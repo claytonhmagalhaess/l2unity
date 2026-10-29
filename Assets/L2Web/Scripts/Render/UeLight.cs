@@ -2,6 +2,7 @@
 // coronas (sprite aditivo virado para a camera, apagado quando algo fica na frente).
 using System;
 using System.Collections.Generic;
+using L2Web.World;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -87,13 +88,34 @@ namespace L2Web.Render
         }
     }
 
-    /// <summary>Corona: quad aditivo (L2WebFx billboard) do tamanho DrawScale * USize da textura [I-UE2], com fade de 0,25 s.</summary>
+    /// <summary>
+    /// Corona (FCoronaRender::RenderCoronas 0x10658690 [O]): quad virado para a camera na posicao da luz, Translucent (aditivo),
+    /// sem ZTest, cor = matiz + (1 - matiz) Saturation/255 vezes o brilho do fade (o LightBrightness nao entra) e meia aresta =
+    /// clamp(clamp(dist/1000; 0,01; 10) DrawScale 512; MinCoronaSize; MaxCoronaSize) UU: tamanho angular constante.
+    /// </summary>
     public sealed class Corona
     {
         public Transform Tr;
         public Renderer R;
         public float Alpha;
         public Color Color = Color.white;
+        public float DrawScale = 1;
+        /// <summary>MinCoronaSize/MaxCoronaSize (padroes do Light no Engine.u: 0 e 1000).</summary>
+        public float MinSize, MaxSize = 1000;
+
+        /// <summary>Cor da corona (0x106589c0..0x10658b20 [O]): matiz por tercos do LightHue + (1 - matiz) LightSaturation/255.</summary>
+        public static Color ColorOf(int hue, int sat)
+        {
+            Vector3 h = hue < 86 ? new Vector3((85 - hue) / 85f, hue / 85f, 0)
+                : hue < 171 ? new Vector3(0, (170 - hue) / 85f, (hue - 85) / 85f)
+                : new Vector3((hue - 170) / 85f, 0, (255 - hue) / 84f);
+            var c = h + sat / 255f * (Vector3.one - h);
+            return new Color(c.x, c.y, c.z, 1);
+        }
+
+        /// <summary>Meia aresta em UU (0x10658b7d..0x10658ece [O]).</summary>
+        public static float HalfSize(float distUu, float drawScale, float min = 0, float max = 1000) =>
+            Mathf.Clamp(Mathf.Clamp(distUu / 1000f, 0.01f, 10f) * drawScale * 512f, min, max);
 
         static readonly MaterialPropertyBlock mpb = new();
         static readonly int ColorId = Shader.PropertyToID("_Color");
@@ -124,6 +146,8 @@ namespace L2Web.Render
                 var visible = Vector3.Dot(dir, cam.transform.forward) > 0 &&
                               !Physics.Linecast(eye, p - dir.normalized * 0.3f, ~0, QueryTriggerInteraction.Ignore);
                 c.Alpha = Mathf.MoveTowards(c.Alpha, visible ? 1 : 0, dt / FadeTime);
+                var size = 2 * HalfSize(dir.magnitude / Coords.Scale, c.DrawScale, c.MinSize, c.MaxSize) * Coords.Scale;
+                c.Tr.localScale = new Vector3(size, size, size);
                 c.R.enabled = c.Alpha > 0;
                 mpb.SetColor(ColorId, c.Color * c.Alpha);
                 c.R.SetPropertyBlock(mpb);

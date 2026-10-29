@@ -67,6 +67,13 @@ namespace L2Web.Render
 
         static Vector3 Rel(JArray v) => Coords.ToUnity((float)v[0] - Eye.x, (float)v[1] - Eye.y, (float)v[2] - Eye.z);
 
+        /// <summary>
+        /// UV do Lobby_sky.json (TextureU/TextureV do UE, v = 0 na primeira linha da textura) para o Unity, onde o LoadImage poe a
+        /// primeira linha do PNG em v = 1 (como o BspLightmap). Sem isso o anel de nevoa amostrava o WhiteRing de cabeca para baixo:
+        /// opaco em cima e transparente no horizonte, cobrindo o fundo azul e as nuvens.
+        /// </summary>
+        public static Vector2 Uv(float u, float v) => new(u, 1 - v);
+
         static Material Mat(Texture tex, Color c, BlendMode src, BlendMode dst, int queue)
         {
             var m = RenderMats.Fx(c, false, true, tex, false, false);
@@ -116,6 +123,8 @@ namespace L2Web.Render
                 ["Cloud_Final"] = cloud = Mat(cloudTex, CloudColor, BlendMode.SrcAlpha, BlendMode.OneMinusSrcAlpha, 1003),
                 ["HazeRing_Final"] = ringMat = Mat(ring, HazeColor, BlendMode.SrcAlpha, BlendMode.OneMinusSrcAlpha, 1004),
             };
+            // nuvens e anel: SrcAlpha sobre o fundo opaco, misturados em gama como no D3D (L2WebFx _GammaOver)
+            SetGammaOver(Background);
             foreach (var kv in geo)
             {
                 var polys = (JArray)kv.Value["polys"];
@@ -131,7 +140,7 @@ namespace L2Web.Render
                     for (var i = 0; i < vs.Count; i++)
                     {
                         b.v.Add(Rel((JArray)vs[i]));
-                        b.uv.Add(new Vector2((float)uvs[i][0], (float)uvs[i][1]));
+                        b.uv.Add(Uv((float)uvs[i][0], (float)uvs[i][1]));
                     }
                     for (var i = 1; i + 1 < vs.Count; i++)
                     {
@@ -265,8 +274,19 @@ namespace L2Web.Render
         public void SetColors(Color32 sky, Color32 haze, Color32[] clouds)
         {
             if (bgMat) bgMat.SetColor("_Color", sky);
+            SetGammaOver(sky);
             if (ringMat) ringMat.SetColor("_Color", haze);
             if (cloud && clouds != null && clouds.Length > 0) cloud.SetColor("_Color", clouds[0]);
+        }
+
+        /// <summary>Destino das camadas alfa (cor do fundo, em gama) para a mistura em gama do L2WebFx.</summary>
+        public static Vector4 GammaOver(Color32 bg) => new(bg.r / 255f, bg.g / 255f, bg.b / 255f, 1);
+
+        void SetGammaOver(Color32 bg)
+        {
+            // SetVector: o valor fica em gama (o SetColor converteria para linear)
+            if (cloud) cloud.SetVector("_GammaOver", GammaOver(bg));
+            if (ringMat) ringMat.SetVector("_GammaOver", GammaOver(bg));
         }
 
         /// <summary>

@@ -2,7 +2,8 @@
 // estudo em scratchpad/baked_light_re.md). Por ator: o ColorStream RGBA por vertice na ordem do VertexStream da malha (= a
 // ordem do glb do build_statics.py, conferida pelo exportador), posto no MeshRenderer.additionalVertexStreams; o material
 // do molde vira um L2Web/Baked com a mesma textura, o corte alfa e o ambiente D3D da zona (d3d_ambient = AmbientVector/2
-// em bytes). Atores sem instancia usavel (chamas bUnlit, planos de luz, contagem errada) ficam com o material do molde.
+// em bytes). Atores sem instancia usavel (chamas bUnlit, planos de luz, contagem errada) ficam com o material do molde,
+// menos os de efeito sem bUnlit (planos de luz do salao), que recebem a luz de hardware como os pawns (LitFx).
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace L2Web.Render
             public string Mesh;
             public int NVerts;
             public bool Unlit, SunZone;
+            /// <summary>
+            /// Bloqueia tracos de linha (corona, flares, clique): false com bCollideActors ou bBlockZeroExtentTraces False no
+            /// .unr ("collide": false no json; FCoronaRender::IsOccluded traca com TRACE_LevelGeometry) [O].
+            /// </summary>
+            public bool Collide = true;
             public Color Ambient;
             public Color32[] Colors;
             /// <summary>Parte estatica (luzes do mapa) e intensidade do sol por mapa k (byte = I x 127), para a releitura por hora.</summary>
@@ -107,7 +113,7 @@ namespace L2Web.Render
             {
                 var name = (string)o["actor"];
                 if (name == null) continue;
-                var e = new Entry { Mesh = (string)o["mesh"], NVerts = (int?)o["nverts"] ?? 0, Unlit = (bool?)o["unlit"] == true, SunZone = (bool?)o["sun_zone"] == true };
+                var e = new Entry { Mesh = (string)o["mesh"], NVerts = (int?)o["nverts"] ?? 0, Unlit = (bool?)o["unlit"] == true, SunZone = (bool?)o["sun_zone"] == true, Collide = (bool?)o["collide"] != false };
                 var amb = o["d3d_ambient"] as JArray;
                 e.Ambient = amb != null && amb.Count >= 3 ? new Color((float)amb[0] / 255f, (float)amb[1] / 255f, (float)amb[2] / 255f, 1) : new Color(60 / 255f, 60 / 255f, 60 / 255f, 1);
                 if ((bool?)o["instance_usable"] == true && o["colors"] is JValue cv && cv.Type == JTokenType.String)
@@ -185,7 +191,13 @@ namespace L2Web.Render
 
         public static bool Apply(MeshRenderer mr, MeshFilter mf, Entry e, string actor)
         {
-            if (Disabled || mr == null || mf == null || e?.Colors == null || !mf.sharedMesh) return false;
+            if (Disabled || mr == null || e == null) return false;
+            if (e.Colors == null && !e.Unlit)
+            {
+                ApplyHardwareLit(mr, e);
+                return false;
+            }
+            if (mf == null || e.Colors == null || !mf.sharedMesh) return false;
             if (Log && logged < 12)
             {
                 logged++;
@@ -204,6 +216,52 @@ namespace L2Web.Render
             mr.sharedMaterials = mats;
             mr.additionalVertexStreams = cm;
             return true;
+        }
+
+        static readonly Dictionary<(Material, int), Material> litFx = new();
+
+        /// <summary>
+        /// RenderStaticMesh sem instancia usavel e sem bUnlit (baked_light_re.md 3.5 [O]): EnableLighting com Modulate2X, ambiente
+        /// D3D da zona (d3d_ambient) e as luzes da lista do ator por SetLight (ate 3), qualquer que seja o blend do material. No
+        /// Lobby sao os 2 planos de luz rhion_orc_light do salao (Orc_Dgn_light001, Translucent): no original saem quentes das
+        /// luzes vizinhas; sem isto ficavam brancos. Os materiais de efeito viram L2Web/Actor com o mesmo blend.
+        /// [I] sol: o global dos atores (zona da camera), nao o da zona do ator.
+        /// </summary>
+        public static void ApplyHardwareLit(MeshRenderer mr, Entry e)
+        {
+            var mats = mr.sharedMaterials;
+            var changed = false;
+            for (var i = 0; i < mats.Length; i++)
+            {
+                var m = LitFx(mats[i], e);
+                if (m == mats[i]) continue;
+                mats[i] = m;
+                changed = true;
+            }
+            if (changed) mr.sharedMaterials = mats;
+        }
+
+        /// <summary>Material L2Web/Actor equivalente a um material de efeito (MatAnim), aceso pelo ambiente da entrada.</summary>
+        public static Material LitFx(Material src, Entry e)
+        {
+            if (!src || src.shader != RenderMats.FxShader || !ActorMaterial.Shader) return src;
+            var amb = ((int)(e.Ambient.r * 255) << 16) | ((int)(e.Ambient.g * 255) << 8) | (int)(e.Ambient.b * 255);
+            if (litFx.TryGetValue((src, amb), out var m) && m) return m;
+            m = new Material(ActorMaterial.Shader) { name = src.name + " (luz de hardware)", hideFlags = HideFlags.DontUnloadUnusedAsset };
+            m.SetTexture("_BaseMap", src.GetTexture("_MainTex"));
+            m.SetColor("_BaseColor", src.GetColor("_Color"));
+            float s = src.GetFloat("_SrcBlend"), d = src.GetFloat("_DstBlend");
+            m.SetFloat("_SrcBlend", s);
+            m.SetFloat("_DstBlend", d);
+            m.SetFloat("_ZWrite", src.GetFloat("_ZWrite"));
+            m.SetFloat("_Cull", (float)CullMode.Off);
+            // ambiente D3D x 2 em unidades de luz (como o _L2ActorAmbient); SetVector: valor em gama
+            m.SetVector("_OwnAmbient", new Vector4(2 * e.Ambient.r, 2 * e.Ambient.g, 2 * e.Ambient.b, 1));
+            // blend aditivo (Translucent/Brighten): a neblina apaga, como o _Fog 2 do L2Web/Fx
+            m.SetFloat("_FogBlack", d == (float)BlendMode.One || d == (float)BlendMode.OneMinusSrcColor ? 1 : 0);
+            m.renderQueue = src.renderQueue;
+            litFx[(src, amb)] = m;
+            return m;
         }
     }
 }
