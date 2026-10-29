@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-08-npchtml` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `07_demais_janelas.md` (NpcHtmlWnd), `89_telas_nativas.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
