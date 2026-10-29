@@ -11,7 +11,7 @@ import os
 import sys
 
 MAP = sys.argv[1] if len(sys.argv) > 1 else 'Lobby'
-SRC = os.path.join('C:\\Users\\Clayton\\workspace-claude\\L2Unity-workspace\\tools\\l2anim\\out\\re\\maps', MAP + '.json')
+SRC = os.path.join('C:\\Users\\Clayton\\workspace-claude\\L2Unity-workspace\\analises\\l2-interlude\\re\\maps', MAP + '.json')
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Assets',
                                                          'StreamingAssets', 'L2Web', 'cache', 'map', MAP + '_env.json')
 

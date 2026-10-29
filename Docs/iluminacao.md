@@ -1,6 +1,6 @@
 # Iluminação e animação de cenário — paridade com a spec 08
 
-Fonte: `C:\Users\Clayton\workspace-claude\L2Unity-workspace\tools\l2anim\docs\client_spec\08_ambiente_iluminacao.md`, `out\re\env\env_config.json` (dados),
+Fonte: `C:\Users\Clayton\workspace-claude\L2Unity-workspace\analises\l2-interlude\client_spec\08_ambiente_iluminacao.md`, `out\re\env\env_config.json` (dados),
 `out\re\env\env_golden.json` (esperado a cada 15 min, 4 ambientes), `out\re\maps\<mapa>.json` (atores). Marcadores:
 [O] binário, [Obs] dados do cliente, [I] inferência. Uma linha por item: regra, arquivo:linha, estado, evidência.
 

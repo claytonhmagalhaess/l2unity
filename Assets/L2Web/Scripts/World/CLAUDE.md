@@ -1,0 +1,13 @@
+# Área World (vaga `worktrees\world`)
+
+Estado do mundo e regras de jogo do lado do cliente: entidades, movimento e validação pelo geodata, combate, skills e cálculos (`L2Calc`). Coordenadas: `Coords` (unity = (-x, z, y) * 0.01); calcule em coordenadas do L2 e converta só no fim.
+
+**Specs** (em `C:\Users\Clayton\workspace-claude\L2Unity-workspace\analises\l2-interlude\client_spec\`): `01_framework_e_fluxo.md` (fluxo de entrada no mundo), `03_minimapa.md` (grade do mundo, 32768), `09_efeitos_skill.md` (tempos de skill), `92_protocolo_opcodes.md` (pacotes de movimento e combate).
+
+**Arquivos**: `World`, `Entities`/`Entity`, `Movement`, `PawnMotion`, `Combat`, `Skills`, `L2Calc`, `Coords`.
+
+**Testes**: `MovementTests`, `MovementParityTests`, `CombatTests`, `CombatParityTests`, `SkillDataTests`, `PawnSelectTests`, `CreateRuleTests`, `DefPosTests`, `ZoneTests`.
+
+**Regras**
+- O servidor manda: o cliente prevê e corrige, nunca decide posição ou dano por conta própria.
+- Mudança que afeta o desenho (animação, efeito) é da vaga `render`; avise pelo `TAREFAS.md`.

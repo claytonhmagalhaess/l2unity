@@ -12,7 +12,7 @@ namespace L2Web.Tests
     public class FxMapTests
     {
         static string MapDir => Path.Combine(Application.streamingAssetsPath, "L2Web", "cache", "map");
-        const string ReMaps = @"C:\Users\Clayton\workspace-claude\L2Unity-workspace\tools\l2anim\out\re\maps";
+        const string ReMaps = @"C:\Users\Clayton\workspace-claude\L2Unity-workspace\analises\l2-interlude\re\maps";
 
         [Test]
         public void Tiles_ContagemDeEmitters_IgualAoInventario()

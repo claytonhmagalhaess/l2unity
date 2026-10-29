@@ -13,7 +13,7 @@ namespace L2Web.Tests
 {
     public static class FxFixtures
     {
-        public const string FxDir = @"C:\Users\Clayton\workspace-claude\L2Unity-workspace\tools\l2anim\out\re\fx";
+        public const string FxDir = @"C:\Users\Clayton\workspace-claude\L2Unity-workspace\analises\l2-interlude\re\fx";
         static FxLibrary lib;
         static JObject golden;
 
