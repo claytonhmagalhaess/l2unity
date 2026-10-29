@@ -84,5 +84,56 @@ namespace L2Web.Tests
         {
             Assert.IsNotNull(Shader.Find("L2Web/Baked"));
         }
+
+        [Test]
+        public void PlanosDeLuz_SemInstanciaSemUnlit_SemColisao()
+        {
+            // Lobby.unr [O]: StaticMeshActor1252/1343 (rhion_orc_light_S01, os feixes do salao) sem StaticMeshInstance usavel,
+            // sem bUnlit, na zona LevelInfo0 (com sol: ambiente 120 >> 1 = 60) e com bCollideActors/bBlockZeroExtentTraces False
+            var t = Table();
+            var anyCollide = false;
+            foreach (JObject o in t) anyCollide |= o["collide"] != null;
+            foreach (var name in new[] { "StaticMeshActor1252", "StaticMeshActor1343" })
+            {
+                JObject a = null;
+                foreach (JObject o in t)
+                    if ((string)o["actor"] == name) a = o;
+                Assert.IsNotNull(a, name);
+                Assert.AreEqual("rhion_orc_dungeon_s.rhion_orc_light_S01", (string)a["mesh"]);
+                Assert.IsFalse((bool)a["instance_usable"]);
+                Assert.IsFalse((bool)a["unlit"]);
+                Assert.AreEqual(60, (int)a["d3d_ambient"][0]);
+                if (anyCollide) Assert.AreEqual(false, (bool?)a["collide"], name);
+            }
+            if (!anyCollide) Assert.Ignore("Lobby_smlight.json sem o campo collide (reexportar com o export_smlight.py atual)");
+        }
+
+        [Test]
+        public void LuzDeHardware_MaterialDeEfeitoViraActorAditivo()
+        {
+            // RenderStaticMesh sem instancia e sem bUnlit: Modulate2X + ambiente D3D + SetLight, com o blend do material
+            var tex = new Texture2D(2, 2);
+            var fx = RenderMats.Fx(Color.white, false, true, tex, false, true);
+            fx.SetFloat("_SrcBlend", (float)UnityEngine.Rendering.BlendMode.One);
+            fx.SetFloat("_DstBlend", (float)UnityEngine.Rendering.BlendMode.One);
+            fx.SetFloat("_ZWrite", 0);
+            fx.renderQueue = 3000;
+            var e = new BakedLight.Entry { Ambient = new Color(60 / 255f, 60 / 255f, 60 / 255f, 1) };
+            var m = BakedLight.LitFx(fx, e);
+            Assert.AreEqual("L2Web/Actor", m.shader.name);
+            Assert.AreSame(tex, m.GetTexture("_BaseMap"));
+            Assert.AreEqual((float)UnityEngine.Rendering.BlendMode.One, m.GetFloat("_DstBlend"));
+            Assert.AreEqual(0, m.GetFloat("_ZWrite"));
+            Assert.AreEqual(1, m.GetFloat("_FogBlack"));
+            Assert.AreEqual(3000, m.renderQueue);
+            var amb = m.GetVector("_OwnAmbient");
+            Assert.AreEqual(120 / 255f, amb.x, 1e-5f);
+            Assert.AreEqual(1, amb.w);
+            Assert.AreSame(m, BakedLight.LitFx(fx, e));
+            // material comum (nao de efeito) fica como esta
+            var plain = new Material(Shader.Find("L2Web/Baked"));
+            Assert.AreSame(plain, BakedLight.LitFx(plain, e));
+            UnityEngine.Object.DestroyImmediate(tex);
+        }
     }
 }

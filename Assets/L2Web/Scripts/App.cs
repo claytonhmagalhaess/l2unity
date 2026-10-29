@@ -1474,7 +1474,13 @@ namespace L2Web
             {
                 var m = GamePackets.ParseMoveToLocation(r);
                 world.Get(m.ObjectId)?.ServerMove(m.Tx, m.Ty, m.Tz, m.X, m.Y, m.Z);
+                world.Answered(m.ObjectId);
             });
+            // recusas sem campos: so zeram a trava de pedido do clique (spec 05 secao 5.7)
+            On(0x08, _ => world.OnAttackOutofRange());
+            On(0x09, _ => world.OnAttackinCoolTime());
+            On(0x0a, _ => world.OnAttackDeadTarget());
+            On(0x25, _ => world.OnActionFailed());
             On(0x62, r =>
             {
                 var s = GamePackets.ParseStartRotation(r);
@@ -1519,6 +1525,7 @@ namespace L2Web
             On(0x12, r =>
             {
                 var id = GamePackets.ParseDeleteObject(r).ObjectId;
+                world.Request.Deleted(id, targetId);
                 if (id == targetId) SetTarget(0);
                 world.Remove(id);
             });
@@ -1527,6 +1534,7 @@ namespace L2Web
                 var m = GamePackets.ParseMoveToPawn(r);
                 var e = world.Get(m.ObjectId);
                 if (e != null) e.Follow = new FollowInfo { TargetId = m.TargetId, Distance = m.Distance };
+                world.Answered(m.ObjectId);
             });
             On(0x2e, r =>
             {
@@ -1603,6 +1611,9 @@ namespace L2Web
             On(0x05, r =>
             {
                 var a = GamePackets.ParseAttack(r);
+                // OnAttack(User*,User*) (+0x12c) zera a trava quando o atacante sou eu; com o alvo desconhecido o
+                // tratador chama +0x128, que nao zera. Os golpes extras (OnAssociatedAttack) nao zeram.
+                if (a.Hits.Count > 0 && world.Get(a.Hits[0].TargetId) != null) world.Answered(a.AttackerId);
                 L2Events.Dispatch(PacketEvents.Attack(a, id => world.Get(id)?.Name ?? ""));
                 OnAttack(a);
             });
@@ -1743,6 +1754,7 @@ namespace L2Web
             On(0xa6, r =>
             {
                 var t = GamePackets.ParseMyTargetSelected(r);
+                world.Request.MyTargetSelected();
                 L2Events.Dispatch(PacketEvents.MyTargetSelected(t));
                 ui.TargetLevelDiff = t.Color;
                 SetTarget(t.ObjectId);
@@ -1752,6 +1764,7 @@ namespace L2Web
                 var u = GamePackets.ParseTargetUnselected(r);
                 var e = world.Get(u.ObjectId);
                 if (e != null) e.TargetId = 0;
+                world.Answered(u.ObjectId);
                 if (u.ObjectId == world.SelfId) SetTarget(0);
             });
             On(0x29, r =>
@@ -1759,6 +1772,7 @@ namespace L2Web
                 var t = GamePackets.ParseTargetSelected(r);
                 var e = world.Get(t.ObjectId);
                 if (e != null) e.TargetId = t.TargetId;
+                world.Answered(t.ObjectId);
             });
             On(0x06, r =>
             {
@@ -1910,7 +1924,6 @@ namespace L2Web
             On(0xfa, r =>
             {
                 var fl = SocialPackets.ParseFriendList(r);
-                social.FriendList(fl);
                 // L2FriendWnd: limpa, acrescenta cada "dSdd" e refaz a arvore
                 ui.Messenger.M.SetList(fl.Select(f => (f.ObjectId, f.Name, f.Online ? 1 : 0, f.Online ? f.ObjectId : 0)));
                 ui.Messenger.Render();
@@ -2615,6 +2628,7 @@ namespace L2Web
             if (gc == null || !inWorld) return;
             var self = world.Self;
             if (self == null) return;
+            if (!world.Request.CanClick) return;   // PLAYERPAWNMOVETO 0x105af027: trava ligada = clique ignorado
             var hit = scene.Pick(screen.x, screen.y);
             lastClick = hit == null ? $"nada em {screen:0}" : $"{hit.Kind} {hit.ObjectId} {Mathf.RoundToInt(hit.X)},{Mathf.RoundToInt(hit.Y)},{Mathf.RoundToInt(hit.Z)}";
             if (hit == null) return;
@@ -2625,10 +2639,12 @@ namespace L2Web
             {
                 if (ctrl) gc.Send(GamePackets.AttackRequest(hit.ObjectId.Value, ox, oy, oz, shift));
                 else gc.Send(GamePackets.Action(hit.ObjectId.Value, ox, oy, oz, shift));
+                world.Request.Lock();
             }
             else
             {
                 gc.Send(GamePackets.MoveTo(Mathf.RoundToInt(hit.X), Mathf.RoundToInt(hit.Y), Mathf.RoundToInt(hit.Z), ox, oy, oz));
+                world.Request.Lock();
                 scene.ShowMarker(hit.X, hit.Y, hit.Vz ?? hit.Z);
             }
         }
@@ -2643,13 +2659,14 @@ namespace L2Web
             var oz = Mathf.RoundToInt(self.Z);
             // mouse segurado no chao: o cliente reenvia o destino sob o cursor a cada ~0,35 s (depois de 300 ms)
             var now = LoadTrack.Now();
-            if (holdMouse && Mouse.current != null && now - holdSince > 300 && now - holdSent > 350)
+            if (holdMouse && Mouse.current != null && now - holdSince > 300 && now - holdSent > 350 && world.Request.CanClick)
             {
                 var p = Mouse.current.position.ReadValue();
                 var hit = scene.Pick(p.x, p.y);
                 if (hit != null && hit.Kind == "ground")
                 {
                     gc.Send(GamePackets.MoveTo(Mathf.RoundToInt(hit.X), Mathf.RoundToInt(hit.Y), Mathf.RoundToInt(hit.Z), ox, oy, oz));
+                    world.Request.Lock();   // mesmo comando PlayerPawnMoveTo do clique
                     holdSent = now;
                 }
             }

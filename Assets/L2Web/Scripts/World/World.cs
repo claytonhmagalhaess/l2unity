@@ -321,7 +321,27 @@ namespace L2Web.World
         public void Clear()
         {
             foreach (var id in new List<int>(Entities.Keys)) Remove(id);
+            Request.Reset();
         }
+
+        // ------------------------------------------------------------ trava de pedido do clique (spec 05 secao 5.7)
+        /// <summary>GEngine+0x64: o clique no mundo so envia com a trava livre e a liga ao enviar.</summary>
+        public readonly ActionLatch Request = new();
+
+        /// <summary>0x25 ActionFailed: so destrava o clique.</summary>
+        public void OnActionFailed() => Request.ActionFailed();
+
+        /// <summary>0x08 AttackOutofRange: so destrava o clique, se o proprio jogador existe.</summary>
+        public void OnAttackOutofRange() => Request.AttackRefused(Self != null);
+
+        /// <summary>0x09 AttackinCoolTime: idem.</summary>
+        public void OnAttackinCoolTime() => Request.AttackRefused(Self != null);
+
+        /// <summary>0x0a AttackDeadTarget: idem.</summary>
+        public void OnAttackDeadTarget() => Request.AttackRefused(Self != null);
+
+        /// <summary>Resposta de movimento, ataque ou alvo sobre `objectId`: destrava se for o proprio jogador.</summary>
+        public void Answered(int objectId) => Request.Answered(objectId, SelfId);
 
         /// <summary>Altura do chao (geodata) usada pelo movimento; definida pela cena quando o terreno existe.</summary>
         public Func<float, float, float, float?> Ground = (_, _, _) => null;

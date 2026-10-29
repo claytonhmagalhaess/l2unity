@@ -96,5 +96,23 @@ namespace L2Web.UI
         // ---- NCKeyCryptWarningDialogBox 205x87 em (W/2-101, H/2-43); OK 74x21 em (65, 60) (x resolvido a mao no assembly)
         public static readonly NRect KeyCrypt = new(-101, -43, 205, 87, 0.5f, 0.5f);
         public static readonly NRect KeyCryptOk = new(65, 60, 74, 21);
+
+        // ---- MessengerWnd 256x401 em (384, 180) (NCConsole 0x101401d3). MessengerWnd::OnCreate (FUN_100bd480): NCFrameCtrl
+        // 0xa03 (0,0,256,20), NCTabControl 0xa02 (12,25,224,41) e as paginas MsnWnd / L2FriendWnd em (0,48,256,353)
+        // (0x100bd581/0x100bd601). AddTab (FUN_10050440): abas 114x23 lado a lado com 1 px entre elas (0x10050765), rotulos
+        // sysstring 996 "MSN Messenger" e 997 "Chat with Friends", msn_tab2 normal e msn_tab1 escolhida. Draw (FUN_100b5fc0):
+        // msn_back em (0,20) 276x28
+        public static readonly NRect Messenger = new(384, 180, 256, 401);
+        public static readonly NRect MessengerFrame = new(0, 0, 256, 20);
+        public static readonly NRect MessengerTabCtrl = new(12, 25, 224, 41);
+        public static readonly NRect MessengerPage = new(0, 48, 256, 353);
+        public static readonly NRect MessengerBack = new(0, 20, 276, 28);
+        public const int MessengerFrameId = 0xa03, MessengerTabCtrlId = 0xa02;
+        public const float MessengerTabW = 0x72, MessengerTabH = 0x17, MessengerTabGap = 1;
+        /// <summary>Aba i relativa ao NCTabControl: o cursor (+0x2d8) anda largura + espaco a cada AddTab.</summary>
+        public static NRect MessengerTab(int i) => new(i * (MessengerTabW + MessengerTabGap), 0, MessengerTabW, MessengerTabH);
+        public static readonly int[] MessengerTabLabel = { 996, 997 };
+        public const string MessengerTabTex = "L2UI_CH3.Msn.msn_tab2", MessengerTabSelTex = "L2UI_CH3.Msn.msn_tab1";
+        public const string MessengerBackTex = "L2UI_CH3.Msn.msn_back";
     }
 }

@@ -148,13 +148,16 @@ namespace L2Web.Render
                     var go = new GameObject("corona " + (string)l["name"]);
                     go.transform.SetParent(Root, false);
                     go.transform.position = pos;
-                    var size = ((float?)l["drawScale"] ?? 1) * (tex ? tex.width : 128) * Coords.Scale;
-                    go.transform.localScale = new Vector3(size, size, size);
+                    // tamanho por quadro no Corona.Step (angular constante, RenderCoronas)
                     go.AddComponent<MeshFilter>().sharedMesh = RenderMats.Quad();
                     var mr = go.AddComponent<MeshRenderer>();
                     mr.sharedMaterial = coronaMat;
                     mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-                    coronas.Add(new Corona { Tr = go.transform, R = mr, Color = type == 6 && l["hue"] == null ? Color.white : color });
+                    coronas.Add(new Corona
+                    {
+                        Tr = go.transform, R = mr, DrawScale = (float?)l["drawScale"] ?? 1,
+                        Color = Corona.ColorOf((int?)l["hue"] ?? 0, (int?)l["sat"] ?? 255),
+                    });
                 }
             }
         }

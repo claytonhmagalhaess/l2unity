@@ -468,9 +468,11 @@ namespace L2Web.Render
                         mr.sharedMaterials = p.Materials;
                         mr.shadowCastingMode = ShadowCastingMode.Off;
                         mr.receiveShadows = false;
-                        if (a.Name != null && bakedMap.TryGetValue(a.Name, out var be))
+                        BakedLight.Entry be = null;
+                        if (a.Name != null && bakedMap.TryGetValue(a.Name, out be))
                             BakedLight.Apply(mr, go.GetComponent<MeshFilter>(), be, a.Name);
-                        go.AddComponent<MeshCollider>().sharedMesh = p.Mesh;
+                        // sem colisao no .unr: nao bloqueia a corona, os flares nem o clique
+                        if (be == null || be.Collide) go.AddComponent<MeshCollider>().sharedMesh = p.Mesh;
                         for (var sm = 0; sm < p.Mesh.subMeshCount; sm++) tris += (long)p.Mesh.GetIndexCount(sm) / 3;
                     }
                     if (moving != null) WindSway.Register(moving, sway.Value.f, sway.Value.m);

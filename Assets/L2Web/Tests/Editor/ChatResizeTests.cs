@@ -20,11 +20,16 @@ namespace L2Web.Tests
                 Newtonsoft.Json.Linq.JObject.Parse(System.IO.File.ReadAllText(System.IO.Path.Combine(ui, "textures.json"))));
         }
 
+        // sem o WindowsInfo.ini do persistentDataPath (o jogo grava o tamanho do chat na saida, secao [6]): o teste parte do xdat
+        [SetUp]
+        public void SemWindowsInfo() => L2WindowsInfo.Load(System.IO.Path.Combine(System.IO.Path.GetTempPath(), "l2web-sem-windowsinfo.ini"));
+
         [TearDown]
         public void Limpa()
         {
             foreach (var g in made) Object.DestroyImmediate(g);
             made.Clear();
+            L2WindowsInfo.Load();
         }
 
         [Test]

@@ -9,6 +9,7 @@ Uso (python -I):
   export_smlight.py dump   [--map Lobby] --actor Nome [--out f] cores de um ator (e conferencia de contagens)
   export_smlight.py all    [--map Lobby] --out f [--hour 12]    cores de todos os StaticMeshActor com instancia usavel
   export_smlight.py hours  [--map Lobby] --out f                 parte estatica (luzes) + intensidade do sol por mapa k
+        (os dois modos de saida gravam "collide": false nos atores que nao bloqueiam tracos de linha)
         (RenderStaticMesh refaz CalculateStaticMeshLighting + InterpolateSunLight a cada ShadowTick [O hourly_relight_re.md]:
         o cliente recompoe static + floor(I_k x w x 0,5 x S(t)) com as curvas da hora; I_k gravado como byte = I x 127)
 """
@@ -426,6 +427,11 @@ class MapData:
         sun_zone = zp.get('bSunAffect', True)       # ZoneInfo default bSunAffect=True (Engine.u) [O]
         out = dict(actor=name, mesh=mref, nverts=len(mesh['verts']), zone=zname, sun_zone=bool(sun_zone),
                    use_vertex_color=mesh['use_vertex_color'], unlit=bool(pr.get('bUnlit', False)))
+        # colisao com tracos de linha (FCoronaRender::IsOccluded 0x10650e00 traca com 0x2287, TRACE_LevelGeometry; idem o
+        # SingleLineCheck dos flares): um ator fora do hash (bCollideActors False) ou com bBlockZeroExtentTraces False nao
+        # bloqueia. Padroes True no StaticMeshActor; no Lobby, os 2 planos de luz rhion_orc_light e 10 chamas da floresta [O]
+        if not pr.get('bCollideActors', True) or not pr.get('bBlockZeroExtentTraces', True):
+            out['collide'] = False
         inst = read_smi(self.p, self.insts[iref]) if iref in self.insts else None
         usable = (inst is not None and len(inst['colors']) == len(mesh['verts'])
                   and all(len(li['bits']) == (len(mesh['verts']) + 7) // 8 for li in inst['lights']))
