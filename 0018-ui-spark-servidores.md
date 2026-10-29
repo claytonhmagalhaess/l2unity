@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L2-servidores` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `89_telas_nativas.md` (NCLoginServerWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
