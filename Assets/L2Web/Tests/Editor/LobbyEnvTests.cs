@@ -101,6 +101,24 @@ namespace L2Web.Tests
         }
 
         [Test]
+        public void Corona_CorSemBrilhoETamanhoAngular()
+        {
+            // FCoronaRender::RenderCoronas 0x10658690 [O]: cor = matiz + (1 - matiz) Sat/255 (sem LightBrightness); as 13 coronas
+            // do Lobby (Hue 0, Sat 255, Brightness 64) saem brancas 1,0 (antes FGetHSV x 64/255 = 0,21)
+            Assert.AreEqual(Color.white, Corona.ColorOf(0, 255));
+            Assert.AreEqual(new Color(1, 0, 0, 1), Corona.ColorOf(0, 0));
+            Assert.AreEqual(new Color(0, 1, 0, 1), Corona.ColorOf(85, 0));
+            Assert.AreEqual(new Color(0, 0, 1, 1), Corona.ColorOf(170, 0));
+            // metade da saturacao: matiz + (1 - matiz) / 2
+            Assert.AreEqual(0.5f, Corona.ColorOf(0, 255 / 2).g, 0.01f);
+            // meia aresta = clamp(clamp(d/1000; 0,01; 10) DrawScale 512; Min; Max): Light38 (DrawScale 0,22) a 1000 UU = 112,64 UU
+            Assert.AreEqual(112.64f, Corona.HalfSize(1000, 0.22f), 1e-3f);
+            Assert.AreEqual(225.28f, Corona.HalfSize(2000, 0.22f), 1e-3f);
+            Assert.AreEqual(0.01f * 0.22f * 512, Corona.HalfSize(5, 0.22f), 1e-4f);
+            Assert.AreEqual(1000f, Corona.HalfSize(20000, 0.22f)); // MaxCoronaSize
+        }
+
+        [Test]
         public void CataVento_PhysRotating1500PorSegundo()
         {
             var m = Cache("map/Lobby_movers.json");

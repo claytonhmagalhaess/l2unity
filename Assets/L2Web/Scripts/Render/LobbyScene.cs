@@ -594,14 +594,17 @@ namespace L2Web.Render
                     var go = new GameObject("corona " + (string)l["name"]);
                     go.transform.SetParent(lights, false);
                     go.transform.position = pos;
-                    var size = ((float?)l["drawScale"] ?? 1) * (tex ? tex.width : 128) * Coords.Scale * CoronaScale;
-                    go.transform.localScale = new Vector3(size, size, size);
+                    // tamanho por quadro no Corona.Step (angular constante, RenderCoronas)
                     go.AddComponent<MeshFilter>().sharedMesh = RenderMats.Quad();
                     var mr = go.AddComponent<MeshRenderer>();
                     mr.sharedMaterial = coronaMat;
                     mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-                    // Backdrop sem Hue/Sat proprios: branco
-                    coronas.Add(new Corona { Tr = go.transform, R = mr, Color = type == 6 && l["hue"] == null ? Color.white : color });
+                    // cor so de LightHue/LightSaturation (padroes 0/255 = branco), sem o LightBrightness
+                    coronas.Add(new Corona
+                    {
+                        Tr = go.transform, R = mr, DrawScale = (float?)l["drawScale"] ?? 1,
+                        Color = Corona.ColorOf((int?)l["hue"] ?? 0, (int?)l["sat"] ?? 255),
+                    });
                 }
             }
         }
@@ -611,9 +614,6 @@ namespace L2Web.Render
         LobbyMovers movers;
         L2Sky skyZone;
 
-
-        /// <summary>[I] tamanho da corona = DrawScale x USize x isto (halo das tochas do 1920_03_lobby.png ~0,7 m).</summary>
-        public float CoronaScale = 2.5f;
 
         /// <summary>Ajuste geral das luzes pontuais dos atores (diagnostico; 1 = a cor do mapa).</summary>
         public float LightIntensity = 1f;
