@@ -1,0 +1,115 @@
+Mono path[0] = 'C:/Users/Clayton/My project/Build/L2Web_Data/Managed'
+Mono config path = 'C:/Users/Clayton/My project/Build/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.6.7f1 (b22767f04f04)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=262144, entitiesPerBlock=1024, blocksPerSlotPage=0, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Users/Clayton/My project/Build/L2Web_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce GTX 1080 Ti
+[D3D12 Device Filter] Driver Version: 32.0.15.8278
+[D3D12 Device Filter] Feature Level: 12.1
+[D3D12 Device Filter] Graphics Memory: 11107 MB
+[D3D12 Device Filter] Processor Count: 28
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeSplitJobs
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Vendor:          NVIDIA
+    VRAM:            11107 MB
+    App VRAM Budget: 10339 MB
+    Driver:          32.0.15.8278
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.006 seconds
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+Using Windows.Gaming.Input
+UnloadTime: 0.560000 ms
+Shader 'Hidden/Universal Render Pipeline/GaussianDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldGaussianPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/GaussianDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldGaussianPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/BokehDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldBokehPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/PaniniProjection' is not supported or has been stripped from the build (in 'PaniniProjectionPostProcessPass'). PostProcessing render passes will not execute.
+[auto] captura 1_login (scrLogin)
+[login] Init sessao=9a4d2b48 revisao=c621
+[login] GGAuth ok, enviando RequestAuthLogin
+[login] ServerList: #1 127.0.0.1:7777 0/3000 no ar
+[login] RequestServerLogin servidor 1
+[login] PlayOk
+[game] conectando em 127.0.0.1:7777
+[game] KeyPacket recebido, criptografia ligada
+[auto] captura 2_personagens (scrChars)
+[game] CharSelected: L2webTest (268480740) em 81581,149794,-3506
+[l2web] no mundo: L2webTest em 81581, 149794, -3506
+[ev] EV_ChatMessage Type="10" Msg="Announcements: Welcome to L2Ketra X500 Custom PVP!" ColorR="128" ColorG="255" ColorB="255"
+[ev] EV_ChatMessage Type="10" Msg="Announcements: Website: www.L2Ketra.com" ColorR="128" ColorG="255" ColorB="255"
+[ev] EV_ChatMessage Type="18" Msg="Commands: .donate | .classmaster | .farm | .menu | .antilag | .lock | .join | .leave | .inventory | .raid" ColorR="0" ColorG="255" ColorB="255"
+[ev] EV_InventoryClear 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryItemListEnd 
+[ev] EV_ShortcutClear 
+[ev] EV_ShortcutUpdate ShortcutID="0"
+[ev] EV_ShortcutUpdate ShortcutID="1"
+[ev] EV_ShortcutUpdate ShortcutID="3"
+[ev] EV_ShortcutUpdate ShortcutID="6"
+[ev] EV_ShortcutUpdate ShortcutID="7"
+[ev] EV_ShortcutUpdate ShortcutID="10"
+[ev] EV_AbnormalStatusNormalItem Max="36"
+[ev] EV_SkillListStart 
+[l2web] terreno: 9 pedaços do geodata em volta de 81581, 149794
+[l2web] cenário: 1936 objetos de 287 malhas em 22_22 (426 mil triângulos) · BSP: 5 mil triângulos em 22_22
+[l2web] terreno do Unreal: 22_22
+[auto] no mundo: L2webTest em 81581,149794,-3506; 59 objetos
+[auto] captura 3_mundo (scrGame)
+[ev] EV_SystemMessage Index="1987"
+[ev] EV_ChatMessage Type="5" Msg="As you acted, you are no longer under spawn protection." ColorR="176" ColorG="155" ColorB="121" SysType="0"
+[auto] andando: Wait_1HS_MFighter 118 u/s | assets locais=True pedidos de rede ao servidor de assets=0
+[auto] captura 4_andando (scrGame)
+[ev] EV_SystemMessage Index="46"
+[ev] EV_ChatMessage Type="5" Msg="You use Dash." ColorR="176" ColorG="155" ColorB="121" SysType="0"
+[ev] EV_SystemMessage Index="110"
+[ev] EV_ChatMessage Type="5" Msg="The effects of Dash flow through you." ColorR="176" ColorG="155" ColorB="121" SysType="0"
+[ev] EV_UpdateHP ServerID="268480740" CurrentHP="2140"
+[ev] EV_UpdateMP ServerID="268480740" CurrentMP="415"
+[ev] EV_UpdateCP ServerID="268480740" CurrentCP="406"
+[ev] EV_UpdateMaxCP ServerID="268480740" MaxCP="406"
+[ev] EV_UpdateMP ServerID="268480740" CurrentMP="415"
+[ev] EV_AbnormalStatusNormalItem Max="36"
+[ev] EV_AbnormalStatusNormalItem Max="37"
+[ev] EV_ChatMessage Type="18" Msg="Team vs Team: 2 minute(s) till registrations close." ColorR="0" ColorG="255" ColorB="255"
+[ev] EV_UpdateHP ServerID="268480740" CurrentHP="2140"
+[ev] EV_UpdateMP ServerID="268480740" CurrentMP="418"
+[ev] EV_UpdateCP ServerID="268480740" CurrentCP="406"
+[ev] EV_UpdateMaxCP ServerID="268480740" MaxCP="406"
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

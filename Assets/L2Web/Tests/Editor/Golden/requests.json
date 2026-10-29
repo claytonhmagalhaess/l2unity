@@ -1,0 +1,1962 @@
+[
+ {
+  "method": "RequestDropItemFromPet",
+  "server": "jogo",
+  "opcode": 18,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestSetPledgeCrest",
+  "server": "jogo",
+  "opcode": 83,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestSetPledgeCrest",
+  "server": "jogo",
+  "opcode": 83,
+  "sub": null,
+  "format": "cdb",
+  "note": ""
+ },
+ {
+  "method": "RequestDuelStart",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 39,
+  "format": "chSd",
+  "note": ""
+ },
+ {
+  "method": "RequestJoinCastleSiege",
+  "server": "jogo",
+  "opcode": 164,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeItemDelete",
+  "server": "jogo",
+  "opcode": 173,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestRefineCancel",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 46,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestAllyCrest",
+  "server": "jogo",
+  "opcode": 136,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestOustPledgeMember",
+  "server": "jogo",
+  "opcode": 39,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestGetBossRecord",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 24,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestConfirmTargetItem",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 41,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestShortCutDel",
+  "server": "jogo",
+  "opcode": 53,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestCastleSiegeInfo",
+  "server": "jogo",
+  "opcode": 161,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestWithDrawalPledge",
+  "server": "jogo",
+  "opcode": 38,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestJoinPledge",
+  "server": "jogo",
+  "opcode": 36,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopMakeDo",
+  "server": "jogo",
+  "opcode": 182,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "ChangeMoveType",
+  "server": "jogo",
+  "opcode": 28,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestSetCrop",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 11,
+  "format": "chddb",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopSellList",
+  "server": "jogo",
+  "opcode": 183,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "Say2",
+  "server": "jogo",
+  "opcode": 56,
+  "sub": null,
+  "format": "cSdS",
+  "note": ""
+ },
+ {
+  "method": "Say2",
+  "server": "jogo",
+  "opcode": 56,
+  "sub": null,
+  "format": "cSd",
+  "note": ""
+ },
+ {
+  "method": "RequestManagePartyRoom",
+  "server": "jogo",
+  "opcode": 112,
+  "sub": null,
+  "format": "cdddddS",
+  "note": ""
+ },
+ {
+  "method": "RequestWithdrawPartyRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 3,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "RequestHennaUnequipList",
+  "server": "jogo",
+  "opcode": 189,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestJoinParty",
+  "server": "jogo",
+  "opcode": 41,
+  "sub": null,
+  "format": "cSd",
+  "note": ""
+ },
+ {
+  "method": "RequestDismissPartyRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 2,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "SendBypassBuildCmd",
+  "server": "jogo",
+  "opcode": 91,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestPetGetItem",
+  "server": "jogo",
+  "opcode": 143,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestBuySeed",
+  "server": "jogo",
+  "opcode": 196,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "RequestAnswerJoinParty",
+  "server": "jogo",
+  "opcode": 42,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "SendWareHouseWithdrawList",
+  "server": "jogo",
+  "opcode": 50,
+  "sub": null,
+  "format": "cdb",
+  "note": ""
+ },
+ {
+  "method": "RequestFriendDel",
+  "server": "jogo",
+  "opcode": 97,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestServerList",
+  "server": "login",
+  "opcode": 5,
+  "sub": null,
+  "format": "cddc",
+  "note": ""
+ },
+ {
+  "method": "MoveBackwardToLocation",
+  "server": "jogo",
+  "opcode": 1,
+  "sub": null,
+  "format": "cdddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreManageCancel",
+  "server": "jogo",
+  "opcode": 117,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestExMPCCShowPartyMembersInfo",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 38,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestDeleteMacro",
+  "server": "jogo",
+  "opcode": 194,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestDuelAnswerStart",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 40,
+  "format": "chddd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgePower",
+  "server": "jogo",
+  "opcode": 192,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgePower",
+  "server": "jogo",
+  "opcode": 192,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestExOustFromMPCC",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 15,
+  "format": "chS",
+  "note": ""
+ },
+ {
+  "method": "RequestSetAllyCrest",
+  "server": "jogo",
+  "opcode": 135,
+  "sub": null,
+  "format": "cdb",
+  "note": ""
+ },
+ {
+  "method": "SendServerStatus",
+  "server": "jogo",
+  "opcode": 57,
+  "sub": null,
+  "format": "cc",
+  "note": ""
+ },
+ {
+  "method": "RequestCursedWeaponLocation",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 35,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "SetPrivateStoreBuyMsg",
+  "server": "jogo",
+  "opcode": 148,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestAllyInfo",
+  "server": "jogo",
+  "opcode": 142,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestAddTradeItem",
+  "server": "jogo",
+  "opcode": 22,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestUseItem",
+  "server": "jogo",
+  "opcode": 20,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestQuestList",
+  "server": "jogo",
+  "opcode": 99,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "ReplyGameGuardQuery",
+  "server": "jogo",
+  "opcode": 202,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestDestroyItem",
+  "server": "jogo",
+  "opcode": 89,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestOpenMinimap",
+  "server": "jogo",
+  "opcode": 205,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "SetPrivateStoreBuyList",
+  "server": "jogo",
+  "opcode": 145,
+  "sub": null,
+  "format": "cdb",
+  "note": ""
+ },
+ {
+  "method": "RequestConfirmRefinerItem",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 42,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "RequestRemainTime",
+  "server": "jogo",
+  "opcode": 169,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestSellItem",
+  "server": "jogo",
+  "opcode": 30,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeInfo",
+  "server": "jogo",
+  "opcode": 102,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeItemMakeInfo",
+  "server": "jogo",
+  "opcode": 174,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopManageCancel",
+  "server": "jogo",
+  "opcode": 180,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestExEnchantSkillInfo",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 6,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "RequestBypassToServer",
+  "server": "jogo",
+  "opcode": 33,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "BypassUserCmd",
+  "server": "jogo",
+  "opcode": 170,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestMagicSkillUse",
+  "server": "jogo",
+  "opcode": 47,
+  "sub": null,
+  "format": "cddc",
+  "note": ""
+ },
+ {
+  "method": "RequestBBSWrite",
+  "server": "jogo",
+  "opcode": 34,
+  "sub": null,
+  "format": "cSSSSSS",
+  "note": ""
+ },
+ {
+  "method": "GetOnVehicle",
+  "server": "jogo",
+  "opcode": 66,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestManorList",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 8,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "RequestExSetPledgeCrestLarge",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 17,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestExSetPledgeCrestLarge",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 17,
+  "format": "chdb",
+  "note": ""
+ },
+ {
+  "method": "RequestBlock",
+  "server": "jogo",
+  "opcode": 160,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestBlock",
+  "server": "jogo",
+  "opcode": 160,
+  "sub": null,
+  "format": "cdS",
+  "note": ""
+ },
+ {
+  "method": "RequestMagicItem",
+  "server": "jogo",
+  "opcode": 62,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPetitionCancel",
+  "server": "jogo",
+  "opcode": 128,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestWriteHeroWords",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 12,
+  "format": "chS",
+  "note": ""
+ },
+ {
+  "method": "SendSummonCmd",
+  "server": "jogo",
+  "opcode": 57,
+  "sub": null,
+  "format": "ccS",
+  "note": ""
+ },
+ {
+  "method": "RequestGetItemFromPet",
+  "server": "jogo",
+  "opcode": 140,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestTargetCancel",
+  "server": "jogo",
+  "opcode": 55,
+  "sub": null,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "RequestTutorialPassCmdToServer",
+  "server": "jogo",
+  "opcode": 124,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestSendL2FriendSay",
+  "server": "jogo",
+  "opcode": 204,
+  "sub": null,
+  "format": "cSS",
+  "note": ""
+ },
+ {
+  "method": "SendCharacterInfo",
+  "server": "jogo",
+  "opcode": 57,
+  "sub": null,
+  "format": "ccS",
+  "note": ""
+ },
+ {
+  "method": "RequestTradeDone",
+  "server": "jogo",
+  "opcode": 23,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestPackageSendableItemList",
+  "server": "jogo",
+  "opcode": 158,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeBookOpen",
+  "server": "jogo",
+  "opcode": 172,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestHennaUnequipInfo",
+  "server": "jogo",
+  "opcode": 190,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestSendMsnChatLog",
+  "server": "jogo",
+  "opcode": 206,
+  "sub": null,
+  "format": "cSSd",
+  "note": ""
+ },
+ {
+  "method": "RequestExEnchantSkill",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 7,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "Action",
+  "server": "jogo",
+  "opcode": 4,
+  "sub": null,
+  "format": "cddddc",
+  "note": ""
+ },
+ {
+  "method": "RequestJoinPartyRoom",
+  "server": "jogo",
+  "opcode": 113,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopMessageSet",
+  "server": "jogo",
+  "opcode": 177,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestGMList",
+  "server": "jogo",
+  "opcode": 129,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestConfirmCastleSiegeWaitingList",
+  "server": "jogo",
+  "opcode": 165,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestRefine",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 44,
+  "format": "chdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestStartPledgeWar",
+  "server": "jogo",
+  "opcode": 77,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestListPartyMatchingWaitingRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 22,
+  "format": "chdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestBuyItem",
+  "server": "jogo",
+  "opcode": 31,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "Atk",
+  "server": "jogo",
+  "opcode": 10,
+  "sub": null,
+  "format": "cddddc",
+  "note": ""
+ },
+ {
+  "method": "RequestOustFromPartyRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 1,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestCursedWeaponList",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 34,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "FinishRotating",
+  "server": "jogo",
+  "opcode": 75,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "GetOffVehicle",
+  "server": "jogo",
+  "opcode": 67,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestDuelSurrender",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 48,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "MoveWithDelta",
+  "server": "jogo",
+  "opcode": 65,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestTutorialLinkHtml",
+  "server": "jogo",
+  "opcode": 123,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestFriendAddReply",
+  "server": "jogo",
+  "opcode": 95,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestGameStart",
+  "server": "jogo",
+  "opcode": 13,
+  "sub": null,
+  "format": "cdhddd",
+  "note": ""
+ },
+ {
+  "method": "RequestShortCutUse",
+  "server": "jogo",
+  "opcode": 52,
+  "sub": null,
+  "format": "cddc",
+  "note": ""
+ },
+ {
+  "method": "RequestSSQStatus",
+  "server": "jogo",
+  "opcode": 199,
+  "sub": null,
+  "format": "cc",
+  "note": ""
+ },
+ {
+  "method": "RequestRestart",
+  "server": "jogo",
+  "opcode": 70,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestHennaItemList",
+  "server": "jogo",
+  "opcode": 186,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestHennaItemInfo",
+  "server": "jogo",
+  "opcode": 187,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestShortCutReg",
+  "server": "jogo",
+  "opcode": 51,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestOustAlly",
+  "server": "jogo",
+  "opcode": 133,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestChangePetName",
+  "server": "jogo",
+  "opcode": 137,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestHennaEquip",
+  "server": "jogo",
+  "opcode": 188,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestCreatePledge",
+  "server": "jogo",
+  "opcode": 35,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "SAP",
+  "server": "jogo",
+  "opcode": 48,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestLinkHtml",
+  "server": "jogo",
+  "opcode": 32,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestExFishRanking",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 31,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "SendLogOutPacket",
+  "server": "jogo",
+  "opcode": 9,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreManage",
+  "server": "jogo",
+  "opcode": 115,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopManageQuit",
+  "server": "jogo",
+  "opcode": 179,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestSkillItem",
+  "server": "jogo",
+  "opcode": 63,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestGiveItemToPet",
+  "server": "jogo",
+  "opcode": 139,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestMagicSkillList",
+  "server": "jogo",
+  "opcode": 46,
+  "sub": null,
+  "format": "ddd",
+  "note": ""
+ },
+ {
+  "method": "RequestHandOverPartyMaster",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 4,
+  "format": "chS",
+  "note": ""
+ },
+ {
+  "method": "RequestJoinAlly",
+  "server": "jogo",
+  "opcode": 130,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "SendPrivateStoreBuyList",
+  "server": "jogo",
+  "opcode": 121,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "RequestTutorialClientEvent",
+  "server": "jogo",
+  "opcode": 126,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestSCCheck",
+  "server": "login",
+  "opcode": 6,
+  "sub": null,
+  "format": "cdx",
+  "note": ""
+ },
+ {
+  "method": "RequestProcureCrop",
+  "server": "jogo",
+  "opcode": 195,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "RequestServerLogin",
+  "server": "login",
+  "opcode": 2,
+  "sub": null,
+  "format": "cddc",
+  "note": ""
+ },
+ {
+  "method": "RequestMultiSellChoose",
+  "server": "jogo",
+  "opcode": 167,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreBuyQuit",
+  "server": "jogo",
+  "opcode": 147,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeItemMakeSelf",
+  "server": "jogo",
+  "opcode": 175,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "GMSnoopEnd",
+  "server": "jogo",
+  "opcode": 171,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestExChangeName",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 49,
+  "format": "chdSd",
+  "note": ""
+ },
+ {
+  "method": "RequestDismissParty",
+  "server": "jogo",
+  "opcode": 45,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestExPledgeCrestLarge",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 16,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgePowerGradeList",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 26,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "RequestWithdrawAlly",
+  "server": "jogo",
+  "opcode": 132,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestShowboard",
+  "server": "jogo",
+  "opcode": 87,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestDestroyQuest",
+  "server": "jogo",
+  "opcode": 100,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "AnswerJoinPartyRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 21,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestGMCommand",
+  "server": "jogo",
+  "opcode": 110,
+  "sub": null,
+  "format": "cSdd",
+  "note": ""
+ },
+ {
+  "method": "ChangeWaitType",
+  "server": "jogo",
+  "opcode": 29,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestExAcceptJoinMPCC",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 14,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "RequestSiegeInfo",
+  "server": "jogo",
+  "opcode": 71,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "StartRotating",
+  "server": "jogo",
+  "opcode": 74,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestFriendInvite",
+  "server": "jogo",
+  "opcode": 94,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestAcquireSkillInfo",
+  "server": "jogo",
+  "opcode": 107,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestAttack",
+  "server": "jogo",
+  "opcode": 4,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestStopPledgeWar",
+  "server": "jogo",
+  "opcode": 79,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestSetSeed",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 10,
+  "format": "chddb",
+  "note": ""
+ },
+ {
+  "method": "VoteSociality",
+  "server": "jogo",
+  "opcode": 185,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestAcquireSkill",
+  "server": "jogo",
+  "opcode": 108,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestListPartyWating",
+  "server": "jogo",
+  "opcode": 111,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestEnterWorldPacket",
+  "server": "jogo",
+  "opcode": 3,
+  "sub": null,
+  "format": "cbddddbdcccccccccccccccccccc",
+  "note": ""
+ },
+ {
+  "method": "RequestExMagicSkillUseGround",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 47,
+  "format": "chdddddc",
+  "note": ""
+ },
+ {
+  "method": "RequestUnEquipItem",
+  "server": "jogo",
+  "opcode": 17,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestDismissAlly",
+  "server": "jogo",
+  "opcode": 134,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestCastleSiegeAttackerList",
+  "server": "jogo",
+  "opcode": 162,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopMakeInfo",
+  "server": "jogo",
+  "opcode": 181,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RL",
+  "server": "login",
+  "opcode": 0,
+  "sub": null,
+  "format": "cxddddddhc",
+  "note": ""
+ },
+ {
+  "method": "RequestAnswerJoinAlly",
+  "server": "jogo",
+  "opcode": 131,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestEquipItem",
+  "server": "jogo",
+  "opcode": 16,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestOustPartyMember",
+  "server": "jogo",
+  "opcode": 44,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestActionUse",
+  "server": "jogo",
+  "opcode": 69,
+  "sub": null,
+  "format": "cddc",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeSetAcademyMasterPupil",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 25,
+  "format": "chdSS",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreList",
+  "server": "jogo",
+  "opcode": 120,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestDropItem",
+  "server": "jogo",
+  "opcode": 18,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestConfirmGemStone",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 43,
+  "format": "chdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestRestartPoint",
+  "server": "jogo",
+  "opcode": 109,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreQuit",
+  "server": "jogo",
+  "opcode": 118,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopManageList",
+  "server": "jogo",
+  "opcode": 176,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "SendL2ParamSetting",
+  "server": "jogo",
+  "opcode": 57,
+  "sub": null,
+  "format": "ccdd",
+  "note": ""
+ },
+ {
+  "method": "RequestEnchantItem",
+  "server": "jogo",
+  "opcode": 88,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestPCCafeCouponUse",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 32,
+  "format": "chS",
+  "note": ""
+ },
+ {
+  "method": "RequestPreviewItem",
+  "server": "jogo",
+  "opcode": 198,
+  "sub": null,
+  "format": "cdddb",
+  "note": ""
+ },
+ {
+  "method": "RequestSetCastleSiegeTime",
+  "server": "jogo",
+  "opcode": 166,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestNewCharacter",
+  "server": "jogo",
+  "opcode": 14,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestReload",
+  "server": "jogo",
+  "opcode": 207,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "SocialAction",
+  "server": "jogo",
+  "opcode": 27,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestCastleSiegeDefenderList",
+  "server": "jogo",
+  "opcode": 163,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestSkillCoolTime",
+  "server": "jogo",
+  "opcode": 157,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreBuyManageCancel",
+  "server": "jogo",
+  "opcode": 146,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestTeleport",
+  "server": "jogo",
+  "opcode": 26,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestTeleport",
+  "server": "jogo",
+  "opcode": 26,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestAutoSoulShot",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 5,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "RequestCrystallizeItem",
+  "server": "jogo",
+  "opcode": 114,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestObserverEndPacket",
+  "server": "jogo",
+  "opcode": 184,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPetUseItem",
+  "server": "jogo",
+  "opcode": 138,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeMemberInfo",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 29,
+  "format": "chdS",
+  "note": ""
+ },
+ {
+  "method": "RequestConfirmCancelItem",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 45,
+  "format": "chd",
+  "note": ""
+ },
+ {
+  "method": "RequestCharacterCreate",
+  "server": "jogo",
+  "opcode": 11,
+  "sub": null,
+  "format": "cSdddddddddddd",
+  "note": ""
+ },
+ {
+  "method": "SendWareHouseDepositList",
+  "server": "jogo",
+  "opcode": 49,
+  "sub": null,
+  "format": "cdb",
+  "note": ""
+ },
+ {
+  "method": "ConfirmDlg",
+  "server": "jogo",
+  "opcode": 197,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "Say",
+  "server": "jogo",
+  "opcode": 2,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "SendTimeCheckPacket",
+  "server": "jogo",
+  "opcode": 151,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "NetPing",
+  "server": "jogo",
+  "opcode": 168,
+  "sub": null,
+  "format": "cddd",
+  "note": ""
+ },
+ {
+  "method": "RequestAskJoinPartyRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 20,
+  "format": "chS",
+  "note": ""
+ },
+ {
+  "method": "RequestFriendList",
+  "server": "jogo",
+  "opcode": 96,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestWithDrawalParty",
+  "server": "jogo",
+  "opcode": 43,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeMemberList",
+  "server": "jogo",
+  "opcode": 60,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "SetPrivateStoreMsg",
+  "server": "jogo",
+  "opcode": 119,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "AnswerTradeRequest",
+  "server": "jogo",
+  "opcode": 68,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "CanNotMoveAnymore",
+  "server": "jogo",
+  "opcode": 93,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "CanNotMoveAnymore",
+  "server": "jogo",
+  "opcode": 54,
+  "sub": null,
+  "format": "cdddd",
+  "note": ""
+ },
+ {
+  "method": "RequestMakeMacro",
+  "server": "jogo",
+  "opcode": 193,
+  "sub": null,
+  "format": "cdSSSccb",
+  "note": ""
+ },
+ {
+  "method": "ValidatePosition",
+  "server": "jogo",
+  "opcode": 72,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "EW",
+  "server": "jogo",
+  "opcode": 3,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestPetition",
+  "server": "jogo",
+  "opcode": 127,
+  "sub": null,
+  "format": "cSd",
+  "note": ""
+ },
+ {
+  "method": "RequestItemList",
+  "server": "jogo",
+  "opcode": 15,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestHennaUnequip",
+  "server": "jogo",
+  "opcode": 191,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "SetPrivateStoreList",
+  "server": "jogo",
+  "opcode": 116,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "SendDestroyItem",
+  "server": "jogo",
+  "opcode": 89,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeReorganizeMember",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 36,
+  "format": "chdSdS",
+  "note": ""
+ },
+ {
+  "method": "RequestOlympiadMatchList",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 19,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "RequestGiveNickName",
+  "server": "jogo",
+  "opcode": 85,
+  "sub": null,
+  "format": "cSS",
+  "note": ""
+ },
+ {
+  "method": "ResponseAuthGameGuard",
+  "server": "login",
+  "opcode": 7,
+  "sub": null,
+  "format": "cddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestAnswerJoinPledge",
+  "server": "jogo",
+  "opcode": 37,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestProcureCropList",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 9,
+  "format": "chdb",
+  "note": ""
+ },
+ {
+  "method": "RequestExitPartyMatchingWaitingRoom",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 23,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "RequestTutorialQuestionMarkPressed",
+  "server": "jogo",
+  "opcode": 125,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestCharacterRestore",
+  "server": "jogo",
+  "opcode": 98,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeWarList",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 30,
+  "format": "chdd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeMemberPowerInfo",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 27,
+  "format": "chdS",
+  "note": ""
+ },
+ {
+  "method": "PetitionVote",
+  "server": "jogo",
+  "opcode": 200,
+  "sub": null,
+  "format": "cddS",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreBuyList",
+  "server": "jogo",
+  "opcode": 149,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeCrest",
+  "server": "jogo",
+  "opcode": 104,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestCharacterDelete",
+  "server": "jogo",
+  "opcode": 12,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "SendPrivateStoreBuyBuyList",
+  "server": "jogo",
+  "opcode": 150,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "MTL",
+  "server": "jogo",
+  "opcode": 92,
+  "sub": null,
+  "format": "cddddddd",
+  "note": ""
+ },
+ {
+  "method": "MTL",
+  "server": "jogo",
+  "opcode": 1,
+  "sub": null,
+  "format": "cddddddd",
+  "note": ""
+ },
+ {
+  "method": "RequestTrade",
+  "server": "jogo",
+  "opcode": 21,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestExAskJoinMPCC",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 13,
+  "format": "chS",
+  "note": ""
+ },
+ {
+  "method": "RequestDismissPledge",
+  "server": "jogo",
+  "opcode": 40,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeExtendedInfo",
+  "server": "jogo",
+  "opcode": 103,
+  "sub": null,
+  "format": "cS",
+  "note": ""
+ },
+ {
+  "method": "RequestPrivateStoreBuyManage",
+  "server": "jogo",
+  "opcode": 144,
+  "sub": null,
+  "format": "c",
+  "note": ""
+ },
+ {
+  "method": "RequestPledgeSetMemberPowerGrade",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 28,
+  "format": "chSd",
+  "note": ""
+ },
+ {
+  "method": "RequestRecipeShopListSet",
+  "server": "jogo",
+  "opcode": 178,
+  "sub": null,
+  "format": "cdb",
+  "note": ""
+ },
+ {
+  "method": "RequestOlympiadObserverEnd",
+  "server": "jogo",
+  "opcode": 208,
+  "sub": 18,
+  "format": "ch",
+  "note": ""
+ },
+ {
+  "method": "RequestPackageSend",
+  "server": "jogo",
+  "opcode": 159,
+  "sub": null,
+  "format": "cddb",
+  "note": ""
+ },
+ {
+  "method": "ReviveReply",
+  "server": "jogo",
+  "opcode": 122,
+  "sub": null,
+  "format": "cd",
+  "note": ""
+ },
+ {
+  "method": "RequestSEKCustom",
+  "server": "jogo",
+  "opcode": 73,
+  "sub": null,
+  "format": "cdd",
+  "note": ""
+ },
+ {
+  "method": "FUN_10401dc0",
+  "server": "jogo",
+  "opcode": 0,
+  "sub": null,
+  "format": "cdbd",
+  "note": "ProtocolVersion: versao 746, lida de \"#Revision: 746 $\" com sscanf(\"%cRevision: %d %c\"); bloco de 0x100 bytes"
+ },
+ {
+  "method": "FUN_1040d000",
+  "server": "jogo",
+  "opcode": 8,
+  "sub": null,
+  "format": "cSddddd",
+  "note": "AuthLogin: conta (UTF-16), playKey2, playKey1, loginKey1, loginKey2, idioma (GLanguageType)"
+ }
+]

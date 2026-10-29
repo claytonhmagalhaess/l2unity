@@ -1,0 +1,6125 @@
+{
+ "0x0": {
+  "source": "decomp",
+  "acis": "KeyPacket",
+  "tokens": [
+   "c",
+   "Q",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x1": {
+  "source": "decomp",
+  "acis": "MoveToLocation",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2": {
+  "source": "decomp",
+  "acis": "NpcSay",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3": {
+  "source": "decomp",
+  "acis": "CharInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "h:2",
+   "h",
+   "h",
+   "c",
+   "d",
+   "c",
+   "h",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "d",
+   "c",
+   "c",
+   "c",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 14,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   79
+  ]
+ },
+ "0x4": {
+  "source": "decomp",
+  "acis": "UserInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c",
+   "d",
+   "d",
+   "h:2",
+   "h",
+   "h",
+   "c",
+   "d",
+   "c",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "d",
+   "c",
+   "c",
+   "c",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 15,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   132
+  ]
+ },
+ "0x5": {
+  "source": "decomp",
+  "acis": "Attack",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "d",
+   "h:2",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   7
+  ]
+ },
+ "0x6": {
+  "source": "decomp",
+  "acis": "Die",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7": {
+  "source": "decomp",
+  "acis": "Revive",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x8": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x9": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb": {
+  "source": "decomp",
+  "acis": "SpawnItem",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc": {
+  "source": "decomp",
+  "acis": "DropItem",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd": {
+  "source": "decomp",
+  "acis": "GetItem",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xe": {
+  "source": "decomp",
+  "acis": "StatusUpdate",
+  "tokens": [
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xf": {
+  "source": "decomp",
+  "acis": "NpcHtmlMessage",
+  "tokens": [
+   "d",
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x10": {
+  "source": "decomp",
+  "acis": "SellList",
+  "tokens": [
+   "d",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0x11": {
+  "source": "decomp",
+  "acis": "BuyList",
+  "tokens": [
+   "d",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0x12": {
+  "source": "decomp",
+  "acis": "DeleteObject",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x13": {
+  "source": "packet_formats",
+  "acis": "CharSelectInfo",
+  "tokens": [
+   "d:2",
+   "S",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "d",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "c",
+   "h",
+   "h",
+   "S",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "d",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "c",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x14": {
+  "source": "decomp",
+  "acis": "AuthLoginFail",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x15": {
+  "source": "decomp",
+  "acis": "CharSelected",
+  "tokens": [
+   "S",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "d",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": false,
+  "reads": 9,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x16": {
+  "source": "decomp",
+  "acis": "AbstractNpcInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "f",
+   "f",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x17": {
+  "source": "packet_formats",
+  "acis": "CharTemplates",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x18": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x19": {
+  "source": "decomp",
+  "acis": "CharCreateOk",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x1a": {
+  "source": "decomp",
+  "acis": "CharCreateFail",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x1b": {
+  "source": "decomp",
+  "acis": "ItemList",
+  "tokens": [
+   "h",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   1
+  ]
+ },
+ "0x1c": {
+  "source": "decomp",
+  "acis": "SunRise",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x1d": {
+  "source": "decomp",
+  "acis": "SunSet",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x1e": {
+  "source": "decomp",
+  "acis": "TradeStart",
+  "tokens": [
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   1
+  ]
+ },
+ "0x1f": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x20": {
+  "source": "decomp",
+  "acis": "TradeOwnAdd",
+  "tokens": [
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x21": {
+  "source": "decomp",
+  "acis": "TradeOtherAdd",
+  "tokens": [
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x22": {
+  "source": "decomp",
+  "acis": "SendTradeDone",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x23": {
+  "source": "decomp",
+  "acis": "CharDeleteOk",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x24": {
+  "source": "decomp",
+  "acis": "CharDeleteFail",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x25": {
+  "source": "decomp",
+  "acis": "ActionFailed",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x26": {
+  "source": "decomp",
+  "acis": "ServerClose",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x27": {
+  "source": "decomp",
+  "acis": "InventoryUpdate",
+  "tokens": [
+   "h:2",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0x28": {
+  "source": "decomp",
+  "acis": "TeleportToLocation",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x29": {
+  "source": "decomp",
+  "acis": "TargetSelected",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2a": {
+  "source": "decomp",
+  "acis": "TargetUnselected",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2b": {
+  "source": "decomp",
+  "acis": "AutoAttackStart",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2c": {
+  "source": "decomp",
+  "acis": "AutoAttackStop",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2d": {
+  "source": "decomp",
+  "acis": "SocialAction",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2e": {
+  "source": "decomp",
+  "acis": "ChangeMoveType",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x2f": {
+  "source": "decomp",
+  "acis": "ChangeWaitType",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x30": {
+  "source": "decomp",
+  "acis": "ManagePledgePower",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x31": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x32": {
+  "source": "decomp",
+  "acis": "AskJoinPledge",
+  "tokens": [
+   "d",
+   "S",
+   "d"
+  ],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x33": {
+  "source": "decomp",
+  "acis": "JoinPledge",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x34": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x35": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x36": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x37": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x38": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x39": {
+  "source": "decomp",
+  "acis": "AskJoinParty",
+  "tokens": [
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3a": {
+  "source": "decomp",
+  "acis": "JoinParty",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3b": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3c": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3d": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3e": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x3f": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x40": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x41": {
+  "source": "decomp",
+  "acis": "WarehouseDepositList",
+  "tokens": [
+   "h",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0x42": {
+  "source": "decomp",
+  "acis": "WarehouseWithdrawList",
+  "tokens": [
+   "h",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0x43": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x44": {
+  "source": "decomp",
+  "acis": "ShortCutRegister",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 6,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x45": {
+  "source": "decomp",
+  "acis": "ShortCutInit",
+  "tokens": [
+   "d"
+  ],
+  "complete": false,
+  "reads": 7,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x46": {
+  "source": "decomp",
+  "acis": "ShortCutDelete",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x47": {
+  "source": "decomp",
+  "acis": "StopMove",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x48": {
+  "source": "decomp",
+  "acis": "MagicSkillUse",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h:2",
+   "h",
+   "h",
+   "h:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   9,
+   12
+  ]
+ },
+ "0x49": {
+  "source": "decomp",
+  "acis": "MagicSkillCanceled",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x4a": {
+  "source": "decomp",
+  "acis": "CreatureSay",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": false,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x4b": {
+  "source": "decomp",
+  "acis": "EquipUpdate",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x4c": {
+  "source": "decomp",
+  "acis": "DoorInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x4d": {
+  "source": "decomp",
+  "acis": "DoorStatusUpdate",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x4e": {
+  "source": "decomp",
+  "acis": "PartySmallWindowAll",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x4f": {
+  "source": "decomp",
+  "acis": "PartySmallWindowAdd",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x50": {
+  "source": "decomp",
+  "acis": "PartySmallWindowDeleteAll",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x51": {
+  "source": "decomp",
+  "acis": "PartySmallWindowDelete",
+  "tokens": [
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x52": {
+  "source": "decomp",
+  "acis": "PartySmallWindowUpdate",
+  "tokens": [
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x53": {
+  "source": "decomp",
+  "acis": "PledgeShowMemberListAll",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "S"
+  ],
+  "complete": false,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x54": {
+  "source": "decomp",
+  "acis": "PledgeShowMemberListUpdate",
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x55": {
+  "source": "decomp",
+  "acis": "PledgeShowMemberListAdd",
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x56": {
+  "source": "decomp",
+  "acis": "PledgeShowMemberListDelete",
+  "tokens": [
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x57": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x58": {
+  "source": "decomp",
+  "acis": "SkillList",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0x59": {
+  "source": "decomp",
+  "acis": "VehicleInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x5a": {
+  "source": "decomp",
+  "acis": "VehicleDeparture",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x5b": {
+  "source": "decomp",
+  "acis": "OnVehicleCheckLocation",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x5c": {
+  "source": "decomp",
+  "acis": "GetOnVehicle",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x5d": {
+  "source": "decomp",
+  "acis": "GetOffVehicle",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x5e": {
+  "source": "decomp",
+  "acis": "SendTradeRequest",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x5f": {
+  "source": "decomp",
+  "acis": "RestartResponse",
+  "tokens": [
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x60": {
+  "source": "decomp",
+  "acis": "MoveToPawn",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x61": {
+  "source": "decomp",
+  "acis": "ValidateLocation",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x62": {
+  "source": "decomp",
+  "acis": "StartRotation",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x63": {
+  "source": "decomp",
+  "acis": "StopRotation",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x64": {
+  "source": "decomp",
+  "acis": "SystemMessage",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": false,
+  "reads": 9,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x65": {
+  "source": "decomp",
+  "acis": "StartPledgeWar",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x66": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x67": {
+  "source": "decomp",
+  "acis": "StopPledgeWar",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x68": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x69": {
+  "source": "decomp",
+  "acis": "SurrenderPledgeWar",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x6a": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x6b": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x6c": {
+  "source": "decomp",
+  "acis": "PledgeCrest",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x6d": {
+  "source": "decomp",
+  "acis": "SetupGauge",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x6e": {
+  "source": "decomp",
+  "acis": "ShowBoard",
+  "tokens": [
+   "c"
+  ],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x6f": {
+  "source": "decomp",
+  "acis": "ChooseInventoryItem",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x70": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x71": {
+  "source": "decomp",
+  "acis": "MoveToLocationInVehicle",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x72": {
+  "source": "decomp",
+  "acis": "StopMoveInVehicle",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x73": {
+  "source": "decomp",
+  "acis": "ValidateLocationInVehicle",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x74": {
+  "source": "decomp",
+  "acis": "TradeItemUpdate",
+  "tokens": [
+   "h:2",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0x75": {
+  "source": "decomp",
+  "acis": "TradePressOwnOk",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x76": {
+  "source": "decomp",
+  "acis": "MagicSkillLaunched",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x77": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x78": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x79": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7a": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7b": {
+  "source": "decomp",
+  "acis": "FriendStatus",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7c": {
+  "source": "decomp",
+  "acis": "TradePressOtherOk",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7d": {
+  "source": "decomp",
+  "acis": "FriendAddRequest",
+  "tokens": [
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7e": {
+  "source": "decomp",
+  "acis": "LeaveWorld",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x7f": {
+  "source": "decomp",
+  "acis": "AbnormalStatusUpdate",
+  "tokens": [
+   "h:2",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0x80": {
+  "source": "decomp",
+  "acis": "QuestList",
+  "tokens": [
+   "h:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "b128"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0x81": {
+  "source": "decomp",
+  "acis": "EnchantResult",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x82": {
+  "source": "decomp",
+  "acis": "PledgeShowMemberListDeleteAll",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x83": {
+  "source": "decomp",
+  "acis": "PledgeInfo",
+  "tokens": [
+   "d",
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x84": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x85": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x86": {
+  "source": "decomp",
+  "acis": "Ride",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x87": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x88": {
+  "source": "decomp",
+  "acis": "PledgeShowInfoUpdate",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x89": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x8a": {
+  "source": "decomp",
+  "acis": "AcquireSkillList",
+  "tokens": [
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   1
+  ]
+ },
+ "0x8b": {
+  "source": "decomp",
+  "acis": "AcquireSkillInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   4
+  ]
+ },
+ "0x8c": {
+  "source": "decomp",
+  "acis": "ServerObjectInfo",
+  "tokens": [
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x8d": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x8e": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x8f": {
+  "source": "decomp",
+  "acis": "GMViewCharacterInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "d",
+   "c",
+   "c",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x90": {
+  "source": "decomp",
+  "acis": "GMViewPledgeInfo",
+  "tokens": [
+   "d",
+   "S",
+   "d",
+   "d",
+   "S",
+   "S"
+  ],
+  "complete": false,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0x91": {
+  "source": "decomp",
+  "acis": "GMViewSkillInfo",
+  "tokens": [
+   "S",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   1
+  ]
+ },
+ "0x92": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "S",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   1
+  ]
+ },
+ "0x93": {
+  "source": "decomp",
+  "acis": "GMViewQuestList",
+  "tokens": [
+   "S",
+   "h:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   1,
+   6
+  ]
+ },
+ "0x94": {
+  "source": "decomp",
+  "acis": "GMViewItemList",
+  "tokens": [
+   "S",
+   "d",
+   "h",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   3
+  ]
+ },
+ "0x95": {
+  "source": "decomp",
+  "acis": "GMViewWarehouseWithdrawList",
+  "tokens": [
+   "S",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 5,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0x96": {
+  "source": "decomp",
+  "acis": "PartyMatchList",
+  "tokens": [
+   "d",
+   "d:2",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x97": {
+  "source": "decomp",
+  "acis": "PartyMatchDetail",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x98": {
+  "source": "decomp",
+  "acis": "PlaySound",
+  "tokens": [
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x99": {
+  "source": "decomp",
+  "acis": "StaticObjectInfo",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x9a": {
+  "source": "decomp",
+  "acis": "PrivateStoreManageListSell",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   3,
+   22
+  ]
+ },
+ "0x9b": {
+  "source": "decomp",
+  "acis": "PrivateStoreListSell",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   3
+  ]
+ },
+ "0x9c": {
+  "source": "decomp",
+  "acis": "PrivateStoreMsgSell",
+  "tokens": [
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x9d": {
+  "source": "decomp",
+  "acis": "ShowMiniMap",
+  "tokens": [
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x9e": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0x9f": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa0": {
+  "source": "decomp",
+  "acis": "TutorialShowHtml",
+  "tokens": [
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa1": {
+  "source": "decomp",
+  "acis": "TutorialShowQuestionMark",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa2": {
+  "source": "decomp",
+  "acis": "TutorialEnableClientEvent",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa3": {
+  "source": "decomp",
+  "acis": "TutorialCloseHtml",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa4": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa5": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa6": {
+  "source": "decomp",
+  "acis": "MyTargetSelected",
+  "tokens": [
+   "d",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa7": {
+  "source": "decomp",
+  "acis": "PartyMemberPosition",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa8": {
+  "source": "decomp",
+  "acis": "AskJoinAlly",
+  "tokens": [
+   "d",
+   "S",
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xa9": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xaa": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xab": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xac": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xad": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xae": {
+  "source": "decomp",
+  "acis": "AllyCrest",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xaf": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb0": {
+  "source": "decomp",
+  "acis": "PetStatusShow",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb1": {
+  "source": "decomp",
+  "acis": "PetInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "f",
+   "f",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c",
+   "c",
+   "c",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "Q",
+   "Q",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb2": {
+  "source": "decomp",
+  "acis": "PetItemList",
+  "tokens": [
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0xb3": {
+  "source": "decomp",
+  "acis": "PetInventoryUpdate",
+  "tokens": [
+   "h:2",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0xb4": {
+  "source": "decomp",
+  "acis": "AllianceInfo",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb5": {
+  "source": "decomp",
+  "acis": "PetStatusUpdate",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "Q",
+   "Q",
+   "Q"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb6": {
+  "source": "decomp",
+  "acis": "PetDelete",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xb7": {
+  "source": "decomp",
+  "acis": "PrivateStoreManageListBuy",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d:2",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2,
+   17
+  ]
+ },
+ "0xb8": {
+  "source": "decomp",
+  "acis": "PrivateStoreListBuy",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0xb9": {
+  "source": "decomp",
+  "acis": "PrivateStoreMsgBuy",
+  "tokens": [
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xba": {
+  "source": "decomp",
+  "acis": "VehicleStarted",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xbb": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xbc": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xbd": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xbe": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xbf": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc0": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc1": {
+  "source": "decomp",
+  "acis": "SkillCoolTime",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "0xc2": {
+  "source": "decomp",
+  "acis": "PackageToList",
+  "tokens": [
+   "d:2",
+   "d",
+   "S",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xc3": {
+  "source": "decomp",
+  "acis": "PackageSendableList",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xc4": {
+  "source": "decomp",
+  "acis": "Earthquake",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc5": {
+  "source": "decomp",
+  "acis": "FlyToLocation",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc6": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc7": {
+  "source": "decomp",
+  "acis": "SpecialCamera",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc8": {
+  "source": "decomp",
+  "acis": "NormalCamera",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xc9": {
+  "source": "decomp",
+  "acis": "SiegeInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   9
+  ]
+ },
+ "0xca": {
+  "source": "decomp",
+  "acis": "SiegeAttackerList",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xcb": {
+  "source": "decomp",
+  "acis": "SiegeDefenderList",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xcc": {
+  "source": "decomp",
+  "acis": "TitleUpdate",
+  "tokens": [
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xcd": {
+  "source": "decomp",
+  "acis": "PledgeStatusChanged",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xce": {
+  "source": "decomp",
+  "acis": "RelationChanged",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xcf": {
+  "source": "decomp",
+  "acis": "EventTrigger",
+  "tokens": [
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd0": {
+  "source": "decomp",
+  "acis": "MultiSellList",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xd1": {
+  "source": "decomp",
+  "acis": "SetSummonRemainTime",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd2": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd3": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd4": {
+  "source": "decomp",
+  "acis": "Dice",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd5": {
+  "source": "decomp",
+  "acis": "Snoop",
+  "tokens": [
+   "d",
+   "S",
+   "d",
+   "d",
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd6": {
+  "source": "decomp",
+  "acis": "RecipeBookItemList",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0xd7": {
+  "source": "decomp",
+  "acis": "RecipeItemMakeInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xd8": {
+  "source": "decomp",
+  "acis": "RecipeShopManageList",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 4,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   3,
+   8
+  ]
+ },
+ "0xd9": {
+  "source": "decomp",
+  "acis": "RecipeShopSellList",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   4
+  ]
+ },
+ "0xda": {
+  "source": "decomp",
+  "acis": "RecipeShopItemInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xdb": {
+  "source": "decomp",
+  "acis": "RecipeShopMsg",
+  "tokens": [
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xdc": {
+  "source": "decomp",
+  "acis": "ShowCalculator",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xdd": {
+  "source": "decomp",
+  "acis": "MonRaceInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "f",
+   "f",
+   "d:2",
+   "c",
+   "c",
+   "d"
+  ],
+  "complete": true,
+  "reads": 5,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   13
+  ]
+ },
+ "0xde": {
+  "source": "decomp",
+  "acis": "ShowTownMap",
+  "tokens": [
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xdf": {
+  "source": "decomp",
+  "acis": "ObservationMode",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xe0": {
+  "source": "decomp",
+  "acis": "ObservationReturn",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xe1": {
+  "source": "decomp",
+  "acis": "ChairSit",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xe2": {
+  "source": "decomp",
+  "acis": "HennaEquipList",
+  "tokens": [],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xe3": {
+  "source": "decomp",
+  "acis": "HennaItemInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xe4": {
+  "source": "decomp",
+  "acis": "HennaInfo",
+  "tokens": [],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xe5": {
+  "source": "decomp",
+  "acis": "HennaRemoveList",
+  "tokens": [],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xe6": {
+  "source": "decomp",
+  "acis": "HennaItemRemoveInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xe7": {
+  "source": "decomp",
+  "acis": "SendMacroList",
+  "tokens": [],
+  "complete": false,
+  "reads": 6,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xe8": {
+  "source": "decomp",
+  "acis": "BuyListSeed",
+  "tokens": [
+   "d",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 5,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0xe9": {
+  "source": "decomp",
+  "acis": "SellListProcure",
+  "tokens": [
+   "d",
+   "d",
+   "h:2",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d",
+   "h",
+   "d",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d",
+   "h",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 5,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "0xea": {
+  "source": "decomp",
+  "acis": "GMViewHennaInfo",
+  "tokens": [],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xeb": {
+  "source": "decomp",
+  "acis": "RadarControl",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xec": {
+  "source": "decomp",
+  "acis": "ClientSetTime",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xed": {
+  "source": "decomp",
+  "acis": "ConfirmDlg",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": false,
+  "reads": 9,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xee": {
+  "source": "decomp",
+  "acis": "PartySpelled",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xef": {
+  "source": "decomp",
+  "acis": "ShopPreviewList",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "h:2",
+   "d",
+   "h",
+   "h",
+   "d",
+   "d",
+   "h",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   3
+  ]
+ },
+ "0xf0": {
+  "source": "decomp",
+  "acis": "ShopPreviewInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf1": {
+  "source": "decomp",
+  "acis": "CameraMode",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf2": {
+  "source": "decomp",
+  "acis": "ShowXMasSeal",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf3": {
+  "source": "decomp",
+  "acis": "EtcStatusUpdate",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf4": {
+  "source": "decomp",
+  "acis": "ShortBuffStatusUpdate",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf5": {
+  "source": "decomp",
+  "acis": "SSQStatus",
+  "tokens": [
+   "c",
+   "c"
+  ],
+  "complete": false,
+  "reads": 13,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xf6": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf7": {
+  "source": "decomp",
+  "acis": "ClanHallDecoration",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf8": {
+  "source": "decomp",
+  "acis": "SSQInfo",
+  "tokens": [
+   "c",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xf9": {
+  "source": "decomp",
+  "acis": "GameGuardQuery",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xfa": {
+  "source": "decomp",
+  "acis": "FriendList",
+  "tokens": [
+   "d:2",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "0xfb": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xfc": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xfd": {
+  "source": "decomp",
+  "acis": "L2FriendSay",
+  "tokens": [
+   "d",
+   "S",
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "0xfe": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1": {
+  "source": "decomp",
+  "acis": "ExRegenMax",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "f"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x3": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "c",
+   "c",
+   "S",
+   "S",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "c",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x5": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x6": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": false,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x7": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x8": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x9": {
+  "source": "decomp",
+  "acis": "ExColosseumFenceInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0xa": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0xb": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0xc": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0xd": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0xe": {
+  "source": "decomp",
+  "acis": "ExPartyRoomMember",
+  "tokens": [
+   "d",
+   "d:2",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0xf": {
+  "source": "decomp",
+  "acis": "ExClosePartyRoom",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x10": {
+  "source": "decomp",
+  "acis": "ExManagePartyRoomMember",
+  "tokens": [
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x11": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x12": {
+  "source": "decomp",
+  "acis": "ExAutoSoulShot",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x13": {
+  "source": "decomp",
+  "acis": "ExFishingStart",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "c",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x14": {
+  "source": "decomp",
+  "acis": "ExFishingEnd",
+  "tokens": [
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x15": {
+  "source": "decomp",
+  "acis": "ExFishingStartCombat",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x16": {
+  "source": "decomp",
+  "acis": "ExFishingHpRegen",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "c",
+   "c",
+   "c",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x17": {
+  "source": "decomp",
+  "acis": "ExEnchantSkillList",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "Q",
+   "d",
+   "d",
+   "d",
+   "Q"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "ex:0x18": {
+  "source": "decomp",
+  "acis": "ExEnchantSkillInfo",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "Q",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   5
+  ]
+ },
+ "ex:0x19": {
+  "source": "decomp",
+  "acis": "ExQuestInfo",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1a": {
+  "source": "decomp",
+  "acis": "ExShowQuestMark",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1b": {
+  "source": "decomp",
+  "acis": "ExSendManorList",
+  "tokens": [
+   "d:2",
+   "d",
+   "S",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1c": {
+  "source": "decomp",
+  "acis": "ExShowSeedInfo",
+  "tokens": [
+   "c",
+   "d",
+   "d",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 5,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1d": {
+  "source": "decomp",
+  "acis": "ExShowCropInfo",
+  "tokens": [
+   "c",
+   "d",
+   "d",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 5,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1e": {
+  "source": "decomp",
+  "acis": "ExShowManorDefaultInfo",
+  "tokens": [
+   "c",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 5,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x1f": {
+  "source": "decomp",
+  "acis": "ExShowSeedSetting",
+  "tokens": [
+   "d",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 6,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x20": {
+  "source": "decomp",
+  "acis": "ExShowCropSetting",
+  "tokens": [
+   "d",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 6,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x21": {
+  "source": "decomp",
+  "acis": "ExShowSellCropList",
+  "tokens": [
+   "d",
+   "d:2"
+  ],
+  "complete": false,
+  "reads": 6,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x22": {
+  "source": "decomp",
+  "acis": "ExShowProcureCropDetail",
+  "tokens": [
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "c",
+   "d",
+   "d",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x23": {
+  "source": "decomp",
+  "acis": "ExHeroList",
+  "tokens": [
+   "d:2",
+   "S",
+   "d",
+   "S",
+   "d",
+   "S",
+   "d",
+   "d",
+   "S",
+   "d",
+   "S",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "ex:0x24": {
+  "source": "decomp",
+  "acis": "ExServerPrimitive",
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": false,
+  "reads": 6,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "ex:0x25": {
+  "source": "decomp",
+  "acis": "ExOpenMPCC",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x26": {
+  "source": "decomp",
+  "acis": "ExCloseMPCC",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x27": {
+  "source": "decomp",
+  "acis": "ExAskJoinMPCC",
+  "tokens": [
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x28": {
+  "source": "decomp",
+  "acis": "ExPledgeCrestLarge",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x29": {
+  "source": "decomp",
+  "acis": "ExOlympiadUserInfo",
+  "tokens": [
+   "c",
+   "d",
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2a": {
+  "source": "decomp",
+  "acis": "ExOlympiadSpelledInfo",
+  "tokens": [
+   "d",
+   "d:2",
+   "d",
+   "h",
+   "d",
+   "d",
+   "h",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2b": {
+  "source": "decomp",
+  "acis": "ExOlympiadMode",
+  "tokens": [
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2c": {
+  "source": "decomp",
+  "acis": "ExOlympiadMatchEnd",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2d": {
+  "source": "decomp",
+  "acis": "ExMailArrived",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2e": {
+  "source": "decomp",
+  "acis": "ExStorageMaxCount",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x2f": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "c",
+   "c",
+   "S",
+   "c",
+   "S",
+   "c",
+   "d",
+   "c",
+   "c",
+   "d",
+   "S",
+   "d",
+   "d",
+   "c",
+   "c",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x30": {
+  "source": "decomp",
+  "acis": "ExMultiPartyCommandChannelInfo",
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x31": {
+  "source": "decomp",
+  "acis": "ExPCCafePointInfo",
+  "tokens": [
+   "d",
+   "d",
+   "c",
+   "d",
+   "c"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x32": {
+  "source": "decomp",
+  "acis": "ExSetCompassZoneCode",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x33": {
+  "source": "decomp",
+  "acis": "ExGetBossRecord",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "ex:0x34": {
+  "source": "decomp",
+  "acis": "ExAskJoinPartyRoom",
+  "tokens": [
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x35": {
+  "source": "decomp",
+  "acis": "ExListPartyMatchingWaitingRoom",
+  "tokens": [
+   "d",
+   "d:2",
+   "S",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 3,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x36": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x37": {
+  "source": "decomp",
+  "acis": "ExShowAdventurerGuideBook",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x38": {
+  "source": "decomp",
+  "acis": "ExShowScreenMessage",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x39": {
+  "source": "decomp",
+  "acis": "PledgeSkillList",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "ex:0x3a": {
+  "source": "decomp",
+  "acis": "PledgeSkillListAdd",
+  "tokens": [
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x3b": {
+  "source": "decomp",
+  "acis": "PledgePowerGradeList",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "ex:0x3c": {
+  "source": "decomp",
+  "acis": "PledgeReceivePowerInfo",
+  "tokens": [
+   "d",
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x3d": {
+  "source": "decomp",
+  "acis": "PledgeReceiveMemberInfo",
+  "tokens": [
+   "d",
+   "S",
+   "S",
+   "d",
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x3e": {
+  "source": "decomp",
+  "acis": "PledgeReceiveWarList",
+  "tokens": [
+   "d",
+   "d",
+   "d:2",
+   "S",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": [
+   2
+  ]
+ },
+ "ex:0x3f": {
+  "source": "decomp",
+  "acis": "PledgeReceiveSubPledgeCreated",
+  "tokens": [
+   "d",
+   "d",
+   "S",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x40": {
+  "source": "decomp",
+  "acis": "ExRedSky",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x41": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x42": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x43": {
+  "source": "decomp",
+  "acis": "ShowPCCafeCouponShowUI",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x44": {
+  "source": "decomp",
+  "acis": "ExOrcMove",
+  "tokens": [
+   "b64"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x45": {
+  "source": "decomp",
+  "acis": "ExCursedWeaponList",
+  "tokens": [
+   "d:2",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "ex:0x46": {
+  "source": "decomp",
+  "acis": "ExCursedWeaponLocation",
+  "tokens": [
+   "d:2",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": false,
+  "counterBeforeLoop": [
+   0
+  ]
+ },
+ "ex:0x47": {
+  "source": "decomp",
+  "acis": "ExRestartClient",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x48": {
+  "source": "decomp",
+  "acis": "ExRequestHackShield",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x49": {
+  "source": "decomp",
+  "acis": "ExUseSharedGroupItem",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4a": {
+  "source": "decomp",
+  "acis": "ExMPCCShowPartyMemberInfo",
+  "tokens": [
+   "d:2",
+   "S",
+   "d",
+   "d",
+   "S",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 2,
+  "ifTaken": true,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4b": {
+  "source": "decomp",
+  "acis": "ExDuelAskStart",
+  "tokens": [
+   "S",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4c": {
+  "source": "decomp",
+  "acis": "ExDuelReady",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4d": {
+  "source": "decomp",
+  "acis": "ExDuelStart",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4e": {
+  "source": "decomp",
+  "acis": "ExDuelEnd",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x4f": {
+  "source": "decomp",
+  "acis": "ExDuelUpdateUserInfo",
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x50": {
+  "source": "decomp",
+  "acis": "ExShowVariationMakeWindow",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x51": {
+  "source": "decomp",
+  "acis": "ExShowVariationCancelWindow",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x52": {
+  "source": "decomp",
+  "acis": "ExConfirmVariationItem",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x53": {
+  "source": "decomp",
+  "acis": "ExConfirmVariationRefiner",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x54": {
+  "source": "decomp",
+  "acis": "ExConfirmVariationGemstone",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x55": {
+  "source": "decomp",
+  "acis": "ExVariationResult",
+  "tokens": [
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x56": {
+  "source": "decomp",
+  "acis": "ExConfirmCancelItem",
+  "tokens": [
+   "d",
+   "d",
+   "d",
+   "d",
+   "Q",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x57": {
+  "source": "decomp",
+  "acis": "ExVariationCancelResult",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x58": {
+  "source": "decomp",
+  "acis": "ExDuelEnemyRelation",
+  "tokens": [],
+  "complete": true,
+  "reads": 0,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x59": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "c",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x5a": {
+  "source": "decomp",
+  "acis": "ExMPCCPartyInfoUpdate",
+  "tokens": [
+   "S",
+   "d",
+   "d",
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x5b": {
+  "source": "decomp",
+  "acis": "ExPlayScene",
+  "tokens": [
+   "d"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ },
+ "ex:0x5c": {
+  "source": "decomp",
+  "acis": null,
+  "tokens": [
+   "d",
+   "d",
+   "S"
+  ],
+  "complete": true,
+  "reads": 1,
+  "ifTaken": false,
+  "counterBeforeLoop": []
+ }
+}

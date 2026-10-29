@@ -1,0 +1,863 @@
+{
+ "names": [
+  {
+   "seq": 1,
+   "id": 0,
+   "name": "loc"
+  },
+  {
+   "seq": 2,
+   "id": 1,
+   "name": "GM"
+  },
+  {
+   "seq": 3,
+   "id": 2,
+   "name": "Gmcancel"
+  },
+  {
+   "seq": 4,
+   "id": 3,
+   "name": "gmlist"
+  },
+  {
+   "seq": 5,
+   "id": 4,
+   "name": "sit"
+  },
+  {
+   "seq": 6,
+   "id": 5,
+   "name": "stand"
+  },
+  {
+   "seq": 7,
+   "id": 6,
+   "name": "walk"
+  },
+  {
+   "seq": 8,
+   "id": 7,
+   "name": "run"
+  },
+  {
+   "seq": 9,
+   "id": 8,
+   "name": "attack"
+  },
+  {
+   "seq": 10,
+   "id": 9,
+   "name": "attackforce"
+  },
+  {
+   "seq": 11,
+   "id": 10,
+   "name": "attackstand"
+  },
+  {
+   "seq": 12,
+   "id": 11,
+   "name": "trade"
+  },
+  {
+   "seq": 13,
+   "id": 12,
+   "name": "target"
+  },
+  {
+   "seq": 14,
+   "id": 13,
+   "name": "targetnext"
+  },
+  {
+   "seq": 15,
+   "id": 14,
+   "name": "pickup"
+  },
+  {
+   "seq": 16,
+   "id": 15,
+   "name": "assist"
+  },
+  {
+   "seq": 17,
+   "id": 16,
+   "name": "Invite"
+  },
+  {
+   "seq": 18,
+   "id": 17,
+   "name": "Leave"
+  },
+  {
+   "seq": 19,
+   "id": 18,
+   "name": "Dismiss"
+  },
+  {
+   "seq": 20,
+   "id": 19,
+   "name": "vendor"
+  },
+  {
+   "seq": 21,
+   "id": 20,
+   "name": "partymatching"
+  },
+  {
+   "seq": 22,
+   "id": 21,
+   "name": "socialhello"
+  },
+  {
+   "seq": 23,
+   "id": 22,
+   "name": "socialvictory"
+  },
+  {
+   "seq": 24,
+   "id": 23,
+   "name": "socialcharge"
+  },
+  {
+   "seq": 25,
+   "id": 24,
+   "name": "useskill"
+  },
+  {
+   "seq": 26,
+   "id": 25,
+   "name": "useskillforce"
+  },
+  {
+   "seq": 27,
+   "id": 26,
+   "name": "useskillstand"
+  },
+  {
+   "seq": 28,
+   "id": 27,
+   "name": "useshortcut"
+  },
+  {
+   "seq": 29,
+   "id": 28,
+   "name": "useshortcutforce"
+  },
+  {
+   "seq": 30,
+   "id": 29,
+   "name": "useshortcutstand"
+  },
+  {
+   "seq": 31,
+   "id": 30,
+   "name": "allyinvite"
+  },
+  {
+   "seq": 32,
+   "id": 31,
+   "name": "allyleave"
+  },
+  {
+   "seq": 33,
+   "id": 32,
+   "name": "allydismiss"
+  },
+  {
+   "seq": 34,
+   "id": 33,
+   "name": "allydissolve"
+  },
+  {
+   "seq": 35,
+   "id": 34,
+   "name": "allycrest"
+  },
+  {
+   "seq": 36,
+   "id": 35,
+   "name": "allyinfo"
+  },
+  {
+   "seq": 37,
+   "id": 36,
+   "name": "friendinvite"
+  },
+  {
+   "seq": 38,
+   "id": 37,
+   "name": "friendlist"
+  },
+  {
+   "seq": 39,
+   "id": 38,
+   "name": "frienddel"
+  },
+  {
+   "seq": 40,
+   "id": 39,
+   "name": "buy"
+  },
+  {
+   "seq": 41,
+   "id": 40,
+   "name": "allywarstart"
+  },
+  {
+   "seq": 42,
+   "id": 41,
+   "name": "allywarstop"
+  },
+  {
+   "seq": 43,
+   "id": 42,
+   "name": "allywarsurrender"
+  },
+  {
+   "seq": 44,
+   "id": 43,
+   "name": "blocklist"
+  },
+  {
+   "seq": 45,
+   "id": 44,
+   "name": "block"
+  },
+  {
+   "seq": 46,
+   "id": 45,
+   "name": "unblock"
+  },
+  {
+   "seq": 47,
+   "id": 46,
+   "name": "socialno"
+  },
+  {
+   "seq": 48,
+   "id": 47,
+   "name": "socialyes"
+  },
+  {
+   "seq": 49,
+   "id": 48,
+   "name": "socialbow"
+  },
+  {
+   "seq": 50,
+   "id": 49,
+   "name": "socialunaware"
+  },
+  {
+   "seq": 51,
+   "id": 50,
+   "name": "socialwaiting"
+  },
+  {
+   "seq": 52,
+   "id": 51,
+   "name": "sociallaugh"
+  },
+  {
+   "seq": 53,
+   "id": 52,
+   "name": "unstuck"
+  },
+  {
+   "seq": 54,
+   "id": 53,
+   "name": "remaintime"
+  },
+  {
+   "seq": 55,
+   "id": 54,
+   "name": "socialapplause"
+  },
+  {
+   "seq": 56,
+   "id": 55,
+   "name": "socialdance"
+  },
+  {
+   "seq": 57,
+   "id": 56,
+   "name": "socialsad"
+  },
+  {
+   "seq": 58,
+   "id": 57,
+   "name": "sitstand"
+  },
+  {
+   "seq": 59,
+   "id": 58,
+   "name": "walkrun"
+  },
+  {
+   "seq": 60,
+   "id": 59,
+   "name": "dwarvenmanufacture"
+  },
+  {
+   "seq": 61,
+   "id": 60,
+   "name": "mountdismount"
+  },
+  {
+   "seq": 62,
+   "id": 61,
+   "name": "mount"
+  },
+  {
+   "seq": 63,
+   "id": 62,
+   "name": "dismount"
+  },
+  {
+   "seq": 64,
+   "id": 63,
+   "name": "pethold"
+  },
+  {
+   "seq": 65,
+   "id": 64,
+   "name": "petattack"
+  },
+  {
+   "seq": 66,
+   "id": 65,
+   "name": "petstop"
+  },
+  {
+   "seq": 67,
+   "id": 66,
+   "name": "petcollect"
+  },
+  {
+   "seq": 68,
+   "id": 67,
+   "name": "petrevert"
+  },
+  {
+   "seq": 69,
+   "id": 68,
+   "name": "petspecialskill"
+  },
+  {
+   "seq": 70,
+   "id": 69,
+   "name": "summonhold"
+  },
+  {
+   "seq": 71,
+   "id": 70,
+   "name": "summonattack"
+  },
+  {
+   "seq": 72,
+   "id": 71,
+   "name": "summonstop"
+  },
+  {
+   "seq": 73,
+   "id": 72,
+   "name": "summonsiege"
+  },
+  {
+   "seq": 74,
+   "id": 73,
+   "name": "summonpoison"
+  },
+  {
+   "seq": 75,
+   "id": 74,
+   "name": "summoncorpse"
+  },
+  {
+   "seq": 76,
+   "id": 75,
+   "name": "evaluate"
+  },
+  {
+   "seq": 77,
+   "id": 76,
+   "name": "delay"
+  },
+  {
+   "seq": 78,
+   "id": 77,
+   "name": "Time"
+  },
+  {
+   "seq": 79,
+   "id": 78,
+   "name": "allblock"
+  },
+  {
+   "seq": 80,
+   "id": 79,
+   "name": "allunblock"
+  },
+  {
+   "seq": 81,
+   "id": 80,
+   "name": "equip"
+  },
+  {
+   "seq": 82,
+   "id": 81,
+   "name": "partyinfo"
+  },
+  {
+   "seq": 83,
+   "id": 82,
+   "name": "clanwarinfo"
+  },
+  {
+   "seq": 84,
+   "id": 83,
+   "name": "allywarinfo"
+  },
+  {
+   "seq": 85,
+   "id": 84,
+   "name": "findprivatestore"
+  },
+  {
+   "seq": 86,
+   "id": 85,
+   "name": "changepartyleader"
+  },
+  {
+   "seq": 87,
+   "id": 86,
+   "name": "clanwarstart"
+  },
+  {
+   "seq": 88,
+   "id": 87,
+   "name": "clanwarstop"
+  },
+  {
+   "seq": 89,
+   "id": 88,
+   "name": "attacklist"
+  },
+  {
+   "seq": 90,
+   "id": 89,
+   "name": "underattacklist"
+  },
+  {
+   "seq": 91,
+   "id": 90,
+   "name": "warlist"
+  },
+  {
+   "seq": 92,
+   "id": 91,
+   "name": "deletealliancecrest"
+  },
+  {
+   "seq": 93,
+   "id": 92,
+   "name": "channelcreate"
+  },
+  {
+   "seq": 94,
+   "id": 93,
+   "name": "channeldelete"
+  },
+  {
+   "seq": 95,
+   "id": 94,
+   "name": "channelinvite"
+  },
+  {
+   "seq": 96,
+   "id": 95,
+   "name": "channelkick"
+  },
+  {
+   "seq": 97,
+   "id": 96,
+   "name": "channelleave"
+  },
+  {
+   "seq": 98,
+   "id": 97,
+   "name": "channelinfo"
+  },
+  {
+   "seq": 99,
+   "id": 98,
+   "name": "nick"
+  },
+  {
+   "seq": 100,
+   "id": 99,
+   "name": "siegestatus"
+  },
+  {
+   "seq": 101,
+   "id": 100,
+   "name": "clanpenalty"
+  },
+  {
+   "seq": 102,
+   "id": 101,
+   "name": "generalmanufacture"
+  },
+  {
+   "seq": 103,
+   "id": 102,
+   "name": "fatiguetime"
+  },
+  {
+   "seq": 104,
+   "id": 103,
+   "name": "start_videorecording"
+  },
+  {
+   "seq": 105,
+   "id": 104,
+   "name": "end_videorecording"
+  },
+  {
+   "seq": 106,
+   "id": 105,
+   "name": "startend_videorecording"
+  },
+  {
+   "seq": 107,
+   "id": 106,
+   "name": "petmove"
+  },
+  {
+   "seq": 108,
+   "id": 107,
+   "name": "servitormove"
+  },
+  {
+   "seq": 109,
+   "id": 108,
+   "name": "unsummon"
+  },
+  {
+   "seq": 110,
+   "id": 109,
+   "name": "olympiadstat"
+  },
+  {
+   "seq": 111,
+   "id": 110,
+   "name": "graduatelist"
+  },
+  {
+   "seq": 112,
+   "id": 111,
+   "name": "duel"
+  },
+  {
+   "seq": 113,
+   "id": 112,
+   "name": "withdraw"
+  },
+  {
+   "seq": 114,
+   "id": 113,
+   "name": "partyduel"
+  }
+ ],
+ "dispatch": {
+  "1": [
+   "ev:1921"
+  ],
+  "2": [
+   "pkt:0x80"
+  ],
+  "3": [
+   "pkt:0x81"
+  ],
+  "4": [
+   "pkt:0x1d(0)"
+  ],
+  "5": [
+   "pkt:0x1d(1)"
+  ],
+  "6": [
+   "pkt:0x1c(0)"
+  ],
+  "7": [
+   "pkt:0x1c(1)"
+  ],
+  "8": [
+   "pkt:0x4"
+  ],
+  "9": [
+   "pkt:0xa"
+  ],
+  "10": [
+   "pkt:0x4"
+  ],
+  "11": [
+   "pkt:0x15"
+  ],
+  "12": [
+   "msg:1256",
+   "pkt:0x4"
+  ],
+  "13": [
+   "local:targetnext"
+  ],
+  "14": [
+   "local:pickup"
+  ],
+  "15": [
+   "local:assist"
+  ],
+  "16": [
+   "msg:185",
+   "pkt:0x29"
+  ],
+  "17": [
+   "pkt:0x2b"
+  ],
+  "18": [
+   "msg:187",
+   "pkt:0x2c"
+  ],
+  "19": [
+   "pkt:0x73"
+  ],
+  "20": [
+   "ev:1630",
+   "pkt:0x6f(1,-1,1)"
+  ],
+  "21": [
+   "pkt:0x1b(2)"
+  ],
+  "22": [
+   "pkt:0x1b(3)"
+  ],
+  "23": [
+   "pkt:0x1b(4)"
+  ],
+  "24": [
+   "msg:1256",
+   "pkt:0x2f(0,0)"
+  ],
+  "25": [
+   "msg:1256",
+   "pkt:0x2f(1,0)"
+  ],
+  "26": [
+   "msg:1256",
+   "pkt:0x2f(0,1)"
+  ],
+  "27": [
+   "local:useshortcut"
+  ],
+  "28": [
+   "local:useshortcut"
+  ],
+  "29": [
+   "local:useshortcut"
+  ],
+  "30": [
+   "msg:510",
+   "msg:511",
+   "pkt:0x82"
+  ],
+  "31": [
+   "dlg:512"
+  ],
+  "32": [
+   "dlg:513"
+  ],
+  "33": [
+   "dlg:514"
+  ],
+  "34": [
+   "dlg:515"
+  ],
+  "35": [
+   "pkt:0x8e"
+  ],
+  "36": [
+   "msg:1256",
+   "pkt:0x5e"
+  ],
+  "37": [
+   "pkt:0x60"
+  ],
+  "38": [
+   "msg:1256",
+   "pkt:0x61"
+  ],
+  "39": [
+   "pkt:0x90"
+  ],
+  "40": [],
+  "41": [],
+  "42": [],
+  "68": [],
+  "97": [],
+  "43": [
+   "pkt:0xa0(2)"
+  ],
+  "44": [
+   "msg:1256",
+   "pkt:0xa0(0)"
+  ],
+  "45": [
+   "msg:1256",
+   "pkt:0xa0(1)"
+  ],
+  "46": [
+   "pkt:0x1b(5)"
+  ],
+  "47": [
+   "pkt:0x1b(6)"
+  ],
+  "48": [
+   "pkt:0x1b(7)"
+  ],
+  "49": [
+   "pkt:0x1b(8)"
+  ],
+  "50": [
+   "pkt:0x1b(9)"
+  ],
+  "51": [
+   "pkt:0x1b(10)"
+  ],
+  "default": [
+   "pkt:0xaa"
+  ],
+  "53": [
+   "pkt:0xa9"
+  ],
+  "54": [
+   "pkt:0x1b(11)"
+  ],
+  "55": [
+   "pkt:0x1b(12)"
+  ],
+  "56": [
+   "pkt:0x1b(13)"
+  ],
+  "57": [
+   "act:0"
+  ],
+  "58": [
+   "act:1"
+  ],
+  "59": [
+   "pkt:0x45(37,0,0)"
+  ],
+  "60": [
+   "act:38"
+  ],
+  "63": [
+   "act:15"
+  ],
+  "64": [
+   "act:16"
+  ],
+  "65": [
+   "act:17"
+  ],
+  "66": [
+   "local:petpickup"
+  ],
+  "67": [
+   "act:19"
+  ],
+  "69": [
+   "act:21"
+  ],
+  "70": [
+   "act:22"
+  ],
+  "71": [
+   "act:23"
+  ],
+  "75": [
+   "act:40"
+  ],
+  "78": [
+   "pkt:0xa0(3)"
+  ],
+  "79": [
+   "pkt:0xa0(4)"
+  ],
+  "80": [
+   "local:equip"
+  ],
+  "84": [
+   "local:findprivatestore"
+  ],
+  "85": [
+   "msg:1400",
+   "pkt:0xd0/0x4"
+  ],
+  "86": [
+   "dlg:1531"
+  ],
+  "87": [
+   "dlg:1532"
+  ],
+  "91": [
+   "pkt:0x87"
+  ],
+  "94": [
+   "msg:1530",
+   "pkt:0xd0/0xd"
+  ],
+  "95": [
+   "msg:1530",
+   "pkt:0xd0/0xf"
+  ],
+  "98": [
+   "msg:204",
+   "msg:80",
+   "pkt:0x55"
+  ],
+  "101": [
+   "pkt:0x45(51,0,0)"
+  ],
+  "103": [
+   "local:replay"
+  ],
+  "104": [
+   "local:replay"
+  ],
+  "105": [
+   "act:55"
+  ],
+  "106": [
+   "act:54"
+  ],
+  "107": [
+   "act:53"
+  ],
+  "108": [
+   "act:52"
+  ],
+  "111": [
+   "pkt:0xd0/0x27(0)",
+   "pkt:0xd0/0x27(1)"
+  ],
+  "113": [
+   "pkt:0xd0/0x27(0)",
+   "pkt:0xd0/0x27(1)"
+  ],
+  "112": [
+   "pkt:0xd0/0x30"
+  ]
+ },
+ "badFormatMsg": 1256
+}

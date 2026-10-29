@@ -1,0 +1,132 @@
+[
+ {
+  "section": "Video",
+  "keys": [
+   "GamePlayViewportX",
+   "GamePlayViewportY",
+   "StartupFullScreen",
+   "UseTrilinear",
+   "TextureDetail",
+   "ModelDetail",
+   "SkipAnim",
+   "PawnClippingRange",
+   "TerrainClippingRange",
+   "Gamma",
+   "PostProc",
+   "RenderDeco",
+   "PawnShadow",
+   "RenderActorLimited",
+   "AntiAliasing",
+   "ColorBits",
+   "RefreshRate",
+   "WeatherEffect",
+   "GPUAnimation",
+   "IsKeepMinFrameRate",
+   "UseColorCursor"
+  ]
+ },
+ {
+  "section": "Game",
+  "keys": [
+   "HideDropItem",
+   "IsShortcutWndVertical",
+   "IsLockShortcutWnd",
+   "Is1ExpandShortcutWnd",
+   "Is2ExpandShortcutWnd",
+   "ScreenShotQuality",
+   "IsNative",
+   "MyName",
+   "NPCName",
+   "PledgeMemberName",
+   "PartyMemberName",
+   "OtherPCName",
+   "GroupName",
+   "TransparencyMode",
+   "ArrowMode",
+   "AutoTrackingPawn",
+   "EnterChatting",
+   "OldChatting",
+   "ShowZoneTitle",
+   "ShowGameTipMsg",
+   "IsRejectingDuel",
+   "PartyLooting",
+   "SystemMsgWnd",
+   "SystemMsgWndDamage",
+   "SystemMsgWndExpendableItem",
+   "Is3ExpandShortcutWnd",
+   "Is4ExpandShortcutWnd"
+  ]
+ },
+ {
+  "section": "Audio",
+  "keys": [
+   "SoundVolume",
+   "MusicVolume",
+   "WavVoiceVolume",
+   "OggVoiceVolume",
+   "AudioMuteOn"
+  ]
+ },
+ {
+  "section": "L2WaterEffect",
+  "keys": [
+   "EffectType",
+   "IsUseEffect"
+  ]
+ },
+ {
+  "section": "ClippingRange",
+  "keys": [
+   "Terrain",
+   "Actor",
+   "StaticMesh",
+   "StaticMeshLod",
+   "Pawn"
+  ]
+ },
+ {
+  "section": "FirstRun",
+  "keys": [
+   "FirstRun"
+  ]
+ },
+ {
+  "section": "Key",
+  "keys": [
+   "UseFPad",
+   "UseNumpad",
+   "UseQwerty",
+   "Panel1",
+   "Panel2",
+   "Panel3"
+  ]
+ },
+ {
+  "section": "AutoEnchant",
+  "keys": [
+   "Delay_ScrollSelect",
+   "Delay_EnchantItem"
+  ]
+ },
+ {
+  "section": "Neophron",
+  "keys": [
+   "DisplayAdena",
+   "AbnormalSize",
+   "ShowCount",
+   "ShowEvent",
+   "ShowDamage",
+   "SkillCastingBox",
+   "ShowClassLabels",
+   "ModernParty",
+   "ShowNoble",
+   "ChatTransparency"
+  ]
+ },
+ {
+  "section": "Potions",
+  "keys": [
+   "Type_HP"
+  ]
+ }
+]

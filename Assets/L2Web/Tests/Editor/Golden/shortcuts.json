@@ -1,0 +1,1406 @@
+[
+ {
+  "state": "EulaMsgState",
+  "keys": [
+   "Enter",
+   "None",
+   "None"
+  ],
+  "action": "EulaWndOKButton"
+ },
+ {
+  "state": "ChinaWarnMsgState",
+  "keys": [
+   "Enter",
+   "None",
+   "None"
+  ],
+  "action": "ChinaWarnMsgOKButton"
+ },
+ {
+  "state": "ServerListState",
+  "keys": [
+   "Enter",
+   "None",
+   "None"
+  ],
+  "action": "ServerSelectOKButton"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F1",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F2",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F3",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F4",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F5",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F6",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F7",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F8",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F9",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F10",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F11",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=10"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F12",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=11"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "1",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "2",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "3",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "4",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "5",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "6",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "7",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "8",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "9",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "0",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "1",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "2",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "3",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "4",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "5",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "6",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "7",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "8",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "9",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "0",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Minus",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=10"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Equals",
+   "None",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=11"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Escape",
+   "None",
+   "None"
+  ],
+  "action": "TargetCancel"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Enter",
+   "None",
+   "None"
+  ],
+  "action": "FocusChatWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Tab",
+   "None",
+   "None"
+  ],
+  "action": "TabShowInventoryWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "V",
+   "None",
+   "None"
+  ],
+  "action": "ShowInventoryWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "T",
+   "None",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Status"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "K",
+   "None",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Skill"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "C",
+   "None",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Action"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "U",
+   "None",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Quest"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "N",
+   "None",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Pledge"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "X",
+   "None",
+   "None"
+  ],
+  "action": "ShowSystemMenuWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "B",
+   "None",
+   "None"
+  ],
+  "action": "ShowBoardWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "G",
+   "None",
+   "None"
+  ],
+  "action": "ShowGMWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "O",
+   "None",
+   "None"
+  ],
+  "action": "ShowGMPetitionWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "I",
+   "None",
+   "None"
+  ],
+  "action": "ShowMainWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "M",
+   "None",
+   "None"
+  ],
+  "action": "RequestOpenMinimap"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F",
+   "None",
+   "None"
+  ],
+  "action": "ShowPartyBuff"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "P",
+   "None",
+   "None"
+  ],
+  "action": "ApplyMinFrame"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Y",
+   "None",
+   "None"
+  ],
+  "action": "ShowMessengerWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "R",
+   "None",
+   "None"
+  ],
+  "action": "ShowMacroListWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "V",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowInventoryWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "T",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Status"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "K",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Skill"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "C",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Action"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "U",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Quest"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "N",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMainWindow Tab=Pledge"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "X",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowSystemMenuWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "J",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowChatWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "B",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowBoardWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "H",
+   "Alt",
+   "None"
+  ],
+  "action": "HideAllWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "W",
+   "Alt",
+   "None"
+  ],
+  "action": "CloseAllWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "G",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowGMWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "O",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowGMPetitionWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "I",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMainWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "M",
+   "Alt",
+   "None"
+  ],
+  "action": "RequestOpenMinimap"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowPartyBuff"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "P",
+   "Alt",
+   "None"
+  ],
+  "action": "ApplyMinFrame"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "Y",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMessengerWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "R",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowMacroListWindow"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "1",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "2",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "3",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "4",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "5",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "6",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "7",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "8",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "9",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "0",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F1",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F2",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F3",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F4",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F5",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F6",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F7",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F8",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F9",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F10",
+   "Alt",
+   "None"
+  ],
+  "action": "SetShortcutPage Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "PageUp",
+   "Alt",
+   "None"
+  ],
+  "action": "SetPrevChatType"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "PageDown",
+   "Alt",
+   "None"
+  ],
+  "action": "SetNextChatType"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F1",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F2",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F3",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F4",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F5",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F6",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F7",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F8",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F9",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F10",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F11",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=10"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F12",
+   "Ctrl",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=11"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F1",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=0"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F2",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=1"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F3",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=2"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F4",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=3"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F5",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=4"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F6",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=5"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F7",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=6"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F8",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=7"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F9",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=8"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F10",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=9"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F11",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=10"
+ },
+ {
+  "state": "GamingState",
+  "keys": [
+   "F12",
+   "Shift",
+   "None"
+  ],
+  "action": "UseShortcutItem Num=11"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "P",
+   "None",
+   "None"
+  ],
+  "action": "BroadcastShowPartyWindow"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "L",
+   "None",
+   "None"
+  ],
+  "action": "BroadcastLockPosition"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "I",
+   "None",
+   "None"
+  ],
+  "action": "BroadcastInitPosition"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "N",
+   "None",
+   "None"
+  ],
+  "action": "BroadcastToggleShowClassOrName"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "M",
+   "None",
+   "None"
+  ],
+  "action": "BroadcastToggleTargetName"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "G",
+   "None",
+   "None"
+  ],
+  "action": "BroadcastSwitchMessageMode"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "P",
+   "Alt",
+   "None"
+  ],
+  "action": "BroadcastShowPartyWindow"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "L",
+   "Alt",
+   "None"
+  ],
+  "action": "BroadcastLockPosition"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "I",
+   "Alt",
+   "None"
+  ],
+  "action": "BroadcastInitPosition"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "N",
+   "Alt",
+   "None"
+  ],
+  "action": "BroadcastToggleShowClassOrName"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "M",
+   "Alt",
+   "None"
+  ],
+  "action": "BroadcastToggleTargetName"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "G",
+   "Alt",
+   "None"
+  ],
+  "action": "BroadcastSwitchMessageMode"
+ },
+ {
+  "state": "BroadcastObserverState",
+  "keys": [
+   "J",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowChatWindow"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "P",
+   "None",
+   "None"
+  ],
+  "action": "EventMatchShowPartyWindow"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "L",
+   "None",
+   "None"
+  ],
+  "action": "EventMatchLockPosition"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "I",
+   "None",
+   "None"
+  ],
+  "action": "EventMatchInitPosition"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "N",
+   "None",
+   "None"
+  ],
+  "action": "EventMatchToggleShowClassOrName"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "M",
+   "None",
+   "None"
+  ],
+  "action": "EventMatchToggleTargetName"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "G",
+   "None",
+   "None"
+  ],
+  "action": "EventMatchSwitchMessageMode"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "P",
+   "Alt",
+   "None"
+  ],
+  "action": "EventMatchShowPartyWindow"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "L",
+   "Alt",
+   "None"
+  ],
+  "action": "EventMatchLockPosition"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "I",
+   "Alt",
+   "None"
+  ],
+  "action": "EventMatchInitPosition"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "N",
+   "Alt",
+   "None"
+  ],
+  "action": "EventMatchToggleShowClassOrName"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "M",
+   "Alt",
+   "None"
+  ],
+  "action": "EventMatchToggleTargetName"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "G",
+   "Alt",
+   "None"
+  ],
+  "action": "EventMatchSwitchMessageMode"
+ },
+ {
+  "state": "EventMatchObserverState",
+  "keys": [
+   "J",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowChatWindow"
+ },
+ {
+  "state": "DebugState",
+  "keys": [
+   "J",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowChatWindow"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "J",
+   "Alt",
+   "None"
+  ],
+  "action": "ShowChatWindow"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "RightBracket",
+   "None",
+   "None"
+  ],
+  "action": "Perspective speed=1.0"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "LeftBracket",
+   "None",
+   "None"
+  ],
+  "action": "Perspective speed=-1.0"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "RightBracket",
+   "Shift",
+   "None"
+  ],
+  "action": "CameraSpeed speed=0.04"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "LeftBracket",
+   "Shift",
+   "None"
+  ],
+  "action": "CameraSpeed speed=-0.04"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "E",
+   "Shift",
+   "None"
+  ],
+  "action": "Cameraviewheightadjust speed=1.0"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "C",
+   "Shift",
+   "None"
+  ],
+  "action": "Cameraviewheightadjust speed=-1.0"
+ },
+ {
+  "state": "GMCameraState",
+  "keys": [
+   "H",
+   "Alt",
+   "None"
+  ],
+  "action": "SetGamingState"
+ }
+]

@@ -1,0 +1,2808 @@
+{
+ "sysstringCount": 2083,
+ "sysstring": {
+  "0": "",
+  "20": "Adamantaite",
+  "40": "Feet",
+  "60": "Branch of Worldtree",
+  "80": "Parchment",
+  "100": "Social",
+  "120": "Active",
+  "140": "OK",
+  "141": "Cancel",
+  "149": "Log In",
+  "153": "Exit",
+  "154": "New Account",
+  "155": "Lost Account",
+  "160": "Start",
+  "180": "Type B",
+  "200": "Party Info",
+  "220": "1024*768 32bit",
+  "240": "Quest Item",
+  "260": "Necromancer",
+  "280": "Shillien Knight",
+  "300": "Dwarven Fighter",
+  "320": "MP Cost",
+  "340": "In War",
+  "360": "Clan",
+  "380": "Add Fav.",
+  "400": "Auto Join",
+  "420": "Search",
+  "440": "Party",
+  "460": "Off",
+  "480": "Settling",
+  "500": "<Private Store - Sell>",
+  "520": "Staris",
+  "540": "PC/NPC Limit",
+  "560": "Sending list",
+  "580": "Clan",
+  "600": "Disagree",
+  "620": "Front of the Outer Gate of Gludio Castle",
+  "640": "Change of Basic Ability",
+  "660": "List of Symbols",
+  "680": "Other Functions",
+  "700": "Report a Bad User",
+  "720": "Salty Dog",
+  "740": "-_-ㆀ",
+  "760": "Thifiel",
+  "780": "Ken Orwen",
+  "800": "By turn including spoil",
+  "805": "Production Team",
+  "820": "Level 42 and Below",
+  "840": "Total Score",
+  "860": "Location",
+  "880": "Summoner",
+  "900": "Move",
+  "920": "Temporary Mail Archive",
+  "940": "Expected Ownership of a Seal Stone",
+  "960": "Near Giran Harbor in Giran Territory",
+  "980": "Bitmap",
+  "1000": "Lineage 2 Messenger",
+  "1020": "Out to Lunch",
+  "1040": "Create Room",
+  "1060": "Aden",
+  "1080": "Ending Message",
+  "1100": "Stopping in Progress...",
+  "1120": "Seed Name",
+  "1140": "Next Price",
+  "1160": "Dreadnought",
+  "1180": "Ghost Sentinel",
+  "1200": "Quest Name",
+  "1220": "Item Enchant",
+  "1240": "Average",
+  "1260": "The fish did not take the bait.",
+  "1280": "Ten Thousand, Hundred Million",
+  "1300": "Hunting Zone Type",
+  "1320": "Ranking",
+  "1340": "Manage Clan Insignia",
+  "1360": "Manage Siege War",
+  "1380": "List Update",
+  "1400": "1st Royal Guard",
+  "1420": "Rune Castle",
+  "1440": "Waiting List for Partymatching",
+  "1460": "The room settings will be changed.",
+  "1480": "Item for Augmentation",
+  "1500": "Song/Dance",
+  "1520": "Disagree",
+  "1540": "",
+  "1560": "",
+  "1580": "",
+  "1600": "",
+  "1620": "",
+  "1640": "",
+  "1660": "",
+  "1680": "",
+  "1700": "",
+  "1720": "",
+  "1740": "",
+  "1760": "",
+  "1780": "",
+  "1800": "",
+  "1820": "",
+  "1840": "",
+  "1860": "",
+  "1880": "",
+  "1900": "",
+  "1920": "",
+  "1940": "",
+  "1960": "",
+  "1980": ""
+ },
+ "systemmsgCount": 2380,
+ "systemmsg": {
+  "0": {
+   "msg": "You have been disconnected from the server.",
+   "group": 2,
+   "col": [
+    0,
+    0,
+    255,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "server"
+  },
+  "23": {
+   "msg": "Not enough HP.",
+   "group": 0,
+   "col": [
+    0,
+    0,
+    255,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "46": {
+   "msg": "You use $s1.",
+   "group": 0,
+   "col": [
+    128,
+    128,
+    64,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "69": {
+   "msg": "Would you like to dismiss $s1 from the clan? If you do so, you will have to wait at least a day before accepting a new member.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "92": {
+   "msg": "$s1 has worn off.",
+   "group": 0,
+   "col": [
+    128,
+    128,
+    255,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "115": {
+   "msg": "You have left the shadow of the fucking Mother Tree.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "138": {
+   "msg": "Designate shortcut.",
+   "group": 0,
+   "col": [
+    128,
+    255,
+    255,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "161": {
+   "msg": "That player is not currently online.",
+   "group": 0,
+   "col": [
+    128,
+    128,
+    255,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "184": {
+   "msg": "Please try again later. or dont try at all.. lol",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "207": {
+   "msg": "$s2 of the clan $s1 requests declaration of war. Do you accept?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "230": {
+   "msg": "You must wait 10 days before creating a new clan!",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "253": {
+   "msg": "Enter the name of the clan you wish to end the war with.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "276": {
+   "msg": "You do not have the necessary materials or prerequisites to learn this skill.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "popup"
+  },
+  "299": {
+   "msg": "$c1 has obtained $s3 $s2.",
+   "group": 0,
+   "col": [
+    0,
+    255,
+    255,
+    255
+   ],
+   "snd": "ItemSound3.sys_exchange_success",
+   "voice": "",
+   "typ": "none"
+  },
+  "322": {
+   "msg": "Please decide on the sales price.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "345": {
+   "msg": "Chat enabled.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "345",
+   "typ": "none"
+  },
+  "368": {
+   "msg": "Equipped +$s1 $s2.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "391": {
+   "msg": "Receipt No. $s1: petition cancelled.",
+   "group": 6,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "391",
+   "typ": "petition"
+  },
+  "414": {
+   "msg": "Standby",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "437": {
+   "msg": "Your account has been suspended, under Chapter 3, Section 14 of the Lineage II Service Use Agreement, for using illegal software which has not been authenticated by our company. For more information, please visit the Support Center on the PlayNC website (http://www.plaync.com/us/support/).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "460": {
+   "msg": "to reactivate your account.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "483": {
+   "msg": "This function is inaccessible right now.  Please try again later.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "506": {
+   "msg": "Incorrect alliance name.  Please try again.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "529": {
+   "msg": "You may only register an 8 x 12 pixel, 256-color BMP.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "552": {
+   "msg": "During the grace period for dissolving a clan, the registration or deletion of a clan's crest is not allowed.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "575": {
+   "msg": "How much adena do you wish to transfer to your pet?",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "598": {
+   "msg": "You may not chat while you are invisible.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "621": {
+   "msg": "Game connection attempted through a restricted IP.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "644": {
+   "msg": "You are not yet registered for the castle siege.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "667": {
+   "msg": "You are registering on the attacking side of the $s1 siege. Do you want to continue?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "690": {
+   "msg": "You cannot register on the attacking side because you are part of an alliance with the clan that owns the castle.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "713": {
+   "msg": "$s1/$s2/$s3 $s4:$s5",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "736": {
+   "msg": "The petition was canceled. You may submit $s1 more petition(s) today.",
+   "group": 6,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "736",
+   "typ": "petition"
+  },
+  "759": {
+   "msg": "There are $s1 minutes left in this week's play time.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "782": {
+   "msg": "You may not observe a siege with a pet or servitor summoned.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "805": {
+   "msg": "Petitions are not being accepted at this time. You may submit your petition after $s1 a.m./p.m.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "828": {
+   "msg": "Are you sure you wish to delete the $s1 macro?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "851": {
+   "msg": "$s1 has been added.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "874": {
+   "msg": "The capacity of the warehouse has been exceeded.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "897": {
+   "msg": "The fee to create the item is incorrect.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "920": {
+   "msg": "Current location : $s1, $s2, $s3 (Near the Orc Village)",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "943": {
+   "msg": "Restart at the Town of Gludin.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "964": {
+   "msg": "Chatting is prohibited for one minute.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_prohibition",
+   "voice": "964",
+   "typ": "none"
+  },
+  "965": {
+   "msg": "The chatting prohibition has been removed.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_permission",
+   "voice": "965",
+   "typ": "none"
+  },
+  "966": {
+   "msg": "Chatting is currently prohibited. If you try to chat before the prohibition is removed, the prohibition time will become even longer.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_prohibition",
+   "voice": "966",
+   "typ": "none"
+  },
+  "989": {
+   "msg": "The ferry will leave for Talking Island Harbor in one minute.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1012": {
+   "msg": "A strider cannot be ridden while in battle.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1035": {
+   "msg": "Looting method: By turn including spoil",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1058": {
+   "msg": "The sales price for seeds is $s1 adena.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1078": {
+   "msg": "When a user's keyboard input exceeds a certain cumulative score a chat ban will be applied. This is done to discourage spamming. Please avoid posting the same message multiple times during a short period.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1081": {
+   "msg": "Being permanent, are you sure you wish to use the hair dye potion - Type A?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1104": {
+   "msg": "Hair dye potion - Type C is being applied.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1127": {
+   "msg": "The reward must be less than 10 times the standard price.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1150": {
+   "msg": "$c1 has failed to create $s2 at the price of $s3 adena.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_make_fail",
+   "voice": "",
+   "typ": "none"
+  },
+  "1173": {
+   "msg": "The Innadril pleasure boat will arrive in approximately 10 minutes.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1196": {
+   "msg": "Your force has reached maximum capacity.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1219": {
+   "msg": "Seven Signs: The Seal Validation period has ended.",
+   "group": 0,
+   "col": [
+    178,
+    176,
+    90,
+    255
+   ],
+   "snd": "",
+   "voice": "1219",
+   "typ": "none"
+  },
+  "1242": {
+   "msg": "Users who have not verified their age may not log in between the hours of 10:00 p.m. and 6:00 a.m.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1265": {
+   "msg": "You can't absorb souls without a soul stone.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_failed",
+   "voice": "",
+   "typ": "none"
+  },
+  "1288": {
+   "msg": "If trends continue, $s1 will win and the seal will belong to:",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1311": {
+   "msg": "Previous versions of MSN Messenger only provide the basic features for in-game MSN Messenger chat.  Add/Delete Contacts and other MSN Messenger options are not available.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1334": {
+   "msg": "The new camera data has been stored.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1357": {
+   "msg": "You have been blocked from chatting with that contact.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_prohibition",
+   "voice": "",
+   "typ": "none"
+  },
+  "1380": {
+   "msg": "You can't summon a $s1 while on the battleground.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1403": {
+   "msg": "You have failed to transfer the party leadership.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1426": {
+   "msg": "Race setup file error - ExpSkillCnt is not specified.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1449": {
+   "msg": "You've got a bite!",
+   "group": 0,
+   "col": [
+    64,
+    255,
+    0,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1472": {
+   "msg": "You look oddly at the fishing pole in disbelief and realize that you can't attack anything with this.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1495": {
+   "msg": "The Grand Olympiad match will start in $s1 second(s).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1518": {
+   "msg": "You do not meet the required condition to equip that item.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1541": {
+   "msg": "Cargo has arrived at Elven Village.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1564": {
+   "msg": "A Clan War can be declared only if the clan is level three or above, and the number of clan members is fifteen or greater.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1587": {
+   "msg": "$c1's party has left the Command Channel.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_party_leave",
+   "voice": "",
+   "typ": "none"
+  },
+  "1610": {
+   "msg": "You cannot declare war against your own clan!",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1633": {
+   "msg": "The ferry from Rune Harbor will be arriving at Gludin Harbor in approximately 1 minute.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1656": {
+   "msg": "You have successfully traded the item with the NPC.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_exchange_success",
+   "voice": "",
+   "typ": "none"
+  },
+  "1679": {
+   "msg": "Only the creator of a channel can issue a global command.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1702": {
+   "msg": "$s1 is using a third party program.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1725": {
+   "msg": "You have earned $s1 raid point(s).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1748": {
+   "msg": "Clan Academy member $s1 has successfully completed the 2nd class transfer and obtained $s2 Clan Reputation points.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1771": {
+   "msg": "Now that your clan level is above Level 5, it can accumulate clan reputation points.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1794": {
+   "msg": "The Knights of $s1 have been created.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_pledge_join",
+   "voice": "",
+   "typ": "none"
+  },
+  "1817": {
+   "msg": "$s2's owner has logged into the $s1 region.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1840": {
+   "msg": "3. If you enter the incorrect serial number more than 5 times,\\n   you may use it again after a certain amount of time passes.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1863": {
+   "msg": "$c1 purchased a clan item, reducing the Clan Reputation by $s2 points.",
+   "group": 0,
+   "col": [
+    160,
+    215,
+    254,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1886": {
+   "msg": "This serial number has already been used.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1909": {
+   "msg": "==< List of Clan Academy Graduates During the Past Week >==",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1932": {
+   "msg": "$c1 has declined your challenge to a duel!",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1955": {
+   "msg": "Since $c1 withdrew from the duel, $s2 has won.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1978": {
+   "msg": "You cannot augment items while sitting down.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "2001": {
+   "msg": "Augmentation failed due to inappropriate conditions.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_make_fail",
+   "voice": "",
+   "typ": "none"
+  },
+  "2024": {
+   "msg": "$c1 cannot duel because $c1 is participating in the Olympiad.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "2047": {
+   "msg": "This account cannot use the clan warehouse.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_denial",
+   "voice": "",
+   "typ": "none"
+  },
+  "2070": {
+   "msg": "Untrain of enchant skill was successful. Current level of enchant skill $s1 became 0 and enchant skill will be initialized.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2093": {
+   "msg": "The passed-in price is $s1 adena. Would you like to return the passed-in price?",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2116": {
+   "msg": "Your account has been suspended for abusing a free NCcoin. For more information, please visit the Support Center on the PlayNC website (http://www.plaync.com/us/support/).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_failed",
+   "voice": "",
+   "typ": "none"
+  },
+  "2139": {
+   "msg": "$c1's Pet.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2162": {
+   "msg": "Your soul has increased by $s1, so it is now at $s2.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2185": {
+   "msg": "Only a party leader can try to enter.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2208": {
+   "msg": "You do not meet the skill level requirements.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2231": {
+   "msg": "The reputation of the upper castle in contract is not enough and supply was not granted.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2254": {
+   "msg": "You cannot mount a steed while skill casting.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "2504": {
+   "msg": "Focus will be moved to chat window.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  }
+ },
+ "officialCount": 2083,
+ "official": {
+  "0": {
+   "msg": "You have been disconnected from the server.",
+   "group": 2,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "server"
+  },
+  "20": {
+   "msg": "The gate is being opened.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "40": {
+   "msg": "This is the TGS demo: the character will immediately be restored.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "60": {
+   "msg": "You have failed to earn $s2 $s1(s).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "80": {
+   "msg": "Your title cannot exceed 16 characters in length.  Please try again.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_character_failed",
+   "voice": "",
+   "typ": "none"
+  },
+  "100": {
+   "msg": "$s1 has requested a trade. Do you wish to continue?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "120": {
+   "msg": "You begin trading with $s1.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "140": {
+   "msg": "Your skill was removed due to a lack of MP.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "160": {
+   "msg": "$s1 is a member of another party and cannot be invited.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "180": {
+   "msg": "You have $s1 day(s) left until deletion.  Do you wish to cancel this action?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "200": {
+   "msg": "You have withdrawn from the party.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_party_leave",
+   "voice": "",
+   "typ": "none"
+  },
+  "220": {
+   "msg": "You have $s1 minutes left until the clan war ends.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "240": {
+   "msg": "Currently involved in clan war.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "260": {
+   "msg": "Fame level has decreased: 5 days have not passed since you were refused war.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "280": {
+   "msg": "You do not have any items to sell.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "popup"
+  },
+  "300": {
+   "msg": "$s1 has obtained $s2.",
+   "group": 0,
+   "col": [
+    0,
+    255,
+    255,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "320": {
+   "msg": "You have failed to unlock the door.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_failed",
+   "voice": "",
+   "typ": "none"
+  },
+  "340": {
+   "msg": "Your private store is now open for business.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "360": {
+   "msg": "Castle siege $s1 second(s) left!",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "380": {
+   "msg": "$s1 purchased $s3 $s2(s).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_exchange_success",
+   "voice": "",
+   "typ": "none"
+  },
+  "400": {
+   "msg": "You are attempting to drop $s1.  Do you wish to continue?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "420": {
+   "msg": "Time expired.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "440": {
+   "msg": "Because you are registered as a minor, your account has been suspended at the request of your parents or guardian. For more information, please visit the Support Center on the PlayNC website (http://www.plaync.com/us/support/).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "460": {
+   "msg": "to reactivate your account.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "480": {
+   "msg": "Please check your friends list.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_failed",
+   "voice": "",
+   "typ": "none"
+  },
+  "500": {
+   "msg": "------------------------",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "520": {
+   "msg": "You have failed to withdraw from the alliance.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "540": {
+   "msg": "Clan leaders may not be deleted. Dissolve the clan first and try again.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "560": {
+   "msg": "You have purchased +$s2 $s3 from $s1.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "580": {
+   "msg": "You may not use multiple pets or servitors at the same time.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "600": {
+   "msg": "You may not equip a pet item.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "620": {
+   "msg": "$s1  has placed you on his/her Ignore List.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "640": {
+   "msg": "You have failed to refuse castle defense aid.",
+   "group": 5,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_failed",
+   "voice": "",
+   "typ": "error"
+  },
+  "660": {
+   "msg": "This is not the time for siege registration and so registration and cancellation cannot be done.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "680": {
+   "msg": "You cannot participate in an auction.",
+   "group": 5,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "error"
+  },
+  "700": {
+   "msg": "The purchase is complete.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_exchange_success",
+   "voice": "",
+   "typ": "none"
+  },
+  "720": {
+   "msg": "The purchase price is higher than the amount of money that you have and so you cannot open a personal store.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "popup"
+  },
+  "740": {
+   "msg": "$s1 participated in a petition chat at the request of the GM.",
+   "group": 6,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "740",
+   "typ": "petition"
+  },
+  "760": {
+   "msg": "$s1 cannot join the clan because one day has not yet passed since he/she left another clan.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "780": {
+   "msg": "Observation is only possible during a siege.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "800": {
+   "msg": "You are too late. The registration period is over.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "820": {
+   "msg": "Monster Race $s2 will begin in $s1 minute(s)!",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "840": {
+   "msg": "That recipe is already registered.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "860": {
+   "msg": "You may not build your headquarters in close proximity to another headquarters.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "880": {
+   "msg": "The transaction is complete.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "900": {
+   "msg": "No slot exists to draw the symbol.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "920": {
+   "msg": "Current location : $s1, $s2, $s3 (Near the Orc Village)",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "940": {
+   "msg": "$s1 is blocking everything.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "960": {
+   "msg": "$s1 manufacturing failure.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_make_fail",
+   "voice": "",
+   "typ": "none"
+  },
+  "964": {
+   "msg": "Chatting is prohibited for one minute.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_prohibition",
+   "voice": "964",
+   "typ": "none"
+  },
+  "965": {
+   "msg": "The chatting prohibition has been removed.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_permission",
+   "voice": "965",
+   "typ": "none"
+  },
+  "966": {
+   "msg": "Chatting is currently prohibited. If you try to chat before the prohibition is removed, the prohibition time will become even longer.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_chat_prohibition",
+   "voice": "966",
+   "typ": "none"
+  },
+  "980": {
+   "msg": "The ferry will leave for Gludin Harbor after anchoring for ten minutes.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1000": {
+   "msg": "The Innadril pleasure boat will leave in one minute.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1020": {
+   "msg": "Your pet picked up $s1.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1040": {
+   "msg": "Packages sent by freight can be picked up from any Warehouse location.  Would you like to continue?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1060": {
+   "msg": "The remainder after selling the seeds is $s1.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1078": {
+   "msg": "When a user's keyboard input exceeds a certain cumulative score a chat ban will be applied. This is done to discourage spamming. Please avoid posting the same message multiple times during a short period.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1080": {
+   "msg": "Being permanent, are you sure you wish to use the facelift potion - Type A?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1100": {
+   "msg": " Do you wish to use the hair style change potion – Type G? It is permanent.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1120": {
+   "msg": "You are still a member of the clan.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_failed",
+   "voice": "",
+   "typ": "none"
+  },
+  "1140": {
+   "msg": "Would you like to open the gate?",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1160": {
+   "msg": "The ferry from Talking Island will be arriving at Gludin Harbor in approximately 5 minutes.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1180": {
+   "msg": "During the Seal Validation period, the cabal's maximum CP amount increases. In addition, the cabal posessing the seal will benefit from favorable changes in the cost to upgrade castle defense mercenaries, castle gates and walls; basic P. Def. of castle gates and walls; and the limit imposed on the castle tax rate. The use of siege war weapons will also be limited. If the Revolutionary Army of Dusk takes possession of this seal during the castle siege war, only the allies of the clan that owns the castle can come to the aid of the defenders.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1200": {
+   "msg": "= $s1 ($s2 Alliance)",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1220": {
+   "msg": "Are you sure you wish to summon it?",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1240": {
+   "msg": "Seven Signs: The Revolutionaries of Dusk have won.",
+   "group": 0,
+   "col": [
+    178,
+    176,
+    90,
+    255
+   ],
+   "snd": "",
+   "voice": "1240",
+   "typ": "none"
+  },
+  "1260": {
+   "msg": "Seven Signs: Preparations have begun for the next quest event.",
+   "group": 0,
+   "col": [
+    178,
+    176,
+    90,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1280": {
+   "msg": "Magic Critical Hit!",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1300": {
+   "msg": "You are no longer trying on equipment.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1320": {
+   "msg": "After selecting the group you wish to move your contact to, press the OK button.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1340": {
+   "msg": "This server cannot be accessed by the coupon you are using.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1360": {
+   "msg": "You have received a message from $s1.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1380": {
+   "msg": "You can't summon a $s1 while on the battleground.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1400": {
+   "msg": "Please select the person you wish to make the party leader.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1420": {
+   "msg": "The name of Team 1 and the name of Team 2 are identical.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1440": {
+   "msg": "Skill enchant was successful! $s1 has been enchanted.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1460": {
+   "msg": "You reel your line in and stop fishing.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1480": {
+   "msg": "Are you sure you wish to remove yourself from the Grand Olympiad Games waiting list?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1500": {
+   "msg": "You cannot participate in the Grand Olympiad Games with a character in their subclass.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_impossible",
+   "voice": "",
+   "typ": "none"
+  },
+  "1520": {
+   "msg": "Servitor passed away.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1540": {
+   "msg": "Cargo has arrived at the Dark Elf Village.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1560": {
+   "msg": "The quantity of crop should be more than $s1 and less than $s2 .",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1580": {
+   "msg": "The Command Channel has been formed.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1600": {
+   "msg": "Tomorrow's items will ALL be set to 0.  Do you wish to continue?",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1620": {
+   "msg": "Arrived at Rune Harbor.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1640": {
+   "msg": "Period $s1 of the Grand Olympiad Games has now ended.",
+   "group": 0,
+   "col": [
+    178,
+    176,
+    90,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1660": {
+   "msg": "The channel was opened by: $s1",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1680": {
+   "msg": "$s1 has declined the channel invitation.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1700": {
+   "msg": "You don't have enough spiritshots needed for a pet/servitor.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "none"
+  },
+  "1720": {
+   "msg": "---",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1740": {
+   "msg": "Please enter the name of the Clan Academy.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1760": {
+   "msg": "Clan member $s1's title has been changed to $s2.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1780": {
+   "msg": "Your clan has captured your opponent's contested clan hall. $s1 points have been deducted from your opponent's clan reputation score.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1800": {
+   "msg": "User $s1 has a history of using BOT.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1820": {
+   "msg": "$s1 is currently asleep.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1840": {
+   "msg": "3. If you enter the incorrect serial number more than 5 times,\\n   you may use it again after a certain amount of time passes.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1860": {
+   "msg": "The Clan Reputation Score is too low.",
+   "group": 4,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_shortage",
+   "voice": "",
+   "typ": "popup"
+  },
+  "1880": {
+   "msg": "In $s1 second(s), you will be teleported outside of the game arena.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1900": {
+   "msg": "$s1 has entered the party room.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "ItemSound3.sys_party_join",
+   "voice": "",
+   "typ": "none"
+  },
+  "1920": {
+   "msg": "Your account is currently inactive because you have not logged into the game for some time. You may reactivate your account by visiting the PlayNC website (http://www.plaync.com/us/support/).",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1940": {
+   "msg": "You are unable to request a duel at this time.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1960": {
+   "msg": "This is not a suitable item.",
+   "group": 0,
+   "col": [
+    121,
+    155,
+    176,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  },
+  "1980": {
+   "msg": "$s1's remaining Mana is now 5.",
+   "group": 0,
+   "col": [
+    0,
+    0,
+    255,
+    255
+   ],
+   "snd": "",
+   "voice": "",
+   "typ": "none"
+  }
+ }
+}

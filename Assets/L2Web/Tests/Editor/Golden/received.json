@@ -1,0 +1,5491 @@
+[
+ {
+  "table": "login",
+  "opcode": 0,
+  "name": null,
+  "acis": "Init",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd",
+   "dddd",
+   "s"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 1,
+  "name": null,
+  "acis": "LoginFail",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "c"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 2,
+  "name": null,
+  "acis": "AccountKicked",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 3,
+  "name": null,
+  "acis": "LoginOk",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddddd",
+   "b"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 4,
+  "name": null,
+  "acis": "ServerList",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "cc",
+   "cddcchhcdc"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 5,
+  "name": null,
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "c"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 6,
+  "name": null,
+  "acis": "PlayFail",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "c"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 7,
+  "name": null,
+  "acis": "PlayOk",
+  "effect": "rede",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 8,
+  "name": null,
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "c"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 9,
+  "name": null,
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "c",
+   "hS"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 10,
+  "name": null,
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dc"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 11,
+  "name": null,
+  "acis": "GGAuth",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "login",
+  "opcode": 12,
+  "name": null,
+  "acis": null,
+  "effect": "log",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 0,
+  "name": "VersionCheckPacket",
+  "acis": "KeyPacket",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "cQdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 1,
+  "name": null,
+  "acis": "MoveToLocation",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 2,
+  "name": "NSPacket",
+  "acis": "NpcSay",
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_PartyMatchChatMessage",
+   "EV_PetitionChatMessage",
+   "EV_ShowPetitionWnd"
+  ],
+  "windows": [
+   "ChatWnd",
+   "PartyMatchRoomWnd",
+   "PetitionWnd"
+  ],
+  "formats": [
+   "dddS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 3,
+  "name": "CIPacket",
+  "acis": "CharInfo",
+  "effect": "UI",
+  "events": [
+   "EV_FishRankEventButtonHide",
+   "EV_FishViewportWndShow"
+  ],
+  "windows": [
+   "FishViewportWnd"
+  ],
+  "formats": [
+   "dddddSdddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddffffdddSdddddccccccch",
+   "h",
+   "c",
+   "dchd",
+   "ddc",
+   "c",
+   "dcc",
+   "cddd",
+   "d",
+   "d",
+   "dd",
+   "d",
+   "d",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 4,
+  "name": "UIPacket",
+  "acis": "UserInfo",
+  "effect": "UI",
+  "events": [
+   "EV_ChatWndStatusChange",
+   "EV_ClanMyAuth",
+   "EV_FishRankEventButtonHide",
+   "EV_FishViewportWndShow",
+   "EV_UpdateUserInfo"
+  ],
+  "windows": [
+   "ChatWnd",
+   "ClanWnd",
+   "DetailStatusWnd",
+   "FishViewportWnd",
+   "InventoryWnd",
+   "StatusWnd"
+  ],
+  "formats": [
+   "dddddSddddQddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddddffffddddSdddddcccddh",
+   "h",
+   "c",
+   "dc",
+   "d",
+   "hhdh",
+   "ddddc",
+   "c",
+   "dcc",
+   "cddd",
+   "d",
+   "c",
+   "dd",
+   "d",
+   "d",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 5,
+  "name": "AttackPacket",
+  "acis": "Attack",
+  "effect": "UI",
+  "events": [
+   "EV_ReceiveAttack"
+  ],
+  "windows": [
+   "OlympiadPlayerWnd"
+  ],
+  "formats": [
+   "dddcdddh",
+   "ddc",
+   "dd",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 6,
+  "name": "DiePacket",
+  "acis": "Die",
+  "effect": "UI",
+  "events": [
+   "EV_Die"
+  ],
+  "windows": [
+   "AbnormalStatusWnd",
+   "RestartMenuWnd"
+  ],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 7,
+  "name": "RevivePacket",
+  "acis": "Revive",
+  "effect": "UI",
+  "events": [
+   "EV_RestartMenuHide"
+  ],
+  "windows": [
+   "RestartMenuWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 8,
+  "name": "AttackOutofRangePacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 9,
+  "name": "AttackinCoolTimePacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 10,
+  "name": "AttackDeadTargetPacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 11,
+  "name": "SpawnItemPacket",
+  "acis": "SpawnItem",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 12,
+  "name": "DropItemPacket",
+  "acis": "DropItem",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 13,
+  "name": "GetItemPacket",
+  "acis": "GetItem",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 14,
+  "name": "StatusUpdatePacket",
+  "acis": "StatusUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_UpdateCP",
+   "EV_UpdateHP",
+   "EV_UpdateMP",
+   "EV_UpdateMaxCP",
+   "EV_UpdateMaxHP",
+   "EV_UpdateMaxMP"
+  ],
+  "windows": [
+   "DetailStatusWnd",
+   "RecipeBuyListWnd",
+   "RecipeBuyManufactureWnd",
+   "RecipeManufactureWnd",
+   "StatusWnd",
+   "TargetStatusWnd"
+  ],
+  "formats": [
+   "dd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 15,
+  "name": "NpcHtmlMessagePacket",
+  "acis": "NpcHtmlMessage",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 16,
+  "name": "SellListPacket",
+  "acis": "SellList",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryHideWindow",
+   "EV_ShopAddItem",
+   "EV_ShopOpenWindow"
+  ],
+  "windows": [
+   "InventoryWnd",
+   "ShopWnd"
+  ],
+  "formats": [
+   "ddh",
+   "h",
+   "dddhhdhhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 17,
+  "name": "BuyListPacket",
+  "acis": "BuyList",
+  "effect": "UI",
+  "events": [
+   "EV_ShopAddItem",
+   "EV_ShopOpenWindow"
+  ],
+  "windows": [
+   "ShopWnd"
+  ],
+  "formats": [
+   "ddh",
+   "h",
+   "dddhhdhhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 18,
+  "name": "DeleteObjectPacket",
+  "acis": "DeleteObject",
+  "effect": "UI",
+  "events": [
+   "EV_PetSummonedStatusClose"
+  ],
+  "windows": [
+   "PetStatusWnd",
+   "PetWnd",
+   "SummonedStatusWnd",
+   "SummonedWnd"
+  ],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 19,
+  "name": "CharacterSelectionInfoPacket",
+  "acis": "CharSelectInfo",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "SdSddddddddddffdQddddddddddddddddddddddddddddddddddddddddddddddddffdddchh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 20,
+  "name": "LoginFailPacket",
+  "acis": "AuthLoginFail",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 21,
+  "name": "CharacterSelectedPacket",
+  "acis": "CharSelected",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "SdSddddddddddffdQddddddddddddddddddddddddddddddddddddddddddd",
+   "d",
+   "b",
+   "dddd",
+   "d",
+   "dddd",
+   "d",
+   "d",
+   "b"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 22,
+  "name": "NpcInfoPacket",
+  "acis": "AbstractNpcInfo",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddddddddddddddffffdddcccccSSddd",
+   "dddddccffdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 23,
+  "name": "NewCharacterSuccessPacket",
+  "acis": "CharTemplates",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "dddddddddddddddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 24,
+  "name": "NewCharacterFailPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 25,
+  "name": "CharacterCreateSuccessPacket",
+  "acis": "CharCreateOk",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 26,
+  "name": "CharacterCreateFailPacket",
+  "acis": "CharCreateFail",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 27,
+  "name": "ItemListPacket",
+  "acis": "ItemList",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryAddItem",
+   "EV_InventoryClear",
+   "EV_InventoryItemListEnd",
+   "EV_InventoryOpenWindow",
+   "EV_ShortcutUpdate"
+  ],
+  "windows": [
+   "InventoryWnd",
+   "QuestTreeWnd",
+   "RecipeBuyManufactureWnd",
+   "RecipeManufactureWnd",
+   "ShortcutWnd"
+  ],
+  "formats": [
+   "hh",
+   "h",
+   "dddhhhdhhhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 28,
+  "name": "SunRisePacket",
+  "acis": "SunRise",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 29,
+  "name": "SunSetPacket",
+  "acis": "SunSet",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 30,
+  "name": "TradeStartPacket",
+  "acis": "TradeStart",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryHideWindow",
+   "EV_TradeAddItem",
+   "EV_TradeStart"
+  ],
+  "windows": [
+   "InventoryWnd",
+   "TradeWnd"
+  ],
+  "formats": [
+   "d",
+   "h",
+   "h",
+   "dddhhdhhh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 31,
+  "name": "TradeStartOkPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 32,
+  "name": "TradeOwnAddPacket",
+  "acis": "TradeOwnAdd",
+  "effect": "UI",
+  "events": [
+   "EV_TradeAddItem"
+  ],
+  "windows": [
+   "TradeWnd"
+  ],
+  "formats": [
+   "h",
+   "h",
+   "dddhhdhhh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 33,
+  "name": "TradeOtherAddPacket",
+  "acis": "TradeOtherAdd",
+  "effect": "UI",
+  "events": [
+   "EV_TradeAddItem"
+  ],
+  "windows": [
+   "TradeWnd"
+  ],
+  "formats": [
+   "h",
+   "h",
+   "dddhhdhhh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 34,
+  "name": "TradeDonePacket",
+  "acis": "SendTradeDone",
+  "effect": "UI",
+  "events": [
+   "EV_TradeDone"
+  ],
+  "windows": [
+   "TradeWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 35,
+  "name": "CharacterDeleteSuccessPacket",
+  "acis": "CharDeleteOk",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 36,
+  "name": "CharacterDeleteFailPacket",
+  "acis": "CharDeleteFail",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 37,
+  "name": "ActionFailPacket",
+  "acis": "ActionFailed",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 38,
+  "name": "SeverClosePacket",
+  "acis": "ServerClose",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 39,
+  "name": "InventoryUpdatePacket",
+  "acis": "InventoryUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryUpdateItem",
+   "EV_ShortcutUpdate"
+  ],
+  "windows": [
+   "InventoryWnd",
+   "QuestTreeWnd",
+   "RecipeBuyManufactureWnd",
+   "RecipeManufactureWnd",
+   "ShortcutWnd"
+  ],
+  "formats": [
+   "h",
+   "hh",
+   "dddhhhdhhhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 40,
+  "name": "TeleportToLocationPacket",
+  "acis": "TeleportToLocation",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 41,
+  "name": "TargetSelectedPacket",
+  "acis": "TargetSelected",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 42,
+  "name": "TargetUnselectedPacket",
+  "acis": "TargetUnselected",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 43,
+  "name": "AutoAttackStartPacket",
+  "acis": "AutoAttackStart",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 44,
+  "name": "AutoAttackStopPacket",
+  "acis": "AutoAttackStop",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 45,
+  "name": "SocialActionPacket",
+  "acis": "SocialAction",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 46,
+  "name": "ChangeMoveTypePacket",
+  "acis": "ChangeMoveType",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 47,
+  "name": "ChangeWaitTypePacket",
+  "acis": "ChangeWaitType",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 48,
+  "name": "ManagePledgePowerPacket",
+  "acis": "ManagePledgePower",
+  "effect": "UI",
+  "events": [
+   "EV_ClanAuth"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 49,
+  "name": "CreatePledgePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 50,
+  "name": "AskJoinPledgePacket",
+  "acis": "AskJoinPledge",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSd",
+   "S"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 51,
+  "name": "JoinPledgePacket",
+  "acis": "JoinPledge",
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 52,
+  "name": "WithdrawalPledgePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 53,
+  "name": "OustPledgeMemberPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 54,
+  "name": "SetOustPledgeMemberPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 55,
+  "name": "DismissPledgePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 56,
+  "name": "SetDismissPledgePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 57,
+  "name": "AskJoinPartyPacket",
+  "acis": "AskJoinParty",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "Sd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 58,
+  "name": "JoinPartyPacket",
+  "acis": "JoinParty",
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 59,
+  "name": "WithdrawalPartyPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 60,
+  "name": "OustPartyMemberPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 61,
+  "name": "SetOustPartyMemberPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 62,
+  "name": "DismissPartyPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 63,
+  "name": "SetDismissPartyPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 64,
+  "name": "MagicAndSkillList",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 65,
+  "name": "WareHouseDepositListPacket",
+  "acis": "WarehouseDepositList",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryHideWindow",
+   "EV_WarehouseAddItem",
+   "EV_WarehouseOpenWindow"
+  ],
+  "windows": [
+   "InventoryWnd",
+   "WarehouseWnd"
+  ],
+  "formats": [
+   "hdh",
+   "h",
+   "dddhhdhhhddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 66,
+  "name": "WareHouseWithdrawListPacket",
+  "acis": "WarehouseWithdrawList",
+  "effect": "UI",
+  "events": [
+   "EV_WarehouseAddItem",
+   "EV_WarehouseOpenWindow"
+  ],
+  "windows": [
+   "WarehouseWnd"
+  ],
+  "formats": [
+   "hdh",
+   "h",
+   "dddhhdhhhddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 67,
+  "name": "WareHouseDonePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 68,
+  "name": "ShortCutRegisterPacket",
+  "acis": "ShortCutRegister",
+  "effect": "UI",
+  "events": [
+   "EV_ShortcutUpdate"
+  ],
+  "windows": [
+   "ShortcutWnd"
+  ],
+  "formats": [
+   "dd",
+   "dddddhh",
+   "ddcd",
+   "dd",
+   "dd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 69,
+  "name": "ShortCutInitPacket",
+  "acis": "ShortCutInit",
+  "effect": "UI",
+  "events": [
+   "EV_ShortcutClear",
+   "EV_ShortcutUpdate"
+  ],
+  "windows": [
+   "ShortcutWnd"
+  ],
+  "formats": [
+   "d",
+   "dd",
+   "dddddhh",
+   "ddcd",
+   "dd",
+   "dd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 70,
+  "name": "ShortCutDeletePacket",
+  "acis": "ShortCutDelete",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 71,
+  "name": "StopMovePacket",
+  "acis": "StopMove",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 72,
+  "name": "MagicSkillUse",
+  "acis": "MagicSkillUse",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddddddh",
+   "h",
+   "h",
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 73,
+  "name": "MagicSkillCanceled",
+  "acis": "MagicSkillCanceled",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 74,
+  "name": "SayPacket2",
+  "acis": "CreatureSay",
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_PartyMatchChatMessage",
+   "EV_PetitionChatMessage",
+   "EV_ShowPetitionWnd"
+  ],
+  "windows": [
+   "ChatWnd",
+   "PartyMatchRoomWnd",
+   "PetitionWnd"
+  ],
+  "formats": [
+   "dd",
+   "dd",
+   "SS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 75,
+  "name": "EquipUpdatePacket",
+  "acis": "EquipUpdate",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 76,
+  "name": "DoorInfoPacket",
+  "acis": "DoorInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 77,
+  "name": "DoorStatusUpdatePacket",
+  "acis": "DoorStatusUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_TargetUpdate"
+  ],
+  "windows": [
+   "GMWnd",
+   "TargetStatusWnd"
+  ],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 78,
+  "name": null,
+  "acis": "PartySmallWindowAll",
+  "effect": "UI",
+  "events": [
+   "EV_ChatWndStatusChange",
+   "EV_PartyAddParty",
+   "EV_PartyMemberChanged"
+  ],
+  "windows": [
+   "ChatWnd",
+   "MinimapWnd",
+   "MinimapWnd_Expand",
+   "OptionWnd",
+   "PartyWnd",
+   "PartyWndCompact"
+  ],
+  "formats": [
+   "ddd",
+   "dSdddddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 79,
+  "name": "PartySmallWindowAddPacket",
+  "acis": "PartySmallWindowAdd",
+  "effect": "UI",
+  "events": [
+   "EV_ChatWndStatusChange",
+   "EV_PartyAddParty",
+   "EV_PartyMemberChanged"
+  ],
+  "windows": [
+   "ChatWnd",
+   "MinimapWnd",
+   "MinimapWnd_Expand",
+   "OptionWnd",
+   "PartyWnd",
+   "PartyWndCompact"
+  ],
+  "formats": [
+   "dddSdddddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 80,
+  "name": "PartySmallWindowDeleteAllPacket",
+  "acis": "PartySmallWindowDeleteAll",
+  "effect": "UI",
+  "events": [
+   "EV_ChatWndStatusChange",
+   "EV_PartyDeleteAllParty",
+   "EV_PartyMemberChanged"
+  ],
+  "windows": [
+   "ChatWnd",
+   "MinimapWnd",
+   "MinimapWnd_Expand",
+   "OptionWnd",
+   "PartyWnd",
+   "PartyWndCompact"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 81,
+  "name": "PartySmallWindowDeletePacket",
+  "acis": "PartySmallWindowDelete",
+  "effect": "UI",
+  "events": [
+   "EV_PartyDeleteParty",
+   "EV_PartyMemberChanged"
+  ],
+  "windows": [
+   "MinimapWnd",
+   "MinimapWnd_Expand",
+   "OptionWnd",
+   "PartyWnd",
+   "PartyWndCompact"
+  ],
+  "formats": [
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 82,
+  "name": "PartySmallWindowUpdatePacket",
+  "acis": "PartySmallWindowUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_PartyUpdateParty"
+  ],
+  "windows": [
+   "PartyWnd",
+   "PartyWndCompact"
+  ],
+  "formats": [
+   "dSdddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 83,
+  "name": "PledgeShowMemberListAllPacket",
+  "acis": "PledgeShowMemberListAll",
+  "effect": "UI",
+  "events": [
+   "EV_ClanAddMemberMultiple",
+   "EV_ClanInfo"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "dddSS",
+   "dddddddddSdd",
+   "d",
+   "Sdddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 84,
+  "name": "PledgeShowMemberListUpdatePacket",
+  "acis": "PledgeShowMemberListUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_ClanMemberInfoUpdate"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "Sddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 85,
+  "name": "PledgeShowMemberListAddPacket",
+  "acis": "PledgeShowMemberListAdd",
+  "effect": "UI",
+  "events": [
+   "EV_ClanAddMember"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "Sdddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 86,
+  "name": "PledgeShowMemberListDeletePacket",
+  "acis": "PledgeShowMemberListDelete",
+  "effect": "UI",
+  "events": [
+   "EV_ClanDeleteMember"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "S"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 87,
+  "name": "MagicListPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 88,
+  "name": "SkillListPacket",
+  "acis": "SkillList",
+  "effect": "UI",
+  "events": [
+   "EV_SkillList",
+   "EV_SkillListStart"
+  ],
+  "windows": [
+   "MagicSkillWnd"
+  ],
+  "formats": [
+   "d",
+   "dddc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 89,
+  "name": "VehicleInfoPacket",
+  "acis": "VehicleInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 90,
+  "name": "VehicleDeparturePacket",
+  "acis": "VehicleDeparture",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 91,
+  "name": "VehicleCheckLocationPacket",
+  "acis": "OnVehicleCheckLocation",
+  "effect": "log",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 92,
+  "name": "GetOnVehiclePacket",
+  "acis": "GetOnVehicle",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 93,
+  "name": "GetOffVehiclePacket",
+  "acis": "GetOffVehicle",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 94,
+  "name": "TradeRequestPacket",
+  "acis": "SendTradeRequest",
+  "effect": "UI",
+  "events": [
+   "EV_TradeRequestStartExchange"
+  ],
+  "windows": [
+   "TradeWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 95,
+  "name": "RestartResponsePacket",
+  "acis": "RestartResponse",
+  "effect": "UI",
+  "events": [
+   "EV_ObserverWndHide",
+   "EV_Restart"
+  ],
+  "windows": [
+   "AbnormalStatusWnd",
+   "ObserverWnd",
+   "PartyMatchRoomWnd",
+   "PartyWnd",
+   "PartyWndCompact",
+   "RestartMenuWnd"
+  ],
+  "formats": [
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 96,
+  "name": "MoveToPawnPacket",
+  "acis": "MoveToPawn",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 97,
+  "name": "ValidateLocationPacket",
+  "acis": "ValidateLocation",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 98,
+  "name": "StartRotatingPacket",
+  "acis": "StartRotation",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 99,
+  "name": "FinishRotatingPacket",
+  "acis": "StopRotation",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 100,
+  "name": "SystemMessagePacket",
+  "acis": "SystemMessage",
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_PetitionChatMessage",
+   "EV_ShowPetitionWnd",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd",
+   "PetitionWnd"
+  ],
+  "formats": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "dhh",
+   "dd",
+   "Q",
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 101,
+  "name": "StartPledgeWarPacket",
+  "acis": "StartPledgeWar",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 102,
+  "name": "ReplyStartPledgeWarPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 103,
+  "name": "StopPledgeWarPacket",
+  "acis": "StopPledgeWar",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 104,
+  "name": "ReplyStopPledgeWarPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 105,
+  "name": "SurrenderPledgeWarPacket",
+  "acis": "SurrenderPledgeWar",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 106,
+  "name": "ReplySurrenderPledgeWarPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 107,
+  "name": "SetPledgeCrestPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 108,
+  "name": "PledgeCrestPacket",
+  "acis": "PledgeCrest",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 109,
+  "name": "SetupGaugePacket",
+  "acis": "SetupGauge",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 110,
+  "name": "ShowBoardPacket",
+  "acis": "ShowBoard",
+  "effect": "UI",
+  "events": [
+   "EV_ShowBoardPacket"
+  ],
+  "windows": [
+   "BoardWnd"
+  ],
+  "formats": [
+   "c",
+   "SSSSSSSSS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 111,
+  "name": "ChooseInventoryItemPacket",
+  "acis": "ChooseInventoryItem",
+  "effect": "UI",
+  "events": [
+   "EV_EnchantItemList",
+   "EV_EnchantShow"
+  ],
+  "windows": [
+   "ItemEnchantWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 112,
+  "name": "DummyPacket",
+  "acis": null,
+  "effect": "log",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 113,
+  "name": "MoveToLocationInVehiclePacket",
+  "acis": "MoveToLocationInVehicle",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 114,
+  "name": "StopMoveInVehiclePacket",
+  "acis": "StopMoveInVehicle",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 115,
+  "name": "ValidateLocationInVehiclePacket",
+  "acis": "ValidateLocationInVehicle",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 116,
+  "name": "TradeUpdatePacket",
+  "acis": "TradeItemUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_TradeUpdateInventoryItem"
+  ],
+  "windows": [
+   "TradeWnd"
+  ],
+  "formats": [
+   "h",
+   "hh",
+   "dddhhdhhh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 117,
+  "name": "TradePressOwnOkPacket",
+  "acis": "TradePressOwnOk",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 118,
+  "name": "MagicSkillLaunchedPacket",
+  "acis": "MagicSkillLaunched",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddd",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 119,
+  "name": "FriendAddRequestResult",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 120,
+  "name": "FriendAdd",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 121,
+  "name": "FriendRemove",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 122,
+  "name": "FriendList",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 123,
+  "name": "FriendStatus",
+  "acis": "FriendStatus",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 124,
+  "name": "TradePressOtherOkPacket",
+  "acis": "TradePressOtherOk",
+  "effect": "UI",
+  "events": [
+   "EV_TradeOtherOK"
+  ],
+  "windows": [
+   "TradeWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 125,
+  "name": "FriendAddRequest",
+  "acis": "FriendAddRequest",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "S"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 126,
+  "name": "LogOutOkPacket",
+  "acis": "LeaveWorld",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 127,
+  "name": "AbnormalStatusUpdatePacket",
+  "acis": "AbnormalStatusUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_AbnormalStatusNormalItem"
+  ],
+  "windows": [
+   "AbnormalStatusWnd"
+  ],
+  "formats": [
+   "h",
+   "dhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 128,
+  "name": "QuestListPacket",
+  "acis": "QuestList",
+  "effect": "UI",
+  "events": [
+   "EV_QuestListEnd",
+   "EV_QuestListStart"
+  ],
+  "windows": [
+   "QuestTreeWnd"
+  ],
+  "formats": [
+   "h",
+   "dd",
+   "b"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 129,
+  "name": "EnchantResultPacket",
+  "acis": "EnchantResult",
+  "effect": "UI",
+  "events": [
+   "EV_EnchantResult"
+  ],
+  "windows": [
+   "ItemEnchantWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 130,
+  "name": "PledgeShowMemberListDeleteAllPacket",
+  "acis": "PledgeShowMemberListDeleteAll",
+  "effect": "UI",
+  "events": [
+   "EV_ClanDeleteAllMember"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 131,
+  "name": "PledgeInfoPacket",
+  "acis": "PledgeInfo",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 132,
+  "name": "PledgeExtendedInfoPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "SddSddddddddSd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 133,
+  "name": "SurrenderPersonallyPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 134,
+  "name": "RidePacket",
+  "acis": "Ride",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 135,
+  "name": "DummyPacket",
+  "acis": null,
+  "effect": "log",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 136,
+  "name": "PledgeShowInfoUpdatePacket",
+  "acis": "PledgeShowInfoUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_ClanInfoUpdate"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "ddddddddddSdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 137,
+  "name": "ClientActionPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 138,
+  "name": "AcquireSkillListPacket",
+  "acis": "AcquireSkillList",
+  "effect": "UI",
+  "events": [
+   "EV_SkillTrainListWndAddSkill",
+   "EV_SkillTrainListWndShow"
+  ],
+  "windows": [
+   "SkillTrainListWnd"
+  ],
+  "formats": [
+   "dd",
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 139,
+  "name": "AcquireSkillInfoPacket",
+  "acis": "AcquireSkillInfo",
+  "effect": "UI",
+  "events": [
+   "EV_SkillTrainInfoWndAddExtendInfo",
+   "EV_SkillTrainInfoWndShow"
+  ],
+  "windows": [
+   "SkillTrainInfoWnd"
+  ],
+  "formats": [
+   "dddd",
+   "d",
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 140,
+  "name": "ServerObjectInfoPacket",
+  "acis": "ServerObjectInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddSdddddffffdddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 141,
+  "name": "GMHidePacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 142,
+  "name": "AcquireSkillDonePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_SkillTrainInfoWndHide",
+   "EV_SkillTrainListWndHide"
+  ],
+  "windows": [
+   "SkillTrainInfoWnd",
+   "SkillTrainListWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 143,
+  "name": "GMViewCharacterInfoPacket",
+  "acis": "GMViewCharacterInfo",
+  "effect": "UI",
+  "events": [
+   "EV_GMObservingUserInfoUpdate"
+  ],
+  "windows": [
+   "GMDetailStatusWnd"
+  ],
+  "formats": [
+   "dddddSddddQddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddddffffddddSdddcccddhhddddccdccdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 144,
+  "name": "GMViewPledgeInfoPacket",
+  "acis": "GMViewPledgeInfo",
+  "effect": "UI",
+  "events": [
+   "EV_GMObservingClan",
+   "EV_GMObservingClanMember",
+   "EV_GMObservingClanMemberStart"
+  ],
+  "windows": [
+   "GMClanWnd"
+  ],
+  "formats": [
+   "dSddSS",
+   "dddddddddSdd",
+   "d",
+   "Sdddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 145,
+  "name": "GMViewSkillInfoPacket",
+  "acis": "GMViewSkillInfo",
+  "effect": "UI",
+  "events": [
+   "EV_GMObservingSkillList",
+   "EV_GMObservingSkillListStart"
+  ],
+  "windows": [
+   "GMMagicSkillWnd"
+  ],
+  "formats": [
+   "Sd",
+   "dddc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 146,
+  "name": "GMViewMagicInfoPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "Sd",
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 147,
+  "name": "GMViewQuestInfoPacket",
+  "acis": "GMViewQuestList",
+  "effect": "UI",
+  "events": [
+   "EV_GMObservingQuestItem",
+   "EV_GMObservingQuestList",
+   "EV_GMObservingQuestListEnd",
+   "EV_GMObservingQuestListStart"
+  ],
+  "windows": [
+   "GMQuestWnd"
+  ],
+  "formats": [
+   "Sh",
+   "dd",
+   "h",
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 148,
+  "name": "GMViewItemListPacket",
+  "acis": "GMViewItemList",
+  "effect": "UI",
+  "events": [
+   "EV_GMObservingInventoryAddItem",
+   "EV_GMObservingInventoryClear"
+  ],
+  "windows": [
+   "GMInventoryWnd"
+  ],
+  "formats": [
+   "Sdhh",
+   "h",
+   "dddhhhdhhhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 149,
+  "name": "GMViewWarehouseWithdrawListPacket",
+  "acis": "GMViewWarehouseWithdrawList",
+  "effect": "UI",
+  "events": [
+   "EV_GMObservingWarehouseItemList",
+   "EV_GMObservingWarehouseItemListStart"
+  ],
+  "windows": [
+   "GMWarehouseWnd"
+  ],
+  "formats": [
+   "Sdh",
+   "h",
+   "dddhh",
+   "dhhhdd",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 150,
+  "name": "ListPartyWatingPacket",
+  "acis": "PartyMatchList",
+  "effect": "UI",
+  "events": [
+   "EV_PartyMatchList",
+   "EV_PartyMatchStart"
+  ],
+  "windows": [
+   "PartyMatchWnd"
+  ],
+  "formats": [
+   "dd",
+   "dSdddddS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 151,
+  "name": "PartyRoomInfoPacket",
+  "acis": "PartyMatchDetail",
+  "effect": "UI",
+  "events": [
+   "EV_PartyMatchRoomStart"
+  ],
+  "windows": [
+   "OptionWnd",
+   "PartyMatchRoomWnd",
+   "PartyMatchWaitListWnd",
+   "PartyMatchWnd"
+  ],
+  "formats": [
+   "ddddddS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 152,
+  "name": "PlaySoundPacket",
+  "acis": "PlaySound",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSdddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 153,
+  "name": "StaticObjectPacket",
+  "acis": "StaticObjectInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 154,
+  "name": "PrivateStoreManageList",
+  "acis": "PrivateStoreManageListSell",
+  "effect": "UI",
+  "events": [
+   "EV_PrivateShopAddItem",
+   "EV_PrivateShopOpenWindow"
+  ],
+  "windows": [
+   "PrivateShopWnd"
+  ],
+  "formats": [
+   "dddd",
+   "ddddhhhdd",
+   "d",
+   "ddddhhhddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 155,
+  "name": "PrivateStoreList",
+  "acis": "PrivateStoreListSell",
+  "effect": "UI",
+  "events": [
+   "EV_PrivateShopAddItem",
+   "EV_PrivateShopOpenWindow"
+  ],
+  "windows": [
+   "PrivateShopWnd"
+  ],
+  "formats": [
+   "dddd",
+   "ddddhhhddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 156,
+  "name": "PrivateStoreMsg",
+  "acis": "PrivateStoreMsgSell",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 157,
+  "name": null,
+  "acis": "ShowMiniMap",
+  "effect": "UI",
+  "events": [
+   "EV_ShowMinimap"
+  ],
+  "windows": [
+   "MinimapWnd"
+  ],
+  "formats": [
+   "dc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 158,
+  "name": "ReviveRequestPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 159,
+  "name": "AbnormalVisualEffectPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 160,
+  "name": "TutorialShowHtmlPacket",
+  "acis": "TutorialShowHtml",
+  "effect": "UI",
+  "events": [
+   "EV_TutorialViewerWndShow"
+  ],
+  "windows": [
+   "TutorialViewerWnd"
+  ],
+  "formats": [
+   "S"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 161,
+  "name": "TutorialShowQuestionMarkPacket",
+  "acis": "TutorialShowQuestionMark",
+  "effect": "UI",
+  "events": [
+   "EV_ArriveNewTutorialQuestion"
+  ],
+  "windows": [
+   "TutorialBtnWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 162,
+  "name": "TutorialEnableClientEventPacket",
+  "acis": "TutorialEnableClientEvent",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 163,
+  "name": "TutorialCloseHtmlPacket",
+  "acis": "TutorialCloseHtml",
+  "effect": "UI",
+  "events": [
+   "EV_TutorialViewerWndHide"
+  ],
+  "windows": [
+   "TutorialViewerWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 164,
+  "name": "ShowRadarPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_MinimapAddTarget",
+   "EV_MinimapDeleteAllTarget",
+   "EV_RadarAddTarget",
+   "EV_RadarDeleteAllTarget"
+  ],
+  "windows": [
+   "MinimapWnd",
+   "MinimapWnd_Expand",
+   "RadarContainerWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 165,
+  "name": "DeleteRadarPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_MinimapDeleteTarget"
+  ],
+  "windows": [
+   "MinimapWnd",
+   "MinimapWnd_Expand"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 166,
+  "name": "MyTargetSelectedPacket",
+  "acis": "MyTargetSelected",
+  "effect": "UI",
+  "events": [
+   "EV_ReceiveTargetLevelDiff"
+  ],
+  "windows": [
+   "TargetStatusWnd"
+  ],
+  "formats": [
+   "dhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 167,
+  "name": "PartyMemberPositionPacket",
+  "acis": "PartyMemberPosition",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 168,
+  "name": "AskJoinAlliancePacket",
+  "acis": "AskJoinAlly",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSSS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 169,
+  "name": "JoinAlliancePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 170,
+  "name": "WithdrawAlliancePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 171,
+  "name": "OustAllianceMemberPledgePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 172,
+  "name": "DismissAlliancePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ChatMessage",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "ChatWnd",
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 173,
+  "name": "SetAllianceCrestPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 174,
+  "name": "AllianceCrestPacket",
+  "acis": "AllyCrest",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 175,
+  "name": "ServerCloseSocketPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 176,
+  "name": "PetStatusShowPacket",
+  "acis": "PetStatusShow",
+  "effect": "UI",
+  "events": [
+   "EV_PetWndShow"
+  ],
+  "windows": [
+   "PetWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 177,
+  "name": "PetInfoPacket",
+  "acis": "PetInfo",
+  "effect": "UI",
+  "events": [
+   "EV_PetStatusShow",
+   "EV_PetWndShowNameBtn",
+   "EV_UpdatePetInfo"
+  ],
+  "windows": [
+   "PetStatusWnd",
+   "PetWnd",
+   "SummonedStatusWnd",
+   "SummonedWnd"
+  ],
+  "formats": [
+   "dddddddddddddddddddffffdddcccccSSdddddddddddQQQddddddddddddddccdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 178,
+  "name": "PetItemListPacket",
+  "acis": "PetItemList",
+  "effect": "UI",
+  "events": [
+   "EV_PetInventoryItemList",
+   "EV_PetInventoryItemStart"
+  ],
+  "windows": [
+   "PetWnd"
+  ],
+  "formats": [
+   "h",
+   "h",
+   "dddhhhdhh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 179,
+  "name": "PetInventoryUpdatePacket",
+  "acis": "PetInventoryUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_PetInventoryItemUpdate",
+   "EV_ShortcutUpdate"
+  ],
+  "windows": [
+   "PetWnd",
+   "ShortcutWnd"
+  ],
+  "formats": [
+   "h",
+   "hh",
+   "dddhhhdhh"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 180,
+  "name": "AllianceInfoPacket",
+  "acis": "AllianceInfo",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 181,
+  "name": "PetStatusUpdatePacket",
+  "acis": "PetStatusUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_UpdatePetInfo"
+  ],
+  "windows": [
+   "PetStatusWnd",
+   "PetWnd",
+   "SummonedStatusWnd",
+   "SummonedWnd"
+  ],
+  "formats": [
+   "dddddSdddddddQQQ"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 182,
+  "name": "PetDeletePacket",
+  "acis": "PetDelete",
+  "effect": "UI",
+  "events": [
+   "EV_PetSummonedStatusClose"
+  ],
+  "windows": [
+   "PetStatusWnd",
+   "PetWnd",
+   "SummonedStatusWnd",
+   "SummonedWnd"
+  ],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 183,
+  "name": "PrivateStoreBuyManageList",
+  "acis": "PrivateStoreManageListBuy",
+  "effect": "UI",
+  "events": [
+   "EV_PrivateShopAddItem",
+   "EV_PrivateShopOpenWindow"
+  ],
+  "windows": [
+   "PrivateShopWnd"
+  ],
+  "formats": [
+   "ddd",
+   "dhddhdh",
+   "d",
+   "dhddhdhdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 184,
+  "name": "PrivateStoreBuyList",
+  "acis": "PrivateStoreListBuy",
+  "effect": "UI",
+  "events": [
+   "EV_PrivateShopAddItem",
+   "EV_PrivateShopOpenWindow"
+  ],
+  "windows": [
+   "PrivateShopWnd"
+  ],
+  "formats": [
+   "ddd",
+   "ddhddhdhdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 185,
+  "name": "PrivateStoreBuyMsg",
+  "acis": "PrivateStoreMsgBuy",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 186,
+  "name": "VehicleStartPacket",
+  "acis": "VehicleStarted",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 187,
+  "name": "RequestTimeCheckPacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 188,
+  "name": "StartAllianceWarPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "SS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 189,
+  "name": "ReplyStartAllianceWarPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 190,
+  "name": "StopAllianceWarPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "SS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 191,
+  "name": "ReplyStopAllianceWarPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 192,
+  "name": "SurrenderAllianceWarPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 193,
+  "name": "SkillCoolTimePacket",
+  "acis": "SkillCoolTime",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 194,
+  "name": "PackageToListPacket",
+  "acis": "PackageToList",
+  "effect": "UI",
+  "events": [
+   "EV_SelectDeliverAddName",
+   "EV_SelectDeliverClear"
+  ],
+  "windows": [
+   "SelectDeliverWnd"
+  ],
+  "formats": [
+   "d",
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 195,
+  "name": "PackageSendableListPacket",
+  "acis": "PackageSendableList",
+  "effect": "UI",
+  "events": [
+   "EV_DeliverAddItem",
+   "EV_DeliverOpenWindow"
+  ],
+  "windows": [
+   "DeliverWnd"
+  ],
+  "formats": [
+   "ddd",
+   "h",
+   "dddhhdhhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 196,
+  "name": "EarthQuakePacket",
+  "acis": "Earthquake",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 197,
+  "name": "FlyToLoactionPacket",
+  "acis": "FlyToLocation",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 198,
+  "name": "BlockListPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 199,
+  "name": "SpecialCameraPacket",
+  "acis": "SpecialCamera",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 200,
+  "name": "NormalCameraPacket",
+  "acis": "NormalCamera",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 201,
+  "name": "CastleSiegeInfoPacket",
+  "acis": "SiegeInfo",
+  "effect": "UI",
+  "events": [
+   "EV_SiegeInfo",
+   "EV_SiegeInfoSelectableTime"
+  ],
+  "windows": [
+   "SiegeInfoWnd"
+  ],
+  "formats": [
+   "dddSSdSdd",
+   "d",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 202,
+  "name": "CastleSiegeAttackerListPacket",
+  "acis": "SiegeAttackerList",
+  "effect": "UI",
+  "events": [
+   "EV_SiegeInfoClanList",
+   "EV_SiegeInfoClanListEnd",
+   "EV_SiegeInfoClanListStart"
+  ],
+  "windows": [
+   "SiegeInfoWnd"
+  ],
+  "formats": [
+   "dddddd",
+   "dSSdddSSd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 203,
+  "name": null,
+  "acis": "SiegeDefenderList",
+  "effect": "UI",
+  "events": [
+   "EV_SiegeInfoClanList",
+   "EV_SiegeInfoClanListEnd",
+   "EV_SiegeInfoClanListStart"
+  ],
+  "windows": [
+   "SiegeInfoWnd"
+  ],
+  "formats": [
+   "dddddd",
+   "dSSddddSSd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 204,
+  "name": "NickNameChangedPacket",
+  "acis": "TitleUpdate",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 205,
+  "name": "PledgeStatusChangedPacket",
+  "acis": "PledgeStatusChanged",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 206,
+  "name": "RelationChangedPacket",
+  "acis": "RelationChanged",
+  "effect": "UI",
+  "events": [
+   "EV_ChatWndStatusChange"
+  ],
+  "windows": [
+   "ChatWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 207,
+  "name": "EventTriggerPacket",
+  "acis": "EventTrigger",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 208,
+  "name": "MultiSellListPacket",
+  "acis": "MultiSellList",
+  "effect": "UI",
+  "events": [
+   "EV_MultiSellItemList",
+   "EV_MultiSellItemListEnd",
+   "EV_MultiSellNeededItemList",
+   "EV_MultiSellShopID"
+  ],
+  "windows": [
+   "MultiSellWnd"
+  ],
+  "formats": [
+   "ddddd",
+   "dddchh",
+   "hdhdhdd",
+   "hhdhdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 209,
+  "name": "SetSummonRemainTimePacket",
+  "acis": "SetSummonRemainTime",
+  "effect": "UI",
+  "events": [
+   "EV_SummonedStatusRemainTime"
+  ],
+  "windows": [
+   "SummonedStatusWnd"
+  ],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 210,
+  "name": "SkillRemainSecPacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 211,
+  "name": "NetPingPacket",
+  "acis": null,
+  "effect": "rede",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 212,
+  "name": "DicePacket",
+  "acis": "Dice",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 213,
+  "name": "SnoopPacket",
+  "acis": "Snoop",
+  "effect": "UI",
+  "events": [
+   "EV_GMSnoop"
+  ],
+  "windows": [
+   "GMSnoopWnd"
+  ],
+  "formats": [
+   "dSddSS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 214,
+  "name": "RecipeBookItemListPacket",
+  "acis": "RecipeBookItemList",
+  "effect": "UI",
+  "events": [
+   "EV_RecipeAddBookItem",
+   "EV_RecipeShowBookWnd"
+  ],
+  "windows": [
+   "RecipeBookWnd"
+  ],
+  "formats": [
+   "ddd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 215,
+  "name": "RecipeItemMakeInfoPacket",
+  "acis": "RecipeItemMakeInfo",
+  "effect": "UI",
+  "events": [
+   "EV_RecipeItemMakeInfo"
+  ],
+  "windows": [
+   "RecipeManufactureWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 216,
+  "name": "RecipeShopManageListPacket",
+  "acis": "RecipeShopManageList",
+  "effect": "UI",
+  "events": [
+   "EV_RecipeShopAddBookItem",
+   "EV_RecipeShopAddShopItem",
+   "EV_RecipeShopShowWnd"
+  ],
+  "windows": [
+   "RecipeShopWnd"
+  ],
+  "formats": [
+   "dddd",
+   "dd",
+   "d",
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 217,
+  "name": "RecipeShopSellListPacket",
+  "acis": "RecipeShopSellList",
+  "effect": "UI",
+  "events": [
+   "EV_RecipeShopSellItem",
+   "EV_RecipeShowBuyListWnd"
+  ],
+  "windows": [
+   "RecipeBuyListWnd"
+  ],
+  "formats": [
+   "ddddd",
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 218,
+  "name": "RecipeShopItemInfoPacket",
+  "acis": "RecipeShopItemInfo",
+  "effect": "UI",
+  "events": [
+   "EV_RecipeShopItemInfo"
+  ],
+  "windows": [
+   "RecipeBuyManufactureWnd"
+  ],
+  "formats": [
+   "dddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 219,
+  "name": "RecipeShopMsgPacket",
+  "acis": "RecipeShopMsg",
+  "effect": "dados",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 220,
+  "name": "ShowCalcPacket",
+  "acis": "ShowCalculator",
+  "effect": "UI",
+  "events": [
+   "EV_CalculatorWndShowHide"
+  ],
+  "windows": [
+   "CalculatorWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 221,
+  "name": "MonRaceInfoPacket",
+  "acis": "MonRaceInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd",
+   "d",
+   "ddddddddffd",
+   "c",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 222,
+  "name": "ShowTownMapPacket",
+  "acis": "ShowTownMap",
+  "effect": "UI",
+  "events": [
+   "EV_ShowTownMap"
+  ],
+  "windows": [
+   "TownMapWnd"
+  ],
+  "formats": [
+   "Sdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 223,
+  "name": "ObserverStartPacket",
+  "acis": "ObservationMode",
+  "effect": "UI",
+  "events": [
+   "EV_ObserverWndShow"
+  ],
+  "windows": [
+   "ObserverWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 224,
+  "name": "ObserverEndPacket",
+  "acis": "ObservationReturn",
+  "effect": "UI",
+  "events": [
+   "EV_ObserverWndHide"
+  ],
+  "windows": [
+   "ObserverWnd"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 225,
+  "name": "ChairSitPacket",
+  "acis": "ChairSit",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 226,
+  "name": "HennaEquipListPacket",
+  "acis": "HennaEquipList",
+  "effect": "UI",
+  "events": [
+   "EV_HennaListWndAddHennaEquip",
+   "EV_HennaListWndShowHideEquip"
+  ],
+  "windows": [
+   "HennaListWnd"
+  ],
+  "formats": [
+   "ddd",
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 227,
+  "name": "HennaItemInfoPacket",
+  "acis": "HennaItemInfo",
+  "effect": "UI",
+  "events": [
+   "EV_HennaInfoWndShowHideEquip"
+  ],
+  "windows": [
+   "HennaInfoWnd"
+  ],
+  "formats": [
+   "dddddddcdcdcdcdcdc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 228,
+  "name": "HennaInfoPacket",
+  "acis": "HennaInfo",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryAddHennaInfo",
+   "EV_UpdateHennaInfo"
+  ],
+  "windows": [
+   "DetailStatusWnd",
+   "InventoryWnd"
+  ],
+  "formats": [
+   "ccccccdd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 229,
+  "name": "HennaUnequipListPacket",
+  "acis": "HennaRemoveList",
+  "effect": "UI",
+  "events": [
+   "EV_HennaListWndAddHennaUnEquip",
+   "EV_HennaListWndShowHideUnEquip"
+  ],
+  "windows": [
+   "HennaListWnd"
+  ],
+  "formats": [
+   "ddd",
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 230,
+  "name": "HennaUnequipInfoPacket",
+  "acis": "HennaItemRemoveInfo",
+  "effect": "UI",
+  "events": [
+   "EV_HennaInfoWndShowHideUnEquip"
+  ],
+  "windows": [
+   "HennaInfoWnd"
+  ],
+  "formats": [
+   "dddddddcdcdcdcdcdc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 231,
+  "name": "MacroListPacket",
+  "acis": "SendMacroList",
+  "effect": "UI",
+  "events": [
+   "EV_MacroUpdate"
+  ],
+  "windows": [
+   "MacroListWnd"
+  ],
+  "formats": [
+   "c",
+   "d",
+   "c",
+   "c",
+   "dSSScc",
+   "ccdcS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 232,
+  "name": "BuyListSeedPacket",
+  "acis": "BuyListSeed",
+  "effect": "UI",
+  "events": [
+   "EV_ManorShopWndAddItem",
+   "EV_ManorShopWndOpen"
+  ],
+  "windows": [
+   "ManorShopWnd"
+  ],
+  "formats": [
+   "ddh",
+   "h",
+   "dddhh",
+   "dhhh",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 233,
+  "name": "SellListProcurePacket",
+  "acis": "SellListProcure",
+  "effect": "UI",
+  "events": [
+   "EV_InventoryHideWindow",
+   "EV_ManorShopWndAddItem",
+   "EV_ManorShopWndOpen"
+  ],
+  "windows": [
+   "InventoryWnd",
+   "ManorShopWnd"
+  ],
+  "formats": [
+   "ddh",
+   "h",
+   "dddhh",
+   "dhhh",
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 234,
+  "name": "GMHennaInfoPacket",
+  "acis": "GMViewHennaInfo",
+  "effect": "UI",
+  "events": [
+   "EV_GMAddHennaInfo",
+   "EV_GMUpdateHennaInfo"
+  ],
+  "windows": [
+   "GMDetailStatusWnd",
+   "GMInventoryWnd"
+  ],
+  "formats": [
+   "ccccccdd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 235,
+  "name": "RadarControlPacket",
+  "acis": "RadarControl",
+  "effect": "UI",
+  "events": [
+   "EV_MinimapAddTarget",
+   "EV_MinimapDeleteAllTarget",
+   "EV_RadarAddTarget",
+   "EV_RadarDeleteAllTarget"
+  ],
+  "windows": [
+   "MinimapWnd",
+   "MinimapWnd_Expand",
+   "RadarContainerWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 236,
+  "name": null,
+  "acis": "ClientSetTime",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 237,
+  "name": "ConfirmDlgPacket",
+  "acis": "ConfirmDlg",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "dd",
+   "Q",
+   "ddd",
+   "dd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 238,
+  "name": "PartySpelledPacket",
+  "acis": "PartySpelled",
+  "effect": "UI",
+  "events": [
+   "EV_SummonedStatusSpelledList"
+  ],
+  "windows": [
+   "SummonedStatusWnd"
+  ],
+  "formats": [
+   "ddd",
+   "dhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 239,
+  "name": "ShopPreviewListPacket",
+  "acis": "ShopPreviewList",
+  "effect": "UI",
+  "events": [
+   "EV_ShopAddItem",
+   "EV_ShopOpenWindow"
+  ],
+  "windows": [
+   "ShopWnd"
+  ],
+  "formats": [
+   "dddh",
+   "dhhd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 240,
+  "name": "ShopPreviewInfoPacket",
+  "acis": "ShopPreviewInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddddddddddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 241,
+  "name": "CameraModePacket",
+  "acis": "CameraMode",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 242,
+  "name": "ShowXMasSealPacket",
+  "acis": "ShowXMasSeal",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 243,
+  "name": "EtcStatusUpdatePacket",
+  "acis": "EtcStatusUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_AbnormalStatusEtcItem"
+  ],
+  "windows": [
+   "AbnormalStatusWnd"
+  ],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 244,
+  "name": "ShortBuffStatusUpdatePacket",
+  "acis": "ShortBuffStatusUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_AbnormalStatusShortItem"
+  ],
+  "windows": [
+   "AbnormalStatusWnd"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 245,
+  "name": "SSQStatusPacket",
+  "acis": "SSQStatus",
+  "effect": "UI",
+  "events": [
+   "EV_SSQMainEvent",
+   "EV_SSQPreInfo",
+   "EV_SSQSealStatus",
+   "EV_SSQStatus"
+  ],
+  "windows": [
+   "SSQMainBoard"
+  ],
+  "formats": [
+   "c",
+   "c",
+   "dddccdddddcdddc",
+   "c",
+   "cc",
+   "cddc",
+   "S",
+   "dc",
+   "S",
+   "ccc",
+   "cccc",
+   "cc",
+   "ccd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 246,
+  "name": "PetitionVotePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EnablePetitionFeedback"
+  ],
+  "windows": [
+   "PetitionWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "game",
+  "opcode": 247,
+  "name": "AgitDecoInfoPacket",
+  "acis": "ClanHallDecoration",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 248,
+  "name": "SSQInfoPacket",
+  "acis": "SSQInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "cc"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 249,
+  "name": "GameGuardQueryPacket",
+  "acis": "GameGuardQuery",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 250,
+  "name": "L2FriendListPacket",
+  "acis": "FriendList",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "dSdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 251,
+  "name": "L2FriendPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddSdd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 252,
+  "name": "L2FriendStatusPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSd"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 253,
+  "name": "L2FriendSayPacket",
+  "acis": "L2FriendSay",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dSSS"
+  ]
+ },
+ {
+  "table": "game",
+  "opcode": 254,
+  "name": "DummyPacket",
+  "acis": null,
+  "effect": "log",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 0,
+  "name": "ExDummyPacket",
+  "acis": null,
+  "effect": "sem tratador",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 1,
+  "name": null,
+  "acis": "ExRegenMax",
+  "effect": "UI",
+  "events": [
+   "EV_RegenStatus"
+  ],
+  "windows": [
+   "StatusWnd"
+  ],
+  "formats": [
+   "dddf"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 2,
+  "name": "ExEventMatchListPacket",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 3,
+  "name": "ExEventMatchObserverPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchUpdateTeamName",
+   "EV_StartEventMatchObserver"
+  ],
+  "windows": [
+   "EventMatchObserverWnd"
+  ],
+  "formats": [
+   "dccSSddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 4,
+  "name": "ExEventMatchMessagePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchGMMessage"
+  ],
+  "windows": [
+   "EventMatchGMMsgWnd",
+   "EventMatchSpecialMsgWnd"
+  ],
+  "formats": [
+   "cS"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 5,
+  "name": "ExEventMatchScorePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchUpdateScore"
+  ],
+  "windows": [
+   "EventMatchObserverWnd"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 6,
+  "name": "ExEventMatchTeamInfoPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchUpdateTeamInfo"
+  ],
+  "windows": [
+   "EventMatchGMWnd",
+   "EventMatchObserverWnd"
+  ],
+  "formats": [
+   "dcd",
+   "dSdddddddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 7,
+  "name": "ExEventMatchCreatePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchCreated"
+  ],
+  "windows": [
+   "EventMatchGMWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 8,
+  "name": "ExEventMatchUserInfoPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchUpdateUserInfo"
+  ],
+  "windows": [
+   "EventMatchObserverWnd"
+  ],
+  "formats": [
+   "dSdddddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 9,
+  "name": "ExColosseumFenceInfoPacket",
+  "acis": "ExColosseumFenceInfo",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 10,
+  "name": "ExEventMatchSpelledInfoPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchUpdateUserInfo"
+  ],
+  "windows": [
+   "EventMatchObserverWnd"
+  ],
+  "formats": [
+   "ddd",
+   "dhd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 11,
+  "name": "ExEventMatchFirecrackerPacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 12,
+  "name": "ExEventMatchTeamUnlockedPacket",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 13,
+  "name": "ExEventMatchGMTestPacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ShowEventMatchGMWnd"
+  ],
+  "windows": [
+   "EventMatchGMFenceWnd",
+   "EventMatchGMWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 14,
+  "name": "ExPartyRoomMemberPacket",
+  "acis": "ExPartyRoomMember",
+  "effect": "UI",
+  "events": [
+   "EV_PartyMatchRoomMember"
+  ],
+  "windows": [
+   "PartyMatchRoomWnd"
+  ],
+  "formats": [
+   "dd",
+   "dSdddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 15,
+  "name": "ExClosePartyRoomPacket",
+  "acis": "ExClosePartyRoom",
+  "effect": "UI",
+  "events": [
+   "EV_PartyMatchRoomClose"
+  ],
+  "windows": [
+   "OptionWnd",
+   "PartyMatchRoomWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 16,
+  "name": "ExManagePartyRoomMemberPacket",
+  "acis": "ExManagePartyRoomMember",
+  "effect": "UI",
+  "events": [
+   "EV_PartyMatchRoomMemberUpdate"
+  ],
+  "windows": [
+   "PartyMatchRoomWnd"
+  ],
+  "formats": [
+   "ddSdddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 17,
+  "name": "ExEventMatchLockResult",
+  "acis": null,
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 18,
+  "name": "ExAutoSoulShot",
+  "acis": "ExAutoSoulShot",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 19,
+  "name": "ExFishingStartPacket",
+  "acis": "ExFishingStart",
+  "effect": "UI",
+  "events": [
+   "EV_FishRankEventButtonHide",
+   "EV_FishViewportWndShow"
+  ],
+  "windows": [
+   "FishViewportWnd"
+  ],
+  "formats": [
+   "dddddcc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 20,
+  "name": "ExFishingEndPacket",
+  "acis": "ExFishingEnd",
+  "effect": "UI",
+  "events": [
+   "EV_PetitionChatMessage",
+   "EV_ShowPetitionWnd",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "OnScreenMessageWnd",
+   "PetitionWnd"
+  ],
+  "formats": [
+   "dc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 21,
+  "name": "ExFishingStartCombatPacket",
+  "acis": "ExFishingStartCombat",
+  "effect": "UI",
+  "events": [
+   "EV_PetitionChatMessage",
+   "EV_ShowPetitionWnd",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "OnScreenMessageWnd",
+   "PetitionWnd"
+  ],
+  "formats": [
+   "dddccc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 22,
+  "name": "ExFishingHpRegenPacket",
+  "acis": "ExFishingHpRegen",
+  "effect": "UI",
+  "events": [
+   "EV_PetitionChatMessage",
+   "EV_ShowPetitionWnd",
+   "EV_SystemMessage"
+  ],
+  "windows": [
+   "OnScreenMessageWnd",
+   "PetitionWnd"
+  ],
+  "formats": [
+   "dddcccdc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 23,
+  "name": "ExEnchantSkillListPacket",
+  "acis": "ExEnchantSkillList",
+  "effect": "UI",
+  "events": [
+   "EV_SkillTrainListWndAddSkill",
+   "EV_SkillTrainListWndShow"
+  ],
+  "windows": [
+   "SkillTrainListWnd"
+  ],
+  "formats": [
+   "d",
+   "dddQ"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 24,
+  "name": "ExEnchantSkillInfoPacket",
+  "acis": "ExEnchantSkillInfo",
+  "effect": "UI",
+  "events": [
+   "EV_SkillTrainInfoWndAddExtendInfo",
+   "EV_SkillTrainInfoWndShow"
+  ],
+  "windows": [
+   "SkillTrainInfoWnd"
+  ],
+  "formats": [
+   "dddQd",
+   "d",
+   "dddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 25,
+  "name": "ExShowQuestInfoPacket",
+  "acis": "ExQuestInfo",
+  "effect": "UI",
+  "events": [
+   "EV_QuestInfo",
+   "EV_QuestInfoStart"
+  ],
+  "windows": [
+   "QuestListWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 26,
+  "name": "ExShowQuestMarkPacket",
+  "acis": "ExShowQuestMark",
+  "effect": "UI",
+  "events": [
+   "EV_ArriveShowQuest"
+  ],
+  "windows": [
+   "QuestBtnWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 27,
+  "name": "ExSendManorListPacket",
+  "acis": "ExSendManorList",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d",
+   "dS"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 28,
+  "name": "ExShowSeedInfoPacket",
+  "acis": "ExShowSeedInfo",
+  "effect": "UI",
+  "events": [
+   "EV_ManorInfoWndSeedAdd",
+   "EV_ManorInfoWndSeedShow"
+  ],
+  "windows": [
+   "ManorInfoWnd"
+  ],
+  "formats": [
+   "cddd",
+   "dddddc",
+   "d",
+   "c",
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 29,
+  "name": "ExShowCropInfoPacket",
+  "acis": "ExShowCropInfo",
+  "effect": "UI",
+  "events": [
+   "EV_ManorInfoWndCropAdd",
+   "EV_ManorInfoWndCropShow"
+  ],
+  "windows": [
+   "ManorInfoWnd"
+  ],
+  "formats": [
+   "cddd",
+   "ddddcdc",
+   "d",
+   "c",
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 30,
+  "name": "ExShowManorDefaultInfoPacket",
+  "acis": "ExShowManorDefaultInfo",
+  "effect": "UI",
+  "events": [
+   "EV_ManorInfoWndDefaultAdd",
+   "EV_ManorInfoWndDefaultShow"
+  ],
+  "windows": [
+   "ManorInfoWnd"
+  ],
+  "formats": [
+   "cd",
+   "ddddc",
+   "d",
+   "c",
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 31,
+  "name": "ExShowSeedSettingPacket",
+  "acis": "ExShowSeedSetting",
+  "effect": "UI",
+  "events": [
+   "EV_ManorSeedInfoSettingWndAddItem",
+   "EV_ManorSeedInfoSettingWndAddItemEnd",
+   "EV_ManorSeedInfoSettingWndShow"
+  ],
+  "windows": [
+   "ManorSeedInfoSettingWnd"
+  ],
+  "formats": [
+   "dd",
+   "ddc",
+   "d",
+   "c",
+   "d",
+   "dddddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 32,
+  "name": "ExShowCropSettingPacket",
+  "acis": "ExShowCropSetting",
+  "effect": "UI",
+  "events": [
+   "EV_ManorCropInfoSettingWndAddItem",
+   "EV_ManorCropInfoSettingWndAddItemEnd",
+   "EV_ManorCropInfoSettingWndShow"
+  ],
+  "windows": [
+   "ManorCropInfoSettingWnd"
+  ],
+  "formats": [
+   "dd",
+   "ddc",
+   "d",
+   "c",
+   "d",
+   "ddddddcddc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 33,
+  "name": "ExShowSellCropListPacket",
+  "acis": "ExShowSellCropList",
+  "effect": "UI",
+  "events": [
+   "EV_ManorCropSellWndAddItem",
+   "EV_ManorCropSellWndShow"
+  ],
+  "windows": [
+   "ManorCropSellWnd"
+  ],
+  "formats": [
+   "dd",
+   "dddc",
+   "d",
+   "c",
+   "d",
+   "dddcd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 34,
+  "name": "ExShowProcureCropDetailPacket",
+  "acis": "ExShowProcureCropDetail",
+  "effect": "UI",
+  "events": [
+   "EV_ManorCropSellChangeWndAddItem",
+   "EV_ManorCropSellChangeWndShow"
+  ],
+  "windows": [
+   "ManorCropSellChangeWnd"
+  ],
+  "formats": [
+   "dd",
+   "dddc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 35,
+  "name": "ExHeroListPacket",
+  "acis": "ExHeroList",
+  "effect": "UI",
+  "events": [
+   "EV_HeroShowList"
+  ],
+  "windows": [
+   "HeroTowerWnd"
+  ],
+  "formats": [
+   "d",
+   "SdSdSdd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 36,
+  "name": "ExServerPrimitivePacket",
+  "acis": "ExServerPrimitive",
+  "effect": "debug",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "Sdddddd",
+   "c",
+   "Sddddddd",
+   "Sdddd",
+   "ddd",
+   "ddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 37,
+  "name": "ExOpenMPCCPacket",
+  "acis": "ExOpenMPCC",
+  "effect": "UI",
+  "events": [
+   "EV_CommandChannelStart"
+  ],
+  "windows": [
+   "UnionWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 38,
+  "name": "ExCloseMPCCPacket",
+  "acis": "ExCloseMPCC",
+  "effect": "UI",
+  "events": [
+   "EV_CommandChannelEnd"
+  ],
+  "windows": [
+   "UnionWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 39,
+  "name": "ExAskJoinMPCCPacket",
+  "acis": "ExAskJoinMPCC",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "Sd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 40,
+  "name": "ExPledgeCrestLargePacket",
+  "acis": "ExPledgeCrestLarge",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 41,
+  "name": "ExOlympiadUserInfoPacket",
+  "acis": "ExOlympiadUserInfo",
+  "effect": "UI",
+  "events": [
+   "EV_OlympiadUserInfo"
+  ],
+  "windows": [
+   "OlympiadPlayerWnd",
+   "OlympiadTargetWnd"
+  ],
+  "formats": [
+   "cdSddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 42,
+  "name": "ExOlympiadSpelledInfoPacket",
+  "acis": "ExOlympiadSpelledInfo",
+  "effect": "UI",
+  "events": [
+   "EV_OlympiadBuffInfo"
+  ],
+  "windows": [
+   "OlympiadBuffWnd"
+  ],
+  "formats": [
+   "dd",
+   "dhd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 43,
+  "name": "ExOlympiadModePacket",
+  "acis": "ExOlympiadMode",
+  "effect": "UI",
+  "events": [
+   "EV_OlympiadMatchEnd",
+   "EV_OlympiadTargetShow"
+  ],
+  "windows": [
+   "OlympiadBuffWnd",
+   "OlympiadPlayerWnd",
+   "OlympiadTargetWnd"
+  ],
+  "formats": [
+   "c"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 44,
+  "name": "ExOlympiadMatchEndPacket",
+  "acis": "ExOlympiadMatchEnd",
+  "effect": "UI",
+  "events": [
+   "EV_OlympiadMatchEnd"
+  ],
+  "windows": [
+   "OlympiadBuffWnd",
+   "OlympiadPlayerWnd",
+   "OlympiadTargetWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 45,
+  "name": "ExMailArrivedPacket",
+  "acis": "ExMailArrived",
+  "effect": "UI",
+  "events": [
+   "EV_ArriveNewMail"
+  ],
+  "windows": [
+   "MailBtnWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 46,
+  "name": "ExStorageMaxCountPacket",
+  "acis": "ExStorageMaxCount",
+  "effect": "UI",
+  "events": [
+   "EV_SetMaxCount"
+  ],
+  "windows": [
+   "PrivateShopWnd",
+   "RecipeBookWnd",
+   "WarehouseWnd"
+  ],
+  "formats": [
+   "ddddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 47,
+  "name": "ExEventMatchManagePacket",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_EventMatchManage"
+  ],
+  "windows": [
+   "EventMatchGMWnd"
+  ],
+  "formats": [
+   "dccScScd",
+   "ccdSdd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 48,
+  "name": "ExMultiPartyCommandChannelInfoPacket",
+  "acis": "ExMultiPartyCommandChannelInfo",
+  "effect": "UI",
+  "events": [
+   "EV_CommandChannelInfo",
+   "EV_CommandChannelPartyList"
+  ],
+  "windows": [
+   "UnionWnd"
+  ],
+  "formats": [
+   "Sddd",
+   "Sdd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 49,
+  "name": "ExPCCafePointInfoPacket",
+  "acis": "ExPCCafePointInfo",
+  "effect": "UI",
+  "events": [
+   "EV_PCCafePointInfo"
+  ],
+  "windows": [
+   "PCCafeEventWnd"
+  ],
+  "formats": [
+   "ddcdc"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 50,
+  "name": "ExSetCompassZoneCode",
+  "acis": "ExSetCompassZoneCode",
+  "effect": "UI",
+  "events": [
+   "EV_SetRadarZoneCode"
+  ],
+  "windows": [
+   "RadarWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 51,
+  "name": "ExGetBossRecord",
+  "acis": "ExGetBossRecord",
+  "effect": "UI",
+  "events": [
+   "EV_RaidRecord"
+  ],
+  "windows": [
+   "GuideWnd"
+  ],
+  "formats": [
+   "ddd",
+   "ddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 52,
+  "name": "ExAskJoinPartyRoom",
+  "acis": "ExAskJoinPartyRoom",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "S"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 53,
+  "name": "ExListPartyMatchingWaitingRoom",
+  "acis": "ExListPartyMatchingWaitingRoom",
+  "effect": "UI",
+  "events": [
+   "EV_PartyMatchWaitList",
+   "EV_PartyMatchWaitListStart"
+  ],
+  "windows": [
+   "PartyMatchOutWaitListWnd",
+   "PartyMatchWaitListWnd"
+  ],
+  "formats": [
+   "d",
+   "d",
+   "Sdd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 54,
+  "name": "ExSetMpccRouting",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_CommandChannelRoutingType"
+  ],
+  "windows": [
+   "UnionWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 55,
+  "name": "ExShowAdventurerGuideBook",
+  "acis": "ExShowAdventurerGuideBook",
+  "effect": "UI",
+  "events": [
+   "EV_ShowGuideWnd"
+  ],
+  "windows": [
+   "GuideWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 56,
+  "name": "ExShowScreenMessage",
+  "acis": "ExShowScreenMessage",
+  "effect": "UI",
+  "events": [
+   "EV_ShowScreenMessage"
+  ],
+  "windows": [
+   "OnScreenMessageWnd"
+  ],
+  "formats": [
+   "ddddddddddS"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 57,
+  "name": "PledgeSkillListPacket",
+  "acis": "PledgeSkillList",
+  "effect": "UI",
+  "events": [
+   "EV_ClanSkillList"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "d",
+   "dd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 58,
+  "name": "PledgeSkillListAddPacket",
+  "acis": "PledgeSkillListAdd",
+  "effect": "UI",
+  "events": [
+   "EV_ClanSkillListAdd"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "dd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 59,
+  "name": "PledgePowerGradeList",
+  "acis": "PledgePowerGradeList",
+  "effect": "UI",
+  "events": [
+   "EV_ClanAuthGradeList"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "d",
+   "dd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 60,
+  "name": "PledgeReceivePowerInfo",
+  "acis": "PledgeReceivePowerInfo",
+  "effect": "UI",
+  "events": [
+   "EV_ClanAuthMember"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "dSd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 61,
+  "name": "PledgeReceiveMemberInfo",
+  "acis": "PledgeReceiveMemberInfo",
+  "effect": "UI",
+  "events": [
+   "EV_ClanMemberInfo"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "dSSdSS"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 62,
+  "name": "PledgeReceiveWarList",
+  "acis": "PledgeReceiveWarList",
+  "effect": "UI",
+  "events": [
+   "EV_ClanWarList"
+  ],
+  "windows": [
+   "ClanDrawerWnd"
+  ],
+  "formats": [
+   "ddd",
+   "Sdd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 63,
+  "name": "PledgeReceiveSubPledgeCreated",
+  "acis": "PledgeReceiveSubPledgeCreated",
+  "effect": "UI",
+  "events": [
+   "EV_ClanSubClanUpdated"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "ddSS"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 64,
+  "name": "ExRedSkyPacket",
+  "acis": "ExRedSky",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 65,
+  "name": "PledgeReceiveUpdatePower",
+  "acis": null,
+  "effect": "UI",
+  "events": [
+   "EV_ClanMyAuth"
+  ],
+  "windows": [
+   "ClanWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 66,
+  "name": "FlySelfDestinationPacket",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 67,
+  "name": "ShowPCCafeCouponShowUI",
+  "acis": "ShowPCCafeCouponShowUI",
+  "effect": "UI",
+  "events": [
+   "EV_ShowPCCafeCouponUI"
+  ],
+  "windows": [
+   "CouponEventWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 68,
+  "name": "ExSearchOrc",
+  "acis": "ExOrcMove",
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "b"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 69,
+  "name": "ExCursedWeaponList",
+  "acis": "ExCursedWeaponList",
+  "effect": "UI",
+  "events": [
+   "EV_MinimapCursedWeaponList"
+  ],
+  "windows": [
+   "MinimapWnd",
+   "MinimapWnd_Expand"
+  ],
+  "formats": [
+   "d",
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 70,
+  "name": "ExCursedWeaponLocation",
+  "acis": "ExCursedWeaponLocation",
+  "effect": "UI",
+  "events": [
+   "EV_MinimapCursedWeaponLocation"
+  ],
+  "windows": [
+   "MinimapWnd",
+   "MinimapWnd_Expand"
+  ],
+  "formats": [
+   "d",
+   "ddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 71,
+  "name": "ExRestartClient",
+  "acis": "ExRestartClient",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 72,
+  "name": "ExRequestHackShield",
+  "acis": "ExRequestHackShield",
+  "effect": "log",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 73,
+  "name": "ExUseSharedGroupItem",
+  "acis": "ExUseSharedGroupItem",
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 74,
+  "name": "ExMPCCShowPartyMemberInfo",
+  "acis": "ExMPCCShowPartyMemberInfo",
+  "effect": "UI",
+  "events": [
+   "EV_CommandChannelPartyMember"
+  ],
+  "windows": [
+   "UnionDetailWnd"
+  ],
+  "formats": [
+   "d",
+   "Sdd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 75,
+  "name": "ExDuelAskStart",
+  "acis": "ExDuelAskStart",
+  "effect": "UI",
+  "events": [
+   "EV_DuelAskStart"
+  ],
+  "windows": [
+   "DuelManager"
+  ],
+  "formats": [
+   "Sd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 76,
+  "name": "ExDuelReady",
+  "acis": "ExDuelReady",
+  "effect": "UI",
+  "events": [
+   "EV_DuelReady"
+  ],
+  "windows": [
+   "DuelManager"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 77,
+  "name": "ExDuelStart",
+  "acis": "ExDuelStart",
+  "effect": "UI",
+  "events": [
+   "EV_DuelStart"
+  ],
+  "windows": [
+   "DuelManager"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 78,
+  "name": null,
+  "acis": "ExDuelEnd",
+  "effect": "UI",
+  "events": [
+   "EV_DuelEnd"
+  ],
+  "windows": [
+   "DuelManager"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 79,
+  "name": "ExDuelUpdateUserInfo",
+  "acis": "ExDuelUpdateUserInfo",
+  "effect": "UI",
+  "events": [
+   "EV_DuelUpdateUserInfo"
+  ],
+  "windows": [
+   "DuelManager"
+  ],
+  "formats": [
+   "Sddddddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 80,
+  "name": "ExShowVariationMakeWindow",
+  "acis": "ExShowVariationMakeWindow",
+  "effect": "UI",
+  "events": [
+   "EV_ShowRefineryInteface"
+  ],
+  "windows": [
+   "RefineryWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 81,
+  "name": "ExShowVariationCancelWindow",
+  "acis": "ExShowVariationCancelWindow",
+  "effect": "UI",
+  "events": [
+   "EV_ShowRefineryCancelInteface"
+  ],
+  "windows": [
+   "UnrefineryWnd"
+  ],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 82,
+  "name": "ExPutItemResultForVariationMake",
+  "acis": "ExConfirmVariationItem",
+  "effect": "UI",
+  "events": [
+   "EV_RefineryConfirmTargetItemResult"
+  ],
+  "windows": [
+   "RefineryWnd"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 83,
+  "name": "ExPutIntensiveResultForVariationMake",
+  "acis": "ExConfirmVariationRefiner",
+  "effect": "UI",
+  "events": [
+   "EV_RefineryConfirmRefinerItemResult"
+  ],
+  "windows": [
+   "RefineryWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 84,
+  "name": "ExPutCommissionResultForVariationMake",
+  "acis": "ExConfirmVariationGemstone",
+  "effect": "UI",
+  "events": [
+   "EV_RefineryConfirmGemStoneResult"
+  ],
+  "windows": [
+   "RefineryWnd"
+  ],
+  "formats": [
+   "ddddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 85,
+  "name": "ExVariationResult",
+  "acis": "ExVariationResult",
+  "effect": "UI",
+  "events": [
+   "EV_RefineryRefineResult"
+  ],
+  "windows": [
+   "RefineryWnd"
+  ],
+  "formats": [
+   "ddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 86,
+  "name": "ExPutItemResultForVariationCancel",
+  "acis": "ExConfirmCancelItem",
+  "effect": "UI",
+  "events": [
+   "EV_RefineryConfirmCancelItemResult"
+  ],
+  "windows": [
+   "UnrefineryWnd"
+  ],
+  "formats": [
+   "ddddQd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 87,
+  "name": "ExVariationCancelResult",
+  "acis": "ExVariationCancelResult",
+  "effect": "UI",
+  "events": [
+   "EV_RefineryRefineCancelResult"
+  ],
+  "windows": [
+   "UnrefineryWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 88,
+  "name": "ExDuelEnemyRelation",
+  "acis": "ExDuelEnemyRelation",
+  "effect": "ignorado",
+  "events": [],
+  "windows": [],
+  "formats": []
+ },
+ {
+  "table": "ex",
+  "opcode": 89,
+  "name": "ExPlayAnimation",
+  "acis": null,
+  "effect": "mundo/engine",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "dcdS"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 90,
+  "name": "ExMPCCPartyInfoUpdate",
+  "acis": "ExMPCCPartyInfoUpdate",
+  "effect": "UI",
+  "events": [
+   "EV_CommandChannelPartyUpdate"
+  ],
+  "windows": [
+   "UnionWnd"
+  ],
+  "formats": [
+   "Sddd"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 91,
+  "name": "ExPlayScene",
+  "acis": "ExPlayScene",
+  "effect": "UI",
+  "events": [
+   "EV_ShowPlaySceneInterface"
+  ],
+  "windows": [
+   "TeaserSlideWnd"
+  ],
+  "formats": [
+   "d"
+  ]
+ },
+ {
+  "table": "ex",
+  "opcode": 92,
+  "name": "ExNeedToChangeName",
+  "acis": null,
+  "effect": "UI nativa (C++, sem EV_)",
+  "events": [],
+  "windows": [],
+  "formats": [
+   "ddS"
+  ]
+ }
+]

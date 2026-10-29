@@ -1,0 +1,631 @@
+{
+ "count": 29868,
+ "debuffs": 7196,
+ "consumed": 3254982,
+ "sample": [
+  {
+   "id": 3,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill0003"
+  },
+  {
+   "id": 70,
+   "level": 3,
+   "debuff": 0,
+   "icon": "icon.skill0070"
+  },
+  {
+   "id": 101,
+   "level": 7,
+   "debuff": 1,
+   "icon": "icon.skill0101"
+  },
+  {
+   "id": 112,
+   "level": 153,
+   "debuff": 0,
+   "icon": "icon.skill0112"
+  },
+  {
+   "id": 208,
+   "level": 26,
+   "debuff": 0,
+   "icon": "icon.skill0208"
+  },
+  {
+   "id": 228,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill0228"
+  },
+  {
+   "id": 235,
+   "level": 39,
+   "debuff": 0,
+   "icon": "icon.skill0235"
+  },
+  {
+   "id": 1040,
+   "level": 141,
+   "debuff": 0,
+   "icon": "icon.skill1040"
+  },
+  {
+   "id": 1069,
+   "level": 20,
+   "debuff": 1,
+   "icon": "icon.skill1069"
+  },
+  {
+   "id": 1085,
+   "level": 109,
+   "debuff": 0,
+   "icon": "icon.skill1085"
+  },
+  {
+   "id": 1127,
+   "level": 44,
+   "debuff": 0,
+   "icon": "icon.skill1127"
+  },
+  {
+   "id": 1160,
+   "level": 130,
+   "debuff": 1,
+   "icon": "icon.skill1160"
+  },
+  {
+   "id": 1191,
+   "level": 111,
+   "debuff": 0,
+   "icon": "icon.skill1191"
+  },
+  {
+   "id": 1217,
+   "level": 16,
+   "debuff": 0,
+   "icon": "icon.skill1217"
+  },
+  {
+   "id": 1222,
+   "level": 114,
+   "debuff": 1,
+   "icon": "icon.skill1222"
+  },
+  {
+   "id": 1035,
+   "level": 103,
+   "debuff": 0,
+   "icon": "icon.skill1035"
+  },
+  {
+   "id": 95,
+   "level": 10,
+   "debuff": 1,
+   "icon": "icon.skill0095"
+  },
+  {
+   "id": 223,
+   "level": 9,
+   "debuff": 1,
+   "icon": "icon.skill0223"
+  },
+  {
+   "id": 253,
+   "level": 6,
+   "debuff": 0,
+   "icon": "icon.skill0253"
+  },
+  {
+   "id": 1007,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill1007"
+  },
+  {
+   "id": 1095,
+   "level": 1,
+   "debuff": 1,
+   "icon": "icon.skill1095"
+  },
+  {
+   "id": 1151,
+   "level": 119,
+   "debuff": 0,
+   "icon": "icon.skill1151"
+  },
+  {
+   "id": 1227,
+   "level": 109,
+   "debuff": 0,
+   "icon": "icon.skill1227"
+  },
+  {
+   "id": 111,
+   "level": 145,
+   "debuff": 0,
+   "icon": "icon.skill0111"
+  },
+  {
+   "id": 5,
+   "level": 9,
+   "debuff": 0,
+   "icon": "icon.skill0005"
+  },
+  {
+   "id": 9,
+   "level": 26,
+   "debuff": 0,
+   "icon": "icon.skill0009"
+  },
+  {
+   "id": 19,
+   "level": 7,
+   "debuff": 0,
+   "icon": "icon.skill0019"
+  },
+  {
+   "id": 30,
+   "level": 146,
+   "debuff": 0,
+   "icon": "icon.skill0030"
+  },
+  {
+   "id": 48,
+   "level": 5,
+   "debuff": 1,
+   "icon": "icon.skill0048"
+  },
+  {
+   "id": 69,
+   "level": 155,
+   "debuff": 0,
+   "icon": "icon.skill0069"
+  },
+  {
+   "id": 97,
+   "level": 118,
+   "debuff": 1,
+   "icon": "icon.skill0097"
+  },
+  {
+   "id": 123,
+   "level": 112,
+   "debuff": 0,
+   "icon": "icon.skill0123"
+  },
+  {
+   "id": 190,
+   "level": 128,
+   "debuff": 0,
+   "icon": "icon.skill0190"
+  },
+  {
+   "id": 262,
+   "level": 18,
+   "debuff": 0,
+   "icon": "icon.skill0262"
+  },
+  {
+   "id": 266,
+   "level": 101,
+   "debuff": 0,
+   "icon": "icon.skill0266"
+  },
+  {
+   "id": 270,
+   "level": 167,
+   "debuff": 0,
+   "icon": "icon.skill0270"
+  },
+  {
+   "id": 275,
+   "level": 162,
+   "debuff": 0,
+   "icon": "icon.skill0275"
+  },
+  {
+   "id": 281,
+   "level": 2,
+   "debuff": 1,
+   "icon": "icon.skill0281"
+  },
+  {
+   "id": 1020,
+   "level": 111,
+   "debuff": 0,
+   "icon": "icon.skill1020"
+  },
+  {
+   "id": 1042,
+   "level": 122,
+   "debuff": 1,
+   "icon": "icon.skill1042"
+  },
+  {
+   "id": 1071,
+   "level": 114,
+   "debuff": 1,
+   "icon": "icon.skill1071"
+  },
+  {
+   "id": 1104,
+   "level": 149,
+   "debuff": 1,
+   "icon": "icon.skill1104"
+  },
+  {
+   "id": 1148,
+   "level": 148,
+   "debuff": 0,
+   "icon": "icon.skill1148"
+  },
+  {
+   "id": 1170,
+   "level": 141,
+   "debuff": 1,
+   "icon": "icon.skill1170"
+  },
+  {
+   "id": 1230,
+   "level": 14,
+   "debuff": 0,
+   "icon": "icon.skill1230"
+  },
+  {
+   "id": 1234,
+   "level": 153,
+   "debuff": 0,
+   "icon": "icon.skill1234"
+  },
+  {
+   "id": 1238,
+   "level": 146,
+   "debuff": 0,
+   "icon": "icon.skill1238"
+  },
+  {
+   "id": 1243,
+   "level": 166,
+   "debuff": 0,
+   "icon": "icon.skill1243"
+  },
+  {
+   "id": 1248,
+   "level": 170,
+   "debuff": 1,
+   "icon": "icon.skill1248"
+  },
+  {
+   "id": 1253,
+   "level": 156,
+   "debuff": 0,
+   "icon": "icon.skill1253"
+  },
+  {
+   "id": 285,
+   "level": 11,
+   "debuff": 0,
+   "icon": "icon.skill0285"
+  },
+  {
+   "id": 1261,
+   "level": 102,
+   "debuff": 0,
+   "icon": "icon.skill1261"
+  },
+  {
+   "id": 1267,
+   "level": 124,
+   "debuff": 0,
+   "icon": "icon.skill1267"
+  },
+  {
+   "id": 1275,
+   "level": 159,
+   "debuff": 0,
+   "icon": "icon.skill1275"
+  },
+  {
+   "id": 1284,
+   "level": 117,
+   "debuff": 0,
+   "icon": "icon.skill1284"
+  },
+  {
+   "id": 306,
+   "level": 141,
+   "debuff": 0,
+   "icon": "icon.skill0306"
+  },
+  {
+   "id": 311,
+   "level": 126,
+   "debuff": 0,
+   "icon": "icon.skill0311"
+  },
+  {
+   "id": 315,
+   "level": 116,
+   "debuff": 0,
+   "icon": "icon.skill0315"
+  },
+  {
+   "id": 1298,
+   "level": 169,
+   "debuff": 1,
+   "icon": "icon.skill1298"
+  },
+  {
+   "id": 322,
+   "level": 122,
+   "debuff": 0,
+   "icon": "icon.skill0322"
+  },
+  {
+   "id": 1309,
+   "level": 3,
+   "debuff": 0,
+   "icon": "icon.skill1309"
+  },
+  {
+   "id": 1328,
+   "level": 5,
+   "debuff": 0,
+   "icon": "icon.skill1328"
+  },
+  {
+   "id": 372,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill0372"
+  },
+  {
+   "id": 403,
+   "level": 109,
+   "debuff": 1,
+   "icon": "icon.skill0403"
+  },
+  {
+   "id": 410,
+   "level": 118,
+   "debuff": 0,
+   "icon": "icon.skill0410"
+  },
+  {
+   "id": 1381,
+   "level": 168,
+   "debuff": 0,
+   "icon": "icon.skill1381"
+  },
+  {
+   "id": 1398,
+   "level": 4,
+   "debuff": 0,
+   "icon": "icon.skill1398"
+  },
+  {
+   "id": 1402,
+   "level": 123,
+   "debuff": 0,
+   "icon": "icon.skill1402"
+  },
+  {
+   "id": 1423,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill1423"
+  },
+  {
+   "id": 2198,
+   "level": 5,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 2270,
+   "level": 6,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 3038,
+   "level": 5,
+   "debuff": 0,
+   "icon": "icon.skill1086"
+  },
+  {
+   "id": 3600,
+   "level": 6,
+   "debuff": 0,
+   "icon": "icon.skill1062"
+  },
+  {
+   "id": 3102,
+   "level": 9,
+   "debuff": 1,
+   "icon": "icon.skill3080"
+  },
+  {
+   "id": 3132,
+   "level": 9,
+   "debuff": 0,
+   "icon": "icon.skill3123"
+  },
+  {
+   "id": 3171,
+   "level": 10,
+   "debuff": 0,
+   "icon": "icon.skill3123"
+  },
+  {
+   "id": 3207,
+   "level": 2,
+   "debuff": 0,
+   "icon": "icon.skill3080"
+  },
+  {
+   "id": 3237,
+   "level": 2,
+   "debuff": 0,
+   "icon": "icon.skill3080"
+  },
+  {
+   "id": 4028,
+   "level": 3,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4075,
+   "level": 12,
+   "debuff": 1,
+   "icon": "icon.skill0092"
+  },
+  {
+   "id": 4138,
+   "level": 11,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4160,
+   "level": 4,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4202,
+   "level": 8,
+   "debuff": 1,
+   "icon": "icon.skill1201"
+  },
+  {
+   "id": 4257,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4356,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill1059"
+  },
+  {
+   "id": 4564,
+   "level": 4,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4593,
+   "level": 5,
+   "debuff": 1,
+   "icon": "icon.skill0122"
+  },
+  {
+   "id": 4627,
+   "level": 6,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4668,
+   "level": 3,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4710,
+   "level": 10,
+   "debuff": 1,
+   "icon": "icon.skill0100"
+  },
+  {
+   "id": 4734,
+   "level": 7,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4749,
+   "level": 7,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4770,
+   "level": 7,
+   "debuff": 1,
+   "icon": "icon.skill0101"
+  },
+  {
+   "id": 4822,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skillraid"
+  },
+  {
+   "id": 4415,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 4461,
+   "level": 4,
+   "debuff": 0,
+   "icon": "icon.skill4461"
+  },
+  {
+   "id": 5029,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skillraid"
+  },
+  {
+   "id": 5064,
+   "level": 6,
+   "debuff": 0,
+   "icon": "icon.skill0000"
+  },
+  {
+   "id": 5148,
+   "level": 9,
+   "debuff": 0,
+   "icon": "icon.skill3080"
+  },
+  {
+   "id": 5193,
+   "level": 1,
+   "debuff": 0,
+   "icon": "icon.skill1085"
+  },
+  {
+   "id": 102,
+   "level": 1,
+   "debuff": 1,
+   "icon": "icon.skill0102"
+  },
+  {
+   "id": 1040,
+   "level": 3,
+   "debuff": 0,
+   "icon": "icon.skill1040"
+  },
+  {
+   "id": 1160,
+   "level": 1,
+   "debuff": 1,
+   "icon": "icon.skill1160"
+  },
+  {
+   "id": 1204,
+   "level": 2,
+   "debuff": 0,
+   "icon": "icon.skill1204"
+  }
+ ]
+}

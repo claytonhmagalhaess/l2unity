@@ -1,0 +1,117 @@
+Mono path[0] = 'C:/Users/Clayton/My project/Build/L2Web_Data/Managed'
+Mono config path = 'C:/Users/Clayton/My project/Build/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.6.7f1 (b22767f04f04)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=262144, entitiesPerBlock=1024, blocksPerSlotPage=0, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Users/Clayton/My project/Build/L2Web_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce GTX 1080 Ti
+[D3D12 Device Filter] Driver Version: 32.0.15.8278
+[D3D12 Device Filter] Feature Level: 12.1
+[D3D12 Device Filter] Graphics Memory: 11107 MB
+[D3D12 Device Filter] Processor Count: 28
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeSplitJobs
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Vendor:          NVIDIA
+    VRAM:            11107 MB
+    App VRAM Budget: 10339 MB
+    Driver:          32.0.15.8278
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.006 seconds
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+Using Windows.Gaming.Input
+UnloadTime: 0.448400 ms
+Shader 'Hidden/Universal Render Pipeline/GaussianDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldGaussianPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/GaussianDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldGaussianPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/BokehDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldBokehPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/PaniniProjection' is not supported or has been stripped from the build (in 'PaniniProjectionPostProcessPass'). PostProcessing render passes will not execute.
+[auto] captura 1_login (scrLogin)
+[login] Init sessao=3498faf1 revisao=c621
+[login] GGAuth ok, enviando RequestAuthLogin
+[login] ServerList: #1 127.0.0.1:7777 0/3000 no ar
+[login] RequestServerLogin servidor 1
+[login] PlayOk
+[game] conectando em 127.0.0.1:7777
+[game] KeyPacket recebido, criptografia ligada
+[auto] captura 2_personagens (scrChars)
+[game] CharSelected: L2webTest (268480740) em 86536,148536,-3400
+[l2web] no mundo: L2webTest em 86536, 148536, -3400
+[ev] EV_ChatMessage Type="10" Msg="Announcements: ￿￿Welcome to L2Ketra X500 Custom PVP!" ColorR="128" ColorG="255" ColorB="255"
+[ev] EV_ChatMessage Type="10" Msg="Announcements: ￿￿Website: www.L2Ketra.com" ColorR="128" ColorG="255" ColorB="255"
+[ev] EV_ChatMessage Type="18" Msg="￿￿Commands: .donate | .classmaster | .farm | .menu | .antilag | .lock | .join | .leave | .inventory | .raid" ColorR="0" ColorG="255" ColorB="255"
+[ev] EV_InventoryClear 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryAddItem 
+[ev] EV_InventoryItemListEnd 
+[ev] EV_ShortcutClear 
+[ev] EV_ShortcutUpdate ShortcutID="0"
+[ev] EV_ShortcutUpdate ShortcutID="1"
+[ev] EV_ShortcutUpdate ShortcutID="3"
+[ev] EV_ShortcutUpdate ShortcutID="7"
+[ev] EV_ShortcutUpdate ShortcutID="10"
+[ev] EV_AbnormalStatusNormalItem Max="36" SkillID_0="1040" SkillLevel_0="3" RemainTime_0="3747" Name_0="Shield" IconName_0="icon.skill1040" SkillID_1="1388" SkillLevel_1="3" RemainTime_1="3747" Name_1="Greater Might" IconName_1="icon.skill1388" SkillID_2="1036" SkillLevel_2="2" RemainTime_2="3747" Name_2="Magic Barrier" IconName_2="icon.skill1036" SkillID_3="1035" SkillLevel_3="4" RemainTime_3="3747" Name_3="Mental Shield" IconName_3="icon.skill1035" SkillID_4="1045" SkillLevel_4="6" RemainTime_4="3747" Name_4="Blessed Body" IconName_4="icon.skill1045" SkillID_5="1062" SkillLevel_5="2" RemainTime_5="3747" Name_5="Berserker Spirit" IconName_5="icon.skill1062" SkillID_6="1204" SkillLevel_6="2" RemainTime_6="3747" Name_6="Wind Walk" IconName_6="icon.skill1204" SkillID_7="1242" SkillLevel_7="3" RemainTime_7="3747" Name_7="Death Whisper" IconName_7="icon.skill1242" SkillID_8="1077" SkillLevel_8="3" RemainTime_8="3747" Name_8="Focus" IconName_8="icon.skill1077" SkillID_9="1086" SkillLevel_9="2" RemainTime_9="3747" Name_9="Haste" IconName_9="icon.skill1086" SkillID_10="1068" SkillLevel_10="3" RemainTime_10="3747" Name_10="Might" IconName_10="icon.skill1068" SkillID_11="1240" SkillLevel_11="3" RemainTime_11="3747" Name_11="Guidance" IconName_11="icon.skill1240" SkillID_12="264" SkillLevel_12="1" RemainTime_12="3747" Name_12="Song of Earth" IconName_12="icon.skill0264" SkillID_13="267" SkillLevel_13="1" RemainTime_13="3747" Name_13="Song of Warding" IconName_13="icon.skill0267" SkillID_14="268" SkillLevel_14="1" RemainTime_14="3747" Name_14="Song of Wind" IconName_14="icon.skill0268" SkillID_15="269" SkillLevel_15="1" RemainTime_15="3747" Name_15="Song of Hunter" IconName_15="icon.skill0269" SkillID_16="304" SkillLevel_16="1" RemainTime_16="3747" Name_16="Song of Vitality" IconName_16="icon.skill0304" SkillID_17="364" SkillLevel_17="1" RemainTime_17="3747" Name_17="Song of Champion" IconName_17="icon.skill0364" SkillID_18="270" SkillLevel_18="1" RemainTime_18="3747" Name_18="Song of Invocation" IconName_18="icon.skill0270" SkillID_19="306" SkillLevel_19="1" RemainTime_19="3747" Name_19="Song of Flame Guard" IconName_19="icon.skill0306" SkillID_20="349" SkillLevel_20="1" RemainTime_20="3747" Name_20="Song of Renewal" IconName_20="icon.skill0349" SkillID_21="274" SkillLevel_21="1" RemainTime_21="3747" Name_21="Dance of Fire" IconName_21="icon.skill0274" SkillID_22="275" SkillLevel_22="1" RemainTime_22="3747" Name_22="Dance of Fury" IconName_22="icon.skill0275" SkillID_23="271" SkillLevel_23="1" RemainTime_23="3747" Name_23="Dance of the Warrior" IconName_23="icon.skill0271" SkillID_24="307" SkillLevel_24="1" RemainTime_24="3747" Name_24="Dance of Aqua Guard" IconName_24="icon.skill0307" SkillID_25="1353" SkillLevel_25="1" RemainTime_25="3747" Name_25="Divine Protection" IconName_25="icon.skill1353" SkillID_26="1352" SkillLevel_26="1" RemainTime_26="3747" Name_26="Elemental Protection" IconName_26="icon.skill1352" SkillID_27="1392" SkillLevel_27="3" RemainTime_27="3747" Name_27="Holy Resistance" IconName_27="icon.skill1392" SkillID_28="1393" SkillLevel_28="3" RemainTime_28="3747" Name_28="Unholy Resistance" IconName_28="icon.skill1393" SkillID_29="1259" SkillLevel_29="4" RemainTime_29="3747" Name_29="Resist Shock" IconName_29="icon.skill1259" SkillID_30="1363" SkillLevel_30="1" RemainTime_30="3747" Name_30="Chant of Victory" IconName_30="icon.skill1363" SkillID_31="4699" SkillLevel_31="13" RemainTime_31="3747" Name_31="Blessing of Queen" IconName_31="icon.skill1331" SkillID_32="1323" SkillLevel_32="1" RemainTime_32="3747" Name_32="Noblesse Blessing" IconName_32="icon.skill1323" SkillID_33="1374" SkillLevel_33="1" RemainTime_33="3747" Name_33="Heroic Valor" IconName_33="icon.skill1374" SkillID_34="4551" SkillLevel_34="4" RemainTime_34="3747" Name_34="Hot Springs Rheumatism" IconName_34="icon.skill1164" SkillID_35="4553" SkillLevel_35="4" RemainTime_35="3747" Name_35="Hot Springs Flu" IconName_35="icon.skill1164"
+[ev] EV_AbnormalStatusEtcItem Max="0"
+[ev] EV_SkillListStart 
+[auto] captura 2c_carregando (scrGame)
+[l2web] terreno: 9 pedaços do geodata em volta de 86536, 148536
+[l2web] cenário: 1936 objetos de 287 malhas em 22_22 (426 mil triângulos) · BSP: 5 mil triângulos em 22_22
+[l2web] terreno do Unreal: 22_22
+[auto] no mundo: L2webTest em 86536,148536,-3400; 17 objetos
+[auto] captura 3_mundo (scrGame)
+[ev] EV_SystemMessage Index="1987"
+[ev] EV_ChatMessage Type="5" Msg="As you acted, you are no longer under spawn protection." ColorR="176" ColorG="155" ColorB="121" SysType="0"
+[auto] andando: Run_1HS_MFighter 169 u/s | assets locais=True pedidos de rede ao servidor de assets=0
+[auto] captura 4_andando (scrGame)
+[ev] EV_ShowMinimap SSQStatus="0"
+[ev] EV_MinimapShowReduceBtn 
+[ev] EV_MinimapUpdateGameTime GameHour="12" GameMinute="0"
+[ev] EV_MinimapCursedWeaponList NUM="0"
+[map] aberto=True mapa=370605824 (map_giran_castle_town) vista=497,261 eu=(168, 164, True) zona=Giran Castle Town reduzir=True hora=PM 12 : 00 ssq=Currently Preparing for the Quest Event pos=Giran Castle Town
+[auto] captura map1_cidade (scrGame)
+[ev] EV_MinimapHideReduceBtn 
+[map] reduzido: mapa=0 vista=926,1891 eu=(164, 164, True) botoes+=1
+[auto] captura map2_mundi (scrGame)
+[map] arrastado: vista=836,1837
+[auto] captura map3_arrasto (scrGame)
+[ev] EV_MinimapShowReduceBtn 
+[ev] EV_MinimapUpdateGameTime GameHour="12" GameMinute="0"
+[map] expandido=True tamanho=1024x768 ctrl=994x678 mapa=370605824 vista=30,86
+[auto] captura map4_expandido (scrGame)
+[ev] EV_ShowMinimap SSQStatus="0"
+[map] M de novo: normal=False expandido=False
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

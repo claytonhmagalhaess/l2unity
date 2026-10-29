@@ -1,0 +1,6263 @@
+{
+ "events": {
+  "EV_Test": {
+   "id": 10,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "INT64"
+   ],
+   "script_keys": []
+  },
+  "EV_LoginOK": {
+   "id": 20,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_LoginFail": {
+   "id": 30,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_Restart": {
+   "id": 40,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "LoadingState"
+   ],
+   "script_keys": []
+  },
+  "EV_Die": {
+   "id": 50,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Agit",
+    "BattleCamp",
+    "Castle",
+    "Original",
+    "Village"
+   ],
+   "script_keys": []
+  },
+  "EV_CardKeyLogin": {
+   "id": 60,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_RegenStatus": {
+   "id": 70,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Amount",
+    "Duration",
+    "Ticks",
+    "Type"
+   ],
+   "script_keys": [
+    "Amount",
+    "Duration",
+    "Ticks",
+    "Type"
+   ]
+  },
+  "EV_RadarTransitionFinished": {
+   "id": 80,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShortcutCommand": {
+   "id": 90,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "ACTION",
+    "AnimationType",
+    "ApplyMinFrame",
+    "BackgroundType",
+    "CAMERAVIEWHEIGHTADJUST",
+    "CameraSpeed",
+    "ChinaWarnMsgOKButton",
+    "Command",
+    "EulaWndOKButton",
+    "EventMatchToggleTargetName",
+    "FocusChatWindow",
+    "FontSize",
+    "FontType",
+    "GamingState",
+    "HideAllWindow",
+    "ISKEEPMINFRAMERATE",
+    "LifeTime",
+    "Msg",
+    "MsgColor",
+    "MsgNo",
+    "MsgType",
+    "PLEDGE",
+    "Param1",
+    "Param2",
+    "Perspective",
+    "QUEST",
+    "QuestTreeWnd",
+    "RequestOpenMinimap",
+    "SKILL",
+    "STATUS",
+    "ServerSelectOKButton",
+    "SetGamingState",
+    "SetShortcutPage",
+    "ShadowType",
+    "ShowBoardWindow",
+    "ShowGMPetitionWindow",
+    "ShowGMWindow",
+    "ShowInventoryWindow",
+    "ShowMacroListWindow",
+    "ShowMainWindow",
+    "ShowMessengerWindow",
+    "ShowOptionWindow",
+    "ShowPartyBuff",
+    "ShowShortcutWnd",
+    "ShowSystemMenuWindow",
+    "ShowTestWindow",
+    "ShowWindow",
+    "TabShowInventoryWindow",
+    "TargetCancel",
+    "UseShortcutItem",
+    "Video",
+    "WindowType",
+    "hahaha"
+   ],
+   "script_keys": [
+    "Command"
+   ]
+  },
+  "EV_MagicSkillList": {
+   "id": 100,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SetRadarZoneCode": {
+   "id": 110,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ZoneCode"
+   ],
+   "script_keys": []
+  },
+  "EV_RaidRecord": {
+   "id": 120,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Count",
+    "RaidRank",
+    "SeasonPoint"
+   ],
+   "script_keys": [
+    "Count",
+    "CurrentPoint",
+    "MonsterID",
+    "RaidRank",
+    "SeasonPoint",
+    "TotalPoint"
+   ]
+  },
+  "EV_ShowGuideWnd": {
+   "id": 130,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShowScreenMessage": {
+   "id": 140,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ACTION",
+    "AnimationType",
+    "ApplyMinFrame",
+    "BackgroundType",
+    "CAMERAVIEWHEIGHTADJUST",
+    "CameraSpeed",
+    "ChinaWarnMsgOKButton",
+    "Command",
+    "EulaWndOKButton",
+    "EventMatchToggleTargetName",
+    "FocusChatWindow",
+    "FontSize",
+    "FontType",
+    "GamingState",
+    "HideAllWindow",
+    "ISKEEPMINFRAMERATE",
+    "LifeTime",
+    "Msg",
+    "MsgColor",
+    "MsgNo",
+    "MsgType",
+    "PLEDGE",
+    "Param1",
+    "Param2",
+    "Perspective",
+    "QUEST",
+    "QuestTreeWnd",
+    "RequestOpenMinimap",
+    "SKILL",
+    "STATUS",
+    "ServerSelectOKButton",
+    "SetGamingState",
+    "SetShortcutPage",
+    "ShadowType",
+    "ShowBoardWindow",
+    "ShowGMPetitionWindow",
+    "ShowGMWindow",
+    "ShowInventoryWindow",
+    "ShowMacroListWindow",
+    "ShowMainWindow",
+    "ShowMessengerWindow",
+    "ShowOptionWindow",
+    "ShowPartyBuff",
+    "ShowShortcutWnd",
+    "ShowSystemMenuWindow",
+    "ShowTestWindow",
+    "ShowWindow",
+    "TabShowInventoryWindow",
+    "TargetCancel",
+    "UseShortcutItem",
+    "Video",
+    "WindowType",
+    "hahaha"
+   ],
+   "script_keys": []
+  },
+  "EV_GamingStateEnter": {
+   "id": 150,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GamingStateExit": {
+   "id": 160,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "BroadcastObserverState",
+    "GamingHideWindowState",
+    "OlympiadObserverState",
+    "SpecialCameraState"
+   ],
+   "script_keys": []
+  },
+  "EV_ServerAgeLimitChange": {
+   "id": 170,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "ServerAgeLimit"
+   ],
+   "script_keys": []
+  },
+  "EV_UpdateUserInfo": {
+   "id": 180,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_UpdateHP": {
+   "id": 190,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CurrentHP",
+    "ServerID"
+   ],
+   "script_keys": []
+  },
+  "EV_UpdateMaxHP": {
+   "id": 200,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MaxHP",
+    "ServerID"
+   ],
+   "script_keys": [
+    "ServerID"
+   ]
+  },
+  "EV_UpdateMP": {
+   "id": 210,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CurrentMP",
+    "ServerID"
+   ],
+   "script_keys": [
+    "ServerID"
+   ]
+  },
+  "EV_UpdateMaxMP": {
+   "id": 220,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MaxMP",
+    "ServerID"
+   ],
+   "script_keys": [
+    "ServerID"
+   ]
+  },
+  "EV_UpdateCP": {
+   "id": 230,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CurrentCP",
+    "ServerID"
+   ],
+   "script_keys": [
+    "ServerID"
+   ]
+  },
+  "EV_UpdateMaxCP": {
+   "id": 240,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MaxCP",
+    "ServerID"
+   ],
+   "script_keys": [
+    "ServerID"
+   ]
+  },
+  "EV_UpdatePetInfo": {
+   "id": 250,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_UpdateHennaInfo": {
+   "id": 260,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ReceiveAttack": {
+   "id": 280,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AttackerID",
+    "AttackerName",
+    "Critical",
+    "DefenderID",
+    "DefenderName",
+    "ShieldDefense"
+   ],
+   "script_keys": []
+  },
+  "EV_ReceiveMagicSkillUse": {
+   "id": 290,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "AttackerID",
+    "DefenderID",
+    "SkillID"
+   ],
+   "script_keys": [
+    "AttackerID",
+    "DefenderID",
+    "SkillID"
+   ]
+  },
+  "EV_ReceiveTargetLevelDiff": {
+   "id": 300,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "LevelDiff"
+   ],
+   "script_keys": []
+  },
+  "EV_ShowReplayQuitDialogBox": {
+   "id": 310,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ClanInfo": {
+   "id": 320,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ClanNameValue",
+    "ClanRank",
+    "ClanType",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "SkillLevel",
+    "Status"
+   ],
+   "script_keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ClanNameValue",
+    "ClanRank",
+    "ClanType",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "SkillLevel",
+    "Status"
+   ]
+  },
+  "EV_ClanInfoUpdate": {
+   "id": 330,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanNameValue",
+    "ClanRank",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "LargeCrestID",
+    "SkillLevel",
+    "Status"
+   ],
+   "script_keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanNameValue",
+    "ClanRank",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "LargeCrestID",
+    "SkillLevel",
+    "Status"
+   ]
+  },
+  "EV_ClanMyAuth": {
+   "id": 340,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanCrest",
+    "ClanMaster",
+    "Grade",
+    "Join",
+    "ManageMaster",
+    "NickName",
+    "OustMember",
+    "War"
+   ],
+   "script_keys": [
+    "ClanCrest",
+    "ClanMaster",
+    "Grade",
+    "Join",
+    "ManageMaster",
+    "NickName",
+    "OustMember",
+    "War"
+   ]
+  },
+  "EV_ClanAuthGradeList": {
+   "id": 350,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Count"
+   ],
+   "script_keys": [
+    "Count",
+    "GradeID",
+    "GradeMemberCount"
+   ]
+  },
+  "EV_ClanCrestChange": {
+   "id": 360,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ClanAuth": {
+   "id": 370,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Command",
+    "GradeID"
+   ],
+   "script_keys": [
+    "Command",
+    "GradeID",
+    "PowerValue"
+   ]
+  },
+  "EV_ClanAuthMember": {
+   "id": 380,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Grade",
+    "Name"
+   ],
+   "script_keys": [
+    "Grade",
+    "Name",
+    "PowerValue"
+   ]
+  },
+  "EV_ClanSetAcademyMaster": {
+   "id": 390,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ClanAddMember": {
+   "id": 400,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ],
+   "script_keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ]
+  },
+  "EV_ClanAddMemberMultiple": {
+   "id": 410,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "HaveMaster",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ],
+   "script_keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "HaveMaster",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ]
+  },
+  "EV_ClanDeleteAllMember": {
+   "id": 420,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ClanMemberInfo": {
+   "id": 430,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanType",
+    "GradeID",
+    "MasterName",
+    "Name",
+    "NickName",
+    "OrderName"
+   ],
+   "script_keys": [
+    "ClanType",
+    "GradeID",
+    "MasterName",
+    "Name",
+    "NickName",
+    "OrderName"
+   ]
+  },
+  "EV_ClanMemberInfoUpdate": {
+   "id": 440,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Class",
+    "Gender",
+    "HaveMaster",
+    "ID",
+    "Level",
+    "Name",
+    "PledgeType",
+    "Race"
+   ],
+   "script_keys": [
+    "Class",
+    "Gender",
+    "HaveMaster",
+    "ID",
+    "Level",
+    "Name",
+    "PledgeType",
+    "Race"
+   ]
+  },
+  "EV_ClanDeleteMember": {
+   "id": 450,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Name"
+   ],
+   "script_keys": [
+    "Name"
+   ]
+  },
+  "EV_ClanWarList": {
+   "id": 460,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanName",
+    "Condition",
+    "Page",
+    "Period",
+    "Type"
+   ],
+   "script_keys": [
+    "ClanName",
+    "Page",
+    "Period",
+    "Type"
+   ]
+  },
+  "EV_ClanClearWarList": {
+   "id": 470,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": [
+    "Condition"
+   ]
+  },
+  "EV_ClanSubClanUpdated": {
+   "id": 480,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanID",
+    "ClanName",
+    "ClanType",
+    "MasterName"
+   ],
+   "script_keys": [
+    "ClanID",
+    "ClanName",
+    "ClanType",
+    "MasterName"
+   ]
+  },
+  "EV_ClanSkillList": {
+   "id": 490,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Count"
+   ],
+   "script_keys": [
+    "Count",
+    "SkillID",
+    "SkillLevel"
+   ]
+  },
+  "EV_ClanSkillListAdd": {
+   "id": 500,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "SkillID",
+    "SkillLevel"
+   ],
+   "script_keys": [
+    "SkillID",
+    "SkillLevel"
+   ]
+  },
+  "EV_MinFrameRateChanged": {
+   "id": 510,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PartyMemberChanged": {
+   "id": 520,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "CurMP",
+    "ID",
+    "Level",
+    "MasterID",
+    "MaxCP",
+    "MaxHP",
+    "MaxMP",
+    "Name",
+    "PartyMemberCount",
+    "RoutingType"
+   ],
+   "script_keys": [
+    "PartyMemberCount"
+   ]
+  },
+  "EV_ShowPCCafeCouponUI": {
+   "id": 530,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ChatMessage": {
+   "id": 540,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Msg",
+    "SysType",
+    "Type"
+   ],
+   "script_keys": [
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Msg",
+    "SysType",
+    "Type"
+   ]
+  },
+  "EV_ChatWndStatusChange": {
+   "id": 550,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "CurMP",
+    "ID",
+    "Level",
+    "MasterID",
+    "MaxCP",
+    "MaxHP",
+    "MaxMP",
+    "Name",
+    "PartyMemberCount",
+    "RoutingType"
+   ],
+   "script_keys": []
+  },
+  "EV_ChatWndSetString": {
+   "id": 560,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "String"
+   ],
+   "script_keys": [
+    "String"
+   ]
+  },
+  "EV_ChatWndSetFocus": {
+   "id": 570,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "GAMINGSTATE",
+    "LOGINSTATE",
+    "OLYMPIADOBSERVERSTATE"
+   ],
+   "script_keys": []
+  },
+  "EV_ChatWndMsnStatus": {
+   "id": 571,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "AWY",
+    "BRB",
+    "BSY",
+    "CHG",
+    "FLN",
+    "HDN",
+    "IDL",
+    "LUN",
+    "NLN",
+    "PHN",
+    "away",
+    "berightback",
+    "busy",
+    "idle",
+    "invisible",
+    "lunch",
+    "none",
+    "offline",
+    "online",
+    "onthephone",
+    "status"
+   ],
+   "script_keys": [
+    "status"
+   ]
+  },
+  "EV_ChatWndMacroCommand": {
+   "id": 572,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "Command"
+   ],
+   "script_keys": [
+    "Command"
+   ]
+  },
+  "EV_SystemMessage": {
+   "id": 580,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Index"
+   ],
+   "script_keys": []
+  },
+  "EV_JoypadLButtonDown": {
+   "id": 590,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_JoypadLButtonUp": {
+   "id": 600,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_JoypadRButtonDown": {
+   "id": 610,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_JoypadRButtonUp": {
+   "id": 620,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShortcutUpdate": {
+   "id": 630,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Game",
+    "IsLockShortcutWnd",
+    "ShortcutID",
+    "pItem",
+    "pShortcutDelay",
+    "pShortcutItem",
+    "pShortcutItemInfo"
+   ],
+   "script_keys": [
+    "ShortcutID"
+   ]
+  },
+  "EV_ShortcutPageUpdate": {
+   "id": 640,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "ShortcutPage"
+   ],
+   "script_keys": [
+    "ShortcutPage"
+   ]
+  },
+  "EV_ShortcutClear": {
+   "id": 650,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShortcutJoypad": {
+   "id": 660,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "OnOff"
+   ],
+   "script_keys": [
+    "OnOff"
+   ]
+  },
+  "EV_ShortcutPageDown": {
+   "id": 670,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShortcutPageUp": {
+   "id": 680,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShowShortcutWnd": {
+   "id": 690,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "ACTION",
+    "AnimationType",
+    "ApplyMinFrame",
+    "BackgroundType",
+    "CAMERAVIEWHEIGHTADJUST",
+    "CameraSpeed",
+    "ChinaWarnMsgOKButton",
+    "Command",
+    "EulaWndOKButton",
+    "EventMatchToggleTargetName",
+    "FocusChatWindow",
+    "FontSize",
+    "FontType",
+    "GamingState",
+    "HideAllWindow",
+    "ISKEEPMINFRAMERATE",
+    "LifeTime",
+    "Msg",
+    "MsgColor",
+    "MsgNo",
+    "MsgType",
+    "PLEDGE",
+    "Param1",
+    "Param2",
+    "Perspective",
+    "QUEST",
+    "QuestTreeWnd",
+    "RequestOpenMinimap",
+    "SKILL",
+    "STATUS",
+    "ServerSelectOKButton",
+    "SetGamingState",
+    "SetShortcutPage",
+    "ShadowType",
+    "ShowBoardWindow",
+    "ShowGMPetitionWindow",
+    "ShowGMWindow",
+    "ShowInventoryWindow",
+    "ShowMacroListWindow",
+    "ShowMainWindow",
+    "ShowMessengerWindow",
+    "ShowOptionWindow",
+    "ShowPartyBuff",
+    "ShowShortcutWnd",
+    "ShowSystemMenuWindow",
+    "ShowTestWindow",
+    "ShowWindow",
+    "TabShowInventoryWindow",
+    "TargetCancel",
+    "UseShortcutItem",
+    "Video",
+    "WindowType",
+    "hahaha"
+   ],
+   "script_keys": []
+  },
+  "EV_QuestListStart": {
+   "id": 700,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_QuestList": {
+   "id": 710,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "Completed",
+    "Level",
+    "QuestID"
+   ],
+   "script_keys": []
+  },
+  "EV_QuestListEnd": {
+   "id": 720,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_QuestSetCurrentID": {
+   "id": 730,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "Index",
+    "QuestID"
+   ],
+   "script_keys": []
+  },
+  "EV_SSQStatus": {
+   "id": 740,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Contribution",
+    "MsgNum1",
+    "MsgNum2",
+    "Period",
+    "SSQStatus",
+    "SSQTeam",
+    "SealStoneAdena",
+    "SelectedSeal",
+    "Team1HuntingMark",
+    "Team1MainEventMark",
+    "Team1Per",
+    "Team1TotalMark",
+    "Team2HuntingMark",
+    "Team2MainEventMark",
+    "Team2Per",
+    "Team2TotalMark"
+   ],
+   "script_keys": []
+  },
+  "EV_SSQMainEvent": {
+   "id": 750,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "EventNum",
+    "SSQStatus"
+   ],
+   "script_keys": []
+  },
+  "EV_SSQSealStatus": {
+   "id": 760,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "NeedPoint1",
+    "NeedPoint2",
+    "SSQStatus",
+    "SealNum"
+   ],
+   "script_keys": []
+  },
+  "EV_SSQPreInfo": {
+   "id": 770,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "RoomNum",
+    "Winner"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShowBuyListWnd": {
+   "id": 780,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena",
+    "CurrentMP",
+    "MaxMP",
+    "ServerID"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShopSellItem": {
+   "id": 790,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CanbeMade",
+    "MakingFee",
+    "RecipeID"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShopItemInfo": {
+   "id": 800,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena",
+    "CurrentMP",
+    "MakingResult",
+    "MaxMP",
+    "MerchantID",
+    "RecipeID"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShowRecipeTreeWnd": {
+   "id": 810,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_RecipeShowBookWnd": {
+   "id": 820,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CurrentMP",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeAddBookItem": {
+   "id": 830,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "RecipeID"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeItemMakeInfo": {
+   "id": 840,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CurrentMP",
+    "MakingResult",
+    "MaxMP",
+    "RecipeID",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShopShowWnd": {
+   "id": 850,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShopAddBookItem": {
+   "id": 860,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "RecipeID"
+   ],
+   "script_keys": []
+  },
+  "EV_RecipeShopAddShopItem": {
+   "id": 870,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CanbeMade",
+    "MakingFee",
+    "RecipeID"
+   ],
+   "script_keys": []
+  },
+  "EV_HeroShowList": {
+   "id": 880,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Max"
+   ],
+   "script_keys": []
+  },
+  "EV_HeroRecord": {
+   "id": 890,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_OlympiadTargetShow": {
+   "id": 900,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "GamingState",
+    "OlympiadObserverState",
+    "OlympiadTargetWnd",
+    "PlayerNum"
+   ],
+   "script_keys": []
+  },
+  "EV_OlympiadMatchEnd": {
+   "id": 910,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "GamingState",
+    "OlympiadObserverState",
+    "OlympiadTargetWnd",
+    "PlayerNum"
+   ],
+   "script_keys": []
+  },
+  "EV_OlympiadUserInfo": {
+   "id": 920,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "ID",
+    "IsPlayer",
+    "MaxCP",
+    "MaxHP",
+    "Name",
+    "OlympiadObserverState",
+    "PlayerNum"
+   ],
+   "script_keys": []
+  },
+  "EV_OlympiadBuffShow": {
+   "id": 930,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_OlympiadBuffInfo": {
+   "id": 940,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Max",
+    "PlayerID"
+   ],
+   "script_keys": []
+  },
+  "EV_AbnormalStatusNormalItem": {
+   "id": 950,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Max",
+    "OlympiadObserverState"
+   ],
+   "script_keys": []
+  },
+  "EV_AbnormalStatusEtcItem": {
+   "id": 960,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Max"
+   ],
+   "script_keys": []
+  },
+  "EV_AbnormalStatusShortItem": {
+   "id": 970,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Max"
+   ],
+   "script_keys": []
+  },
+  "EV_TargetUpdate": {
+   "id": 980,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_TargetHideWindow": {
+   "id": 990,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShowBuffIcon": {
+   "id": 1000,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "Show"
+   ],
+   "script_keys": []
+  },
+  "EV_PetWndShow": {
+   "id": 1010,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PetWndShowNameBtn": {
+   "id": 1020,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Show"
+   ],
+   "script_keys": []
+  },
+  "EV_PetWndRegPetNameFailed": {
+   "id": 1030,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ErrMsgNo"
+   ],
+   "script_keys": []
+  },
+  "EV_PetStatusShow": {
+   "id": 1040,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PetStatusSpelledList": {
+   "id": 1050,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PetInventoryItemStart": {
+   "id": 1060,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PetInventoryItemList": {
+   "id": 1070,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PetInventoryItemUpdate": {
+   "id": 1080,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "WorkType"
+   ],
+   "script_keys": []
+  },
+  "EV_SummonedWndShow": {
+   "id": 1090,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SummonedStatusShow": {
+   "id": 1100,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SummonedStatusSpelledList": {
+   "id": 1110,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ID",
+    "Max"
+   ],
+   "script_keys": []
+  },
+  "EV_SummonedStatusRemainTime": {
+   "id": 1120,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MaxTime",
+    "RemainTime"
+   ],
+   "script_keys": []
+  },
+  "EV_PetSummonedStatusClose": {
+   "id": 1130,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PartyAddParty": {
+   "id": 1140,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "CurMP",
+    "ID",
+    "Level",
+    "MasterID",
+    "MaxCP",
+    "MaxHP",
+    "MaxMP",
+    "Name",
+    "PartyMemberCount",
+    "RoutingType"
+   ],
+   "script_keys": []
+  },
+  "EV_PartyUpdateParty": {
+   "id": 1150,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "CurMP",
+    "ID",
+    "Level",
+    "MaxCP",
+    "MaxHP",
+    "MaxMP",
+    "Name"
+   ],
+   "script_keys": []
+  },
+  "EV_PartyDeleteParty": {
+   "id": 1160,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ID",
+    "PartyMemberCount"
+   ],
+   "script_keys": []
+  },
+  "EV_PartyDeleteAllParty": {
+   "id": 1170,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "PartyMemberCount"
+   ],
+   "script_keys": []
+  },
+  "EV_PartySpelledList": {
+   "id": 1180,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShowBBS": {
+   "id": 1190,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "Index",
+    "Init",
+    "QuestID"
+   ],
+   "script_keys": []
+  },
+  "EV_ShowBoardPacket": {
+   "id": 1200,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Address",
+    "Command1",
+    "Command2",
+    "Command3",
+    "Command4",
+    "Command5",
+    "Command6",
+    "Command7",
+    "Command8",
+    "OK"
+   ],
+   "script_keys": []
+  },
+  "EV_ShowHelp": {
+   "id": 1210,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "FilePath"
+   ],
+   "script_keys": []
+  },
+  "EV_LoadHelpHtml": {
+   "id": 1220,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "HtmlString"
+   ],
+   "script_keys": []
+  },
+  "EV_LoadPetitionHtml": {
+   "id": 1221,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "HtmlString"
+   ],
+   "script_keys": [
+    "HtmlString"
+   ]
+  },
+  "EV_MacroShowListWnd": {
+   "id": 1230,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MacroUpdate": {
+   "id": 1240,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MacroList": {
+   "id": 1250,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "Max"
+   ],
+   "script_keys": []
+  },
+  "EV_MacroShowEditWnd": {
+   "id": 1260,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MacroDeleted": {
+   "id": 1270,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "MacroID"
+   ],
+   "script_keys": []
+  },
+  "EV_SkillListStart": {
+   "id": 1280,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SkillList": {
+   "id": 1290,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "Command",
+    "Description",
+    "EnchantName",
+    "IconName",
+    "Level",
+    "Lock",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_ActionListStart": {
+   "id": 1300,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ActionID",
+    "Command",
+    "Description",
+    "IconName",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_ActionList": {
+   "id": 1310,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ActionID",
+    "Command",
+    "Description",
+    "IconName",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_ActionPetListStart": {
+   "id": 1320,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ActionID",
+    "Command",
+    "Description",
+    "IconName",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_ActionPetList": {
+   "id": 1330,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ActionID",
+    "Command",
+    "Description",
+    "IconName",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_ActionSummonedListStart": {
+   "id": 1340,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ActionID",
+    "Command",
+    "Description",
+    "IconName",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_ActionSummonedList": {
+   "id": 1350,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "ActionID",
+    "Command",
+    "Description",
+    "IconName",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_CommandChannelStart": {
+   "id": 1360,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_CommandChannelEnd": {
+   "id": 1370,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_CommandChannelInfo": {
+   "id": 1380,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "OwnerName",
+    "PartyMemberNum",
+    "PartyNum",
+    "RoutingType"
+   ],
+   "script_keys": []
+  },
+  "EV_CommandChannelPartyList": {
+   "id": 1390,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MasterID",
+    "MasterName",
+    "PartyNum"
+   ],
+   "script_keys": []
+  },
+  "EV_CommandChannelPartyUpdate": {
+   "id": 1395,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MasterID",
+    "MasterName",
+    "MemberCount",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_CommandChannelRoutingType": {
+   "id": 1400,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "RoutingType"
+   ],
+   "script_keys": []
+  },
+  "EV_CommandChannelPartyMember": {
+   "id": 1420,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MemberCount"
+   ],
+   "script_keys": []
+  },
+  "EV_RestartMenuShow": {
+   "id": 1430,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_RestartMenuHide": {
+   "id": 1440,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SiegeInfo": {
+   "id": 1450,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanName",
+    "IsOwner",
+    "NowTime",
+    "OwnerName",
+    "SiegeTime"
+   ],
+   "script_keys": []
+  },
+  "EV_SiegeInfoClanListStart": {
+   "id": 1460,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_SiegeInfoClanList": {
+   "id": 1470,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AllianceID",
+    "AllianceMasterName",
+    "AllianceName",
+    "ClanCrestID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ProposeTime",
+    "Status",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_SiegeInfoClanListEnd": {
+   "id": 1480,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_SiegeInfoSelectableTime": {
+   "id": 1490,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "TimeID"
+   ],
+   "script_keys": []
+  },
+  "EV_IMEStatusChange": {
+   "id": 1500,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ArriveNewTutorialQuestion": {
+   "id": 1510,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "QuestionID"
+   ],
+   "script_keys": []
+  },
+  "EV_ArriveShowQuest": {
+   "id": 1520,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "QuestID"
+   ],
+   "script_keys": []
+  },
+  "EV_ArriveNewMail": {
+   "id": 1530,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "IdxMail"
+   ],
+   "script_keys": []
+  },
+  "EV_PartyMatchStart": {
+   "id": 1540,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PartyMatchRoomStart": {
+   "id": 1550,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "LootingMethodID",
+    "MaxLevel",
+    "MaxMember",
+    "MinLevel",
+    "RoomName",
+    "RoomNum",
+    "ZoneID"
+   ],
+   "script_keys": [
+    "LootingMethodID",
+    "MaxLevel",
+    "MaxMember",
+    "MinLevel",
+    "RoomName",
+    "RoomNum",
+    "ZoneID"
+   ]
+  },
+  "EV_PartyMatchRoomClose": {
+   "id": 1560,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PartyMatchList": {
+   "id": 1570,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "PageNum",
+    "RoomCount"
+   ],
+   "script_keys": [
+    "CurMember_",
+    "Leader_",
+    "MaxLevel_",
+    "MaxMember_",
+    "MinLevel_",
+    "PageNum",
+    "RoomCount",
+    "RoomName_",
+    "RoomNum_",
+    "ZoneID_"
+   ]
+  },
+  "EV_PartyMatchRoomMember": {
+   "id": 1580,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MemberCount",
+    "MyMembershipType"
+   ],
+   "script_keys": [
+    "ClassID_",
+    "Level_",
+    "MemberCount",
+    "MemberID_",
+    "MemberName_",
+    "MembershipType_",
+    "MyMembershipType",
+    "ZoneID_"
+   ]
+  },
+  "EV_PartyMatchRoomMemberUpdate": {
+   "id": 1590,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "Level",
+    "MemberID",
+    "MemberName",
+    "MembershipType",
+    "UpdateType",
+    "ZoneID"
+   ],
+   "script_keys": [
+    "ClassID",
+    "Level",
+    "MemberID",
+    "MemberName",
+    "MembershipType",
+    "UpdateType",
+    "ZoneID"
+   ]
+  },
+  "EV_PartyMatchChatMessage": {
+   "id": 1600,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ColorA",
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Message",
+    "Msg"
+   ],
+   "script_keys": [
+    "ColorA",
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Msg"
+   ]
+  },
+  "EV_PartyMatchWaitListStart": {
+   "id": 1610,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AllCount",
+    "Count"
+   ],
+   "script_keys": [
+    "AllCount",
+    "Count"
+   ]
+  },
+  "EV_PartyMatchWaitList": {
+   "id": 1620,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "Level",
+    "Name"
+   ],
+   "script_keys": [
+    "ClassID",
+    "Level",
+    "Name"
+   ]
+  },
+  "EV_PartyMatchCommand": {
+   "id": 1630,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "Message"
+   ],
+   "script_keys": []
+  },
+  "EV_HennaListWndShowHideEquip": {
+   "id": 1640,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena"
+   ],
+   "script_keys": [
+    "Adena"
+   ]
+  },
+  "EV_HennaListWndAddHennaEquip": {
+   "id": 1650,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "Description",
+    "HennaID",
+    "IconName",
+    "NumberOfItem"
+   ],
+   "script_keys": []
+  },
+  "EV_HennaInfoWndShowHideEquip": {
+   "id": 1660,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena",
+    "CONchange",
+    "CONnow",
+    "ClassID",
+    "DEXchange",
+    "DEXnow",
+    "DyeIconName",
+    "DyeName",
+    "HennaID",
+    "INTchange",
+    "INTnow",
+    "MENchange",
+    "MENnow",
+    "NumOfItem",
+    "STRchange",
+    "STRnow",
+    "TattooAddName",
+    "TattooIconName",
+    "TattooName",
+    "WITchange",
+    "WITnow"
+   ],
+   "script_keys": [
+    "Adena",
+    "CONchange",
+    "CONnow",
+    "ClassID",
+    "DEXchange",
+    "DEXnow",
+    "DyeIconName",
+    "DyeName",
+    "Fee",
+    "HennaID",
+    "INTchange",
+    "INTnow",
+    "MENchange",
+    "MENnow",
+    "NumOfItem",
+    "STRchange",
+    "STRnow",
+    "TattooAddName",
+    "TattooIconName",
+    "TattooName",
+    "WITchange",
+    "WITnow"
+   ]
+  },
+  "EV_HennaListWndShowHideUnEquip": {
+   "id": 1670,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena"
+   ],
+   "script_keys": [
+    "Adena"
+   ]
+  },
+  "EV_HennaListWndAddHennaUnEquip": {
+   "id": 1680,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "Description",
+    "HennaID",
+    "IconName",
+    "NumberOfItem"
+   ],
+   "script_keys": [
+    "ClassID",
+    "Description",
+    "Fee",
+    "HennaID",
+    "IconName",
+    "Name",
+    "NumOfItem"
+   ]
+  },
+  "EV_HennaInfoWndShowHideUnEquip": {
+   "id": 1690,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena",
+    "CONchange",
+    "CONnow",
+    "ClassID",
+    "DEXchange",
+    "DEXnow",
+    "DyeIconName",
+    "DyeName",
+    "HennaID",
+    "INTchange",
+    "INTnow",
+    "MENchange",
+    "MENnow",
+    "NumOfItem",
+    "STRchange",
+    "STRnow",
+    "TattooAddName",
+    "TattooIconName",
+    "TattooName",
+    "WITchange",
+    "WITnow"
+   ],
+   "script_keys": [
+    "Adena",
+    "CONchange",
+    "CONnow",
+    "ClassID",
+    "DEXchange",
+    "DEXnow",
+    "DyeIconName",
+    "DyeName",
+    "Fee",
+    "HennaID",
+    "INTchange",
+    "INTnow",
+    "MENchange",
+    "MENnow",
+    "NumOfItem",
+    "STRchange",
+    "STRnow",
+    "TattooAddName",
+    "TattooIconName",
+    "TattooName",
+    "WITchange",
+    "WITnow"
+   ]
+  },
+  "EV_CalculatorWndShowHide": {
+   "id": 1700,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_DialogOK": {
+   "id": 1710,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_DialogCancel": {
+   "id": 1720,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_RadarAddTarget": {
+   "id": 1730,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "X",
+    "Y",
+    "Z"
+   ],
+   "script_keys": [
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  "EV_RadarDeleteTarget": {
+   "id": 1740,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": [
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  "EV_RadarDeleteAllTarget": {
+   "id": 1750,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "X",
+    "Y",
+    "Z"
+   ],
+   "script_keys": []
+  },
+  "EV_RadarColor": {
+   "id": 1760,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShowTownMap": {
+   "id": 1770,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "TownMapName",
+    "UserPosX",
+    "UserPosY"
+   ],
+   "script_keys": [
+    "TownMapName",
+    "UserPosX",
+    "UserPosY"
+   ]
+  },
+  "EV_ShowMinimap": {
+   "id": 1780,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "SSQStatus"
+   ],
+   "script_keys": [
+    "SSQStatus"
+   ]
+  },
+  "EV_MinimapAddTarget": {
+   "id": 1790,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "X",
+    "Y",
+    "Z"
+   ],
+   "script_keys": [
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  "EV_MinimapDeleteTarget": {
+   "id": 1800,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "X",
+    "Y",
+    "Z"
+   ],
+   "script_keys": [
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  "EV_MinimapDeleteAllTarget": {
+   "id": 1810,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "X",
+    "Y",
+    "Z"
+   ],
+   "script_keys": []
+  },
+  "EV_MinimapShowQuest": {
+   "id": 1820,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MinimapHideQuest": {
+   "id": 1830,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MinimapChangeOnTick": {
+   "id": 1840,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MinimapCursedWeaponList": {
+   "id": 1850,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "NUM"
+   ],
+   "script_keys": [
+    "ID",
+    "NAME",
+    "NUM"
+   ]
+  },
+  "EV_MinimapCursedWeaponLocation": {
+   "id": 1860,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "NUM"
+   ],
+   "script_keys": [
+    "ID",
+    "ISOWNED",
+    "NAME",
+    "NUM",
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  "EV_MinimapShowReduceBtn": {
+   "id": 1870,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MinimapHideReduceBtn": {
+   "id": 1880,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MinimapUpdateGameTime": {
+   "id": 1890,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "GameHour",
+    "GameMinute"
+   ],
+   "script_keys": [
+    "GameHour",
+    "GameMinute"
+   ]
+  },
+  "EV_LanguageChanged": {
+   "id": 1900,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PCCafePointInfo": {
+   "id": 1910,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AddPoint",
+    "PeriodType",
+    "PointType",
+    "RemainTime",
+    "TotalPoint"
+   ],
+   "script_keys": [
+    "AddPoint",
+    "PeriodType",
+    "PointType",
+    "RemainTime",
+    "TotalPoint"
+   ]
+  },
+  "EV_ShowPetitionWnd": {
+   "id": 1920,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ColorA",
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Message",
+    "Msg"
+   ],
+   "script_keys": []
+  },
+  "EV_ShowUserPetitionWnd": {
+   "id": 1921,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "Message"
+   ],
+   "script_keys": [
+    "Message"
+   ]
+  },
+  "EV_PetitionChatMessage": {
+   "id": 1930,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ColorA",
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Message",
+    "Msg"
+   ],
+   "script_keys": [
+    "ColorA",
+    "ColorB",
+    "ColorG",
+    "ColorR",
+    "Message"
+   ]
+  },
+  "EV_EnablePetitionFeedback": {
+   "id": 1940,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": [
+    "Enable"
+   ]
+  },
+  "EV_TradeStart": {
+   "id": 1950,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "targetID"
+   ],
+   "script_keys": [
+    "targetId"
+   ]
+  },
+  "EV_TradeAddItem": {
+   "id": 1960,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "destination",
+    "inventoryList",
+    "myList",
+    "otherList"
+   ],
+   "script_keys": [
+    "destination"
+   ]
+  },
+  "EV_TradeDone": {
+   "id": 1970,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_TradeOtherOK": {
+   "id": 1980,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_TradeUpdateInventoryItem": {
+   "id": 1990,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "add",
+    "delete",
+    "type",
+    "update"
+   ],
+   "script_keys": [
+    "type"
+   ]
+  },
+  "EV_TradeRequestStartExchange": {
+   "id": 2000,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "targetID"
+   ],
+   "script_keys": [
+    "targetID"
+   ]
+  },
+  "EV_SkillTrainListWndShow": {
+   "id": 2010,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Type"
+   ],
+   "script_keys": [
+    "Type"
+   ]
+  },
+  "EV_SkillTrainListWndHide": {
+   "id": 2020,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SkillTrainListWndAddSkill": {
+   "id": 2030,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "bItemConsume",
+    "iEXPConsume",
+    "iID",
+    "iLevel",
+    "iMaxLevel",
+    "iSPConsume",
+    "iType",
+    "strDescription",
+    "strEnchantName",
+    "strIconName",
+    "strName",
+    "strOperateType"
+   ],
+   "script_keys": [
+    "iID",
+    "iLevel",
+    "iSPConsume",
+    "strEnchantName",
+    "strIconName",
+    "strName"
+   ]
+  },
+  "EV_SkillTrainInfoWndShow": {
+   "id": 2040,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "iCastRange",
+    "iEXPConsume",
+    "iLevel",
+    "iMPConsume",
+    "iPercent",
+    "iSPConsume",
+    "strDescription",
+    "strEnchantDesc",
+    "strEnchantName",
+    "strIconName",
+    "strName",
+    "strOperateType"
+   ],
+   "script_keys": [
+    "Type",
+    "iCastRange",
+    "iEXPConsume",
+    "iID",
+    "iLevel",
+    "iMPConsume",
+    "iPercent",
+    "iSPConsume",
+    "strDescription",
+    "strEnchantDesc",
+    "strEnchantName",
+    "strIconName",
+    "strName",
+    "strOperateType"
+   ]
+  },
+  "EV_SkillTrainInfoWndHide": {
+   "id": 2050,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_SkillTrainInfoWndAddExtendInfo": {
+   "id": 2060,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "iNumOfItem",
+    "strIconName",
+    "strName"
+   ],
+   "script_keys": [
+    "iNumOfItem",
+    "strIconName",
+    "strName"
+   ]
+  },
+  "EV_SetMaxCount": {
+   "id": 2070,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "dwarvenRecipe",
+    "inventory",
+    "privateShopBuy",
+    "privateShopSell",
+    "recipe",
+    "warehouseClan",
+    "warehousePrivate"
+   ],
+   "script_keys": [
+    "privateShopBuy",
+    "privateShopSell",
+    "warehousePrivate"
+   ]
+  },
+  "EV_ShopOpenWindow": {
+   "id": 2080,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "buy",
+    "merchant",
+    "npc",
+    "preview",
+    "sell",
+    "type"
+   ],
+   "script_keys": [
+    "adena",
+    "merchant",
+    "npc",
+    "type"
+   ]
+  },
+  "EV_ShopAddItem": {
+   "id": 2090,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_WarehouseOpenWindow": {
+   "id": 2100,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "category",
+    "deposit",
+    "type",
+    "withdraw"
+   ],
+   "script_keys": [
+    "adena",
+    "category",
+    "type"
+   ]
+  },
+  "EV_WarehouseAddItem": {
+   "id": 2110,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_PrivateShopOpenWindow": {
+   "id": 2120,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "bulk",
+    "buy",
+    "buyList",
+    "sell",
+    "sellList",
+    "type",
+    "userID"
+   ],
+   "script_keys": [
+    "adena",
+    "bulk",
+    "type",
+    "userID"
+   ]
+  },
+  "EV_PrivateShopAddItem": {
+   "id": 2130,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "bottomList",
+    "buy",
+    "buyList",
+    "sell",
+    "sellList",
+    "target",
+    "topList",
+    "type"
+   ],
+   "script_keys": [
+    "target"
+   ]
+  },
+  "EV_SelectDeliverClear": {
+   "id": 2140,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "id",
+    "name"
+   ],
+   "script_keys": []
+  },
+  "EV_SelectDeliverAddName": {
+   "id": 2150,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "id",
+    "name"
+   ],
+   "script_keys": [
+    "id",
+    "name"
+   ]
+  },
+  "EV_DeliverOpenWindow": {
+   "id": 2160,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "destinationID"
+   ],
+   "script_keys": [
+    "adena",
+    "destinationID"
+   ]
+  },
+  "EV_DeliverAddItem": {
+   "id": 2170,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "destinationID"
+   ],
+   "script_keys": []
+  },
+  "EV_ShowEventMatchGMWnd": {
+   "id": 2180,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_EventMatchCreated": {
+   "id": 2190,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "MatchID"
+   ],
+   "script_keys": [
+    "MatchID"
+   ]
+  },
+  "EV_EventMatchDestroyed": {
+   "id": 2200,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_EventMatchManage": {
+   "id": 2210,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "FenceStat",
+    "MatchID",
+    "MatchStat",
+    "Team1Name",
+    "Team1Stat",
+    "Team2Name",
+    "Team2Stat"
+   ],
+   "script_keys": [
+    "FenceStat",
+    "MatchID",
+    "MatchStat",
+    "Team1Name",
+    "Team1Stat",
+    "Team2Name",
+    "Team2Stat"
+   ]
+  },
+  "EV_StartEventMatchObserver": {
+   "id": 2220,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "EventMatchObserverState",
+    "GamingState"
+   ],
+   "script_keys": []
+  },
+  "EV_EventMatchUpdateTeamName": {
+   "id": 2230,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "EventMatchObserverState",
+    "GamingState"
+   ],
+   "script_keys": []
+  },
+  "EV_EventMatchUpdateScore": {
+   "id": 2240,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_EventMatchUpdateTeamInfo": {
+   "id": 2250,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "TeamID"
+   ],
+   "script_keys": [
+    "TeamID"
+   ]
+  },
+  "EV_EventMatchUpdateUserInfo": {
+   "id": 2260,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "TeamID",
+    "UserID"
+   ],
+   "script_keys": [
+    "TeamID",
+    "UserID"
+   ]
+  },
+  "EV_EventMatchGMMessage": {
+   "id": 2270,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Message",
+    "Type"
+   ],
+   "script_keys": [
+    "Message",
+    "Type"
+   ]
+  },
+  "EV_ShowGMWnd": {
+   "id": 2280,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingUserInfoUpdate": {
+   "id": 2290,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingSkillListStart": {
+   "id": 2300,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingSkillList": {
+   "id": 2310,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "Command",
+    "Description",
+    "EnchantName",
+    "IconName",
+    "Level",
+    "Lock",
+    "Name",
+    "Type"
+   ],
+   "script_keys": []
+  },
+  "EV_GMObservingQuestListStart": {
+   "id": 2320,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingQuestList": {
+   "id": 2330,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Completed",
+    "Level",
+    "QuestID"
+   ],
+   "script_keys": []
+  },
+  "EV_GMObservingQuestListEnd": {
+   "id": 2340,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingQuestItem": {
+   "id": 2350,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "ItemCount"
+   ],
+   "script_keys": [
+    "ClassID",
+    "ItemCount"
+   ]
+  },
+  "EV_GMObservingWarehouseItemListStart": {
+   "id": 2360,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "category",
+    "type",
+    "withdraw"
+   ],
+   "script_keys": []
+  },
+  "EV_GMObservingWarehouseItemList": {
+   "id": 2370,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingClan": {
+   "id": 2380,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ClanNameValue",
+    "ClanRank",
+    "ClanType",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "SkillLevel",
+    "Status"
+   ],
+   "script_keys": []
+  },
+  "EV_GMObservingClanMemberStart": {
+   "id": 2390,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingClanMember": {
+   "id": 2400,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ],
+   "script_keys": []
+  },
+  "EV_GMObservingInventoryAddItem": {
+   "id": 2401,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMObservingInventoryClear": {
+   "id": 2402,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "InvenLimit"
+   ],
+   "script_keys": [
+    "InvenLimit"
+   ]
+  },
+  "EV_GMAddHennaInfo": {
+   "id": 2403,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ID",
+    "bActive"
+   ],
+   "script_keys": [
+    "ID",
+    "bActive"
+   ]
+  },
+  "EV_GMUpdateHennaInfo": {
+   "id": 2404,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_GMSnoop": {
+   "id": 2410,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CharacterName",
+    "ChatMessage",
+    "CreatureID",
+    "SnoopID",
+    "SnoopName",
+    "Type"
+   ],
+   "script_keys": [
+    "CharacterName",
+    "ChatMessage",
+    "CreatureID",
+    "SnoopID",
+    "SnoopName",
+    "Type"
+   ]
+  },
+  "EV_BeginShowZoneTitleWnd": {
+   "id": 2420,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "GAMINGSTATE",
+    "Game",
+    "ShowZoneTitle",
+    "SubZoneName1",
+    "SubZoneName2",
+    "ZoneName"
+   ],
+   "script_keys": [
+    "SubZoneName1",
+    "SubZoneName2",
+    "ZoneName"
+   ]
+  },
+  "EV_TutorialViewerWndShow": {
+   "id": 2430,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "HtmlString"
+   ],
+   "script_keys": [
+    "HtmlString"
+   ]
+  },
+  "EV_TutorialViewerWndHide": {
+   "id": 2440,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ObserverWndShow": {
+   "id": 2450,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ObserverWndHide": {
+   "id": 2460,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_FishViewportWndShow": {
+   "id": 2470,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_FishViewportWndHide": {
+   "id": 2480,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_FishViewportWndInit": {
+   "id": 2490,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": [
+    "Event"
+   ]
+  },
+  "EV_FishViewportWndFinalAction": {
+   "id": 2500,
+   "origin": "sem uso",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_FishRankEventButtonShow": {
+   "id": 2510,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_FishRankEventButtonHide": {
+   "id": 2520,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_MultiSellShopID": {
+   "id": 2530,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "shopID"
+   ],
+   "script_keys": [
+    "shopID"
+   ]
+  },
+  "EV_MultiSellItemList": {
+   "id": 2540,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ID",
+    "OutputRefineryOp1",
+    "OutputRefineryOp2",
+    "classID",
+    "enchant",
+    "index",
+    "itemCount",
+    "itemType",
+    "refineryOp1",
+    "refineryOp2",
+    "slotBitType",
+    "type"
+   ],
+   "script_keys": [
+    "ID",
+    "OutputRefineryOp1",
+    "OutputRefineryOp2",
+    "classID",
+    "index",
+    "itemCount",
+    "itemType",
+    "slotBitType",
+    "type"
+   ]
+  },
+  "EV_MultiSellNeededItemList": {
+   "id": 2550,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID",
+    "ID",
+    "count",
+    "enchant",
+    "inputRefineryOp1",
+    "inputRefineryOp2",
+    "refineryOp1",
+    "refineryOp2"
+   ],
+   "script_keys": [
+    "ClassID",
+    "ID",
+    "count",
+    "enchant",
+    "inputRefineryOp1",
+    "inputRefineryOp2",
+    "refineryOp1",
+    "refineryOp2"
+   ]
+  },
+  "EV_MultiSellItemListEnd": {
+   "id": 2560,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_InventoryClear": {
+   "id": 2570,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_InventoryOpenWindow": {
+   "id": 2580,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_InventoryHideWindow": {
+   "id": 2590,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "category",
+    "deposit",
+    "merchant",
+    "sell",
+    "targetID",
+    "type"
+   ],
+   "script_keys": []
+  },
+  "EV_InventoryAddItem": {
+   "id": 2600,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_InventoryUpdateItem": {
+   "id": 2610,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "add",
+    "delete",
+    "type",
+    "update"
+   ],
+   "script_keys": [
+    "type"
+   ]
+  },
+  "EV_InventoryItemListEnd": {
+   "id": 2620,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_InventoryAddHennaInfo": {
+   "id": 2630,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ID",
+    "bActive"
+   ],
+   "script_keys": [
+    "ID",
+    "bActive"
+   ]
+  },
+  "EV_InventoryToggleWindow": {
+   "id": 2631,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ManorCropSellWndShow": {
+   "id": 2640,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropServerID",
+    "ManorID",
+    "ManorName",
+    "MyCropCnt",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ],
+   "script_keys": []
+  },
+  "EV_ManorCropSellWndAddItem": {
+   "id": 2645,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropServerID",
+    "ManorID",
+    "ManorName",
+    "MyCropCnt",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ],
+   "script_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropServerID",
+    "ManorID",
+    "ManorName",
+    "MyCropCnt",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ]
+  },
+  "EV_ManorCropSellWndSetCropSell": {
+   "id": 2646,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": [
+    "CropPriceString",
+    "CropRemainCntString",
+    "ManorID",
+    "ManorName",
+    "ProcureTypeString",
+    "SellCntString"
+   ]
+  },
+  "EV_ManorCropSellChangeWndShow": {
+   "id": 2647,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropPrice",
+    "CropRemainCnt",
+    "ManorID",
+    "ManorName",
+    "ProcureType"
+   ],
+   "script_keys": []
+  },
+  "EV_ManorCropSellChangeWndAddItem": {
+   "id": 2648,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropPrice",
+    "CropRemainCnt",
+    "ManorID",
+    "ManorName",
+    "ProcureType"
+   ],
+   "script_keys": [
+    "CropPrice",
+    "CropRemainCnt",
+    "ManorID",
+    "ManorName",
+    "ProcureType"
+   ]
+  },
+  "EV_ManorCropSellChangeWndSetCropNameAndRewardType": {
+   "id": 2649,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": [
+    "CropName",
+    "RewardType1",
+    "RewardType2"
+   ]
+  },
+  "EV_ManorInfoWndSeedShow": {
+   "id": 2650,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "SeedPrice",
+    "SeedRemainCnt",
+    "SeedTotalCnt"
+   ],
+   "script_keys": [
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain"
+   ]
+  },
+  "EV_ManorInfoWndSeedAdd": {
+   "id": 2651,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "SeedPrice",
+    "SeedRemainCnt",
+    "SeedTotalCnt"
+   ],
+   "script_keys": [
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "SeedPrice",
+    "SeedRemainCnt",
+    "SeedTotalCnt"
+   ]
+  },
+  "EV_ManorInfoWndCropShow": {
+   "id": 2652,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropTotalCnt",
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ],
+   "script_keys": [
+    "ManorID",
+    "MerchantOrChamberlain"
+   ]
+  },
+  "EV_ManorInfoWndCropAdd": {
+   "id": 2653,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropTotalCnt",
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ],
+   "script_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropTotalCnt",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ]
+  },
+  "EV_ManorInfoWndDefaultShow": {
+   "id": 2654,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "MerchantOrChamberlain",
+    "RewardType1",
+    "RewardType2",
+    "SeedPrice"
+   ],
+   "script_keys": [
+    "MerchantOrChamberlain"
+   ]
+  },
+  "EV_ManorInfoWndDefaultAdd": {
+   "id": 2655,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "MerchantOrChamberlain",
+    "RewardType1",
+    "RewardType2",
+    "SeedPrice"
+   ],
+   "script_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "RewardType1",
+    "RewardType2",
+    "SeedPrice"
+   ]
+  },
+  "EV_ManorSeedInfoSettingWndShow": {
+   "id": 2656,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "DefaultSeedPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxSeedTotalCnt",
+    "MinCropPrice",
+    "NextSeedPrice",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "TodayNextSeedTotalCnt",
+    "TodaySeedPrice",
+    "TodaySeedTotalCnt"
+   ],
+   "script_keys": [
+    "ManorID",
+    "ManorName"
+   ]
+  },
+  "EV_ManorSeedInfoSettingWndAddItem": {
+   "id": 2657,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "DefaultSeedPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxSeedTotalCnt",
+    "MinCropPrice",
+    "NextSeedPrice",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "TodayNextSeedTotalCnt",
+    "TodaySeedPrice",
+    "TodaySeedTotalCnt"
+   ],
+   "script_keys": [
+    "DefaultSeedPrice",
+    "MaxCropPrice",
+    "MaxSeedTotalCnt",
+    "MinCropPrice",
+    "NextSeedPrice",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "TodayNextSeedTotalCnt",
+    "TodaySeedPrice",
+    "TodaySeedTotalCnt"
+   ]
+  },
+  "EV_ManorSeedInfoSettingWndAddItemEnd": {
+   "id": 2658,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "DefaultSeedPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxSeedTotalCnt",
+    "MinCropPrice",
+    "NextSeedPrice",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "TodayNextSeedTotalCnt",
+    "TodaySeedPrice",
+    "TodaySeedTotalCnt"
+   ],
+   "script_keys": []
+  },
+  "EV_ManorSeedInfoSettingWndChangeValue": {
+   "id": 2659,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": [
+    "TomorrowPrice",
+    "TomorrowSalesVolume"
+   ]
+  },
+  "EV_ManorSeedInfoChangeWndShow": {
+   "id": 2660,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": [
+    "MaxCropPrice",
+    "MinCropPrice",
+    "SeedName",
+    "TomorrowLimit",
+    "TomorrowPrice",
+    "TomorrowVolumeOfSales"
+   ]
+  },
+  "EV_ManorCropInfoSettingWndShow": {
+   "id": 2665,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "DefaultCropPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxCropTotalCnt",
+    "MinCropPrice",
+    "NextCropPrice",
+    "NextCropTotalCnt",
+    "NextProcureType",
+    "RewardType1",
+    "RewardType2",
+    "TodayCropPrice",
+    "TodayCropTotalCnt",
+    "TodayProcureType"
+   ],
+   "script_keys": [
+    "ManorID",
+    "ManorName"
+   ]
+  },
+  "EV_ManorCropInfoSettingWndAddItem": {
+   "id": 2666,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "DefaultCropPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxCropTotalCnt",
+    "MinCropPrice",
+    "NextCropPrice",
+    "NextCropTotalCnt",
+    "NextProcureType",
+    "RewardType1",
+    "RewardType2",
+    "TodayCropPrice",
+    "TodayCropTotalCnt",
+    "TodayProcureType"
+   ],
+   "script_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "DefaultCropPrice",
+    "MaxCropPrice",
+    "MaxCropTotalCnt",
+    "MinCropPrice",
+    "NextCropPrice",
+    "NextCropTotalCnt",
+    "NextProcureType",
+    "RewardType1",
+    "RewardType2",
+    "TodayCropPrice",
+    "TodayCropTotalCnt",
+    "TodayProcureType"
+   ]
+  },
+  "EV_ManorCropInfoSettingWndAddItemEnd": {
+   "id": 2667,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "DefaultCropPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxCropTotalCnt",
+    "MinCropPrice",
+    "NextCropPrice",
+    "NextCropTotalCnt",
+    "NextProcureType",
+    "RewardType1",
+    "RewardType2",
+    "TodayCropPrice",
+    "TodayCropTotalCnt",
+    "TodayProcureType"
+   ],
+   "script_keys": []
+  },
+  "EV_ManorCropInfoSettingWndChangeValue": {
+   "id": 2668,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": [
+    "TomorrowAmountOfPurchase",
+    "TomorrowProcure",
+    "TomorrowPurchasePrice"
+   ]
+  },
+  "EV_ManorCropInfoChangeWndShow": {
+   "id": 2670,
+   "origin": "script (ExecuteEvent)",
+   "native_keys": [],
+   "script_keys": [
+    "CropName",
+    "MaxCropPrice",
+    "MinCropPrice",
+    "TomorrowLimit",
+    "TomorrowPrice",
+    "TomorrowProcure",
+    "TomorrowVolumeOfBuy"
+   ]
+  },
+  "EV_ManorShopWndOpen": {
+   "id": 2680,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "adena",
+    "buy",
+    "merchant",
+    "sell",
+    "type"
+   ],
+   "script_keys": []
+  },
+  "EV_ManorShopWndAddItem": {
+   "id": 2690,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_ShowPlaySceneInterface": {
+   "id": 3000,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_DuelAskStart": {
+   "id": 2700,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "type",
+    "userName"
+   ],
+   "script_keys": [
+    "type",
+    "userName"
+   ]
+  },
+  "EV_DuelReady": {
+   "id": 2710,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "type"
+   ],
+   "script_keys": []
+  },
+  "EV_DuelStart": {
+   "id": 2720,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "type"
+   ],
+   "script_keys": []
+  },
+  "EV_DuelEnd": {
+   "id": 2730,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "type"
+   ],
+   "script_keys": []
+  },
+  "EV_DuelUpdateUserInfo": {
+   "id": 2740,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ID",
+    "class",
+    "currentCP",
+    "currentHP",
+    "currentMP",
+    "level",
+    "maxCP",
+    "maxHP",
+    "maxMP",
+    "userName"
+   ],
+   "script_keys": [
+    "ID",
+    "class",
+    "currentCP",
+    "currentHP",
+    "currentMP",
+    "level",
+    "maxCP",
+    "maxHP",
+    "maxMP",
+    "userName"
+   ]
+  },
+  "EV_DuelEnemyRelation": {
+   "id": 2750,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "bEnemy",
+    "id",
+    "userName"
+   ],
+   "script_keys": []
+  },
+  "EV_ShowRefineryInteface": {
+   "id": 2760,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_RefineryConfirmTargetItemResult": {
+   "id": 2770,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Result",
+    "TargetItemClassID",
+    "TargetItemServerID"
+   ],
+   "script_keys": [
+    "Result",
+    "TargetItemClassID",
+    "TargetItemServerID"
+   ]
+  },
+  "EV_RefineryConfirmRefinerItemResult": {
+   "id": 2780,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "GemStoneClassID",
+    "GemStoneCount",
+    "RefinerItemClassID",
+    "RefinerItemServerID",
+    "Result"
+   ],
+   "script_keys": [
+    "GemStoneClassID",
+    "GemStoneCount",
+    "RefinerItemClassID",
+    "RefinerItemServerID",
+    "Result"
+   ]
+  },
+  "EV_RefineryConfirmGemStoneResult": {
+   "id": 2790,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "GemStoneClassID",
+    "GemStoneCount",
+    "GemStoneServerID",
+    "NecessaryGemStoneCount",
+    "Result"
+   ],
+   "script_keys": [
+    "GemStoneClassID",
+    "GemStoneCount",
+    "GemStoneServerID",
+    "NecessaryGemStoneCount",
+    "Result"
+   ]
+  },
+  "EV_RefineryRefineResult": {
+   "id": 2800,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Option1",
+    "Option2",
+    "Result"
+   ],
+   "script_keys": [
+    "Option1",
+    "Option2",
+    "Result"
+   ]
+  },
+  "EV_ShowRefineryCancelInteface": {
+   "id": 2810,
+   "origin": "pacote do servidor",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_RefineryConfirmCancelItemResult": {
+   "id": 2820,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Adena",
+    "CancelItemClassID",
+    "CancelItemServerID",
+    "Option1",
+    "Option2",
+    "Result"
+   ],
+   "script_keys": [
+    "Adena",
+    "CancelItemClassID",
+    "CancelItemServerID",
+    "Option1",
+    "Option2",
+    "Result"
+   ]
+  },
+  "EV_RefineryRefineCancelResult": {
+   "id": 2830,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Result"
+   ],
+   "script_keys": [
+    "Result"
+   ]
+  },
+  "EV_QuestInfoStart": {
+   "id": 2840,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "QuestDecription",
+    "QuestID",
+    "QuestLevel",
+    "QuestName",
+    "QuestNpcName",
+    "QuestRequirement",
+    "QuestType"
+   ],
+   "script_keys": []
+  },
+  "EV_QuestInfo": {
+   "id": 2850,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "QuestDecription",
+    "QuestID",
+    "QuestLevel",
+    "QuestName",
+    "QuestNpcName",
+    "QuestRequirement",
+    "QuestType"
+   ],
+   "script_keys": [
+    "QuestDecription",
+    "QuestID",
+    "QuestLevel",
+    "QuestName",
+    "QuestNpcName",
+    "QuestRequirement",
+    "QuestType"
+   ]
+  },
+  "EV_EnchantShow": {
+   "id": 2860,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID"
+   ],
+   "script_keys": []
+  },
+  "EV_EnchantHide": {
+   "id": 2870,
+   "origin": "registrado, sem emissor neste build",
+   "native_keys": [],
+   "script_keys": []
+  },
+  "EV_EnchantItemList": {
+   "id": 2880,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "ClassID"
+   ],
+   "script_keys": []
+  },
+  "EV_EnchantResult": {
+   "id": 2890,
+   "origin": "pacote do servidor",
+   "native_keys": [
+    "Result"
+   ],
+   "script_keys": []
+  },
+  "EV_ResolutionChanged": {
+   "id": 2900,
+   "origin": "engine fora de pacote (entrada, tick, estado)",
+   "native_keys": [
+    "NewHeight",
+    "NewWidth"
+   ],
+   "script_keys": [
+    "NewHeight",
+    "NewWidth"
+   ]
+  },
+  "EV_PawnViewerWndAddItem": {
+   "id": 2910,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "TabNum"
+   ],
+   "script_keys": []
+  },
+  "EV_RequestTooltipInfo": {
+   "id": 2920,
+   "origin": "UI nativa (NWindow: clique, timer, native chamada pelo script)",
+   "native_keys": [
+    "Description",
+    "ID",
+    "MaxColumn",
+    "SourceType",
+    "Text",
+    "TooltipType",
+    "nReserved1",
+    "nReserved2",
+    "nReserved3",
+    "szReserved"
+   ],
+   "script_keys": [
+    "SourceType",
+    "TooltipType"
+   ]
+  }
+ },
+ "pairs": [
+  {
+   "packet": "NSPacket",
+   "table": "game",
+   "opcode": 2,
+   "event": "EV_PartyMatchChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "NSPacket",
+   "table": "game",
+   "opcode": 2,
+   "event": "EV_ShowPetitionWnd",
+   "verified": true
+  },
+  {
+   "packet": "NSPacket",
+   "table": "game",
+   "opcode": 2,
+   "event": "EV_PetitionChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "NSPacket",
+   "table": "game",
+   "opcode": 2,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "CIPacket",
+   "table": "game",
+   "opcode": 3,
+   "event": "EV_FishViewportWndShow",
+   "verified": true
+  },
+  {
+   "packet": "CIPacket",
+   "table": "game",
+   "opcode": 3,
+   "event": "EV_FishRankEventButtonHide",
+   "verified": true
+  },
+  {
+   "packet": "UIPacket",
+   "table": "game",
+   "opcode": 4,
+   "event": "EV_UpdateUserInfo",
+   "verified": true
+  },
+  {
+   "packet": "UIPacket",
+   "table": "game",
+   "opcode": 4,
+   "event": "EV_ClanMyAuth",
+   "verified": true
+  },
+  {
+   "packet": "UIPacket",
+   "table": "game",
+   "opcode": 4,
+   "event": "EV_ChatWndStatusChange",
+   "verified": true
+  },
+  {
+   "packet": "UIPacket",
+   "table": "game",
+   "opcode": 4,
+   "event": "EV_FishViewportWndShow",
+   "verified": true
+  },
+  {
+   "packet": "UIPacket",
+   "table": "game",
+   "opcode": 4,
+   "event": "EV_FishRankEventButtonHide",
+   "verified": true
+  },
+  {
+   "packet": "AttackPacket",
+   "table": "game",
+   "opcode": 5,
+   "event": "EV_ReceiveAttack",
+   "verified": true
+  },
+  {
+   "packet": "DiePacket",
+   "table": "game",
+   "opcode": 6,
+   "event": "EV_Die",
+   "verified": true
+  },
+  {
+   "packet": "RevivePacket",
+   "table": "game",
+   "opcode": 7,
+   "event": "EV_RestartMenuHide",
+   "verified": true
+  },
+  {
+   "packet": "StatusUpdatePacket",
+   "table": "game",
+   "opcode": 14,
+   "event": "EV_UpdateHP",
+   "verified": true
+  },
+  {
+   "packet": "StatusUpdatePacket",
+   "table": "game",
+   "opcode": 14,
+   "event": "EV_UpdateMaxHP",
+   "verified": true
+  },
+  {
+   "packet": "StatusUpdatePacket",
+   "table": "game",
+   "opcode": 14,
+   "event": "EV_UpdateCP",
+   "verified": true
+  },
+  {
+   "packet": "StatusUpdatePacket",
+   "table": "game",
+   "opcode": 14,
+   "event": "EV_UpdateMaxCP",
+   "verified": true
+  },
+  {
+   "packet": "StatusUpdatePacket",
+   "table": "game",
+   "opcode": 14,
+   "event": "EV_UpdateMP",
+   "verified": true
+  },
+  {
+   "packet": "StatusUpdatePacket",
+   "table": "game",
+   "opcode": 14,
+   "event": "EV_UpdateMaxMP",
+   "verified": true
+  },
+  {
+   "packet": "SellListPacket",
+   "table": "game",
+   "opcode": 16,
+   "event": "EV_InventoryHideWindow",
+   "verified": true
+  },
+  {
+   "packet": "SellListPacket",
+   "table": "game",
+   "opcode": 16,
+   "event": "EV_ShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "SellListPacket",
+   "table": "game",
+   "opcode": 16,
+   "event": "EV_ShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "BuyListPacket",
+   "table": "game",
+   "opcode": 17,
+   "event": "EV_ShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "BuyListPacket",
+   "table": "game",
+   "opcode": 17,
+   "event": "EV_ShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "DeleteObjectPacket",
+   "table": "game",
+   "opcode": 18,
+   "event": "EV_PetSummonedStatusClose",
+   "verified": true
+  },
+  {
+   "packet": "ItemListPacket",
+   "table": "game",
+   "opcode": 27,
+   "event": "EV_InventoryClear",
+   "verified": true
+  },
+  {
+   "packet": "ItemListPacket",
+   "table": "game",
+   "opcode": 27,
+   "event": "EV_InventoryOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "ItemListPacket",
+   "table": "game",
+   "opcode": 27,
+   "event": "EV_InventoryAddItem",
+   "verified": true
+  },
+  {
+   "packet": "ItemListPacket",
+   "table": "game",
+   "opcode": 27,
+   "event": "EV_ShortcutUpdate",
+   "verified": true
+  },
+  {
+   "packet": "ItemListPacket",
+   "table": "game",
+   "opcode": 27,
+   "event": "EV_InventoryItemListEnd",
+   "verified": true
+  },
+  {
+   "packet": "TradeStartPacket",
+   "table": "game",
+   "opcode": 30,
+   "event": "EV_InventoryHideWindow",
+   "verified": true
+  },
+  {
+   "packet": "TradeStartPacket",
+   "table": "game",
+   "opcode": 30,
+   "event": "EV_TradeStart",
+   "verified": true
+  },
+  {
+   "packet": "TradeStartPacket",
+   "table": "game",
+   "opcode": 30,
+   "event": "EV_TradeAddItem",
+   "verified": true
+  },
+  {
+   "packet": "TradeOwnAddPacket",
+   "table": "game",
+   "opcode": 32,
+   "event": "EV_TradeAddItem",
+   "verified": true
+  },
+  {
+   "packet": "TradeOtherAddPacket",
+   "table": "game",
+   "opcode": 33,
+   "event": "EV_TradeAddItem",
+   "verified": true
+  },
+  {
+   "packet": "TradeDonePacket",
+   "table": "game",
+   "opcode": 34,
+   "event": "EV_TradeDone",
+   "verified": true
+  },
+  {
+   "packet": "InventoryUpdatePacket",
+   "table": "game",
+   "opcode": 39,
+   "event": "EV_InventoryUpdateItem",
+   "verified": true
+  },
+  {
+   "packet": "InventoryUpdatePacket",
+   "table": "game",
+   "opcode": 39,
+   "event": "EV_ShortcutUpdate",
+   "verified": true
+  },
+  {
+   "packet": "ManagePledgePowerPacket",
+   "table": "game",
+   "opcode": 48,
+   "event": "EV_ClanAuth",
+   "verified": true
+  },
+  {
+   "packet": "CreatePledgePacket",
+   "table": "game",
+   "opcode": 49,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "CreatePledgePacket",
+   "table": "game",
+   "opcode": 49,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "JoinPledgePacket",
+   "table": "game",
+   "opcode": 51,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "JoinPledgePacket",
+   "table": "game",
+   "opcode": 51,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "WithdrawalPledgePacket",
+   "table": "game",
+   "opcode": 52,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "WithdrawalPledgePacket",
+   "table": "game",
+   "opcode": 52,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "OustPledgeMemberPacket",
+   "table": "game",
+   "opcode": 53,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "OustPledgeMemberPacket",
+   "table": "game",
+   "opcode": 53,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetOustPledgeMemberPacket",
+   "table": "game",
+   "opcode": 54,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetOustPledgeMemberPacket",
+   "table": "game",
+   "opcode": 54,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "DismissPledgePacket",
+   "table": "game",
+   "opcode": 55,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "DismissPledgePacket",
+   "table": "game",
+   "opcode": 55,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetDismissPledgePacket",
+   "table": "game",
+   "opcode": 56,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetDismissPledgePacket",
+   "table": "game",
+   "opcode": 56,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "JoinPartyPacket",
+   "table": "game",
+   "opcode": 58,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "JoinPartyPacket",
+   "table": "game",
+   "opcode": 58,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "WithdrawalPartyPacket",
+   "table": "game",
+   "opcode": 59,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "WithdrawalPartyPacket",
+   "table": "game",
+   "opcode": 59,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "OustPartyMemberPacket",
+   "table": "game",
+   "opcode": 60,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "OustPartyMemberPacket",
+   "table": "game",
+   "opcode": 60,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetOustPartyMemberPacket",
+   "table": "game",
+   "opcode": 61,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetOustPartyMemberPacket",
+   "table": "game",
+   "opcode": 61,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "DismissPartyPacket",
+   "table": "game",
+   "opcode": 62,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "DismissPartyPacket",
+   "table": "game",
+   "opcode": 62,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetDismissPartyPacket",
+   "table": "game",
+   "opcode": 63,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "SetDismissPartyPacket",
+   "table": "game",
+   "opcode": 63,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseDepositListPacket",
+   "table": "game",
+   "opcode": 65,
+   "event": "EV_InventoryHideWindow",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseDepositListPacket",
+   "table": "game",
+   "opcode": 65,
+   "event": "EV_WarehouseOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseDepositListPacket",
+   "table": "game",
+   "opcode": 65,
+   "event": "EV_WarehouseAddItem",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseWithdrawListPacket",
+   "table": "game",
+   "opcode": 66,
+   "event": "EV_WarehouseOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseWithdrawListPacket",
+   "table": "game",
+   "opcode": 66,
+   "event": "EV_WarehouseAddItem",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseDonePacket",
+   "table": "game",
+   "opcode": 67,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "WareHouseDonePacket",
+   "table": "game",
+   "opcode": 67,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "ShortCutRegisterPacket",
+   "table": "game",
+   "opcode": 68,
+   "event": "EV_ShortcutUpdate",
+   "verified": true
+  },
+  {
+   "packet": "ShortCutInitPacket",
+   "table": "game",
+   "opcode": 69,
+   "event": "EV_ShortcutUpdate",
+   "verified": true
+  },
+  {
+   "packet": "ShortCutInitPacket",
+   "table": "game",
+   "opcode": 69,
+   "event": "EV_ShortcutClear",
+   "verified": true
+  },
+  {
+   "packet": "SayPacket2",
+   "table": "game",
+   "opcode": 74,
+   "event": "EV_PartyMatchChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SayPacket2",
+   "table": "game",
+   "opcode": 74,
+   "event": "EV_ShowPetitionWnd",
+   "verified": true
+  },
+  {
+   "packet": "SayPacket2",
+   "table": "game",
+   "opcode": 74,
+   "event": "EV_PetitionChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SayPacket2",
+   "table": "game",
+   "opcode": 74,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "DoorStatusUpdatePacket",
+   "table": "game",
+   "opcode": 77,
+   "event": "EV_TargetUpdate",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowAll",
+   "table": "game",
+   "opcode": 78,
+   "event": "EV_ChatWndStatusChange",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowAll",
+   "table": "game",
+   "opcode": 78,
+   "event": "EV_PartyAddParty",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowAll",
+   "table": "game",
+   "opcode": 78,
+   "event": "EV_PartyMemberChanged",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowAddPacket",
+   "table": "game",
+   "opcode": 79,
+   "event": "EV_ChatWndStatusChange",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowAddPacket",
+   "table": "game",
+   "opcode": 79,
+   "event": "EV_PartyAddParty",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowAddPacket",
+   "table": "game",
+   "opcode": 79,
+   "event": "EV_PartyMemberChanged",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowDeleteAllPacket",
+   "table": "game",
+   "opcode": 80,
+   "event": "EV_ChatWndStatusChange",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowDeleteAllPacket",
+   "table": "game",
+   "opcode": 80,
+   "event": "EV_PartyDeleteAllParty",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowDeleteAllPacket",
+   "table": "game",
+   "opcode": 80,
+   "event": "EV_PartyMemberChanged",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowDeletePacket",
+   "table": "game",
+   "opcode": 81,
+   "event": "EV_PartyDeleteParty",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowDeletePacket",
+   "table": "game",
+   "opcode": 81,
+   "event": "EV_PartyMemberChanged",
+   "verified": true
+  },
+  {
+   "packet": "PartySmallWindowUpdatePacket",
+   "table": "game",
+   "opcode": 82,
+   "event": "EV_PartyUpdateParty",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowMemberListAllPacket",
+   "table": "game",
+   "opcode": 83,
+   "event": "EV_ClanInfo",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowMemberListAllPacket",
+   "table": "game",
+   "opcode": 83,
+   "event": "EV_ClanAddMemberMultiple",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowMemberListUpdatePacket",
+   "table": "game",
+   "opcode": 84,
+   "event": "EV_ClanMemberInfoUpdate",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowMemberListAddPacket",
+   "table": "game",
+   "opcode": 85,
+   "event": "EV_ClanAddMember",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowMemberListDeletePacket",
+   "table": "game",
+   "opcode": 86,
+   "event": "EV_ClanDeleteMember",
+   "verified": true
+  },
+  {
+   "packet": "SkillListPacket",
+   "table": "game",
+   "opcode": 88,
+   "event": "EV_SkillListStart",
+   "verified": true
+  },
+  {
+   "packet": "SkillListPacket",
+   "table": "game",
+   "opcode": 88,
+   "event": "EV_SkillList",
+   "verified": true
+  },
+  {
+   "packet": "TradeRequestPacket",
+   "table": "game",
+   "opcode": 94,
+   "event": "EV_TradeRequestStartExchange",
+   "verified": true
+  },
+  {
+   "packet": "RestartResponsePacket",
+   "table": "game",
+   "opcode": 95,
+   "event": "EV_Restart",
+   "verified": true
+  },
+  {
+   "packet": "RestartResponsePacket",
+   "table": "game",
+   "opcode": 95,
+   "event": "EV_ObserverWndHide",
+   "verified": true
+  },
+  {
+   "packet": "SystemMessagePacket",
+   "table": "game",
+   "opcode": 100,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "SystemMessagePacket",
+   "table": "game",
+   "opcode": 100,
+   "event": "EV_ShowPetitionWnd",
+   "verified": true
+  },
+  {
+   "packet": "SystemMessagePacket",
+   "table": "game",
+   "opcode": 100,
+   "event": "EV_PetitionChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "SystemMessagePacket",
+   "table": "game",
+   "opcode": 100,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "ShowBoardPacket",
+   "table": "game",
+   "opcode": 110,
+   "event": "EV_ShowBoardPacket",
+   "verified": true
+  },
+  {
+   "packet": "ChooseInventoryItemPacket",
+   "table": "game",
+   "opcode": 111,
+   "event": "EV_EnchantShow",
+   "verified": true
+  },
+  {
+   "packet": "ChooseInventoryItemPacket",
+   "table": "game",
+   "opcode": 111,
+   "event": "EV_EnchantItemList",
+   "verified": true
+  },
+  {
+   "packet": "TradeUpdatePacket",
+   "table": "game",
+   "opcode": 116,
+   "event": "EV_TradeUpdateInventoryItem",
+   "verified": true
+  },
+  {
+   "packet": "FriendAddRequestResult",
+   "table": "game",
+   "opcode": 119,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "FriendAddRequestResult",
+   "table": "game",
+   "opcode": 119,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "TradePressOtherOkPacket",
+   "table": "game",
+   "opcode": 124,
+   "event": "EV_TradeOtherOK",
+   "verified": true
+  },
+  {
+   "packet": "AbnormalStatusUpdatePacket",
+   "table": "game",
+   "opcode": 127,
+   "event": "EV_AbnormalStatusNormalItem",
+   "verified": true
+  },
+  {
+   "packet": "QuestListPacket",
+   "table": "game",
+   "opcode": 128,
+   "event": "EV_QuestListStart",
+   "verified": true
+  },
+  {
+   "packet": "QuestListPacket",
+   "table": "game",
+   "opcode": 128,
+   "event": "EV_QuestListEnd",
+   "verified": true
+  },
+  {
+   "packet": "EnchantResultPacket",
+   "table": "game",
+   "opcode": 129,
+   "event": "EV_EnchantResult",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowMemberListDeleteAllPacket",
+   "table": "game",
+   "opcode": 130,
+   "event": "EV_ClanDeleteAllMember",
+   "verified": true
+  },
+  {
+   "packet": "PledgeShowInfoUpdatePacket",
+   "table": "game",
+   "opcode": 136,
+   "event": "EV_ClanInfoUpdate",
+   "verified": true
+  },
+  {
+   "packet": "AcquireSkillListPacket",
+   "table": "game",
+   "opcode": 138,
+   "event": "EV_SkillTrainListWndShow",
+   "verified": true
+  },
+  {
+   "packet": "AcquireSkillListPacket",
+   "table": "game",
+   "opcode": 138,
+   "event": "EV_SkillTrainListWndAddSkill",
+   "verified": true
+  },
+  {
+   "packet": "AcquireSkillInfoPacket",
+   "table": "game",
+   "opcode": 139,
+   "event": "EV_SkillTrainInfoWndShow",
+   "verified": true
+  },
+  {
+   "packet": "AcquireSkillInfoPacket",
+   "table": "game",
+   "opcode": 139,
+   "event": "EV_SkillTrainInfoWndAddExtendInfo",
+   "verified": true
+  },
+  {
+   "packet": "AcquireSkillDonePacket",
+   "table": "game",
+   "opcode": 142,
+   "event": "EV_SkillTrainInfoWndHide",
+   "verified": true
+  },
+  {
+   "packet": "AcquireSkillDonePacket",
+   "table": "game",
+   "opcode": 142,
+   "event": "EV_SkillTrainListWndHide",
+   "verified": true
+  },
+  {
+   "packet": "GMViewCharacterInfoPacket",
+   "table": "game",
+   "opcode": 143,
+   "event": "EV_GMObservingUserInfoUpdate",
+   "verified": true
+  },
+  {
+   "packet": "GMViewPledgeInfoPacket",
+   "table": "game",
+   "opcode": 144,
+   "event": "EV_GMObservingClan",
+   "verified": true
+  },
+  {
+   "packet": "GMViewPledgeInfoPacket",
+   "table": "game",
+   "opcode": 144,
+   "event": "EV_GMObservingClanMemberStart",
+   "verified": true
+  },
+  {
+   "packet": "GMViewPledgeInfoPacket",
+   "table": "game",
+   "opcode": 144,
+   "event": "EV_GMObservingClanMember",
+   "verified": true
+  },
+  {
+   "packet": "GMViewSkillInfoPacket",
+   "table": "game",
+   "opcode": 145,
+   "event": "EV_GMObservingSkillListStart",
+   "verified": true
+  },
+  {
+   "packet": "GMViewSkillInfoPacket",
+   "table": "game",
+   "opcode": 145,
+   "event": "EV_GMObservingSkillList",
+   "verified": true
+  },
+  {
+   "packet": "GMViewQuestInfoPacket",
+   "table": "game",
+   "opcode": 147,
+   "event": "EV_GMObservingQuestListStart",
+   "verified": true
+  },
+  {
+   "packet": "GMViewQuestInfoPacket",
+   "table": "game",
+   "opcode": 147,
+   "event": "EV_GMObservingQuestList",
+   "verified": true
+  },
+  {
+   "packet": "GMViewQuestInfoPacket",
+   "table": "game",
+   "opcode": 147,
+   "event": "EV_GMObservingQuestListEnd",
+   "verified": true
+  },
+  {
+   "packet": "GMViewQuestInfoPacket",
+   "table": "game",
+   "opcode": 147,
+   "event": "EV_GMObservingQuestItem",
+   "verified": true
+  },
+  {
+   "packet": "GMViewItemListPacket",
+   "table": "game",
+   "opcode": 148,
+   "event": "EV_GMObservingInventoryClear",
+   "verified": true
+  },
+  {
+   "packet": "GMViewItemListPacket",
+   "table": "game",
+   "opcode": 148,
+   "event": "EV_GMObservingInventoryAddItem",
+   "verified": true
+  },
+  {
+   "packet": "GMViewWarehouseWithdrawListPacket",
+   "table": "game",
+   "opcode": 149,
+   "event": "EV_GMObservingWarehouseItemListStart",
+   "verified": true
+  },
+  {
+   "packet": "GMViewWarehouseWithdrawListPacket",
+   "table": "game",
+   "opcode": 149,
+   "event": "EV_GMObservingWarehouseItemList",
+   "verified": true
+  },
+  {
+   "packet": "ListPartyWatingPacket",
+   "table": "game",
+   "opcode": 150,
+   "event": "EV_PartyMatchStart",
+   "verified": true
+  },
+  {
+   "packet": "ListPartyWatingPacket",
+   "table": "game",
+   "opcode": 150,
+   "event": "EV_PartyMatchList",
+   "verified": true
+  },
+  {
+   "packet": "PartyRoomInfoPacket",
+   "table": "game",
+   "opcode": 151,
+   "event": "EV_PartyMatchRoomStart",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreManageList",
+   "table": "game",
+   "opcode": 154,
+   "event": "EV_PrivateShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreManageList",
+   "table": "game",
+   "opcode": 154,
+   "event": "EV_PrivateShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreList",
+   "table": "game",
+   "opcode": 155,
+   "event": "EV_PrivateShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreList",
+   "table": "game",
+   "opcode": 155,
+   "event": "EV_PrivateShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "ShowMiniMap",
+   "table": "game",
+   "opcode": 157,
+   "event": "EV_ShowMinimap",
+   "verified": true
+  },
+  {
+   "packet": "TutorialShowHtmlPacket",
+   "table": "game",
+   "opcode": 160,
+   "event": "EV_TutorialViewerWndShow",
+   "verified": true
+  },
+  {
+   "packet": "TutorialShowQuestionMarkPacket",
+   "table": "game",
+   "opcode": 161,
+   "event": "EV_ArriveNewTutorialQuestion",
+   "verified": true
+  },
+  {
+   "packet": "TutorialCloseHtmlPacket",
+   "table": "game",
+   "opcode": 163,
+   "event": "EV_TutorialViewerWndHide",
+   "verified": true
+  },
+  {
+   "packet": "ShowRadarPacket",
+   "table": "game",
+   "opcode": 164,
+   "event": "EV_RadarDeleteAllTarget",
+   "verified": true
+  },
+  {
+   "packet": "ShowRadarPacket",
+   "table": "game",
+   "opcode": 164,
+   "event": "EV_RadarAddTarget",
+   "verified": true
+  },
+  {
+   "packet": "ShowRadarPacket",
+   "table": "game",
+   "opcode": 164,
+   "event": "EV_MinimapDeleteAllTarget",
+   "verified": true
+  },
+  {
+   "packet": "ShowRadarPacket",
+   "table": "game",
+   "opcode": 164,
+   "event": "EV_MinimapAddTarget",
+   "verified": true
+  },
+  {
+   "packet": "DeleteRadarPacket",
+   "table": "game",
+   "opcode": 165,
+   "event": "EV_MinimapDeleteTarget",
+   "verified": true
+  },
+  {
+   "packet": "MyTargetSelectedPacket",
+   "table": "game",
+   "opcode": 166,
+   "event": "EV_ReceiveTargetLevelDiff",
+   "verified": true
+  },
+  {
+   "packet": "JoinAlliancePacket",
+   "table": "game",
+   "opcode": 169,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "JoinAlliancePacket",
+   "table": "game",
+   "opcode": 169,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "WithdrawAlliancePacket",
+   "table": "game",
+   "opcode": 170,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "WithdrawAlliancePacket",
+   "table": "game",
+   "opcode": 170,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "OustAllianceMemberPledgePacket",
+   "table": "game",
+   "opcode": 171,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "OustAllianceMemberPledgePacket",
+   "table": "game",
+   "opcode": 171,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "DismissAlliancePacket",
+   "table": "game",
+   "opcode": 172,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "DismissAlliancePacket",
+   "table": "game",
+   "opcode": 172,
+   "event": "EV_ChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "PetStatusShowPacket",
+   "table": "game",
+   "opcode": 176,
+   "event": "EV_PetWndShow",
+   "verified": true
+  },
+  {
+   "packet": "PetInfoPacket",
+   "table": "game",
+   "opcode": 177,
+   "event": "EV_UpdatePetInfo",
+   "verified": true
+  },
+  {
+   "packet": "PetInfoPacket",
+   "table": "game",
+   "opcode": 177,
+   "event": "EV_PetWndShowNameBtn",
+   "verified": true
+  },
+  {
+   "packet": "PetInfoPacket",
+   "table": "game",
+   "opcode": 177,
+   "event": "EV_PetStatusShow",
+   "verified": true
+  },
+  {
+   "packet": "PetItemListPacket",
+   "table": "game",
+   "opcode": 178,
+   "event": "EV_PetInventoryItemStart",
+   "verified": true
+  },
+  {
+   "packet": "PetItemListPacket",
+   "table": "game",
+   "opcode": 178,
+   "event": "EV_PetInventoryItemList",
+   "verified": true
+  },
+  {
+   "packet": "PetInventoryUpdatePacket",
+   "table": "game",
+   "opcode": 179,
+   "event": "EV_PetInventoryItemUpdate",
+   "verified": true
+  },
+  {
+   "packet": "PetInventoryUpdatePacket",
+   "table": "game",
+   "opcode": 179,
+   "event": "EV_ShortcutUpdate",
+   "verified": true
+  },
+  {
+   "packet": "PetStatusUpdatePacket",
+   "table": "game",
+   "opcode": 181,
+   "event": "EV_UpdatePetInfo",
+   "verified": true
+  },
+  {
+   "packet": "PetDeletePacket",
+   "table": "game",
+   "opcode": 182,
+   "event": "EV_PetSummonedStatusClose",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreBuyManageList",
+   "table": "game",
+   "opcode": 183,
+   "event": "EV_PrivateShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreBuyManageList",
+   "table": "game",
+   "opcode": 183,
+   "event": "EV_PrivateShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreBuyList",
+   "table": "game",
+   "opcode": 184,
+   "event": "EV_PrivateShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "PrivateStoreBuyList",
+   "table": "game",
+   "opcode": 184,
+   "event": "EV_PrivateShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "PackageToListPacket",
+   "table": "game",
+   "opcode": 194,
+   "event": "EV_SelectDeliverClear",
+   "verified": true
+  },
+  {
+   "packet": "PackageToListPacket",
+   "table": "game",
+   "opcode": 194,
+   "event": "EV_SelectDeliverAddName",
+   "verified": true
+  },
+  {
+   "packet": "PackageSendableListPacket",
+   "table": "game",
+   "opcode": 195,
+   "event": "EV_DeliverOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "PackageSendableListPacket",
+   "table": "game",
+   "opcode": 195,
+   "event": "EV_DeliverAddItem",
+   "verified": true
+  },
+  {
+   "packet": "CastleSiegeInfoPacket",
+   "table": "game",
+   "opcode": 201,
+   "event": "EV_SiegeInfo",
+   "verified": true
+  },
+  {
+   "packet": "CastleSiegeInfoPacket",
+   "table": "game",
+   "opcode": 201,
+   "event": "EV_SiegeInfoSelectableTime",
+   "verified": true
+  },
+  {
+   "packet": "CastleSiegeAttackerListPacket",
+   "table": "game",
+   "opcode": 202,
+   "event": "EV_SiegeInfoClanListStart",
+   "verified": true
+  },
+  {
+   "packet": "CastleSiegeAttackerListPacket",
+   "table": "game",
+   "opcode": 202,
+   "event": "EV_SiegeInfoClanList",
+   "verified": true
+  },
+  {
+   "packet": "CastleSiegeAttackerListPacket",
+   "table": "game",
+   "opcode": 202,
+   "event": "EV_SiegeInfoClanListEnd",
+   "verified": true
+  },
+  {
+   "packet": "SiegeDefenderList",
+   "table": "game",
+   "opcode": 203,
+   "event": "EV_SiegeInfoClanListStart",
+   "verified": true
+  },
+  {
+   "packet": "SiegeDefenderList",
+   "table": "game",
+   "opcode": 203,
+   "event": "EV_SiegeInfoClanList",
+   "verified": true
+  },
+  {
+   "packet": "SiegeDefenderList",
+   "table": "game",
+   "opcode": 203,
+   "event": "EV_SiegeInfoClanListEnd",
+   "verified": true
+  },
+  {
+   "packet": "RelationChangedPacket",
+   "table": "game",
+   "opcode": 206,
+   "event": "EV_ChatWndStatusChange",
+   "verified": true
+  },
+  {
+   "packet": "MultiSellListPacket",
+   "table": "game",
+   "opcode": 208,
+   "event": "EV_MultiSellNeededItemList",
+   "verified": true
+  },
+  {
+   "packet": "MultiSellListPacket",
+   "table": "game",
+   "opcode": 208,
+   "event": "EV_MultiSellItemListEnd",
+   "verified": true
+  },
+  {
+   "packet": "MultiSellListPacket",
+   "table": "game",
+   "opcode": 208,
+   "event": "EV_MultiSellItemList",
+   "verified": true
+  },
+  {
+   "packet": "MultiSellListPacket",
+   "table": "game",
+   "opcode": 208,
+   "event": "EV_MultiSellShopID",
+   "verified": true
+  },
+  {
+   "packet": "SetSummonRemainTimePacket",
+   "table": "game",
+   "opcode": 209,
+   "event": "EV_SummonedStatusRemainTime",
+   "verified": true
+  },
+  {
+   "packet": "SnoopPacket",
+   "table": "game",
+   "opcode": 213,
+   "event": "EV_GMSnoop",
+   "verified": true
+  },
+  {
+   "packet": "RecipeBookItemListPacket",
+   "table": "game",
+   "opcode": 214,
+   "event": "EV_RecipeShowBookWnd",
+   "verified": true
+  },
+  {
+   "packet": "RecipeBookItemListPacket",
+   "table": "game",
+   "opcode": 214,
+   "event": "EV_RecipeAddBookItem",
+   "verified": true
+  },
+  {
+   "packet": "RecipeItemMakeInfoPacket",
+   "table": "game",
+   "opcode": 215,
+   "event": "EV_RecipeItemMakeInfo",
+   "verified": true
+  },
+  {
+   "packet": "RecipeShopManageListPacket",
+   "table": "game",
+   "opcode": 216,
+   "event": "EV_RecipeShopShowWnd",
+   "verified": true
+  },
+  {
+   "packet": "RecipeShopManageListPacket",
+   "table": "game",
+   "opcode": 216,
+   "event": "EV_RecipeShopAddBookItem",
+   "verified": true
+  },
+  {
+   "packet": "RecipeShopManageListPacket",
+   "table": "game",
+   "opcode": 216,
+   "event": "EV_RecipeShopAddShopItem",
+   "verified": true
+  },
+  {
+   "packet": "RecipeShopSellListPacket",
+   "table": "game",
+   "opcode": 217,
+   "event": "EV_RecipeShowBuyListWnd",
+   "verified": true
+  },
+  {
+   "packet": "RecipeShopSellListPacket",
+   "table": "game",
+   "opcode": 217,
+   "event": "EV_RecipeShopSellItem",
+   "verified": true
+  },
+  {
+   "packet": "RecipeShopItemInfoPacket",
+   "table": "game",
+   "opcode": 218,
+   "event": "EV_RecipeShopItemInfo",
+   "verified": true
+  },
+  {
+   "packet": "ShowCalcPacket",
+   "table": "game",
+   "opcode": 220,
+   "event": "EV_CalculatorWndShowHide",
+   "verified": true
+  },
+  {
+   "packet": "ShowTownMapPacket",
+   "table": "game",
+   "opcode": 222,
+   "event": "EV_ShowTownMap",
+   "verified": true
+  },
+  {
+   "packet": "ObserverStartPacket",
+   "table": "game",
+   "opcode": 223,
+   "event": "EV_ObserverWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ObserverEndPacket",
+   "table": "game",
+   "opcode": 224,
+   "event": "EV_ObserverWndHide",
+   "verified": true
+  },
+  {
+   "packet": "HennaEquipListPacket",
+   "table": "game",
+   "opcode": 226,
+   "event": "EV_HennaListWndShowHideEquip",
+   "verified": true
+  },
+  {
+   "packet": "HennaEquipListPacket",
+   "table": "game",
+   "opcode": 226,
+   "event": "EV_HennaListWndAddHennaEquip",
+   "verified": true
+  },
+  {
+   "packet": "HennaItemInfoPacket",
+   "table": "game",
+   "opcode": 227,
+   "event": "EV_HennaInfoWndShowHideEquip",
+   "verified": true
+  },
+  {
+   "packet": "HennaInfoPacket",
+   "table": "game",
+   "opcode": 228,
+   "event": "EV_UpdateHennaInfo",
+   "verified": true
+  },
+  {
+   "packet": "HennaInfoPacket",
+   "table": "game",
+   "opcode": 228,
+   "event": "EV_InventoryAddHennaInfo",
+   "verified": true
+  },
+  {
+   "packet": "HennaUnequipListPacket",
+   "table": "game",
+   "opcode": 229,
+   "event": "EV_HennaListWndShowHideUnEquip",
+   "verified": true
+  },
+  {
+   "packet": "HennaUnequipListPacket",
+   "table": "game",
+   "opcode": 229,
+   "event": "EV_HennaListWndAddHennaUnEquip",
+   "verified": true
+  },
+  {
+   "packet": "HennaUnequipInfoPacket",
+   "table": "game",
+   "opcode": 230,
+   "event": "EV_HennaInfoWndShowHideUnEquip",
+   "verified": true
+  },
+  {
+   "packet": "MacroListPacket",
+   "table": "game",
+   "opcode": 231,
+   "event": "EV_MacroUpdate",
+   "verified": true
+  },
+  {
+   "packet": "BuyListSeedPacket",
+   "table": "game",
+   "opcode": 232,
+   "event": "EV_ManorShopWndOpen",
+   "verified": true
+  },
+  {
+   "packet": "BuyListSeedPacket",
+   "table": "game",
+   "opcode": 232,
+   "event": "EV_ManorShopWndAddItem",
+   "verified": true
+  },
+  {
+   "packet": "SellListProcurePacket",
+   "table": "game",
+   "opcode": 233,
+   "event": "EV_InventoryHideWindow",
+   "verified": true
+  },
+  {
+   "packet": "SellListProcurePacket",
+   "table": "game",
+   "opcode": 233,
+   "event": "EV_ManorShopWndOpen",
+   "verified": true
+  },
+  {
+   "packet": "SellListProcurePacket",
+   "table": "game",
+   "opcode": 233,
+   "event": "EV_ManorShopWndAddItem",
+   "verified": true
+  },
+  {
+   "packet": "GMHennaInfoPacket",
+   "table": "game",
+   "opcode": 234,
+   "event": "EV_GMUpdateHennaInfo",
+   "verified": true
+  },
+  {
+   "packet": "GMHennaInfoPacket",
+   "table": "game",
+   "opcode": 234,
+   "event": "EV_GMAddHennaInfo",
+   "verified": true
+  },
+  {
+   "packet": "RadarControlPacket",
+   "table": "game",
+   "opcode": 235,
+   "event": "EV_RadarDeleteAllTarget",
+   "verified": true
+  },
+  {
+   "packet": "RadarControlPacket",
+   "table": "game",
+   "opcode": 235,
+   "event": "EV_RadarAddTarget",
+   "verified": true
+  },
+  {
+   "packet": "RadarControlPacket",
+   "table": "game",
+   "opcode": 235,
+   "event": "EV_MinimapDeleteAllTarget",
+   "verified": true
+  },
+  {
+   "packet": "RadarControlPacket",
+   "table": "game",
+   "opcode": 235,
+   "event": "EV_MinimapAddTarget",
+   "verified": true
+  },
+  {
+   "packet": "PartySpelledPacket",
+   "table": "game",
+   "opcode": 238,
+   "event": "EV_SummonedStatusSpelledList",
+   "verified": true
+  },
+  {
+   "packet": "ShopPreviewListPacket",
+   "table": "game",
+   "opcode": 239,
+   "event": "EV_ShopOpenWindow",
+   "verified": true
+  },
+  {
+   "packet": "ShopPreviewListPacket",
+   "table": "game",
+   "opcode": 239,
+   "event": "EV_ShopAddItem",
+   "verified": true
+  },
+  {
+   "packet": "EtcStatusUpdatePacket",
+   "table": "game",
+   "opcode": 243,
+   "event": "EV_AbnormalStatusEtcItem",
+   "verified": true
+  },
+  {
+   "packet": "ShortBuffStatusUpdatePacket",
+   "table": "game",
+   "opcode": 244,
+   "event": "EV_AbnormalStatusShortItem",
+   "verified": true
+  },
+  {
+   "packet": "SSQStatusPacket",
+   "table": "game",
+   "opcode": 245,
+   "event": "EV_SSQStatus",
+   "verified": true
+  },
+  {
+   "packet": "SSQStatusPacket",
+   "table": "game",
+   "opcode": 245,
+   "event": "EV_SSQMainEvent",
+   "verified": true
+  },
+  {
+   "packet": "SSQStatusPacket",
+   "table": "game",
+   "opcode": 245,
+   "event": "EV_SSQSealStatus",
+   "verified": true
+  },
+  {
+   "packet": "SSQStatusPacket",
+   "table": "game",
+   "opcode": 245,
+   "event": "EV_SSQPreInfo",
+   "verified": true
+  },
+  {
+   "packet": "PetitionVotePacket",
+   "table": "game",
+   "opcode": 246,
+   "event": "EV_EnablePetitionFeedback",
+   "verified": true
+  },
+  {
+   "packet": "ExRegenMax",
+   "table": "ex",
+   "opcode": 1,
+   "event": "EV_RegenStatus",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchObserverPacket",
+   "table": "ex",
+   "opcode": 3,
+   "event": "EV_StartEventMatchObserver",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchObserverPacket",
+   "table": "ex",
+   "opcode": 3,
+   "event": "EV_EventMatchUpdateTeamName",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchMessagePacket",
+   "table": "ex",
+   "opcode": 4,
+   "event": "EV_EventMatchGMMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchScorePacket",
+   "table": "ex",
+   "opcode": 5,
+   "event": "EV_EventMatchUpdateScore",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchTeamInfoPacket",
+   "table": "ex",
+   "opcode": 6,
+   "event": "EV_EventMatchUpdateTeamInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchCreatePacket",
+   "table": "ex",
+   "opcode": 7,
+   "event": "EV_EventMatchCreated",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchUserInfoPacket",
+   "table": "ex",
+   "opcode": 8,
+   "event": "EV_EventMatchUpdateUserInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchSpelledInfoPacket",
+   "table": "ex",
+   "opcode": 10,
+   "event": "EV_EventMatchUpdateUserInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchGMTestPacket",
+   "table": "ex",
+   "opcode": 13,
+   "event": "EV_ShowEventMatchGMWnd",
+   "verified": true
+  },
+  {
+   "packet": "ExPartyRoomMemberPacket",
+   "table": "ex",
+   "opcode": 14,
+   "event": "EV_PartyMatchRoomMember",
+   "verified": true
+  },
+  {
+   "packet": "ExClosePartyRoomPacket",
+   "table": "ex",
+   "opcode": 15,
+   "event": "EV_PartyMatchRoomClose",
+   "verified": true
+  },
+  {
+   "packet": "ExManagePartyRoomMemberPacket",
+   "table": "ex",
+   "opcode": 16,
+   "event": "EV_PartyMatchRoomMemberUpdate",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingStartPacket",
+   "table": "ex",
+   "opcode": 19,
+   "event": "EV_FishViewportWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingStartPacket",
+   "table": "ex",
+   "opcode": 19,
+   "event": "EV_FishRankEventButtonHide",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingEndPacket",
+   "table": "ex",
+   "opcode": 20,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingEndPacket",
+   "table": "ex",
+   "opcode": 20,
+   "event": "EV_ShowPetitionWnd",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingEndPacket",
+   "table": "ex",
+   "opcode": 20,
+   "event": "EV_PetitionChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingStartCombatPacket",
+   "table": "ex",
+   "opcode": 21,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingStartCombatPacket",
+   "table": "ex",
+   "opcode": 21,
+   "event": "EV_ShowPetitionWnd",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingStartCombatPacket",
+   "table": "ex",
+   "opcode": 21,
+   "event": "EV_PetitionChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingHpRegenPacket",
+   "table": "ex",
+   "opcode": 22,
+   "event": "EV_SystemMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingHpRegenPacket",
+   "table": "ex",
+   "opcode": 22,
+   "event": "EV_ShowPetitionWnd",
+   "verified": true
+  },
+  {
+   "packet": "ExFishingHpRegenPacket",
+   "table": "ex",
+   "opcode": 22,
+   "event": "EV_PetitionChatMessage",
+   "verified": true
+  },
+  {
+   "packet": "ExEnchantSkillListPacket",
+   "table": "ex",
+   "opcode": 23,
+   "event": "EV_SkillTrainListWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExEnchantSkillListPacket",
+   "table": "ex",
+   "opcode": 23,
+   "event": "EV_SkillTrainListWndAddSkill",
+   "verified": true
+  },
+  {
+   "packet": "ExEnchantSkillInfoPacket",
+   "table": "ex",
+   "opcode": 24,
+   "event": "EV_SkillTrainInfoWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExEnchantSkillInfoPacket",
+   "table": "ex",
+   "opcode": 24,
+   "event": "EV_SkillTrainInfoWndAddExtendInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExShowQuestInfoPacket",
+   "table": "ex",
+   "opcode": 25,
+   "event": "EV_QuestInfoStart",
+   "verified": true
+  },
+  {
+   "packet": "ExShowQuestInfoPacket",
+   "table": "ex",
+   "opcode": 25,
+   "event": "EV_QuestInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExShowQuestMarkPacket",
+   "table": "ex",
+   "opcode": 26,
+   "event": "EV_ArriveShowQuest",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSeedInfoPacket",
+   "table": "ex",
+   "opcode": 28,
+   "event": "EV_ManorInfoWndSeedShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSeedInfoPacket",
+   "table": "ex",
+   "opcode": 28,
+   "event": "EV_ManorInfoWndSeedAdd",
+   "verified": true
+  },
+  {
+   "packet": "ExShowCropInfoPacket",
+   "table": "ex",
+   "opcode": 29,
+   "event": "EV_ManorInfoWndCropShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowCropInfoPacket",
+   "table": "ex",
+   "opcode": 29,
+   "event": "EV_ManorInfoWndCropAdd",
+   "verified": true
+  },
+  {
+   "packet": "ExShowManorDefaultInfoPacket",
+   "table": "ex",
+   "opcode": 30,
+   "event": "EV_ManorInfoWndDefaultShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowManorDefaultInfoPacket",
+   "table": "ex",
+   "opcode": 30,
+   "event": "EV_ManorInfoWndDefaultAdd",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSeedSettingPacket",
+   "table": "ex",
+   "opcode": 31,
+   "event": "EV_ManorSeedInfoSettingWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSeedSettingPacket",
+   "table": "ex",
+   "opcode": 31,
+   "event": "EV_ManorSeedInfoSettingWndAddItem",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSeedSettingPacket",
+   "table": "ex",
+   "opcode": 31,
+   "event": "EV_ManorSeedInfoSettingWndAddItemEnd",
+   "verified": true
+  },
+  {
+   "packet": "ExShowCropSettingPacket",
+   "table": "ex",
+   "opcode": 32,
+   "event": "EV_ManorCropInfoSettingWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowCropSettingPacket",
+   "table": "ex",
+   "opcode": 32,
+   "event": "EV_ManorCropInfoSettingWndAddItem",
+   "verified": true
+  },
+  {
+   "packet": "ExShowCropSettingPacket",
+   "table": "ex",
+   "opcode": 32,
+   "event": "EV_ManorCropInfoSettingWndAddItemEnd",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSellCropListPacket",
+   "table": "ex",
+   "opcode": 33,
+   "event": "EV_ManorCropSellWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowSellCropListPacket",
+   "table": "ex",
+   "opcode": 33,
+   "event": "EV_ManorCropSellWndAddItem",
+   "verified": true
+  },
+  {
+   "packet": "ExShowProcureCropDetailPacket",
+   "table": "ex",
+   "opcode": 34,
+   "event": "EV_ManorCropSellChangeWndShow",
+   "verified": true
+  },
+  {
+   "packet": "ExShowProcureCropDetailPacket",
+   "table": "ex",
+   "opcode": 34,
+   "event": "EV_ManorCropSellChangeWndAddItem",
+   "verified": true
+  },
+  {
+   "packet": "ExHeroListPacket",
+   "table": "ex",
+   "opcode": 35,
+   "event": "EV_HeroShowList",
+   "verified": true
+  },
+  {
+   "packet": "ExOpenMPCCPacket",
+   "table": "ex",
+   "opcode": 37,
+   "event": "EV_CommandChannelStart",
+   "verified": true
+  },
+  {
+   "packet": "ExCloseMPCCPacket",
+   "table": "ex",
+   "opcode": 38,
+   "event": "EV_CommandChannelEnd",
+   "verified": true
+  },
+  {
+   "packet": "ExOlympiadUserInfoPacket",
+   "table": "ex",
+   "opcode": 41,
+   "event": "EV_OlympiadUserInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExOlympiadSpelledInfoPacket",
+   "table": "ex",
+   "opcode": 42,
+   "event": "EV_OlympiadBuffInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExOlympiadModePacket",
+   "table": "ex",
+   "opcode": 43,
+   "event": "EV_OlympiadTargetShow",
+   "verified": true
+  },
+  {
+   "packet": "ExOlympiadModePacket",
+   "table": "ex",
+   "opcode": 43,
+   "event": "EV_OlympiadMatchEnd",
+   "verified": true
+  },
+  {
+   "packet": "ExOlympiadMatchEndPacket",
+   "table": "ex",
+   "opcode": 44,
+   "event": "EV_OlympiadMatchEnd",
+   "verified": true
+  },
+  {
+   "packet": "ExMailArrivedPacket",
+   "table": "ex",
+   "opcode": 45,
+   "event": "EV_ArriveNewMail",
+   "verified": true
+  },
+  {
+   "packet": "ExStorageMaxCountPacket",
+   "table": "ex",
+   "opcode": 46,
+   "event": "EV_SetMaxCount",
+   "verified": true
+  },
+  {
+   "packet": "ExEventMatchManagePacket",
+   "table": "ex",
+   "opcode": 47,
+   "event": "EV_EventMatchManage",
+   "verified": true
+  },
+  {
+   "packet": "ExMultiPartyCommandChannelInfoPacket",
+   "table": "ex",
+   "opcode": 48,
+   "event": "EV_CommandChannelInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExMultiPartyCommandChannelInfoPacket",
+   "table": "ex",
+   "opcode": 48,
+   "event": "EV_CommandChannelPartyList",
+   "verified": true
+  },
+  {
+   "packet": "ExPCCafePointInfoPacket",
+   "table": "ex",
+   "opcode": 49,
+   "event": "EV_PCCafePointInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExSetCompassZoneCode",
+   "table": "ex",
+   "opcode": 50,
+   "event": "EV_SetRadarZoneCode",
+   "verified": true
+  },
+  {
+   "packet": "ExGetBossRecord",
+   "table": "ex",
+   "opcode": 51,
+   "event": "EV_RaidRecord",
+   "verified": true
+  },
+  {
+   "packet": "ExListPartyMatchingWaitingRoom",
+   "table": "ex",
+   "opcode": 53,
+   "event": "EV_PartyMatchWaitListStart",
+   "verified": true
+  },
+  {
+   "packet": "ExListPartyMatchingWaitingRoom",
+   "table": "ex",
+   "opcode": 53,
+   "event": "EV_PartyMatchWaitList",
+   "verified": true
+  },
+  {
+   "packet": "ExSetMpccRouting",
+   "table": "ex",
+   "opcode": 54,
+   "event": "EV_CommandChannelRoutingType",
+   "verified": true
+  },
+  {
+   "packet": "ExShowAdventurerGuideBook",
+   "table": "ex",
+   "opcode": 55,
+   "event": "EV_ShowGuideWnd",
+   "verified": true
+  },
+  {
+   "packet": "ExShowScreenMessage",
+   "table": "ex",
+   "opcode": 56,
+   "event": "EV_ShowScreenMessage",
+   "verified": true
+  },
+  {
+   "packet": "PledgeSkillListPacket",
+   "table": "ex",
+   "opcode": 57,
+   "event": "EV_ClanSkillList",
+   "verified": true
+  },
+  {
+   "packet": "PledgeSkillListAddPacket",
+   "table": "ex",
+   "opcode": 58,
+   "event": "EV_ClanSkillListAdd",
+   "verified": true
+  },
+  {
+   "packet": "PledgePowerGradeList",
+   "table": "ex",
+   "opcode": 59,
+   "event": "EV_ClanAuthGradeList",
+   "verified": true
+  },
+  {
+   "packet": "PledgeReceivePowerInfo",
+   "table": "ex",
+   "opcode": 60,
+   "event": "EV_ClanAuthMember",
+   "verified": true
+  },
+  {
+   "packet": "PledgeReceiveMemberInfo",
+   "table": "ex",
+   "opcode": 61,
+   "event": "EV_ClanMemberInfo",
+   "verified": true
+  },
+  {
+   "packet": "PledgeReceiveWarList",
+   "table": "ex",
+   "opcode": 62,
+   "event": "EV_ClanWarList",
+   "verified": true
+  },
+  {
+   "packet": "PledgeReceiveSubPledgeCreated",
+   "table": "ex",
+   "opcode": 63,
+   "event": "EV_ClanSubClanUpdated",
+   "verified": true
+  },
+  {
+   "packet": "PledgeReceiveUpdatePower",
+   "table": "ex",
+   "opcode": 65,
+   "event": "EV_ClanMyAuth",
+   "verified": true
+  },
+  {
+   "packet": "ShowPCCafeCouponShowUI",
+   "table": "ex",
+   "opcode": 67,
+   "event": "EV_ShowPCCafeCouponUI",
+   "verified": true
+  },
+  {
+   "packet": "ExCursedWeaponList",
+   "table": "ex",
+   "opcode": 69,
+   "event": "EV_MinimapCursedWeaponList",
+   "verified": true
+  },
+  {
+   "packet": "ExCursedWeaponLocation",
+   "table": "ex",
+   "opcode": 70,
+   "event": "EV_MinimapCursedWeaponLocation",
+   "verified": true
+  },
+  {
+   "packet": "ExMPCCShowPartyMemberInfo",
+   "table": "ex",
+   "opcode": 74,
+   "event": "EV_CommandChannelPartyMember",
+   "verified": true
+  },
+  {
+   "packet": "ExDuelAskStart",
+   "table": "ex",
+   "opcode": 75,
+   "event": "EV_DuelAskStart",
+   "verified": true
+  },
+  {
+   "packet": "ExDuelReady",
+   "table": "ex",
+   "opcode": 76,
+   "event": "EV_DuelReady",
+   "verified": true
+  },
+  {
+   "packet": "ExDuelStart",
+   "table": "ex",
+   "opcode": 77,
+   "event": "EV_DuelStart",
+   "verified": true
+  },
+  {
+   "packet": "ExDuelEnd",
+   "table": "ex",
+   "opcode": 78,
+   "event": "EV_DuelEnd",
+   "verified": true
+  },
+  {
+   "packet": "ExDuelUpdateUserInfo",
+   "table": "ex",
+   "opcode": 79,
+   "event": "EV_DuelUpdateUserInfo",
+   "verified": true
+  },
+  {
+   "packet": "ExShowVariationMakeWindow",
+   "table": "ex",
+   "opcode": 80,
+   "event": "EV_ShowRefineryInteface",
+   "verified": true
+  },
+  {
+   "packet": "ExShowVariationCancelWindow",
+   "table": "ex",
+   "opcode": 81,
+   "event": "EV_ShowRefineryCancelInteface",
+   "verified": true
+  },
+  {
+   "packet": "ExPutItemResultForVariationMake",
+   "table": "ex",
+   "opcode": 82,
+   "event": "EV_RefineryConfirmTargetItemResult",
+   "verified": true
+  },
+  {
+   "packet": "ExPutIntensiveResultForVariationMake",
+   "table": "ex",
+   "opcode": 83,
+   "event": "EV_RefineryConfirmRefinerItemResult",
+   "verified": true
+  },
+  {
+   "packet": "ExPutCommissionResultForVariationMake",
+   "table": "ex",
+   "opcode": 84,
+   "event": "EV_RefineryConfirmGemStoneResult",
+   "verified": true
+  },
+  {
+   "packet": "ExVariationResult",
+   "table": "ex",
+   "opcode": 85,
+   "event": "EV_RefineryRefineResult",
+   "verified": true
+  },
+  {
+   "packet": "ExPutItemResultForVariationCancel",
+   "table": "ex",
+   "opcode": 86,
+   "event": "EV_RefineryConfirmCancelItemResult",
+   "verified": true
+  },
+  {
+   "packet": "ExVariationCancelResult",
+   "table": "ex",
+   "opcode": 87,
+   "event": "EV_RefineryRefineCancelResult",
+   "verified": true
+  },
+  {
+   "packet": "ExMPCCPartyInfoUpdate",
+   "table": "ex",
+   "opcode": 90,
+   "event": "EV_CommandChannelPartyUpdate",
+   "verified": true
+  },
+  {
+   "packet": "ExPlayScene",
+   "table": "ex",
+   "opcode": 91,
+   "event": "EV_ShowPlaySceneInterface",
+   "verified": true
+  }
+ ]
+}

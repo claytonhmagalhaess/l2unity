@@ -1,0 +1,65 @@
+{
+ "formats": [
+  "ddddd",
+  "dddchh",
+  "hdhdhdd",
+  "hhdhdd"
+ ],
+ "itemArgs": [
+  "iVar3",
+  "(int)(char)param_1",
+  "local_38",
+  "local_3c",
+  "local_40",
+  "(int)local_50[0]",
+  "local_18",
+  "(int)local_54[0]",
+  "local_1c",
+  "(int)local_58[0]",
+  "local_20",
+  "local_24"
+ ],
+ "needArgs": [
+  "local_38",
+  "local_3c",
+  "local_40",
+  "(int)local_48[0]",
+  "local_c",
+  "(int)local_4c[0]",
+  "local_10",
+  "local_14"
+ ],
+ "header": [
+  "local_28",
+  "local_2c",
+  "local_8",
+  "local_4",
+  "local_30"
+ ],
+ "shopIdWhen": 1,
+ "endWhen": 2,
+ "itemKeys": [
+  "index",
+  "type",
+  "ID",
+  "refineryOp1",
+  "refineryOp2",
+  "classID",
+  "slotBitType",
+  "itemType",
+  "itemCount",
+  "enchant",
+  "OutputRefineryOp1",
+  "OutputRefineryOp2"
+ ],
+ "needKeys": [
+  "ID",
+  "refineryOp1",
+  "refineryOp2",
+  "ClassID",
+  "count",
+  "enchant",
+  "inputRefineryOp1",
+  "inputRefineryOp2"
+ ]
+}
