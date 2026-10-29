@@ -11,6 +11,7 @@ Shader "L2Web/Fx"
         _Fog ("Fog", Float) = 0
         _VColor ("Vertex color", Float) = 1
         _Gamma2x ("Modulate2X em gama", Float) = 0
+        _GammaOver ("Alfa em gama sobre destino conhecido (rgb gama, w = 1 liga)", Vector) = (0,0,0,0)
         [Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend ("Src", Float) = 5
         [Enum(UnityEngine.Rendering.BlendMode)] _DstBlend ("Dst", Float) = 10
         [Enum(Off, 0, On, 1)] _ZWrite ("ZWrite", Float) = 0
@@ -33,6 +34,7 @@ Shader "L2Web/Fx"
             #pragma fragment frag
             #pragma multi_compile_fog
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 
             TEXTURE2D(_MainTex); SAMPLER(sampler_MainTex);
             CBUFFER_START(UnityPerMaterial)
@@ -42,6 +44,7 @@ Shader "L2Web/Fx"
                 float _Fog;
                 float _VColor;
                 float _Gamma2x;
+                float4 _GammaOver;
                 float _SrcBlend, _DstBlend, _ZWrite, _Cull, _ZTest;
             CBUFFER_END
 
@@ -92,6 +95,17 @@ Shader "L2Web/Fx"
                 // Blend DstColor SrcColor = 2 src dst. O UE2 faz isso em gama; com a textura lida linear (127 = 0,498) e o
                 // projeto em espaco linear, src = (2 t)^2,2 / 2 da o mesmo resultado depois da conversao
                 if (_Gamma2x > 0.5) c.rgb = pow(saturate(2 * c.rgb), 2.2) * 0.5;
+                // SrcAlpha/InvSrcAlpha: o D3D mistura os valores em gama, R = a C + (1 - a) D. Em linear uma camada clara e fina
+                // sobre um fundo escuro sai muito mais forte (nuvens do ceu). Com o destino D conhecido (o fundo opaco do ceu),
+                // o alfa que da o mesmo R em linear e a' = (lin(R) - lin(D)) / (lin(C) - lin(D)), pela luminancia
+                if (_GammaOver.w > 0.5)
+                {
+                    float3 d = SRGBToLinear(_GammaOver.rgb);
+                    float3 r = SRGBToLinear(c.a * LinearToSRGB(c.rgb) + (1 - c.a) * _GammaOver.rgb);
+                    float3 w = float3(0.2126, 0.7152, 0.0722);
+                    float den = dot(c.rgb - d, w);
+                    if (abs(den) > 1e-4) c.a = saturate(dot(r - d, w) / den);
+                }
                 return c;
             }
             ENDHLSL
