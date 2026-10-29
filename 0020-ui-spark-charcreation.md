@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L4-charcreation` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `89_telas_nativas.md` (NCPawnSetupWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
