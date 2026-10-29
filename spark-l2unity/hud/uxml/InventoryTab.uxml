@@ -1,0 +1,7 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement label="General" name="Tab">
+    <ui:ScrollView vertical-scroller-visibility="AlwaysVisible" horizontal-page-size="1" name="ScrollView" horizontal-scroller-visibility="Hidden" mouse-wheel-scroll-size="2" touch-scroll-type="Clamped" class="l2-scroll-view">
+      <ui:VisualElement name="Content" />
+    </ui:ScrollView>
+  </ui:VisualElement>
+</ui:UXML>

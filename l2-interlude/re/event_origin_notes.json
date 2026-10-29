@@ -1,0 +1,9 @@
+{
+  "_fonte": "Origens confirmadas a mao (desmontagem do engine.dll, WinDrv.dll e NWindow.dll; RTTI do NWindow) para os eventos cujo chamador nao passa pelos caminhos rastreados automaticamente por scripts/ui_call_scan.py.",
+  "EV_ServerAgeLimitChange": ["NCServerSelectWnd (tela de selecao de servidor; RTTI .?AVNCServerSelectWnd@@, vtable 0x10295e9c slot 125 = FUN_101a8d60) -> FUN_1014fc30 -> emissor FUN_1014fb40; tambem pelo slot 513 do console (slot so do NWindow)"],
+  "EV_ShowReplayQuitDialogBox": ["WinDrv.dll UWindowsViewport: WM_SYSCOMMAND com SC_CLOSE (wParam & 0xFFF0 == 0xF060) em modo replay -> console->vtbl[0x748] (slot 466)"],
+  "EV_ChatWndMacroCommand": ["Tick do console a cada quadro (slot 26, UL2ConsoleWnd::Tick) -> FUN_101b4df0 (execucao de macro, um comando por tick) -> emissor FUN_101b45f0"],
+  "EV_ShortcutJoypad": ["WinDrv.dll (entrada de joystick): GL2Console->vtbl[0x2cc] (slot 179)"],
+  "EV_ShowUserPetitionWnd": ["natives de script UUIScript::execExecuteCommand (slot 462) e execExecuteCommandFromAction (slot 463): comando executado por uma janela"],
+  "EV_ResolutionChanged": ["WinDrv.dll UWindowsViewport (redimensionamento): [Viewport+0x68]->vtbl[0x510] (slot 324)"]
+}

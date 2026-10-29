@@ -1,0 +1,13 @@
+Window UnionWnd 226x271 @TOP_LEFT->pai.TOP_LEFT(200,200) unk101=L2UI_ch3.PartyCommandWnd.Herochat1_back unk102=UnionWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk111=1494 unk113=0 unk114=3 unk115=0 unk117=0 unk122=84872192 unk123=0 unk124=0 unk125=0 unk126=0 unk127=74600712 unk128=74599864 unk130=0 unk131=0 unk132=84560352 unk133=84559600 unk134=73788200 unk135=84559936 unk136=L2UI_CH3.PartyCommandWnd.HeroChatIcon unk137=1494 unk139=Game size=[2]
+  ListCtrl lstParty 212x147 @TOP_LEFT->pai.TOP_LEFT(7,92) unk100=1000 unk101=7 unk102=1 unk103=18 unk104=19 size=[2] values=[2]
+    - values: textStringId=408 width=165 unk108=true unk109=true unk110=false
+    - values: textStringId=1036 width=47 unk108=true unk109=true unk110=true
+  TextBox txtOwnerHead 0x0 @TOP_LEFT->pai.TOP_LEFT(14,34) textAlign=Left offsetY=0 sysstring=1265 textColor=#ffbbbbbb emoticon=1 autosize=1 size=[2]
+  TextBox txtOwner 0x0 @TOP_LEFT->pai.TOP_LEFT(110,34) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 autosize=1 size=[2]
+  TextBox txtRoutingTypeHead 0x0 @TOP_LEFT->pai.TOP_LEFT(14,49) textAlign=Left offsetY=0 sysstring=1382 textColor=#ffbbbbbb emoticon=1 autosize=1 size=[2]
+  TextBox txtRoutingType 0x0 @TOP_LEFT->pai.TOP_LEFT(110,49) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 autosize=1 size=[2]
+  TextBox txtCountInfo 0x0 @TOP_LEFT->pai.TOP_LEFT(15,75) text=0 textAlign=Left offsetY=0 textColor=#ffbbbbbb emoticon=1 autosize=1 size=[2]
+  Button btnRefresh 65x20 @TOP_RIGHT->pai.TOP_RIGHT(-6,70) normalTex=L2UI_CH3.Button.smallbutton2 pushedTex=L2UI_CH3.Button.smallbutton2_down buttonName=1039 disableTime=5000 size=[2]
+  Button btnBan 65x20 @TOP_LEFT->pai.TOP_LEFT(10,244) normalTex=L2UI_CH3.Button.smallbutton2 pushedTex=L2UI_CH3.Button.smallbutton2_down buttonName=681 size=[2]
+  Button btnOut 65x20 @TOP_LEFT->pai.TOP_LEFT(81,244) normalTex=L2UI_CH3.Button.smallbutton2 pushedTex=L2UI_CH3.Button.smallbutton2_down buttonName=1268 size=[2]
+  Button btnMemberInfo 65x20 @TOP_LEFT->pai.TOP_LEFT(152,244) normalTex=L2UI_CH3.Button.smallbutton2 pushedTex=L2UI_CH3.Button.smallbutton2_down buttonName=200 size=[2]

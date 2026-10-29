@@ -1,0 +1,14 @@
+<ui:UXML editor-extension-mode="True" uss="L2StyleSheet" uss="ActionWindow" uss="CharacterInfoWindow" uss="ChatWindow" uss="ExitWindow" uss="InventoryWindow" uss="MenuWindow" uss="Nameplate" uss="HtmlStyle" uss="RestartLocationWindow" uss="SkillbarWindow" uss="StatusWindow" uss="SystemMenuWindow" uss="TargetWindow" uss="SkillLearnWindow" uss="SkillWindow" uss="ShopStyle" uss="BuffWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="NameplatesContainer" focusable="false" usage-hints="GroupTransform" picking-mode="Ignore">
+    <ui:VisualElement name="Spacer" picking-mode="Ignore" />
+  </ui:VisualElement>
+  <ui:VisualElement name="UIContainer" focusable="false" usage-hints="GroupTransform">
+    <ui:VisualElement name="Spacer" picking-mode="Ignore" />
+  </ui:VisualElement>
+  <ui:VisualElement name="UIContainerPopup" focusable="false" usage-hints="None" picking-mode="Ignore" />
+  <ui:VisualElement name="UIContainerTooltip" focusable="false" usage-hints="None" picking-mode="Ignore" />
+  <ui:VisualElement name="UIContainerSlot" focusable="false" usage-hints="None" picking-mode="Ignore" />
+  <ui:VisualElement name="Loading" picking-mode="Ignore">
+    <ui:Label tabindex="-1" text="Loading..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" picking-mode="Ignore" />
+  </ui:VisualElement>
+</ui:UXML>

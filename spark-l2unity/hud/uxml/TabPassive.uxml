@@ -1,0 +1,84 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="Window">
+    <ui:GroupBox name="Content" class="psvroot">
+      <ui:GroupBox name="AllPanel">
+        <ui:GroupBox name="AbilityContent" class="row-ability-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Ability" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Ability skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowAbility">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="pasbox0" class="pasbox0" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="pasbox1" class="pasbox1" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="pasbox2" class="pasbox2" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="pasbox3" class="pasbox3" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="pasbox4" class="pasbox4" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="pasbox5" class="pasbox5" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="pasbox6" class="pasbox6" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+        <ui:GroupBox name="SubjectContent" class="row-subject-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Subject" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Subject skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowSubject">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="pasbox7" class="pasbox7" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="pasbox8" class="pasbox8" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="pasbox9" class="pasbox9" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="pasbox10" class="pasbox10" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="pasbox11" class="pasbox11" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="pasbox12" class="pasbox12" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="pasbox13" class="pasbox13" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

@@ -1,0 +1,274 @@
+{
+ "dll": "L2.exe",
+ "functions": 1901,
+ "by_evidence": {
+  "thunk": 264,
+  "vizinhanca": 62,
+  "inferido": 273,
+  "eh": 365,
+  "vtable": 31,
+  "rtti": 137,
+  "guard": 8,
+  "nome": 761
+ },
+ "by_subsystem": {
+  "nucleo Unreal (objetos, script VM, IO)": 592,
+  "criptografia de arquivos (Ver111/121/413)": 144,
+  "inicializacao (L2.exe: lancador, config, criptografia de arquivos)": 473,
+  "UI Win32 (Window.dll: janelas de config/ferramentas)": 154,
+  "bibliotecas (CRT/MFC/zlib)": 534,
+  "rede": 3,
+  "sistema (chamadas Win32 importadas)": 1
+ },
+ "classes": 64,
+ "top_classes_by_subsystem": {
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "FConfigCacheIni",
+    282
+   ],
+   [
+    "FFileManagerGeneric",
+    94
+   ],
+   [
+    "FFileManagerWindows",
+    77
+   ],
+   [
+    "FMallocWindows",
+    54
+   ],
+   [
+    "FConfigCache",
+    21
+   ],
+   [
+    "CORE.DLL::FArchive",
+    20
+   ],
+   [
+    "FOutputDeviceFile",
+    11
+   ],
+   [
+    "FOutputDeviceWindowsError",
+    8
+   ],
+   [
+    "FStringOutputDevice",
+    5
+   ],
+   [
+    "CORE.DLL::FCodec",
+    5
+   ],
+   [
+    "TMapBase",
+    4
+   ],
+   [
+    "FOutputDeviceNull",
+    3
+   ],
+   [
+    "CORE.DLL::FNotifyHook",
+    3
+   ],
+   [
+    "CORE.DLL::FFileManager",
+    3
+   ],
+   [
+    "CORE.DLL::FOutputDevice",
+    2
+   ]
+  ],
+  "criptografia de arquivos (Ver111/121/413)": [
+   [
+    "FL2RSACodec",
+    36
+   ],
+   [
+    "FL2DESCodec",
+    32
+   ],
+   [
+    "FL2FileDecryptArchive",
+    29
+   ],
+   [
+    "FArchiveFileReader",
+    26
+   ],
+   [
+    "FL2FileEncryptArchive",
+    21
+   ]
+  ],
+  "inicializacao (L2.exe: lancador, config, criptografia de arquivos)": [
+   [
+    "(funcao livre nomeada)",
+    203
+   ],
+   [
+    "WINDOW.DLL::WWindow",
+    54
+   ],
+   [
+    "FExecHook",
+    51
+   ],
+   [
+    "FFeedbackContextWindows",
+    51
+   ],
+   [
+    "FConfigFile",
+    34
+   ],
+   [
+    "FMemArchive",
+    18
+   ],
+   [
+    "WINDOW.DLL::WProperties",
+    15
+   ],
+   [
+    "WINDOW.DLL::WLog",
+    10
+   ],
+   [
+    "WINDOW.DLL::WWizardDialog",
+    8
+   ],
+   [
+    "WINDOW.DLL::WWizardPage",
+    7
+   ],
+   [
+    "WINDOW.DLL::WDialog",
+    5
+   ],
+   [
+    "WINDOW.DLL::WObjectProperties",
+    4
+   ],
+   [
+    "WINDOW.DLL::WTerminal",
+    4
+   ],
+   [
+    "WINDOW.DLL::WConfigProperties",
+    3
+   ],
+   [
+    "WSOCK32.DLL",
+    2
+   ]
+  ],
+  "UI Win32 (Window.dll: janelas de config/ferramentas)": [
+   [
+    "WLog",
+    68
+   ],
+   [
+    "WConfigPageSafeOptions",
+    34
+   ],
+   [
+    "WConfigWizard",
+    28
+   ],
+   [
+    "WConfigPageSafeMode",
+    20
+   ],
+   [
+    "WObjectProperties",
+    2
+   ],
+   [
+    "WConfigProperties",
+    2
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    379
+   ],
+   [
+    "std::bad_exception",
+    48
+   ],
+   [
+    "UnDecorator",
+    44
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "type_info",
+    5
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "_LocaleUpdate",
+    3
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ],
+   [
+    "exception",
+    1
+   ],
+   [
+    "std::bad_cast",
+    1
+   ]
+  ],
+  "rede": [
+   [
+    "Replicator",
+    3
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    1
+   ]
+  ]
+ },
+ "funclets_linked": 380,
+ "eh_handlers": 143
+}

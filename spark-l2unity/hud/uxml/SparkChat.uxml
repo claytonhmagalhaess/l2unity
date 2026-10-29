@@ -1,0 +1,3 @@
+<ui:UXML editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SparkChat" focusable="true" />
+</ui:UXML>

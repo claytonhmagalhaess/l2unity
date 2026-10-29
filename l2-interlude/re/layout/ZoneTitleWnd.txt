@@ -1,0 +1,4 @@
+Window ZoneTitleWnd 500x200 @CENTER->pai.CENTER(0,0) unk102=ZoneTitleWnd unk103=GamingState unk107=1 unk108=1 unk114=0 unk117=0 unk122=74396928 unk126=0 unk127=85116504 unk128=84012632 unk130=3 unk131=3 unk132=0 unk133=1073741824 unk134=0 unk135=1073741824 unk139=Game size=[2]
+  Texture texZoneTitleFontDeco 256x256 @TOP_LEFT->pai.TOP_LEFT(0,0) file=L2ui_ch3.PlayerStatusWnd.fontdeco type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  TextBox textZoneNameBack 100x40 @TOP_LEFT->pai.TOP_LEFT(103,83) textAlign=Left offsetY=4 textColor=#ff000000 emoticon=1 autosize=1 size=[2]
+  TextBox textZoneNameFront 100x40 @TOP_LEFT->pai.TOP_LEFT(100,80) textAlign=Left offsetY=4 textColor=#fff0f0dc emoticon=1 autosize=1 size=[2]

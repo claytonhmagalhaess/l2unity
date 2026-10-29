@@ -1,0 +1,7 @@
+Window ActionWnd 256x335 @TOP_LEFT->pai.TOP_LEFT(0,65) unk100=MainWnd unk101=L2UI_CH3.ActionWnd.Action_Back unk102=ActionWnd unk114=0 unk117=0 unk122=470012597 unk126=0 unk127=369129583 unk128=2820 unk130=0 unk131=0 unk132=0 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+  TextBox txtBasic 0x0 @TOP_LEFT->pai.TOP_LEFT(22,11) textAlign=Left offsetY=0 sysstring=129 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ItemWindow ActionBasicItem 219x104 @TOP_LEFT->pai.TOP_LEFT(18,25) popupType=Action col=6 row=3 maxItemNum=18 iconWidth=32 iconHeight=32 gapX=5 gapY=3 buttonClick=1 size=[2]
+  TextBox txtBasic 0x0 @TOP_LEFT->pai.TOP_LEFT(22,141) textAlign=Left offsetY=0 sysstring=130 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ItemWindow ActionPartyItem 219x69 @TOP_LEFT->pai.TOP_LEFT(18,155) popupType=Action col=6 row=2 maxItemNum=12 iconWidth=32 iconHeight=32 gapX=5 gapY=3 buttonClick=1 size=[2]
+  TextBox txtBasic 0x0 @TOP_LEFT->pai.TOP_LEFT(22,235) textAlign=Left offsetY=0 sysstring=204 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ItemWindow ActionSocialItem 219x69 @TOP_LEFT->pai.TOP_LEFT(18,250) popupType=Action col=6 row=3 maxItemNum=12 iconWidth=32 iconHeight=32 gapX=5 gapY=3 buttonClick=1 size=[2]

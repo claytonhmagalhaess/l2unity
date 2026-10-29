@@ -1,0 +1,2 @@
+Window HelpHtmlWnd 310x311 @CENTER_LEFT->pai.CENTER_LEFT(0,-97) unk101=L2UI_ch3.NpcWnd.Npc2_back unk102=HelpHtmlWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=145 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=84255880 unk128=-1064894378 unk130=0 unk131=0 unk132=84257592 unk133=0 unk134=1 unk135=0 unk139=Game size=[2]
+  HtmlCtrl HtmlViewer 296x274 @TOP_LEFT->pai.TOP_LEFT(7,30) size=[2]

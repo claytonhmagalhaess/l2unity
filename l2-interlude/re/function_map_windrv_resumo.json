@@ -1,0 +1,188 @@
+{
+ "dll": "WinDrv.dll",
+ "functions": 1057,
+ "by_evidence": {
+  "nome": 748,
+  "thunk": 14,
+  "eh": 162,
+  "rtti": 17,
+  "inferido": 69,
+  "vizinhanca": 46,
+  "vtable": 1
+ },
+ "by_subsystem": {
+  "interface/entrada (janela, teclado, mouse, joystick)": 434,
+  "UI Win32 (Window.dll: janelas de config/ferramentas)": 23,
+  "bibliotecas (CRT/MFC/zlib)": 524,
+  "nucleo Unreal (objetos, script VM, IO)": 55,
+  "UI: janelas e controles nativos (NC*)": 2,
+  "engine (chamada importada)": 10,
+  "sistema (chamadas Win32 importadas)": 6,
+  "rede": 3
+ },
+ "classes": 39,
+ "top_classes_by_subsystem": {
+  "interface/entrada (janela, teclado, mouse, joystick)": [
+   [
+    "UWindowsViewport",
+    227
+   ],
+   [
+    "UWindowsClient",
+    84
+   ],
+   [
+    "(funcao livre nomeada)",
+    65
+   ],
+   [
+    "WINDOW.DLL::WWindow",
+    53
+   ],
+   [
+    "DINPUT8.DLL",
+    4
+   ],
+   [
+    "WINDOW.DLL::FCommandTarget",
+    1
+   ]
+  ],
+  "UI Win32 (Window.dll: janelas de config/ferramentas)": [
+   [
+    "WWindowsViewportWindow",
+    23
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    365
+   ],
+   [
+    "UnDecorator",
+    43
+   ],
+   [
+    "type_info",
+    41
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "_LocaleUpdate",
+    13
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "std::bad_typeid",
+    3
+   ],
+   [
+    "std::bad_exception",
+    3
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "CRect",
+    2
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "CORE.DLL::UObject",
+    25
+   ],
+   [
+    "CORE.DLL::UBoolProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UField",
+    7
+   ],
+   [
+    "CORE.DLL::UProperty",
+    7
+   ],
+   [
+    "CORE.DLL::FNotifyHook",
+    3
+   ],
+   [
+    "UBoolProperty",
+    2
+   ],
+   [
+    "CORE.DLL::FOutputDevice",
+    2
+   ]
+  ],
+  "UI: janelas e controles nativos (NC*)": [
+   [
+    "switchD_1110950a",
+    1
+   ],
+   [
+    "switchD_11109b4c",
+    1
+   ]
+  ],
+  "engine (chamada importada)": [
+   [
+    "ENGINE.DLL::UViewport",
+    6
+   ],
+   [
+    "ENGINE.DLL::UClient",
+    4
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "IMM32.DLL",
+    5
+   ],
+   [
+    "KERNEL32.DLL",
+    1
+   ]
+  ],
+  "rede": [
+   [
+    "Replicator",
+    3
+   ]
+  ]
+ },
+ "funclets_linked": 163,
+ "eh_handlers": 47
+}

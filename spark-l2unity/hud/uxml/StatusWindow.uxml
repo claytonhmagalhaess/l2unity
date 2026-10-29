@@ -1,0 +1,24 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="StatusWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="StatusWindow" class="status-window">
+    <ui:VisualElement name="Frame_DF_Ver" template="Frame_DF_Ver" class="drag-area status-window-drag">
+      <ui:Instance template="Frame_DF_Ver" template="Frame_DF_Ver" name="Frame_DF_Ver" class="frame_df_ver drag-area" />
+    </ui:VisualElement>
+    <ui:GroupBox name="CenterContainer" class="status-window-bg">
+      <ui:VisualElement name="LevelContainer" class="status-window-row-1">
+        <ui:GroupBox name="LevelContainer" class="level-container">
+          <ui:Label text="1" name="LevelText" class="l2-color-2" />
+        </ui:GroupBox>
+        <ui:Label text="Shnok" name="PlayerNameText" class="l2-color-4" />
+      </ui:VisualElement>
+      <ui:GroupBox name="BarGroup" class="status-window-row-2">
+        <ui:Instance template="L2Bar" template="L2Bar" name="CPBar" class="l2-bar cp status" />
+        <ui:Instance template="L2Bar" template="L2Bar" name="HPBar" class="l2-bar status" />
+        <ui:Instance template="L2Bar" template="L2Bar" name="MPBar" class="l2-bar mp status" />
+        <ui:Instance template="L2Bar" template="L2Bar" name="EXPBar" class="l2-bar exp" />
+      </ui:GroupBox>
+    </ui:GroupBox>
+    <ui:VisualElement name="SizeControl" class="status-window-size-control">
+      <ui:VisualElement name="SizeControl" class="status-window-resize-handle resize-hor" />
+    </ui:VisualElement>
+  </ui:GroupBox>
+</ui:UXML>

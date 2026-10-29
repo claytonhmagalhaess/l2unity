@@ -1,0 +1,10 @@
+Window UserPetitionWnd 256x401 @CENTER_LEFT->pai.CENTER_LEFT(0,0) unk101=L2UI_ch3.PetitionWnd.petition1_back unk102=UserPetitionWnd unk103=GamingState unk104=1 unk107=1 unk111=470 unk114=0 unk117=0 unk122=7209077 unk126=0 unk127=7471205 unk128=7209033 unk130=0 unk131=0 unk132=852091 unk133=655373 unk134=7274604 unk135=589834 unk139=Game size=[2]
+  ComboBox PetitionTypeComboBox 145x17 @TOP_LEFT->pai.TOP_LEFT(51,50) size=[2] values=[1]
+    - values: sysString=695 systemMsg=-9999 text=undefined reserved=-9999
+  MultiEdit PetitionMultiEdit 240x124 @TOP_LEFT->pai.TOP_LEFT(8,241) size=[2]
+  Button OKButton 76x23 @TOP_LEFT->pai.TOP_LEFT(51,372) normalTex=L2UI_CH3.Button.Btn1_Normal pushedTex=L2UI_CH3.Button.Btn1_NormalOn buttonName=694 size=[2]
+  Button CancelButton 76x23 @TOP_LEFT->pai.TOP_LEFT(131,372) normalTex=L2UI_CH3.Button.Btn1_Normal pushedTex=L2UI_CH3.Button.Btn1_NormalOn buttonName=473 size=[2]
+  TextBox ViewInfoTextBox 0x0 @TOP_LEFT->pai.TOP_LEFT(22,30) textAlign=Left offsetY=0 sysstring=705 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox CategoryTextBox 0x0 @TOP_LEFT->pai.TOP_LEFT(22,53) textAlign=Left offsetY=0 sysstring=412 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox InputPetitionTextBox 0x0 @TOP_LEFT->pai.TOP_LEFT(22,226) textAlign=Left offsetY=0 sysstring=707 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  HtmlCtrl HelpHtmlCtrl 240x141 @TOP_LEFT->pai.TOP_LEFT(8,79) size=[2]

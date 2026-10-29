@@ -1,0 +1,56 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="ChatWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement label="General" name="Tab" class="chat-window chat-tab">
+    <ui:ScrollView vertical-scroller-visibility="AlwaysVisible" horizontal-page-size="1" name="ScrollView" horizontal-scroller-visibility="Hidden" mouse-wheel-scroll-size="4.833333" touch-scroll-type="Clamped" class="l2-scroll-view">
+      <ui:Label text="Shnok: 1
+Shnok: 11222222222222222222222222222222222222222222222222222222222222222222222222222222222
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 1
+Shnok: 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 1 11 11 11 11 11 11 11 1 11 11 11 11 11 11 11 1 11 11 11 11 11111111111 11 11 11 11 1" name="Content" class="chat-content" />
+    </ui:ScrollView>
+  </ui:VisualElement>
+</ui:UXML>

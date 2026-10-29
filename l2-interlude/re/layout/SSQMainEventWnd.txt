@@ -1,0 +1,3 @@
+Window SSQMainEventWnd 256x353 @TOP_LEFT->pai.TOP_LEFT(0,48) unk100=SSQMainBoard unk101=L2UI_CH3.SSQWnd.ssq_back2 unk114=0 unk117=0 unk122=4194304 unk126=0 unk127=84007216 unk128=0 unk130=0 unk131=0 unk132=0 unk133=0 unk134=84007296 unk135=17938 unk139=Game size=[2]
+  TreeCtrl me_MainTree 238x304 @TOP_LEFT->pai.TOP_LEFT(9,11) saveExpandedNode=false multiExpand=0 size=[2]
+  Button me_btnRenew 76x23 @TOP_LEFT->pai.TOP_LEFT(91,324) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=938 size=[2]

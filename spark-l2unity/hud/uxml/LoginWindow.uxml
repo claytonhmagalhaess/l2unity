@@ -1,0 +1,10 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="LoginWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="LoginWindow" picking-mode="Ignore" class="login-window">
+    <ui:Instance template="L2Input" template="L2Input" name="UserInputField" class="l2-input-field-template l2-color-4" />
+    <ui:Instance template="L2Input" template="L2Input" name="PasswordInputField" class="l2-input-field-template l2-color-4" />
+    <ui:VisualElement name="Buttons" picking-mode="Ignore" class="login-buttons">
+      <ui:Instance template="L2Button" template="L2Button" name="LoginButton" class="l2-button-template" />
+      <ui:Instance template="L2Button" template="L2Button" name="ExitButton" class="l2-button-template" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

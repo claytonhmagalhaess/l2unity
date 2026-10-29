@@ -1,0 +1,81 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="DefaultQuest" name="defaultQuest" template="DefaultQuest">
+    <ui:VisualElement name="Background" class="background_over" />
+    <ui:GroupBox name="BoxHeader" class="drag-area" />
+    <ui:GroupBox name="BoxContent" class="quest_content">
+      <ui:GroupBox name="TopPanelBox">
+        <ui:GroupBox name="SingleTab" class="activeTab">
+          <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonSingle" class="btn0">
+            <ui:Label tabindex="-1" text="Single" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label0" class="label0" />
+          </ui:Button>
+          <ui:VisualElement name="Line" class="line0" />
+        </ui:GroupBox>
+        <ui:GroupBox name="RepeatTab" class="passiveTab">
+          <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonRepeat" class="btn1">
+            <ui:Label tabindex="-1" text="Repeat" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label1" enable-rich-text="false" class="label1" />
+          </ui:Button>
+          <ui:VisualElement name="Line" class="line1" />
+        </ui:GroupBox>
+        <ui:GroupBox name="EpicTab" class="learnSkillTab">
+          <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonEpic" class="btn2">
+            <ui:Label tabindex="-1" text="Epic" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label2" class="label2" />
+          </ui:Button>
+          <ui:VisualElement name="Line" class="line2" />
+        </ui:GroupBox>
+        <ui:GroupBox name="TransferTab" class="learnSkillTab">
+          <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonTransfer" class="btn2">
+            <ui:Label tabindex="-1" text="Transfer" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label2" class="label2" />
+          </ui:Button>
+          <ui:VisualElement name="Line" class="line2" />
+        </ui:GroupBox>
+        <ui:GroupBox name="SpecialTab" class="learnSkillTab">
+          <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonSpecial" class="btn2">
+            <ui:Label tabindex="-1" text="Special" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label2" class="label2" />
+          </ui:Button>
+          <ui:VisualElement name="Line" class="line2" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="TopFrameBox">
+        <ui:GroupBox name="LeftBox" />
+        <ui:GroupBox name="CenterBox" />
+        <ui:GroupBox name="CenterButton" />
+        <ui:GroupBox name="CenterBox" />
+        <ui:GroupBox name="RightBox" />
+      </ui:GroupBox>
+      <ui:GroupBox name="CenterFrameBox">
+        <ui:GroupBox name="Left" />
+        <ui:GroupBox name="Center">
+          <ui:GroupBox name="TopTextBox">
+            <ui:GroupBox name="TextNameQuest">
+              <ui:Label tabindex="-1" text="Accepted Quest" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:GroupBox>
+            <ui:GroupBox name="TextNamePart">
+              <ui:Label tabindex="-1" text="(0/40)" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:GroupBox>
+          </ui:GroupBox>
+          <ui:GroupBox name="Content">
+            <ui:VisualElement name="Background" class="background_over" />
+          </ui:GroupBox>
+        </ui:GroupBox>
+        <ui:GroupBox name="Right" />
+      </ui:GroupBox>
+      <ui:GroupBox name="FooterPenaleBox">
+        <ui:GroupBox name="LeftBg" />
+        <ui:GroupBox name="CenterBg" />
+        <ui:GroupBox name="RightBg" />
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBox">
+        <ui:GroupBox name="CheckBox1" />
+        <ui:Label tabindex="-1" text="Cancel Auto-notify" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+        <ui:GroupBox name="CheckBox2" />
+        <ui:Label tabindex="-1" text="Tracking" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+      </ui:GroupBox>
+      <ui:GroupBox name="FooterAll">
+        <ui:Button text="Log In" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseButton" class="l2-button">
+          <ui:VisualElement name="ButtonBg" class="l2-button-bg" />
+          <ui:Label text="Detailed Info" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonLabel" picking-mode="Ignore" class="button-label" />
+        </ui:Button>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:Instance>
+</ui:UXML>

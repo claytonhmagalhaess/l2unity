@@ -1,0 +1,3393 @@
+{
+"mapa": "23_12",
+"pacote": {
+"versao": 123,
+"licenca": 28,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"AmbientSoundObject": 1302,
+"StaticMeshActor": 789,
+"StaticMeshInstance": 590,
+"TerrainSector": 256,
+"Polys": 150,
+"Model": 150,
+"Brush": 132,
+"Light": 37,
+"Camera": 15,
+"ZoneInfo": 10,
+"MusicVolume": 9,
+"SpriteEmitter": 7,
+"Emitter": 7,
+"BlockingVolume": 5,
+"WaterVolume": 3,
+"NMovableSunLight": 1,
+"LevelInfo": 1,
+"TerrainInfo": 1,
+"Level": 1,
+"SkyZoneInfo": 1,
+"PlayerStart": 1,
+"LevelSummary": 1,
+"NMoon": 1,
+"NSun": 1,
+"PhysicsVolume": 1
+},
+"atores_ambiente": [
+{
+"classe": "NMovableSunLight",
+"nome": "NMovableSunLight0",
+"props": {
+"LightBrightness": 70.0,
+"bSunAffect": true,
+"Location": [
+132530.3594,
+-198871.0781,
+15272.1318
+],
+"Rotation": [
+-8846,
+25324,
+0
+],
+"DrawScale": 100.0
+}
+},
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 175.5444,
+"Summary": "LevelSummary",
+"VisibleGroups": "emmiter,Group1,innnn,None,S_DW_Agit,S_DW_BBG,S_DW_BS,S_DW_GuildUnion,S_DW_Shop,S_DW_Temple,StartPoint,tree",
+"bPathsRebuilt": true,
+"CameraLocationDynamic": [
+120431.2109,
+-188445.2031,
+-3034.147
+],
+"CameraLocationTop": [
+124869.3594,
+-159307.3594,
+100228.8516
+],
+"CameraLocationFront": [
+124869.3594,
+-1626.8171,
+120767.6562
+],
+"CameraLocationSide": [
+-171923.8125,
+-1335.0,
+56988.9922
+],
+"CameraRotationDynamic": [
+62680,
+588280,
+0
+],
+"NavigationPointList": "PlayerStart0",
+"bDistanceFog": true,
+"DistanceFogColor": {
+"R": 121,
+"G": 140,
+"B": 162,
+"A": 0
+}
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"Terrains": "<2 bytes>",
+"DistanceFogEnd": 15000.0,
+"Location": [
+117070.8594,
+-181366.6406,
+-126.7227
+],
+"DrawScale": 10.0,
+"bIgnoredRange": true
+}
+},
+{
+"classe": "TerrainInfo",
+"nome": "TerrainInfo0",
+"props": {
+"TerrainMap": "T_23_12.Height.23_12",
+"TerrainScale": [
+128.0,
+128.0,
+76.0
+],
+"Layers": {
+"Texture": "T_Schtgart.SCS05",
+"AlphaMap": "T_texture.Texture.layer0",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.04688,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-768.0,
+1536.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[1]": {
+"Texture": "T_Schtgart.SCS04",
+"AlphaMap": "T_23_12.Height.23_12_S",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.04688,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-3072.0,
+6144.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[2]": {
+"Texture": "T_Schtgart.SCST02",
+"AlphaMap": "T_23_12.Height.23_12_ST1",
+"UScale": 4.0,
+"VScale": 4.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00195,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00195,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.01172,
+"Y": 0.02344,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+64.0,
+64.0,
+76.0
+],
+"ToWorld": [
+-1536.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+64.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+64.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0156,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0156,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[3]": {
+"Texture": "T_Schtgart.SCST01",
+"AlphaMap": "T_23_12.Height.23_12_ST",
+"UScale": 3.0,
+"VScale": 3.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.0026,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0026,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.01562,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-3072.0,
+6144.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[4]": {
+"Texture": "T_Schtgart.SCSN02",
+"AlphaMap": "T_23_12.Height.23_12_G",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.04688,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-3072.0,
+6144.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[5]": {
+"Texture": "T_Schtgart.SCSN03",
+"AlphaMap": "T_23_12.Height.23_12_G1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.04688,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-3072.0,
+6144.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[6]": {
+"Texture": "T_Schtgart.SCS03",
+"AlphaMap": "T_23_12.Height.23_12_R",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.04688,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-3072.0,
+6144.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[7]": {
+"Texture": "T_Schtgart.SCSN01",
+"AlphaMap": "T_23_12.Height.23_12_SN",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.04688,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+64.0,
+64.0,
+76.0
+],
+"ToWorld": [
+-1536.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+64.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+64.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+98304.0,
+-196608.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0156,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0156,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": true
+},
+"Layers[8]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00868,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00868,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.03472,
+"Y": 0.0,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-2048.0,
+0.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+65536.0,
+-0.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"DecoLayers": [
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer.Schtgart.23_12_DECO01",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.Dwarf_Grass.Dwarf_grass001",
+"ScaleMultiplier": {
+"X": {
+"Min": 1.5,
+"Max": 3.5
+},
+"Y": {
+"Min": 1.5,
+"Max": 3.5
+},
+"Z": {
+"Min": 1.5,
+"Max": 3.5
+}
+},
+"FadeoutRadius": {
+"Min": 300.0,
+"Max": 1500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 50.0
+},
+"MaxPerQuad": 15,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer.Schtgart.23_12_DECO02",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.Dwarf_Grass.Dwarf_grass002",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.4,
+"Max": 1.3
+},
+"Y": {
+"Min": 0.4,
+"Max": 1.3
+},
+"Z": {
+"Min": 0.4,
+"Max": 1.3
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 7,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer.Schtgart.23_12_DECO03",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.Dwarf_Grass.Dwarf_grass003",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.4,
+"Max": 1.3
+},
+"Y": {
+"Min": 0.4,
+"Max": 1.3
+},
+"Z": {
+"Min": 0.4,
+"Max": 1.3
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 7,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+}
+],
+"QuadVisibilityBitmap": "<8194>",
+"EdgeTurnBitmap": "<8194>",
+"MapX": 23,
+"MapY": 12,
+"QuadVisibilityBitmapOrig": "<8194>",
+"EdgeTurnBitmapOrig": "<8194>",
+"GeneratedSectorCounter": 256,
+"NumIntMap": 8,
+"bAutoTimeGeneration": true,
+"TIntMap": "<528537>",
+"TickTime": 12.0,
+"bSunAffect": true,
+"Location": [
+114688.0,
+-180224.0,
+160.6513
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light21",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightSaturation": 249,
+"bSunAffect": true,
+"Group": "None,S_DW_Temple",
+"Location": [
+114489.8047,
+-178535.75,
+-769.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light23",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightSaturation": 249,
+"bSunAffect": true,
+"Group": "None,S_DW_Temple",
+"Location": [
+114492.0703,
+-178245.0938,
+-769.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light24",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightSaturation": 249,
+"bSunAffect": true,
+"Group": "None,S_DW_Temple",
+"Location": [
+114492.0312,
+-178824.3594,
+-769.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light3",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Shop",
+"Location": [
+115785.9609,
+-177382.9844,
+-839.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "light2",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Shop",
+"Location": [
+116182.1484,
+-177666.125,
+-839.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light18",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_BS",
+"Location": [
+115358.0703,
+-182571.5469,
+-1390.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light8",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_BBG",
+"Location": [
+115724.9453,
+-183323.0469,
+-1432.0
+],
+"Rotation": [
+0,
+21504,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light4",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Shop",
+"Location": [
+116180.8203,
+-177366.4844,
+-839.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light17",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_BS",
+"Location": [
+115356.7344,
+-182281.6719,
+-1390.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light33",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_BBG",
+"Location": [
+115861.5234,
+-183575.1875,
+-1432.0
+],
+"Rotation": [
+0,
+21504,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light13",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Agit",
+"Location": [
+117330.8359,
+-182877.4062,
+-1465.0
+],
+"Rotation": [
+0,
+-18432,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light28",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Location": [
+114791.8672,
+-180027.8125,
+-826.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light27",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Location": [
+114833.2656,
+-179654.2656,
+-826.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light38",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 235,
+"bSunAffect": true,
+"Group": "None,S_DW_GuildUnion",
+"Location": [
+116103.4062,
+-178533.1875,
+-902.0
+],
+"Rotation": [
+0,
+-16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light30",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Shop",
+"Location": [
+115813.0156,
+-181553.0469,
+-1294.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light19",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Agit",
+"Location": [
+117275.5547,
+-183161.9844,
+-1465.0
+],
+"Rotation": [
+0,
+-18432,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light31",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Shop",
+"Location": [
+115796.4844,
+-181158.1875,
+-1294.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light26",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Location": [
+115087.4531,
+-180031.1406,
+-826.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light29",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Shop",
+"Location": [
+116096.1172,
+-181156.8281,
+-1294.0
+],
+"Rotation": [
+0,
+16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Agit",
+"Location": [
+117252.3047,
+-179877.0781,
+-1105.0
+],
+"Rotation": [
+0,
+-16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light0",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 50.0,
+"LightHue": 26,
+"LightSaturation": 190,
+"bSunAffect": true,
+"Group": "None,S_DW_Agit",
+"Location": [
+117253.6016,
+-180166.9688,
+-1105.0
+],
+"Rotation": [
+0,
+-16384,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light110",
+"props": {
+"LightBrightness": 150.0,
+"LightRadius": 40.0,
+"Location": [
+113279.9219,
+-170503.4531,
+27.2858
+],
+"Rotation": [
+0,
+26680,
+0
+],
+"DrawScale": 4.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light41",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 75.0,
+"LightHue": 128,
+"LightSaturation": 92,
+"Location": [
+111550.4219,
+-170602.4531,
+-44.3791
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo10",
+"props": {
+"ZoneTag": "Tunnel01",
+"AmbientVector": [
+0.1941,
+0.1941,
+0.1941
+],
+"AmbientBrightness": 15,
+"bSunAffect": false,
+"Location": [
+109691.9375,
+-169506.75,
+-190.0
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light52",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 75.0,
+"LightHue": 128,
+"LightSaturation": 92,
+"Location": [
+109631.4844,
+-169521.1562,
+52.6209
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light34",
+"props": {
+"LightType": 6,
+"LightBrightness": 60.0,
+"LightRadius": 40.0,
+"bCorona": true,
+"bSunAffect": true,
+"Location": [
+115532.25,
+-182439.2969,
+-1438.8672
+],
+"Rotation": [
+0,
+32768,
+0
+],
+"DrawScale": 0.4,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light62",
+"props": {
+"LightType": 6,
+"LightBrightness": 210.0,
+"LightRadius": 100.0,
+"LightHue": 25,
+"LightSaturation": 180,
+"bCorona": true,
+"bSunAffect": true,
+"Group": "None,Group1",
+"Location": [
+110552.5625,
+-166500.125,
+523.4227
+],
+"Rotation": [
+0,
+13312,
+0
+],
+"DrawScale": 2.0,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light49",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"bSunAffect": true,
+"Location": [
+111511.5234,
+-166767.7656,
+538.9608
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light50",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+112848.6094,
+-169993.6562,
+-7.0392
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light39",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+110180.2969,
+-169859.7656,
+22.9608
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume2",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+98304.0,
+-179968.0,
+-3840.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light51",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+112155.6484,
+-170117.3594,
+-49.0392
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light70",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+110762.4297,
+-170238.3438,
+-55.0392
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light54",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+111047.7188,
+-167431.0938,
+341.9608
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light55",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+109984.9531,
+-168950.1406,
+22.9608
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo2",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+115355.0,
+-182445.0,
+-1447.0
+]
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo4",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+114876.0,
+-179879.0,
+-877.0
+]
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo5",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+116102.0,
+-177439.0,
+-890.0
+]
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo3",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+115914.0,
+-181189.0,
+-1345.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light43",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+110708.5078,
+-167959.6094,
+204.9608
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo8",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+117286.0,
+-183075.0,
+-1517.0
+]
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo7",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+117256.0,
+-180057.0,
+-1157.0
+]
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo1",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+115806.0,
+-183461.0,
+-1484.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light48",
+"props": {
+"LightBrightness": 240.0,
+"LightRadius": 30.0,
+"LightHue": 42,
+"LightSaturation": 127,
+"Location": [
+110395.4766,
+-168446.4062,
+66.9608
+],
+"DrawScale": 5.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light57",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 15.0,
+"LightHue": 135,
+"LightSaturation": 100,
+"bSunAffect": true,
+"Group": "None,Group1",
+"Location": [
+110623.5156,
+-166650.2969,
+892.8928
+],
+"Rotation": [
+0,
+13312,
+0
+],
+"DrawScale": 2.0
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+260.2028,
+264371.1562,
+24471.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "Light",
+"nome": "Light259",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 15.0,
+"LightHue": 135,
+"LightSaturation": 100,
+"bSunAffect": true,
+"Group": "None,Group1",
+"Location": [
+110452.7734,
+-166897.3438,
+901.8928
+],
+"Rotation": [
+0,
+13312,
+0
+],
+"DrawScale": 2.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo6",
+"props": {
+"AmbientVector": [
+0.5118,
+0.5118,
+0.5118
+],
+"AmbientBrightness": 100,
+"Location": [
+116078.0,
+-178528.0,
+-955.0
+]
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume0",
+"props": {
+"nMusicID": 231201,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231201_town",
+"Location": [
+117328.0,
+-178720.0,
+-3904.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume1",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+98304.0,
+-179968.0,
+-4784.0
+]
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter1",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter1",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Y": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bSunAffect": true,
+"Location": [
+226.1241,
+264327.9062,
+24506.8398
+],
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+242.322,
+264343.75,
+24510.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter3",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter3",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Y": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter2",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter2",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Y": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Z": {
+"Min": 5.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter14",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter14",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Y": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter7",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter0",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": 150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": 150.0,
+"Max": 150.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -2.0,
+"Max": 2.0
+},
+"Y": {
+"Min": -2.0,
+"Max": 2.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter5",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter5",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"BlendBetweenSubdivisions": true,
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Y": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter4",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+-2.0,
+0.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.2,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"MaxParticles": 30,
+"WeatherSoundCheck": true,
+"Name": "SpriteEmitter4",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": -0.031,
+"Max": 0.031
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": -1.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.3
+},
+{
+"RelativeTime": 0.62,
+"RelativeSize": 1.3
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.8
+}
+],
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "Schtgart_Dwarf_Village_T.DW_smoke",
+"LifetimeRange": {
+"Min": 20.0,
+"Max": 20.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Y": {
+"Min": -1.333,
+"Max": 1.333
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 5.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter4",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+117364.9688,
+-181436.6562,
+-1073.0
+],
+"DrawScale": 0.3
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter5",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+117266.7578,
+-181373.0156,
+-1084.0
+],
+"DrawScale": 0.3
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter8",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+115937.3828,
+-183703.2188,
+-1218.0
+],
+"Rotation": [
+0,
+7552,
+0
+],
+"DrawScale": 0.3,
+"bDirectional": true
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter1",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+114644.6875,
+-177812.7969,
+-558.0
+],
+"Rotation": [
+0,
+-4408,
+0
+],
+"DrawScale": 0.3
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter7",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+114593.4531,
+-177724.4219,
+-536.0
+],
+"Rotation": [
+0,
+-4408,
+0
+],
+"DrawScale": 0.3
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter2",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+115399.5,
+-182809.7188,
+-1152.0
+],
+"Rotation": [
+0,
+6840,
+0
+],
+"DrawScale": 0.3
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter3",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emmiter",
+"Location": [
+115298.0391,
+-182821.8438,
+-1152.0
+],
+"Rotation": [
+0,
+6840,
+0
+],
+"DrawScale": 0.3
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume1",
+"props": {
+"nMusicID": 231202,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231202_guild",
+"Location": [
+116056.0,
+-183644.0,
+-272.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume7",
+"props": {
+"nMusicID": 231203,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231203_blacksmith",
+"Location": [
+115504.0,
+-182096.0,
+-240.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume8",
+"props": {
+"nMusicID": 231204,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231204_shop",
+"Location": [
+116256.0,
+-181200.0,
+-208.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume9",
+"props": {
+"nMusicID": 231205,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231205_warehouse",
+"Location": [
+114672.0,
+-179456.0,
+-208.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume10",
+"props": {
+"nMusicID": 231206,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231206_temple",
+"Location": [
+114352.0,
+-178944.0,
+-2208.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume11",
+"props": {
+"nMusicID": 231207,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231207_shop",
+"Location": [
+116132.0,
+-177820.0,
+-216.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume12",
+"props": {
+"nMusicID": 231208,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231208_guild",
+"Location": [
+116100.0,
+-178524.0,
+-1216.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume2",
+"props": {
+"nMusicID": 231209,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,231209_start",
+"Location": [
+107792.0,
+-174392.0,
+196.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume4",
+"props": {
+"LocationName": "",
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bLightChanged": true,
+"bDeleteMe": true,
+"bSunAffect": true,
+"Location": [
+115146.0,
+-181920.0,
+-1307.0
+],
+"bPendingDelete": true,
+"bSelected": true
+}
+}
+]
+}

@@ -1,0 +1,13 @@
+Window BoardWnd 646x530 @CENTER->pai.CENTER(0,0) unk102=BoardWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk111=387 unk113=0 unk114=3 unk115=1 unk117=0 unk122=1507344 unk123=0 unk124=0 unk125=0 unk126=0 unk127=74593120 unk128=0 unk130=0 unk131=0 unk132=74593120 unk133=0 unk134=0 unk135=0 unk136=L2UI_CH3.BoardWnd.board_icon unk137=390 unk139=Game size=[2]
+  Texture texBackTop 646x28 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_CH3.BoardWnd.board_back1 type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture texBackBottom 646x482 @TOP_LEFT->pai.TOP_LEFT(0,48) file=L2UI_CH3.BoardWnd.board_back2 type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Button btnBookmark 66x21 @TOP_LEFT->pai.TOP_LEFT(574,25) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=380 size=[2]
+  HtmlCtrl HtmlViewer 633x474 @TOP_LEFT->pai.TOP_LEFT(8,51) viewType=BBS size=[2]
+  Tab TabCtrl 538x23 @TOP_LEFT->pai.TOP_LEFT(12,25) size=[2] tabs=[7]
+    - tabs: buttonName=377 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=379 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=8 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=381 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=382 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=8 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=403 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=905 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=904 target=HtmlViewer width=74 height=23 normalTex=L2UI_CH3.BoardWnd.Board_tab2 pushedTex=L2UI_CH3.BoardWnd.Board_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1

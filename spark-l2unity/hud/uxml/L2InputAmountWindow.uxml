@@ -1,0 +1,40 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Button" uss="L2InputAmountWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="L2InputAmountWindow" class="input-amount-window">
+    <ui:VisualElement name="Main" class="drag-area input-amount-window-main">
+      <ui:VisualElement name="InfoBox" picking-mode="Ignore" class="input-amount-window-content-container">
+        <ui:VisualElement name="IconContainer" picking-mode="Ignore" class="input-amount-window-icon-container">
+          <ui:VisualElement name="VisualElement" picking-mode="Ignore" class="input-amount-window-icon" />
+        </ui:VisualElement>
+        <ui:VisualElement class="input-amount-window-content">
+          <ui:Label text="Warning message! Warning message! Warning message! Warning message!" name="Content" picking-mode="Ignore" class="l2-color-4 input-amount-window-content-label" />
+          <ui:Instance template="L2Input" template="L2Input" name="AmountInput" class="input-amount-window-amount" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+      <ui:VisualElement name="ButtonBox" picking-mode="Ignore" class="input-amount-window-button-box">
+        <ui:Instance template="L2Button" template="L2Button" name="OkButton" class="input-amount-window-button" />
+        <ui:Instance template="L2Button" template="L2Button" name="CancelButton" class="input-amount-window-button" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Side" class="input-amount-window-side">
+      <ui:VisualElement>
+        <ui:VisualElement>
+          <ui:Instance template="L2Button" template="L2Button" name="Number1" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number2" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number3" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number4" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number5" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number6" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number7" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number8" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number9" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="Number0" class="input-amount-window-number" />
+          <ui:Instance template="L2Button" template="L2Button" name="NumberAll" class="input-amount-window-number input-amount-window-number-all" />
+        </ui:VisualElement>
+        <ui:VisualElement>
+          <ui:Instance template="L2Button" template="L2Button" name="NumberBS" class="input-amount-window-number-vertical" />
+          <ui:Instance template="L2Button" template="L2Button" name="NumberC" class="input-amount-window-number-vertical" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

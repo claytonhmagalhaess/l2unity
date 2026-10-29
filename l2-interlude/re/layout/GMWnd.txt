@@ -1,0 +1,20 @@
+Window GMWnd 256x276 @BOTTOM_RIGHT->pai.BOTTOM_RIGHT(0,-51) unk101=l2ui_ch3.siegewnd.siege_back31 unk102=GMWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=83766776 unk128=84630560 unk130=0 unk131=0 unk132=8681 unk133=-1064894378 unk134=16919 unk135=271047840 unk139=Game size=[2]
+  EditBox EditBox 180x14 @TOP_LEFT->pai.TOP_LEFT(35,55) type=NORMAL maxLength=200 chatMarkOn=false size=[2]
+  Button TeleButton 54x18 @TOP_LEFT->pai.TOP_LEFT(10,75) normalTex=sek.cbui91 pushedTex=sek.cbui93 buttonName=899 noHighlight=1 size=[2]
+  Button MoveButton @TOP_LEFT->TeleButton.TOP_RIGHT(10,0) buttonName=900
+  Button RecallButton @TOP_LEFT->MoveButton.TOP_RIGHT(10,0) buttonName=688
+  Button DetailStatusButton @TOP_LEFT->TeleButton.BOTTOM_LEFT(0,3) buttonName=433
+  Button InventoryButton @TOP_LEFT->DetailStatusButton.TOP_RIGHT(10,0) buttonName=138
+  Button MagicSkillButton @TOP_LEFT->InventoryButton.TOP_RIGHT(10,0) buttonName=119
+  Button QuestButton @TOP_LEFT->DetailStatusButton.BOTTOM_LEFT(0,3) buttonName=118
+  Button InfoButton @TOP_LEFT->QuestButton.TOP_RIGHT(10,0) buttonName=901
+  Button StoreButton @TOP_LEFT->InfoButton.TOP_RIGHT(10,0) buttonName=131
+  Button ClanButton @TOP_LEFT->QuestButton.BOTTOM_LEFT(0,3) buttonName=439
+  Button PetitionButton @TOP_LEFT->ClanButton.TOP_RIGHT(10,0) buttonName=902
+  Button SendHomeButton @TOP_LEFT->PetitionButton.TOP_RIGHT(10,0) buttonName=903
+  Button NPCListButton @TOP_LEFT->ClanButton.BOTTOM_LEFT(0,3) buttonName=690
+  Button ItemListButton @TOP_LEFT->NPCListButton.TOP_RIGHT(10,0) buttonName=691
+  Button SkillListButton @TOP_LEFT->ItemListButton.TOP_RIGHT(10,0) buttonName=692
+  Button ForcePetitionButton @TOP_LEFT->NPCListButton.BOTTOM_LEFT(0,3) buttonName=1274
+  Button ChangeServerButton @TOP_LEFT->ForcePetitionButton.TOP_RIGHT(10,0) buttonName=1275
+  TextBox TextBox 0x0 @TOP_LEFT->pai.TOP_LEFT(7,55) textAlign=Undefined offsetY=0 sysstring=50 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]

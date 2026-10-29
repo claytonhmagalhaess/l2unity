@@ -1,0 +1,269 @@
+{
+ "dll": "D3DDrv.dll",
+ "functions": 3527,
+ "by_evidence": {
+  "inferido": 1357,
+  "vizinhanca": 313,
+  "eh": 1176,
+  "nome": 475,
+  "vtable": 64,
+  "rtti": 119,
+  "guard": 2,
+  "thunk": 21
+ },
+ "by_subsystem": {
+  "renderizacao (Direct3D)": 2836,
+  "bibliotecas (CRT/MFC/zlib)": 413,
+  "efeitos e particulas": 10,
+  "renderizacao": 110,
+  "terreno e decoracao": 73,
+  "nucleo Unreal (objetos, script VM, IO)": 75,
+  "engine (chamada importada)": 3,
+  "sistema (chamadas Win32 importadas)": 7
+ },
+ "classes": 79,
+ "top_classes_by_subsystem": {
+  "renderizacao (Direct3D)": [
+   [
+    "UD3DRenderDevice",
+    1521
+   ],
+   [
+    "FD3DRenderInterface",
+    1117
+   ],
+   [
+    "FD3DShader",
+    68
+   ],
+   [
+    "(funcao livre nomeada)",
+    37
+   ],
+   [
+    "FD3DDynamicVertexStream",
+    14
+   ],
+   [
+    "FD3DTexture",
+    12
+   ],
+   [
+    "FD3DDynamicIndexBuffer",
+    10
+   ],
+   [
+    "FD3DVertexShaderParameter",
+    9
+   ],
+   [
+    "FD3DVertexShader",
+    8
+   ],
+   [
+    "FD3DResource",
+    7
+   ],
+   [
+    "FD3DVertexStream",
+    6
+   ],
+   [
+    "FD3DIndexBuffer",
+    6
+   ],
+   [
+    "FD3DPixelShader",
+    5
+   ],
+   [
+    "FD3DShaderParameter",
+    5
+   ],
+   [
+    "FD3DPixelShaderParameter",
+    4
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    337
+   ],
+   [
+    "type_info",
+    57
+   ],
+   [
+    "_LocaleUpdate",
+    11
+   ],
+   [
+    "std::bad_exception",
+    4
+   ],
+   [
+    "std::exception",
+    3
+   ],
+   [
+    "exception",
+    1
+   ]
+  ],
+  "efeitos e particulas": [
+   [
+    "SetParticleMaterial",
+    10
+   ]
+  ],
+  "renderizacao": [
+   [
+    "FSkinningVertexShader",
+    17
+   ],
+   [
+    "FBaseTexture",
+    11
+   ],
+   [
+    "FRefractionVertexShader",
+    6
+   ],
+   [
+    "FFilterBlit1VertexShader",
+    5
+   ],
+   [
+    "FFilterBlit2VertexShader",
+    5
+   ],
+   [
+    "FGBlurXVertexShader",
+    5
+   ],
+   [
+    "FGBlurYVertexShader",
+    5
+   ],
+   [
+    "FTexture",
+    3
+   ],
+   [
+    "FCubemap",
+    3
+   ],
+   [
+    "FWaterMaterialPixelShader",
+    2
+   ],
+   [
+    "FFadeBlackWhitePixelShader",
+    2
+   ],
+   [
+    "FBlackWhitePixelShader",
+    2
+   ],
+   [
+    "FBrightPassPixelShader",
+    2
+   ],
+   [
+    "FBrightPass2PixelShader",
+    2
+   ],
+   [
+    "FGBlurXPixelShader",
+    2
+   ]
+  ],
+  "terreno e decoracao": [
+   [
+    "FProjectorCubeMap",
+    48
+   ],
+   [
+    "FProjectorCubeMapFace",
+    19
+   ],
+   [
+    "FTerrain3LayerPixelShader11",
+    2
+   ],
+   [
+    "FTerrain3LayerPixelShader14",
+    2
+   ],
+   [
+    "FTerrain4LayerPixelShader14",
+    2
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "CORE.DLL::UObject",
+    25
+   ],
+   [
+    "CORE.DLL::UBoolProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UIntProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UFloatProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UProperty",
+    8
+   ],
+   [
+    "CORE.DLL::UField",
+    7
+   ],
+   [
+    "UGlobalTempObjects",
+    4
+   ],
+   [
+    "UIntProperty",
+    1
+   ],
+   [
+    "UBoolProperty",
+    1
+   ],
+   [
+    "UFloatProperty",
+    1
+   ],
+   [
+    "CORE.DLL::USubsystem",
+    1
+   ]
+  ],
+  "engine (chamada importada)": [
+   [
+    "ENGINE.DLL::URenderDevice",
+    2
+   ],
+   [
+    "ENGINE.DLL::FRenderResource",
+    1
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    7
+   ]
+  ]
+ },
+ "funclets_linked": 1226,
+ "eh_handlers": 304
+}

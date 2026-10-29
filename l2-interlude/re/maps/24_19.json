@@ -1,0 +1,4242 @@
+{
+"mapa": "24_19",
+"pacote": {
+"versao": 123,
+"licenca": 28,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"StaticMeshActor": 1814,
+"AmbientSoundObject": 1788,
+"StaticMeshInstance": 813,
+"TerrainSector": 256,
+"Model": 89,
+"Polys": 89,
+"Light": 65,
+"Brush": 65,
+"WaterVolume": 20,
+"Camera": 14,
+"Mover": 12,
+"ZoneInfo": 4,
+"PlayerStart": 4,
+"MusicVolume": 3,
+"PhysicsVolume": 2,
+"NMovableSunLight": 1,
+"LevelInfo": 1,
+"TerrainInfo": 1,
+"Level": 1,
+"SkyZoneInfo": 1,
+"LevelSummary": 1,
+"NMoon": 1,
+"NSun": 1
+},
+"atores_ambiente": [
+{
+"classe": "NMovableSunLight",
+"nome": "NMovableSunLight0",
+"props": {
+"LightBrightness": 70.0,
+"bSunAffect": true,
+"Location": [
+164707.3906,
+31850.2402,
+15592.1318
+],
+"Rotation": [
+-8846,
+25324,
+0
+],
+"DrawScale": 100.0
+}
+},
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 2126.53467,
+"Summary": "LevelSummary",
+"VisibleGroups": "None,sstone,tree",
+"CameraLocationDynamic": [
+146199.0938,
+46863.2422,
+-3176.4001
+],
+"CameraLocationTop": [
+161254.9531,
+55819.4922,
+450518.3438
+],
+"CameraLocationFront": [
+163119.7969,
+-2067.9116,
+528551.6875
+],
+"CameraLocationSide": [
+46688.5156,
+-3193.6272,
+10547.5527
+],
+"CameraRotationDynamic": [
+64208,
+-1528,
+0
+],
+"NavigationPointList": "PlayerStart36",
+"AmbientVector": [
+0.0457,
+0.0457,
+0.0457
+],
+"AmbientBrightness": 1
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"Terrains": "<2 bytes>",
+"DistanceFogEnd": 15000.0,
+"Location": [
+148283.25,
+48340.6758,
+-126.7227
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light152",
+"props": {
+"bSunAffect": true,
+"Location": [
+154913.2188,
+54105.9688,
+-3198.0
+],
+"Rotation": [
+0,
+14336,
+0
+]
+}
+},
+{
+"classe": "TerrainInfo",
+"nome": "TerrainInfo0",
+"props": {
+"TerrainMap": "T_24_19.Height.24_19",
+"TerrainScale": [
+128.0,
+128.0,
+76.0
+],
+"Layers": {
+"Texture": "T_ADEN.AS_N_02",
+"AlphaMap": "T_texture.Texture.layer0",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 32768.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-1024.0,
+-256.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[1]": {
+"Texture": "T_ADEN.AS_N_01",
+"AlphaMap": "T_24_19.Height.24_19_S",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": 0.0,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[2]": {
+"Texture": "T_ADEN.AG_N_02",
+"AlphaMap": "T_24_19.Height.24_19_G2",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 131072.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[3]": {
+"Texture": "T_ADEN.AG_001",
+"AlphaMap": "T_24_19.Height.24_19_G3",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": 0.0,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[4]": {
+"Texture": "T_texture.Texture.g_01",
+"AlphaMap": "T_24_19.Height.24_19_G1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 131072.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[5]": {
+"Texture": "T_ADEN.AC04",
+"AlphaMap": "T_24_19.Height.24_19_ST",
+"UScale": 2.5,
+"VScale": 2.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00313,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00313,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.025,
+"Y": -0.00625,
+"Z": 365643.0
+}
+},
+"KFriction": 131072.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+64.0,
+64.0,
+76.0
+],
+"ToWorld": [
+-2048.0,
+-512.0,
+32225.8594
+],
+"ToWorld[1]": [
+64.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+64.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0156,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0156,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[6]": {
+"Texture": "T_Schtgart.SCSN01",
+"AlphaMap": "T_24_19.Height.24_19_SN",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 131072.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-1024.0,
+-256.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": true
+},
+"Layers[7]": {
+"Texture": "T_ADEN.AS_N_03",
+"AlphaMap": "T_24_19.Height.24_19_S1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 131072.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[8]": {
+"Texture": "T_ADEN.AR_N_01",
+"AlphaMap": "T_24_19.Height.24_19_R",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 131072.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[9]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": -0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 32768.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+-1024.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+32768.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"DecoLayers": [
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_aden.aden.24_19_Deco001",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.Oren_grass.oren_grass001",
+"ScaleMultiplier": {
+"X": {
+"Min": 1.3,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.3,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.3,
+"Max": 3.0
+}
+},
+"FadeoutRadius": {
+"Min": 300.0,
+"Max": 1500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 50.0
+},
+"MaxPerQuad": 12,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_aden.aden.24_19_Deco002",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.Aden_grass.Aden_gardengrass006",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.6,
+"Max": 1.2
+},
+"Y": {
+"Min": 0.6,
+"Max": 1.2
+},
+"Z": {
+"Min": 0.6,
+"Max": 1.2
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2400.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 4,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_aden.aden.24_19_Deco003",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.Aden_grass.Aden_grass_M01",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.6,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.6,
+"Max": 1.0
+},
+"Z": {
+"Min": 0.6,
+"Max": 1.0
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2400.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 1,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+}
+],
+"QuadVisibilityBitmap": "<8194>",
+"EdgeTurnBitmap": "<8194>",
+"MapX": 24,
+"MapY": 19,
+"QuadVisibilityBitmapOrig": "<8194>",
+"EdgeTurnBitmapOrig": "<8194>",
+"GeneratedSectorCounter": 256,
+"NumIntMap": 8,
+"bAutoTimeGeneration": true,
+"TIntMap": "<528537>",
+"TickTime": 12.0,
+"bSunAffect": true,
+"Location": [
+147456.0,
+49152.0,
+160.6513
+],
+"Rotation": [
+0,
+-2552,
+0
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light156",
+"props": {
+"bSunAffect": true,
+"Location": [
+154864.875,
+53837.2305,
+-3008.0
+],
+"Rotation": [
+0,
+14336,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light157",
+"props": {
+"bSunAffect": true,
+"Location": [
+154566.4688,
+53890.4766,
+-3008.0
+],
+"Rotation": [
+0,
+14336,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light155",
+"props": {
+"bSunAffect": true,
+"Location": [
+154437.0156,
+53562.4258,
+-3198.0
+],
+"Rotation": [
+0,
+14336,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light154",
+"props": {
+"bSunAffect": true,
+"Location": [
+154776.375,
+53500.0195,
+-3198.0
+],
+"Rotation": [
+0,
+14336,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light153",
+"props": {
+"bSunAffect": true,
+"Location": [
+154573.8594,
+54168.3984,
+-3198.0
+],
+"Rotation": [
+0,
+14336,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light957",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+154666.7656,
+55171.9688,
+-3073.0117
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light962",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+155336.25,
+55278.4023,
+-3073.0117
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light961",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+154841.2812,
+55029.9883,
+-3073.0117
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light963",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+155014.4531,
+54887.8867,
+-3073.0117
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light956",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+154988.5156,
+55562.4727,
+-3073.0117
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light960",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+155163.0781,
+55420.5,
+-3073.0117
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo39",
+"props": {
+"ZoneTag": "hall",
+"AmbientVector": [
+0.3212,
+0.3212,
+0.3212
+],
+"AmbientBrightness": 40,
+"bSunAffect": false,
+"Location": [
+155015.6719,
+55371.7188,
+-3245.0
+],
+"Rotation": [
+0,
+9216,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light958",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155130.5625,
+55432.0078,
+-3161.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light970",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154833.6562,
+55059.8398,
+-3161.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume1",
+"props": {
+"nMusicID": 241902,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,241902",
+"Location": [
+136000.0,
+34848.0,
+-3008.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light18",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 255.0,
+"LightRadius": 20.0,
+"LightHue": 42,
+"LightSaturation": 191,
+"Location": [
+151282.1875,
+46713.6641,
+-3265.7061
+],
+"Rotation": [
+-16612,
+20020,
+22052
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light971",
+"props": {
+"LightBrightness": 90.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154978.6094,
+55259.8047,
+-3135.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light42",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+147790.125,
+46707.2695,
+-3261.2712
+],
+"Rotation": [
+-17356,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light987",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154465.7188,
+55184.0898,
+-3100.877
+],
+"Rotation": [
+0,
+94548,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light984",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155027.7812,
+54897.1055,
+-3199.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light968",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155093.25,
+54749.3242,
+-3181.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light969",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155479.4375,
+55218.2031,
+-3181.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light983",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155338.2969,
+55272.1055,
+-3199.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light35",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+151078.9531,
+46713.9062,
+-3087.6582
+],
+"Rotation": [
+-22844,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light982",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155168.0469,
+55087.3008,
+-3199.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light981",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154933.3125,
+55751.9375,
+-3100.877
+],
+"Rotation": [
+0,
+87392,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light966",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154834.4688,
+54697.9141,
+-3181.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light975",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154949.2656,
+54601.5312,
+-3060.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light43",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"bSunAffect": true,
+"Location": [
+147103.1875,
+46705.9648,
+-3087.6582
+],
+"Rotation": [
+-22844,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light44",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 30,
+"LightSaturation": 175,
+"Location": [
+147682.5156,
+46983.543,
+-3245.5686
+],
+"Rotation": [
+-16504,
+15472,
+5336
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light45",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+147867.6719,
+46979.2422,
+-3251.1113
+],
+"Rotation": [
+-14020,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light964",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155477.5312,
+55483.1797,
+-3181.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light990",
+"props": {
+"LightBrightness": 40.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155299.6719,
+54991.9531,
+-3201.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light5",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+147856.9531,
+46453.6055,
+-3275.1113
+],
+"Rotation": [
+-14020,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light976",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155594.375,
+55388.8398,
+-3060.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light17",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 280.0,
+"LightRadius": 15.0,
+"LightHue": 26,
+"LightSaturation": 175,
+"Location": [
+151145.5469,
+46451.9023,
+-3229.6917
+],
+"Rotation": [
+-18272,
+31280,
+5656
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light989",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154182.9688,
+55185.4258,
+-3033.877
+],
+"Rotation": [
+0,
+94288,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light988",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154868.5,
+56015.8359,
+-3033.877
+],
+"Rotation": [
+0,
+87392,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light977",
+"props": {
+"LightBrightness": 40.0,
+"LightRadius": 10.0,
+"LightHue": 50,
+"LightSaturation": 20,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155263.8906,
+55022.5625,
+-3044.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light980",
+"props": {
+"LightBrightness": 40.0,
+"LightRadius": 10.0,
+"LightHue": 50,
+"LightSaturation": 20,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154558.9844,
+55594.7188,
+-3050.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light34",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+151765.8906,
+46715.2109,
+-3261.2712
+],
+"Rotation": [
+-17356,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light39",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 280.0,
+"LightRadius": 15.0,
+"LightHue": 26,
+"LightSaturation": 175,
+"Location": [
+151166.7031,
+46977.5234,
+-3211.6404
+],
+"Rotation": [
+-16140,
+31280,
+5844
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light33",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 255.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+151498.9375,
+46719.5117,
+-3267.5686
+],
+"Rotation": [
+-16504,
+15472,
+5336
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light986",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 15.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154753.9375,
+55744.2773,
+-3159.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light985",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 15.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154424.2344,
+55345.4023,
+-3159.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light979",
+"props": {
+"LightBrightness": 30.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154384.8125,
+55456.5312,
+-3026.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume16",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+137087.0,
+52786.0,
+-4776.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light40",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 255.0,
+"LightRadius": 20.0,
+"LightHue": 42,
+"LightSaturation": 191,
+"Location": [
+147306.4219,
+46705.7227,
+-3265.7061
+],
+"Rotation": [
+-16612,
+20020,
+22052
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light14",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+151832.7188,
+46461.5469,
+-3275.1113
+],
+"Rotation": [
+-14020,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light37",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+151843.4375,
+46987.1836,
+-3251.1113
+],
+"Rotation": [
+-14020,
+11984,
+5596
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light36",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 250.0,
+"LightRadius": 15.0,
+"LightHue": 30,
+"LightSaturation": 175,
+"Location": [
+151658.2812,
+46991.4844,
+-3245.5686
+],
+"Rotation": [
+-16504,
+15472,
+5336
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light41",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 255.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+147523.1719,
+46711.5703,
+-3267.5686
+],
+"Rotation": [
+-16504,
+15472,
+5336
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light30",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 200.0,
+"LightRadius": 15.0,
+"LightHue": 33,
+"LightSaturation": 180,
+"Location": [
+151474.1562,
+46714.2266,
+-3095.5686
+],
+"Rotation": [
+-16504,
+15472,
+5336
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light978",
+"props": {
+"LightBrightness": 30.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154664.3438,
+55815.0312,
+-3026.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light974",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154642.0469,
+55519.0352,
+-3196.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light6",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 350.0,
+"LightRadius": 15.0,
+"LightHue": 30,
+"LightSaturation": 175,
+"Location": [
+147426.2188,
+46453.3164,
+-3263.5298
+],
+"Rotation": [
+-23336,
+16656,
+3776
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light8",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 280.0,
+"LightRadius": 15.0,
+"LightHue": 26,
+"LightSaturation": 175,
+"Location": [
+147169.7812,
+46443.9609,
+-3229.6917
+],
+"Rotation": [
+-18272,
+31280,
+5656
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light972",
+"props": {
+"LightBrightness": 20.0,
+"LightRadius": 10.0,
+"LightHue": 50,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154275.4219,
+55178.332,
+-3199.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light46",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 300.0,
+"LightRadius": 15.0,
+"LightHue": 30,
+"LightSaturation": 175,
+"Location": [
+147426.3906,
+46978.9531,
+-3268.957
+],
+"Rotation": [
+-18236,
+16656,
+3776
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light47",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 280.0,
+"LightRadius": 15.0,
+"LightHue": 26,
+"LightSaturation": 175,
+"Location": [
+147190.9375,
+46969.582,
+-3211.6404
+],
+"Rotation": [
+-16140,
+31280,
+5844
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light16",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 350.0,
+"LightRadius": 15.0,
+"LightHue": 30,
+"LightSaturation": 175,
+"Location": [
+151401.9844,
+46461.2578,
+-3263.5298
+],
+"Rotation": [
+-23336,
+16656,
+3776
+],
+"bDirectional": true
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo2",
+"props": {
+"bDistanceFog": true,
+"AmbientVector": [
+0.457,
+0.457,
+0.457
+],
+"AmbientBrightness": 80,
+"DistanceFogColor": {
+"R": 114,
+"G": 124,
+"B": 141,
+"A": 0
+},
+"bSunAffect": false,
+"Location": [
+151491.0,
+46721.0,
+-3412.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light965",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+155309.4062,
+55623.6914,
+-3181.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light973",
+"props": {
+"LightBrightness": 25.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154892.2344,
+55936.7109,
+-3199.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light38",
+"props": {
+"LightEffect": 12,
+"LightBrightness": 300.0,
+"LightRadius": 15.0,
+"LightHue": 30,
+"LightSaturation": 175,
+"Location": [
+151402.1562,
+46986.8945,
+-3268.957
+],
+"Rotation": [
+-18236,
+16656,
+3776
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light967",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154666.3281,
+54838.4297,
+-3181.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo1",
+"props": {
+"bDistanceFog": true,
+"AmbientVector": [
+0.457,
+0.457,
+0.457
+],
+"AmbientBrightness": 80,
+"DistanceFogColor": {
+"R": 114,
+"G": 124,
+"B": 141,
+"A": 0
+},
+"bSunAffect": false,
+"Location": [
+147569.0,
+46700.0,
+-3412.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light955",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154799.4375,
+55386.0781,
+-3157.8965
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light959",
+"props": {
+"LightBrightness": 30.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+154774.2656,
+55154.2539,
+-3161.877
+],
+"Rotation": [
+0,
+60720,
+0
+]
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+516.2028,
+264627.1562,
+24727.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume15",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+136960.0,
+52736.0,
+-3840.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume18",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+151680.0,
+65535.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume14",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+152960.0,
+43440.0,
+-4776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume1",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+137088.0,
+43440.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume7",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+152064.0,
+45312.0,
+-3840.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume6",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+151681.0,
+44327.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume2",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+137088.0,
+50048.0,
+-3712.0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover2",
+"props": {
+"RangeDelta": [
+-11.9531,
+-80.5156,
+-147.175
+],
+"RangeDelta[1]": [
+11.7031,
+-81.8086,
+-147.175
+],
+"RangeDelta[2]": [
+11.7188,
+76.3906,
+-147.175
+],
+"RangeDelta[3]": [
+-9.8906,
+76.9062,
+-147.175
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+126.0
+],
+"BasePos": [
+150950.5156,
+46721.2773,
+-3288.6306
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "Aden_Colosseum.Colosseum_Door",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24190003,
+"L2ServerObjectID": 3,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+150950.5156,
+46721.2773,
+-3288.6306
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume9",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+146176.0,
+44288.0,
+-3840.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume10",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+146048.0,
+45360.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume13",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+147328.0,
+43776.0,
+-3712.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume11",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+146050.0,
+50087.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume12",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+146048.0,
+49200.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume8",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+151681.0,
+50087.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume5",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+152063.0,
+49200.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume4",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+147328.0,
+49664.0,
+-4736.0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover0",
+"props": {
+"RangeDelta": [
+-11.1562,
+-80.7305,
+-146.3413
+],
+"RangeDelta[1]": [
+13.4062,
+-80.8203,
+-146.3413
+],
+"RangeDelta[2]": [
+13.9688,
+79.5039,
+-146.3413
+],
+"RangeDelta[3]": [
+-11.1562,
+78.7734,
+-146.3413
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+125.0
+],
+"BasePos": [
+147086.125,
+46721.2734,
+-3288.6587
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "Aden_Colosseum.Colosseum_Door",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24190001,
+"L2ServerObjectID": 1,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+147086.125,
+46721.2734,
+-3288.6587
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume19",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+157184.0,
+58544.0,
+-3776.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume17",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+151680.0,
+58496.0,
+-3712.0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume3",
+"props": {
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+151808.0,
+52736.0,
+-4864.0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover3",
+"props": {
+"RangeDelta": [
+-7.375,
+-77.6523,
+-147.1252
+],
+"RangeDelta[1]": [
+7.25,
+-77.7188,
+-147.1252
+],
+"RangeDelta[2]": [
+8.3594,
+77.5547,
+-147.1252
+],
+"RangeDelta[3]": [
+-6.9688,
+77.6875,
+-147.1252
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+126.0
+],
+"BasePos": [
+151910.9219,
+46721.2734,
+-3288.6636
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "Aden_Colosseum.Colosseum_Door",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24190004,
+"L2ServerObjectID": 4,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+151910.9219,
+46721.2734,
+-3288.6636
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover1",
+"props": {
+"RangeDelta": [
+-11.2344,
+-79.1094,
+-147.429
+],
+"RangeDelta[1]": [
+10.7344,
+-79.7734,
+-147.429
+],
+"RangeDelta[2]": [
+12.125,
+79.5547,
+-147.429
+],
+"RangeDelta[3]": [
+-9.2344,
+77.3281,
+-147.429
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+125.0
+],
+"BasePos": [
+148045.0781,
+46721.2578,
+-3288.6233
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "Aden_Colosseum.Colosseum_Door",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24190002,
+"L2ServerObjectID": 2,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+148045.0781,
+46721.2578,
+-3288.6233
+]
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume14",
+"props": {
+"nMusicID": 241901,
+"bForcePlayMusic": true,
+"bLoopMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,241901",
+"Location": [
+132320.0,
+63312.0,
+-1920.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bSunAffect": true,
+"Location": [
+482.1241,
+264583.9062,
+24762.8398
+],
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+498.322,
+264599.75,
+24766.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume11",
+"props": {
+"nMusicID": 241903,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,241903_yose",
+"Location": [
+155712.0,
+57312.0,
+-1888.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover8",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-41.7891,
+-66.9136,
+0.0
+],
+"RangeDelta[1]": [
+6.7891,
+-6.1978,
+0.0
+],
+"RangeDelta[2]": [
+-7.2422,
+5.2783,
+0.0
+],
+"RangeDelta[3]": [
+-56.6641,
+-56.2749,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+156134.3594,
+56277.7031,
+-3253.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+9216,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"L2ServerObjectRealID": 24190012,
+"L2ServerObjectID": 12,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+156134.3594,
+56277.7031,
+-3253.0
+],
+"Rotation": [
+0,
+9216,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover9",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+59.0938,
+55.7959,
+0.0
+],
+"RangeDelta[1]": [
+7.5625,
+-5.1216,
+0.0
+],
+"RangeDelta[2]": [
+-5.9844,
+6.1279,
+0.0
+],
+"RangeDelta[3]": [
+44.9922,
+66.9575,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+156034.7344,
+56156.3242,
+-3253.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-23552,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"L2ServerObjectRealID": 24190011,
+"L2ServerObjectID": 11,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+156034.7344,
+56156.3242,
+-3253.0
+],
+"Rotation": [
+0,
+-23552,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover91",
+"props": {
+"MeshGrade": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[1]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[2]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[3]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[4]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[5]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[6]": "L2fortress_02_s.fort02_wall_doorZ",
+"RangeDelta": [
+-38.5312,
+-73.7603,
+-1.3452
+],
+"RangeDelta[1]": [
+62.9766,
+50.0269,
+-1.3452
+],
+"RangeDelta[2]": [
+36.2109,
+72.3843,
+-1.3452
+],
+"RangeDelta[3]": [
+-64.8047,
+-53.5688,
+-1.3452
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+136.0
+],
+"BasePos": [
+156500.9844,
+54106.1914,
+-3303.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+9216,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.fort02_wall_door",
+"L2ServerObjectRealID": 24190010,
+"L2ServerObjectID": 10,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+156500.9844,
+54106.1914,
+-3303.0
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"bIgnoredRange": true
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover92",
+"props": {
+"MeshGrade": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[1]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[2]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[3]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[4]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[5]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[6]": "L2fortress_02_s.fort02_wall_doorZ",
+"RangeDelta": [
+-39.0469,
+-74.8384,
+0.2991
+],
+"RangeDelta[1]": [
+62.0391,
+49.6323,
+0.2991
+],
+"RangeDelta[2]": [
+36.3672,
+70.1851,
+0.2991
+],
+"RangeDelta[3]": [
+-65.0859,
+-53.4634,
+0.2991
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+136.0
+],
+"BasePos": [
+153327.7812,
+56710.375,
+-3303.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+9216,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.fort02_wall_door",
+"L2ServerObjectRealID": 24190005,
+"L2ServerObjectID": 5,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+153327.7812,
+56710.375,
+-3303.0
+],
+"Rotation": [
+0,
+9216,
+0
+],
+"bIgnoredRange": true
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover200",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-42.3828,
+-66.5776,
+0.0
+],
+"RangeDelta[1]": [
+8.0547,
+-5.4517,
+0.0
+],
+"RangeDelta[2]": [
+-7.1484,
+5.4033,
+0.0
+],
+"RangeDelta[3]": [
+-57.1484,
+-55.5015,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+154483.6562,
+55744.9219,
+-3282.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+9216,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"L2ServerObjectRealID": 24190007,
+"L2ServerObjectID": 7,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+154483.6562,
+55744.9219,
+-3282.0
+],
+"Rotation": [
+0,
+9216,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover201",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+58.4844,
+56.2764,
+0.0
+],
+"RangeDelta[1]": [
+6.4219,
+-4.5708,
+0.0
+],
+"RangeDelta[2]": [
+-6.125,
+5.7295,
+0.0
+],
+"RangeDelta[3]": [
+43.5078,
+67.02,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+154384.7188,
+55624.3438,
+-3282.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-23552,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"L2ServerObjectRealID": 24190006,
+"L2ServerObjectID": 6,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+154384.7188,
+55624.3438,
+-3282.0
+],
+"Rotation": [
+0,
+-23552,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover202",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-43.9141,
+-65.6479,
+0.0
+],
+"RangeDelta[1]": [
+6.8828,
+-4.6196,
+0.0
+],
+"RangeDelta[2]": [
+-6.4297,
+4.9189,
+0.0
+],
+"RangeDelta[3]": [
+-56.4766,
+-55.8999,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+155412.0781,
+54983.0352,
+-3282.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+9216,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"L2ServerObjectRealID": 24190009,
+"L2ServerObjectID": 9,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+155412.0781,
+54983.0352,
+-3282.0
+],
+"Rotation": [
+0,
+9216,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover203",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+56.5938,
+57.1006,
+0.0
+],
+"RangeDelta[1]": [
+5.7969,
+-4.0278,
+0.0
+],
+"RangeDelta[2]": [
+-5.4219,
+4.6826,
+0.0
+],
+"RangeDelta[3]": [
+44.4297,
+66.4771,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+155313.1094,
+54862.4414,
+-3282.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-23552,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"L2ServerObjectRealID": 24190008,
+"L2ServerObjectID": 8,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+155313.1094,
+54862.4414,
+-3282.0
+],
+"Rotation": [
+0,
+-23552,
+0
+]
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume0",
+"props": {
+"LocationName": "",
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bLightChanged": true,
+"bDeleteMe": true,
+"bSunAffect": true,
+"Location": [
+147456.0,
+49152.0,
+-4272.0
+],
+"bPendingDelete": true,
+"bSelected": true
+}
+}
+]
+}

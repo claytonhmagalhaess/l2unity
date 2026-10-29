@@ -1,0 +1,2 @@
+Window EventMatchGMCommandWnd 310x401 @CENTER->pai.CENTER(0,0) unk101=L2UI_ch3.NpcWnd.Npc1_back unk103=GamingState unk104=1 unk106=1 unk107=1 unk111=444 unk114=0 unk117=0 unk122=71830488 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=69154840 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+  HtmlCtrl HtmlCtrl 100%-14 x 100%-37 @TOP_LEFT->pai.TOP_LEFT(7,30) viewType=Normal size_percent=[2] size=[2]

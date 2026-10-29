@@ -1,0 +1,308 @@
+{
+ "Emitter": {
+  "super": "Actor",
+  "metodo": "cabecalho",
+  "defaults": {
+   "SpeedRate": 1.0,
+   "SoundPitchMin": 1.0,
+   "SoundPitchMax": 1.0,
+   "VisibilityInterpRange": 500.0,
+   "bSetSizeScale": true,
+   "DrawType": 10,
+   "bNeedCleanup": false,
+   "bNoDelete": true,
+   "bCheckChangableLevel": true,
+   "RemoteRole": 0,
+   "Texture": "S_Emitter",
+   "Style": 8,
+   "bUnlit": true
+  }
+ },
+ "ParticleEmitter": {
+  "super": "Object",
+  "metodo": "cabecalho",
+  "defaults": {
+   "ExtentMultiplier": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "DampingFactorRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   },
+   "SpawnFromOtherEmitter": -1,
+   "ColorMultiplierRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   },
+   "Opacity": 1.0,
+   "FadeOutFactor": {
+    "W": 1.0,
+    "X": 1.0,
+    "Y": 1.0,
+    "Z": 1.0
+   },
+   "FadeInFactor": {
+    "W": 1.0,
+    "X": 1.0,
+    "Y": 1.0,
+    "Z": 1.0
+   },
+   "CoordinateSystem": 1,
+   "MaxParticles": 10,
+   "LevelOfWeather": 2,
+   "RespawnDeadParticles": true,
+   "AddLocationFromOtherEmitter": -1,
+   "StartMassRange": {
+    "Min": 1.0,
+    "Max": 1.0
+   },
+   "VelocityScaleRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   },
+   "MeshScaleRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   },
+   "UniformMeshScale": true,
+   "UniformVelocityScale": true,
+   "MeshNormal": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "AlphaTest": true,
+   "ZTest": true,
+   "SpinCCWorCW": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "UseRegularSizeScale": true,
+   "StartSizeRange": {
+    "X": {
+     "Min": 100.0,
+     "Max": 100.0
+    },
+    "Y": {
+     "Min": 100.0,
+     "Max": 100.0
+    },
+    "Z": {
+     "Min": 100.0,
+     "Max": 100.0
+    }
+   },
+   "SkeletalScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "RelativeBoneIndexRange": {
+    "Min": 0.0,
+    "Max": 1.0
+   },
+   "AutomaticInitialSpawning": true,
+   "DrawStyle": 3,
+   "Texture": "S_Emitter",
+   "LifetimeRange": {
+    "Min": 4.0,
+    "Max": 4.0
+   },
+   "TriggerDisabled": true,
+   "MaxAbsVelocity": [
+    10000.0,
+    10000.0,
+    10000.0
+   ],
+   "AddVelocityFromOtherEmitter": -1,
+   "AddVelocityMultiplierRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   }
+  }
+ },
+ "BeamEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "BeamTextureUScale": 1.0,
+   "BeamTextureVScale": 1.0,
+   "LowFrequencyPoints": 3,
+   "HighFrequencyPoints": 10,
+   "BranchEmitter": -1
+  }
+ },
+ "MeshEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "UseMeshBlendMode": true,
+   "StartSizeRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   }
+  }
+ },
+ "RibbonEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "SampleRate": 0.05,
+   "NumPoints": 20,
+   "RibbonWidth": 20.0,
+   "GetPointAxisFrom": 5,
+   "AxisNormal": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "MinSampleDist": 1.0,
+   "MinSampleDot": 0.995,
+   "PointOriginOffset": 0.5,
+   "RibbonTextureUScale": 1.0,
+   "RibbonTextureVScale": 1.0,
+   "CntrPoints": 5,
+   "ScaleRatio": 3.0,
+   "bSamplePoints": true,
+   "bDecayPoints": true,
+   "MaxParticles": 1,
+   "UseRegularSizeScale": false,
+   "StartSizeRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   },
+   "InitialParticlesPerSecond": 10000.0,
+   "AutomaticInitialSpawning": false
+  }
+ },
+ "SparkEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "LineSegmentsRange": {
+    "Min": 5.0,
+    "Max": 5.0
+   }
+  }
+ },
+ "SpriteEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "ProjectionNormal": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "RefrUScale": 0.06,
+   "RefrVScale": 0.06
+  }
+ },
+ "TrailEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "MaxPointsPerTrail": 50,
+   "DistanceRange": {
+    "Min": 1.0,
+    "Max": 100.0
+   },
+   "MaxTrailTwistAngle": 16384
+  }
+ },
+ "VertMeshEmitter": {
+  "super": "ParticleEmitter",
+  "metodo": "cabecalho",
+  "defaults": {
+   "UseMeshBlendMode": true,
+   "RenderTwoSided": true,
+   "StartSizeRange": {
+    "X": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Y": {
+     "Min": 1.0,
+     "Max": 1.0
+    },
+    "Z": {
+     "Min": 1.0,
+     "Max": 1.0
+    }
+   }
+  }
+ }
+}

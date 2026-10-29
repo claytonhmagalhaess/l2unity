@@ -1,0 +1,2 @@
+Window MailBtnWnd 32x32 @BOTTOM_LEFT->ChatWnd.TOP_LEFT(79,-5) unk102=MailBtnWnd unk103=GamingState unk107=1 unk108=0 unk114=0 unk117=0 unk122=0 unk126=0 unk127=6422629 unk128=4391033 unk130=0 unk131=0 unk132=84013552 unk133=84410417 unk134=30620536 unk135=83822496 unk139=Game size=[2]
+  EffectButton btnMail 32x32 @TOP_LEFT->pai.TOP_LEFT(0,0) type=2 normalTex=L2UI_ch3.ConsoleBtn.MailBtn pushedTex=L2UI_ch3.ConsoleBtn.MailBtn_down highlightTex=L2UI_ch3.ConsoleBtn.MailBtn_light effectTex1=l2ui_ch3.etc.glowbtn1 effectTex2=l2ui_ch3.etc.glowbtn2 size=[2]

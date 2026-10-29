@@ -1,0 +1,132 @@
+  104ed6d0  push   ebp
+  104ed6d1  mov    ebp, esp
+  104ed6d3  push   -1
+  104ed6d5  push   0x10818b70
+  104ed6da  mov    eax, dword ptr fs:[0]
+  104ed6e0  push   eax
+  104ed6e1  mov    dword ptr fs:[0], esp
+  104ed6e8  sub    esp, 0xc
+  104ed6eb  push   ebx
+  104ed6ec  push   esi
+  104ed6ed  push   edi
+  104ed6ee  mov    dword ptr [ebp - 0x10], esp
+  104ed6f1  mov    esi, ecx
+  104ed6f3  mov    dword ptr [ebp - 4], 0
+  104ed6fa  mov    eax, dword ptr [esi + 0x4fc]
+  104ed700  push   eax
+  104ed701  mov    ecx, dword ptr [esi + 0x4f8]
+  104ed707  push   ecx
+  104ed708  mov    ecx, 0x10b3c870
+  104ed70d  call   0x1030b816 ; ?GetMSData@FL2GameData@@QAEPAUFL2MagicSkillData@@HH@Z
+  104ed712  test   eax, eax
+  104ed714  je     0x104ed73b
+  104ed716  mov    eax, dword ptr [eax + 0x30]
+  104ed719  test   eax, eax
+  104ed71b  je     0x104ed73b
+  104ed71d  mov    dword ptr [esi + 0x52c], eax
+  104ed723  mov    eax, 1
+  104ed728  mov    ecx, dword ptr [ebp - 0xc]
+  104ed72b  mov    dword ptr fs:[0], ecx
+  104ed732  pop    edi
+  104ed733  pop    esi
+  104ed734  pop    ebx
+  104ed735  mov    esp, ebp
+  104ed737  pop    ebp
+  104ed738  ret    8
+  104ed73b  test   byte ptr [esi + 0x694], 4
+  104ed742  je     0x104ed76e
+  104ed744  mov    eax, 1
+  104ed749  cmp    dword ptr [esi + 0x534], eax
+  104ed74f  jne    0x104ed76e
+  104ed751  mov    dword ptr [esi + 0x52c], 5
+  104ed75b  mov    ecx, dword ptr [ebp - 0xc]
+  104ed75e  mov    dword ptr fs:[0], ecx
+  104ed765  pop    edi
+  104ed766  pop    esi
+  104ed767  pop    ebx
+  104ed768  mov    esp, ebp
+  104ed76a  pop    ebp
+  104ed76b  ret    8
+  104ed76e  xor    eax, eax
+  104ed770  mov    ecx, dword ptr [ebp - 0xc]
+  104ed773  mov    dword ptr fs:[0], ecx
+  104ed77a  pop    edi
+  104ed77b  pop    esi
+  104ed77c  pop    ebx
+  104ed77d  mov    esp, ebp
+  104ed77f  pop    ebp
+  104ed780  ret    8
+  104ed783  mov    edx, dword ptr [ebp - 0x18]
+  104ed786  mov    dword ptr [ebp - 0x14], edx
+  104ed789  push   0x10914c48
+  104ed78e  lea    eax, [ebp - 0x14]
+  104ed791  push   eax
+  104ed792  call   0x107a5ebf ; -> 107a5ebf
+  104ed797  push   0x108a8ec0 ; L"APawn::SetSkillType"
+  104ed79c  push   0x10851d80
+  104ed7a1  call   dword ptr [0x11d8d6bc] ; -> 11d8d6bc
+  104ed7a7  add    esp, 8
+  104ed7aa  push   0
+  104ed7ac  push   0
+  104ed7ae  call   0x107a5ebf ; -> 107a5ebf
+  104ed7b3  int3   
+  104ed7b4  int3   
+  104ed7b5  int3   
+  104ed7b6  int3   
+  104ed7b7  int3   
+  104ed7b8  int3   
+  104ed7b9  int3   
+  104ed7ba  int3   
+  104ed7bb  int3   
+  104ed7bc  int3   
+  104ed7bd  int3   
+  104ed7be  int3   
+  104ed7bf  int3   
+  104ed7c0  int3   
+  104ed7c1  int3   
+  104ed7c2  int3   
+  104ed7c3  int3   
+  104ed7c4  int3   
+  104ed7c5  int3   
+  104ed7c6  int3   
+  104ed7c7  int3   
+  104ed7c8  int3   
+  104ed7c9  int3   
+  104ed7ca  int3   
+  104ed7cb  int3   
+  104ed7cc  int3   
+  104ed7cd  int3   
+  104ed7ce  int3   
+  104ed7cf  int3   
+  104ed7d0  int3   
+  104ed7d1  int3   
+  104ed7d2  int3   
+  104ed7d3  int3   
+  104ed7d4  int3   
+  104ed7d5  int3   
+  104ed7d6  int3   
+  104ed7d7  int3   
+  104ed7d8  int3   
+  104ed7d9  int3   
+  104ed7da  int3   
+  104ed7db  int3   
+  104ed7dc  int3   
+  104ed7dd  int3   
+  104ed7de  int3   
+  104ed7df  int3   
+  104ed7e0  int3   
+  104ed7e1  int3   
+  104ed7e2  int3   
+  104ed7e3  int3   
+  104ed7e4  int3   
+  104ed7e5  int3   
+  104ed7e6  int3   
+  104ed7e7  int3   
+  104ed7e8  int3   
+  104ed7e9  int3   
+  104ed7ea  int3   
+  104ed7eb  int3   
+  104ed7ec  int3   
+  104ed7ed  int3   
+  104ed7ee  int3   
+  104ed7ef  int3   

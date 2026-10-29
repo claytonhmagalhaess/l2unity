@@ -1,0 +1,5 @@
+Window SkillTrainListWnd 256x401 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.SkillTrainWnd.SkillTrain1 unk102=SkillTrainListWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk113=0 unk114=3 unk115=1 unk117=0 unk122=6619207 unk123=0 unk124=0 unk125=0 unk126=0 unk127=5701748 unk128=6553710 unk130=0 unk131=0 unk132=852027 unk133=2687017 unk134=7077987 unk135=589834 unk139=Game size=[2]
+  TextBox txtSkillList 245x12 @TOP_LEFT->pai.TOP_LEFT(11,32) textAlign=Left offsetY=0 sysstring=364 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtSPString 84x17 @TOP_RIGHT->SkillTrainListWnd.txtSP.TOP_LEFT(-20,0) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtSP 84x17 @TOP_LEFT->pai.TOP_LEFT(140,345) textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TreeCtrl SkillTrainListTree 238x273 @TOP_LEFT->pai.TOP_LEFT(9,49) saveExpandedNode=false multiExpand=0 size=[2]

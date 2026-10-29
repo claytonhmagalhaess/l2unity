@@ -1,0 +1,4 @@
+Window HennaListWnd 256x401 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) unk101=L2UI_ch3.HennaWnd.henna1_back unk102=HennaListWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=7929972 unk128=6619219 unk130=0 unk131=0 unk132=84060104 unk133=84410493 unk134=70023240 unk135=83488760 unk139=Game size=[2]
+  TextBox txtList 245x12 @TOP_LEFT->pai.TOP_LEFT(15,28) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtAdena 84x17 @TOP_LEFT->pai.TOP_LEFT(145,374) popupType=Text textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TreeCtrl HennaListTree 238x309 @TOP_LEFT->pai.TOP_LEFT(9,49) saveExpandedNode=false multiExpand=0 size=[2]

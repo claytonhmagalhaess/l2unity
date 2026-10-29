@@ -1,0 +1,6 @@
+Window OptionWnd 256x480 @CENTER->pai.CENTER(0,0) unk102=OptionWnd unk104=1 unk107=1 unk108=1 unk109=1 unk111=146 unk113=0 unk114=3 unk115=1 unk117=0 unk122=67579888 unk123=0 unk124=0 unk125=0 unk126=0 unk127=67208840 unk128=67209288 unk130=0 unk131=0 unk132=67211704 unk133=67211248 unk134=67212480 unk135=67212160 unk139=Game size=[2]
+  Texture TabBackTex 256x28 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_ch3.SSQWnd.ssq_back type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Tab TabCtrl 224x23 @TOP_LEFT->pai.TOP_LEFT(12,25) size=[2] tabs=[3]
+    - tabs: buttonName=206 target=VideoTab width=74 height=23 normalTex=l2ui_ch3.tabbutton.normal_tab_on pushedTex=l2ui_ch3.tabbutton.normal_tab movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=207 target=AudioTab width=74 height=23 normalTex=l2ui_ch3.tabbutton.normal_tab_on pushedTex=l2ui_ch3.tabbutton.normal_tab movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=208 target=GameTab width=74 height=23 normalTex=l2ui_ch3.tabbutton.normal_tab_on pushedTex=l2ui_ch3.tabbutton.normal_tab movable=false gap=0 tooltip=-1 noHighlight=-1

@@ -1,0 +1,38 @@
+Window PartyMatchWnd 550x486 @TOP_LEFT->pai.TOP_LEFT(0,76) unk101=L2UI_CH3.PartyMatchWnd.PartyMatch1_Back unk102=PartyMatchWnd unk103=GamingState unk104=1 unk107=1 unk111=389 unk114=0 unk117=0 unk122=83869288 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=1793 unk133=0 unk134=0 unk135=94 unk136=L2UI_CH3.PartyMatchWnd.PartyMatchIcon unk137=389 unk139=Game size=[2]
+  TextBox LocationFilterTextBox 0x0 @TOP_RIGHT->PartyMatchWnd.LocationFilterComboBox.TOP_LEFT(-4,2) textAlign=Left offsetY=0 sysstring=1034 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ComboBox LocationFilterComboBox 90x17 @TOP_LEFT->pai.TOP_LEFT(84,42) size=[2] values=[17]
+    - values: sysString=1047 systemMsg=-9999 text=undefined reserved=-2
+    - values: sysString=1046 systemMsg=-9999 text=undefined reserved=-1
+    - values: sysString=1048 systemMsg=-9999 text=undefined reserved=1
+    - values: sysString=1049 systemMsg=-9999 text=undefined reserved=2
+    - values: sysString=1050 systemMsg=-9999 text=undefined reserved=3
+    - values: sysString=1051 systemMsg=-9999 text=undefined reserved=4
+    - values: sysString=1052 systemMsg=-9999 text=undefined reserved=5
+    - values: sysString=1053 systemMsg=-9999 text=undefined reserved=6
+    - values: sysString=1054 systemMsg=-9999 text=undefined reserved=7
+    - values: sysString=1056 systemMsg=-9999 text=undefined reserved=9
+    - values: sysString=1057 systemMsg=-9999 text=undefined reserved=10
+    - values: sysString=1058 systemMsg=-9999 text=undefined reserved=11
+    - values: sysString=1059 systemMsg=-9999 text=undefined reserved=12
+    - values: sysString=1060 systemMsg=-9999 text=undefined reserved=13
+    - values: sysString=1247 systemMsg=-9999 text=undefined reserved=14
+    - values: sysString=1248 systemMsg=-9999 text=undefined reserved=15
+    - values: sysString=1443 systemMsg=-9999 text=undefined reserved=100
+  TextBox LevelFilterTextBox 0x0 @TOP_RIGHT->PartyMatchWnd.LevelFilterComboBox.TOP_LEFT(-4,2) textAlign=Left offsetY=0 sysstring=1035 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ComboBox LevelFilterComboBox 90x17 @TOP_LEFT->pai.TOP_LEFT(264,42) size=[2] values=[2]
+    - values: sysString=1045 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1046 systemMsg=-9999 text=undefined reserved=-9999
+  Button RefreshBtn 76x23 @TOP_LEFT->pai.TOP_LEFT(369,40) normalTex=L2UI_CH3.Button.Btn1_normal pushedTex=L2UI_CH3.Button.Btn1_normalOn buttonName=1039 disableTime=5000 size=[2]
+  ListCtrl PartyMatchListCtrl 535x304 @TOP_LEFT->pai.TOP_LEFT(7,69) unk100=100 unk101=16 unk102=1 unk103=19 unk104=19 size=[2] values=[6]
+    - values: textStringId=416 width=36 unk108=true unk109=true unk110=true
+    - values: textStringId=413 width=208 unk108=true unk109=true unk110=true
+    - values: textStringId=408 width=110 unk108=true unk109=true unk110=false
+    - values: textStringId=1029 width=90 unk108=true unk109=true unk110=false
+    - values: textStringId=1030 width=50 unk108=true unk109=true unk110=true
+    - values: textStringId=1036 width=45 unk108=true unk109=true unk110=true
+  TextBox CurrentStatusTxt 0x0 @TOP_LEFT->pai.TOP_LEFT(15,379) textAlign=Left offsetY=0 sysstring=1439 textColor=#ffaf9779 emoticon=1 autosize=1 size=[2]
+  Button PrevBtn 64x21 @TOP_LEFT->pai.TOP_LEFT(208,400) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=1037 disableTime=5000 size=[2]
+  Button NextBtn 64x21 @TOP_LEFT->pai.TOP_LEFT(278,400) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=1038 disableTime=5000 size=[2]
+  Button WaitListButton 76x23 @TOP_LEFT->pai.TOP_LEFT(300,455) normalTex=L2UI_CH3.Button.Btn1_normal pushedTex=L2UI_CH3.Button.Btn1_normalOn buttonName=1378 disableTime=5000 size=[2]
+  Button MakeRoomBtn 76x23 @TOP_LEFT->pai.TOP_LEFT(380,455) normalTex=L2UI_CH3.Button.Btn1_normal pushedTex=L2UI_CH3.Button.Btn1_normalOn buttonName=1040 size=[2]
+  Button AutoJoinBtn 76x23 @TOP_LEFT->pai.TOP_LEFT(460,455) normalTex=L2UI_CH3.Button.Btn1_normal pushedTex=L2UI_CH3.Button.Btn1_normalOn buttonName=1041 disableTime=5000 size=[2]

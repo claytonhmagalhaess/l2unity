@@ -1,0 +1,1883 @@
+{
+ "LoginWnd": [
+  {
+   "fn": "0x100bbae0",
+   "method": "MsnWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por MsnWnd)",
+     "field": 596,
+     "id": null,
+     "strings": [],
+     "at": "0x100bbb9f",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        0,
+        "W",
+        "H"
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x100b1fe0",
+   "method": "LoginWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCEditBox",
+     "field": 460,
+     "id": null,
+     "strings": [],
+     "at": "0x100b208e",
+     "ops": [
+      [
+       "rect",
+       [
+        92,
+        131,
+        151,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 464,
+     "id": "0xa56",
+     "strings": [],
+     "at": "0x100b212a",
+     "ops": [
+      [
+       "rect",
+       [
+        92,
+        151,
+        151,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 468,
+     "id": "0xa09",
+     "strings": [
+      "L2UI_CH3.Button.SmallButton2_down",
+      "L2UI_CH3.Button.SmallButton2",
+      "rótulo sysstring[140] = OK"
+     ],
+     "at": "0x100b2211",
+     "ops": [
+      [
+       "rect",
+       [
+        72,
+        176,
+        66,
+        21
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 472,
+     "id": "0xa0a",
+     "strings": [
+      "L2UI_CH3.Button.SmallButton2_down",
+      "L2UI_CH3.Button.SmallButton2",
+      "rótulo sysstring[141] = Cancel"
+     ],
+     "at": "0x100b2338",
+     "ops": [
+      [
+       "rect",
+       [
+        142,
+        176,
+        66,
+        21
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 476,
+     "id": "0xa0b",
+     "strings": [
+      "L2UI_CH3.Button.bigbutton3_down",
+      "L2UI_CH3.Button.bigbutton3",
+      "rótulo sysstring[995] = MSN Messenger Info"
+     ],
+     "at": "0x100b2466",
+     "ops": [
+      [
+       "rect",
+       [
+        72,
+        204,
+        134,
+        23
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "MessengerWnd": [
+  {
+   "fn": "0x1013efd0",
+   "method": "NCConsole::OnCreate (string de guard; NCConsole::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCConsole)",
+     "field": 536,
+     "id": null,
+     "strings": [],
+     "at": "0x101401d3",
+     "ops": [
+      [
+       "rect",
+       [
+        384,
+        180,
+        256,
+        401
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x100b64b0",
+   "method": "MessengerWnd::<virtual 78>",
+   "controls": [
+    {
+     "class": "(a própria janela)",
+     "field": null,
+     "id": null,
+     "strings": [],
+     "at": "0x100b64b0",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        0,
+        "W",
+        "H"
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x100bd480",
+   "method": "MessengerWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCFrameCtrl",
+     "field": 192,
+     "id": null,
+     "strings": [],
+     "at": "0x100bd4e6",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        0,
+        256,
+        20
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCTabControl",
+     "field": 468,
+     "id": "0xa02",
+     "strings": [],
+     "at": "0x100bd678",
+     "ops": [
+      [
+       "rect",
+       [
+        12,
+        25,
+        224,
+        41
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCLobbyFunctionWnd": [
+  {
+   "fn": "0x1017f6f0",
+   "method": "NCLobbyWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCLobbyWnd)",
+     "field": 472,
+     "id": null,
+     "strings": [],
+     "at": "0x1017f938",
+     "ops": [
+      [
+       "rect",
+       [
+        "GSEKScreenX-154",
+        "GSEKScreenY-200",
+        120,
+        138
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x1017cad0",
+   "method": "NCLobbyFunctionWnd::OnCreate (string de guard; NCLobbyFunctionWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "NCButton",
+     "field": 464,
+     "id": "0x100b",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[158] = Create"
+     ],
+     "at": "0x1017cb88",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        20,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 468,
+     "id": "0x100c",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[159] = Delete"
+     ],
+     "at": "0x1017cc90",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        45,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 460,
+     "id": "0x100a",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[884] = Re-Login"
+     ],
+     "at": "0x1017cdaa",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        95,
+        96,
+        23
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCLobbyStartWnd": [
+  {
+   "fn": "0x1017f6f0",
+   "method": "NCLobbyWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCLobbyWnd)",
+     "field": 468,
+     "id": null,
+     "strings": [],
+     "at": "0x1017f887",
+     "ops": [
+      [
+       "rect",
+       [
+        "GSEKScreenX/2-71",
+        "GSEKScreenY-111",
+        140,
+        49
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x1017d3f0",
+   "method": "NCLobbyStartWnd::OnCreate (string de guard; NCLobbyStartWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "NCButton",
+     "field": 460,
+     "id": "0x1009",
+     "strings": [
+      "L2UI_CH3.Button.BigButton2_down",
+      "L2UI_CH3.Button.BigButton2",
+      "rótulo sysstring[160] = Start"
+     ],
+     "at": "0x1017d4a1",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        10,
+        116,
+        31
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCPawnSelectWnd": [
+  {
+   "fn": "0x1017f6f0",
+   "method": "NCLobbyWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCLobbyWnd)",
+     "field": 460,
+     "id": null,
+     "strings": [],
+     "at": "0x1017f73d",
+     "ops": [
+      [
+       "rect",
+       [
+        24,
+        27,
+        256,
+        108
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x1017e160",
+   "method": "NCPawnSelectWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCComboBox",
+     "field": 480,
+     "id": "0x1f04",
+     "strings": [],
+     "at": "0x1017e21e",
+     "ops": [
+      [
+       "rect",
+       [
+        46,
+        13,
+        138,
+        17
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCLoginFunctionWnd": [
+  {
+   "fn": "0x1013efd0",
+   "method": "NCConsole::OnCreate (string de guard; NCConsole::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCConsole)",
+     "field": 480,
+     "id": null,
+     "strings": [],
+     "at": "0x1013f537",
+     "ops": [
+      [
+       "rect",
+       [
+        "W-154",
+        "H-200",
+        120,
+        138
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x10180040",
+   "method": "NCLoginFunctionWnd::OnCreate (string de guard; NCLoginFunctionWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "NCButton",
+     "field": 464,
+     "id": "0xaff12012",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[154] = New Account"
+     ],
+     "at": "0x101800f8",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        8,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 468,
+     "id": "0xaff12015",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[155] = Lost Account"
+     ],
+     "at": "0x10180200",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        33,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 472,
+     "id": "0xaff12011",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[156] = Options"
+     ],
+     "at": "0x10180308",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        58,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 476,
+     "id": "0xaff12014",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[805] = Production Team"
+     ],
+     "at": "0x10180413",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        83,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 480,
+     "id": "0xaff12016",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[1251] = Replay"
+     ],
+     "at": "0x10180523",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        107,
+        96,
+        23
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCKeyCryptWarningDialogBox": [
+  {
+   "fn": "0x10181c80",
+   "method": "NCAuthWnd::OnCreate (string de guard; NCAuthWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCAuthWnd)",
+     "field": 504,
+     "id": null,
+     "strings": [],
+     "at": "0x1018240d",
+     "ops": [
+      [
+       "rect",
+       [
+        "GSEKScreenX/2-101",
+        "GSEKScreenY/2-43",
+        205,
+        87
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x10181330",
+   "method": "NCKeyCryptWarningDialogBox::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCButton",
+     "field": 732,
+     "id": "0x1004",
+     "strings": [
+      "L2UI_ch3.button.btn1_normalon",
+      "L2UI_ch3.button.btn1_normal",
+      "rótulo sysstring[140] = OK"
+     ],
+     "at": "0x10181415",
+     "ops": [
+      [
+       "rect",
+       [
+        null,
+        60,
+        74,
+        21
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCAuthWnd": [
+  {
+   "fn": "0x1013efd0",
+   "method": "NCConsole::OnCreate (string de guard; NCConsole::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCConsole)",
+     "field": 476,
+     "id": null,
+     "strings": [],
+     "at": "0x1013f3d7",
+     "ops": [
+      [
+       "rect",
+       [
+        "0.5*W-128",
+        [
+         "alt",
+         "H*0.5-64",
+         "H*0.5-54"
+        ],
+        256,
+        [
+         "alt",
+         128,
+         108
+        ]
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x10181c80",
+   "method": "NCAuthWnd::OnCreate (string de guard; NCAuthWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "NCEditBox",
+     "field": 480,
+     "id": "0x1502",
+     "strings": [],
+     "at": "0x10181d36",
+     "ops": [
+      [
+       "rect",
+       [
+        84,
+        20,
+        128,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 484,
+     "id": "0x1503",
+     "strings": [],
+     "at": "0x10181dc1",
+     "ops": [
+      [
+       "rect",
+       [
+        84,
+        42,
+        128,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 488,
+     "id": "0x112211f1",
+     "strings": [],
+     "at": "0x10181e4c",
+     "ops": [
+      [
+       "rect",
+       [
+        84,
+        64,
+        128,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 492,
+     "id": "0x112211f0",
+     "strings": [
+      "L2UI_CH3.LoginWnd.aboutotpicon_down",
+      "L2UI_CH3.LoginWnd.aboutotpicon"
+     ],
+     "at": "0x10181f3a",
+     "ops": [
+      [
+       "size",
+       [
+        16.0,
+        16.0
+       ]
+      ],
+      [
+       "anchor",
+       [
+        "TopLeft",
+        "TopRight",
+        "NCEditBox 0x112211f1",
+        5,
+        1
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 496,
+     "id": "0x1006",
+     "strings": [
+      "L2UI_CH3.BUTTON.bigbutton_down",
+      "L2UI_CH3.BUTTON.bigbutton",
+      "rótulo sysstring[152] = Log In"
+     ],
+     "at": "0x101820d9",
+     "ops": [
+      [
+       "rect",
+       [
+        31,
+        [
+         "alt",
+         92,
+         72
+        ],
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 500,
+     "id": "0x1007",
+     "strings": [
+      "L2UI_CH3.BUTTON.bigbutton_down",
+      "L2UI_CH3.BUTTON.bigbutton",
+      "rótulo sysstring[153] = Exit"
+     ],
+     "at": "0x101821f4",
+     "ops": [
+      [
+       "rect",
+       [
+        131,
+        [
+         "alt",
+         92,
+         72
+        ],
+        96,
+        23
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCNpcView_CharacterSelectWnd": [
+  {
+   "fn": "0x10195ac0",
+   "method": "NCNpcViewerWnd::OnCreate (string de guard; NCNpcViewerWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCNpcViewerWnd)",
+     "field": 468,
+     "id": null,
+     "strings": [],
+     "at": "0x10195f41",
+     "ops": [
+      [
+       "rect",
+       [
+        10,
+        40,
+        350,
+        630
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x10194a10",
+   "method": "NCNpcView_CharacterSelectWnd::OnCreate (string de guard; NCNpcView_CharacterSelectWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela)",
+     "field": null,
+     "id": null,
+     "strings": [
+      "NpcViewer"
+     ],
+     "at": "0x10194a10",
+     "ops": []
+    },
+    {
+     "class": "NCFrameCtrl",
+     "field": 192,
+     "id": null,
+     "strings": [],
+     "at": "0x10194a78",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        0,
+        "W",
+        25
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCComboBox",
+     "field": 464,
+     "id": "0x1f05",
+     "strings": [],
+     "at": "0x10194b12",
+     "ops": [
+      [
+       "rect",
+       [
+        25,
+        30,
+        125,
+        18
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 496,
+     "id": "0xf4",
+     "strings": [],
+     "at": "0x10194c03",
+     "ops": [
+      [
+       "rect",
+       [
+        10,
+        380,
+        80,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 500,
+     "id": "0xf5",
+     "strings": [
+      "L2UI_ch3.button.SmallButton2_Down",
+      "L2UI_ch3.button.SmallButton2",
+      "rótulo sysstring[420] = Search"
+     ],
+     "at": "0x10194cc0",
+     "ops": [
+      [
+       "rect",
+       [
+        95,
+        380,
+        32,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 504,
+     "id": "0xf6",
+     "strings": [
+      "L2UI_ch3.button.SmallButton2_Down",
+      "L2UI_ch3.button.SmallButton2",
+      "rótulo sysstring[422] = View List"
+     ],
+     "at": "0x10194dc6",
+     "ops": [
+      [
+       "rect",
+       [
+        135,
+        380,
+        50,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 536,
+     "id": "0xfa",
+     "strings": [
+      "L2UI_ch3.button.SmallButton2_Down",
+      "L2UI_ch3.button.SmallButton2"
+     ],
+     "at": "0x10194ecf",
+     "ops": [
+      [
+       "rect",
+       [
+        195,
+        380,
+        32,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCCheckBox",
+     "field": 532,
+     "id": "0xfb",
+     "strings": [
+      "Mesh이름"
+     ],
+     "at": "0x10194fc6",
+     "ops": [
+      [
+       "rect",
+       [
+        180,
+        32,
+        100,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCCheckBox",
+     "field": 548,
+     "id": null,
+     "strings": [
+      "Monster"
+     ],
+     "at": "0x1019505d",
+     "ops": [
+      [
+       "rect",
+       [
+        10,
+        400,
+        100,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCCheckBox",
+     "field": 544,
+     "id": null,
+     "strings": [
+      "NPC"
+     ],
+     "at": "0x101950e7",
+     "ops": [
+      [
+       "rect",
+       [
+        110,
+        400,
+        100,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 468,
+     "id": "0xfe",
+     "strings": [],
+     "at": "0x1019516c",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        418,
+        230,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 472,
+     "id": "0xff",
+     "strings": [],
+     "at": "0x101951f6",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        438,
+        230,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 476,
+     "id": "0x100",
+     "strings": [],
+     "at": "0x10195280",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        458,
+        230,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 480,
+     "id": "0x101",
+     "strings": [],
+     "at": "0x1019530a",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        478,
+        230,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 484,
+     "id": "0x102",
+     "strings": [],
+     "at": "0x10195394",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        498,
+        230,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 488,
+     "id": "0x103",
+     "strings": [],
+     "at": "0x1019541e",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        518,
+        32,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 492,
+     "id": "0x104",
+     "strings": [],
+     "at": "0x101954a5",
+     "ops": [
+      [
+       "rect",
+       [
+        160,
+        518,
+        32,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 540,
+     "id": "0x1100",
+     "strings": [
+      "L2UI_ch3.button.SmallButton2_Down",
+      "L2UI_ch3.button.SmallButton2"
+     ],
+     "at": "0x10195562",
+     "ops": [
+      [
+       "rect",
+       [
+        200,
+        518,
+        32,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 512,
+     "id": "0xf8",
+     "strings": [],
+     "at": "0x1019565c",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        550,
+        80,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 508,
+     "id": "0xf7",
+     "strings": [],
+     "at": "0x101956e4",
+     "ops": [
+      [
+       "rect",
+       [
+        210,
+        550,
+        80,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 520,
+     "id": "0xfe",
+     "strings": [],
+     "at": "0x1019576f",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        570,
+        80,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 516,
+     "id": "0xff",
+     "strings": [],
+     "at": "0x101957f7",
+     "ops": [
+      [
+       "rect",
+       [
+        210,
+        570,
+        80,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCEditBox",
+     "field": 524,
+     "id": "0x1101",
+     "strings": [],
+     "at": "0x10195882",
+     "ops": [
+      [
+       "rect",
+       [
+        60,
+        590,
+        80,
+        16
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 528,
+     "id": "0xf9",
+     "strings": [
+      "L2UI_ch3.button.SmallButton2_Down",
+      "L2UI_ch3.button.SmallButton2",
+      "rótulo sysstring[218] = Apply"
+     ],
+     "at": "0x10195943",
+     "ops": [
+      [
+       "rect",
+       [
+        210,
+        590,
+        32,
+        16
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCPawnCreateFunctionWnd": [
+  {
+   "fn": "0x1019a2d0",
+   "method": "NCPawnCreateWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCPawnCreateWnd)",
+     "field": 564,
+     "id": null,
+     "strings": [],
+     "at": "0x1019ab28",
+     "ops": [
+      [
+       "rect",
+       [
+        "GSEKScreenX-154",
+        "GSEKScreenY-200",
+        120,
+        138
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x101960b0",
+   "method": "NCPawnCreateFunctionWnd::OnCreate (string de guard; NCPawnCreateFunctionWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "NCButton",
+     "field": 464,
+     "id": "0x1009",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[162] = Create Character"
+     ],
+     "at": "0x10196168",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        20,
+        96,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 468,
+     "id": "0x100a",
+     "strings": [
+      "L2UI_CH3.Button.BigButton_down",
+      "L2UI_CH3.Button.BigButton",
+      "rótulo sysstring[161] = Previous"
+     ],
+     "at": "0x10196270",
+     "ops": [
+      [
+       "rect",
+       [
+        13,
+        45,
+        96,
+        23
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCPawnSetupWnd": [
+  {
+   "fn": "0x1019a2d0",
+   "method": "NCPawnCreateWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCPawnCreateWnd)",
+     "field": 460,
+     "id": null,
+     "strings": [],
+     "at": "0x1019a346",
+     "ops": [
+      [
+       "rect",
+       [
+        24,
+        27,
+        256,
+        205
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x10199dc0",
+   "method": "NCPawnSetupWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCEditBox",
+     "field": 492,
+     "id": "0x1503",
+     "strings": [],
+     "at": "0x10199e2f",
+     "ops": [
+      [
+       "rect",
+       [
+        66,
+        17,
+        128,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCSelectCtrl",
+     "field": 460,
+     "id": "0xf0a3b2",
+     "strings": [],
+     "at": "0x10199eba",
+     "ops": [
+      [
+       "rect",
+       [
+        86,
+        52,
+        136,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCSelectCtrl",
+     "field": 464,
+     "id": "0xf0a4b3",
+     "strings": [],
+     "at": "0x10199f45",
+     "ops": [
+      [
+       "rect",
+       [
+        86,
+        76,
+        136,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCSelectCtrl",
+     "field": 468,
+     "id": "0xf0a5b4",
+     "strings": [],
+     "at": "0x10199fd0",
+     "ops": [
+      [
+       "rect",
+       [
+        86,
+        100,
+        136,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCSelectCtrl",
+     "field": 472,
+     "id": "0xf0a7b6",
+     "strings": [],
+     "at": "0x1019a05b",
+     "ops": [
+      [
+       "rect",
+       [
+        86,
+        124,
+        136,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCSelectCtrl",
+     "field": 476,
+     "id": "0xf0a6b5",
+     "strings": [],
+     "at": "0x1019a0e6",
+     "ops": [
+      [
+       "rect",
+       [
+        86,
+        148,
+        136,
+        17
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCSelectCtrl",
+     "field": 480,
+     "id": "0xf0a8b7",
+     "strings": [],
+     "at": "0x1019a174",
+     "ops": [
+      [
+       "rect",
+       [
+        86,
+        172,
+        136,
+        17
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCPawnCreateWnd": [
+  {
+   "fn": "0x1019a2d0",
+   "method": "NCPawnCreateWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCExButton",
+     "field": 548,
+     "id": "0x100d",
+     "strings": [
+      "l2ui.LobbyWnd.left_click",
+      "l2ui.LobbyWnd.left"
+     ],
+     "at": "0x1019a4e7",
+     "ops": [
+      [
+       "rect",
+       [
+        "W*0.5-88",
+        "H-100",
+        44,
+        44
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCExButton",
+     "field": 552,
+     "id": "0x100e",
+     "strings": [
+      "l2ui.LobbyWnd.right_click",
+      "l2ui.LobbyWnd.right"
+     ],
+     "at": "0x1019a689",
+     "ops": [
+      [
+       "rect",
+       [
+        "W*0.5+44",
+        "H-100",
+        44,
+        44
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 556,
+     "id": "0x1010",
+     "strings": [
+      "l2ui.LobbyWnd.zoomin_click",
+      "l2ui.LobbyWnd.zoomin"
+     ],
+     "at": "0x1019a82b",
+     "ops": [
+      [
+       "rect",
+       [
+        "W*0.5-22",
+        "H-100",
+        44,
+        44
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 560,
+     "id": "0x1010",
+     "strings": [
+      "l2ui.LobbyWnd.zoomout_click",
+      "l2ui.LobbyWnd.zoomout"
+     ],
+     "at": "0x1019a9cd",
+     "ops": [
+      [
+       "rect",
+       [
+        "W*0.5-22",
+        "H-100",
+        44,
+        44
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCServerInfoWnd": [
+  {
+   "fn": "0x101808b0",
+   "method": "NCLoginServerWnd::OnCreate (string de guard; NCLoginServerWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCLoginServerWnd)",
+     "field": 464,
+     "id": null,
+     "strings": [],
+     "at": "0x10180996",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        337,
+        316,
+        205
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x101a9530",
+   "method": "NCServerInfoWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCHtmlViewer",
+     "field": 464,
+     "id": null,
+     "strings": [],
+     "at": "0x101a958c",
+     "ops": [
+      [
+       "rect",
+       [
+        7,
+        7,
+        "W-14",
+        "H-14"
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCServerSelectWnd": [
+  {
+   "fn": "0x101808b0",
+   "method": "NCLoginServerWnd::OnCreate (string de guard; NCLoginServerWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCLoginServerWnd)",
+     "field": 460,
+     "id": null,
+     "strings": [],
+     "at": "0x10180910",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        0,
+        316,
+        330
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fn": "0x101aa1e0",
+   "method": "NCServerSelectWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "NCButton",
+     "field": 468,
+     "id": "0xf007",
+     "strings": [
+      "L2UI_CH3.Button.Btn1_normalOn",
+      "L2UI_CH3.Button.Btn1_normal",
+      "rótulo sysstring[140] = OK"
+     ],
+     "at": "0x101aa502",
+     "ops": [
+      [
+       "rect",
+       [
+        121,
+        297,
+        76,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 472,
+     "id": "0xf017",
+     "strings": [
+      "L2UI_CH3.Button.Btn1_normalOn",
+      "L2UI_CH3.Button.Btn1_normal",
+      "rótulo sysstring[141] = Cancel"
+     ],
+     "at": "0x101aa647",
+     "ops": [
+      [
+       "rect",
+       [
+        201,
+        297,
+        76,
+        23
+       ]
+      ]
+     ]
+    },
+    {
+     "class": "NCButton",
+     "field": 476,
+     "id": "0xf020",
+     "strings": [
+      "L2UI_CH3.Button.Btn1_normalOn",
+      "L2UI_CH3.Button.Btn1_normal",
+      "rótulo sysstring[603] = Quality"
+     ],
+     "at": "0x101aa782",
+     "ops": [
+      [
+       "rect",
+       [
+        41,
+        297,
+        76,
+        23
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "LoadingWnd": [
+  {
+   "fn": "0x100bbae0",
+   "method": "MsnWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por MsnWnd)",
+     "field": 604,
+     "id": null,
+     "strings": [],
+     "at": "0x100bbd1f",
+     "ops": [
+      [
+       "rect",
+       [
+        0,
+        0,
+        "W",
+        "H"
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCLoginServerWnd": [
+  {
+   "fn": "0x1013efd0",
+   "method": "NCConsole::OnCreate (string de guard; NCConsole::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCConsole)",
+     "field": 464,
+     "id": null,
+     "strings": [],
+     "at": "0x1013f946",
+     "ops": [
+      [
+       "size",
+       [
+        316.0,
+        542.0
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCNpcView_CharacterSelect_List": [
+  {
+   "fn": "0x10194a10",
+   "method": "NCNpcView_CharacterSelectWnd::OnCreate (string de guard; NCNpcView_CharacterSelectWnd::<virtual 38>)",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCNpcView_CharacterSelectWnd)",
+     "field": 460,
+     "id": null,
+     "strings": [],
+     "at": "0x10194b8e",
+     "ops": [
+      [
+       "rect",
+       [
+        10,
+        50,
+        285,
+        250
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCPawnInfoWnd": [
+  {
+   "fn": "0x1019a2d0",
+   "method": "NCPawnCreateWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCPawnCreateWnd)",
+     "field": 464,
+     "id": null,
+     "strings": [],
+     "at": "0x1019a3fa",
+     "ops": [
+      [
+       "rect",
+       [
+        24,
+        249,
+        256,
+        205
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "NCServerSelectListCtrl": [
+  {
+   "fn": "0x101aa1e0",
+   "method": "NCServerSelectWnd::<virtual 38>",
+   "controls": [
+    {
+     "class": "(a própria janela, criada por NCServerSelectWnd)",
+     "field": 464,
+     "id": "0xf018",
+     "strings": [],
+     "at": "0x101aa298",
+     "ops": [
+      [
+       "rect",
+       [
+        8,
+        10,
+        300,
+        274
+       ]
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

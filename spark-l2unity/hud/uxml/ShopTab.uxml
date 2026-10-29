@@ -1,0 +1,49 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="ShopStyle" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement label="General" name="ShopTab" class="shop-tab">
+    <ui:VisualElement name="SmallTabContainer" class="shop-small-tab-container">
+      <ui:VisualElement class="shop-window-arrow" />
+      <ui:VisualElement name="ContainerInnerLeft" class="small-tab-container-inner">
+        <ui:Instance template="ShopTabSmall" template="ShopTabSmall" />
+      </ui:VisualElement>
+      <ui:VisualElement name="ContainerInnerRight" class="small-tab-container-inner">
+        <ui:Instance template="ShopTabSmall" template="ShopTabSmall" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:GroupBox name="Footer" class="shop-item-footer">
+      <ui:GroupBox name="StatisticBox" class="item-statistics-container">
+        <ui:VisualElement name="Row" class="shop-statistic-row">
+          <ui:Label text="Adena" class="l2-color-4 shop-statistic-label" />
+          <ui:VisualElement class="shop-statistic-icon">
+            <ui:VisualElement class="item-statistic-icon icon-adena" />
+          </ui:VisualElement>
+          <ui:GroupBox name="TextBox" class="inventory-adena-box shop-statistic-gauge">
+            <ui:GroupBox class="inventory-adena-box-inner">
+              <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AdenaCount" class="inventory-adena-count" />
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="Row" class="shop-statistic-row">
+          <ui:Label text="Weight" class="l2-color-4 shop-statistic-label" />
+          <ui:VisualElement class="shop-statistic-icon">
+            <ui:VisualElement class="item-statistic-icon icon-bag" />
+          </ui:VisualElement>
+          <ui:Instance template="L2Bar" template="L2Bar" name="WeightBar" class="l2-bar weight-3 shop-statistic-gauge" />
+        </ui:VisualElement>
+      </ui:GroupBox>
+      <ui:GroupBox name="Divider" class="shop-divider" />
+      <ui:GroupBox name="StatisticBox" class="item-statistics-container">
+        <ui:VisualElement name="Row" class="shop-statistic-row">
+          <ui:Label text="Price" class="l2-color-4 shop-statistic-label" />
+          <ui:VisualElement class="shop-statistic-icon">
+            <ui:VisualElement class="item-statistic-icon icon-adena" />
+          </ui:VisualElement>
+          <ui:GroupBox name="TextBox" class="inventory-adena-box shop-statistic-gauge">
+            <ui:GroupBox class="inventory-adena-box-inner">
+              <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Price" class="inventory-adena-count" />
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:VisualElement>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:VisualElement>
+</ui:UXML>

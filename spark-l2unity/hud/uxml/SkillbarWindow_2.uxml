@@ -1,0 +1,102 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="ShortCut" class="short-cut">
+    <ui:GroupBox name="GroupBox" class="drag-area-shortcut">
+      <ui:GroupBox name="GroupBox">
+        <ui:VisualElement />
+      </ui:GroupBox>
+      <ui:GroupBox>
+        <ui:VisualElement name="head-slider" class="button-slider" />
+      </ui:GroupBox>
+      <ui:GroupBox>
+        <ui:VisualElement />
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBox">
+        <ui:VisualElement />
+      </ui:GroupBox>
+      <ui:GroupBox name="horizontal-groupbox">
+        <ui:VisualElement name="head-slide-hor" class="slide-hor" />
+      </ui:GroupBox>
+      <ui:GroupBox>
+        <ui:VisualElement />
+      </ui:GroupBox>
+    </ui:GroupBox>
+    <ui:GroupBox>
+      <ui:GroupBox name="GroupBoxButon">
+        <ui:Button parse-escape-sequences="false" display-tooltip-when-elided="false" name="button_preview" class="button-option_preview" />
+      </ui:GroupBox>
+      <ui:GroupBox>
+        <ui:VisualElement name="ImageIndexPanel" class="ImageIndex" />
+      </ui:GroupBox>
+      <ui:GroupBox>
+        <ui:Button parse-escape-sequences="false" display-tooltip-when-elided="false" enable-rich-text="true" focusable="true" name="button_next" class="button-option_next" />
+      </ui:GroupBox>
+    </ui:GroupBox>
+    <ui:GroupBox name="GroupBox">
+      <ui:GroupBox name="GroupBoxRow1" class="border_row0">
+        <ui:GroupBox name="GroupBoxImageRow1" class="ClassGroupBoxImageRow1">
+          <ui:VisualElement name="Skill_Icon1" class="row0" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow2" class="border_row1">
+        <ui:GroupBox name="GroupBoxImageRow2">
+          <ui:VisualElement name="Skill_Icon2" class="row1" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow3" class="border_row2">
+        <ui:GroupBox name="GroupBoxImageRow3">
+          <ui:VisualElement name="Skill_Icon3" class="row2" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow4" class="border_row3">
+        <ui:GroupBox name="GroupBoxImageRow4">
+          <ui:VisualElement name="Skill_Icon4" class="row3" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow5" class="border_row4">
+        <ui:GroupBox name="GroupBoxImageRow5">
+          <ui:VisualElement name="Skill_Icon5" class="row4" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow6" class="border_row5">
+        <ui:GroupBox name="GroupBoxImageRow6">
+          <ui:VisualElement name="Skill_Icon6" class="row5" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow7" class="border_row6">
+        <ui:GroupBox name="GroupBoxImageRow7">
+          <ui:VisualElement name="Skill_Icon7" class="row6" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow8" class="border_row7">
+        <ui:GroupBox name="GroupBoxImageRow8">
+          <ui:VisualElement name="Skill_Icon8" class="row7" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow9" class="border_row8">
+        <ui:GroupBox name="GroupBoxImageRow9">
+          <ui:VisualElement name="Skill_Icon9" class="row8" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow10" class="border_row9">
+        <ui:GroupBox name="GroupBoxImageRow10">
+          <ui:VisualElement name="Skill_Icon10" class="row9" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow11" class="border_row10">
+        <ui:GroupBox name="GroupBoxImageRow11">
+          <ui:VisualElement name="Skill_Icon11" class="row10" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="GroupBoxRow12" class="border_row11">
+        <ui:GroupBox name="GroupBoxImageRow12">
+          <ui:VisualElement name="Skill_Icon12" class="row11" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+    </ui:GroupBox>
+    <ui:GroupBox name="GroupFooter">
+      <ui:VisualElement name="visualToolTip" class="button-tool-tip" />
+      <ui:VisualElement name="visualRotate" class="button-rotate" />
+      <ui:VisualElement name="visualLock" class="button-lock" />
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

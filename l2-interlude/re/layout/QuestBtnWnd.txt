@@ -1,0 +1,2 @@
+Window QuestBtnWnd 32x32 @BOTTOM_LEFT->ChatWnd.TOP_LEFT(42,-5) unk102=QuestBtnWnd unk103=GamingState unk107=1 unk108=0 unk114=0 unk117=0 unk122=14655 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=31402288 unk133=458770 unk134=7536713 unk135=6226017 unk139=Game size=[2]
+  EffectButton btnQuest 32x32 @TOP_LEFT->pai.TOP_LEFT(0,0) type=1 normalTex=L2UI_ch3.ConsoleBtn.QuestBtn pushedTex=L2UI_ch3.ConsoleBtn.QuestBtn_down highlightTex=L2UI_ch3.ConsoleBtn.QuestBtn_light effectTex1=l2ui_ch3.etc.glowbtn1 effectTex2=l2ui_ch3.etc.glowbtn2 size=[2]

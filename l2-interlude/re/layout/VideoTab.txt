@@ -1,0 +1,80 @@
+Window VideoTab 256x432 @TOP_LEFT->pai.TOP_LEFT(0,48) unk100=OptionWnd unk114=0 unk117=0 unk122=67249984 unk126=0 unk127=67002520 unk128=67001880 unk130=0 unk131=0 unk132=66995832 unk133=66996632 unk134=0 unk135=67068224 unk139=Game size=[2]
+  Texture VideoBackTex 256x432 @TOP_LEFT->pai.TOP_LEFT(0,0) file=L2ui_ch3.OptionWnd.option1_back type=Normal layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Button VideoOKBtn 76x23 @TOP_LEFT->pai.TOP_LEFT(11,402) normalTex=L2UI_CH3.BUTTON.BTN1_normal pushedTex=L2UI_CH3.BUTTON.BTN1_normalon buttonName=140 size=[2]
+  Button VideoCancelBtn 76x23 @TOP_LEFT->pai.TOP_LEFT(91,402) normalTex=L2UI_CH3.BUTTON.BTN1_normal pushedTex=L2UI_CH3.BUTTON.BTN1_normalon buttonName=141 size=[2]
+  Button VideoApplyBtn 76x23 @TOP_LEFT->pai.TOP_LEFT(171,402) normalTex=L2UI_CH3.BUTTON.BTN1_normal pushedTex=L2UI_CH3.BUTTON.BTN1_normalon buttonName=218 size=[2]
+  TextBox text0 98x19 @TOP_LEFT->pai.TOP_LEFT(0,14) textAlign=Right offsetY=0 sysstring=209 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text1 98x19 @TOP_LEFT->pai.TOP_LEFT(0,33) textAlign=Right offsetY=0 sysstring=351 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text2 98x19 @TOP_LEFT->pai.TOP_LEFT(0,52) textAlign=Right offsetY=0 sysstring=210 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text3 98x19 @TOP_LEFT->pai.TOP_LEFT(0,71) textAlign=Right offsetY=0 sysstring=211 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text4 98x19 @TOP_LEFT->pai.TOP_LEFT(0,90) textAlign=Right offsetY=0 sysstring=594 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text5 98x19 @TOP_LEFT->pai.TOP_LEFT(0,109) textAlign=Right offsetY=0 sysstring=607 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text6 98x19 @TOP_LEFT->pai.TOP_LEFT(0,142) textAlign=Right offsetY=0 sysstring=214 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text7 98x19 @TOP_LEFT->pai.TOP_LEFT(0,161) textAlign=Right offsetY=0 sysstring=215 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text8 98x19 @TOP_LEFT->pai.TOP_LEFT(0,180) textAlign=Right offsetY=0 sysstring=540 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text9 98x19 @TOP_LEFT->pai.TOP_LEFT(0,232) textAlign=Right offsetY=0 sysstring=352 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text10 98x19 @TOP_LEFT->pai.TOP_LEFT(0,251) textAlign=Right offsetY=0 sysstring=868 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text11 98x19 @TOP_LEFT->pai.TOP_LEFT(0,320) textAlign=Right offsetY=0 sysstring=979 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox text12 98x19 @TOP_LEFT->pai.TOP_LEFT(0,339) textAlign=Right offsetY=0 sysstring=1229 textColor=#ffdcdcdc emoticon=1 size=[2]
+  ComboBox ResBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,11) size=[2] values=[0]
+  ComboBox RefreshRateBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,30) size=[2] values=[0]
+  ComboBox GammaBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,49) size=[2] values=[5]
+    - values: sysString=1233 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1234 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1235 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1236 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1237 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox TextureBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,68) size=[2] values=[3]
+    - values: sysString=224 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=225 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=226 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox ModelBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,87) size=[2] values=[2]
+    - values: sysString=224 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=226 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox AnimBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,106) size=[2] values=[2]
+    - values: sysString=224 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=226 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox TerrainBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,139) size=[2] values=[5]
+    - values: sysString=1238 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1239 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1240 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1241 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1242 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox CharBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,158) size=[2] values=[5]
+    - values: sysString=1238 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1239 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1240 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1241 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1242 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox PawnBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,177) size=[2] values=[6]
+    - values: sysString=27 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1233 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1234 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1235 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1236 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1237 systemMsg=-9999 text=undefined reserved=-9999
+  CheckBox FrameBox 125x17 @TOP_LEFT->pai.TOP_LEFT(25,199) titleIndex=370 maxWidth=100 size=[2]
+  ComboBox ReflectBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,229) size=[2] values=[3]
+    - values: sysString=27 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=353 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=354 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox AABox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,248) size=[2] values=[0]
+  ComboBox CaptureBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,317) size=[2] values=[4]
+    - values: sysString=980 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=981 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=982 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=983 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox HDRBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,336) size=[2] values=[3]
+    - values: sysString=869 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=867 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1246 systemMsg=-9999 text=undefined reserved=-9999
+  TextBox text13 98x19 @TOP_LEFT->pai.TOP_LEFT(0,358) textAlign=Right offsetY=0 sysstring=1418 textColor=#ffdcdcdc emoticon=1 size=[2]
+  ComboBox WeatherEffectComboBox 125x17 @TOP_LEFT->pai.TOP_LEFT(107,355) size=[2] values=[4]
+    - values: sysString=869 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=224 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=225 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=226 systemMsg=-9999 text=undefined reserved=-9999
+  CheckBox ShadowBox 109x17 @TOP_LEFT->pai.TOP_LEFT(25,270) titleIndex=212 size=[2]
+  CheckBox DecoBox 109x17 @TOP_LEFT->pai.TOP_LEFT(135,270) titleIndex=213 size=[2]
+  CheckBox TriBox 109x17 @TOP_LEFT->pai.TOP_LEFT(135,287) titleIndex=464 size=[2]
+  CheckBox GPUAnimationCheckBox 109x17 @TOP_LEFT->pai.TOP_LEFT(25,287) titleIndex=1417 size=[2]

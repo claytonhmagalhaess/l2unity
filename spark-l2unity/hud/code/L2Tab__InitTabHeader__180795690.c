@@ -1,0 +1,32 @@
+// L2Tab__InitTabHeader__180795690 @ 0x180795690
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void L2Tab__InitTabHeader__180795690(longlong param_1)
+
+{
+  longlong lVar1;
+  undefined8 uVar2;
+  
+  if (cRam00000001834b445f == '\0') {
+    FUN_180315380(TI_ButtonClickSoundManipulator);
+    FUN_180315380(MR_UnityEngine.UIElements.CallbackEventHandler.RegisterCallback<UnityEngine.UIElements.MouseDownEvent>);
+    FUN_180315380(TI_UnityEngine.UIElements.EventCallback<UnityEngine.UIElements.MouseDownEvent>);
+    FUN_180315380(MD_L2Tab._InitTabHeader_b__13_0);
+    cRam00000001834b445f = '\x01';
+  }
+  lVar1 = *(longlong *)(param_1 + 0x28);
+  if (lVar1 != 0) {
+    uVar2 = func_0x000180315580(TI_ButtonClickSoundManipulator);
+    BlinkingCursorManipulator___ctor__1807aa3c0(uVar2,lVar1,0);
+    UnityEngine_UIElements_VisualElementExtensions__AddManipulator(lVar1,uVar2,0);
+  }
+  lVar1 = *(longlong *)(param_1 + 0x28);
+  if (lVar1 != 0) {
+    uVar2 = func_0x000180315580(TI_UnityEngine.UIElements.EventCallback<UnityEngine.UIElements.MouseDownEvent>);
+    FUN_18055b980(uVar2,param_1,MD_L2Tab._InitTabHeader_b__13_0,0);
+    FUN_180990d50(lVar1,uVar2,1,MR_UnityEngine.UIElements.CallbackEventHandler.RegisterCallback<UnityEngine.UIElements.MouseDownEvent>);
+  }
+  return;
+}
+

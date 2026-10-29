@@ -1,0 +1,4 @@
+# SPARK: endereco do login server (protecao 1.3). A linha de comando -servidor host:porta tem prioridade.
+# 04/10: o editor joga na VPS (Infinity em /opt/infinity). Para voltar ao servidor do PC, trocar o ip por 127.0.0.1.
+ip=192.99.42.182
+porta=2108

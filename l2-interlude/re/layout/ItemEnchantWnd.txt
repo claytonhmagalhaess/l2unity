@@ -1,0 +1,5 @@
+Window ItemEnchantWnd 256x401 @CENTER_RIGHT->pai.CENTER_RIGHT(-256,-70) unk101=L2UI_CH3.InventoryWnd.itemenchant_back unk102=ItemEnchantWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk113=0 unk114=3 unk115=0 unk117=0 unk122=2131105284 unk123=0 unk124=0 unk125=0 unk126=0 unk127=538056193 unk128=64038392 unk130=0 unk131=0 unk132=7628903 unk133=1768249198 unk134=263096 unk135=-399077354 unk139=Game size=[2]
+  TextBox txtTitle 0x0 @TOP_LEFT->pai.TOP_LEFT(11,32) textAlign=Left offsetY=0 sysstring=1221 textColor=#ffdcdcdc emoticon=1 size=[2]
+  ItemWindow ItemWnd 240x318 @TOP_LEFT->pai.TOP_LEFT(9,48) popupType=Inventory col=6 row=9 maxItemNum=250 iconWidth=32 iconHeight=32 gapX=5 gapY=3 size=[2]
+  Button btnOK 76x23 @TOP_LEFT->pai.TOP_LEFT(51,372) normalTex=L2UI_CH3.Button.btn1_normal pushedTex=L2UI_CH3.Button.btn1_normalon buttonName=140 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(131,372) normalTex=L2UI_CH3.Button.btn1_normal pushedTex=L2UI_CH3.Button.btn1_normalon buttonName=141 size=[2]

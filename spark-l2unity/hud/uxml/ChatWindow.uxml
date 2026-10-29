@@ -1,0 +1,27 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="ChatWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="ChatWindow" focusable="true" class="chat-window">
+    <ui:GroupBox name="BGContainer" class="chat-bg-container">
+      <ui:VisualElement name="TopBar" />
+      <ui:VisualElement name="TextBG" />
+      <ui:GroupBox name="BtmBar">
+        <ui:VisualElement />
+      </ui:GroupBox>
+    </ui:GroupBox>
+    <ui:GroupBox name="Container" focusable="true" class="chat-window-wrapper">
+      <ui:Instance template="L2TabView" template="L2TabView" name="ChatTabView" />
+      <ui:GroupBox name="ChatBar" focusable="true" class="chatbar-container">
+        <ui:GroupBox name="InnerBar" focusable="true" class="chatbar-container-wrapper">
+          <ui:VisualElement name="InputIcon" tabindex="0" class="chatbar-input-icon" />
+          <ui:TextField name="ChatInputField" password="false" max-length="100" class="chat-input-field" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="ChatOptions" class="chat-options-box">
+        <ui:Button text="
+" name="EnlargeTextBtn" class="chatting-fontsize" />
+        <ui:Button text="
+" name="ChatOptionsBtn" class="chatting-option" />
+      </ui:GroupBox>
+      <ui:VisualElement name="ChatResizeBtn" class="resize-diag chat-resize-btn" />
+    </ui:GroupBox>
+  </ui:VisualElement>
+</ui:UXML>

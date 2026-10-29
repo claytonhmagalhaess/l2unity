@@ -1,0 +1,301 @@
+{
+ "dll": "IpDrv.dll",
+ "functions": 2444,
+ "by_evidence": {
+  "nome": 1272,
+  "thunk": 177,
+  "inferido": 174,
+  "vizinhanca": 123,
+  "rtti": 68,
+  "eh": 605,
+  "guard": 15,
+  "vtable": 10
+ },
+ "by_subsystem": {
+  "mundo e atores": 264,
+  "rede": 1199,
+  "nucleo Unreal (objetos, script VM, IO)": 244,
+  "natives de UnrealScript (exec*)": 31,
+  "bibliotecas (CRT/MFC/zlib)": 464,
+  "ferramentas (commandlets)": 33,
+  "engine (chamada importada)": 208,
+  "sistema (chamadas Win32 importadas)": 1
+ },
+ "classes": 69,
+ "top_classes_by_subsystem": {
+  "mundo e atores": [
+   [
+    "AMasterServerClient",
+    92
+   ],
+   [
+    "AMasterServerUplink",
+    59
+   ],
+   [
+    "AServerQueryClient",
+    51
+   ],
+   [
+    "AMasterServerLink",
+    40
+   ],
+   [
+    "AMasterServerGameStats",
+    22
+   ]
+  ],
+  "rede": [
+   [
+    "FMasterServerUplinkLink",
+    202
+   ],
+   [
+    "ATcpLink",
+    130
+   ],
+   [
+    "AInternetLink",
+    111
+   ],
+   [
+    "FTcpLink",
+    100
+   ],
+   [
+    "FServerQueryLink",
+    87
+   ],
+   [
+    "UHTTPDownload",
+    84
+   ],
+   [
+    "AUdpLink",
+    75
+   ],
+   [
+    "UTcpNetDriver",
+    69
+   ],
+   [
+    "UTcpipConnection",
+    50
+   ],
+   [
+    "(funcao livre nomeada)",
+    46
+   ],
+   [
+    "FMasterServerClientLink",
+    39
+   ],
+   [
+    "FUdpLink",
+    36
+   ],
+   [
+    "FIpAddr",
+    27
+   ],
+   [
+    "WSOCK32.DLL",
+    25
+   ],
+   [
+    "FServerQueryInterface",
+    22
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "FArchiveTcpReader",
+    54
+   ],
+   [
+    "FArchiveUdpWriter",
+    25
+   ],
+   [
+    "CORE.DLL::UObject",
+    25
+   ],
+   [
+    "FArchiveUdpReader",
+    24
+   ],
+   [
+    "CORE.DLL::FArchive",
+    24
+   ],
+   [
+    "FArchiveTcpWriter",
+    22
+   ],
+   [
+    "FArchiveTcpSocket",
+    18
+   ],
+   [
+    "CORE.DLL::UStrProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UIntProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UBoolProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UField",
+    7
+   ],
+   [
+    "UStrProperty",
+    2
+   ],
+   [
+    "UBoolProperty",
+    2
+   ],
+   [
+    "UIntProperty",
+    2
+   ]
+  ],
+  "natives de UnrealScript (exec*)": [
+   [
+    "AInternetLink",
+    9
+   ],
+   [
+    "ATcpLink",
+    9
+   ],
+   [
+    "AUdpLink",
+    5
+   ],
+   [
+    "AMasterServerClient",
+    3
+   ],
+   [
+    "AMasterServerUplink",
+    2
+   ],
+   [
+    "AServerQueryClient",
+    2
+   ],
+   [
+    "AMasterServerLink",
+    1
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    324
+   ],
+   [
+    "UnDecorator",
+    43
+   ],
+   [
+    "type_info",
+    39
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "std::bad_exception",
+    2
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ],
+   [
+    "_LocaleUpdate",
+    1
+   ],
+   [
+    "exception",
+    1
+   ],
+   [
+    "std::bad_cast",
+    1
+   ]
+  ],
+  "ferramentas (commandlets)": [
+   [
+    "UCompressCommandlet",
+    17
+   ],
+   [
+    "UDecompressCommandlet",
+    16
+   ]
+  ],
+  "engine (chamada importada)": [
+   [
+    "ENGINE.DLL::AActor",
+    186
+   ],
+   [
+    "ENGINE.DLL::UNetConnection",
+    12
+   ],
+   [
+    "ENGINE.DLL::UNetDriver",
+    7
+   ],
+   [
+    "ENGINE.DLL::UDownload",
+    3
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    1
+   ]
+  ]
+ },
+ "funclets_linked": 628,
+ "eh_handlers": 266
+}

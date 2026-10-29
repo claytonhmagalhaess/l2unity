@@ -1,0 +1,7 @@
+Window BenchMarkMenuWnd 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) unk102=BenchMarkMenuWnd unk103=BenchMarkMenuState unk107=0 unk108=1 unk114=0 unk117=0 unk122=1231839593 unk126=0 unk127=1950968929 unk128=28005 unk130=0 unk131=0 unk132=74549040 unk133=263099 unk134=83803544 unk135=67830806 unk139=Game size_percent=[2] size=[2]
+  Texture textureBack 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) file=L2UI_CH3.BenchMarkWnd.BenchMark_Title type=Stretch layer=None u=0.0 v=0.0 uSize=1024.0 vSize=768.0 size_percent=[2] size=[2]
+  Window BenchMarkFunctionWnd 120x138 @BOTTOM_RIGHT->pai.BOTTOM_RIGHT(-26,-98) unk101=L2UI_CH3.LobbyWnd.lobby_menuback unk103=BenchMarkMenuState unk107=0 unk108=1 unk114=0 unk117=0 unk122=352609054 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=0 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+    Button btnPlay 96x23 @TOP_LEFT->pai.TOP_LEFT(13,20) normalTex=L2UI_CH3.Button.BigButton pushedTex=L2UI_CH3.Button.BigButton_down buttonName=1023 size=[2]
+    Button btnBenchMark 96x23 @TOP_LEFT->pai.TOP_LEFT(13,45) normalTex=L2UI_CH3.Button.BigButton pushedTex=L2UI_CH3.Button.BigButton_down buttonName=1022 size=[2]
+    Button btnOption 96x23 @TOP_LEFT->pai.TOP_LEFT(13,70) normalTex=L2UI_CH3.Button.BigButton pushedTex=L2UI_CH3.Button.BigButton_down buttonName=156 size=[2]
+    Button btnExit 96x23 @TOP_LEFT->pai.TOP_LEFT(13,95) normalTex=L2UI_CH3.Button.BigButton pushedTex=L2UI_CH3.Button.BigButton_down buttonName=153 size=[2]

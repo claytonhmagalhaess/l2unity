@@ -1,0 +1,5 @@
+Window TutorialViewerWnd 310x401 @TOP_RIGHT->pai.TOP_RIGHT(0,0) unk102=TutorialViewerWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk109=1 unk111=448 unk113=0 unk114=3 unk115=0 unk117=0 unk122=2687008 unk123=0 unk124=0 unk125=0 unk126=0 unk127=7929953 unk128=7471205 unk130=0 unk131=0 unk132=655373 unk133=2687084 unk134=8060937 unk135=589833 unk139=Game size=[2]
+  Texture texTutorialViewerBack1 310x12 @TOP_LEFT->pai.TOP_LEFT(0,20) file=l2ui_ch3.tutorialwnd.tutorial_back1 type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture texTutorialViewerBack2 310x60 @TOP_LEFT->pai.TOP_LEFT(0,32) file=l2ui_ch3.tutorialwnd.tutorial_back2 type=Tile layer=None u=0.0 v=0.0 uSize=310.0 vSize=12.0 size=[2]
+  Texture texTutorialViewerBack3 310x9 @TOP_LEFT->pai.TOP_LEFT(0,280) file=l2ui_ch3.tutorialwnd.tutorial_back3 type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  HtmlCtrl HtmlTutorialViewer 295x201 @TOP_LEFT->pai.TOP_LEFT(8,32) viewType=Tutorial size=[2]

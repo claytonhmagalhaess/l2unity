@@ -1,0 +1,65 @@
+/* TradeWindow  (13 regras) */
+.trade-caixa {
+    position: absolute;
+    unity-background-image-tint-color: rgba(255, 255, 255, 1.00);
+    background-image: resource("Data/UI/Assets/Party/GroupBox_DF");
+    unity-slice-left: 3;
+    unity-slice-right: 3;
+    unity-slice-top: 3;
+    unity-slice-bottom: 3;
+}
+.trade-texto {
+    position: absolute;
+    unity-font: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    color: rgba(220, 220, 220, 1.00);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 1.00);
+}
+.trade-grade {
+    position: absolute;
+    width: 240px;
+}
+.trade-grade .l2-slot-container-label {
+    display: none;
+}
+.trade-grade .l2-slot-container-scrollview {
+    background-color: rgba(0, 0, 0, 0.00);
+    border-width: 0;
+}
+.trade-grade.apagada {
+    opacity: 0.45;
+}
+.trade-seta {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: resource("Data/UI/Assets/Trade/DownButton");
+}
+.trade-seta:hover {
+    background-image: resource("Data/UI/Assets/Trade/downbutton_over");
+}
+.trade-seta:active {
+    background-image: resource("Data/UI/Assets/Trade/downbutton_down");
+}
+.trade-peso-icone {
+    position: absolute;
+    width: 18px;
+    height: 13px;
+    background-image: resource("Data/UI/Assets/Trade/Icon_DF_Common_Weight");
+}
+.trade-peso {
+    position: absolute;
+    width: 76px;
+}
+.trade-nivel {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+}
+.trade-botao {
+    position: absolute;
+    width: 85px;
+    height: 27px;
+}

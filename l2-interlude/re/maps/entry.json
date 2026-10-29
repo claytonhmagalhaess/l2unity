@@ -1,0 +1,68 @@
+{
+"mapa": "entry",
+"pacote": {
+"versao": 123,
+"licenca": 0,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"Model": 3,
+"Polys": 3,
+"Brush": 2,
+"LevelInfo": 1,
+"Light": 1,
+"Level": 1,
+"DefaultPhysicsVolume": 1,
+"PlayerStart": 1,
+"LevelSummary": 1
+},
+"atores_ambiente": [
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 32.00391,
+"Summary": "LevelSummary",
+"bPathsRebuilt": true,
+"CameraLocationDynamic": [
+-399.1996,
+53.5433,
+68.4
+],
+"CameraLocationTop": [
+-500.0,
+-300.0,
+40000.0
+],
+"CameraLocationFront": [
+-500.0,
+300.0,
+40000.0
+],
+"CameraLocationSide": [
+-300.0,
+300.0,
+40000.0
+],
+"CameraRotationDynamic": [
+63412,
+-416,
+0
+],
+"NavigationPointList": "PlayerStart0"
+}
+},
+{
+"classe": "Light",
+"nome": "Light0",
+"props": {
+"LightBrightness": 128.0,
+"Location": [
+-16.0,
+-14.0,
+-22.0
+]
+}
+}
+]
+}

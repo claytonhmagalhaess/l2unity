@@ -1,0 +1,3 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Scrollview" xmlns:ui="UnityEngine.UIElements">
+  <ui:ScrollView name="L2Scrollview" class="l2-scroll-view" />
+</ui:UXML>

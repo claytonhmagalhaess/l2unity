@@ -1,0 +1,10 @@
+Window HeroTowerWnd 600x326 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.HeroTower.herotower1_back unk102=HeroTowerWnd unk103=GamingState unk104=1 unk106=0 unk107=1 unk108=0 unk109=1 unk111=1222 unk113=0 unk114=3 unk115=1 unk117=0 unk122=7209071 unk123=0 unk124=0 unk125=0 unk126=0 unk127=4522016 unk128=5570641 unk130=0 unk131=0 unk132=3997728 unk133=7602291 unk134=852027 unk135=3538976 unk139=Game size=[2]
+  ListCtrl lstHero 586x255 @TOP_LEFT->pai.TOP_LEFT(7,34) unk100=1000 unk101=13 unk102=1 unk103=18 unk104=19 size=[2] values=[5]
+    - values: textStringId=393 width=169 unk108=true unk109=true unk110=false
+    - values: textStringId=391 width=120 unk108=true unk109=true unk110=false
+    - values: textStringId=604 width=128 unk108=true unk109=true unk110=false
+    - values: textStringId=605 width=119 unk108=true unk109=true unk110=false
+    - values: textStringId=1191 width=50 unk108=true unk109=true unk110=true
+  EditBox txtDiary 405x16 @TOP_LEFT->pai.TOP_LEFT(25,300) type=NORMAL maxLength=64 chatMarkOn=false size=[2]
+  Button btnReg 76x23 @TOP_LEFT->pai.TOP_LEFT(440,297) normalTex=L2UI_CH3.Button.btn1_normal pushedTex=L2UI_CH3.Button.btn1_normalon buttonName=1192 size=[2]
+  Button btnShowDiary 76x23 @TOP_LEFT->pai.TOP_LEFT(518,297) normalTex=L2UI_CH3.Button.btn1_normal pushedTex=L2UI_CH3.Button.btn1_normalon buttonName=1193 size=[2]

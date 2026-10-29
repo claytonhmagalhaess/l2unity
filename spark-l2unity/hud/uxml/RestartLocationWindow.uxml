@@ -1,0 +1,11 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="RestartLocationWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="RestartLocationWindow" class="restart-location-window drag-area">
+    <ui:VisualElement name="Buttons" picking-mode="Ignore" class="restart-location-window-buttons">
+      <ui:Instance template="L2Button" template="L2Button" name="ToVillageButton" />
+      <ui:Instance template="L2Button" template="L2Button" name="ToClanHallButton" />
+      <ui:Instance template="L2Button" template="L2Button" name="ToCastleButton" />
+      <ui:Instance template="L2Button" template="L2Button" name="ToSiegeButton" />
+      <ui:Instance template="L2Button" template="L2Button" name="FixedResButton" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

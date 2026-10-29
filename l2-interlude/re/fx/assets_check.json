@@ -1,0 +1,30 @@
+{
+ "classes_efeito": 886,
+ "classes_usadas_por_dados": 255,
+ "usadas_inexistentes": [
+  "lineageeffect.p_u110_a"
+ ],
+ "skills_com_efeito": 953,
+ "skills_sem_efeito": 1741,
+ "refs_skill_usk_faltando": [
+  "skill.bl.1147",
+  "skill.it.2178",
+  "skill.mo.87"
+ ],
+ "assets_distintos": 495,
+ "assets_faltando": {
+  "LineageKetraMesh.fx_m_t6235": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.etc_spawn00": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.twist_m06": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t8137": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6172": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_a": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_b": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_c": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_d": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_e": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_f": "pacote ilegivel (cifra desconhecida)",
+  "LineageKetraMesh.fx_m_t6235_g": "pacote ilegivel (cifra desconhecida)",
+  "LineageEffectsStaticmeshes.Monster.Barler_bright0": "nao encontrado no pacote"
+ }
+}

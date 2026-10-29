@@ -1,0 +1,1057 @@
+11101005	UWindowsClient::PostEditChange	00000.c	ok
+1110100a	UWindowsViewport::ResizeViewport	00000.c	ok
+1110100f	WWindowsViewportWindow::operator=	00000.c	ok
+11101014	UWindowsClient::StaticClass	00000.c	ok
+11101019	UWindowsViewport::CloseWindow	00000.c	ok
+1110101e	UWindowsViewport::ToggleFullscreen	00000.c	ok
+11101023	thunk_FUN_11103e50	00000.c	thunk -> 11103e50
+11101028	UWindowsViewport::SetMouseDisable	00000.c	ok
+1110102d	WWindowsViewportWindow::WWindowsViewportWindow	00000.c	ok
+11101032	UWindowsClient::Tick	00000.c	ok
+11101041	thunk_FUN_11103ec0	00000.c	thunk -> 11103ec0
+11101046	CRect::CRect	00000.c	thunk -> 111040f0
+1110104b	UWindowsClient::InternalConstructor	00000.c	ok
+11101050	UWindowsViewport::ShutdownAfterError	00000.c	ok
+11101055	UWindowsViewport::UpdateInput	00000.c	ok
+1110105a	UWindowsViewport::EndFullscreen	00000.c	ok
+1110105f	UWindowsViewport::IsFullscreen	00000.c	ok
+11101064	thunk_FUN_111027a0	00000.c	thunk -> 111027a0
+11101069	UWindowsViewport::UpdateWindowFrame	00000.c	ok
+1110106e	UWindowsViewport::SetDefaultConsolePos	00000.c	ok
+11101073	UWindowsViewport::GetWindow	00000.c	ok
+11101078	UWindowsViewport::Repaint	00000.c	ok
+1110107d	UWindowsClient::ShutdownAfterError	00000.c	ok
+11101082	UWindowsViewport::Destroy	00000.c	ok
+11101087	UWindowsViewport::Unlock	00000.c	ok
+1110109b	UWindowsViewport::ViewportWndProc	00000.c	ok
+111010a0	thunk_FUN_11103320	00000.c	thunk -> 11103320
+111010a5	UWindowsClient::Exec	00000.c	ok
+111010aa	UWindowsClient::operator_new	00000.c	ok
+111010af	UWindowsClient::~UWindowsClient	00000.c	ok
+111010be	UWindowsViewport::operator_new	00000.c	ok
+111010c8	UWindowsViewport::IsDefaultConsolePos	00000.c	ok
+111010cd	UWindowsViewport::OpenWindow	00000.c	ok
+111010d2	UWindowsClient::ShowViewportWindows	00000.c	ok
+111010d7	UWindowsClient::operator_new	00000.c	ok
+111010dc	UWindowsViewport::IsMouseCaptured	00000.c	ok
+111010e1	UWindowsViewport::Exec	00000.c	ok
+111010e6	UWindowsClient::GetLastCurrent	00000.c	ok
+111010eb	WWindowsViewportWindow::GetWindowClassName	00000.c	ok
+111010f5	thunk_FUN_11103f30	00000.c	thunk -> 11103f30
+111010fa	thunk_FUN_11102780	00000.c	thunk -> 11102780
+111010ff	DirectInputError	00000.c	ok
+11101104	UWindowsViewport::EnumJoysticksCallback	00000.c	ok
+11101109	UWindowsClient::NewViewport	00000.c	ok
+1110110e	UWindowsViewport::Lock	00000.c	ok
+11101113	UWindowsViewport::operator=	00000.c	ok
+11101118	thunk_FUN_11101aa0	00000.c	thunk -> 11101aa0
+11101122	UWindowsViewport::PlayForceFeedBack	00000.c	ok
+11101127	thunk_FUN_11107b00	00000.c	thunk -> 11107b00
+1110112c	UWindowsViewport::UWindowsViewport	00000.c	ok
+11101131	WWindowsViewportWindow::~WWindowsViewportWindow	00000.c	ok
+11101136	WWindowsViewportWindow::WWindowsViewportWindow	00000.c	ok
+1110113b	UWindowsViewport::SetModeCursor	00000.c	ok
+11101140	UWindowsViewport::UWindowsViewport	00000.c	ok
+1110114a	UWindowsClient::MakeCurrent	00000.c	ok
+1110114f	UWindowsViewport::CauseInputEvent	00000.c	ok
+11101154	UWindowsClient::Init	00000.c	ok
+1110115e	thunk_FUN_11103fc0	00000.c	thunk -> 11103fc0
+11101163	WWindowsViewportWindow::GetPackageName	00000.c	ok
+11101172	thunk_FUN_11101c50	00000.c	thunk -> 11101c50
+1110117c	UWindowsClient::NotifyDestroy	00000.c	ok
+11101181	UWindowsViewport::GetOuterUWindowsClient	00000.c	ok
+1110118b	_DllMain@12	00000.c	thunk -> 11102670
+11101190	thunk_FUN_11103f90	00000.c	thunk -> 11103f90
+11101195	UWindowsViewport::EnumEffectsInFileProc	00000.c	ok
+1110119a	UWindowsViewport::operator_new	00000.c	ok
+1110119f	UWindowsViewport::StaticClass	00000.c	ok
+111011a4	UWindowsClient::UWindowsClient	00000.c	ok
+111011a9	thunk_FUN_11103010	00000.c	thunk -> 11103010
+111011ae	UWindowsViewport::~UWindowsViewport	00000.c	ok
+111011b3	UWindowsViewport::SetMouseCapture	00000.c	ok
+111011b8	UWindowsViewport::TickForceFeedBack	00000.c	ok
+111011c2	UWindowsClient::Destroy	00000.c	ok
+111011c7	UWindowsViewport::EnumAxesCallback	00000.c	ok
+111011cc	UWindowsViewport::TryRenderDevice	00000.c	ok
+111011d1	UWindowsViewport::GetViewportButtonFlags	00000.c	ok
+111011db	UWindowsViewport::SetTopness	00000.c	ok
+111011e0	WWindowsViewportWindow::WWindowsViewportWindow	00000.c	ok
+111011e5	UWindowsViewport::GetLocalizedKeyName	00000.c	ok
+111011ea	thunk_FUN_11102490	00000.c	thunk -> 11102490
+111011ef	UWindowsClient::EnableViewportWindows	00000.c	ok
+111011f4	UWindowsClient::operator=	00000.c	ok
+111011f9	UWindowsClient::UWindowsClient	00000.c	ok
+111011fe	UWindowsClient::StaticConstructor	00000.c	ok
+1110120d	WWindowsViewportWindow::WndProc	00000.c	ok
+11101212	thunk_FUN_11101ad0	00000.c	thunk -> 11101ad0
+1110121c	UWindowsViewport::InternalConstructor	00000.c	ok
+11101440	FUN_11101440	00000.c	ok
+111014df	Catch@111014df	00000.c	ok
+111014f3	Catch@111014f3	00000.c	ok
+11101550	FUN_11101550	00000.c	ok
+111016bd	Catch@111016bd	00000.c	ok
+111016d1	Catch@111016d1	00000.c	ok
+11101760	FUN_11101760	00000.c	ok
+1110181f	Catch@1110181f	00000.c	ok
+11101833	Catch@11101833	00000.c	ok
+11101890	FUN_11101890	00000.c	ok
+111018f7	Catch@111018f7	00000.c	ok
+1110190b	Catch@1110190b	00000.c	ok
+11101950	FUN_11101950	00000.c	ok
+11101996	Catch@11101996	00000.c	ok
+111019aa	Catch@111019aa	00000.c	ok
+111019f0	FUN_111019f0	00000.c	ok
+11101a2f	Catch@11101a2f	00000.c	ok
+11101a43	Catch@11101a43	00000.c	ok
+11101aa0	FUN_11101aa0	00000.c	ok
+11101ad0	FUN_11101ad0	00000.c	ok
+11101b2d	Catch@11101b2d	00000.c	ok
+11101b41	Catch@11101b41	00000.c	ok
+11101b90	FUN_11101b90	00000.c	ok
+11101ba0	FUN_11101ba0	00000.c	ok
+11101bb0	FUN_11101bb0	00000.c	ok
+11101c30	FUN_11101c30	00000.c	ok
+11101c50	FUN_11101c50	00000.c	ok
+11101cd0	FUN_11101cd0	00000.c	ok
+11101ce0	FUN_11101ce0	00000.c	ok
+11101d30	FUN_11101d30	00000.c	ok
+11101ed0	Catch@11101ed0	00000.c	ok
+11101ee4	Catch@11101ee4	00000.c	ok
+11101f80	FUN_11101f80	00000.c	ok
+11102020	FUN_11102020	00000.c	ok
+11102098	Catch@11102098	00000.c	ok
+111020ac	Catch@111020ac	00000.c	ok
+11102100	FUN_11102100	00000.c	ok
+1110216f	Catch@1110216f	00000.c	ok
+11102183	Catch@11102183	00000.c	ok
+111021d0	FUN_111021d0	00000.c	ok
+1110224f	Catch@1110224f	00000.c	ok
+11102263	Catch@11102263	00000.c	ok
+111022b0	FUN_111022b0	00000.c	ok
+1110232e	Catch@1110232e	00000.c	ok
+11102342	Catch@11102342	00000.c	ok
+11102390	FUN_11102390	00000.c	ok
+11102429	Catch@11102429	00000.c	ok
+1110243d	Catch@1110243d	00000.c	ok
+11102490	FUN_11102490	00000.c	ok
+11102500	FUN_11102500	00000.c	ok
+111025f5	Catch@111025f5	00000.c	ok
+11102609	Catch@11102609	00000.c	ok
+11102670	FUN_11102670	00000.c	ok
+11102690	FUN_11102690	00000.c	ok
+11102780	FUN_11102780	00000.c	ok
+111027a0	FUN_111027a0	00000.c	ok
+11102800	FUN_11102800	00000.c	ok
+11102840	FUN_11102840	00000.c	ok
+111029d0	FUN_111029d0	00000.c	ok
+11102b10	FUN_11102b10	00000.c	ok
+11102b40	FUN_11102b40	00000.c	ok
+11102b50	FUN_11102b50	00000.c	ok
+11102bd0	FUN_11102bd0	00000.c	ok
+11102bf0	CORE.DLL::UObject::GetOuter	00000.c	thunk -> EXTERNAL:0000005a
+11102c00	FUN_11102c00	00000.c	ok
+11102c10	FUN_11102c10	00000.c	ok
+11102c20	FUN_11102c20	00000.c	ok
+11102c30	FUN_11102c30	00000.c	ok
+11102e00	FUN_11102e00	00000.c	ok
+11102fe0	FUN_11102fe0	00000.c	ok
+11103010	FUN_11103010	00000.c	ok
+11103090	FUN_11103090	00000.c	ok
+111030b0	FUN_111030b0	00000.c	ok
+11103120	FUN_11103120	00000.c	ok
+11103130	FUN_11103130	00000.c	ok
+111031b0	FUN_111031b0	00000.c	ok
+11103240	FUN_11103240	00000.c	ok
+11103250	FUN_11103250	00000.c	ok
+111032c0	FUN_111032c0	00000.c	ok
+111032f0	FUN_111032f0	00000.c	ok
+11103320	FUN_11103320	00000.c	ok
+111033a0	FUN_111033a0	00000.c	ok
+111033d0	FUN_111033d0	00000.c	ok
+11103465	Catch@11103465	00000.c	ok
+11103479	Catch@11103479	00000.c	ok
+111034d0	FUN_111034d0	00000.c	ok
+1110356f	Catch@1110356f	00000.c	ok
+11103583	Catch@11103583	00000.c	ok
+111035e0	FUN_111035e0	00000.c	ok
+11103622	Catch@11103622	00000.c	ok
+11103636	Catch@11103636	00000.c	ok
+11103670	FUN_11103670	00000.c	ok
+11103894	Catch@11103894	00000.c	ok
+111038a8	Catch@111038a8	00000.c	ok
+111039a0	FUN_111039a0	00000.c	ok
+111039e2	Catch@111039e2	00000.c	ok
+111039f6	Catch@111039f6	00000.c	ok
+11103a30	FUN_11103a30	00000.c	ok
+11103aa6	Catch@11103aa6	00000.c	ok
+11103aba	Catch@11103aba	00000.c	ok
+11103b00	FUN_11103b00	00000.c	ok
+11103b10	FUN_11103b10	00000.c	ok
+11103ba0	FUN_11103ba0	00000.c	ok
+11103c42	Catch@11103c42	00000.c	ok
+11103c56	Catch@11103c56	00000.c	ok
+11103cb0	FUN_11103cb0	00000.c	ok
+11103d1b	Catch@11103d1b	00000.c	ok
+11103d2f	Catch@11103d2f	00000.c	ok
+11103d80	FUN_11103d80	00000.c	ok
+11103de0	FUN_11103de0	00000.c	ok
+11103e50	FUN_11103e50	00000.c	ok
+11103ec0	FUN_11103ec0	00000.c	ok
+11103f30	FUN_11103f30	00000.c	ok
+11103f90	FUN_11103f90	00000.c	ok
+11103fc0	FUN_11103fc0	00000.c	ok
+111040f0	CRect::CRect	00000.c	ok
+111041c0	FUN_111041c0	00000.c	ok
+11104281	Catch@11104281	00000.c	ok
+11104295	Catch@11104295	00000.c	ok
+111042f0	FUN_111042f0	00000.c	ok
+1110484f	Catch@1110484f	00000.c	ok
+11104863	Catch@11104863	00000.c	ok
+111049f0	FUN_111049f0	00000.c	ok
+11104a64	Catch@11104a64	00000.c	ok
+11104a78	Catch@11104a78	00000.c	ok
+11104ac0	FUN_11104ac0	00000.c	ok
+11104d6a	Catch@11104d6a	00000.c	ok
+11104d7e	Catch@11104d7e	00000.c	ok
+11104f40	FUN_11104f40	00000.c	ok
+11104fa4	Catch@11104fa4	00000.c	ok
+11104fb8	Catch@11104fb8	00000.c	ok
+11105000	FUN_11105000	00000.c	ok
+11105251	Catch@11105251	00000.c	ok
+11105265	Catch@11105265	00000.c	ok
+11105330	FUN_11105330	00000.c	ok
+11105d21	Catch@11105d21	00000.c	ok
+11105d35	Catch@11105d35	00000.c	ok
+11106020	FUN_11106020	00000.c	ok
+11106604	Catch@11106604	00000.c	ok
+11106618	Catch@11106618	00000.c	ok
+11106634	Catch@11106634	00000.c	ok
+11106648	Catch@11106648	00000.c	ok
+111067e0	FUN_111067e0	00000.c	ok
+111068b0	Catch@111068b0	00000.c	ok
+111068c4	Catch@111068c4	00000.c	ok
+11106930	FUN_11106930	00000.c	ok
+11106af8	Catch@11106af8	00000.c	ok
+11106b0c	Catch@11106b0c	00000.c	ok
+11106bb0	FUN_11106bb0	00000.c	ok
+11107604	Catch@11107604	00000.c	ok
+11107618	Catch@11107618	00000.c	ok
+11107634	Catch@11107634	00000.c	ok
+11107648	Catch@11107648	00000.c	ok
+1110764f	Catch@1110764f	00000.c	ok
+11107660	Catch@11107660	00000.c	ok
+11107667	Catch@11107667	00000.c	ok
+11107678	Catch@11107678	00000.c	ok
+1110767f	Catch@1110767f	00000.c	ok
+11107690	Catch@11107690	00000.c	ok
+11107697	Catch@11107697	00000.c	ok
+111076a8	Catch@111076a8	00000.c	ok
+111076b2	Catch@111076b2	00000.c	ok
+111076c6	Catch@111076c6	00000.c	ok
+111076d0	Catch@111076d0	00000.c	ok
+111076e4	Catch@111076e4	00000.c	ok
+111079c0	FUN_111079c0	00000.c	ok
+11107aa0	FUN_11107aa0	00000.c	ok
+11107ac0	FUN_11107ac0	00000.c	ok
+11107b00	FUN_11107b00	00000.c	ok
+11107b30	FUN_11107b30	00000.c	ok
+11108001	Catch@11108001	00000.c	ok
+11108015	Catch@11108015	00000.c	ok
+11108180	FUN_11108180	00000.c	ok
+1110873d	Catch@1110873d	00000.c	ok
+11108751	Catch@11108751	00000.c	ok
+111088f0	FUN_111088f0	00000.c	ok
+11108c7d	Catch@11108c7d	00000.c	ok
+11108c94	Catch@11108c94	00000.c	ok
+11108d59	Catch@11108d59	00000.c	ok
+11108d70	Catch@11108d70	00000.c	ok
+11108db0	Catch@11108db0	00000.c	ok
+11108dc7	Catch@11108dc7	00000.c	ok
+11108e45	FUN_11108e45	00000.c	ok
+11108e7a	Catch@11108e7a	00000.c	ok
+11108e91	Catch@11108e91	00000.c	ok
+11108f05	Catch@11108f05	00000.c	ok
+11108f1c	Catch@11108f1c	00000.c	ok
+11108f3b	Catch@11108f3b	00000.c	ok
+11108f52	Catch@11108f52	00000.c	ok
+11108fed	Catch@11108fed	00000.c	ok
+11109004	Catch@11109004	00000.c	ok
+11109264	Catch@11109264	00000.c	ok
+1110927b	Catch@1110927b	00000.c	ok
+11109360	Catch@11109360	00000.c	ok
+11109377	Catch@11109377	00000.c	ok
+11109466	Catch@11109466	00000.c	ok
+1110947d	Catch@1110947d	00000.c	ok
+111094c8	Catch@111094c8	00000.c	ok
+111094df	Catch@111094df	00000.c	ok
+11109636	Catch@11109636	00000.c	ok
+1110964d	Catch@1110964d	00000.c	ok
+11109657	switchD_1110950a::caseD_101	00000.c	ok
+11109732	Catch@11109732	00000.c	ok
+11109749	Catch@11109749	00000.c	ok
+1110980f	Catch@1110980f	00000.c	ok
+11109826	Catch@11109826	00000.c	ok
+11109a4d	Catch@11109a4d	00000.c	ok
+11109a64	Catch@11109a64	00000.c	ok
+11109b03	Catch@11109b03	00000.c	ok
+11109b1a	Catch@11109b1a	00000.c	ok
+11109e66	Catch@11109e66	00000.c	ok
+11109e7d	Catch@11109e7d	00000.c	ok
+1110a0db	Catch@1110a0db	00000.c	ok
+1110a0f2	Catch@1110a0f2	00000.c	ok
+1110a14d	Catch@1110a14d	00000.c	ok
+1110a164	Catch@1110a164	00000.c	ok
+1110a1a8	Catch@1110a1a8	00000.c	ok
+1110a1bf	Catch@1110a1bf	00000.c	ok
+1110a292	Catch@1110a292	00000.c	ok
+1110a2a9	Catch@1110a2a9	00000.c	ok
+1110a2b3	switchD_11109b4c::caseD_200	00000.c	ok
+1110a83c	Catch@1110a83c	00000.c	ok
+1110a853	Catch@1110a853	00000.c	ok
+1110a94f	Catch@1110a94f	00000.c	ok
+1110a966	Catch@1110a966	00000.c	ok
+1110a9b6	Catch@1110a9b6	00000.c	ok
+1110a9cd	Catch@1110a9cd	00000.c	ok
+1110b3a8	WINDOW.DLL::FCommandTarget::Unused	00000.c	thunk -> EXTERNAL:0000003e
+1110b3ae	WINDOW.DLL::WWindow::Show	00000.c	thunk -> EXTERNAL:0000003d
+1110b3b4	WINDOW.DLL::WWindow::Serialize	00000.c	thunk -> EXTERNAL:0000003c
+1110b3ba	WINDOW.DLL::WWindow::DoDestroy	00000.c	thunk -> EXTERNAL:0000003b
+1110b3c0	WINDOW.DLL::WWindow::CallDefaultProc	00000.c	thunk -> EXTERNAL:0000003a
+1110b3c6	WINDOW.DLL::WWindow::InterceptControlCommand	00000.c	thunk -> EXTERNAL:00000039
+1110b3cc	WINDOW.DLL::WWindow::GetText	00000.c	thunk -> EXTERNAL:00000038
+1110b3d2	WINDOW.DLL::WWindow::SetText	00000.c	thunk -> EXTERNAL:00000037
+1110b3d8	WINDOW.DLL::WWindow::GetLength	00000.c	thunk -> EXTERNAL:00000036
+1110b3de	WINDOW.DLL::WWindow::OnCopyData	00000.c	thunk -> EXTERNAL:00000035
+1110b3e4	WINDOW.DLL::WWindow::OnSetFocus	00000.c	thunk -> EXTERNAL:00000034
+1110b3ea	WINDOW.DLL::WWindow::OnKillFocus	00000.c	thunk -> EXTERNAL:00000033
+1110b3f0	WINDOW.DLL::WWindow::OnSize	00000.c	thunk -> EXTERNAL:00000032
+1110b3f6	WINDOW.DLL::WWindow::OnWindowPosChanging	00000.c	thunk -> EXTERNAL:00000031
+1110b3fc	WINDOW.DLL::WWindow::OnMove	00000.c	thunk -> EXTERNAL:00000030
+1110b402	WINDOW.DLL::WWindow::OnCommand	00000.c	thunk -> EXTERNAL:0000002f
+1110b408	WINDOW.DLL::WWindow::OnSysCommand	00000.c	thunk -> EXTERNAL:0000002e
+1110b40e	WINDOW.DLL::WWindow::OnActivate	00000.c	thunk -> EXTERNAL:0000002d
+1110b414	WINDOW.DLL::WWindow::OnChar	00000.c	thunk -> EXTERNAL:0000002c
+1110b41a	WINDOW.DLL::WWindow::OnKeyDown	00000.c	thunk -> EXTERNAL:0000002b
+1110b420	WINDOW.DLL::WWindow::OnCut	00000.c	thunk -> EXTERNAL:0000002a
+1110b426	WINDOW.DLL::WWindow::OnCopy	00000.c	thunk -> EXTERNAL:00000029
+1110b42c	WINDOW.DLL::WWindow::OnPaste	00000.c	thunk -> EXTERNAL:00000028
+1110b432	WINDOW.DLL::WWindow::OnShowWindow	00000.c	thunk -> EXTERNAL:00000027
+1110b438	WINDOW.DLL::WWindow::OnUndo	00000.c	thunk -> EXTERNAL:00000026
+1110b43e	WINDOW.DLL::WWindow::OnEraseBkgnd	00000.c	thunk -> EXTERNAL:00000025
+1110b444	WINDOW.DLL::WWindow::OnVScroll	00000.c	thunk -> EXTERNAL:00000024
+1110b44a	WINDOW.DLL::WWindow::OnHScroll	00000.c	thunk -> EXTERNAL:00000023
+1110b450	WINDOW.DLL::WWindow::OnKeyUp	00000.c	thunk -> EXTERNAL:00000022
+1110b456	WINDOW.DLL::WWindow::OnPaint	00000.c	thunk -> EXTERNAL:00000021
+1110b45c	WINDOW.DLL::WWindow::OnCreate	00000.c	thunk -> EXTERNAL:00000020
+1110b462	WINDOW.DLL::WWindow::OnDrawItem	00000.c	thunk -> EXTERNAL:0000001f
+1110b468	WINDOW.DLL::WWindow::OnMeasureItem	00000.c	thunk -> EXTERNAL:0000001e
+1110b46e	WINDOW.DLL::WWindow::OnInitDialog	00000.c	thunk -> EXTERNAL:0000001d
+1110b474	WINDOW.DLL::WWindow::OnEnterIdle	00000.c	thunk -> EXTERNAL:0000001c
+1110b47a	WINDOW.DLL::WWindow::OnMouseEnter	00000.c	thunk -> EXTERNAL:0000001b
+1110b480	WINDOW.DLL::WWindow::OnMouseLeave	00000.c	thunk -> EXTERNAL:0000001a
+1110b486	WINDOW.DLL::WWindow::OnMouseHover	00000.c	thunk -> EXTERNAL:00000019
+1110b48c	WINDOW.DLL::WWindow::OnTimer	00000.c	thunk -> EXTERNAL:00000018
+1110b492	WINDOW.DLL::WWindow::OnReleaseCapture	00000.c	thunk -> EXTERNAL:00000017
+1110b498	WINDOW.DLL::WWindow::OnMdiActivate	00000.c	thunk -> EXTERNAL:00000016
+1110b49e	WINDOW.DLL::WWindow::OnMouseMove	00000.c	thunk -> EXTERNAL:00000015
+1110b4a4	WINDOW.DLL::WWindow::OnLeftButtonDown	00000.c	thunk -> EXTERNAL:00000014
+1110b4aa	WINDOW.DLL::WWindow::OnLeftButtonDoubleClick	00000.c	thunk -> EXTERNAL:00000013
+1110b4b0	WINDOW.DLL::WWindow::OnMiddleButtonDoubleClick	00000.c	thunk -> EXTERNAL:00000012
+1110b4b6	WINDOW.DLL::WWindow::OnRightButtonDoubleClick	00000.c	thunk -> EXTERNAL:00000011
+1110b4bc	WINDOW.DLL::WWindow::OnRightButtonDown	00000.c	thunk -> EXTERNAL:00000010
+1110b4c2	WINDOW.DLL::WWindow::OnLeftButtonUp	00000.c	thunk -> EXTERNAL:0000000f
+1110b4c8	WINDOW.DLL::WWindow::OnRightButtonUp	00000.c	thunk -> EXTERNAL:0000000e
+1110b4ce	WINDOW.DLL::WWindow::OnFinishSplitterDrag	00000.c	thunk -> EXTERNAL:0000000d
+1110b4d4	WINDOW.DLL::WWindow::OnSetCursor	00000.c	thunk -> EXTERNAL:0000000c
+1110b4da	WINDOW.DLL::WWindow::OnClose	00000.c	thunk -> EXTERNAL:0000000b
+1110b4e0	WINDOW.DLL::WWindow::OnDestroy	00000.c	thunk -> EXTERNAL:0000000a
+1110b4e6	WINDOW.DLL::WWindow::MyDrawEdge	00000.c	thunk -> EXTERNAL:00000009
+1110b51c	CORE.DLL::UObject::QueryInterface	00000.c	thunk -> EXTERNAL:00000086
+1110b522	CORE.DLL::UObject::AddRef	00000.c	thunk -> EXTERNAL:00000087
+1110b528	CORE.DLL::UObject::Release	00000.c	thunk -> EXTERNAL:00000088
+1110b52e	CORE.DLL::UObject::ProcessEvent	00000.c	thunk -> EXTERNAL:00000089
+1110b534	CORE.DLL::UObject::ProcessDelegate	00000.c	thunk -> EXTERNAL:0000008a
+1110b53a	CORE.DLL::UObject::ProcessState	00000.c	thunk -> EXTERNAL:0000008b
+1110b540	CORE.DLL::UObject::ProcessRemoteFunction	00000.c	thunk -> EXTERNAL:0000008c
+1110b546	CORE.DLL::UObject::Modify	00000.c	thunk -> EXTERNAL:0000008d
+1110b54c	CORE.DLL::UObject::PostLoad	00000.c	thunk -> EXTERNAL:0000008e
+1110b552	CORE.DLL::UObject::IsPendingKill	00000.c	thunk -> EXTERNAL:0000008f
+1110b558	CORE.DLL::UObject::GotoState	00000.c	thunk -> EXTERNAL:00000090
+1110b55e	CORE.DLL::UObject::GotoLabel	00000.c	thunk -> EXTERNAL:00000091
+1110b564	CORE.DLL::UObject::InitExecution	00000.c	thunk -> EXTERNAL:00000092
+1110b56a	CORE.DLL::UObject::CallFunction	00000.c	thunk -> EXTERNAL:00000093
+1110b570	CORE.DLL::UObject::ScriptConsoleExec	00000.c	thunk -> EXTERNAL:00000094
+1110b576	CORE.DLL::UObject::Register	00000.c	thunk -> EXTERNAL:00000095
+1110b57c	CORE.DLL::UObject::LanguageChange	00000.c	thunk -> EXTERNAL:00000096
+1110b582	CORE.DLL::UObject::ClearL2Game	00000.c	thunk -> EXTERNAL:00000097
+1110b588	CORE.DLL::UObject::Rename	00000.c	thunk -> EXTERNAL:00000098
+1110b58e	CORE.DLL::UObject::NetDirty	00000.c	thunk -> EXTERNAL:00000099
+1110b594	CORE.DLL::UObject::IsLoaded	00000.c	thunk -> EXTERNAL:0000009a
+1110b59a	CORE.DLL::FNotifyHook::NotifyPreChange	00000.c	thunk -> EXTERNAL:0000009b
+1110b5a0	CORE.DLL::FNotifyHook::NotifyPostChange	00000.c	thunk -> EXTERNAL:0000009c
+1110b5a6	CORE.DLL::FNotifyHook::NotifyExec	00000.c	thunk -> EXTERNAL:0000009d
+1110b5c4	CORE.DLL::UField::PostLoad	00000.c	thunk -> EXTERNAL:000000a6
+1110b5ca	CORE.DLL::UObject::Destroy	00000.c	thunk -> EXTERNAL:000000a7
+1110b5d0	CORE.DLL::UBoolProperty::Serialize	00000.c	thunk -> EXTERNAL:000000a8
+1110b5d6	CORE.DLL::UObject::ShutdownAfterError	00000.c	thunk -> EXTERNAL:000000a9
+1110b5dc	CORE.DLL::UObject::PostEditChange	00000.c	thunk -> EXTERNAL:000000aa
+1110b5e2	CORE.DLL::UField::Register	00000.c	thunk -> EXTERNAL:000000ab
+1110b5e8	CORE.DLL::UField::AddCppProperty	00000.c	thunk -> EXTERNAL:000000ac
+1110b5ee	CORE.DLL::UField::MergeBools	00000.c	thunk -> EXTERNAL:000000ad
+1110b5f4	CORE.DLL::UField::Bind	00000.c	thunk -> EXTERNAL:000000ae
+1110b5fa	CORE.DLL::UField::GetOwnerClass	00000.c	thunk -> EXTERNAL:000000af
+1110b600	CORE.DLL::UField::GetPropertiesSize	00000.c	thunk -> EXTERNAL:000000b0
+1110b606	CORE.DLL::UProperty::CleanupDestroyed	00000.c	thunk -> EXTERNAL:000000b1
+1110b60c	CORE.DLL::UBoolProperty::Link	00000.c	thunk -> EXTERNAL:000000b2
+1110b612	CORE.DLL::UBoolProperty::Identical	00000.c	thunk -> EXTERNAL:000000b3
+1110b618	CORE.DLL::UProperty::ExportCpp	00000.c	thunk -> EXTERNAL:000000b4
+1110b61e	CORE.DLL::UBoolProperty::ExportCppItem	00000.c	thunk -> EXTERNAL:000000b5
+1110b624	CORE.DLL::UBoolProperty::SerializeItem	00000.c	thunk -> EXTERNAL:000000b6
+1110b62a	CORE.DLL::UBoolProperty::NetSerializeItem	00000.c	thunk -> EXTERNAL:000000b7
+1110b630	CORE.DLL::UBoolProperty::ExportTextItem	00000.c	thunk -> EXTERNAL:000000b8
+1110b636	CORE.DLL::UBoolProperty::ImportText	00000.c	thunk -> EXTERNAL:000000b9
+1110b63c	CORE.DLL::UProperty::ExportText	00000.c	thunk -> EXTERNAL:000000ba
+1110b642	CORE.DLL::UBoolProperty::CopySingleValue	00000.c	thunk -> EXTERNAL:000000bb
+1110b648	CORE.DLL::UProperty::CopyCompleteValue	00000.c	thunk -> EXTERNAL:000000bc
+1110b64e	CORE.DLL::UProperty::DestroyValue	00000.c	thunk -> EXTERNAL:000000bd
+1110b654	CORE.DLL::UProperty::Port	00000.c	thunk -> EXTERNAL:000000be
+1110b65a	CORE.DLL::UProperty::GetID	00000.c	thunk -> EXTERNAL:000000bf
+1110b6f6	CORE.DLL::FOutputDevice::Flush	00000.c	thunk -> EXTERNAL:0000005c
+1110b6fc	CORE.DLL::FOutputDevice::Release	00000.c	thunk -> EXTERNAL:0000005b
+1110b7b6	ENGINE.DLL::UClient::Serialize	00000.c	thunk -> EXTERNAL:000000de
+1110b7bc	ENGINE.DLL::UClient::Flush	00000.c	thunk -> EXTERNAL:000000cd
+1110b7c2	ENGINE.DLL::UClient::UpdateGamma	00000.c	thunk -> EXTERNAL:000000c9
+1110b7c8	ENGINE.DLL::UClient::RestoreGamma	00000.c	thunk -> EXTERNAL:000000ca
+1110b804	ENGINE.DLL::UViewport::Serialize	00000.c	thunk -> EXTERNAL:000000d5
+1110b80a	ENGINE.DLL::UViewport::ReadInput	00000.c	thunk -> EXTERNAL:000000d6
+1110b810	ENGINE.DLL::UViewport::Present	00000.c	thunk -> EXTERNAL:000000d7
+1110b816	ENGINE.DLL::UViewport::SetDrag	00000.c	thunk -> EXTERNAL:000000d8
+1110b81c	ENGINE.DLL::UViewport::GetServer	00000.c	thunk -> EXTERNAL:000000d9
+1110b822	ENGINE.DLL::UViewport::Serialize	00000.c	thunk -> EXTERNAL:000000da
+1110b8ac	DINPUT8.DLL::DirectInput8Create	00000.c	thunk -> EXTERNAL:000000f6
+1110c370	FUN_1110c370	00000.c	ok
+1110ed1b	FUN_1110ed1b	00000.c	ok
+11116a4e	FUN_11116a4e	00000.c	ok
+11116bb0	IMM32.DLL::ImmDestroyContext	00000.c	thunk -> EXTERNAL:000000fa
+11116bb6	IMM32.DLL::ImmAssociateContext	00000.c	thunk -> EXTERNAL:000000f9
+11116bbc	IMM32.DLL::ImmGetContext	00000.c	thunk -> EXTERNAL:000000f8
+11116bc2	IMM32.DLL::ImmReleaseContext	00000.c	thunk -> EXTERNAL:000000f7
+11116bc8	IMM32.DLL::ImmCreateContext	00000.c	thunk -> EXTERNAL:000000fb
+11116d60	_JumpToContinuation	00000.c	ok
+11116d90	_CallMemberFunction0	00000.c	ok
+11116d97	FID_conflict:_CallMemberFunction1	00000.c	ok
+11116d9e	FID_conflict:_CallMemberFunction1	00000.c	ok
+11116da5	_UnwindNestedFrames	00000.c	ok
+11116df7	FID_conflict:___CxxFrameHandler3	00000.c	ok
+11116e2d	FID_conflict:___CxxFrameHandler3	00000.c	ok
+11116e63	FID_conflict:___CxxFrameHandler3	00000.c	ok
+11116ee3	_CallSETranslator	00000.c	ok
+11116fb8	TranslatorGuardHandler	00000.c	ok
+11117055	_GetRangeOfTrysToCheck	00000.c	ok
+111170c8	__CreateFrameInfo	00000.c	ok
+111170f0	__IsExceptionObjectToBeDestroyed	00000.c	ok
+11117111	__FindAndUnlinkFrame	00000.c	ok
+1111715d	_CallCatchBlock2	00000.c	ok
+111171bb	__CxxThrowException@8	00000.c	ok
+11117214	type_info::~type_info	00000.c	ok
+11117222	type_info::`scalar_deleting_destructor'	00000.c	ok
+11117255	type_info::operator==	00000.c	ok
+111172d1	__ArrayUnwind	00000.c	ok
+1111732f	`eh_vector_destructor_iterator'	00000.c	ok
+1111737a	FUN_1111737a	00000.c	ok
+11117392	FUN_11117392	00000.c	ok
+1111747a	__onexit	00000.c	ok
+111174b0	FUN_111174b0	00000.c	ok
+111174b6	_atexit	00000.c	ok
+111174c9	__cfltcvt_init	00000.c	ok
+11117539	__fpmath	00000.c	ok
+11117589	__CRT_INIT@12	00000.c	ok
+11117762	___DllMainCRTStartup	00000.c	ok
+11117858	entry	00000.c	ok
+11117890	__alloca_probe	00000.c	ok
+111178bb	_sprintf	00000.c	ok
+1111796c	__sprintf_s_l	00000.c	ok
+11117989	__snprintf_s	00000.c	ok
+111179a8	__snprintf_s_l	00000.c	ok
+111179e4	FUN_111179e4	00000.c	ok
+11117a73	FUN_11117a73	00000.c	ok
+11117a95	___TypeMatch	00000.c	ok
+11117b35	___FrameUnwindToState	00000.c	ok
+11117bfb	FUN_11117bfb	00000.c	ok
+11117c5b	___DestructExceptionObject	00000.c	ok
+11117caf	___AdjustPointer	00000.c	ok
+11117ff5	IsInExceptionSpec	00000.c	ok
+1111806e	CallUnexpected	00000.c	ok
+1111809f	Catch_All@1111809f	00000.c	ok
+11118169	CallCatchBlock	00000.c	ok
+1111828f	FUN_1111828f	00000.c	ok
+11118305	___BuildCatchObjectHelper	00000.c	ok
+11118484	___BuildCatchObject	00000.c	ok
+11118515	___CxxExceptionFilter	00000.c	ok
+11118658	CatchIt	00000.c	ok
+111186c4	FindHandlerForForeignException	00000.c	ok
+111187b6	FindHandler	00000.c	ok
+11118b24	___InternalCxxFrameHandler	00000.c	ok
+11118c08	__security_check_cookie	00000.c	ok
+11118c17	FUN_11118c17	00000.c	ok
+11118c83	FUN_11118c83	00000.c	ok
+11118cf1	__encoded_null	00000.c	ok
+11118cfa	FUN_11118cfa	00000.c	ok
+11118d8c	FUN_11118d8c	00000.c	ok
+11118dd7	__mtterm	00000.c	ok
+11118e14	FUN_11118e14	00000.c	ok
+11118eca	FUN_11118eca	00000.c	ok
+11118ed3	FUN_11118ed3	00000.c	ok
+11118f4a	__getptd	00000.c	ok
+11118f62	__freefls@4	00000.c	ok
+1111906e	FUN_1111906e	00000.c	ok
+1111907a	FUN_1111907a	00000.c	ok
+11119083	__freeptd	00000.c	ok
+111190f8	__mtinit	00000.c	ok
+1111927c	terminate	00000.c	ok
+111192b5	unexpected	00000.c	ok
+111192c8	_inconsistency	00000.c	ok
+111192ff	__initp_eh_hooks	00000.c	ok
+11119310	__CallSettingFrame@12	00000.c	ok
+1111935c	__invoke_watson_if_error	00000.c	ok
+1111937e	type_info::_Type_info_dtor	00000.c	ok
+111193e5	FUN_111193e5	00000.c	ok
+11119553	___unDNameHelper	00000.c	ok
+111196d0	_strcmp	00000.c	ok
+11119758	__SEH_prolog4	00000.c	ok
+1111979d	__SEH_epilog4	00000.c	ok
+111197f0	__except_handler4	00000.c	ok
+11119986	FUN_11119986	00000.c	ok
+111199b7	__malloc_crt	00000.c	ok
+111199f7	__calloc_crt	00000.c	ok
+11119a3f	__realloc_crt	00000.c	ok
+11119a8a	__recalloc_crt	00000.c	ok
+11119af6	__msize	00000.c	ok
+11119b90	FUN_11119b90	00000.c	ok
+11119b99	__amsg_exit	00000.c	ok
+11119bbd	FUN_11119bbd	00000.c	ok
+11119be3	___crtExitProcess	00000.c	ok
+11119bf8	FUN_11119bf8	00000.c	ok
+11119c01	FUN_11119c01	00000.c	ok
+11119c0a	FUN_11119c0a	00000.c	ok
+11119c22	__initterm_e	00000.c	ok
+11119c42	__get_osplatform	00000.c	ok
+11119cf1	__get_winmajor	00000.c	ok
+11119dd7	__cinit	00000.c	ok
+11119e69	FUN_11119e69	00000.c	ok
+11119f36	FUN_11119f36	00000.c	ok
+11119f5c	__exit	00000.c	ok
+11119f6d	__cexit	00000.c	ok
+11119f8b	__init_pointers	00000.c	ok
+11119fdc	_LocaleUpdate::_LocaleUpdate	00000.c	ok
+1111a06f	__forcdecpt_l	00000.c	ok
+1111a0e0	__cropzeros_l	00000.c	ok
+1111a176	__fassign_l	00000.c	ok
+1111a1cd	__shift	00000.c	ok
+1111a206	__cftoe2_l	00000.c	ok
+1111a373	__cftoe_l	00000.c	ok
+1111a441	__cftoe	00000.c	ok
+1111a45f	__cftoa_l	00000.c	ok
+1111a7d0	__cftoa	00000.c	ok
+1111a7ee	__cftof2_l	00000.c	ok
+1111a8e3	__cftof_l	00000.c	ok
+1111a9b7	__cftog_l	00000.c	ok
+1111aaaf	__cftog	00000.c	ok
+1111aacd	__cfltcvt_l	00000.c	ok
+1111ab53	__cfltcvt	00000.c	ok
+1111ab74	__initp_misc_cfltcvt_tab	00000.c	ok
+1111ab93	__setdefaultprecision	00000.c	ok
+1111abbc	__ms_p5_test_fdiv	00000.c	ok
+1111abf8	__ms_p5_mp_test_fdiv	00000.c	ok
+1111ac21	_free	00000.c	ok
+1111ac77	FUN_1111ac77	00000.c	ok
+1111acaf	__ioinit	00000.c	ok
+1111aeef	__ioterm	00000.c	ok
+1111af3b	__setenvp	00000.c	ok
+1111b020	parse_cmdline	00000.c	ok
+1111b1b8	__setargv	00000.c	ok
+1111b271	___crtGetEnvironmentStringsA	00000.c	ok
+1111b3a6	__RTC_Initialize	00000.c	ok
+1111b3ee	___heap_select	00000.c	ok
+1111b449	__heap_init	00000.c	ok
+1111b4a3	__heap_term	00000.c	ok
+1111b51d	FUN_1111b51d	00000.c	ok
+1111b550	FUN_1111b550	00000.c	ok
+1111b6c9	___security_init_cookie	00000.c	ok
+1111b75d	__swprintf	00000.c	ok
+1111b829	__snwprintf_s	00000.c	ok
+1111b864	__swprintf_s_l	00000.c	ok
+1111b881	__snwprintf_s_l	00000.c	ok
+1111b8a1	FUN_1111b8a1	00000.c	ok
+1111b90c	__flsbuf	00000.c	ok
+1111ba6c	write_char	00000.c	ok
+1111ba9f	write_multi_char	00000.c	ok
+1111bac3	write_string	00000.c	ok
+1111bb38	FUN_1111bb38	00000.c	ok
+1111c4cc	FUN_1111c4cc	00000.c	ok
+1111c4d6	__invoke_watson	00000.c	ok
+1111c601	FUN_1111c601	00000.c	ok
+1111c60a	FUN_1111c60a	00000.c	ok
+1111c63e	FUN_1111c63e	00000.c	ok
+1111c647	FUN_1111c647	00000.c	ok
+1111c682	FUN_1111c682	00000.c	ok
+1111c695	FUN_1111c695	00000.c	ok
+1111c6a8	FUN_1111c6a8	00000.c	ok
+1111c750	__vsprintf_l	00000.c	ok
+1111c7e3	FID_conflict:__vscprintf_helper	00000.c	ok
+1111c89c	__vsnprintf_helper	00000.c	ok
+1111c98d	FID_conflict:__vsnprintf_c_l	00000.c	ok
+1111c9b5	__vsprintf_s_l	00000.c	ok
+1111ca56	__vsnprintf_s_l	00000.c	ok
+1111cb5b	__vsnprintf_s	00000.c	ok
+1111cba0	FID_conflict:__vsnprintf_c_l	00000.c	ok
+1111cbd9	std::exception::exception	00000.c	ok
+1111cced	exception::~exception	00000.c	ok
+1111cd03	FUN_1111cd03	00000.c	ok
+1111cdc3	FUN_1111cdc3	00000.c	ok
+1111cddf	FUN_1111cddf	00000.c	ok
+1111ce01	FUN_1111ce01	00000.c	ok
+1111ce23	FUN_1111ce23	00000.c	ok
+1111ce78	__EH_prolog3_catch	00000.c	ok
+1111cf1d	__EH_epilog3	00000.c	ok
+1111cf4f	_ValidateRead	00000.c	ok
+1111cf5c	FID_conflict:_ValidateExecute	00000.c	ok
+1111cf69	FID_conflict:_ValidateExecute	00000.c	ok
+1111cf80	_memmove	00000.c	ok
+1111d2e5	___report_gsfailure	00000.c	ok
+1111d3e9	__mtinitlocks	00000.c	ok
+1111d432	__mtdeletelocks	00000.c	ok
+1111d487	FUN_1111d487	00000.c	ok
+1111d4b4	__mtinitlocknum	00000.c	ok
+1111d56e	FUN_1111d56e	00000.c	ok
+1111d577	__lock	00000.c	ok
+1111d5b4	___freetlocinfo	00000.c	ok
+1111d6f4	___addlocaleref	00000.c	ok
+1111d77a	___removelocaleref	00000.c	ok
+1111d806	__copytlocinfo_nolock	00000.c	ok
+1111d82a	__updatetlocinfoEx_nolock	00000.c	ok
+1111d868	___updatetlocinfo	00000.c	ok
+1111d8d2	FUN_1111d8d2	00000.c	ok
+1111dac2	__strcats	00000.c	ok
+1111db00	___lc_strtolc	00000.c	ok
+1111dc29	___lc_lctostr	00000.c	ok
+1111e705	FUN_1111e705	00000.c	ok
+1111e734	setSBCS	00000.c	ok
+1111e789	setSBUpLow	00000.c	ok
+1111e913	___updatetmbcinfo	00000.c	ok
+1111e9ae	FUN_1111e9ae	00000.c	ok
+1111e9b7	getSystemCP	00000.c	ok
+1111ea31	FUN_1111ea31	00000.c	ok
+1111ec0a	__getmbcp	00000.c	ok
+1111ec46	__setmbcp	00000.c	ok
+1111eda7	FUN_1111eda7	00000.c	ok
+1111ede0	___initmbctable	00000.c	ok
+1111edfe	_abort	00000.c	ok
+1111eef1	__set_abort_behavior	00000.c	ok
+1111ef10	__global_unwind2	00000.c	ok
+1111ef75	__local_unwind2	00000.c	ok
+1111f01c	__NLG_Notify1	00000.c	ok
+1111f025	__NLG_Notify	00000.c	ok
+1111f044	FUN_1111f044	00000.c	ok
+1111f047	_strcpy_s	00000.c	ok
+1111f0b0	_strlen	00000.c	ok
+1111f15c	HeapManager::Destructor	00000.c	ok
+1111f182	UnDecorator::getNumberOfDimensions	00000.c	ok
+1111f1e5	UnDecorator::getTypeEncoding	00000.c	ok
+1111f72d	UnDecorator::UScore	00000.c	ok
+1111f746	HeapManager::getMemory	00000.c	ok
+1111f7e9	DName::DName	00000.c	ok
+1111f8ff	DName::operator=	00000.c	ok
+1111f983	Replicator::operator[]	00000.c	ok
+1111f9b9	DNameNode::operator+=	00000.c	ok
+1111f9f8	FUN_1111f9f8	00000.c	ok
+1111f9fc	FUN_1111f9fc	00000.c	ok
+1111fa00	FUN_1111fa00	00000.c	ok
+1111fa1b	FUN_1111fa1b	00000.c	ok
+1111fa1f	pDNameNode::pDNameNode	00000.c	ok
+1111fa4e	DNameStatusNode::DNameStatusNode	00000.c	ok
+1111fa73	FUN_1111fa73	00000.c	ok
+1111fa77	FUN_1111fa77	00000.c	ok
+1111fa92	und_strncpy	00000.c	ok
+1111fad7	UnDecorator::getDataIndirectType	00000.c	ok
+1111fb0a	UnDecorator::getThisType	00000.c	ok
+1111fb51	DName::DName	00000.c	ok
+1111fba7	DName::DName	00000.c	ok
+1111fc08	DName::isValid	00000.c	ok
+1111fc1f	DName::isEmpty	00000.c	ok
+1111fc34	DName::isUDC	00000.c	ok
+1111fc6a	DName::length	00000.c	ok
+1111fc8f	DName::getLastChar	00000.c	ok
+1111fcc7	DName::getString	00000.c	ok
+1111fd58	DName::operator|=	00000.c	ok
+1111fd8d	DName::operator=	00000.c	ok
+1111fe0e	Replicator::Replicator	00000.c	ok
+1111fe2c	Replicator::operator+=	00000.c	ok
+1111fe73	DNameNode::clone	00000.c	ok
+1111feba	pcharNode::pcharNode	00000.c	ok
+1111ff1f	FUN_1111ff1f	00000.c	ok
+1111ff31	pcharNode::getString	00000.c	ok
+1111ff62	pDNameNode::length	00000.c	ok
+1111ff71	pDNameNode::getLastChar	00000.c	ok
+1111ff80	pDNameNode::getString	00000.c	ok
+1111ff9d	DNameStatusNode::getString	00000.c	ok
+1111ffd0	UnDecorator::UnDecorator	00000.c	ok
+11120043	UnDecorator::getReturnType	00000.c	ok
+11120081	DName::operator+=	00000.c	ok
+111200fa	DName::operator=	00000.c	ok
+11120162	DName::doPchar	00000.c	ok
+11120208	DName::DName	00000.c	ok
+1112022e	DName::DName	00000.c	ok
+1112025f	DName::DName	00000.c	ok
+1112032f	DName::DName	00000.c	ok
+11120398	FUN_11120398	00000.c	ok
+1112042e	DName::operator+	00000.c	ok
+1112045c	DName::operator+=	00000.c	ok
+111204be	FUN_111204be	00000.c	ok
+11120549	DName::operator=	00000.c	ok
+11120565	DName::operator=	00000.c	ok
+1112058f	UnDecorator::getCallingConvention	00000.c	ok
+11120635	UnDecorator::getVCallThunkType	00000.c	ok
+1112066c	DName::operator+	00000.c	ok
+111206bd	FUN_111206bd	00000.c	ok
+111206eb	DName::operator+=	00000.c	ok
+11120755	DName::operator+=	00000.c	ok
+111207c1	UnDecorator::getArgumentList	00000.c	ok
+111208a1	UnDecorator::getVdispMapType	00000.c	ok
+111208f0	operator+	00000.c	ok
+11120912	operator+	00000.c	ok
+11120934	operator+	00000.c	ok
+11120956	DName::operator+	00000.c	ok
+11120984	DName::operator+	00000.c	ok
+111209b2	UnDecorator::getDimension	00000.c	ok
+11120af3	UnDecorator::getEnumType	00000.c	ok
+11120bc7	UnDecorator::getArgumentTypes	00000.c	ok
+11120c8b	UnDecorator::getThrowTypes	00000.c	ok
+11120d09	UnDecorator::getExtendedDataIndirectType	00000.c	ok
+11120e2e	UnDecorator::getArrayType	00000.c	ok
+11120f8d	UnDecorator::getLexicalFrame	00000.c	ok
+11120ff4	UnDecorator::getVfTableType	00000.c	ok
+11121144	UnDecorator::getStringEncoding	00000.c	ok
+111211e4	UnDecorator::getSignedDimension	00000.c	ok
+11121234	UnDecorator::getTemplateConstant	00000.c	ok
+111214ef	UnDecorator::getPtrRefDataType	00000.c	ok
+111215dc	UnDecorator::getTemplateArgumentList	00000.c	ok
+11121794	UnDecorator::getOperatorName	00000.c	ok
+11121d03	UnDecorator::getTemplateName	00000.c	ok
+11121e56	UnDecorator::getZName	00000.c	ok
+11122040	UnDecorator::getScopedName	00000.c	ok
+11122133	UnDecorator::getECSUDataType	00000.c	ok
+11122233	UnDecorator::getSymbolName	00000.c	ok
+11122279	UnDecorator::getBasedType	00000.c	ok
+1112230b	UnDecorator::composeDeclaration	00000.c	ok
+11122e4d	UnDecorator::getDecoratedName	00000.c	ok
+1112305e	UnDecorator::getScope	00000.c	ok
+111232e9	UnDecorator::getFunctionIndirectType	00000.c	ok
+1112362a	UnDecorator::getDataIndirectType	00000.c	ok
+11123b0e	UnDecorator::operator_char*	00000.c	ok
+11123c5a	UnDecorator::getPtrRefType	00000.c	ok
+11123dc1	___unDName	00000.c	ok
+11123e5b	FUN_11123e5b	00000.c	ok
+11123f07	FUN_11123f07	00000.c	ok
+1112428e	UnDecorator::getPrimaryDataType	00000.c	ok
+111243cc	UnDecorator::getDataType	00000.c	ok
+1112447d	UnDecorator::getExternalDataType	00000.c	ok
+111244e1	_V6_HeapAlloc	00000.c	ok
+11124527	FUN_11124527	00000.c	ok
+111245a5	_malloc	00000.c	ok
+11124668	__local_unwind4	00000.c	ok
+1112473e	FUN_1112473e	00000.c	ok
+1112475a	_EH4_CallFilterFunc	00000.c	ok
+11124771	_EH4_TransferToHandler	00000.c	ok
+1112478a	_EH4_GlobalUnwind	00000.c	ok
+111247a4	_EH4_LocalUnwind	00000.c	ok
+111247c0	__ValidateImageBase	00000.c	ok
+111247f0	__FindPESection	00000.c	ok
+11124840	__IsNonwritableInCurrentImage	00000.c	ok
+111248fb	__calloc_impl	00000.c	ok
+111249f7	FUN_111249f7	00000.c	ok
+11124a19	_calloc	00000.c	ok
+11124a58	_realloc	00000.c	ok
+11124b9c	FUN_11124b9c	00000.c	ok
+11124c73	FUN_11124c73	00000.c	ok
+11124d8f	___sbh_heap_init	00000.c	ok
+11124dd7	thunk_FUN_11124dfb	00000.c	thunk -> 11124dfb
+11124dfb	FUN_11124dfb	00000.c	ok
+11124e02	___sbh_free_block	00000.c	ok
+11125116	___sbh_alloc_new_region	00000.c	ok
+111251c6	___sbh_alloc_new_group	00000.c	ok
+111252cc	___sbh_resize_block	00000.c	ok
+11125678	___sbh_heap_check	00000.c	ok
+11125a02	___sbh_alloc_block	00000.c	ok
+11125ce5	FUN_11125ce5	00000.c	ok
+11125ea5	__FF_MSGBANNER	00000.c	ok
+11125ede	__initp_misc_winsig	00000.c	ok
+11125f92	siglookup	00000.c	ok
+11125fc6	___get_sigabrt	00000.c	ok
+11126222	_raise	00000.c	ok
+11126396	FUN_11126396	00000.c	ok
+111263d2	FUN_111263d2	00000.c	ok
+111264e0	___getlocaleinfo	00000.c	ok
+1112663a	FUN_1112663a	00000.c	ok
+11126644	FUN_11126644	00000.c	ok
+1112664e	___crtInitCritSecNoSpinCount@8	00000.c	ok
+1112665e	___crtInitCritSecAndSpinCount	00000.c	ok
+11126723	FUN_11126723	00000.c	ok
+11126774	__callnewh	00000.c	ok
+111267a0	_strrchr	00000.c	ok
+111267cd	__isalpha_l	00000.c	ok
+1112684c	__isupper_l	00000.c	ok
+111268c4	__islower_l	00000.c	ok
+1112693c	__isdigit_l	00000.c	ok
+1112698b	_isdigit	00000.c	ok
+111269b4	__isxdigit_l	00000.c	ok
+11126a33	__isspace_l	00000.c	ok
+11126aab	__ispunct_l	00000.c	ok
+11126b23	__isalnum_l	00000.c	ok
+11126ba2	__isprint_l	00000.c	ok
+11126c21	__isgraph_l	00000.c	ok
+11126ca0	__iscntrl_l	00000.c	ok
+11126da9	__tolower_l	00000.c	ok
+11126ec0	_tolower	00000.c	ok
+11126ee7	FID_conflict:__atoflt_l	00000.c	ok
+11126fa0	__atoldbl_l	00000.c	ok
+1112705a	FID_conflict:__atoflt_l	00000.c	ok
+11127150	__fptostr	00000.c	ok
+1112720d	___dtold	00000.c	ok
+111272c8	__fltout2	00000.c	ok
+11127360	__alldvrm	00000.c	ok
+11127440	_memset	00000.c	ok
+111274c0	__aullshr	00000.c	ok
+111274e8	__controlfp_s	00000.c	ok
+11127552	x_ismbbtype_l	00000.c	ok
+11127710	__ismbblead	00000.c	ok
+1112774b	__ismbbkana_l	00000.c	ok
+111277b0	_memcpy	00000.c	ok
+11127b15	write_char	00000.c	ok
+11127b3a	write_multi_char	00000.c	ok
+11127b5f	write_string	00000.c	ok
+11127bae	FUN_11127bae	00000.c	ok
+111284be	FUN_111284be	00000.c	ok
+11128571	FID_conflict:__vscprintf_helper	00000.c	ok
+1112862a	__vswprintf_helper	00000.c	ok
+11128747	FID_conflict:__vswprintf_p_l	00000.c	ok
+1112876f	__vswprintf_s_l	00000.c	ok
+11128811	__vsnwprintf_s_l	00000.c	ok
+11128918	__vsnwprintf_s	00000.c	ok
+1112895d	FID_conflict:__vswprintf_p_l	00000.c	ok
+11128985	__lseeki64_nolock	00000.c	ok
+11128a08	__lseeki64	00000.c	ok
+11128b17	FUN_11128b17	00000.c	ok
+11128b21	__write_nolock	00000.c	ok
+111290e7	__write	00000.c	ok
+111291b9	FUN_111291b9	00000.c	ok
+111291c3	__getbuf	00000.c	ok
+11129207	__isatty	00000.c	ok
+11129265	FUN_11129265	00000.c	ok
+11129406	__fileno	00000.c	ok
+11129571	FUN_11129571	00000.c	ok
+11129587	__wctomb_s_l	00000.c	ok
+111296e6	_wctomb_s	00000.c	ok
+11129701	__wctomb_l	00000.c	ok
+11129750	_wctomb	00000.c	ok
+11129780	__isleadbyte_l	00000.c	ok
+111297b6	_isleadbyte	00000.c	ok
+111299f0	__aulldvrm	00000.c	ok
+11129a85	FUN_11129a85	00000.c	ok
+11129a8d	__validate_param_reuseA	00000.c	ok
+11129bb6	write_char	00000.c	ok
+11129be9	write_multi_char	00000.c	ok
+1112abef	write_char	00000.c	ok
+1112ac22	write_multi_char	00000.c	ok
+1112b640	FUN_1112b640	00000.c	ok
+1112b6c7	__VEC_memcpy	00000.c	ok
+1112b801	__get_lc_time	00000.c	ok
+1112bc1a	___free_lc_time	00000.c	ok
+1112bdaa	___init_time	00000.c	ok
+1112be50	___free_lconv_num	00000.c	ok
+1112be90	___init_numeric	00000.c	ok
+1112c08b	___free_lconv_mon	00000.c	ok
+1112c114	___init_monetary	00000.c	ok
+1112c3d8	___init_ctype	00000.c	ok
+1112c76d	____mb_cur_max_func	00000.c	ok
+1112c7ac	____lc_codepage_func	00000.c	ok
+1112c833	__freea	00000.c	ok
+1112c84e	__Getdays_l	00000.c	ok
+1112c955	__Getmonths_l	00000.c	ok
+1112ca5c	__Gettnames_l	00000.c	ok
+1112cdba	FUN_1112cdba	00000.c	ok
+1112ce10	FID_conflict:__store_num	00000.c	ok
+1112ce89	FUN_1112ce89	00000.c	ok
+1112d26f	FUN_1112d26f	00000.c	ok
+1112d6cc	__Strftime_l	00000.c	ok
+1112d87b	__strftime_l	00000.c	ok
+1112d8b6	__Strftime	00000.c	ok
+1112d8fa	_strcat_s	00000.c	ok
+1112d970	_strcspn	00000.c	ok
+1112d9b6	_strncpy_s	00000.c	ok
+1112da69	_TranslateName	00000.c	ok
+1112dadd	_ProcessCodePage	00000.c	ok
+1112db54	_TestDefaultCountry	00000.c	ok
+1112db72	_LcidFromHexString	00000.c	ok
+1112dba4	_GetPrimaryLen	00000.c	ok
+1112dbbf	_CountryEnumProc@4	00000.c	ok
+1112dc55	_TestDefaultLanguage	00000.c	ok
+1112dcc7	_LangCountryEnumProc@4	00000.c	ok
+1112de97	_LanguageEnumProc@4	00000.c	ok
+1112df82	_GetLcidFromLangCountry	00000.c	ok
+1112dfe7	_GetLcidFromLanguage	00000.c	ok
+1112e023	___get_qualified_locale	00000.c	ok
+11130df8	__crtGetStringTypeA_stat	00000.c	ok
+11130fb0	___crtGetStringTypeA	00000.c	ok
+11130ff0	_strncmp	00000.c	ok
+111310b0	_strpbrk	00000.c	ok
+1113110a	__crtLCMapStringA_stat	00000.c	ok
+111314ac	___crtLCMapStringA	00000.c	ok
+111314ef	__purecall	00000.c	ok
+11131550	__allmul	00000.c	ok
+11131584	_atol	00000.c	ok
+111315da	FUN_111315da	00000.c	ok
+11131797	__set_error_mode	00000.c	ok
+111317ed	__crtGetLocaleInfoW_stat	00000.c	ok
+11131928	___crtGetLocaleInfoW	00000.c	ok
+11131963	__crtGetLocaleInfoA_stat	00000.c	ok
+11131aa0	___crtGetLocaleInfoA	00000.c	ok
+11131adb	__isctype_l	00000.c	ok
+11131c90	__RoundMan	00000.c	ok
+11131dbe	__ShrMan	00000.c	ok
+11131e56	__ld12cvt	00000.c	ok
+1113237f	FID_conflict:__ld12tod	00000.c	ok
+111328c1	FID_conflict:__ld12tod	00000.c	ok
+11132e03	__ld12told	00000.c	ok
+11132f20	___ld12mul	00000.c	ok
+11133194	FUN_11133194	00000.c	ok
+1113349d	FUN_1113349d	00000.c	ok
+11133b5d	FUN_11133b5d	00000.c	ok
+11133c23	FUN_11133c23	00000.c	ok
+111344e9	fastzero_I	00000.c	ok
+11134540	__VEC_memzero	00000.c	ok
+111345cf	__set_controlfp	00000.c	ok
+111346d2	__hw_cw	00000.c	ok
+1113483b	___hw_cw_sse2	00000.c	ok
+11134925	__statusfp	00000.c	ok
+111349eb	___statusfp_sse2	00000.c	ok
+11134be5	__statusfp2	00000.c	ok
+11134c3d	__clearfp	00000.c	ok
+11134d14	___control87_2	00000.c	ok
+1113501e	__control87	00000.c	ok
+1113562a	__fputwc_nolock	00000.c	ok
+11135885	__mbtowc_l	00000.c	ok
+11135998	_mbtowc	00000.c	ok
+111359af	__validate_param_reuseW	00000.c	ok
+11135b03	write_char	00000.c	ok
+11135b28	write_multi_char	00000.c	ok
+11136afc	write_char	00000.c	ok
+11136b21	write_multi_char	00000.c	ok
+1113752e	FUN_1113752e	00000.c	ok
+111375af	__get_osfhandle	00000.c	ok
+11137620	___lock_fhandle	00000.c	ok
+111376b7	FUN_111376b7	00000.c	ok
+111376c0	FUN_111376c0	00000.c	ok
+11137996	__putwch_nolock	00000.c	ok
+11137f9d	__iswctype_l	00000.c	ok
+1113801f	_iswctype	00000.c	ok
+11138092	strtoxl	00000.c	ok
+111382bd	_strtol	00000.c	ok
+11138301	_strtoul	00000.c	ok
+11138346	FUN_11138346	00000.c	ok
+11138396	__get_sse2_info	00000.c	ok
+11138403	__get_daylight	00000.c	ok
+11138437	__get_dstbias	00000.c	ok
+1113846b	FUN_1113846b	00000.c	ok
+1113849f	__get_tzname	00000.c	ok
+11138541	FUN_11138541	00000.c	ok
+11138547	FUN_11138547	00000.c	ok
+1113854d	FUN_1113854d	00000.c	ok
+11138553	FUN_11138553	00000.c	ok
+1113857d	FUN_1113857d	00000.c	ok
+1113882c	FUN_1113882c	00000.c	ok
+111388c6	cvtdate	00000.c	ok
+11138abb	__isindst_nolock	00000.c	ok
+11138c69	___tzset	00000.c	ok
+11138caf	FUN_11138caf	00000.c	ok
+11138d31	___ascii_stricmp	00000.c	ok
+11138d66	__stricmp_l	00000.c	ok
+11138e39	__stricmp	00000.c	ok
+11138e90	__alloca_probe_16	00000.c	ok
+11138ea6	__alloca_probe_8	00000.c	ok
+11138ebc	__strnicmp_l	00000.c	ok
+11138fac	__strnicmp	00000.c	ok
+11139008	xtoa_s	00000.c	ok
+111390e3	__itoa_s	00000.c	ok
+1113910b	__ltoa_s	00000.c	ok
+11139148	x64toa_s	00000.c	ok
+1113923e	__i64toa_s	00000.c	ok
+11139271	__ui64toa_s	00000.c	ok
+1113928e	___ansicp	00000.c	ok
+111392d5	___convertcp	00000.c	ok
+11139487	strtoxq	00000.c	ok
+1113971b	__strtoi64	00000.c	ok
+1113975f	__strtoui64	00000.c	ok
+111397a4	___mtold12	00000.c	ok
+11139987	__ctrlfp	00000.c	ok
+11139a04	___get_fpsr_sse2	00000.c	ok
+11139a20	___set_fpsr_sse2	00000.c	ok
+11139b1f	__flswbuf	00000.c	ok
+11139c8f	wcstoxl	00000.c	ok
+11139e86	_wcstol	00001.c	ok
+11139eca	_wcstoul	00001.c	ok
+11139f2e	___initconout	00001.c	ok
+1113a149	__crtGetStringTypeW_stat	00001.c	ok
+1113a36d	___crtGetStringTypeW	00001.c	ok
+1113a3ab	__getenv_helper_nolock	00001.c	ok
+1113a42c	__getenv_s_helper	00001.c	ok
+1113a4bf	__dupenv_s_helper	00001.c	ok
+1113a7b0	___ascii_strnicmp	00001.c	ok
+1113a811	__wchartodigit	00001.c	ok
+1113a993	FUN_1113a993	00001.c	ok
+1113ab20	__mbsnbicoll_l	00001.c	ok
+1113ac0c	__mbsnbicoll	00001.c	ok
+1113ac23	___wtomb_environ	00001.c	ok
+1113acec	__crtCompareStringA_stat	00001.c	ok
+1113b075	___crtCompareStringA	00001.c	ok
+1113b0b5	__strnicoll_l	00001.c	ok
+1113b1ad	__strnicoll	00001.c	ok
+1113b1d4	findenv	00001.c	ok
+1113b221	copy_environ	00001.c	ok
+1113b27e	FUN_1113b27e	00001.c	ok
+1113b4ca	__strdup	00001.c	ok
+1113b51a	__mbschr_l	00001.c	ok
+1113b5d4	__mbschr	00001.c	ok
+1113b600	_strchr	00001.c	ok
+1113b6be	KERNEL32.DLL::RtlUnwind	00001.c	thunk -> EXTERNAL:00000153
+11148960	Unwind@11148960	00001.c	ok
+111489e0	Unwind@111489e0	00001.c	ok
+11148a00	Unwind@11148a00	00001.c	ok
+11148a80	Unwind@11148a80	00001.c	ok
+11148aa0	Unwind@11148aa0	00001.c	ok
+11148ac0	Unwind@11148ac0	00001.c	ok
+11148ae0	Unwind@11148ae0	00001.c	ok
+11148b00	Unwind@11148b00	00001.c	ok
+11148b20	Unwind@11148b20	00001.c	ok
+11148b40	Unwind@11148b40	00001.c	ok
+11148b60	Unwind@11148b60	00001.c	ok
+11148c10	Unwind@11148c10	00001.c	ok
+11148c19	Unwind@11148c19	00001.c	ok
+11148cb0	Unwind@11148cb0	00001.c	ok
+11148ce0	Unwind@11148ce0	00001.c	ok
+11148ce9	Unwind@11148ce9	00001.c	ok
+11148cf4	Unwind@11148cf4	00001.c	ok
+11148cfd	Unwind@11148cfd	00001.c	ok
+11148d06	Unwind@11148d06	00001.c	ok
+11148d0f	Unwind@11148d0f	00001.c	ok
+11148d18	Unwind@11148d18	00001.c	ok
+11148d21	Unwind@11148d21	00001.c	ok
+11148d2a	Unwind@11148d2a	00001.c	ok
+11148d33	Unwind@11148d33	00001.c	ok
+11148d3c	Unwind@11148d3c	00001.c	ok
+11148d80	Unwind@11148d80	00001.c	ok
+11148d8c	Unwind@11148d8c	00001.c	ok
+11148d98	Unwind@11148d98	00001.c	ok
+11148da4	Unwind@11148da4	00001.c	ok
+11149e40	FUN_11149e40	00001.c	ok
+11149ef0	FUN_11149ef0	00001.c	ok

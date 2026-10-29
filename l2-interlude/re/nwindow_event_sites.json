@@ -1,0 +1,2404 @@
+{
+ "sites": {
+  "0x100065e0": [
+   {
+    "at": "0x10006697",
+    "id": 1190,
+    "event": "EV_ShowBBS"
+   },
+   {
+    "at": "0x10006706",
+    "id": 730,
+    "event": "EV_QuestSetCurrentID"
+   }
+  ],
+  "0x1002a840": [
+   {
+    "at": "0x1002a8b0",
+    "id": 1500,
+    "event": "EV_IMEStatusChange"
+   }
+  ],
+  "0x1002a8e0": [
+   {
+    "at": "0x1002a961",
+    "id": 1500,
+    "event": "EV_IMEStatusChange"
+   }
+  ],
+  "0x10043160": [
+   {
+    "at": "0x10043282",
+    "id": 80,
+    "event": "EV_RadarTransitionFinished"
+   }
+  ],
+  "0x100461d0": [
+   {
+    "at": "0x1004661c",
+    "id": 630,
+    "event": "EV_ShortcutUpdate"
+   }
+  ],
+  "0x10046690": [
+   {
+    "at": "0x10046854",
+    "id": 630,
+    "event": "EV_ShortcutUpdate"
+   }
+  ],
+  "0x100468e0": [
+   {
+    "at": "0x10046aa6",
+    "id": 630,
+    "event": "EV_ShortcutUpdate"
+   }
+  ],
+  "0x10046b10": [
+   {
+    "at": "0x10046c38",
+    "id": 630,
+    "event": "EV_ShortcutUpdate"
+   }
+  ],
+  "0x10046ca0": [
+   {
+    "at": "0x10046e4c",
+    "id": 630,
+    "event": "EV_ShortcutUpdate"
+   }
+  ],
+  "0x10046eb0": [
+   {
+    "at": "0x10046ffa",
+    "id": 630,
+    "event": "EV_ShortcutUpdate"
+   }
+  ],
+  "0x10047070": [
+   {
+    "at": "0x10047103",
+    "id": 640,
+    "event": "EV_ShortcutPageUpdate"
+   }
+  ],
+  "0x1006fb10": [
+   {
+    "at": "0x1006fb67",
+    "id": 150,
+    "event": "EV_GamingStateEnter"
+   },
+   {
+    "at": "0x1006fbda",
+    "id": 1500,
+    "event": "EV_IMEStatusChange"
+   }
+  ],
+  "0x1006fc40": [
+   {
+    "at": "0x1006fd71",
+    "id": 160,
+    "event": "EV_GamingStateExit"
+   }
+  ],
+  "0x1008caf0": [
+   {
+    "at": "0x1008cd12",
+    "id": 1221,
+    "event": "EV_LoadPetitionHtml"
+   },
+   {
+    "at": "0x1008cdaa",
+    "id": 1220,
+    "event": "EV_LoadHelpHtml"
+   }
+  ],
+  "0x100c1ad0": [
+   {
+    "at": "0x100c1d51",
+    "id": 571,
+    "event": "EV_ChatWndMsnStatus"
+   }
+  ],
+  "0x10108680": [
+   {
+    "at": "0x101087b2",
+    "id": 10,
+    "event": "EV_Test"
+   }
+  ],
+  "0x10108d00": [
+   {
+    "at": "0x10108e94",
+    "id": 1030,
+    "event": "EV_PetWndRegPetNameFailed"
+   }
+  ],
+  "0x10109220": [
+   {
+    "at": "0x101092d7",
+    "id": null,
+    "event": null
+   }
+  ],
+  "0x101095f0": [
+   {
+    "at": "0x101096c1",
+    "id": 560,
+    "event": "EV_ChatWndSetString"
+   }
+  ],
+  "0x1011a860": [
+   {
+    "at": "0x1011a8fe",
+    "id": 1300,
+    "event": "EV_ActionListStart"
+   },
+   {
+    "at": "0x1011ac5c",
+    "id": 1310,
+    "event": "EV_ActionList"
+   }
+  ],
+  "0x1011ace0": [
+   {
+    "at": "0x1011ad7e",
+    "id": 1320,
+    "event": "EV_ActionPetListStart"
+   },
+   {
+    "at": "0x1011b0fb",
+    "id": 1330,
+    "event": "EV_ActionPetList"
+   }
+  ],
+  "0x1011b190": [
+   {
+    "at": "0x1011b22e",
+    "id": 1340,
+    "event": "EV_ActionSummonedListStart"
+   },
+   {
+    "at": "0x1011b5ba",
+    "id": 1350,
+    "event": "EV_ActionSummonedList"
+   }
+  ],
+  "0x1011d670": [
+   {
+    "at": "0x1011d903",
+    "id": 1250,
+    "event": "EV_MacroList"
+   }
+  ],
+  "0x1011d970": [
+   {
+    "at": "0x1011da5e",
+    "id": 1270,
+    "event": "EV_MacroDeleted"
+   }
+  ],
+  "0x1011f2e0": [
+   {
+    "at": "0x1011f367",
+    "id": 1060,
+    "event": "EV_PetInventoryItemStart"
+   },
+   {
+    "at": "0x1011f3cd",
+    "id": 1070,
+    "event": "EV_PetInventoryItemList"
+   }
+  ],
+  "0x1011fa60": [
+   {
+    "at": "0x1011fad9",
+    "id": 700,
+    "event": "EV_QuestListStart"
+   },
+   {
+    "at": "0x1011fb22",
+    "id": 720,
+    "event": "EV_QuestListEnd"
+   }
+  ],
+  "0x10138600": [
+   {
+    "at": "0x10138804",
+    "id": 1600,
+    "event": "EV_PartyMatchChatMessage"
+   }
+  ],
+  "0x10138a40": [
+   {
+    "at": "0x10138bf2",
+    "id": 1600,
+    "event": "EV_PartyMatchChatMessage"
+   },
+   {
+    "at": "0x10138d26",
+    "id": 1600,
+    "event": "EV_PartyMatchChatMessage"
+   },
+   {
+    "at": "0x10138efd",
+    "id": 1600,
+    "event": "EV_PartyMatchChatMessage"
+   },
+   {
+    "at": "0x10139031",
+    "id": 1600,
+    "event": "EV_PartyMatchChatMessage"
+   }
+  ],
+  "0x101392c0": [
+   {
+    "at": "0x10139459",
+    "id": 540,
+    "event": "EV_ChatMessage"
+   }
+  ],
+  "0x10139700": [
+   {
+    "at": "0x1013979d",
+    "id": 560,
+    "event": "EV_ChatWndSetString"
+   },
+   {
+    "at": "0x1013983d",
+    "id": 560,
+    "event": "EV_ChatWndSetString"
+   }
+  ],
+  "0x101398c0": [
+   {
+    "at": "0x101399e5",
+    "id": 560,
+    "event": "EV_ChatWndSetString"
+   },
+   {
+    "at": "0x10139ac8",
+    "id": 560,
+    "event": "EV_ChatWndSetString"
+   },
+   {
+    "at": "0x10139be4",
+    "id": 560,
+    "event": "EV_ChatWndSetString"
+   }
+  ],
+  "0x1013a320": [
+   {
+    "at": "0x1013a45b",
+    "id": 1921,
+    "event": "EV_ShowUserPetitionWnd"
+   },
+   {
+    "at": "0x1013aa87",
+    "id": 1630,
+    "event": "EV_PartyMatchCommand"
+   }
+  ],
+  "0x1013dac0": [
+   {
+    "at": "0x1013db18",
+    "id": 2631,
+    "event": "EV_InventoryToggleWindow"
+   }
+  ],
+  "0x1013db40": [
+   {
+    "at": "0x1013dbbd",
+    "id": 1780,
+    "event": "EV_ShowMinimap"
+   }
+  ],
+  "0x1013dc20": [
+   {
+    "at": "0x1013dca5",
+    "id": 1190,
+    "event": "EV_ShowBBS"
+   }
+  ],
+  "0x1013ddd0": [
+   {
+    "at": "0x1013de24",
+    "id": 1230,
+    "event": "EV_MacroShowListWnd"
+   }
+  ],
+  "0x1013de80": [
+   {
+    "at": "0x1013ded4",
+    "id": 2280,
+    "event": "EV_ShowGMWnd"
+   }
+  ],
+  "0x1013df30": [
+   {
+    "at": "0x1013e118",
+    "id": 1600,
+    "event": "EV_PartyMatchChatMessage"
+   },
+   {
+    "at": "0x1013e377",
+    "id": 1920,
+    "event": "EV_ShowPetitionWnd"
+   },
+   {
+    "at": "0x1013e4bc",
+    "id": 1930,
+    "event": "EV_PetitionChatMessage"
+   }
+  ],
+  "0x1013e510": [
+   {
+    "at": "0x1013e5d5",
+    "id": 580,
+    "event": "EV_SystemMessage"
+   }
+  ],
+  "0x1013e640": [
+   {
+    "at": "0x1013e6c9",
+    "id": 1920,
+    "event": "EV_ShowPetitionWnd"
+   },
+   {
+    "at": "0x1013e80e",
+    "id": 1930,
+    "event": "EV_PetitionChatMessage"
+   }
+  ],
+  "0x1014fb40": [
+   {
+    "at": "0x1014fbcb",
+    "id": 170,
+    "event": "EV_ServerAgeLimitChange"
+   }
+  ],
+  "0x1014fe90": [
+   {
+    "at": "0x1014fee4",
+    "id": 980,
+    "event": "EV_TargetUpdate"
+   }
+  ],
+  "0x101511b0": [
+   {
+    "at": "0x1015122f",
+    "id": 40,
+    "event": "EV_Restart"
+   }
+  ],
+  "0x101512c0": [
+   {
+    "at": "0x10151455",
+    "id": 50,
+    "event": "EV_Die"
+   }
+  ],
+  "0x10151500": [
+   {
+    "at": "0x10151558",
+    "id": 1440,
+    "event": "EV_RestartMenuHide"
+   }
+  ],
+  "0x10151580": [
+   {
+    "at": "0x101515d8",
+    "id": 1430,
+    "event": "EV_RestartMenuShow"
+   }
+  ],
+  "0x10151600": [
+   {
+    "at": "0x101517d0",
+    "id": 2420,
+    "event": "EV_BeginShowZoneTitleWnd"
+   }
+  ],
+  "0x10151830": [
+   {
+    "at": "0x10151892",
+    "id": 2570,
+    "event": "EV_InventoryClear"
+   },
+   {
+    "at": "0x101518ca",
+    "id": 2580,
+    "event": "EV_InventoryOpenWindow"
+   }
+  ],
+  "0x10151930": [
+   {
+    "at": "0x10151994",
+    "id": 2570,
+    "event": "EV_InventoryClear"
+   }
+  ],
+  "0x101519f0": [
+   {
+    "at": "0x10151a64",
+    "id": 2600,
+    "event": "EV_InventoryAddItem"
+   }
+  ],
+  "0x10151ad0": [
+   {
+    "at": "0x10151c48",
+    "id": 2610,
+    "event": "EV_InventoryUpdateItem"
+   }
+  ],
+  "0x10151cb0": [
+   {
+    "at": "0x10151d08",
+    "id": 2620,
+    "event": "EV_InventoryItemListEnd"
+   }
+  ],
+  "0x10151d30": [
+   {
+    "at": "0x10151db8",
+    "id": 2860,
+    "event": "EV_EnchantShow"
+   },
+   {
+    "at": "0x10151ee3",
+    "id": 2880,
+    "event": "EV_EnchantItemList"
+   },
+   {
+    "at": "0x10152020",
+    "id": 2880,
+    "event": "EV_EnchantItemList"
+   }
+  ],
+  "0x10152070": [
+   {
+    "at": "0x101520f8",
+    "id": 2890,
+    "event": "EV_EnchantResult"
+   }
+  ],
+  "0x10152120": [
+   {
+    "at": "0x101521c4",
+    "id": 2000,
+    "event": "EV_TradeRequestStartExchange"
+   }
+  ],
+  "0x10152250": [
+   {
+    "at": "0x101522a2",
+    "id": 2590,
+    "event": "EV_InventoryHideWindow"
+   },
+   {
+    "at": "0x101522fe",
+    "id": 1950,
+    "event": "EV_TradeStart"
+   }
+  ],
+  "0x10152360": [
+   {
+    "at": "0x10152421",
+    "id": 1960,
+    "event": "EV_TradeAddItem"
+   }
+  ],
+  "0x10152450": [
+   {
+    "at": "0x10152511",
+    "id": 1960,
+    "event": "EV_TradeAddItem"
+   }
+  ],
+  "0x10152540": [
+   {
+    "at": "0x10152601",
+    "id": 1960,
+    "event": "EV_TradeAddItem"
+   }
+  ],
+  "0x10152630": [
+   {
+    "at": "0x1015279a",
+    "id": 1990,
+    "event": "EV_TradeUpdateInventoryItem"
+   }
+  ],
+  "0x101527d0": [
+   {
+    "at": "0x10152826",
+    "id": 1970,
+    "event": "EV_TradeDone"
+   }
+  ],
+  "0x101528c0": [
+   {
+    "at": "0x10152914",
+    "id": 1980,
+    "event": "EV_TradeOtherOK"
+   }
+  ],
+  "0x10152970": [
+   {
+    "at": "0x10152a7e",
+    "id": 2680,
+    "event": "EV_ManorShopWndOpen"
+   }
+  ],
+  "0x10152ae0": [
+   {
+    "at": "0x10152b42",
+    "id": 2690,
+    "event": "EV_ManorShopWndAddItem"
+   }
+  ],
+  "0x10152ba0": [
+   {
+    "at": "0x10152c0a",
+    "id": 2590,
+    "event": "EV_InventoryHideWindow"
+   },
+   {
+    "at": "0x10152ce2",
+    "id": 2680,
+    "event": "EV_ManorShopWndOpen"
+   }
+  ],
+  "0x10152d40": [
+   {
+    "at": "0x10152da2",
+    "id": 2690,
+    "event": "EV_ManorShopWndAddItem"
+   }
+  ],
+  "0x10152e00": [
+   {
+    "at": "0x10152f28",
+    "id": 2080,
+    "event": "EV_ShopOpenWindow"
+   }
+  ],
+  "0x10152f60": [
+   {
+    "at": "0x10152fc8",
+    "id": 2090,
+    "event": "EV_ShopAddItem"
+   }
+  ],
+  "0x10152ff0": [
+   {
+    "at": "0x1015312c",
+    "id": 2080,
+    "event": "EV_ShopOpenWindow"
+   }
+  ],
+  "0x10153190": [
+   {
+    "at": "0x101531f2",
+    "id": 2090,
+    "event": "EV_ShopAddItem"
+   }
+  ],
+  "0x10153250": [
+   {
+    "at": "0x101532bf",
+    "id": 2590,
+    "event": "EV_InventoryHideWindow"
+   },
+   {
+    "at": "0x101533c8",
+    "id": 2080,
+    "event": "EV_ShopOpenWindow"
+   }
+  ],
+  "0x10153400": [
+   {
+    "at": "0x10153468",
+    "id": 2090,
+    "event": "EV_ShopAddItem"
+   }
+  ],
+  "0x10153490": [
+   {
+    "at": "0x1015365a",
+    "id": 2070,
+    "event": "EV_SetMaxCount"
+   }
+  ],
+  "0x101536c0": [
+   {
+    "at": "0x1015372f",
+    "id": 2590,
+    "event": "EV_InventoryHideWindow"
+   },
+   {
+    "at": "0x10153839",
+    "id": 2100,
+    "event": "EV_WarehouseOpenWindow"
+   }
+  ],
+  "0x10153870": [
+   {
+    "at": "0x101538d8",
+    "id": 2110,
+    "event": "EV_WarehouseAddItem"
+   }
+  ],
+  "0x10153900": [
+   {
+    "at": "0x10153a29",
+    "id": 2100,
+    "event": "EV_WarehouseOpenWindow"
+   }
+  ],
+  "0x10153a60": [
+   {
+    "at": "0x10153b0e",
+    "id": 2110,
+    "event": "EV_WarehouseAddItem"
+   }
+  ],
+  "0x10153b50": [
+   {
+    "at": "0x10153bd5",
+    "id": 1520,
+    "event": "EV_ArriveShowQuest"
+   }
+  ],
+  "0x10153c40": [
+   {
+    "at": "0x10153d6f",
+    "id": 2650,
+    "event": "EV_ManorInfoWndSeedShow"
+   },
+   {
+    "at": "0x101540be",
+    "id": 2651,
+    "event": "EV_ManorInfoWndSeedAdd"
+   }
+  ],
+  "0x10154170": [
+   {
+    "at": "0x1015429f",
+    "id": 2652,
+    "event": "EV_ManorInfoWndCropShow"
+   },
+   {
+    "at": "0x10154648",
+    "id": 2653,
+    "event": "EV_ManorInfoWndCropAdd"
+   }
+  ],
+  "0x10154700": [
+   {
+    "at": "0x101547a8",
+    "id": 2654,
+    "event": "EV_ManorInfoWndDefaultShow"
+   },
+   {
+    "at": "0x10154abb",
+    "id": 2655,
+    "event": "EV_ManorInfoWndDefaultAdd"
+   }
+  ],
+  "0x10154b60": [
+   {
+    "at": "0x10154c5b",
+    "id": 2656,
+    "event": "EV_ManorSeedInfoSettingWndShow"
+   },
+   {
+    "at": "0x101550df",
+    "id": 2657,
+    "event": "EV_ManorSeedInfoSettingWndAddItem"
+   },
+   {
+    "at": "0x10155142",
+    "id": 2658,
+    "event": "EV_ManorSeedInfoSettingWndAddItemEnd"
+   }
+  ],
+  "0x101551b0": [
+   {
+    "at": "0x101552ab",
+    "id": 2665,
+    "event": "EV_ManorCropInfoSettingWndShow"
+   },
+   {
+    "at": "0x101557b4",
+    "id": 2666,
+    "event": "EV_ManorCropInfoSettingWndAddItem"
+   },
+   {
+    "at": "0x10155817",
+    "id": 2667,
+    "event": "EV_ManorCropInfoSettingWndAddItemEnd"
+   }
+  ],
+  "0x10155890": [
+   {
+    "at": "0x101558f6",
+    "id": 2640,
+    "event": "EV_ManorCropSellWndShow"
+   },
+   {
+    "at": "0x10155d84",
+    "id": 2645,
+    "event": "EV_ManorCropSellWndAddItem"
+   }
+  ],
+  "0x10155e10": [
+   {
+    "at": "0x10155e6e",
+    "id": 2647,
+    "event": "EV_ManorCropSellChangeWndShow"
+   },
+   {
+    "at": "0x10155ff8",
+    "id": 2648,
+    "event": "EV_ManorCropSellChangeWndAddItem"
+   }
+  ],
+  "0x10156060": [
+   {
+    "at": "0x101562e4",
+    "id": 880,
+    "event": "EV_HeroShowList"
+   }
+  ],
+  "0x10156350": [
+   {
+    "at": "0x101565e6",
+    "id": 920,
+    "event": "EV_OlympiadUserInfo"
+   }
+  ],
+  "0x10156650": [
+   {
+    "at": "0x101567b2",
+    "id": 900,
+    "event": "EV_OlympiadTargetShow"
+   },
+   {
+    "at": "0x10156819",
+    "id": 900,
+    "event": "EV_OlympiadTargetShow"
+   },
+   {
+    "at": "0x10156878",
+    "id": 910,
+    "event": "EV_OlympiadMatchEnd"
+   }
+  ],
+  "0x10156920": [
+   {
+    "at": "0x10156974",
+    "id": 910,
+    "event": "EV_OlympiadMatchEnd"
+   }
+  ],
+  "0x101569d0": [
+   {
+    "at": "0x10156b0a",
+    "id": 1380,
+    "event": "EV_CommandChannelInfo"
+   }
+  ],
+  "0x10156b70": [
+   {
+    "at": "0x10156c7b",
+    "id": 1390,
+    "event": "EV_CommandChannelPartyList"
+   }
+  ],
+  "0x10156ce0": [
+   {
+    "at": "0x10156e42",
+    "id": 1420,
+    "event": "EV_CommandChannelPartyMember"
+   }
+  ],
+  "0x10156ea0": [
+   {
+    "at": "0x10156fd2",
+    "id": 1395,
+    "event": "EV_CommandChannelPartyUpdate"
+   }
+  ],
+  "0x10157030": [
+   {
+    "at": "0x10157084",
+    "id": 530,
+    "event": "EV_ShowPCCafeCouponUI"
+   }
+  ],
+  "0x101570e0": [
+   {
+    "at": "0x10157134",
+    "id": 1360,
+    "event": "EV_CommandChannelStart"
+   }
+  ],
+  "0x101571a0": [
+   {
+    "at": "0x101571f4",
+    "id": 1370,
+    "event": "EV_CommandChannelEnd"
+   }
+  ],
+  "0x10157260": [
+   {
+    "at": "0x101572ee",
+    "id": 2010,
+    "event": "EV_SkillTrainListWndShow"
+   }
+  ],
+  "0x10157650": [
+   {
+    "at": "0x1015769e",
+    "id": 2050,
+    "event": "EV_SkillTrainInfoWndHide"
+   },
+   {
+    "at": "0x101576b3",
+    "id": 2020,
+    "event": "EV_SkillTrainListWndHide"
+   }
+  ],
+  "0x10157710": [
+   {
+    "at": "0x10157768",
+    "id": 1280,
+    "event": "EV_SkillListStart"
+   }
+  ],
+  "0x10157790": [
+   {
+    "at": "0x1015783b",
+    "id": 820,
+    "event": "EV_RecipeShowBookWnd"
+   }
+  ],
+  "0x101578a0": [
+   {
+    "at": "0x1015791d",
+    "id": 830,
+    "event": "EV_RecipeAddBookItem"
+   }
+  ],
+  "0x10157980": [
+   {
+    "at": "0x10157ac3",
+    "id": 840,
+    "event": "EV_RecipeItemMakeInfo"
+   }
+  ],
+  "0x10157b20": [
+   {
+    "at": "0x10157b9d",
+    "id": 850,
+    "event": "EV_RecipeShopShowWnd"
+   }
+  ],
+  "0x10157c00": [
+   {
+    "at": "0x10157c7d",
+    "id": 860,
+    "event": "EV_RecipeShopAddBookItem"
+   }
+  ],
+  "0x10157ce0": [
+   {
+    "at": "0x10157db9",
+    "id": 870,
+    "event": "EV_RecipeShopAddShopItem"
+   }
+  ],
+  "0x10157e20": [
+   {
+    "at": "0x10157f27",
+    "id": 780,
+    "event": "EV_RecipeShowBuyListWnd"
+   }
+  ],
+  "0x10157f90": [
+   {
+    "at": "0x10158069",
+    "id": 790,
+    "event": "EV_RecipeShopSellItem"
+   }
+  ],
+  "0x101580d0": [
+   {
+    "at": "0x10158233",
+    "id": 800,
+    "event": "EV_RecipeShopItemInfo"
+   }
+  ],
+  "0x10158290": [
+   {
+    "at": "0x1015833b",
+    "id": 210,
+    "event": "EV_UpdateMP"
+   }
+  ],
+  "0x101583a0": [
+   {
+    "at": "0x1015844b",
+    "id": 190,
+    "event": "EV_UpdateHP"
+   }
+  ],
+  "0x101584b0": [
+   {
+    "at": "0x1015855b",
+    "id": 220,
+    "event": "EV_UpdateMaxMP"
+   }
+  ],
+  "0x101585c0": [
+   {
+    "at": "0x1015866b",
+    "id": 200,
+    "event": "EV_UpdateMaxHP"
+   }
+  ],
+  "0x101586d0": [
+   {
+    "at": "0x1015877b",
+    "id": 230,
+    "event": "EV_UpdateCP"
+   }
+  ],
+  "0x101587e0": [
+   {
+    "at": "0x1015888b",
+    "id": 240,
+    "event": "EV_UpdateMaxCP"
+   }
+  ],
+  "0x101588f0": [
+   {
+    "at": "0x1015895a",
+    "id": 980,
+    "event": "EV_TargetUpdate"
+   }
+  ],
+  "0x101589c0": [
+   {
+    "at": "0x10158a3d",
+    "id": 1640,
+    "event": "EV_HennaListWndShowHideEquip"
+   }
+  ],
+  "0x10158aa0": [
+   {
+    "at": "0x10158d52",
+    "id": 1650,
+    "event": "EV_HennaListWndAddHennaEquip"
+   }
+  ],
+  "0x10158dd0": [
+   {
+    "at": "0x101592eb",
+    "id": 1660,
+    "event": "EV_HennaInfoWndShowHideEquip"
+   }
+  ],
+  "0x10159350": [
+   {
+    "at": "0x101593c9",
+    "id": 260,
+    "event": "EV_UpdateHennaInfo"
+   }
+  ],
+  "0x10159430": [
+   {
+    "at": "0x101594fe",
+    "id": 2630,
+    "event": "EV_InventoryAddHennaInfo"
+   }
+  ],
+  "0x10159560": [
+   {
+    "at": "0x101595dd",
+    "id": 1670,
+    "event": "EV_HennaListWndShowHideUnEquip"
+   }
+  ],
+  "0x10159640": [
+   {
+    "at": "0x101598f2",
+    "id": 1680,
+    "event": "EV_HennaListWndAddHennaUnEquip"
+   }
+  ],
+  "0x10159970": [
+   {
+    "at": "0x10159a1b",
+    "id": 2403,
+    "event": "EV_GMAddHennaInfo"
+   }
+  ],
+  "0x10159a80": [
+   {
+    "at": "0x10159ade",
+    "id": 2404,
+    "event": "EV_GMUpdateHennaInfo"
+   }
+  ],
+  "0x10159b40": [
+   {
+    "at": "0x10159c6e",
+    "id": 1240,
+    "event": "EV_MacroUpdate"
+   }
+  ],
+  "0x10159cd0": [
+   {
+    "at": "0x1015a1eb",
+    "id": 1690,
+    "event": "EV_HennaInfoWndShowHideUnEquip"
+   }
+  ],
+  "0x1015a250": [
+   {
+    "at": "0x1015a2a8",
+    "id": 2631,
+    "event": "EV_InventoryToggleWindow"
+   }
+  ],
+  "0x1015a4a0": [
+   {
+    "at": "0x1015a4ff",
+    "id": 650,
+    "event": "EV_ShortcutClear"
+   }
+  ],
+  "0x1015a560": [
+   {
+    "at": "0x1015a5e5",
+    "id": 950,
+    "event": "EV_AbnormalStatusNormalItem"
+   }
+  ],
+  "0x1015a610": [
+   {
+    "at": "0x1015a695",
+    "id": 970,
+    "event": "EV_AbnormalStatusShortItem"
+   }
+  ],
+  "0x1015a6c0": [
+   {
+    "at": "0x1015a745",
+    "id": 960,
+    "event": "EV_AbnormalStatusEtcItem"
+   }
+  ],
+  "0x1015a920": [
+   {
+    "at": "0x1015a99d",
+    "id": 300,
+    "event": "EV_ReceiveTargetLevelDiff"
+   }
+  ],
+  "0x1015aa00": [
+   {
+    "at": "0x1015adc5",
+    "id": 320,
+    "event": "EV_ClanInfo"
+   }
+  ],
+  "0x1015ae50": [
+   {
+    "at": "0x1015b15b",
+    "id": 330,
+    "event": "EV_ClanInfoUpdate"
+   }
+  ],
+  "0x1015b1c0": [
+   {
+    "at": "0x1015b2cb",
+    "id": 490,
+    "event": "EV_ClanSkillList"
+   }
+  ],
+  "0x1015b330": [
+   {
+    "at": "0x1015b3eb",
+    "id": 500,
+    "event": "EV_ClanSkillListAdd"
+   }
+  ],
+  "0x1015b450": [
+   {
+    "at": "0x1015b4a4",
+    "id": 390,
+    "event": "EV_ClanSetAcademyMaster"
+   }
+  ],
+  "0x1015b510": [
+   {
+    "at": "0x1015b61b",
+    "id": 350,
+    "event": "EV_ClanAuthGradeList"
+   }
+  ],
+  "0x1015b680": [
+   {
+    "at": "0x1015b6d4",
+    "id": 420,
+    "event": "EV_ClanDeleteAllMember"
+   }
+  ],
+  "0x1015b730": [
+   {
+    "at": "0x1015b902",
+    "id": 400,
+    "event": "EV_ClanAddMember"
+   }
+  ],
+  "0x1015b970": [
+   {
+    "at": "0x1015bb77",
+    "id": 410,
+    "event": "EV_ClanAddMemberMultiple"
+   }
+  ],
+  "0x1015bbf0": [
+   {
+    "at": "0x1015bdf7",
+    "id": 440,
+    "event": "EV_ClanMemberInfoUpdate"
+   }
+  ],
+  "0x1015be70": [
+   {
+    "at": "0x1015bf0b",
+    "id": 450,
+    "event": "EV_ClanDeleteMember"
+   }
+  ],
+  "0x1015bf70": [
+   {
+    "at": "0x1015bfc4",
+    "id": 420,
+    "event": "EV_ClanDeleteAllMember"
+   }
+  ],
+  "0x1015c020": [
+   {
+    "at": "0x1015c225",
+    "id": 340,
+    "event": "EV_ClanMyAuth"
+   }
+  ],
+  "0x1015c290": [
+   {
+    "at": "0x1015c3a7",
+    "id": 380,
+    "event": "EV_ClanAuthMember"
+   }
+  ],
+  "0x1015c420": [
+   {
+    "at": "0x1015c606",
+    "id": 430,
+    "event": "EV_ClanMemberInfo"
+   }
+  ],
+  "0x1015c6a0": [
+   {
+    "at": "0x1015c875",
+    "id": 460,
+    "event": "EV_ClanWarList"
+   }
+  ],
+  "0x1015c8b0": [
+   {
+    "at": "0x1015c9f2",
+    "id": 480,
+    "event": "EV_ClanSubClanUpdated"
+   }
+  ],
+  "0x1015ca70": [
+   {
+    "at": "0x1015cb62",
+    "id": 2700,
+    "event": "EV_DuelAskStart"
+   }
+  ],
+  "0x1015cb90": [
+   {
+    "at": "0x1015cc1e",
+    "id": 2710,
+    "event": "EV_DuelReady"
+   }
+  ],
+  "0x1015cc50": [
+   {
+    "at": "0x1015ccde",
+    "id": 2720,
+    "event": "EV_DuelStart"
+   }
+  ],
+  "0x1015cd10": [
+   {
+    "at": "0x1015cd9e",
+    "id": 2730,
+    "event": "EV_DuelEnd"
+   }
+  ],
+  "0x1015cdd0": [
+   {
+    "at": "0x1015d061",
+    "id": 2740,
+    "event": "EV_DuelUpdateUserInfo"
+   }
+  ],
+  "0x1015d090": [
+   {
+    "at": "0x1015d1bb",
+    "id": 2750,
+    "event": "EV_DuelEnemyRelation"
+   }
+  ],
+  "0x1015d1f0": [
+   {
+    "at": "0x1015d25d",
+    "id": 2140,
+    "event": "EV_SelectDeliverClear"
+   },
+   {
+    "at": "0x1015d336",
+    "id": 2150,
+    "event": "EV_SelectDeliverAddName"
+   }
+  ],
+  "0x1015d370": [
+   {
+    "at": "0x1015d439",
+    "id": 2160,
+    "event": "EV_DeliverOpenWindow"
+   },
+   {
+    "at": "0x1015d494",
+    "id": 2170,
+    "event": "EV_DeliverAddItem"
+   }
+  ],
+  "0x1015d4c0": [
+   {
+    "at": "0x1015d830",
+    "id": 1450,
+    "event": "EV_SiegeInfo"
+   }
+  ],
+  "0x1015d880": [
+   {
+    "at": "0x1015dc20",
+    "id": 1470,
+    "event": "EV_SiegeInfoClanList"
+   }
+  ],
+  "0x1015dc70": [
+   {
+    "at": "0x1015e054",
+    "id": 1470,
+    "event": "EV_SiegeInfoClanList"
+   }
+  ],
+  "0x1015e0a0": [
+   {
+    "at": "0x1015e128",
+    "id": 1490,
+    "event": "EV_SiegeInfoSelectableTime"
+   }
+  ],
+  "0x1015e150": [
+   {
+    "at": "0x1015e1d5",
+    "id": 1480,
+    "event": "EV_SiegeInfoClanListEnd"
+   }
+  ],
+  "0x1015e200": [
+   {
+    "at": "0x1015e285",
+    "id": 1480,
+    "event": "EV_SiegeInfoClanListEnd"
+   }
+  ],
+  "0x1015e2b0": [
+   {
+    "at": "0x1015e335",
+    "id": 1460,
+    "event": "EV_SiegeInfoClanListStart"
+   }
+  ],
+  "0x1015e360": [
+   {
+    "at": "0x1015e3e5",
+    "id": 1460,
+    "event": "EV_SiegeInfoClanListStart"
+   }
+  ],
+  "0x1015e410": [
+   {
+    "at": "0x1015e607",
+    "id": 1110,
+    "event": "EV_SummonedStatusSpelledList"
+   }
+  ],
+  "0x1015e640": [
+   {
+    "at": "0x1015e7b6",
+    "id": 550,
+    "event": "EV_ChatWndStatusChange"
+   },
+   {
+    "at": "0x1015ea2b",
+    "id": 1140,
+    "event": "EV_PartyAddParty"
+   },
+   {
+    "at": "0x1015ea84",
+    "id": 520,
+    "event": "EV_PartyMemberChanged"
+   }
+  ],
+  "0x1015eaf0": [
+   {
+    "at": "0x1015ee4a",
+    "id": 1150,
+    "event": "EV_PartyUpdateParty"
+   }
+  ],
+  "0x1015eec0": [
+   {
+    "at": "0x1015ef67",
+    "id": 1160,
+    "event": "EV_PartyDeleteParty"
+   },
+   {
+    "at": "0x1015efc1",
+    "id": 520,
+    "event": "EV_PartyMemberChanged"
+   }
+  ],
+  "0x1015f020": [
+   {
+    "at": "0x1015f08a",
+    "id": 550,
+    "event": "EV_ChatWndStatusChange"
+   },
+   {
+    "at": "0x1015f0bd",
+    "id": 1170,
+    "event": "EV_PartyDeleteAllParty"
+   },
+   {
+    "at": "0x1015f12f",
+    "id": 520,
+    "event": "EV_PartyMemberChanged"
+   }
+  ],
+  "0x1015f190": [
+   {
+    "at": "0x1015f22b",
+    "id": 2430,
+    "event": "EV_TutorialViewerWndShow"
+   }
+  ],
+  "0x1015f290": [
+   {
+    "at": "0x1015f72c",
+    "id": 1200,
+    "event": "EV_ShowBoardPacket"
+   }
+  ],
+  "0x1015f790": [
+   {
+    "at": "0x1015f80d",
+    "id": 1510,
+    "event": "EV_ArriveNewTutorialQuestion"
+   }
+  ],
+  "0x1015f870": [
+   {
+    "at": "0x1015f8c2",
+    "id": 2440,
+    "event": "EV_TutorialViewerWndHide"
+   }
+  ],
+  "0x1015f8f0": [
+   {
+    "at": "0x1015f971",
+    "id": 1010,
+    "event": "EV_PetWndShow"
+   }
+  ],
+  "0x1015f9a0": [
+   {
+    "at": "0x1015fa21",
+    "id": 1040,
+    "event": "EV_PetStatusShow"
+   }
+  ],
+  "0x1015fa50": [
+   {
+    "at": "0x1015fb0e",
+    "id": 1120,
+    "event": "EV_SummonedStatusRemainTime"
+   }
+  ],
+  "0x1015fb40": [
+   {
+    "at": "0x1015fb9b",
+    "id": 1130,
+    "event": "EV_PetSummonedStatusClose"
+   }
+  ],
+  "0x1015fbd0": [
+   {
+    "at": "0x1015fc2b",
+    "id": 1130,
+    "event": "EV_PetSummonedStatusClose"
+   }
+  ],
+  "0x1015fc60": [
+   {
+    "at": "0x1015fced",
+    "id": 1020,
+    "event": "EV_PetWndShowNameBtn"
+   }
+  ],
+  "0x1015fd20": [
+   {
+    "at": "0x1015fd78",
+    "id": 250,
+    "event": "EV_UpdatePetInfo"
+   }
+  ],
+  "0x1015fdb0": [
+   {
+    "at": "0x1015fe18",
+    "id": 1060,
+    "event": "EV_PetInventoryItemStart"
+   }
+  ],
+  "0x1015fe40": [
+   {
+    "at": "0x1015feb3",
+    "id": 1070,
+    "event": "EV_PetInventoryItemList"
+   }
+  ],
+  "0x1015ff10": [
+   {
+    "at": "0x1015ffb3",
+    "id": 1080,
+    "event": "EV_PetInventoryItemUpdate"
+   }
+  ],
+  "0x10160010": [
+   {
+    "at": "0x10160387",
+    "id": 2380,
+    "event": "EV_GMObservingClan"
+   }
+  ],
+  "0x10160410": [
+   {
+    "at": "0x10160464",
+    "id": 2390,
+    "event": "EV_GMObservingClanMemberStart"
+   }
+  ],
+  "0x101604c0": [
+   {
+    "at": "0x1016069a",
+    "id": 2400,
+    "event": "EV_GMObservingClanMember"
+   }
+  ],
+  "0x10160710": [
+   {
+    "at": "0x10160764",
+    "id": 2300,
+    "event": "EV_GMObservingSkillListStart"
+   }
+  ],
+  "0x101607c0": [
+   {
+    "at": "0x10160814",
+    "id": 2320,
+    "event": "EV_GMObservingQuestListStart"
+   }
+  ],
+  "0x10160870": [
+   {
+    "at": "0x101608c4",
+    "id": 2340,
+    "event": "EV_GMObservingQuestListEnd"
+   }
+  ],
+  "0x10160920": [
+   {
+    "at": "0x101609ce",
+    "id": 2350,
+    "event": "EV_GMObservingQuestItem"
+   }
+  ],
+  "0x10160a30": [
+   {
+    "at": "0x10160aad",
+    "id": 2402,
+    "event": "EV_GMObservingInventoryClear"
+   }
+  ],
+  "0x10160b10": [
+   {
+    "at": "0x10160b72",
+    "id": 2401,
+    "event": "EV_GMObservingInventoryAddItem"
+   }
+  ],
+  "0x10160bd0": [
+   {
+    "at": "0x10160cc6",
+    "id": 2360,
+    "event": "EV_GMObservingWarehouseItemListStart"
+   }
+  ],
+  "0x10160d30": [
+   {
+    "at": "0x10160dd9",
+    "id": 2370,
+    "event": "EV_GMObservingWarehouseItemList"
+   }
+  ],
+  "0x101610a0": [
+   {
+    "at": "0x1016120c",
+    "id": 1750,
+    "event": "EV_RadarDeleteAllTarget"
+   },
+   {
+    "at": "0x1016123a",
+    "id": 1730,
+    "event": "EV_RadarAddTarget"
+   },
+   {
+    "at": "0x10161279",
+    "id": 1810,
+    "event": "EV_MinimapDeleteAllTarget"
+   },
+   {
+    "at": "0x101612a7",
+    "id": 1790,
+    "event": "EV_MinimapAddTarget"
+   }
+  ],
+  "0x10161310": [
+   {
+    "at": "0x101613e9",
+    "id": 1800,
+    "event": "EV_MinimapDeleteTarget"
+   }
+  ],
+  "0x10161450": [
+   {
+    "at": "0x101614a4",
+    "id": 1840,
+    "event": "EV_MinimapChangeOnTick"
+   }
+  ],
+  "0x10161500": [
+   {
+    "at": "0x1016166e",
+    "id": 1850,
+    "event": "EV_MinimapCursedWeaponList"
+   }
+  ],
+  "0x101616d0": [
+   {
+    "at": "0x101619bf",
+    "id": 1860,
+    "event": "EV_MinimapCursedWeaponLocation"
+   }
+  ],
+  "0x10161a20": [
+   {
+    "at": "0x10161acb",
+    "id": 2900,
+    "event": "EV_ResolutionChanged"
+   }
+  ],
+  "0x10161b30": [
+   {
+    "at": "0x10161b84",
+    "id": 3000,
+    "event": "EV_ShowPlaySceneInterface"
+   }
+  ],
+  "0x10161be0": [
+   {
+    "at": "0x10161c34",
+    "id": 2760,
+    "event": "EV_ShowRefineryInteface"
+   }
+  ],
+  "0x10161c90": [
+   {
+    "at": "0x10161ce4",
+    "id": 2810,
+    "event": "EV_ShowRefineryCancelInteface"
+   }
+  ],
+  "0x10161d40": [
+   {
+    "at": "0x10161e19",
+    "id": 2770,
+    "event": "EV_RefineryConfirmTargetItemResult"
+   }
+  ],
+  "0x10161e80": [
+   {
+    "at": "0x10161fb5",
+    "id": 2780,
+    "event": "EV_RefineryConfirmRefinerItemResult"
+   }
+  ],
+  "0x10162020": [
+   {
+    "at": "0x10162155",
+    "id": 2790,
+    "event": "EV_RefineryConfirmGemStoneResult"
+   }
+  ],
+  "0x101621c0": [
+   {
+    "at": "0x10162299",
+    "id": 2800,
+    "event": "EV_RefineryRefineResult"
+   }
+  ],
+  "0x10162300": [
+   {
+    "at": "0x10162467",
+    "id": 2820,
+    "event": "EV_RefineryConfirmCancelItemResult"
+   }
+  ],
+  "0x101624d0": [
+   {
+    "at": "0x1016254d",
+    "id": 2830,
+    "event": "EV_RefineryRefineCancelResult"
+   }
+  ],
+  "0x101625b0": [
+   {
+    "at": "0x1016260c",
+    "id": 1700,
+    "event": "EV_CalculatorWndShowHide"
+   }
+  ],
+  "0x10162640": [
+   {
+    "at": "0x10162780",
+    "id": 2120,
+    "event": "EV_PrivateShopOpenWindow"
+   }
+  ],
+  "0x101627e0": [
+   {
+    "at": "0x10162920",
+    "id": 2120,
+    "event": "EV_PrivateShopOpenWindow"
+   }
+  ],
+  "0x10162980": [
+   {
+    "at": "0x10162aa7",
+    "id": 2130,
+    "event": "EV_PrivateShopAddItem"
+   },
+   {
+    "at": "0x10162be2",
+    "id": 2130,
+    "event": "EV_PrivateShopAddItem"
+   }
+  ],
+  "0x10162c40": [
+   {
+    "at": "0x10162d65",
+    "id": 2130,
+    "event": "EV_PrivateShopAddItem"
+   }
+  ],
+  "0x10162d90": [
+   {
+    "at": "0x10162e99",
+    "id": 2120,
+    "event": "EV_PrivateShopOpenWindow"
+   }
+  ],
+  "0x10162f00": [
+   {
+    "at": "0x10163009",
+    "id": 2120,
+    "event": "EV_PrivateShopOpenWindow"
+   }
+  ],
+  "0x10163070": [
+   {
+    "at": "0x10163197",
+    "id": 2130,
+    "event": "EV_PrivateShopAddItem"
+   },
+   {
+    "at": "0x101632d2",
+    "id": 2130,
+    "event": "EV_PrivateShopAddItem"
+   }
+  ],
+  "0x10163300": [
+   {
+    "at": "0x10163425",
+    "id": 2130,
+    "event": "EV_PrivateShopAddItem"
+   }
+  ],
+  "0x10163450": [
+   {
+    "at": "0x101634d8",
+    "id": 2530,
+    "event": "EV_MultiSellShopID"
+   }
+  ],
+  "0x10163500": [
+   {
+    "at": "0x101637cc",
+    "id": 2540,
+    "event": "EV_MultiSellItemList"
+   }
+  ],
+  "0x10163800": [
+   {
+    "at": "0x101639f8",
+    "id": 2550,
+    "event": "EV_MultiSellNeededItemList"
+   }
+  ],
+  "0x10163a30": [
+   {
+    "at": "0x10163a88",
+    "id": 2560,
+    "event": "EV_MultiSellItemListEnd"
+   }
+  ],
+  "0x10163ab0": [
+   {
+    "at": "0x10163b08",
+    "id": 550,
+    "event": "EV_ChatWndStatusChange"
+   }
+  ],
+  "0x10163b30": [
+   {
+    "at": "0x10163d24",
+    "id": 2410,
+    "event": "EV_GMSnoop"
+   }
+  ],
+  "0x10164170": [
+   {
+    "at": "0x101641eb",
+    "id": 1530,
+    "event": "EV_ArriveNewMail"
+   }
+  ],
+  "0x10164250": [
+   {
+    "at": "0x101642fc",
+    "id": 660,
+    "event": "EV_ShortcutJoypad"
+   }
+  ],
+  "0x10164610": [
+   {
+    "at": "0x10164666",
+    "id": 1900,
+    "event": "EV_LanguageChanged"
+   }
+  ],
+  "0x10165630": [
+   {
+    "at": "0x10165696",
+    "id": 1830,
+    "event": "EV_MinimapHideQuest"
+   }
+  ],
+  "0x10165700": [
+   {
+    "at": "0x10165766",
+    "id": 600,
+    "event": "EV_JoypadLButtonUp"
+   }
+  ],
+  "0x101657d0": [
+   {
+    "at": "0x10165836",
+    "id": 620,
+    "event": "EV_JoypadRButtonUp"
+   }
+  ],
+  "0x101658a0": [
+   {
+    "at": "0x101659af",
+    "id": 1770,
+    "event": "EV_ShowTownMap"
+   }
+  ],
+  "0x10165a10": [
+   {
+    "at": "0x10165a60",
+    "id": 2450,
+    "event": "EV_ObserverWndShow"
+   }
+  ],
+  "0x10165ad0": [
+   {
+    "at": "0x10165b20",
+    "id": 2460,
+    "event": "EV_ObserverWndHide"
+   }
+  ],
+  "0x10165b90": [
+   {
+    "at": "0x10165c97",
+    "id": 370,
+    "event": "EV_ClanAuth"
+   }
+  ],
+  "0x10165d00": [
+   {
+    "at": "0x10165e1d",
+    "id": 1000,
+    "event": "EV_ShowBuffIcon"
+   }
+  ],
+  "0x10165e70": [
+   {
+    "at": "0x10165fee",
+    "id": 770,
+    "event": "EV_SSQPreInfo"
+   }
+  ],
+  "0x10166050": [
+   {
+    "at": "0x10166398",
+    "id": 740,
+    "event": "EV_SSQStatus"
+   }
+  ],
+  "0x10166400": [
+   {
+    "at": "0x101667a0",
+    "id": 750,
+    "event": "EV_SSQMainEvent"
+   }
+  ],
+  "0x10166800": [
+   {
+    "at": "0x10166a12",
+    "id": 760,
+    "event": "EV_SSQSealStatus"
+   }
+  ],
+  "0x10166a70": [
+   {
+    "at": "0x10166ac4",
+    "id": 1940,
+    "event": "EV_EnablePetitionFeedback"
+   }
+  ],
+  "0x10166b20": [
+   {
+    "at": "0x10166c3c",
+    "id": 70,
+    "event": "EV_RegenStatus"
+   }
+  ],
+  "0x10166ca0": [
+   {
+    "at": "0x10166da4",
+    "id": 2220,
+    "event": "EV_StartEventMatchObserver"
+   },
+   {
+    "at": "0x10166dd7",
+    "id": 2230,
+    "event": "EV_EventMatchUpdateTeamName"
+   }
+  ],
+  "0x10166e80": [
+   {
+    "at": "0x10166f30",
+    "id": 2270,
+    "event": "EV_EventMatchGMMessage"
+   }
+  ],
+  "0x10166fa0": [
+   {
+    "at": "0x10167024",
+    "id": 2240,
+    "event": "EV_EventMatchUpdateScore"
+   }
+  ],
+  "0x10167090": [
+   {
+    "at": "0x10167127",
+    "id": 2250,
+    "event": "EV_EventMatchUpdateTeamInfo"
+   }
+  ],
+  "0x10167190": [
+   {
+    "at": "0x1016722c",
+    "id": 2190,
+    "event": "EV_EventMatchCreated"
+   }
+  ],
+  "0x10167290": [
+   {
+    "at": "0x101673b5",
+    "id": 2260,
+    "event": "EV_EventMatchUpdateUserInfo"
+   }
+  ],
+  "0x10167420": [
+   {
+    "at": "0x10167504",
+    "id": 2260,
+    "event": "EV_EventMatchUpdateUserInfo"
+   }
+  ],
+  "0x10167570": [
+   {
+    "at": "0x101675c4",
+    "id": 2180,
+    "event": "EV_ShowEventMatchGMWnd"
+   }
+  ],
+  "0x10167620": [
+   {
+    "at": "0x1016770c",
+    "id": 290,
+    "event": "EV_ReceiveMagicSkillUse"
+   }
+  ],
+  "0x10167770": [
+   {
+    "at": "0x1016794a",
+    "id": 280,
+    "event": "EV_ReceiveAttack"
+   }
+  ],
+  "0x101679b0": [
+   {
+    "at": "0x10167a04",
+    "id": 180,
+    "event": "EV_UpdateUserInfo"
+   }
+  ],
+  "0x10167a70": [
+   {
+    "at": "0x10167ac4",
+    "id": 250,
+    "event": "EV_UpdatePetInfo"
+   }
+  ],
+  "0x10167e50": [
+   {
+    "at": "0x10167eaf",
+    "id": 2470,
+    "event": "EV_FishViewportWndShow"
+   }
+  ],
+  "0x10167ee0": [
+   {
+    "at": "0x10167f45",
+    "id": 2480,
+    "event": "EV_FishViewportWndHide"
+   }
+  ],
+  "0x10167f90": [
+   {
+    "at": "0x10168257",
+    "id": 1570,
+    "event": "EV_PartyMatchList"
+   }
+  ],
+  "0x101682c0": [
+   {
+    "at": "0x10168314",
+    "id": 1540,
+    "event": "EV_PartyMatchStart"
+   }
+  ],
+  "0x10168370": [
+   {
+    "at": "0x1016852f",
+    "id": 1550,
+    "event": "EV_PartyMatchRoomStart"
+   }
+  ],
+  "0x10168590": [
+   {
+    "at": "0x101687ca",
+    "id": 1580,
+    "event": "EV_PartyMatchRoomMember"
+   }
+  ],
+  "0x10168830": [
+   {
+    "at": "0x10168884",
+    "id": 1560,
+    "event": "EV_PartyMatchRoomClose"
+   }
+  ],
+  "0x101688f0": [
+   {
+    "at": "0x10168ae2",
+    "id": 1590,
+    "event": "EV_PartyMatchRoomMemberUpdate"
+   }
+  ],
+  "0x10168b10": [
+   {
+    "at": "0x10168cf5",
+    "id": 2210,
+    "event": "EV_EventMatchManage"
+   }
+  ],
+  "0x10169140": [
+   {
+    "at": "0x10169289",
+    "id": 1910,
+    "event": "EV_PCCafePointInfo"
+   }
+  ],
+  "0x101692f0": [
+   {
+    "at": "0x1016937b",
+    "id": 110,
+    "event": "EV_SetRadarZoneCode"
+   }
+  ],
+  "0x101693e0": [
+   {
+    "at": "0x10169590",
+    "id": 120,
+    "event": "EV_RaidRecord"
+   }
+  ],
+  "0x101695f0": [
+   {
+    "at": "0x1016964d",
+    "id": 130,
+    "event": "EV_ShowGuideWnd"
+   }
+  ],
+  "0x101696b0": [
+   {
+    "at": "0x10169963",
+    "id": 140,
+    "event": "EV_ShowScreenMessage"
+   }
+  ],
+  "0x101699d0": [
+   {
+    "at": "0x10169a5d",
+    "id": 1400,
+    "event": "EV_CommandChannelRoutingType"
+   }
+  ],
+  "0x10169ac0": [
+   {
+    "at": "0x10169b76",
+    "id": 1610,
+    "event": "EV_PartyMatchWaitListStart"
+   }
+  ],
+  "0x10169be0": [
+   {
+    "at": "0x10169ce3",
+    "id": 1620,
+    "event": "EV_PartyMatchWaitList"
+   }
+  ],
+  "0x1016ac70": [
+   {
+    "at": "0x1016aed9",
+    "id": 710,
+    "event": "EV_QuestList"
+   }
+  ],
+  "0x1016b0a0": [
+   {
+    "at": "0x1016b110",
+    "id": 2840,
+    "event": "EV_QuestInfoStart"
+   },
+   {
+    "at": "0x1016b4f1",
+    "id": 2850,
+    "event": "EV_QuestInfo"
+   }
+  ],
+  "0x1016b560": [
+   {
+    "at": "0x1016b80f",
+    "id": 940,
+    "event": "EV_OlympiadBuffInfo"
+   }
+  ],
+  "0x1016b870": [
+   {
+    "at": "0x1016be1e",
+    "id": 2040,
+    "event": "EV_SkillTrainInfoWndShow"
+   }
+  ],
+  "0x1016bea0": [
+   {
+    "at": "0x1016c38d",
+    "id": 2030,
+    "event": "EV_SkillTrainListWndAddSkill"
+   }
+  ],
+  "0x1016c400": [
+   {
+    "at": "0x1016c56d",
+    "id": 2060,
+    "event": "EV_SkillTrainInfoWndAddExtendInfo"
+   }
+  ],
+  "0x1016c5e0": [
+   {
+    "at": "0x1016ca12",
+    "id": 1290,
+    "event": "EV_SkillList"
+   }
+  ],
+  "0x1016caa0": [
+   {
+    "at": "0x1016cf10",
+    "id": 950,
+    "event": "EV_AbnormalStatusNormalItem"
+   }
+  ],
+  "0x1016cf50": [
+   {
+    "at": "0x1016d2c7",
+    "id": 960,
+    "event": "EV_AbnormalStatusEtcItem"
+   }
+  ],
+  "0x1016d310": [
+   {
+    "at": "0x1016d69f",
+    "id": 970,
+    "event": "EV_AbnormalStatusShortItem"
+   }
+  ],
+  "0x1016d860": [
+   {
+    "at": "0x1016dc92",
+    "id": 2310,
+    "event": "EV_GMObservingSkillList"
+   }
+  ],
+  "0x1016dea0": [
+   {
+    "at": "0x1016e0f9",
+    "id": 2330,
+    "event": "EV_GMObservingQuestList"
+   }
+  ],
+  "0x1016e410": [
+   {
+    "at": "0x1016e541",
+    "id": 2910,
+    "event": "EV_PawnViewerWndAddItem"
+   }
+  ],
+  "0x1016e950": [
+   {
+    "at": "0x1016e9b4",
+    "id": 310,
+    "event": "EV_ShowReplayQuitDialogBox"
+   },
+   {
+    "at": "0x1016ea1d",
+    "id": 2460,
+    "event": "EV_ObserverWndHide"
+   }
+  ],
+  "0x1016f110": [
+   {
+    "at": "0x1016f186",
+    "id": 700,
+    "event": "EV_QuestListStart"
+   },
+   {
+    "at": "0x1016f1c9",
+    "id": 720,
+    "event": "EV_QuestListEnd"
+   }
+  ],
+  "0x10170860": [
+   {
+    "at": "0x10170bf7",
+    "id": 1630,
+    "event": "EV_PartyMatchCommand"
+   }
+  ],
+  "0x10172350": [
+   {
+    "at": "0x10172cf5",
+    "id": 690,
+    "event": "EV_ShowShortcutWnd"
+   },
+   {
+    "at": "0x10172f6f",
+    "id": 140,
+    "event": "EV_ShowScreenMessage"
+   },
+   {
+    "at": "0x1017333b",
+    "id": 90,
+    "event": "EV_ShortcutCommand"
+   }
+  ],
+  "0x101734e0": [
+   {
+    "at": "0x1017368f",
+    "id": 570,
+    "event": "EV_ChatWndSetFocus"
+   }
+  ],
+  "0x10181970": [
+   {
+    "at": "0x10181a0c",
+    "id": 1210,
+    "event": "EV_ShowHelp"
+   }
+  ],
+  "0x10187b50": [
+   {
+    "at": "0x10187ba9",
+    "id": 1880,
+    "event": "EV_MinimapHideReduceBtn"
+   }
+  ],
+  "0x101880f0": [
+   {
+    "at": "0x1018815f",
+    "id": 1870,
+    "event": "EV_MinimapShowReduceBtn"
+   }
+  ],
+  "0x101895c0": [
+   {
+    "at": "0x10189974",
+    "id": 1890,
+    "event": "EV_MinimapUpdateGameTime"
+   }
+  ],
+  "0x1018a9f0": [
+   {
+    "at": "0x1018aaf3",
+    "id": 1870,
+    "event": "EV_MinimapShowReduceBtn"
+   }
+  ],
+  "0x101ab8c0": [
+   {
+    "at": "0x101ab992",
+    "id": 2520,
+    "event": "EV_FishRankEventButtonHide"
+   }
+  ],
+  "0x101ab9f0": [
+   {
+    "at": "0x101abb85",
+    "id": 2480,
+    "event": "EV_FishViewportWndHide"
+   }
+  ],
+  "0x101b1b50": [
+   {
+    "at": "0x101b1bb1",
+    "id": 2290,
+    "event": "EV_GMObservingUserInfoUpdate"
+   }
+  ],
+  "0x101b45f0": [
+   {
+    "at": "0x101b498b",
+    "id": 572,
+    "event": "EV_ChatWndMacroCommand"
+   }
+  ],
+  "0x101b7cd0": [
+   {
+    "at": "0x101b8305",
+    "id": 580,
+    "event": "EV_SystemMessage"
+   }
+  ],
+  "0x101b8ab0": [
+   {
+    "at": "0x101b8c89",
+    "id": 2920,
+    "event": "EV_RequestTooltipInfo"
+   }
+  ],
+  "0x101b8d20": [
+   {
+    "at": "0x101b8e6c",
+    "id": 2920,
+    "event": "EV_RequestTooltipInfo"
+   }
+  ],
+  "0x101b8f10": [
+   {
+    "at": "0x101b9034",
+    "id": 2920,
+    "event": "EV_RequestTooltipInfo"
+   }
+  ],
+  "0x101b90f0": [
+   {
+    "at": "0x101b945b",
+    "id": 2920,
+    "event": "EV_RequestTooltipInfo"
+   }
+  ]
+ },
+ "unresolved": [
+  "0x101092d7"
+ ],
+ "ids_without_name": []
+}

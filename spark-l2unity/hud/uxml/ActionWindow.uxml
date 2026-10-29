@@ -1,0 +1,22 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="ActionWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="WindowTemplate" template="WindowTemplate" name="WindowTemplate" class="action-window">
+    <ui:VisualElement name="Content" class="action-window-content">
+      <ui:VisualElement name="Category" class="action-window-category">
+        <ui:Label tabindex="-1" text="Basic" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="action-window-category-title l2-color-3" />
+        <ui:Instance template="L2SlotContainer" template="L2SlotContainer" name="BasicSlots" class="action-window-category-slots" />
+      </ui:VisualElement>
+      <ui:VisualElement name="Category" class="action-window-category">
+        <ui:Label tabindex="-1" text="Party" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="action-window-category-title l2-color-3" />
+        <ui:Instance template="L2SlotContainer" template="L2SlotContainer" name="PartySlots" class="action-window-category-slots" />
+      </ui:VisualElement>
+      <ui:VisualElement name="Category" class="action-window-category">
+        <ui:Label tabindex="-1" text="Token Action" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="action-window-category-title l2-color-3" />
+        <ui:Instance template="L2SlotContainer" template="L2SlotContainer" name="TokenSlots" class="action-window-category-slots" />
+      </ui:VisualElement>
+      <ui:VisualElement name="Category" class="action-window-category">
+        <ui:Label tabindex="-1" text="Social" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="action-window-category-title l2-color-3" />
+        <ui:Instance template="L2SlotContainer" template="L2SlotContainer" name="SocialSlots" class="action-window-category-slots" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:Instance>
+</ui:UXML>

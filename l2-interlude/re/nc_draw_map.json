@@ -1,0 +1,3883 @@
+[
+ {
+  "class": "AddFriendDialog",
+  "vtable": "0x102536dc",
+  "draw": "0x1009ea20",
+  "overridden": true,
+  "bases": [
+   "AddFriendDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "AddGroupDialog",
+  "vtable": "0x10253edc",
+  "draw": "0x100a02d0",
+  "overridden": true,
+  "bases": [
+   "AddGroupDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "AddedConfirmDialog",
+  "vtable": "0x10253adc",
+  "draw": "0x1009f630",
+  "overridden": true,
+  "bases": [
+   "AddedConfirmDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "AlarmWnd",
+  "vtable": "0x102570c4",
+  "draw": "0x100b2d90",
+  "overridden": true,
+  "bases": [
+   "AlarmWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "GetViewportSceneTexture": 1,
+   "DrawIcon": 2,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "%s %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "ChatBox",
+  "vtable": "0x102524ec",
+  "draw": "0x10096f30",
+  "overridden": true,
+  "bases": [
+   "ChatBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "ChatFrameCtrl",
+  "vtable": "0x102526fc",
+  "draw": "0x10097220",
+  "overridden": true,
+  "bases": [
+   "ChatFrameCtrl",
+   "NCFrameCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawStretchedTex": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawIcon": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "ChatWnd",
+  "vtable": "0x1025290c",
+  "draw": "0x100994d0",
+  "overridden": true,
+  "bases": [
+   "ChatWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawIcon": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "FriendBox",
+  "vtable": "0x102522dc",
+  "draw": "0x10096cc0",
+  "overridden": true,
+  "bases": [
+   "FriendBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1,
+   "DrawIcon": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "InviteBox",
+  "vtable": "0x10251e24",
+  "draw": "0x10096870",
+  "overridden": true,
+  "bases": [
+   "InviteBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1,
+   "DrawIcon": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "InviteWnd",
+  "vtable": "0x10252034",
+  "draw": "0x10096b00",
+  "overridden": true,
+  "bases": [
+   "InviteWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2ChatBox",
+  "vtable": "0x1025486c",
+  "draw": "0x100a2970",
+  "overridden": true,
+  "bases": [
+   "L2ChatBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2ChatFrameCtrl",
+  "vtable": "0x10254a7c",
+  "draw": "0x1001ba20",
+  "overridden": true,
+  "bases": [
+   "L2ChatFrameCtrl",
+   "NCFrameCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCFrameCtrl",
+  "empty_draw": false
+ },
+ {
+  "class": "L2ChatWnd",
+  "vtable": "0x10254c8c",
+  "draw": "0x100a2b20",
+  "overridden": true,
+  "bases": [
+   "L2ChatWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2FriendTree",
+  "vtable": "0x102587a4",
+  "draw": "0x10055580",
+  "overridden": true,
+  "bases": [
+   "L2FriendTree",
+   "NCTree",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCTree",
+  "empty_draw": false
+ },
+ {
+  "class": "L2FriendTreeCtrl",
+  "vtable": "0x102589ac",
+  "draw": "0x100c50e0",
+  "overridden": true,
+  "bases": [
+   "L2FriendTreeCtrl",
+   "NCTreeCtrl",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2FriendWnd",
+  "vtable": "0x102579cc",
+  "draw": "0x100b5c10",
+  "overridden": true,
+  "bases": [
+   "L2FriendWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2Task",
+  "vtable": "0x10254e84",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "L2Task",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "L2TaskBox",
+  "vtable": "0x1025507c",
+  "draw": "0x100a2c10",
+  "overridden": true,
+  "bases": [
+   "L2TaskBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1,
+   "DrawIcon": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2TaskWnd",
+  "vtable": "0x1025528c",
+  "draw": "0x100978f0",
+  "overridden": true,
+  "bases": [
+   "L2TaskWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "L2WordWrapperWnd",
+  "vtable": "0x1024fdac",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "L2WordWrapperWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "LoadingWnd",
+  "vtable": "0x10256ecc",
+  "draw": "0x100b2c60",
+  "overridden": true,
+  "bases": [
+   "LoadingWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "LoginWnd",
+  "vtable": "0x10256adc",
+  "draw": "0x100b2600",
+  "overridden": true,
+  "bases": [
+   "LoginWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "MessageDialog",
+  "vtable": "0x102544dc",
+  "draw": "0x100a1100",
+  "overridden": true,
+  "bases": [
+   "MessageDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "MessengerWnd",
+  "vtable": "0x10257bc4",
+  "draw": "0x100b5fc0",
+  "overridden": true,
+  "bases": [
+   "MessengerWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "MoveGroupDialog",
+  "vtable": "0x10253cdc",
+  "draw": "0x1009fd20",
+  "overridden": true,
+  "bases": [
+   "MoveGroupDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "MsnTree",
+  "vtable": "0x102562ac",
+  "draw": "0x10055580",
+  "overridden": true,
+  "bases": [
+   "MsnTree",
+   "NCTree",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCTree",
+  "empty_draw": false
+ },
+ {
+  "class": "MsnTreeCtrl",
+  "vtable": "0x1025859c",
+  "draw": "0x100c4b30",
+  "overridden": true,
+  "bases": [
+   "MsnTreeCtrl",
+   "NCTreeCtrl",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "MsnWnd",
+  "vtable": "0x102576ac",
+  "draw": "0x100b4630",
+  "overridden": true,
+  "bases": [
+   "MsnWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawIcon": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "(%s)",
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCActionLinker",
+  "vtable": "0x10250724",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCActionLinker",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCAnimTextureCtrl",
+  "vtable": "0x1022ec9c",
+  "draw": "0x10053790",
+  "overridden": true,
+  "bases": [
+   "NCAnimTextureCtrl",
+   "NCTextureCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 2,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCTextureCtrl",
+  "empty_draw": false
+ },
+ {
+  "class": "NCAnnounceWnd",
+  "vtable": "0x1029040c",
+  "draw": "0x101901c0",
+  "overridden": true,
+  "bases": [
+   "NCAnnounceWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCAuthWnd",
+  "vtable": "0x1028c754",
+  "draw": "0x10181670",
+  "overridden": true,
+  "bases": [
+   "NCAuthWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Param%d",
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCAutoLogWnd",
+  "vtable": "0x1027bcbc",
+  "draw": "0x10136850",
+  "overridden": true,
+  "bases": [
+   "NCAutoLogWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCBBSHtmlViewer",
+  "vtable": "0x1024f4dc",
+  "draw": "0x10083660",
+  "overridden": true,
+  "bases": [
+   "NCBBSHtmlViewer",
+   "NCHtmlViewer",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCBarCtrl",
+  "vtable": "0x1022f00c",
+  "draw": "0x10002f70",
+  "overridden": true,
+  "bases": [
+   "NCBarCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCBenchMarkResultWnd",
+  "vtable": "0x10295494",
+  "draw": "0x101a7f20",
+  "overridden": true,
+  "bases": [
+   "NCBenchMarkResultWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCButton",
+  "vtable": "0x1022fd2c",
+  "draw": "0x10005e00",
+  "overridden": true,
+  "bases": [
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCCandidateBox",
+  "vtable": "0x10231034",
+  "draw": "0x10007c40",
+  "overridden": true,
+  "bases": [
+   "NCCandidateBox",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCChatListBox",
+  "vtable": "0x1027cb1c",
+  "draw": "0x10137f00",
+  "overridden": true,
+  "bases": [
+   "NCChatListBox",
+   "NCTextListBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCChatWnd",
+  "vtable": "0x1027cd9c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCChatWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCCheckBox",
+  "vtable": "0x10231694",
+  "draw": "0x10009080",
+  "overridden": true,
+  "bases": [
+   "NCCheckBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCChineseIME",
+  "vtable": "0x1023a984",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCChineseIME",
+   "NCIME",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCComboBox",
+  "vtable": "0x10231f1c",
+  "draw": "0x1000a640",
+  "overridden": true,
+  "bases": [
+   "NCComboBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCCompositeBox",
+  "vtable": "0x1023123c",
+  "draw": "0x10008310",
+  "overridden": true,
+  "bases": [
+   "NCCompositeBox",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCConsole",
+  "vtable": "0x1027da7c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCConsole",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCCountSpin",
+  "vtable": "0x1023260c",
+  "draw": "0x1000d060",
+  "overridden": true,
+  "bases": [
+   "NCCountSpin",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCCreditWnd",
+  "vtable": "0x10288ed4",
+  "draw": "0x10174780",
+  "overridden": true,
+  "bases": [
+   "NCCreditWnd",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCDebugConsole",
+  "vtable": "0x10289244",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCDebugConsole",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCDebugWnd",
+  "vtable": "0x10289474",
+  "draw": "0x100326c0",
+  "overridden": true,
+  "bases": [
+   "NCDebugWnd",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawRect": 1,
+   "DrawIcon": 3,
+   "Clear": 1,
+   "SetParserParam": 1,
+   "GetLineBuffer": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s",
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": "NCListBox",
+  "empty_draw": false
+ },
+ {
+  "class": "NCDialogBox",
+  "vtable": "0x10233b64",
+  "draw": "0x1018f360",
+  "overridden": true,
+  "bases": [
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": true
+ },
+ {
+  "class": "NCDrawPanel",
+  "vtable": "0x102343c4",
+  "draw": "0x10012860",
+  "overridden": true,
+  "bases": [
+   "NCDrawPanel",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCDynamicLinker",
+  "vtable": "0x10250324",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCDynamicLinker",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCEditBox",
+  "vtable": "0x102351dc",
+  "draw": "0x100183b0",
+  "overridden": true,
+  "bases": [
+   "NCEditBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 2,
+   "SetClip": 1,
+   "ReleaseClip": 1,
+   "DrawLine": 1,
+   "GetViewportSceneTexture": 1,
+   "DrawIcon": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCEffectButton",
+  "vtable": "0x10230a44",
+  "draw": "0x10005aa0",
+  "overridden": true,
+  "bases": [
+   "NCEffectButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCEquipItemWnd",
+  "vtable": "0x10289ab4",
+  "draw": "0x10175bc0",
+  "overridden": true,
+  "bases": [
+   "NCEquipItemWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCEulaWnd",
+  "vtable": "0x102901e4",
+  "draw": "0x1018fdb0",
+  "overridden": true,
+  "bases": [
+   "NCEulaWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCExButton",
+  "vtable": "0x10230074",
+  "draw": "0x10005e00",
+  "overridden": true,
+  "bases": [
+   "NCExButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCButton",
+  "empty_draw": false
+ },
+ {
+  "class": "NCFileLinker",
+  "vtable": "0x10250524",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCFileLinker",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCFishViewportWnd",
+  "vtable": "0x102969f4",
+  "draw": "0x101ab1c0",
+  "overridden": true,
+  "bases": [
+   "NCFishViewportWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawSpecialDigit": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCFrameCtrl",
+  "vtable": "0x10235864",
+  "draw": "0x1001ba20",
+  "overridden": true,
+  "bases": [
+   "NCFrameCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCFrameWnd",
+  "vtable": "0x10236fd4",
+  "draw": "0x1001eb60",
+  "overridden": true,
+  "bases": [
+   "NCFrameWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCGMPetitionWnd",
+  "vtable": "0x1027d43c",
+  "draw": "0x101a7990",
+  "overridden": true,
+  "bases": [
+   "NCGMPetitionWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCGaraDialogBox",
+  "vtable": "0x10233d64",
+  "draw": "0x1000f700",
+  "overridden": true,
+  "bases": [
+   "NCGaraDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHeaderCtrl",
+  "vtable": "0x1023cbd4",
+  "draw": "0x10035330",
+  "overridden": true,
+  "bases": [
+   "NCHeaderCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlAction",
+  "vtable": "0x10250bcc",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCHtmlAction",
+   "NCDynamicLinker",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCHtmlButton",
+  "vtable": "0x10250e04",
+  "draw": "0x10091980",
+  "overridden": true,
+  "bases": [
+   "NCHtmlButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlComboBox",
+  "vtable": "0x1024eb5c",
+  "draw": "0x10091400",
+  "overridden": true,
+  "bases": [
+   "NCHtmlComboBox",
+   "NCComboBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlEdit",
+  "vtable": "0x10251464",
+  "draw": "0x10093480",
+  "overridden": true,
+  "bases": [
+   "NCHtmlEdit",
+   "NCEditBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawStretchedTex": 2,
+   "ReleaseClip": 1,
+   "DrawLine": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlLinker",
+  "vtable": "0x1025095c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCHtmlLinker",
+   "NCDynamicLinker",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCHtmlMultiEdit",
+  "vtable": "0x10251214",
+  "draw": "0x10091c30",
+  "overridden": true,
+  "bases": [
+   "NCHtmlMultiEdit",
+   "NCMultiEdit",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "SetClip": 1,
+   "DrawLine": 1,
+   "ReleaseClip": 1,
+   "DrawTexture": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlPushButton",
+  "vtable": "0x1025100c",
+  "draw": "0x10091ab0",
+  "overridden": true,
+  "bases": [
+   "NCHtmlPushButton",
+   "NCPushButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlSliderBar",
+  "vtable": "0x1025169c",
+  "draw": "0x10093f70",
+  "overridden": true,
+  "bases": [
+   "NCHtmlSliderBar",
+   "NCSliderBar",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCHtmlViewer",
+  "vtable": "0x1024ed5c",
+  "draw": "0x100833e0",
+  "overridden": true,
+  "bases": [
+   "NCHtmlViewer",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "StartTextAnim": 1,
+   "EndTextAnim": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCIME",
+  "vtable": "0x10239e7c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCIME",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCIMEManager",
+  "vtable": "0x1023a0b4",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCIMEManager",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCIcon",
+  "vtable": "0x1023773c",
+  "draw": "0x10023d10",
+  "overridden": true,
+  "bases": [
+   "NCIcon",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawBrightenTexture": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCInvenItemWnd",
+  "vtable": "0x1028a29c",
+  "draw": "0x10179c30",
+  "overridden": true,
+  "bases": [
+   "NCInvenItemWnd",
+   "NCItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCInvenWeightWnd",
+  "vtable": "0x1028a524",
+  "draw": "0x1017a1e0",
+  "overridden": true,
+  "bases": [
+   "NCInvenWeightWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawSpecialDigit": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCInventoryWnd",
+  "vtable": "0x1028a73c",
+  "draw": "0x1017a700",
+  "overridden": true,
+  "bases": [
+   "NCInventoryWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 2,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCItemWnd",
+  "vtable": "0x1023bb94",
+  "draw": "0x10030d90",
+  "overridden": true,
+  "bases": [
+   "NCItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 5,
+   "DrawBrightenTexture": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1,
+   "SetClip": 1,
+   "DrawTexture": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCJapaneseIME",
+  "vtable": "0x1023a514",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCJapaneseIME",
+   "NCIME",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCKeyCryptWarningDialogBox",
+  "vtable": "0x1028c54c",
+  "draw": "0x10181500",
+  "overridden": true,
+  "bases": [
+   "NCKeyCryptWarningDialogBox",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCKoreanIME",
+  "vtable": "0x1023a2dc",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCKoreanIME",
+   "NCIME",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCListBox",
+  "vtable": "0x1023c2ec",
+  "draw": "0x100326c0",
+  "overridden": true,
+  "bases": [
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawRect": 1,
+   "DrawIcon": 3,
+   "Clear": 1,
+   "SetParserParam": 1,
+   "GetLineBuffer": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s",
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCListCtrl",
+  "vtable": "0x1023cdd4",
+  "draw": "0x10035670",
+  "overridden": true,
+  "bases": [
+   "NCListCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCLobbyFunctionWnd",
+  "vtable": "0x1028ad2c",
+  "draw": "0x1017cea0",
+  "overridden": true,
+  "bases": [
+   "NCLobbyFunctionWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCLobbyStartWnd",
+  "vtable": "0x1028b10c",
+  "draw": "0x1017d5a0",
+  "overridden": true,
+  "bases": [
+   "NCLobbyStartWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCLobbyWnd",
+  "vtable": "0x1028bb2c",
+  "draw": "0x1017ef00",
+  "overridden": true,
+  "bases": [
+   "NCLobbyWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1,
+   "DrawChatting": 1
+  },
+  "formats": [
+   "%d%s %d%s %d%s",
+   "%s : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCLoginFunctionWnd",
+  "vtable": "0x1027d644",
+  "draw": "0x1017ff30",
+  "overridden": true,
+  "bases": [
+   "NCLoginFunctionWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCLoginServerWnd",
+  "vtable": "0x1027d854",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCLoginServerWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCMSView_CharacterSelectWnd",
+  "vtable": "0x1028f65c",
+  "draw": "0x1018d420",
+  "overridden": true,
+  "bases": [
+   "NCMSView_CharacterSelectWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCMSView_InvenItemWnd",
+  "vtable": "0x1028f1cc",
+  "draw": "0x10185ed0",
+  "overridden": true,
+  "bases": [
+   "NCMSView_InvenItemWnd",
+   "NCSkillItemWnd",
+   "NCItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawBrightenTexture": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCSkillItemWnd",
+  "empty_draw": false
+ },
+ {
+  "class": "NCMSViewerWnd",
+  "vtable": "0x1028f454",
+  "draw": "0x1018ced0",
+  "overridden": true,
+  "bases": [
+   "NCMSViewerWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCMagicSkillWnd",
+  "vtable": "0x1028d8d4",
+  "draw": "0x101858b0",
+  "overridden": true,
+  "bases": [
+   "NCMagicSkillWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCMessageWnd",
+  "vtable": "0x1028dbdc",
+  "draw": "0x10186c20",
+  "overridden": true,
+  "bases": [
+   "NCMessageWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCMinimapWnd",
+  "vtable": "0x1028ea54",
+  "draw": "0x101895c0",
+  "overridden": true,
+  "bases": [
+   "NCMinimapWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTexture": 1,
+   "ReleaseClip": 1,
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawLine": 1
+  },
+  "formats": [
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCMultiEdit",
+  "vtable": "0x1023d20c",
+  "draw": "0x1003c6f0",
+  "overridden": true,
+  "bases": [
+   "NCMultiEdit",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawLine": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCNPCHtmlViewer",
+  "vtable": "0x1024ef7c",
+  "draw": "0x100837d0",
+  "overridden": true,
+  "bases": [
+   "NCNPCHtmlViewer",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCNameCtrl",
+  "vtable": "0x10240cfc",
+  "draw": "0x1004b510",
+  "overridden": true,
+  "bases": [
+   "NCNameCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "+%d %s",
+   "`%s`"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCNoticeInfoWnd",
+  "vtable": "0x1028fd74",
+  "draw": "0x1018fa60",
+  "overridden": true,
+  "bases": [
+   "NCNoticeInfoWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCNpcView_CharacterSelectWnd",
+  "vtable": "0x102912f4",
+  "draw": "0x101924e0",
+  "overridden": true,
+  "bases": [
+   "NCNpcView_CharacterSelectWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCNpcView_CharacterSelect_List",
+  "vtable": "0x102910e4",
+  "draw": "0x10191430",
+  "overridden": true,
+  "bases": [
+   "NCNpcView_CharacterSelect_List",
+   "NCDebugWnd",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawRect": 1,
+   "DrawIcon": 3,
+   "Clear": 1,
+   "SetParserParam": 1,
+   "GetLineBuffer": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s",
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCNpcView_InvenItemWnd",
+  "vtable": "0x10290c64",
+  "draw": "0x10179c30",
+  "overridden": true,
+  "bases": [
+   "NCNpcView_InvenItemWnd",
+   "NCInvenItemWnd",
+   "NCItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCInvenItemWnd",
+  "empty_draw": false
+ },
+ {
+  "class": "NCNpcViewerWnd",
+  "vtable": "0x10290ee4",
+  "draw": "0x101917c0",
+  "overridden": true,
+  "bases": [
+   "NCNpcViewerWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnCreateFunctionWnd",
+  "vtable": "0x1029183c",
+  "draw": "0x10196360",
+  "overridden": true,
+  "bases": [
+   "NCPawnCreateFunctionWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnCreateWnd",
+  "vtable": "0x102923c4",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCPawnCreateWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCPawnInfoWnd",
+  "vtable": "0x10291fbc",
+  "draw": "0x101975f0",
+  "overridden": true,
+  "bases": [
+   "NCPawnInfoWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnSelectWnd",
+  "vtable": "0x1028b924",
+  "draw": "0x1017e280",
+  "overridden": true,
+  "bases": [
+   "NCPawnSelectWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "DrawSpecialDigit": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnSetupWnd",
+  "vtable": "0x102921b4",
+  "draw": "0x101977d0",
+  "overridden": true,
+  "bases": [
+   "NCPawnSetupWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnView_CharacterSelectWnd",
+  "vtable": "0x10294314",
+  "draw": "0x1019dcf0",
+  "overridden": true,
+  "bases": [
+   "NCPawnView_CharacterSelectWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnView_CharacterSelect_List",
+  "vtable": "0x10294734",
+  "draw": "0x1019c5a0",
+  "overridden": true,
+  "bases": [
+   "NCPawnView_CharacterSelect_List",
+   "NCDebugWnd",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "DrawRect": 1,
+   "DrawIcon": 3,
+   "Clear": 1,
+   "SetParserParam": 1,
+   "GetLineBuffer": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "Can not find Texture : %s",
+   "script not found ,event id : %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnView_InvenItemWnd",
+  "vtable": "0x10293ddc",
+  "draw": "0x10179c30",
+  "overridden": true,
+  "bases": [
+   "NCPawnView_InvenItemWnd",
+   "NCInvenItemWnd",
+   "NCItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCInvenItemWnd",
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnView_InvenTextWnd",
+  "vtable": "0x10293bdc",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCPawnView_InvenTextWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCPawnView_ShortCutWnd",
+  "vtable": "0x10294b5c",
+  "draw": "0x101a1640",
+  "overridden": true,
+  "bases": [
+   "NCPawnView_ShortCutWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnViewerWnd",
+  "vtable": "0x102940cc",
+  "draw": "0x1019d8e0",
+  "overridden": true,
+  "bases": [
+   "NCPawnViewerWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnViewer_HairChangeWnd",
+  "vtable": "0x10294944",
+  "draw": "0x101a07c0",
+  "overridden": true,
+  "bases": [
+   "NCPawnViewer_HairChangeWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnViewer_MixAnimWnd",
+  "vtable": "0x10294524",
+  "draw": "0x1019ed20",
+  "overridden": true,
+  "bases": [
+   "NCPawnViewer_MixAnimWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPawnViewer_Simulator",
+  "vtable": "0x10294dc4",
+  "draw": "0x101a0d60",
+  "overridden": true,
+  "bases": [
+   "NCPawnViewer_Simulator",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCProgressCtrl",
+  "vtable": "0x10232814",
+  "draw": "0x1000d670",
+  "overridden": true,
+  "bases": [
+   "NCProgressCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCPushButton",
+  "vtable": "0x1023055c",
+  "draw": "0x10005e00",
+  "overridden": true,
+  "bases": [
+   "NCPushButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCButton",
+  "empty_draw": false
+ },
+ {
+  "class": "NCRadarWnd",
+  "vtable": "0x1023e384",
+  "draw": "0x10042bd0",
+  "overridden": true,
+  "bases": [
+   "NCRadarWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawRadarBack": 1,
+   "ReleaseClip": 1,
+   "DrawRadarTarget": 1,
+   "DrawRadarEtc": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCRadioButton",
+  "vtable": "0x1023e72c",
+  "draw": "0x10009080",
+  "overridden": true,
+  "bases": [
+   "NCRadioButton",
+   "NCCheckBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCCheckBox",
+  "empty_draw": false
+ },
+ {
+  "class": "NCResizeFrame",
+  "vtable": "0x10235d5c",
+  "draw": "0x1001c190",
+  "overridden": true,
+  "bases": [
+   "NCResizeFrame",
+   "NCFrameCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCScrollWnd",
+  "vtable": "0x1023b964",
+  "draw": "0x10044680",
+  "overridden": true,
+  "bases": [
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCSelectCtrl",
+  "vtable": "0x10291db4",
+  "draw": "0x101973d0",
+  "overridden": true,
+  "bases": [
+   "NCSelectCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCServerInfoWnd",
+  "vtable": "0x1028c07c",
+  "draw": "0x101a9650",
+  "overridden": true,
+  "bases": [
+   "NCServerInfoWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCServerSelectListCtrl",
+  "vtable": "0x10295c8c",
+  "draw": "0x10035670",
+  "overridden": true,
+  "bases": [
+   "NCServerSelectListCtrl",
+   "NCListCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCListCtrl",
+  "empty_draw": false
+ },
+ {
+  "class": "NCServerSelectWnd",
+  "vtable": "0x10295e9c",
+  "draw": "0x101a8b40",
+  "overridden": true,
+  "bases": [
+   "NCServerSelectWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCShortcutItemWnd",
+  "vtable": "0x1023fe84",
+  "draw": "0x10047b40",
+  "overridden": true,
+  "bases": [
+   "NCShortcutItemWnd",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "GetTextExtent": 5,
+   "DrawTextToCanvas": 1,
+   "DrawBrightenTexture": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCSkillItemWnd",
+  "vtable": "0x1028d3bc",
+  "draw": "0x10185ed0",
+  "overridden": true,
+  "bases": [
+   "NCSkillItemWnd",
+   "NCItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawBrightenTexture": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCSkillWnd",
+  "vtable": "0x1028d65c",
+  "draw": "0x10185840",
+  "overridden": true,
+  "bases": [
+   "NCSkillWnd",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCSliderBar",
+  "vtable": "0x10240414",
+  "draw": "0x10049ec0",
+  "overridden": true,
+  "bases": [
+   "NCSliderBar",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCSliderCtrl",
+  "vtable": "0x10240ac4",
+  "draw": "0x1004b070",
+  "overridden": true,
+  "bases": [
+   "NCSliderCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCStatusBarCtrl",
+  "vtable": "0x102412a4",
+  "draw": "0x1004c7c0",
+  "overridden": true,
+  "bases": [
+   "NCStatusBarCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawSpecialDigit": 1,
+   "DrawTexture": 1,
+   "GetTextExtent": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "%.2f%s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCStatusIconCtrl",
+  "vtable": "0x10241cac",
+  "draw": "0x1004db50",
+  "overridden": true,
+  "bases": [
+   "NCStatusIconCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "DrawStretchedTex": 1,
+   "DrawSpecialDigit": 1,
+   "GetTextExtent": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCTabButton",
+  "vtable": "0x102307cc",
+  "draw": "0x10005e00",
+  "overridden": true,
+  "bases": [
+   "NCTabButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCButton",
+  "empty_draw": false
+ },
+ {
+  "class": "NCTabControl",
+  "vtable": "0x1024222c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCTabControl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCTaiwanIME",
+  "vtable": "0x1023a74c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCTaiwanIME",
+   "NCIME",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCTestHtmlViewer",
+  "vtable": "0x1024f77c",
+  "draw": "0x100837d0",
+  "overridden": true,
+  "bases": [
+   "NCTestHtmlViewer",
+   "NCNPCHtmlViewer",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCNPCHtmlViewer",
+  "empty_draw": false
+ },
+ {
+  "class": "NCTextBox",
+  "vtable": "0x102427dc",
+  "draw": "0x10052600",
+  "overridden": true,
+  "bases": [
+   "NCTextBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 5,
+   "DrawSpecialDigit": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCTextListBox",
+  "vtable": "0x1023c4fc",
+  "draw": "0x10033050",
+  "overridden": true,
+  "bases": [
+   "NCTextListBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "GetViewportSceneTexture": 1,
+   "DrawIcon": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCTextureCtrl",
+  "vtable": "0x1022ea44",
+  "draw": "0x10053790",
+  "overridden": true,
+  "bases": [
+   "NCTextureCtrl",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 2,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCThaiIME",
+  "vtable": "0x1023abbc",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCThaiIME",
+   "NCIME",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCThumbButton",
+  "vtable": "0x102302e4",
+  "draw": "0x10005e00",
+  "overridden": true,
+  "bases": [
+   "NCThumbButton",
+   "NCButton",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCButton",
+  "empty_draw": false
+ },
+ {
+  "class": "NCTree",
+  "vtable": "0x10243314",
+  "draw": "0x10055580",
+  "overridden": true,
+  "bases": [
+   "NCTree",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCTreeCtrl",
+  "vtable": "0x1024351c",
+  "draw": "0x10055930",
+  "overridden": true,
+  "bases": [
+   "NCTreeCtrl",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCTutorialHtmlViewer",
+  "vtable": "0x1024f274",
+  "draw": "0x100833e0",
+  "overridden": true,
+  "bases": [
+   "NCTutorialHtmlViewer",
+   "NCHtmlViewer",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "StartTextAnim": 1,
+   "EndTextAnim": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCHtmlViewer",
+  "empty_draw": false
+ },
+ {
+  "class": "NCVIPShopItemInfoWnd",
+  "vtable": "0x1028cf7c",
+  "draw": "0x10184100",
+  "overridden": true,
+  "bases": [
+   "NCVIPShopItemInfoWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "GetViewportSceneTexture": 1,
+   "DrawIcon": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "%s / %s",
+   "%s :",
+   "X %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCVIPShopNeededItemWnd",
+  "vtable": "0x1028cd74",
+  "draw": "0x10183e30",
+  "overridden": true,
+  "bases": [
+   "NCVIPShopNeededItemWnd",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "x %d"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCViewportWnd",
+  "vtable": "0x102967fc",
+  "draw": "0x101aa930",
+  "overridden": true,
+  "bases": [
+   "NCViewportWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": true
+ },
+ {
+  "class": "NCWarningDialogBox",
+  "vtable": "0x10233f74",
+  "draw": "0x1000fee0",
+  "overridden": true,
+  "bases": [
+   "NCWarningDialogBox",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCWarningWnd",
+  "vtable": "0x1028ff7c",
+  "draw": "0x1018fc90",
+  "overridden": true,
+  "bases": [
+   "NCWarningWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCWnd",
+  "vtable": "0x1022e64c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "NCXMLDebugWnd",
+  "vtable": "0x1024710c",
+  "draw": "0x1001eb60",
+  "overridden": true,
+  "bases": [
+   "NCXMLDebugWnd",
+   "NCFrameWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": "NCFrameWnd",
+  "empty_draw": false
+ },
+ {
+  "class": "NCXMLTree",
+  "vtable": "0x10247e8c",
+  "draw": "0x1006a5e0",
+  "overridden": true,
+  "bases": [
+   "NCXMLTree",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCXMLTreeCtrl",
+  "vtable": "0x102480cc",
+  "draw": "0x1006ab60",
+  "overridden": true,
+  "bases": [
+   "NCXMLTreeCtrl",
+   "NCScrollWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NCXMasSealWnd",
+  "vtable": "0x10296c9c",
+  "draw": "0x101ac290",
+  "overridden": true,
+  "bases": [
+   "NCXMasSealWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "NControl",
+  "vtable": "0x1022e844",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "OfflineConfirmDialog",
+  "vtable": "0x102534dc",
+  "draw": "0x1009e4b0",
+  "overridden": true,
+  "bases": [
+   "OfflineConfirmDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "OptionWnd",
+  "vtable": "0x102574b4",
+  "draw": "0x100b41e0",
+  "overridden": true,
+  "bases": [
+   "OptionWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "RemoveFriendDialog",
+  "vtable": "0x102538dc",
+  "draw": "0x1009eec0",
+  "overridden": true,
+  "bases": [
+   "RemoveFriendDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "RemoveGroupDialog",
+  "vtable": "0x102542dc",
+  "draw": "0x100a0d40",
+  "overridden": true,
+  "bases": [
+   "RemoveGroupDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "RenameGroupDialog",
+  "vtable": "0x102540dc",
+  "draw": "0x100a07f0",
+  "overridden": true,
+  "bases": [
+   "RenameGroupDialog",
+   "NCDialogBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "SetClip": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "StatusWnd",
+  "vtable": "0x102572bc",
+  "draw": "0x100b3270",
+  "overridden": true,
+  "bases": [
+   "StatusWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawLine": 1,
+   "DrawStretchedTex": 2,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "Task",
+  "vtable": "0x10252c2c",
+  "draw": "0x10059eb0",
+  "overridden": false,
+  "bases": [
+   "Task",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {},
+  "formats": [],
+  "inherited_from": "NCWnd",
+  "empty_draw": true
+ },
+ {
+  "class": "TaskBox",
+  "vtable": "0x10252e24",
+  "draw": "0x10097520",
+  "overridden": true,
+  "bases": [
+   "TaskBox",
+   "NCListBox",
+   "NControl",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1,
+   "DrawIcon": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "TaskWnd",
+  "vtable": "0x10253034",
+  "draw": "0x100978f0",
+  "overridden": true,
+  "bases": [
+   "TaskWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawStretchedTex": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [],
+  "inherited_from": null,
+  "empty_draw": false
+ },
+ {
+  "class": "VersionWnd",
+  "vtable": "0x10256cd4",
+  "draw": "0x100b2aa0",
+  "overridden": true,
+  "bases": [
+   "VersionWnd",
+   "NCWnd",
+   "NCCmdTarget",
+   "NCObject",
+   "UObject",
+   "FUnknown"
+  ],
+  "primitives": {
+   "SetClip": 1,
+   "DrawTextToCanvas": 1,
+   "GetTextExtent": 1,
+   "DrawTexture": 1,
+   "ReleaseClip": 1
+  },
+  "formats": [
+   "%s%s"
+  ],
+  "inherited_from": null,
+  "empty_draw": false
+ }
+]

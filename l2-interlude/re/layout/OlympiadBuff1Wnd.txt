@@ -1,0 +1,2 @@
+Window OlympiadBuff1Wnd 38x26 @TOP_LEFT->pai.TOP_LEFT(0,47) unk102=OlympiadBuff1Wnd unk103=OlympiadObserverState unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk111=2 unk113=1 unk114=1 unk115=0 unk117=0 unk122=84111984 unk123=0 unk124=0 unk125=0 unk126=0 unk127=84112600 unk128=0 unk130=0 unk131=0 unk132=4849667 unk133=0 unk134=84112728 unk135=84672565 unk139=Game size=[2]
+  StatusIconCtrl StatusIcon 26x26 @TOP_LEFT->pai.TOP_LEFT(12,0) popupType=AbnormalStatus noClip=false noTooltip=false size=[2]

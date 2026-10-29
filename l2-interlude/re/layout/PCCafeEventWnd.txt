@@ -1,0 +1,5 @@
+Window PCCafeEventWnd 83x55 @TOP_RIGHT->pai.TOP_RIGHT(-22,100) popupType=Text unk101=L2UI_CH3.wnd_pcpoint_back unk102=PCCafeEventWnd unk103=GamingState unk104=0 unk107=1 unk108=1 unk114=0 unk117=0 unk122=1770496 unk126=0 unk127=1040187392 unk128=-1525283581 unk130=0 unk131=0 unk132=13172782 unk133=328326 unk134=13173480 unk135=84738202 unk139=Game size=[2]
+  Button HelpButton 14x14 @TOP_LEFT->pai.TOP_LEFT(4,22) popupType=Text normalTex=L2UI_CH3.icn_aboutpoint_down pushedTex=L2UI_CH3.icn_aboutpoint_down highlightTex=L2UI_CH3.icn_aboutpoint_over size=[2]
+  TextBox TitleTextBox 100%+0 x 0%+20 @TOP_LEFT->pai.TOP_LEFT(3,5) textAlign=Center offsetY=0 sysstring=1277 textColor=#ffdcdcdc emoticon=1 autosize=1 size_percent=[2] size=[2]
+  TextBox PointTextBox 60x20 @TOP_RIGHT->pai.TOP_RIGHT(-5,23) text=0 textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox PointAddTextBox 60x20 @TOP_RIGHT->pai.TOP_RIGHT(-5,41) text=0 textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]

@@ -1,0 +1,4076 @@
+[
+ {
+  "table": "login",
+  "opcode": "0x0",
+  "name": null,
+  "acis": "Init",
+  "handler": "0x1040be50",
+  "formats": [
+   "dd",
+   "dddd",
+   "s"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x1",
+  "name": null,
+  "acis": "LoginFail",
+  "handler": "0x1040c450",
+  "formats": [
+   "c"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x2",
+  "name": null,
+  "acis": "AccountKicked",
+  "handler": "0x1040c5e0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x3",
+  "name": null,
+  "acis": "LoginOk",
+  "handler": "0x1040c710",
+  "formats": [
+   "dddddddd",
+   "b"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x4",
+  "name": null,
+  "acis": "ServerList",
+  "handler": "0x1040c930",
+  "formats": [
+   "cc",
+   "cddcchhcdc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x5",
+  "name": null,
+  "acis": null,
+  "handler": "0x1040cbd0",
+  "formats": [
+   "c"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x6",
+  "name": null,
+  "acis": "PlayFail",
+  "handler": "0x1040ccd0",
+  "formats": [
+   "c"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x7",
+  "name": null,
+  "acis": "PlayOk",
+  "handler": "0x10424500",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x8",
+  "name": null,
+  "acis": null,
+  "handler": "0x1040cdc0",
+  "formats": [
+   "c"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0x9",
+  "name": null,
+  "acis": null,
+  "handler": "0x1040ceb0",
+  "formats": [
+   "c",
+   "hS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0xa",
+  "name": null,
+  "acis": null,
+  "handler": "0x1040c8d0",
+  "formats": [
+   "dc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0xb",
+  "name": null,
+  "acis": "GGAuth",
+  "handler": "0x1040c310",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "login",
+  "opcode": "0xc",
+  "name": null,
+  "acis": null,
+  "handler": "0x10401150",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x0",
+  "name": "VersionCheckPacket",
+  "acis": "KeyPacket",
+  "handler": "0x1040d000",
+  "formats": [
+   "cQdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1",
+  "name": null,
+  "acis": "MoveToLocation",
+  "handler": "0x104245f0",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2",
+  "name": "NSPacket",
+  "acis": "NpcSay",
+  "handler": "0x1040d250",
+  "formats": [
+   "dddS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3",
+  "name": "CIPacket",
+  "acis": "CharInfo",
+  "handler": "0x104366f0",
+  "formats": [
+   "dddddSdddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddffffdddSdddddccccccch",
+   "h",
+   "c",
+   "dchd",
+   "ddc",
+   "c",
+   "dcc",
+   "cddd",
+   "d",
+   "d",
+   "dd",
+   "d",
+   "d",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4",
+  "name": "UIPacket",
+  "acis": "UserInfo",
+  "handler": "0x104342f0",
+  "formats": [
+   "dddddSddddQddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddddffffddddSdddddcccddh",
+   "h",
+   "c",
+   "dc",
+   "d",
+   "hhdh",
+   "ddddc",
+   "c",
+   "dcc",
+   "cddd",
+   "d",
+   "c",
+   "dd",
+   "d",
+   "d",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5",
+  "name": "AttackPacket",
+  "acis": "Attack",
+  "handler": "0x10424e80",
+  "formats": [
+   "dddcdddh",
+   "ddc",
+   "dd",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6",
+  "name": "DiePacket",
+  "acis": "Die",
+  "handler": "0x10425770",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7",
+  "name": "RevivePacket",
+  "acis": "Revive",
+  "handler": "0x10425ab0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8",
+  "name": "AttackOutofRangePacket",
+  "acis": null,
+  "handler": "0x10425b80",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9",
+  "name": "AttackinCoolTimePacket",
+  "acis": null,
+  "handler": "0x10425c30",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa",
+  "name": "AttackDeadTargetPacket",
+  "acis": null,
+  "handler": "0x10425ce0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb",
+  "name": "SpawnItemPacket",
+  "acis": "SpawnItem",
+  "handler": "0x1042ddd0",
+  "formats": [
+   "dddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc",
+  "name": "DropItemPacket",
+  "acis": "DropItem",
+  "handler": "0x1042e0f0",
+  "formats": [
+   "ddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd",
+  "name": "GetItemPacket",
+  "acis": "GetItem",
+  "handler": "0x10425d90",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe",
+  "name": "StatusUpdatePacket",
+  "acis": "StatusUpdate",
+  "handler": "0x104261f0",
+  "formats": [
+   "dd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf",
+  "name": "NpcHtmlMessagePacket",
+  "acis": "NpcHtmlMessage",
+  "handler": "0x104266f0",
+  "formats": [
+   "dSd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x10",
+  "name": "SellListPacket",
+  "acis": "SellList",
+  "handler": "0x1040f100",
+  "formats": [
+   "ddh",
+   "h",
+   "dddhhdhhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x11",
+  "name": "BuyListPacket",
+  "acis": "BuyList",
+  "handler": "0x1040f2c0",
+  "formats": [
+   "ddh",
+   "h",
+   "dddhhdhhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x12",
+  "name": "DeleteObjectPacket",
+  "acis": "DeleteObject",
+  "handler": "0x104381b0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x13",
+  "name": "CharacterSelectionInfoPacket",
+  "acis": "CharSelectInfo",
+  "handler": "0x1040f880",
+  "formats": [
+   "d",
+   "SdSddddddddddffdQddddddddddddddddddddddddddddddddddddddddddddddddffdddchh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x14",
+  "name": "LoginFailPacket",
+  "acis": "AuthLoginFail",
+  "handler": "0x10400b60",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x15",
+  "name": "CharacterSelectedPacket",
+  "acis": "CharSelected",
+  "handler": "0x1040fde0",
+  "formats": [
+   "SdSddddddddddffdQddddddddddddddddddddddddddddddddddddddddddd",
+   "d",
+   "b",
+   "dddd",
+   "d",
+   "dddd",
+   "d",
+   "d",
+   "b"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x16",
+  "name": "NpcInfoPacket",
+  "acis": "AbstractNpcInfo",
+  "handler": "0x1043a470",
+  "formats": [
+   "ddddddddddddddddddffffdddcccccSSddd",
+   "dddddccffdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x17",
+  "name": "NewCharacterSuccessPacket",
+  "acis": "CharTemplates",
+  "handler": "0x10411690",
+  "formats": [
+   "d",
+   "dddddddddddddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x18",
+  "name": "NewCharacterFailPacket",
+  "acis": null,
+  "handler": "0x10400c30",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x19",
+  "name": "CharacterCreateSuccessPacket",
+  "acis": "CharCreateOk",
+  "handler": "0x10400c50",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1a",
+  "name": "CharacterCreateFailPacket",
+  "acis": "CharCreateFail",
+  "handler": "0x10411800",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1b",
+  "name": "ItemListPacket",
+  "acis": "ItemList",
+  "handler": "0x10411870",
+  "formats": [
+   "hh",
+   "h",
+   "dddhhhdhhhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1c",
+  "name": "SunRisePacket",
+  "acis": "SunRise",
+  "handler": "0x10400c70",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1d",
+  "name": "SunSetPacket",
+  "acis": "SunSet",
+  "handler": "0x10400c90",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1e",
+  "name": "TradeStartPacket",
+  "acis": "TradeStart",
+  "handler": "0x10411a70",
+  "formats": [
+   "d",
+   "h",
+   "h",
+   "dddhhdhhh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x1f",
+  "name": "TradeStartOkPacket",
+  "acis": null,
+  "handler": "0x10400d20",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x20",
+  "name": "TradeOwnAddPacket",
+  "acis": "TradeOwnAdd",
+  "handler": "0x10411c30",
+  "formats": [
+   "h",
+   "h",
+   "dddhhdhhh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x21",
+  "name": "TradeOtherAddPacket",
+  "acis": "TradeOtherAdd",
+  "handler": "0x10411db0",
+  "formats": [
+   "h",
+   "h",
+   "dddhhdhhh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x22",
+  "name": "TradeDonePacket",
+  "acis": "SendTradeDone",
+  "handler": "0x104122e0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x23",
+  "name": "CharacterDeleteSuccessPacket",
+  "acis": "CharDeleteOk",
+  "handler": "0x10400d30",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x24",
+  "name": "CharacterDeleteFailPacket",
+  "acis": "CharDeleteFail",
+  "handler": "0x10412350",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x25",
+  "name": "ActionFailPacket",
+  "acis": "ActionFailed",
+  "handler": "0x10400d70",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x26",
+  "name": "SeverClosePacket",
+  "acis": "ServerClose",
+  "handler": "0x10400db0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x27",
+  "name": "InventoryUpdatePacket",
+  "acis": "InventoryUpdate",
+  "handler": "0x104123c0",
+  "formats": [
+   "h",
+   "hh",
+   "dddhhhdhhhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x28",
+  "name": "TeleportToLocationPacket",
+  "acis": "TeleportToLocation",
+  "handler": "0x104271c0",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x29",
+  "name": "TargetSelectedPacket",
+  "acis": "TargetSelected",
+  "handler": "0x10427310",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2a",
+  "name": "TargetUnselectedPacket",
+  "acis": "TargetUnselected",
+  "handler": "0x10427750",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2b",
+  "name": "AutoAttackStartPacket",
+  "acis": "AutoAttackStart",
+  "handler": "0x10427890",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2c",
+  "name": "AutoAttackStopPacket",
+  "acis": "AutoAttackStop",
+  "handler": "0x10427960",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2d",
+  "name": "SocialActionPacket",
+  "acis": "SocialAction",
+  "handler": "0x10427a30",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2e",
+  "name": "ChangeMoveTypePacket",
+  "acis": "ChangeMoveType",
+  "handler": "0x10427b20",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x2f",
+  "name": "ChangeWaitTypePacket",
+  "acis": "ChangeWaitType",
+  "handler": "0x10427c20",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x30",
+  "name": "ManagePledgePowerPacket",
+  "acis": "ManagePledgePower",
+  "handler": "0x10419e40",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x31",
+  "name": "CreatePledgePacket",
+  "acis": null,
+  "handler": "0x10412dc0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x32",
+  "name": "AskJoinPledgePacket",
+  "acis": "AskJoinPledge",
+  "handler": "0x10413090",
+  "formats": [
+   "dSd",
+   "S"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x33",
+  "name": "JoinPledgePacket",
+  "acis": "JoinPledge",
+  "handler": "0x104131f0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x34",
+  "name": "WithdrawalPledgePacket",
+  "acis": null,
+  "handler": "0x104132d0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x35",
+  "name": "OustPledgeMemberPacket",
+  "acis": null,
+  "handler": "0x104133b0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x36",
+  "name": "SetOustPledgeMemberPacket",
+  "acis": null,
+  "handler": "0x10400e00",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x37",
+  "name": "DismissPledgePacket",
+  "acis": null,
+  "handler": "0x10413490",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x38",
+  "name": "SetDismissPledgePacket",
+  "acis": null,
+  "handler": "0x10400ea0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x39",
+  "name": "AskJoinPartyPacket",
+  "acis": "AskJoinParty",
+  "handler": "0x10413730",
+  "formats": [
+   "Sd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3a",
+  "name": "JoinPartyPacket",
+  "acis": "JoinParty",
+  "handler": "0x10413840",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3b",
+  "name": "WithdrawalPartyPacket",
+  "acis": null,
+  "handler": "0x10413920",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3c",
+  "name": "OustPartyMemberPacket",
+  "acis": null,
+  "handler": "0x10413a00",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3d",
+  "name": "SetOustPartyMemberPacket",
+  "acis": null,
+  "handler": "0x10400fc0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3e",
+  "name": "DismissPartyPacket",
+  "acis": null,
+  "handler": "0x10413ae0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x3f",
+  "name": "SetDismissPartyPacket",
+  "acis": null,
+  "handler": "0x10401060",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x40",
+  "name": "MagicAndSkillList",
+  "acis": null,
+  "handler": "0x10413bc0",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x41",
+  "name": "WareHouseDepositListPacket",
+  "acis": "WarehouseDepositList",
+  "handler": "0x10413e50",
+  "formats": [
+   "hdh",
+   "h",
+   "dddhhdhhhddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x42",
+  "name": "WareHouseWithdrawListPacket",
+  "acis": "WarehouseWithdrawList",
+  "handler": "0x10414000",
+  "formats": [
+   "hdh",
+   "h",
+   "dddhhdhhhddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x43",
+  "name": "WareHouseDonePacket",
+  "acis": null,
+  "handler": "0x104141b0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x44",
+  "name": "ShortCutRegisterPacket",
+  "acis": "ShortCutRegister",
+  "handler": "0x10414290",
+  "formats": [
+   "dd",
+   "dddddhh",
+   "ddcd",
+   "dd",
+   "dd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x45",
+  "name": "ShortCutInitPacket",
+  "acis": "ShortCutInit",
+  "handler": "0x10414600",
+  "formats": [
+   "d",
+   "dd",
+   "dddddhh",
+   "ddcd",
+   "dd",
+   "dd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x46",
+  "name": "ShortCutDeletePacket",
+  "acis": "ShortCutDelete",
+  "handler": "0x104149c0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x47",
+  "name": "StopMovePacket",
+  "acis": "StopMove",
+  "handler": "0x104287a0",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x48",
+  "name": "MagicSkillUse",
+  "acis": "MagicSkillUse",
+  "handler": "0x10427d60",
+  "formats": [
+   "dddddddddh",
+   "h",
+   "h",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x49",
+  "name": "MagicSkillCanceled",
+  "acis": "MagicSkillCanceled",
+  "handler": "0x10429170",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4a",
+  "name": "SayPacket2",
+  "acis": "CreatureSay",
+  "handler": "0x10414ab0",
+  "formats": [
+   "dd",
+   "dd",
+   "SS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4b",
+  "name": "EquipUpdatePacket",
+  "acis": "EquipUpdate",
+  "handler": "0x10414cb0",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4c",
+  "name": "DoorInfoPacket",
+  "acis": "DoorInfo",
+  "handler": "0x1042fea0",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4d",
+  "name": "DoorStatusUpdatePacket",
+  "acis": "DoorStatusUpdate",
+  "handler": "0x10428a30",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4e",
+  "name": null,
+  "acis": "PartySmallWindowAll",
+  "handler": "0x10439400",
+  "formats": [
+   "ddd",
+   "dSdddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x4f",
+  "name": "PartySmallWindowAddPacket",
+  "acis": "PartySmallWindowAdd",
+  "handler": "0x104397b0",
+  "formats": [
+   "dddSdddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x50",
+  "name": "PartySmallWindowDeleteAllPacket",
+  "acis": "PartySmallWindowDeleteAll",
+  "handler": "0x10439a10",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x51",
+  "name": "PartySmallWindowDeletePacket",
+  "acis": "PartySmallWindowDelete",
+  "handler": "0x10439ac0",
+  "formats": [
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x52",
+  "name": "PartySmallWindowUpdatePacket",
+  "acis": "PartySmallWindowUpdate",
+  "handler": "0x104152b0",
+  "formats": [
+   "dSdddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x53",
+  "name": "PledgeShowMemberListAllPacket",
+  "acis": "PledgeShowMemberListAll",
+  "handler": "0x10438df0",
+  "formats": [
+   "dddSS",
+   "dddddddddSdd",
+   "d",
+   "Sdddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x54",
+  "name": "PledgeShowMemberListUpdatePacket",
+  "acis": "PledgeShowMemberListUpdate",
+  "handler": "0x10414dc0",
+  "formats": [
+   "Sddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x55",
+  "name": "PledgeShowMemberListAddPacket",
+  "acis": "PledgeShowMemberListAdd",
+  "handler": "0x10414f40",
+  "formats": [
+   "Sdddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x56",
+  "name": "PledgeShowMemberListDeletePacket",
+  "acis": "PledgeShowMemberListDelete",
+  "handler": "0x104150a0",
+  "formats": [
+   "S"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x57",
+  "name": "MagicListPacket",
+  "acis": null,
+  "handler": "0x10401140",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x58",
+  "name": "SkillListPacket",
+  "acis": "SkillList",
+  "handler": "0x10415450",
+  "formats": [
+   "d",
+   "dddc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x59",
+  "name": "VehicleInfoPacket",
+  "acis": "VehicleInfo",
+  "handler": "0x10430160",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5a",
+  "name": "VehicleDeparturePacket",
+  "acis": "VehicleDeparture",
+  "handler": "0x10428c00",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5b",
+  "name": "VehicleCheckLocationPacket",
+  "acis": "OnVehicleCheckLocation",
+  "handler": "0x10414a30",
+  "formats": [
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5c",
+  "name": "GetOnVehiclePacket",
+  "acis": "GetOnVehicle",
+  "handler": "0x10428dd0",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5d",
+  "name": "GetOffVehiclePacket",
+  "acis": "GetOffVehicle",
+  "handler": "0x10428fd0",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5e",
+  "name": "TradeRequestPacket",
+  "acis": "SendTradeRequest",
+  "handler": "0x104155f0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x5f",
+  "name": "RestartResponsePacket",
+  "acis": "RestartResponse",
+  "handler": "0x10439c20",
+  "formats": [
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x60",
+  "name": "MoveToPawnPacket",
+  "acis": "MoveToPawn",
+  "handler": "0x104248f0",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x61",
+  "name": "ValidateLocationPacket",
+  "acis": "ValidateLocation",
+  "handler": "0x10424b60",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x62",
+  "name": "StartRotatingPacket",
+  "acis": "StartRotation",
+  "handler": "0x10424c70",
+  "formats": [
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x63",
+  "name": "FinishRotatingPacket",
+  "acis": "StopRotation",
+  "handler": "0x10424d80",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x64",
+  "name": "SystemMessagePacket",
+  "acis": "SystemMessage",
+  "handler": "0x104156d0",
+  "formats": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "dhh",
+   "dd",
+   "Q",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x65",
+  "name": "StartPledgeWarPacket",
+  "acis": "StartPledgeWar",
+  "handler": "0x10400f40",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x66",
+  "name": "ReplyStartPledgeWarPacket",
+  "acis": null,
+  "handler": "0x10400f50",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x67",
+  "name": "StopPledgeWarPacket",
+  "acis": "StopPledgeWar",
+  "handler": "0x10400f60",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x68",
+  "name": "ReplyStopPledgeWarPacket",
+  "acis": null,
+  "handler": "0x10400f70",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x69",
+  "name": "SurrenderPledgeWarPacket",
+  "acis": "SurrenderPledgeWar",
+  "handler": "0x10400f80",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6a",
+  "name": "ReplySurrenderPledgeWarPacket",
+  "acis": null,
+  "handler": "0x10400f90",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6b",
+  "name": "SetPledgeCrestPacket",
+  "acis": null,
+  "handler": "0x10400fb0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6c",
+  "name": "PledgeCrestPacket",
+  "acis": "PledgeCrest",
+  "handler": "0x10413570",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6d",
+  "name": "SetupGaugePacket",
+  "acis": "SetupGauge",
+  "handler": "0x10415a70",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6e",
+  "name": "ShowBoardPacket",
+  "acis": "ShowBoard",
+  "handler": "0x10415b80",
+  "formats": [
+   "c",
+   "SSSSSSSSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x6f",
+  "name": "ChooseInventoryItemPacket",
+  "acis": "ChooseInventoryItem",
+  "handler": "0x10415dd0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x70",
+  "name": "DummyPacket",
+  "acis": null,
+  "handler": "0x10401150",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x71",
+  "name": "MoveToLocationInVehiclePacket",
+  "acis": "MoveToLocationInVehicle",
+  "handler": "0x10429240",
+  "formats": [
+   "dddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x72",
+  "name": "StopMoveInVehiclePacket",
+  "acis": "StopMoveInVehicle",
+  "handler": "0x10429420",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x73",
+  "name": "ValidateLocationInVehiclePacket",
+  "acis": "ValidateLocationInVehicle",
+  "handler": "0x104295c0",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x74",
+  "name": "TradeUpdatePacket",
+  "acis": "TradeItemUpdate",
+  "handler": "0x10411f30",
+  "formats": [
+   "h",
+   "hh",
+   "dddhhdhhh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x75",
+  "name": "TradePressOwnOkPacket",
+  "acis": "TradePressOwnOk",
+  "handler": "0x10400cf0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x76",
+  "name": "MagicSkillLaunchedPacket",
+  "acis": "MagicSkillLaunched",
+  "handler": "0x10429790",
+  "formats": [
+   "dddd",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x77",
+  "name": "FriendAddRequestResult",
+  "acis": null,
+  "handler": "0x10417620",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x78",
+  "name": "FriendAdd",
+  "acis": null,
+  "handler": "0x104011b0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x79",
+  "name": "FriendRemove",
+  "acis": null,
+  "handler": "0x104011c0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7a",
+  "name": "FriendList",
+  "acis": null,
+  "handler": "0x104011e0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7b",
+  "name": "FriendStatus",
+  "acis": "FriendStatus",
+  "handler": "0x104011d0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7c",
+  "name": "TradePressOtherOkPacket",
+  "acis": "TradePressOtherOk",
+  "handler": "0x10400d00",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7d",
+  "name": "FriendAddRequest",
+  "acis": "FriendAddRequest",
+  "handler": "0x10417700",
+  "formats": [
+   "S"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7e",
+  "name": "LogOutOkPacket",
+  "acis": "LeaveWorld",
+  "handler": "0x10427110",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x7f",
+  "name": "AbnormalStatusUpdatePacket",
+  "acis": "AbnormalStatusUpdate",
+  "handler": "0x104120c0",
+  "formats": [
+   "h",
+   "dhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x80",
+  "name": "QuestListPacket",
+  "acis": "QuestList",
+  "handler": "0x10438c20",
+  "formats": [
+   "h",
+   "dd",
+   "b"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x81",
+  "name": "EnchantResultPacket",
+  "acis": "EnchantResult",
+  "handler": "0x10412260",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x82",
+  "name": "PledgeShowMemberListDeleteAllPacket",
+  "acis": "PledgeShowMemberListDeleteAll",
+  "handler": "0x10401100",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x83",
+  "name": "PledgeInfoPacket",
+  "acis": "PledgeInfo",
+  "handler": "0x10415110",
+  "formats": [
+   "dSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x84",
+  "name": "PledgeExtendedInfoPacket",
+  "acis": null,
+  "handler": "0x104151c0",
+  "formats": [
+   "SddSddddddddSd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x85",
+  "name": "SurrenderPersonallyPacket",
+  "acis": null,
+  "handler": "0x10400fa0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x86",
+  "name": "RidePacket",
+  "acis": "Ride",
+  "handler": "0x10425930",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x87",
+  "name": "DummyPacket",
+  "acis": null,
+  "handler": "0x10401150",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x88",
+  "name": "PledgeShowInfoUpdatePacket",
+  "acis": "PledgeShowInfoUpdate",
+  "handler": "0x10439280",
+  "formats": [
+   "ddddddddddSdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x89",
+  "name": "ClientActionPacket",
+  "acis": null,
+  "handler": "0x10415e40",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8a",
+  "name": "AcquireSkillListPacket",
+  "acis": "AcquireSkillList",
+  "handler": "0x10415f30",
+  "formats": [
+   "dd",
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8b",
+  "name": "AcquireSkillInfoPacket",
+  "acis": "AcquireSkillInfo",
+  "handler": "0x10416160",
+  "formats": [
+   "dddd",
+   "d",
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8c",
+  "name": "ServerObjectInfoPacket",
+  "acis": "ServerObjectInfo",
+  "handler": "0x1042f8d0",
+  "formats": [
+   "ddSdddddffffdddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8d",
+  "name": "GMHidePacket",
+  "acis": null,
+  "handler": "0x10410430",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8e",
+  "name": "AcquireSkillDonePacket",
+  "acis": null,
+  "handler": "0x10400b70",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x8f",
+  "name": "GMViewCharacterInfoPacket",
+  "acis": "GMViewCharacterInfo",
+  "handler": "0x10426930",
+  "formats": [
+   "dddddSddddQddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddddffffddddSdddcccddhhddddccdccdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x90",
+  "name": "GMViewPledgeInfoPacket",
+  "acis": "GMViewPledgeInfo",
+  "handler": "0x10410a70",
+  "formats": [
+   "dSddSS",
+   "dddddddddSdd",
+   "d",
+   "Sdddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x91",
+  "name": "GMViewSkillInfoPacket",
+  "acis": "GMViewSkillInfo",
+  "handler": "0x10410d50",
+  "formats": [
+   "Sd",
+   "dddc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x92",
+  "name": "GMViewMagicInfoPacket",
+  "acis": null,
+  "handler": "0x10410ee0",
+  "formats": [
+   "Sd",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x93",
+  "name": "GMViewQuestInfoPacket",
+  "acis": "GMViewQuestList",
+  "handler": "0x10411040",
+  "formats": [
+   "Sh",
+   "dd",
+   "h",
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x94",
+  "name": "GMViewItemListPacket",
+  "acis": "GMViewItemList",
+  "handler": "0x10411260",
+  "formats": [
+   "Sdhh",
+   "h",
+   "dddhhhdhhhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x95",
+  "name": "GMViewWarehouseWithdrawListPacket",
+  "acis": "GMViewWarehouseWithdrawList",
+  "handler": "0x10411470",
+  "formats": [
+   "Sdh",
+   "h",
+   "dddhh",
+   "dhhhdd",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x96",
+  "name": "ListPartyWatingPacket",
+  "acis": "PartyMatchList",
+  "handler": "0x10410520",
+  "formats": [
+   "dd",
+   "dSdddddS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x97",
+  "name": "PartyRoomInfoPacket",
+  "acis": "PartyMatchDetail",
+  "handler": "0x10410750",
+  "formats": [
+   "ddddddS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x98",
+  "name": "PlaySoundPacket",
+  "acis": "PlaySound",
+  "handler": "0x104108e0",
+  "formats": [
+   "dSdddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x99",
+  "name": "StaticObjectPacket",
+  "acis": "StaticObjectInfo",
+  "handler": "0x104304f0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9a",
+  "name": "PrivateStoreManageList",
+  "acis": "PrivateStoreManageListSell",
+  "handler": "0x104164b0",
+  "formats": [
+   "dddd",
+   "ddddhhhdd",
+   "d",
+   "ddddhhhddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9b",
+  "name": "PrivateStoreList",
+  "acis": "PrivateStoreListSell",
+  "handler": "0x10416880",
+  "formats": [
+   "dddd",
+   "ddddhhhddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9c",
+  "name": "PrivateStoreMsg",
+  "acis": "PrivateStoreMsgSell",
+  "handler": "0x10429a60",
+  "formats": [
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9d",
+  "name": null,
+  "acis": "ShowMiniMap",
+  "handler": "0x104163d0",
+  "formats": [
+   "dc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9e",
+  "name": "ReviveRequestPacket",
+  "acis": null,
+  "handler": "0x10400a70",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0x9f",
+  "name": "AbnormalVisualEffectPacket",
+  "acis": null,
+  "handler": "0x104271b0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa0",
+  "name": "TutorialShowHtmlPacket",
+  "acis": "TutorialShowHtml",
+  "handler": "0x1040e690",
+  "formats": [
+   "S"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa1",
+  "name": "TutorialShowQuestionMarkPacket",
+  "acis": "TutorialShowQuestionMark",
+  "handler": "0x1040e710",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa2",
+  "name": "TutorialEnableClientEventPacket",
+  "acis": "TutorialEnableClientEvent",
+  "handler": "0x1040e780",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa3",
+  "name": "TutorialCloseHtmlPacket",
+  "acis": "TutorialCloseHtml",
+  "handler": "0x10400b30",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa4",
+  "name": "ShowRadarPacket",
+  "acis": null,
+  "handler": "0x1040e890",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa5",
+  "name": "DeleteRadarPacket",
+  "acis": null,
+  "handler": "0x1040e930",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa6",
+  "name": "MyTargetSelectedPacket",
+  "acis": "MyTargetSelected",
+  "handler": "0x10427590",
+  "formats": [
+   "dhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa7",
+  "name": "PartyMemberPositionPacket",
+  "acis": "PartyMemberPosition",
+  "handler": "0x10426810",
+  "formats": [
+   "d",
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa8",
+  "name": "AskJoinAlliancePacket",
+  "acis": "AskJoinAlly",
+  "handler": "0x10417010",
+  "formats": [
+   "dSSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xa9",
+  "name": "JoinAlliancePacket",
+  "acis": null,
+  "handler": "0x10417150",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xaa",
+  "name": "WithdrawAlliancePacket",
+  "acis": null,
+  "handler": "0x10417230",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xab",
+  "name": "OustAllianceMemberPledgePacket",
+  "acis": null,
+  "handler": "0x10417310",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xac",
+  "name": "DismissAlliancePacket",
+  "acis": null,
+  "handler": "0x104173f0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xad",
+  "name": "SetAllianceCrestPacket",
+  "acis": null,
+  "handler": "0x10401190",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xae",
+  "name": "AllianceCrestPacket",
+  "acis": "AllyCrest",
+  "handler": "0x104174d0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xaf",
+  "name": "ServerCloseSocketPacket",
+  "acis": null,
+  "handler": "0x10400b50",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb0",
+  "name": "PetStatusShowPacket",
+  "acis": "PetStatusShow",
+  "handler": "0x1040e9b0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb1",
+  "name": "PetInfoPacket",
+  "acis": "PetInfo",
+  "handler": "0x1042e430",
+  "formats": [
+   "dddddddddddddddddddffffdddcccccSSdddddddddddQQQddddddddddddddccdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb2",
+  "name": "PetItemListPacket",
+  "acis": "PetItemList",
+  "handler": "0x1040ea00",
+  "formats": [
+   "h",
+   "h",
+   "dddhhhdhh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb3",
+  "name": "PetInventoryUpdatePacket",
+  "acis": "PetInventoryUpdate",
+  "handler": "0x1040eb90",
+  "formats": [
+   "h",
+   "hh",
+   "dddhhhdhh"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb4",
+  "name": "AllianceInfoPacket",
+  "acis": "AllianceInfo",
+  "handler": "0x104011a0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb5",
+  "name": "PetStatusUpdatePacket",
+  "acis": "PetStatusUpdate",
+  "handler": "0x1040ed50",
+  "formats": [
+   "dddddSdddddddQQQ"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb6",
+  "name": "PetDeletePacket",
+  "acis": "PetDelete",
+  "handler": "0x1040f070",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb7",
+  "name": "PrivateStoreBuyManageList",
+  "acis": "PrivateStoreManageListBuy",
+  "handler": "0x10416a90",
+  "formats": [
+   "ddd",
+   "dhddhdh",
+   "d",
+   "dhddhdhdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb8",
+  "name": "PrivateStoreBuyList",
+  "acis": "PrivateStoreListBuy",
+  "handler": "0x10416e10",
+  "formats": [
+   "ddd",
+   "ddhddhdhdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xb9",
+  "name": "PrivateStoreBuyMsg",
+  "acis": "PrivateStoreMsgBuy",
+  "handler": "0x10429bd0",
+  "formats": [
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xba",
+  "name": "VehicleStartPacket",
+  "acis": "VehicleStarted",
+  "handler": "0x104177e0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xbb",
+  "name": "RequestTimeCheckPacket",
+  "acis": null,
+  "handler": "0x104178c0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xbc",
+  "name": "StartAllianceWarPacket",
+  "acis": null,
+  "handler": "0x10417b40",
+  "formats": [
+   "SS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xbd",
+  "name": "ReplyStartAllianceWarPacket",
+  "acis": null,
+  "handler": "0x104011f0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xbe",
+  "name": "StopAllianceWarPacket",
+  "acis": null,
+  "handler": "0x10417c20",
+  "formats": [
+   "SS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xbf",
+  "name": "ReplyStopAllianceWarPacket",
+  "acis": null,
+  "handler": "0x10401200",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc0",
+  "name": "SurrenderAllianceWarPacket",
+  "acis": null,
+  "handler": "0x10401210",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc1",
+  "name": "SkillCoolTimePacket",
+  "acis": "SkillCoolTime",
+  "handler": "0x104179a0",
+  "formats": [
+   "d",
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc2",
+  "name": "PackageToListPacket",
+  "acis": "PackageToList",
+  "handler": "0x10417d00",
+  "formats": [
+   "d",
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc3",
+  "name": "PackageSendableListPacket",
+  "acis": "PackageSendableList",
+  "handler": "0x10417e50",
+  "formats": [
+   "ddd",
+   "h",
+   "dddhhdhhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc4",
+  "name": "EarthQuakePacket",
+  "acis": "Earthquake",
+  "handler": "0x10417fe0",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc5",
+  "name": "FlyToLoactionPacket",
+  "acis": "FlyToLocation",
+  "handler": "0x10429d40",
+  "formats": [
+   "dddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc6",
+  "name": "BlockListPacket",
+  "acis": null,
+  "handler": "0x104012c0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc7",
+  "name": "SpecialCameraPacket",
+  "acis": "SpecialCamera",
+  "handler": "0x1042a1f0",
+  "formats": [
+   "ddddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc8",
+  "name": "NormalCameraPacket",
+  "acis": "NormalCamera",
+  "handler": "0x104012d0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xc9",
+  "name": "CastleSiegeInfoPacket",
+  "acis": "SiegeInfo",
+  "handler": "0x104180e0",
+  "formats": [
+   "dddSSdSdd",
+   "d",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xca",
+  "name": "CastleSiegeAttackerListPacket",
+  "acis": "SiegeAttackerList",
+  "handler": "0x10439db0",
+  "formats": [
+   "dddddd",
+   "dSSdddSSd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xcb",
+  "name": null,
+  "acis": "SiegeDefenderList",
+  "handler": "0x1043a030",
+  "formats": [
+   "dddddd",
+   "dSSddddSSd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xcc",
+  "name": "NickNameChangedPacket",
+  "acis": "TitleUpdate",
+  "handler": "0x1042a000",
+  "formats": [
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xcd",
+  "name": "PledgeStatusChangedPacket",
+  "acis": "PledgeStatusChanged",
+  "handler": "0x1043a2d0",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xce",
+  "name": "RelationChangedPacket",
+  "acis": "RelationChanged",
+  "handler": "0x1042a0c0",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xcf",
+  "name": "EventTriggerPacket",
+  "acis": "EventTrigger",
+  "handler": "0x10418320",
+  "formats": [
+   "dc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd0",
+  "name": "MultiSellListPacket",
+  "acis": "MultiSellList",
+  "handler": "0x104183a0",
+  "formats": [
+   "ddddd",
+   "dddchh",
+   "hdhdhdd",
+   "hhdhdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd1",
+  "name": "SetSummonRemainTimePacket",
+  "acis": "SetSummonRemainTime",
+  "handler": "0x10418630",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd2",
+  "name": "SkillRemainSecPacket",
+  "acis": null,
+  "handler": "0x1042a450",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd3",
+  "name": "NetPingPacket",
+  "acis": null,
+  "handler": "0x104186a0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd4",
+  "name": "DicePacket",
+  "acis": "Dice",
+  "handler": "0x1042a7a0",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd5",
+  "name": "SnoopPacket",
+  "acis": "Snoop",
+  "handler": "0x10418700",
+  "formats": [
+   "dSddSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd6",
+  "name": "RecipeBookItemListPacket",
+  "acis": "RecipeBookItemList",
+  "handler": "0x10418870",
+  "formats": [
+   "ddd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd7",
+  "name": "RecipeItemMakeInfoPacket",
+  "acis": "RecipeItemMakeInfo",
+  "handler": "0x10418960",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd8",
+  "name": "RecipeShopManageListPacket",
+  "acis": "RecipeShopManageList",
+  "handler": "0x10418a90",
+  "formats": [
+   "dddd",
+   "dd",
+   "d",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xd9",
+  "name": "RecipeShopSellListPacket",
+  "acis": "RecipeShopSellList",
+  "handler": "0x10418c10",
+  "formats": [
+   "ddddd",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xda",
+  "name": "RecipeShopItemInfoPacket",
+  "acis": "RecipeShopItemInfo",
+  "handler": "0x10418d30",
+  "formats": [
+   "dddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xdb",
+  "name": "RecipeShopMsgPacket",
+  "acis": "RecipeShopMsg",
+  "handler": "0x1042a630",
+  "formats": [
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xdc",
+  "name": "ShowCalcPacket",
+  "acis": "ShowCalculator",
+  "handler": "0x10416440",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xdd",
+  "name": "MonRaceInfoPacket",
+  "acis": "MonRaceInfo",
+  "handler": "0x10430780",
+  "formats": [
+   "dd",
+   "d",
+   "ddddddddffd",
+   "c",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xde",
+  "name": "ShowTownMapPacket",
+  "acis": "ShowTownMap",
+  "handler": "0x10418de0",
+  "formats": [
+   "Sdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xdf",
+  "name": "ObserverStartPacket",
+  "acis": "ObservationMode",
+  "handler": "0x10418f20",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe0",
+  "name": "ObserverEndPacket",
+  "acis": "ObservationReturn",
+  "handler": "0x10419050",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe1",
+  "name": "ChairSitPacket",
+  "acis": "ChairSit",
+  "handler": "0x10419160",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe2",
+  "name": "HennaEquipListPacket",
+  "acis": "HennaEquipList",
+  "handler": "0x10419250",
+  "formats": [
+   "ddd",
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe3",
+  "name": "HennaItemInfoPacket",
+  "acis": "HennaItemInfo",
+  "handler": "0x104193d0",
+  "formats": [
+   "dddddddcdcdcdcdcdc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe4",
+  "name": "HennaInfoPacket",
+  "acis": "HennaInfo",
+  "handler": "0x10419530",
+  "formats": [
+   "ccccccdd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe5",
+  "name": "HennaUnequipListPacket",
+  "acis": "HennaRemoveList",
+  "handler": "0x104198b0",
+  "formats": [
+   "ddd",
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe6",
+  "name": "HennaUnequipInfoPacket",
+  "acis": "HennaItemRemoveInfo",
+  "handler": "0x10419ce0",
+  "formats": [
+   "dddddddcdcdcdcdcdc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe7",
+  "name": "MacroListPacket",
+  "acis": "SendMacroList",
+  "handler": "0x10419a30",
+  "formats": [
+   "c",
+   "d",
+   "c",
+   "c",
+   "dSSScc",
+   "ccdcS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe8",
+  "name": "BuyListSeedPacket",
+  "acis": "BuyListSeed",
+  "handler": "0x1040f480",
+  "formats": [
+   "ddh",
+   "h",
+   "dddhh",
+   "dhhh",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xe9",
+  "name": "SellListProcurePacket",
+  "acis": "SellListProcure",
+  "handler": "0x1040f680",
+  "formats": [
+   "ddh",
+   "h",
+   "dddhh",
+   "dhhh",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xea",
+  "name": "GMHennaInfoPacket",
+  "acis": "GMViewHennaInfo",
+  "handler": "0x104196f0",
+  "formats": [
+   "ccccccdd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xeb",
+  "name": "RadarControlPacket",
+  "acis": "RadarControl",
+  "handler": "0x1040e7f0",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xec",
+  "name": null,
+  "acis": "ClientSetTime",
+  "handler": "0x10419f90",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xed",
+  "name": "ConfirmDlgPacket",
+  "acis": "ConfirmDlg",
+  "handler": "0x1041a090",
+  "formats": [
+   "d",
+   "d",
+   "d",
+   "S",
+   "d",
+   "dd",
+   "Q",
+   "ddd",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xee",
+  "name": "PartySpelledPacket",
+  "acis": "PartySpelled",
+  "handler": "0x1041a410",
+  "formats": [
+   "ddd",
+   "dhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xef",
+  "name": "ShopPreviewListPacket",
+  "acis": "ShopPreviewList",
+  "handler": "0x1041a570",
+  "formats": [
+   "dddh",
+   "dhhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf0",
+  "name": "ShopPreviewInfoPacket",
+  "acis": "ShopPreviewInfo",
+  "handler": "0x1041a700",
+  "formats": [
+   "dddddddddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf1",
+  "name": "CameraModePacket",
+  "acis": "CameraMode",
+  "handler": "0x1041a7c0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf2",
+  "name": "ShowXMasSealPacket",
+  "acis": "ShowXMasSeal",
+  "handler": "0x1041a810",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf3",
+  "name": "EtcStatusUpdatePacket",
+  "acis": "EtcStatusUpdate",
+  "handler": "0x1041a880",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf4",
+  "name": "ShortBuffStatusUpdatePacket",
+  "acis": "ShortBuffStatusUpdate",
+  "handler": "0x1041aaf0",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf5",
+  "name": "SSQStatusPacket",
+  "acis": "SSQStatus",
+  "handler": "0x1041ac20",
+  "formats": [
+   "c",
+   "c",
+   "dddccdddddcdddc",
+   "c",
+   "cc",
+   "cddc",
+   "S",
+   "dc",
+   "S",
+   "ccc",
+   "cccc",
+   "cc",
+   "ccd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf6",
+  "name": "PetitionVotePacket",
+  "acis": null,
+  "handler": "0x10401310",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf7",
+  "name": "AgitDecoInfoPacket",
+  "acis": "ClanHallDecoration",
+  "handler": "0x1041b350",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf8",
+  "name": "SSQInfoPacket",
+  "acis": "SSQInfo",
+  "handler": "0x1041b3c0",
+  "formats": [
+   "cc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xf9",
+  "name": "GameGuardQueryPacket",
+  "acis": "GameGuardQuery",
+  "handler": "0x1041b440",
+  "formats": [
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xfa",
+  "name": "L2FriendListPacket",
+  "acis": "FriendList",
+  "handler": "0x1041b4d0",
+  "formats": [
+   "d",
+   "dSdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xfb",
+  "name": "L2FriendPacket",
+  "acis": null,
+  "handler": "0x1041b5d0",
+  "formats": [
+   "ddSdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xfc",
+  "name": "L2FriendStatusPacket",
+  "acis": null,
+  "handler": "0x1041b670",
+  "formats": [
+   "dSd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xfd",
+  "name": "L2FriendSayPacket",
+  "acis": "L2FriendSay",
+  "handler": "0x1041b700",
+  "formats": [
+   "dSSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "game",
+  "opcode": "0xfe",
+  "name": "DummyPacket",
+  "acis": null,
+  "handler": "0x10401150",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1",
+  "name": null,
+  "acis": "ExRegenMax",
+  "handler": "0x1041b7b0",
+  "formats": [
+   "dddf"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2",
+  "name": "ExEventMatchListPacket",
+  "acis": null,
+  "handler": "0x10401350",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3",
+  "name": "ExEventMatchObserverPacket",
+  "acis": null,
+  "handler": "0x1041b850",
+  "formats": [
+   "dccSSddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4",
+  "name": "ExEventMatchMessagePacket",
+  "acis": null,
+  "handler": "0x1041b9b0",
+  "formats": [
+   "cS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5",
+  "name": "ExEventMatchScorePacket",
+  "acis": null,
+  "handler": "0x1041bab0",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x6",
+  "name": "ExEventMatchTeamInfoPacket",
+  "acis": null,
+  "handler": "0x1041bb90",
+  "formats": [
+   "dcd",
+   "dSdddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x7",
+  "name": "ExEventMatchCreatePacket",
+  "acis": null,
+  "handler": "0x1041bde0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x8",
+  "name": "ExEventMatchUserInfoPacket",
+  "acis": null,
+  "handler": "0x1041bed0",
+  "formats": [
+   "dSdddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x9",
+  "name": "ExColosseumFenceInfoPacket",
+  "acis": "ExColosseumFenceInfo",
+  "handler": "0x10431240",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0xa",
+  "name": "ExEventMatchSpelledInfoPacket",
+  "acis": null,
+  "handler": "0x1041c010",
+  "formats": [
+   "ddd",
+   "dhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0xb",
+  "name": "ExEventMatchFirecrackerPacket",
+  "acis": null,
+  "handler": "0x1042a8e0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0xc",
+  "name": "ExEventMatchTeamUnlockedPacket",
+  "acis": null,
+  "handler": "0x1041c190",
+  "formats": [
+   "dc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0xd",
+  "name": "ExEventMatchGMTestPacket",
+  "acis": null,
+  "handler": "0x104013e0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0xe",
+  "name": "ExPartyRoomMemberPacket",
+  "acis": "ExPartyRoomMember",
+  "handler": "0x1041c260",
+  "formats": [
+   "dd",
+   "dSdddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0xf",
+  "name": "ExClosePartyRoomPacket",
+  "acis": "ExClosePartyRoom",
+  "handler": "0x10401480",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x10",
+  "name": "ExManagePartyRoomMemberPacket",
+  "acis": "ExManagePartyRoomMember",
+  "handler": "0x1041c440",
+  "formats": [
+   "ddSdddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x11",
+  "name": "ExEventMatchLockResult",
+  "acis": null,
+  "handler": "0x10401570",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x12",
+  "name": "ExAutoSoulShot",
+  "acis": "ExAutoSoulShot",
+  "handler": "0x1041c5d0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x13",
+  "name": "ExFishingStartPacket",
+  "acis": "ExFishingStart",
+  "handler": "0x1042aa20",
+  "formats": [
+   "dddddcc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x14",
+  "name": "ExFishingEndPacket",
+  "acis": "ExFishingEnd",
+  "handler": "0x1042ac00",
+  "formats": [
+   "dc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x15",
+  "name": "ExFishingStartCombatPacket",
+  "acis": "ExFishingStartCombat",
+  "handler": "0x1042ad50",
+  "formats": [
+   "dddccc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x16",
+  "name": "ExFishingHpRegenPacket",
+  "acis": "ExFishingHpRegen",
+  "handler": "0x1042af40",
+  "formats": [
+   "dddcccdc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x17",
+  "name": "ExEnchantSkillListPacket",
+  "acis": "ExEnchantSkillList",
+  "handler": "0x1041c700",
+  "formats": [
+   "d",
+   "dddQ"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x18",
+  "name": "ExEnchantSkillInfoPacket",
+  "acis": "ExEnchantSkillInfo",
+  "handler": "0x1041c900",
+  "formats": [
+   "dddQd",
+   "d",
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x19",
+  "name": "ExShowQuestInfoPacket",
+  "acis": "ExQuestInfo",
+  "handler": "0x10401580",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1a",
+  "name": "ExShowQuestMarkPacket",
+  "acis": "ExShowQuestMark",
+  "handler": "0x1041cb90",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1b",
+  "name": "ExSendManorListPacket",
+  "acis": "ExSendManorList",
+  "handler": "0x1041cc90",
+  "formats": [
+   "d",
+   "dS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1c",
+  "name": "ExShowSeedInfoPacket",
+  "acis": "ExShowSeedInfo",
+  "handler": "0x1041ce10",
+  "formats": [
+   "cddd",
+   "dddddc",
+   "d",
+   "c",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1d",
+  "name": "ExShowCropInfoPacket",
+  "acis": "ExShowCropInfo",
+  "handler": "0x1041d0c0",
+  "formats": [
+   "cddd",
+   "ddddcdc",
+   "d",
+   "c",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1e",
+  "name": "ExShowManorDefaultInfoPacket",
+  "acis": "ExShowManorDefaultInfo",
+  "handler": "0x1041d380",
+  "formats": [
+   "cd",
+   "ddddc",
+   "d",
+   "c",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1f",
+  "name": "ExShowSeedSettingPacket",
+  "acis": "ExShowSeedSetting",
+  "handler": "0x1041d600",
+  "formats": [
+   "dd",
+   "ddc",
+   "d",
+   "c",
+   "d",
+   "dddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x20",
+  "name": "ExShowCropSettingPacket",
+  "acis": "ExShowCropSetting",
+  "handler": "0x1041d8f0",
+  "formats": [
+   "dd",
+   "ddc",
+   "d",
+   "c",
+   "d",
+   "ddddddcddc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x21",
+  "name": "ExShowSellCropListPacket",
+  "acis": "ExShowSellCropList",
+  "handler": "0x1041dc00",
+  "formats": [
+   "dd",
+   "dddc",
+   "d",
+   "c",
+   "d",
+   "dddcd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x22",
+  "name": "ExShowProcureCropDetailPacket",
+  "acis": "ExShowProcureCropDetail",
+  "handler": "0x1041dee0",
+  "formats": [
+   "dd",
+   "dddc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x23",
+  "name": "ExHeroListPacket",
+  "acis": "ExHeroList",
+  "handler": "0x1041e080",
+  "formats": [
+   "d",
+   "SdSdSdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x24",
+  "name": "ExServerPrimitivePacket",
+  "acis": "ExServerPrimitive",
+  "handler": "0x1041e380",
+  "formats": [
+   "Sdddddd",
+   "c",
+   "Sddddddd",
+   "Sdddd",
+   "ddd",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x25",
+  "name": "ExOpenMPCCPacket",
+  "acis": "ExOpenMPCC",
+  "handler": "0x10401720",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x26",
+  "name": "ExCloseMPCCPacket",
+  "acis": "ExCloseMPCC",
+  "handler": "0x104017a0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x27",
+  "name": "ExAskJoinMPCCPacket",
+  "acis": "ExAskJoinMPCC",
+  "handler": "0x1041eab0",
+  "formats": [
+   "Sd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x28",
+  "name": "ExPledgeCrestLargePacket",
+  "acis": "ExPledgeCrestLarge",
+  "handler": "0x1041ebb0",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x29",
+  "name": "ExOlympiadUserInfoPacket",
+  "acis": "ExOlympiadUserInfo",
+  "handler": "0x1041ed90",
+  "formats": [
+   "cdSddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2a",
+  "name": "ExOlympiadSpelledInfoPacket",
+  "acis": "ExOlympiadSpelledInfo",
+  "handler": "0x1041ef20",
+  "formats": [
+   "dd",
+   "dhd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2b",
+  "name": "ExOlympiadModePacket",
+  "acis": "ExOlympiadMode",
+  "handler": "0x1041f0a0",
+  "formats": [
+   "c"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2c",
+  "name": "ExOlympiadMatchEndPacket",
+  "acis": "ExOlympiadMatchEnd",
+  "handler": "0x10401820",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2d",
+  "name": "ExMailArrivedPacket",
+  "acis": "ExMailArrived",
+  "handler": "0x104018c0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2e",
+  "name": "ExStorageMaxCountPacket",
+  "acis": "ExStorageMaxCount",
+  "handler": "0x1041f170",
+  "formats": [
+   "ddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2f",
+  "name": "ExEventMatchManagePacket",
+  "acis": null,
+  "handler": "0x1041f2d0",
+  "formats": [
+   "dccScScd",
+   "ccdSdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x30",
+  "name": "ExMultiPartyCommandChannelInfoPacket",
+  "acis": "ExMultiPartyCommandChannelInfo",
+  "handler": "0x1041f570",
+  "formats": [
+   "Sddd",
+   "Sdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x31",
+  "name": "ExPCCafePointInfoPacket",
+  "acis": "ExPCCafePointInfo",
+  "handler": "0x1041f780",
+  "formats": [
+   "ddcdc"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x32",
+  "name": "ExSetCompassZoneCode",
+  "acis": "ExSetCompassZoneCode",
+  "handler": "0x1041f8c0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x33",
+  "name": "ExGetBossRecord",
+  "acis": "ExGetBossRecord",
+  "handler": "0x1041f9c0",
+  "formats": [
+   "ddd",
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x34",
+  "name": "ExAskJoinPartyRoom",
+  "acis": "ExAskJoinPartyRoom",
+  "handler": "0x1041fd10",
+  "formats": [
+   "S"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x35",
+  "name": "ExListPartyMatchingWaitingRoom",
+  "acis": "ExListPartyMatchingWaitingRoom",
+  "handler": "0x1041fe20",
+  "formats": [
+   "d",
+   "d",
+   "Sdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x36",
+  "name": "ExSetMpccRouting",
+  "acis": null,
+  "handler": "0x10420000",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x37",
+  "name": "ExShowAdventurerGuideBook",
+  "acis": "ExShowAdventurerGuideBook",
+  "handler": "0x10401960",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x38",
+  "name": "ExShowScreenMessage",
+  "acis": "ExShowScreenMessage",
+  "handler": "0x1041fb60",
+  "formats": [
+   "ddddddddddS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x39",
+  "name": "PledgeSkillListPacket",
+  "acis": "PledgeSkillList",
+  "handler": "0x10412590",
+  "formats": [
+   "d",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3a",
+  "name": "PledgeSkillListAddPacket",
+  "acis": "PledgeSkillListAdd",
+  "handler": "0x104126e0",
+  "formats": [
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3b",
+  "name": "PledgePowerGradeList",
+  "acis": "PledgePowerGradeList",
+  "handler": "0x104127d0",
+  "formats": [
+   "d",
+   "dd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3c",
+  "name": "PledgeReceivePowerInfo",
+  "acis": "PledgeReceivePowerInfo",
+  "handler": "0x10412920",
+  "formats": [
+   "dSd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3d",
+  "name": "PledgeReceiveMemberInfo",
+  "acis": "PledgeReceiveMemberInfo",
+  "handler": "0x10412a70",
+  "formats": [
+   "dSSdSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3e",
+  "name": "PledgeReceiveWarList",
+  "acis": "PledgeReceiveWarList",
+  "handler": "0x10412be0",
+  "formats": [
+   "ddd",
+   "Sdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3f",
+  "name": "PledgeReceiveSubPledgeCreated",
+  "acis": "PledgeReceiveSubPledgeCreated",
+  "handler": "0x10412ea0",
+  "formats": [
+   "ddSS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x40",
+  "name": "ExRedSkyPacket",
+  "acis": "ExRedSky",
+  "handler": "0x10420100",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x41",
+  "name": "PledgeReceiveUpdatePower",
+  "acis": null,
+  "handler": "0x10412fd0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x42",
+  "name": "FlySelfDestinationPacket",
+  "acis": null,
+  "handler": "0x10429ef0",
+  "formats": [
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x43",
+  "name": "ShowPCCafeCouponShowUI",
+  "acis": "ShowPCCafeCouponShowUI",
+  "handler": "0x10401220",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x44",
+  "name": "ExSearchOrc",
+  "acis": "ExOrcMove",
+  "handler": "0x104201d0",
+  "formats": [
+   "b"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x45",
+  "name": "ExCursedWeaponList",
+  "acis": "ExCursedWeaponList",
+  "handler": "0x1042b150",
+  "formats": [
+   "d",
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x46",
+  "name": "ExCursedWeaponLocation",
+  "acis": "ExCursedWeaponLocation",
+  "handler": "0x10431500",
+  "formats": [
+   "d",
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x47",
+  "name": "ExRestartClient",
+  "acis": "ExRestartClient",
+  "handler": "0x10400730",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x48",
+  "name": "ExRequestHackShield",
+  "acis": "ExRequestHackShield",
+  "handler": "0x104007f0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x49",
+  "name": "ExUseSharedGroupItem",
+  "acis": "ExUseSharedGroupItem",
+  "handler": "0x1040d3a0",
+  "formats": [
+   "dddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4a",
+  "name": "ExMPCCShowPartyMemberInfo",
+  "acis": "ExMPCCShowPartyMemberInfo",
+  "handler": "0x1040d4a0",
+  "formats": [
+   "d",
+   "Sdd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4b",
+  "name": "ExDuelAskStart",
+  "acis": "ExDuelAskStart",
+  "handler": "0x1040da10",
+  "formats": [
+   "Sd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4c",
+  "name": "ExDuelReady",
+  "acis": "ExDuelReady",
+  "handler": "0x1040db40",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4d",
+  "name": "ExDuelStart",
+  "acis": "ExDuelStart",
+  "handler": "0x1040dc60",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4e",
+  "name": null,
+  "acis": "ExDuelEnd",
+  "handler": "0x1040dd80",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4f",
+  "name": "ExDuelUpdateUserInfo",
+  "acis": "ExDuelUpdateUserInfo",
+  "handler": "0x1040dea0",
+  "formats": [
+   "Sddddddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x50",
+  "name": "ExShowVariationMakeWindow",
+  "acis": "ExShowVariationMakeWindow",
+  "handler": "0x104008a0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x51",
+  "name": "ExShowVariationCancelWindow",
+  "acis": "ExShowVariationCancelWindow",
+  "handler": "0x10400940",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x52",
+  "name": "ExPutItemResultForVariationMake",
+  "acis": "ExConfirmVariationItem",
+  "handler": "0x1040e050",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x53",
+  "name": "ExPutIntensiveResultForVariationMake",
+  "acis": "ExConfirmVariationRefiner",
+  "handler": "0x1040e130",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x54",
+  "name": "ExPutCommissionResultForVariationMake",
+  "acis": "ExConfirmVariationGemstone",
+  "handler": "0x1040e220",
+  "formats": [
+   "ddddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x55",
+  "name": "ExVariationResult",
+  "acis": "ExVariationResult",
+  "handler": "0x1040e310",
+  "formats": [
+   "ddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x56",
+  "name": "ExPutItemResultForVariationCancel",
+  "acis": "ExConfirmCancelItem",
+  "handler": "0x1040e3f0",
+  "formats": [
+   "ddddQd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x57",
+  "name": "ExVariationCancelResult",
+  "acis": "ExVariationCancelResult",
+  "handler": "0x1040e4f0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x58",
+  "name": "ExDuelEnemyRelation",
+  "acis": "ExDuelEnemyRelation",
+  "handler": "0x104009e0",
+  "formats": [],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x59",
+  "name": "ExPlayAnimation",
+  "acis": null,
+  "handler": "0x1042b280",
+  "formats": [
+   "dcdS"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5a",
+  "name": "ExMPCCPartyInfoUpdate",
+  "acis": "ExMPCCPartyInfoUpdate",
+  "handler": "0x1040d8c0",
+  "formats": [
+   "Sddd"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5b",
+  "name": "ExPlayScene",
+  "acis": "ExPlayScene",
+  "handler": "0x1040d7f0",
+  "formats": [
+   "d"
+  ],
+  "helpers": []
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5c",
+  "name": "ExNeedToChangeName",
+  "acis": null,
+  "handler": "0x1040d690",
+  "formats": [
+   "ddS"
+  ],
+  "helpers": []
+ }
+]

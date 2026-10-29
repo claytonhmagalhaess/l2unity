@@ -1,0 +1,228 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="Window">
+    <ui:GroupBox name="Content" class="actroot">
+      <ui:GroupBox name="AllPanel" class="AllPanel">
+        <ui:GroupBox name="PhysicalContent" class="row-physical-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Physical skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowPhysical">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="imgbox0" class="imgbox0" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="imgbox1" class="imgbox1" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="imgbox2" class="imgbox2" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="imgbox3" class="imgbox3" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="imgbox4" class="imgbox4" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="imgbox5" class="imgbox5" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="imgbox6" class="imgbox6" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+        <ui:GroupBox name="MagicContent" class="row-magic-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Magic" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Magiс skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowMagic">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="imgbox7" class="imgbox7" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="imgbox8" class="imgbox8" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="imgbox9" class="imgbox9" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="imgbox10" class="imgbox10" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="imgbox11" class="imgbox11" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="imgbox12" class="imgbox12" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="imgbox13" class="imgbox13" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+        <ui:GroupBox name="EnhancingContent" class="row-enhancing-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Enhancing" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Enhancing skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowEnhancing">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="imgbox14" class="imgbox14" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="imgbox15" class="imgbox15" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="imgbox16" class="imgbox16" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="imgbox17" class="imgbox17" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="imgbox18" class="imgbox18" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="imgbox19" class="imgbox19" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="imgbox20" class="imgbox20" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+        <ui:GroupBox name="DebilitatingContent" class="row-debilitating-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Debilitating" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Debilitating skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowDebilitating">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="imgbox21" class="imgbox21" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="imgbox22" class="imgbox22" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="imgbox23" class="imgbox23" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="imgbox24" class="imgbox24" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="imgbox25" class="imgbox25" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="imgbox26" class="imgbox26" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="imgbox27" class="imgbox27" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+        <ui:GroupBox name="ClanContent" class="row-clan-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Clan" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Clan skills" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar0">
+            <ui:GroupBox name="RowClan">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="imgbox28" class="imgbox28" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="imgbox29" class="imgbox29" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="imgbox30" class="imgbox30" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="imgbox31" class="imgbox31" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="imgbox32" class="imgbox32" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="imgbox33" class="imgbox33" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="imgbox34" class="imgbox34" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar1">
+            <ui:GroupBox name="RowDebilitating">
+              <ui:GroupBox name="Background">
+                <ui:GroupBox name="Border" />
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="imgbox35" class="imgbox35" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow1" class="grow0">
+                  <ui:GroupBox name="imgbox36" class="imgbox36" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow2" class="grow0">
+                  <ui:GroupBox name="imgbox37" class="imgbox37" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow3" class="grow0">
+                  <ui:GroupBox name="imgbox38" class="imgbox38" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow4" class="grow0">
+                  <ui:GroupBox name="imgbox39" class="imgbox39" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow5" class="grow0">
+                  <ui:GroupBox name="imgbox40" class="imgbox40" />
+                </ui:GroupBox>
+                <ui:GroupBox name="GRow6" class="grow0">
+                  <ui:GroupBox name="imgbox41" class="imgbox41" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

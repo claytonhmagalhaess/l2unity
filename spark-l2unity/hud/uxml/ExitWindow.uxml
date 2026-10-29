@@ -1,0 +1,34 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2StyleSheet" uss="ExitWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="WindowTemplate" template="WindowTemplate" name="WindowTemplate" class="exit-window">
+    <ui:VisualElement name="ContentContainer" class="exit-window-content">
+      <ui:GroupBox name="InfoContainer" class="exit-window-info-container">
+        <ui:VisualElement name="Wrapper" class="exit-window-container-wrapper">
+          <ui:GroupBox name="Bg" class="exit-window-info-bg" />
+          <ui:GroupBox name="ContentInside" class="exit-window-info-inner">
+            <ui:Label tabindex="-1" text="Play Report" parse-escape-sequences="true" display-tooltip-when-elided="true" class="exit-window-label l2-color-4" />
+            <ui:GroupBox name="BoxMenu" class="exit-window-info-text-container">
+              <ui:GroupBox name="FirstRow" class="exit-window-info-row">
+                <ui:Label tabindex="-1" text="EXP Acquired" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Acquired" class="exit-window-info-row-title l2-color-3" />
+                <ui:Label tabindex="-1" text="0 Exp" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CountExp" class="exit-window-info-row-value l2-color-1" />
+              </ui:GroupBox>
+              <ui:GroupBox name="TwoRow" class="exit-window-info-row">
+                <ui:Label tabindex="-1" text="Adena Acquired" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Adena" class="exit-window-info-row-title l2-color-3" />
+                <ui:Label tabindex="-1" text="0 Adena" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CountAdena" class="exit-window-info-row-value l2-color-1" />
+              </ui:GroupBox>
+              <ui:GroupBox name="TreRow" class="exit-window-info-row">
+                <ui:Label tabindex="-1" text="Item Acquired" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Adena" class="exit-window-info-row-title l2-color-3" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CountItem" class="exit-window-info-row-value l2-color-1" />
+              </ui:GroupBox>
+            </ui:GroupBox>
+            <ui:Instance template="L2Button" template="L2Button" name="InitializeButton" class="initialize-button" />
+          </ui:GroupBox>
+        </ui:VisualElement>
+      </ui:GroupBox>
+      <ui:GroupBox name="Buttons" class="exit-window-buttons">
+        <ui:Instance template="L2Button" template="L2Button" name="ExitButton" class="l2-flex-button icon" />
+        <ui:Instance template="L2Button" template="L2Button" name="RestartButton" class="l2-flex-button icon" />
+        <ui:Instance template="L2Button" template="L2Button" name="CancelButton" class="l2-flex-button" />
+      </ui:GroupBox>
+    </ui:VisualElement>
+  </ui:Instance>
+</ui:UXML>

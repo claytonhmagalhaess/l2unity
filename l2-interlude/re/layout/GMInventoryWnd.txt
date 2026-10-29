@@ -1,0 +1,1 @@
+Window GMInventoryWnd 256x401 @NONE->pai.TOP_LEFT(0,100) unk102=GMInventoryWnd unk103=GamingState unk104=1 unk107=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=7667825 unk128=7536741 unk130=0 unk131=0 unk132=97 unk133=7602273 unk134=4128937 unk135=0 unk139=Game size=[2]

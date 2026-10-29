@@ -1,0 +1,2 @@
+Window GMQuestWnd 256x355 @TOP_LEFT->pai.TOP_LEFT(0,100) unk102=GMQuestWnd unk103=GamingState unk104=1 unk107=1 unk114=0 unk117=0 unk122=13502 unk126=0 unk127=13518 unk128=13519 unk130=0 unk131=0 unk132=13526 unk133=13525 unk134=13528 unk135=13527 unk139=Game size=[2]
+  Window InnerWnd @NONE->pai.TOP_LEFT(0,20) unk107=0 unk114=0 unk117=0 unk122=83784752 unk126=0 unk127=5439604 unk128=7274600 unk130=0 unk131=0 unk132=3080211 unk133=0 unk134=83784968 unk135=84410407 unk139=Game

@@ -1,0 +1,9 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="WindowTemplate" template="WindowTemplate" name="WindowTemplate" class="npc-html-window">
+    <ui:VisualElement name="Content" class="html-window-content-container">
+      <ui:ScrollView name="HtmlContent" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="AlwaysVisible" class="l2-scroll-view html-window-content">
+        <ui:VisualElement name="ContentWrapper" class="html-window-content-wrapper" />
+      </ui:ScrollView>
+    </ui:VisualElement>
+  </ui:Instance>
+</ui:UXML>

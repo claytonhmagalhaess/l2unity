@@ -1,0 +1,2 @@
+Window LoadingWnd 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) unk102=LoadingWnd unk103=LoadingState unk107=0 unk108=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=156893351 unk128=67895778 unk130=0 unk131=0 unk132=71830488 unk133=12867 unk134=10515 unk135=-1064370090 unk139=Game size_percent=[2] size=[2]
+  Texture BackTex 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) file=L2Font.loading02-k type=Stretch layer=Normal u=0.0 v=0.0 uSize=1024.0 vSize=768.0 size_percent=[2] size=[2]

@@ -1,0 +1,46 @@
+INFO  Using log config file: jar:file:/C:/Users/Clayton/tools-re/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Clayton\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Clayton\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (623 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1953 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/C:/Users/Clayton/tools-re/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    C:\Users\Clayton\projeto\l2anim\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: C:\Users\Clayton\projeto\l2anim\ghidra_proj\l2nwindow (HeadlessAnalyzer)  
+INFO  Opening project: C:\Users\Clayton\projeto\l2anim\ghidra_proj\l2nwindow (HeadlessProject)  
+INFO  REPORT: Processing read-only project file: /NWindow.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ExtractCallTree.java 'C:\Users\Clayton\projeto\l2anim\out\re\nc_draw.c' '1' '0x10002f70' '0x10005aa0' '0x10005e00' '0x10007c40' '0x10008310' '0x10009080' '0x1000a640' '0x1000d060' '0x1000d670' '0x1000f700' '0x1000fee0' '0x10012860' '0x100183b0' '0x1001ba20' '0x1001c190' '0x1001eb60' '0x10023d10' '0x10030d90' '0x100326c0' '0x10033050' '0x10035330' '0x10035670' '0x1003c6f0' '0x10042bd0' '0x10044680' '0x10047b40' '0x10049ec0' '0x1004b070' '0x1004b510' '0x1004c7c0' '0x1004db50' '0x10052600' '0x10053790' '0x10055580' '0x10055930' '0x10059eb0' '0x1006a5e0' '0x1006ab60' '0x100833e0' '0x10083660' '0x100837d0' '0x10091400' '0x10091980' '0x10091ab0' '0x10091c30' '0x10093480' '0x10093f70' '0x10096870' '0x10096b00' '0x10096cc0' '0x10096f30' '0x10097220' '0x10097520' '0x100978f0' '0x100994d0' '0x1009e4b0' '0x1009ea20' '0x1009eec0' '0x1009f630' '0x1009fd20' '0x100a02d0' '0x100a07f0' '0x100a0d40' '0x100a1100' '0x100a2970' '0x100a2b20' '0x100a2c10' '0x100b2600' '0x100b2aa0' '0x100b2c60' '0x100b2d90' '0x100b3270' '0x100b41e0' '0x100b4630' '0x100b5c10' '0x100b5fc0' '0x100c4b30' '0x100c50e0' '0x10136850' '0x10137f00' '0x10174780' '0x10175bc0' '0x10179c30' '0x1017a1e0' '0x1017a700' '0x1017cea0' '0x1017d5a0' '0x1017e280' '0x1017ef00' '0x1017ff30' '0x10181500' '0x10181670' '0x10183e30' '0x10184100' '0x10185840' '0x101858b0' '0x10185ed0' '0x10186c20' '0x101895c0' '0x1018ced0' '0x1018d420' '0x1018f360' '0x1018fa60' '0x1018fc90' '0x1018fdb0' '0x101901c0' '0x10191430' '0x101917c0' '0x101924e0' '0x10196360' '0x101973d0' '0x101975f0' '0x101977d0' '0x1019c5a0' '0x1019d8e0' '0x1019dcf0' '0x1019ed20' '0x101a07c0' '0x101a0d60' '0x101a1640' '0x101a7990' '0x101a7f20' '0x101a8b40' '0x101a9650' '0x101aa930' '0x101ab1c0' '0x101ac290'  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\Users\Clayton\projeto\l2anim\ghidra_scripts\ExtractCallTree.java (HeadlessAnalyzer)  
+INFO  ExtractCallTree.java> funcoes decompiladas: 257 (GhidraScript)  

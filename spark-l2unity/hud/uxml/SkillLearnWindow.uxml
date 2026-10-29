@@ -1,0 +1,11 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillLearnWindow" uss="L2ListView" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="WindowTemplate" template="WindowTemplate" name="WindowTemplate" class="skill-learn-window">
+    <ui:VisualElement name="Content" picking-mode="Ignore" class="skill-learn-detail-content window-content-margin">
+      <ui:Instance template="ListViewTemplate" template="ListViewTemplate" name="ListView" class="skill-learn-list-view skill-active-background" />
+      <ui:VisualElement name="UserSPGroup" class="user-sp-group skill-active-background">
+        <ui:Label text="SP" name="SP" class="skill-group l2-color-4 user-sp-label" />
+        <ui:Label text="0" name="UserSPValue" class="skill-group l2-color-4" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:Instance>
+</ui:UXML>

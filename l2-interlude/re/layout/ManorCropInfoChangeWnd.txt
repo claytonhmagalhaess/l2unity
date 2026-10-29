@@ -1,0 +1,14 @@
+Window ManorCropInfoChangeWnd 256x201 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.Manor.manor4_back unk102=ManorCropInfoChangeWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=1145 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=0 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+  TextBox txtCropName 10x12 @TOP_LEFT->pai.TOP_LEFT(21,40) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtTomorrowAmountOfPurchase 10x12 @TOP_LEFT->pai.TOP_LEFT(31,71) textAlign=Left offsetY=0 sysstring=1225 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  EditBox ebTomorrowAmountOfPurchase 68x17 @TOP_LEFT->pai.TOP_LEFT(145,68) type=COUNT chatMarkOn=false size=[2]
+  TextBox txtTomorrowPurchaseLimit 38x19 @TOP_LEFT->pai.TOP_LEFT(31,96) textAlign=Left offsetY=0 sysstring=1226 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtVarTomorrowPurchaseLimit 18x19 @TOP_LEFT->pai.TOP_LEFT(145,96) text=0 textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtTomorrowPurchasePrice 38x19 @TOP_LEFT->pai.TOP_LEFT(31,121) textAlign=Left offsetY=0 sysstring=1149 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  EditBox ebTomorrowPurchasePrice 68x17 @TOP_LEFT->pai.TOP_LEFT(145,118) type=COUNT chatMarkOn=false size=[2]
+  TextBox txtTomorrowReward 38x19 @TOP_LEFT->pai.TOP_LEFT(31,146) textAlign=Left offsetY=0 sysstring=1150 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ComboBox cbTomorrowReward 68x17 @TOP_LEFT->pai.TOP_LEFT(145,143) size=[2] values=[2]
+    - values: sysString=-9999 systemMsg=-9999 text=1 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=2 reserved=-9999
+  Button btnOk 76x23 @TOP_LEFT->pai.TOP_LEFT(51,172) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=140 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(131,172) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=141 size=[2]

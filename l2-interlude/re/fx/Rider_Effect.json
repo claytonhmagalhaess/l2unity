@@ -1,0 +1,4770 @@
+{
+ "pacote": "Rider_Effect.u",
+ "classes": {
+  "bo_golem_smoke_a": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "bo_golem_smoke_a.SpriteEmitter32",
+     "bo_golem_smoke_a.SpriteEmitter15",
+     "bo_golem_smoke_a.SpriteEmitter50",
+     "bo_golem_smoke_a.SpriteEmitter48",
+     "bo_golem_smoke_a.SpriteEmitter22",
+     "bo_golem_smoke_a.SpriteEmitter23"
+    ],
+    "AutoReset": true,
+    "bLightChanged": true,
+    "bNoDelete": false,
+    "bSunAffect": true,
+    "Rotation": [
+     0,
+     901136,
+     0
+    ],
+    "DrawScale": 0.1,
+    "bDirectional": true
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter32",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseDirectionAs": 1,
+      "Acceleration": [
+       0.0,
+       0.0,
+       10.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.6,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 20,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       0.4,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.8
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.5
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 13.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 120.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1002",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 7,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 150.0,
+        "Max": 200.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter15",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       10.0
+      ],
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 237,
+         "G": 100,
+         "B": 41,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.22143,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.4,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       1.0,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.8
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.5
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 10.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 120.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1066",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 1,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 130.0,
+        "Max": 180.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter50",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseDirectionAs": 1,
+      "Acceleration": [
+       0.0,
+       0.0,
+       15.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.6,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 20,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       0.4,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 13.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 120.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1002",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 7,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "InitialDelayRange": {
+       "Min": 0.4,
+       "Max": 0.4
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 150.0,
+        "Max": 200.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter48",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       15.0
+      ],
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 237,
+         "G": 100,
+         "B": 41,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.22143,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.4,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       1.0,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 10.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 120.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1066",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 1,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "InitialDelayRange": {
+       "Min": 0.4,
+       "Max": 0.4
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 130.0,
+        "Max": 180.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter22",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseDirectionAs": 1,
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.6,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 20,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       0.4,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 13.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 120.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1002",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 7,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "InitialDelayRange": {
+       "Min": 0.7,
+       "Max": 0.7
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 150.0,
+        "Max": 200.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter23",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 237,
+         "G": 100,
+         "B": 41,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.22143,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.4,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       1.0,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 10.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 120.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1066",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 1,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "InitialDelayRange": {
+       "Min": 0.7,
+       "Max": 0.7
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 130.0,
+        "Max": 180.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "bo_golem_smoke_b": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "bo_golem_smoke_b.SpriteEmitter53",
+     "bo_golem_smoke_b.SpriteEmitter54",
+     "bo_golem_smoke_b.SpriteEmitter55",
+     "bo_golem_smoke_b.SpriteEmitter56"
+    ],
+    "AutoReset": true,
+    "bLightChanged": true,
+    "bNoDelete": false,
+    "bSunAffect": true,
+    "Rotation": [
+     0,
+     901136,
+     0
+    ],
+    "DrawScale": 0.1,
+    "bDirectional": true
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter53",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseDirectionAs": 1,
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.6,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 20,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       0.4,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 13.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 80.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1002",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 7,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 80.0,
+        "Max": 100.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter54",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 237,
+         "G": 100,
+         "B": 41,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.22143,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.4,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       1.0,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 10.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 80.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1066",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 1,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 80.0,
+        "Max": 80.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter55",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseDirectionAs": 1,
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.6,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 20,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       0.4,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 13.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 13.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 80.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1002",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 7,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "InitialDelayRange": {
+       "Min": 0.5,
+       "Max": 0.5
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 80.0,
+        "Max": 100.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter56",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 237,
+         "G": 100,
+         "B": 41,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.22143,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.97,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.97,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.4,
+      "FadeOutStartTime": 0.399,
+      "FadeOut": true,
+      "FadeInEndTime": 0.399,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       1.0,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.02,
+        "Max": 0.02
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 10.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 80.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1066",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 1,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "InitialDelayRange": {
+       "Min": 0.5,
+       "Max": 0.5
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 80.0,
+        "Max": 80.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 13.35,
+        "Max": 17.665
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "br_e_u080_z_bike": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "br_e_u080_z_bike.MeshEmitter4",
+     "br_e_u080_z_bike.SpriteEmitter8",
+     "br_e_u080_z_bike.SpriteEmitter9",
+     "br_e_u080_z_bike.SpriteEmitter14",
+     "br_e_u080_z_bike.MeshEmitter12",
+     "br_e_u080_z_bike.SpriteEmitter15"
+    ],
+    "bLightChanged": true,
+    "bNoDelete": false,
+    "bSunAffect": true,
+    "DrawScale": 0.1
+   },
+   "emitters": [
+    {
+     "name": "MeshEmitter4",
+     "cls": "MeshEmitter",
+     "props": {
+      "StaticMesh": "LineageEffectsStaticmeshes.magiccircle.magiccircleblack02",
+      "UseMeshBlendMode": false,
+      "RenderTwoSided": true,
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 0,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 192,
+         "A": 255
+        }
+       }
+      ],
+      "Opacity": 0.1,
+      "FadeOutStartTime": 0.05,
+      "FadeInEndTime": 0.05,
+      "FadeIn": true,
+      "MaxParticles": 3,
+      "StartLocationOffset": [
+       0.0,
+       0.0,
+       -2.0
+      ],
+      "SphereRadiusRange": {
+       "Min": 0.0,
+       "Max": 1.0
+      },
+      "SpinParticles": true,
+      "SpinCCWorCW": [
+       0.0,
+       0.5,
+       0.5
+      ],
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": 0.01,
+        "Max": 0.01
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.66,
+        "RelativeSize": 1.01
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.0
+       }
+      ],
+      "SizeScaleRepeats": 20.0,
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.6,
+        "Max": 0.6
+       },
+       "Y": {
+        "Min": 0.6,
+        "Max": 0.6
+       },
+       "Z": {
+        "Min": 0.2,
+        "Max": 0.2
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1000.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "LifetimeRange": {
+       "Min": 0.05,
+       "Max": 0.05
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter8",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       -20.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.48214,
+        "Color": {
+         "R": 210,
+         "G": 210,
+         "B": 210,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 5.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.522,
+        "Max": 0.522
+       },
+       "Y": {
+        "Min": 0.494,
+        "Max": 0.494
+       },
+       "Z": {
+        "Min": 0.36,
+        "Max": 0.36
+       }
+      },
+      "FadeOutStartTime": 0.549,
+      "FadeOut": true,
+      "FadeInEndTime": 0.027,
+      "FadeIn": true,
+      "CoordinateSystem": 0,
+      "MaxParticles": 50,
+      "StartLocationOffset": [
+       0.0,
+       0.0,
+       -5.0
+      ],
+      "StartLocationRange": {
+       "X": {
+        "Min": -15.0,
+        "Max": 15.0
+       },
+       "Y": {
+        "Min": -10.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Y": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Z": {
+        "Min": 6.0,
+        "Max": 10.0
+       }
+      },
+      "UseRotationFrom": 1,
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 3.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 12.0,
+        "Max": 12.0
+       },
+       "Y": {
+        "Min": 12.0,
+        "Max": 12.0
+       },
+       "Z": {
+        "Min": 12.0,
+        "Max": 12.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 200.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0071",
+      "TextureUSubdivisions": 4,
+      "TextureVSubdivisions": 4,
+      "BlendBetweenSubdivisions": true,
+      "SubdivisionStart": 13,
+      "SubdivisionEnd": 16,
+      "LifetimeRange": {
+       "Min": 0.5,
+       "Max": 1.1
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 50.0,
+        "Max": 50.0
+       },
+       "Y": {
+        "Min": 50.0,
+        "Max": 50.0
+       },
+       "Z": {
+        "Min": 20.0,
+        "Max": 20.0
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 2.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 2.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "GetVelocityDirectionFrom": 1
+     }
+    },
+    {
+     "name": "SpriteEmitter9",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       -50.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.48214,
+        "Color": {
+         "R": 210,
+         "G": 210,
+         "B": 210,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 5.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.522,
+        "Max": 0.522
+       },
+       "Y": {
+        "Min": 0.494,
+        "Max": 0.494
+       },
+       "Z": {
+        "Min": 0.36,
+        "Max": 0.36
+       }
+      },
+      "FadeOutStartTime": 0.549,
+      "FadeOut": true,
+      "FadeInEndTime": 0.027,
+      "FadeIn": true,
+      "CoordinateSystem": 0,
+      "MaxParticles": 5,
+      "StartLocationOffset": [
+       0.0,
+       0.0,
+       3.0
+      ],
+      "StartLocationRange": {
+       "X": {
+        "Min": -10.0,
+        "Max": -10.0
+       },
+       "Y": {
+        "Min": -10.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Y": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Z": {
+        "Min": 6.0,
+        "Max": 10.0
+       }
+      },
+      "UseRotationFrom": 1,
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.3,
+        "Max": 0.3
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 15.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 10.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 10.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 10.0,
+        "Max": 10.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0071",
+      "TextureUSubdivisions": 4,
+      "TextureVSubdivisions": 4,
+      "BlendBetweenSubdivisions": true,
+      "SubdivisionStart": 10,
+      "SubdivisionEnd": 16,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 2.0
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": -100.0,
+        "Max": -50.0
+       },
+       "Y": {
+        "Min": -20.0,
+        "Max": 20.0
+       },
+       "Z": {
+        "Min": 30.0,
+        "Max": 30.0
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 2.0,
+        "Max": 3.0
+       },
+       "Y": {
+        "Min": 2.0,
+        "Max": 3.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter14",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.5,
+        "Color": {
+         "R": 173,
+         "G": 173,
+         "B": 173,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 5.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.5,
+        "Max": 0.5
+       },
+       "Z": {
+        "Min": 0.5,
+        "Max": 0.5
+       }
+      },
+      "Opacity": 0.7,
+      "FadeOutStartTime": 0.5,
+      "FadeOut": true,
+      "MaxParticles": 8,
+      "StartLocationOffset": [
+       0.0,
+       0.0,
+       -5.0
+      ],
+      "StartLocationRange": {
+       "X": {
+        "Min": -2.0,
+        "Max": 2.0
+       },
+       "Y": {
+        "Min": -2.0,
+        "Max": 2.0
+       },
+       "Z": {
+        "Min": -2.0,
+        "Max": 2.0
+       }
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": -360.0,
+        "Max": 360.0
+       },
+       "Y": {
+        "Min": 30.0,
+        "Max": 140.0
+       },
+       "Z": {
+        "Min": 8.0,
+        "Max": 10.0
+       }
+      },
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": -0.1,
+        "Max": 0.1
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.07,
+        "RelativeSize": 1.5
+       },
+       {
+        "RelativeTime": 0.5,
+        "RelativeSize": 1.6
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 2.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 8.0,
+        "Max": 8.0
+       },
+       "Y": {
+        "Min": 8.0,
+        "Max": 8.0
+       },
+       "Z": {
+        "Min": 8.0,
+        "Max": 8.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles3.fx_m_t4029",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "BlendBetweenSubdivisions": true,
+      "SubdivisionEnd": 7,
+      "LifetimeRange": {
+       "Min": 0.4,
+       "Max": 2.0
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 3.0,
+        "Max": 3.0
+       },
+       "Y": {
+        "Min": 3.0,
+        "Max": 3.0
+       },
+       "Z": {
+        "Min": 3.0,
+        "Max": 3.0
+       }
+      },
+      "GetVelocityDirectionFrom": 2
+     }
+    },
+    {
+     "name": "MeshEmitter12",
+     "cls": "MeshEmitter",
+     "props": {
+      "StaticMesh": "LineageEffectsStaticmeshes.Skill_Power.skill_charge02",
+      "UseMeshBlendMode": false,
+      "RenderTwoSided": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.7,
+        "Max": 0.7
+       },
+       "Z": {
+        "Min": 0.65,
+        "Max": 0.65
+       }
+      },
+      "Opacity": 0.5,
+      "FadeOutStartTime": 0.18,
+      "FadeOut": true,
+      "FadeInEndTime": 0.12,
+      "FadeIn": true,
+      "MaxParticles": 8,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": -1.0,
+        "Max": 1.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.1
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.3,
+        "Max": 0.3
+       },
+       "Y": {
+        "Min": 0.3,
+        "Max": 0.3
+       },
+       "Z": {
+        "Min": 0.3,
+        "Max": 0.3
+       }
+      },
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "LifetimeRange": {
+       "Min": 0.3,
+       "Max": 0.5
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": -15.0,
+        "Max": -15.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter15",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.69643,
+        "Color": {
+         "R": 138,
+         "G": 138,
+         "B": 138,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 70.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.1,
+        "Max": 0.1
+       },
+       "Y": {
+        "Min": 0.1,
+        "Max": 0.1
+       },
+       "Z": {
+        "Min": 0.1,
+        "Max": 0.1
+       }
+      },
+      "FadeOutStartTime": 0.037,
+      "FadeOut": true,
+      "StartLocationOffset": [
+       4.0,
+       0.0,
+       0.0
+      ],
+      "SphereRadiusRange": {
+       "Min": 7.0,
+       "Max": 7.0
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.25,
+        "Max": 0.25
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.5
+       },
+       {
+        "RelativeTime": 0.41,
+        "RelativeSize": 0.8
+       },
+       {
+        "RelativeTime": 0.76,
+        "RelativeSize": 1.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 18.0,
+        "Max": 18.0
+       },
+       "Y": {
+        "Min": 18.0,
+        "Max": 18.0
+       },
+       "Z": {
+        "Min": 18.0,
+        "Max": 18.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 100000.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 6,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t_3033",
+      "LifetimeRange": {
+       "Min": 0.1,
+       "Max": 0.1
+      }
+     }
+    }
+   ]
+  },
+  "br_e_u080_z_bike_run": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "br_e_u080_z_bike_run.MeshEmitter10",
+     "br_e_u080_z_bike_run.SpriteEmitter12",
+     "br_e_u080_z_bike_run.MeshEmitter11",
+     "br_e_u080_z_bike_run.SpriteEmitter13"
+    ],
+    "bLightChanged": true,
+    "bNoDelete": false,
+    "bSunAffect": true,
+    "Rotation": [
+     32768,
+     0,
+     0
+    ]
+   },
+   "emitters": [
+    {
+     "name": "MeshEmitter10",
+     "cls": "MeshEmitter",
+     "props": {
+      "StaticMesh": "LineageEffectsStaticmeshes.Impact.sparkredcone00",
+      "UseMeshBlendMode": false,
+      "RenderTwoSided": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.8,
+        "Max": 0.8
+       },
+       "Z": {
+        "Min": 0.5,
+        "Max": 0.5
+       }
+      },
+      "Opacity": 0.6,
+      "FadeOutStartTime": 0.135,
+      "FadeOut": true,
+      "MaxParticles": 3,
+      "Disabled": true,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 1.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.07,
+        "RelativeSize": 2.0
+       },
+       {
+        "RelativeTime": 0.18,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 0.76,
+        "RelativeSize": 0.8
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.5
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.3,
+        "Max": 0.4
+       },
+       "Y": {
+        "Min": 0.27,
+        "Max": 0.27
+       },
+       "Z": {
+        "Min": 0.27,
+        "Max": 0.27
+       }
+      },
+      "InitialParticlesPerSecond": 100.0,
+      "AutomaticInitialSpawning": false,
+      "LifetimeRange": {
+       "Min": 0.3,
+       "Max": 0.3
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 2.0,
+        "Max": 2.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 5.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter12",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       0.0,
+       0.0,
+       5.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "FadeOutStartTime": 0.82,
+      "FadeOut": true,
+      "StartLocationOffset": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "StartLocationRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": -2.0,
+        "Max": 2.0
+       },
+       "Z": {
+        "Min": -2.0,
+        "Max": 2.0
+       }
+      },
+      "StartLocationShape": 1,
+      "SphereRadiusRange": {
+       "Min": 0.0,
+       "Max": 1.0
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Z": {
+        "Min": 8.0,
+        "Max": 8.0
+       }
+      },
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.1
+       },
+       "Y": {
+        "Min": 0.05,
+        "Max": 0.1
+       },
+       "Z": {
+        "Min": 0.05,
+        "Max": 0.1
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.09,
+        "RelativeSize": 2.0
+       },
+       {
+        "RelativeTime": 0.23,
+        "RelativeSize": 3.0
+       },
+       {
+        "RelativeTime": 0.33,
+        "RelativeSize": 2.0
+       },
+       {
+        "RelativeTime": 0.63,
+        "RelativeSize": 1.5
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.5
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 12.0,
+        "Max": 18.0
+       },
+       "Y": {
+        "Min": 12.0,
+        "Max": 18.0
+       },
+       "Z": {
+        "Min": 12.0,
+        "Max": 18.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1000.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0072",
+      "TextureUSubdivisions": 4,
+      "TextureVSubdivisions": 4,
+      "BlendBetweenSubdivisions": true,
+      "SubdivisionStart": 1,
+      "SubdivisionEnd": 15,
+      "LifetimeRange": {
+       "Min": 0.8,
+       "Max": 1.3
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 100.0,
+        "Max": 100.0
+       },
+       "Y": {
+        "Min": 10.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 10.0,
+        "Max": 10.0
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 3.0,
+        "Max": 3.0
+       },
+       "Y": {
+        "Min": 2.0,
+        "Max": 3.0
+       },
+       "Z": {
+        "Min": 2.0,
+        "Max": 3.0
+       }
+      },
+      "GetVelocityDirectionFrom": 2
+     }
+    },
+    {
+     "name": "MeshEmitter11",
+     "cls": "MeshEmitter",
+     "props": {
+      "StaticMesh": "LineageEffectsStaticmeshes.Fire.fireball00",
+      "UseMeshBlendMode": false,
+      "RenderTwoSided": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "Opacity": 0.4,
+      "FadeOutStartTime": 0.147,
+      "FadeOut": true,
+      "MaxParticles": 3,
+      "StartLocationOffset": [
+       5.0,
+       0.0,
+       0.0
+      ],
+      "StartLocationShape": 1,
+      "SphereRadiusRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.45,
+        "Max": 0.55
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": -0.1,
+        "Max": 0.1
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.1
+       },
+       {
+        "RelativeTime": 0.34,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 0.79,
+        "RelativeSize": 1.2
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.5
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.03744,
+        "Max": 0.03744
+       },
+       "Y": {
+        "Min": 0.04493,
+        "Max": 0.04493
+       },
+       "Z": {
+        "Min": 0.04493,
+        "Max": 0.04493
+       }
+      },
+      "InitialParticlesPerSecond": 1000.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "LifetimeRange": {
+       "Min": 0.2,
+       "Max": 0.3
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter13",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "Opacity": 0.18,
+      "FadeOutStartTime": 0.084,
+      "FadeOut": true,
+      "MaxParticles": 8,
+      "StartLocationOffset": [
+       2.0,
+       0.0,
+       0.0
+      ],
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.11,
+        "RelativeSize": 4.5
+       },
+       {
+        "RelativeTime": 0.2,
+        "RelativeSize": 5.0
+       },
+       {
+        "RelativeTime": 0.41,
+        "RelativeSize": 2.0
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 6.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 50.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0081",
+      "SubdivisionEnd": 1,
+      "LifetimeRange": {
+       "Min": 0.3,
+       "Max": 0.3
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 100.0,
+        "Max": 100.0
+       },
+       "Y": {
+        "Min": -80.0,
+        "Max": 80.0
+       },
+       "Z": {
+        "Min": -80.0,
+        "Max": 80.0
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 5.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 5.0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "br_e_u113_g_halloween_flying_broom": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "br_e_u113_g_halloween_flying_broom.SpriteEmitter35",
+     "br_e_u113_g_halloween_flying_broom.MeshEmitter30"
+    ],
+    "bNoDelete": false,
+    "DrawScale": 0.02
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter35",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.119,
+        "Max": 0.119
+       },
+       "Y": {
+        "Min": 0.129,
+        "Max": 0.129
+       },
+       "Z": {
+        "Min": 0.074,
+        "Max": 0.074
+       }
+      },
+      "Opacity": 0.83,
+      "FadeOutStartTime": 0.32,
+      "FadeOut": true,
+      "FadeInEndTime": 0.22,
+      "FadeIn": true,
+      "MaxParticles": 150,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.5
+       },
+       {
+        "RelativeTime": 0.7,
+        "RelativeSize": 1.2
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.5
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 1.5,
+        "Max": 1.5
+       },
+       "Y": {
+        "Min": 1.5,
+        "Max": 1.5
+       },
+       "Z": {
+        "Min": 1.5,
+        "Max": 1.5
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles3.fx_m_t5009",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 4,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 8,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": -15.0,
+        "Max": 15.0
+       },
+       "Y": {
+        "Min": -15.0,
+        "Max": 15.0
+       },
+       "Z": {
+        "Min": -15.0,
+        "Max": 15.0
+       }
+      },
+      "GetVelocityDirectionFrom": 1
+     }
+    },
+    {
+     "name": "MeshEmitter30",
+     "cls": "MeshEmitter",
+     "props": {
+      "StaticMesh": "LineageEffectsStaticmeshes.Monster.Barler_bright0",
+      "UseMeshBlendMode": false,
+      "RenderTwoSided": true,
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.59643,
+        "Color": {
+         "R": 218,
+         "G": 150,
+         "B": 37,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 13.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.095,
+        "Max": 0.095
+       },
+       "Y": {
+        "Min": 0.129,
+        "Max": 0.129
+       },
+       "Z": {
+        "Min": 0.074,
+        "Max": 0.074
+       }
+      },
+      "Opacity": 0.3,
+      "FadeOutStartTime": 0.48,
+      "FadeOut": true,
+      "FadeInEndTime": 0.2,
+      "FadeIn": true,
+      "MaxParticles": 20,
+      "UseRotationFrom": 3,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -0.1,
+        "Max": 0.1
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": -0.08,
+        "Max": -0.08
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.92
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.15
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.088,
+        "Max": 0.179
+       },
+       "Y": {
+        "Min": 0.094,
+        "Max": 0.105
+       },
+       "Z": {
+        "Min": 0.07,
+        "Max": 0.07
+       }
+      },
+      "InitialParticlesPerSecond": 150.0,
+      "LifetimeRange": {
+       "Min": 0.94,
+       "Max": 0.94
+      }
+     }
+    }
+   ]
+  },
+  "s_ridepawn_trail_w": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "s_ridepawn_trail_w.SpriteEmitter11",
+     "s_ridepawn_trail_w.SpriteEmitter13"
+    ],
+    "bNoDelete": false
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter11",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.11071,
+        "Color": {
+         "R": 0,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 0,
+         "G": 0,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "FadeOutStartTime": 0.682,
+      "FadeOut": true,
+      "FadeInEndTime": 0.319,
+      "FadeIn": true,
+      "MaxParticles": 3,
+      "StartLocationShape": 2,
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 180.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 5.0
+       }
+      },
+      "UseRevolution": true,
+      "RevolutionCenterOffsetRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 1.0
+       }
+      },
+      "RevolutionsPerSecondRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.1,
+        "Max": 0.1
+       },
+       "Y": {
+        "Min": 0.1,
+        "Max": 0.1
+       },
+       "Z": {
+        "Min": 0.1,
+        "Max": 0.1
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1.5,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": null,
+      "TextureUSubdivisions": 4,
+      "TextureVSubdivisions": 2,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 8,
+      "LifetimeRange": {
+       "Min": 1.1,
+       "Max": 1.1
+      },
+      "WarmupTicksPerSecond": 1.0,
+      "RelativeWarmupTime": 1.0
+     }
+    },
+    {
+     "name": "SpriteEmitter13",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       -150.0,
+       0.0,
+       0.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 0,
+         "G": 255,
+         "B": 0,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 128,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 15.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.8,
+        "Max": 0.8
+       },
+       "Y": {
+        "Min": 0.8,
+        "Max": 0.8
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.0
+       }
+      },
+      "Opacity": 0.65,
+      "FadeOutStartTime": 0.162,
+      "FadeOut": true,
+      "FadeInEndTime": 0.09,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 5,
+      "StartLocationRange": {
+       "X": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": -5.0,
+        "Max": 5.0
+       }
+      },
+      "SphereRadiusRange": {
+       "Min": 0.0,
+       "Max": 1.0
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Z": {
+        "Min": 2.0,
+        "Max": 2.0
+       }
+      },
+      "UseRevolution": true,
+      "RevolutionCenterOffsetRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "RevolutionsPerSecondRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": 0.1,
+        "Max": 0.15
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.2
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 1.5,
+        "Max": 1.5
+       },
+       "Y": {
+        "Min": 1.5,
+        "Max": 1.5
+       },
+       "Z": {
+        "Min": 1.5,
+        "Max": 1.5
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 3.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0085",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 2,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 0.6,
+       "Max": 0.6
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.0
+       }
+      },
+      "GetVelocityDirectionFrom": 2,
+      "CustomMaterials": [
+       "Rider_EffectTex.Particles4.fx_m_t8034"
+      ]
+     }
+    }
+   ]
+  },
+  "u_vehicle_deco_a": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "u_vehicle_deco_a.SpriteEmitter1"
+    ],
+    "bNoDelete": false
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter1",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.50714,
+        "Color": {
+         "R": 94,
+         "G": 94,
+         "B": 94,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 16.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 0.2,
+        "Max": 0.5
+       },
+       "Y": {
+        "Min": 0.5,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.0
+       }
+      },
+      "FadeOutStartTime": 1.008,
+      "FadeOut": true,
+      "FadeInEndTime": 0.216,
+      "FadeIn": true,
+      "CoordinateSystem": 0,
+      "MaxParticles": 50,
+      "ResetAfterChange": true,
+      "StartLocationShape": 2,
+      "SphereRadiusRange": {
+       "Min": 10.0,
+       "Max": 10.0
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Y": {
+        "Min": 30.0,
+        "Max": 90.0
+       },
+       "Z": {
+        "Min": 10.0,
+        "Max": 10.0
+       }
+      },
+      "UseRotationFrom": 1,
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.3
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.5
+       },
+       {
+        "RelativeTime": 0.5,
+        "RelativeSize": 1.5
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.5
+       }
+      ],
+      "SizeScaleRepeats": 12.0,
+      "StartSizeRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.5
+       },
+       "Y": {
+        "Min": 1.0,
+        "Max": 1.5
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.5
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 20.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0085",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 2,
+      "BlendBetweenSubdivisions": true,
+      "SubdivisionEnd": 3,
+      "LifetimeRange": {
+       "Min": 1.8,
+       "Max": 1.8
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": -15.0,
+        "Max": 15.0
+       },
+       "Y": {
+        "Min": -15.0,
+        "Max": 15.0
+       },
+       "Z": {
+        "Min": -15.0,
+        "Max": 15.0
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 2.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 2.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 2.0
+       }
+      },
+      "WarmupTicksPerSecond": 2.0,
+      "RelativeWarmupTime": 2.0
+     }
+    }
+   ]
+  },
+  "u_vehicle_deco_b": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "u_vehicle_deco_b.SpriteEmitter32",
+     "u_vehicle_deco_b.SpriteEmitter33"
+    ],
+    "bLightChanged": true,
+    "bNoDelete": false,
+    "bSunAffect": true,
+    "DrawScale": 0.2,
+    "bDirectional": true
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter32",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.11071,
+        "Color": {
+         "R": 0,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 0,
+         "G": 0,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "FadeOutStartTime": 0.682,
+      "FadeOut": true,
+      "FadeInEndTime": 0.319,
+      "FadeIn": true,
+      "MaxParticles": 3,
+      "StartLocationShape": 2,
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 180.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 5.0
+       }
+      },
+      "UseRevolution": true,
+      "RevolutionCenterOffsetRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 1.0
+       }
+      },
+      "RevolutionsPerSecondRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": 0.5,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.1,
+        "Max": 0.1
+       },
+       "Y": {
+        "Min": 0.1,
+        "Max": 0.1
+       },
+       "Z": {
+        "Min": 0.1,
+        "Max": 0.1
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1.5,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 1,
+      "Texture": null,
+      "TextureUSubdivisions": 4,
+      "TextureVSubdivisions": 2,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 8,
+      "LifetimeRange": {
+       "Min": 1.1,
+       "Max": 1.1
+      },
+      "WarmupTicksPerSecond": 1.0,
+      "RelativeWarmupTime": 1.0
+     }
+    },
+    {
+     "name": "SpriteEmitter33",
+     "cls": "SpriteEmitter",
+     "props": {
+      "Acceleration": [
+       -150.0,
+       0.0,
+       0.0
+      ],
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 0,
+         "G": 255,
+         "B": 0,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 128,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 15.0,
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.7,
+        "Max": 0.7
+       },
+       "Z": {
+        "Min": 0.5,
+        "Max": 0.5
+       }
+      },
+      "Opacity": 0.65,
+      "FadeOutStartTime": 0.162,
+      "FadeOut": true,
+      "FadeInEndTime": 0.09,
+      "FadeIn": true,
+      "CoordinateSystem": 4,
+      "MaxParticles": 5,
+      "StartLocationRange": {
+       "X": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Y": {
+        "Min": -5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": -5.0,
+        "Max": 5.0
+       }
+      },
+      "SphereRadiusRange": {
+       "Min": 0.0,
+       "Max": 1.0
+      },
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 360.0
+       },
+       "Z": {
+        "Min": 2.0,
+        "Max": 2.0
+       }
+      },
+      "UseRevolution": true,
+      "RevolutionCenterOffsetRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "RevolutionsPerSecondRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "SpinParticles": true,
+      "SpinsPerSecondRange": {
+       "X": {
+        "Min": 0.1,
+        "Max": 0.15
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.2
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 1.5,
+        "Max": 1.5
+       },
+       "Y": {
+        "Min": 1.5,
+        "Max": 1.5
+       },
+       "Z": {
+        "Min": 1.5,
+        "Max": 1.5
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 3.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles.fx_m_t0085",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 2,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 2,
+      "LifetimeRange": {
+       "Min": 0.6,
+       "Max": 0.6
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.0
+       }
+      },
+      "GetVelocityDirectionFrom": 2,
+      "CustomMaterials": [
+       "Rider_EffectTex.Particles4.fx_m_t8034"
+      ]
+     }
+    }
+   ]
+  },
+  "u_vehicle_light_big": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "u_vehicle_light_big.MeshEmitter8",
+     "u_vehicle_light_big.SpriteEmitter29"
+    ],
+    "bNoDelete": false
+   },
+   "emitters": [
+    {
+     "name": "MeshEmitter8",
+     "cls": "MeshEmitter",
+     "props": {
+      "StaticMesh": "Rider_EffectStatic.etc.MVlight",
+      "UseMeshBlendMode": false,
+      "RenderTwoSided": true,
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 128,
+         "B": 64,
+         "A": 255
+        }
+       }
+      ],
+      "Opacity": 0.04,
+      "FadeOutStartTime": 0.64,
+      "FadeOut": true,
+      "FadeInEndTime": 0.08,
+      "FadeIn": true,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.25,
+        "Max": 0.25
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": -0.06,
+        "Max": -0.06
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 0.75
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 1.25
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 0.6,
+        "Max": 0.6
+       },
+       "Y": {
+        "Min": 2.0,
+        "Max": 2.0
+       },
+       "Z": {
+        "Min": 0.6,
+        "Max": 0.6
+       }
+      },
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "LifetimeRange": {
+       "Min": 1.0,
+       "Max": 1.0
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter29",
+     "cls": "SpriteEmitter",
+     "props": {
+      "UseDirectionAs": 1,
+      "UseColorScale": true,
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 251,
+         "G": 174,
+         "B": 89,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.06429,
+        "Color": {
+         "R": 204,
+         "G": 203,
+         "B": 218,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 0,
+         "G": 0,
+         "B": 0,
+         "A": 255
+        }
+       }
+      ],
+      "ColorMultiplierRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.8,
+        "Max": 0.8
+       },
+       "Z": {
+        "Min": 0.7,
+        "Max": 0.7
+       }
+      },
+      "Opacity": 0.5,
+      "FadeOutStartTime": 0.25,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 2.0
+       },
+       {
+        "RelativeTime": 0.3,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 4.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 6.0,
+        "Max": 6.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 7.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 7.0
+       }
+      },
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t_3208",
+      "LifetimeRange": {
+       "Min": 0.25,
+       "Max": 0.25
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.1,
+        "Max": 0.1
+       }
+      },
+      "VelocityLossRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.1,
+        "Max": 0.1
+       }
+      }
+     }
+    }
+   ]
+  },
+  "u_vehicle_trail_a": {
+   "super": "Engine.Emitter",
+   "metodo": "cabecalho",
+   "defaults": {
+    "Emitters": [
+     "u_vehicle_trail_a.SpriteEmitter4",
+     "u_vehicle_trail_a.SpriteEmitter5",
+     "u_vehicle_trail_a.SpriteEmitter16",
+     "u_vehicle_trail_a.SpriteEmitter17"
+    ],
+    "bLightChanged": true,
+    "bNoDelete": false,
+    "bSunAffect": true,
+    "Rotation": [
+     0,
+     2072626,
+     0
+    ]
+   },
+   "emitters": [
+    {
+     "name": "SpriteEmitter4",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "Opacity": 0.22,
+      "FadeOutStartTime": 0.23,
+      "FadeOut": true,
+      "FadeInEndTime": 0.11,
+      "FadeIn": true,
+      "MaxParticles": 3,
+      "Disabled": true,
+      "StartLocationShape": 2,
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 180.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 5.0
+       }
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": 0.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 2.0
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 7.0,
+        "Max": 7.0
+       },
+       "Y": {
+        "Min": 7.0,
+        "Max": 7.0
+       },
+       "Z": {
+        "Min": 7.0,
+        "Max": 7.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1.5,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles.FX_M_T4123",
+      "LifetimeRange": {
+       "Min": 0.5,
+       "Max": 0.7
+      },
+      "WarmupTicksPerSecond": 1.0,
+      "RelativeWarmupTime": 2.0
+     }
+    },
+    {
+     "name": "SpriteEmitter5",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "MaxParticles": 3,
+      "WeatherSoundCheck": true,
+      "StartLocationShape": 2,
+      "StartLocationPolarRange": {
+       "X": {
+        "Min": -180.0,
+        "Max": 180.0
+       },
+       "Y": {
+        "Min": 90.0,
+        "Max": 90.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 5.0
+       }
+      },
+      "UseRevolution": true,
+      "RevolutionsPerSecondRange": {
+       "X": {
+        "Min": 0.5,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 1.0,
+        "Max": 1.0
+       },
+       "Z": {
+        "Min": 1.0,
+        "Max": 1.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 1.5,
+      "AutomaticInitialSpawning": false,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t_3055",
+      "LifetimeRange": {
+       "Min": 2.0,
+       "Max": 2.0
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter16",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.48214,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 10.0,
+      "FadeOutStartTime": 0.13,
+      "FadeOut": true,
+      "CoordinateSystem": 4,
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "StartSizeRange": {
+       "X": {
+        "Min": 4.0,
+        "Max": 4.0
+       },
+       "Y": {
+        "Min": 4.0,
+        "Max": 4.0
+       },
+       "Z": {
+        "Min": 4.0,
+        "Max": 4.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 6,
+      "Texture": "Rider_EffectTex.Particles2.fx_m_t1020",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 2,
+      "UseRandomSubdivision": true,
+      "SubdivisionEnd": 4,
+      "LifetimeRange": {
+       "Min": 0.5,
+       "Max": 0.5
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 5.0,
+        "Max": 5.0
+       },
+       "Y": {
+        "Min": 5.0,
+        "Max": 5.0
+       },
+       "Z": {
+        "Min": 5.0,
+        "Max": 5.0
+       }
+      }
+     }
+    },
+    {
+     "name": "SpriteEmitter17",
+     "cls": "SpriteEmitter",
+     "props": {
+      "ColorScale": [
+       {
+        "RelativeTime": 0.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 0.48214,
+        "Color": {
+         "R": 128,
+         "G": 128,
+         "B": 128,
+         "A": 255
+        }
+       },
+       {
+        "RelativeTime": 1.0,
+        "Color": {
+         "R": 255,
+         "G": 255,
+         "B": 255,
+         "A": 255
+        }
+       }
+      ],
+      "ColorScaleRepeats": 10.0,
+      "FadeOutStartTime": 0.204,
+      "FadeOut": true,
+      "CoordinateSystem": 4,
+      "StartLocationRange": {
+       "X": {
+        "Min": -2.0,
+        "Max": 2.0
+       },
+       "Y": {
+        "Min": -2.0,
+        "Max": 2.0
+       },
+       "Z": {
+        "Min": -2.0,
+        "Max": 2.0
+       }
+      },
+      "SpinParticles": true,
+      "StartSpinRange": {
+       "X": {
+        "Min": -1.0,
+        "Max": 1.0
+       },
+       "Y": {
+        "Min": 0.0,
+        "Max": 0.0
+       },
+       "Z": {
+        "Min": 0.0,
+        "Max": 0.0
+       }
+      },
+      "UseSizeScale": true,
+      "UseRegularSizeScale": false,
+      "SizeScale": [
+       {
+        "RelativeTime": 0.0,
+        "RelativeSize": 1.0
+       },
+       {
+        "RelativeTime": 1.0,
+        "RelativeSize": 0.2
+       }
+      ],
+      "StartSizeRange": {
+       "X": {
+        "Min": 2.0,
+        "Max": 4.0
+       },
+       "Y": {
+        "Min": 2.0,
+        "Max": 4.0
+       },
+       "Z": {
+        "Min": 2.0,
+        "Max": 4.0
+       }
+      },
+      "UniformSize": true,
+      "InitialParticlesPerSecond": 10.0,
+      "AutomaticInitialSpawning": false,
+      "DrawStyle": 6,
+      "Texture": "Rider_EffectTex.Particles.FX_M_T4122",
+      "TextureUSubdivisions": 2,
+      "TextureVSubdivisions": 2,
+      "SubdivisionEnd": 1,
+      "LifetimeRange": {
+       "Min": 0.3,
+       "Max": 0.4
+      },
+      "StartVelocityRange": {
+       "X": {
+        "Min": 10.0,
+        "Max": 10.0
+       },
+       "Y": {
+        "Min": 10.0,
+        "Max": 10.0
+       },
+       "Z": {
+        "Min": 10.0,
+        "Max": 10.0
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

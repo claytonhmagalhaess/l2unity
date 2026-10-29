@@ -1,0 +1,33 @@
+/* SparkChat  (4 regras) */
+.spark-chat-input {
+    margin: 0;
+    padding: 0;
+    unity-font-definition: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 12px;
+    color: rgba(226, 226, 226, 1.00);
+    background-color: rgba(0, 0, 0, 0.00);
+    --unity-cursor-color: rgba(255, 255, 255, 1.00);
+    cursor: resource("Data/UI/Assets/Cursor/Default");
+}
+.spark-chat-input .unity-base-text-field__input, .spark-chat-input .unity-base-field__input, .spark-chat-input #unity-text-input {
+    margin: 0;
+    padding: 0 0 0 2px;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0.00);
+    color: rgba(226, 226, 226, 1.00);
+    unity-font-definition: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 12px;
+    cursor: resource("Data/UI/Assets/Cursor/Default");
+}
+.spark-chat-input TextElement {
+    color: rgba(226, 226, 226, 1.00);
+}
+.spark-chat-resize {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background-image: resource("Data/UI/Assets/Chat/sizecontrol_icon");
+    cursor: resource("Data/UI/Assets/Cursor/Default");
+}

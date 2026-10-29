@@ -1,0 +1,4010 @@
+[
+ {
+  "entry": "10301064",
+  "method": "RequestDropItemFromPet",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddd",
+    "opcode": "0x12",
+    "sub": null,
+    "acis": [
+     "RequestDropItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030114f",
+  "method": "RequestSetPledgeCrest",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x53",
+    "sub": null,
+    "acis": [
+     "RequestSetPledgeCrest (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cdb",
+    "opcode": "0x53",
+    "sub": null,
+    "acis": [
+     "RequestSetPledgeCrest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10301172",
+  "method": "GetPledgeInfo",
+  "sends": []
+ },
+ {
+  "entry": "10301181",
+  "method": "Exec",
+  "sends": []
+ },
+ {
+  "entry": "1030123f",
+  "method": "GetDistance",
+  "sends": []
+ },
+ {
+  "entry": "10301258",
+  "method": "RequestDuelStart",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chSd",
+    "opcode": "0xd0",
+    "sub": "0x27",
+    "acis": [
+     "RequestDuelStart (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030133e",
+  "method": "EndServerPingList",
+  "sends": []
+ },
+ {
+  "entry": "10301721",
+  "method": "RequestJoinCastleSiege",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0xa4",
+    "sub": null,
+    "acis": [
+     "RequestJoinSiege (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10301a2d",
+  "method": "GetUserPassword",
+  "sends": []
+ },
+ {
+  "entry": "10301a7d",
+  "method": "MoveToPawn",
+  "sends": []
+ },
+ {
+  "entry": "10301c44",
+  "method": "GetPetInfo",
+  "sends": []
+ },
+ {
+  "entry": "10301e60",
+  "method": "RequestRecipeItemDelete",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xad",
+    "sub": null,
+    "acis": [
+     "RequestRecipeBookDestroy (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10301e74",
+  "method": "RequestRefineCancel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x2e",
+    "acis": [
+     "RequestRefineCancel (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10301ed8",
+  "method": "RequestAllyCrest",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x88",
+    "sub": null,
+    "acis": [
+     "RequestAllyCrest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10301f96",
+  "method": "GetServerID",
+  "sends": []
+ },
+ {
+  "entry": "10302135",
+  "method": "RequestOustPledgeMember",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x27",
+    "sub": null,
+    "acis": [
+     "RequestOustPledgeMember (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030225c",
+  "method": "GetPledgeCrestTex",
+  "sends": []
+ },
+ {
+  "entry": "10302356",
+  "method": "RequestGetBossRecord",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x18",
+    "acis": [
+     "RequestGetBossRecord (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030276b",
+  "method": "RequestConfirmTargetItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x29",
+    "acis": [
+     "RequestConfirmTargetItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030285b",
+  "method": "RequestShortCutDel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x35",
+    "sub": null,
+    "acis": [
+     "RequestShortCutDel (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103029c3",
+  "method": "RequestCastleSiegeInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xa1",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "103029c8",
+  "method": "RequestWithDrawalPledge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x26",
+    "sub": null,
+    "acis": [
+     "RequestWithdrawPledge (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10302a18",
+  "method": "RequestJoinPledge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x24",
+    "sub": null,
+    "acis": [
+     "RequestJoinPledge (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10302c1b",
+  "method": "RequestRecipeShopMakeDo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0xb6",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopMakeItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10302cbb",
+  "method": "ChangeMoveType",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x1c",
+    "sub": null,
+    "acis": [
+     "RequestChangeMoveType (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10302ce8",
+  "method": "RequestSurrenderAllianceWar",
+  "sends": []
+ },
+ {
+  "entry": "10302ced",
+  "method": "RequestSetCrop",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chddb",
+    "opcode": "0xd0",
+    "sub": "0xb",
+    "acis": [
+     "RequestSetCrop (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10302d92",
+  "method": "operator=",
+  "sends": []
+ },
+ {
+  "entry": "10302f1d",
+  "method": "GetPetNearestItem",
+  "sends": []
+ },
+ {
+  "entry": "10302f31",
+  "method": "GetNearestObject",
+  "sends": []
+ },
+ {
+  "entry": "10302fc2",
+  "method": "RequestRecipeShopSellList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xb7",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopManagePrev (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030303f",
+  "method": "Say2",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSdS",
+    "opcode": "0x38",
+    "sub": null,
+    "acis": [
+     "Say2 (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cSd",
+    "opcode": "0x38",
+    "sub": null,
+    "acis": [
+     "Say2 (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103030df",
+  "method": "RequestManagePartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddddS",
+    "opcode": "0x70",
+    "sub": null,
+    "acis": [
+     "RequestPartyMatchList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10303111",
+  "method": "RequestWithdrawPartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x3",
+    "acis": [
+     "RequestWithdrawPartyRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103032c4",
+  "method": "RequestHennaUnequipList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xbd",
+    "sub": null,
+    "acis": [
+     "RequestHennaRemoveList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10303571",
+  "method": "RequestSurrenderPersonally",
+  "sends": []
+ },
+ {
+  "entry": "103035d5",
+  "method": "RequestJoinParty",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSd",
+    "opcode": "0x29",
+    "sub": null,
+    "acis": [
+     "RequestJoinParty (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103035df",
+  "method": "GetUser",
+  "sends": []
+ },
+ {
+  "entry": "10303666",
+  "method": "IsSurrender",
+  "sends": []
+ },
+ {
+  "entry": "10303706",
+  "method": "RequestDismissPartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x2",
+    "acis": [
+     "RequestDismissPartyRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103037a6",
+  "method": "GetUserAccount",
+  "sends": []
+ },
+ {
+  "entry": "10303a49",
+  "method": "SendBypassBuildCmd",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x5b",
+    "sub": null,
+    "acis": [
+     "SendBypassBuildCmd (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10303ab2",
+  "method": "Init",
+  "sends": []
+ },
+ {
+  "entry": "10303d00",
+  "method": "RequestPetGetItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x8f",
+    "sub": null,
+    "acis": [
+     "RequestPetGetItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10303d28",
+  "method": "RequestBuySeed",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0xc4",
+    "sub": null,
+    "acis": [
+     "RequestBuySeed (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10303dbe",
+  "method": "RequestAnswerJoinParty",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x2a",
+    "sub": null,
+    "acis": [
+     "RequestAnswerJoinParty (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10303fda",
+  "method": "SendWareHouseWithdrawList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdb",
+    "opcode": "0x32",
+    "sub": null,
+    "acis": [
+     "SendWarehouseWithdrawList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10304002",
+  "method": "IsEnemyPledge",
+  "sends": []
+ },
+ {
+  "entry": "1030407f",
+  "method": "RequestFriendDel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x61",
+    "sub": null,
+    "acis": [
+     "RequestFriendDel (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030409d",
+  "method": "RequestServerList",
+  "sends": [
+   {
+    "server": "login",
+    "format": "cddc",
+    "opcode": "0x5",
+    "sub": null,
+    "acis": [
+     "RequestServerList (LOGIN_AUTHED_LOGIN)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10304115",
+  "method": "ServerExPacketCountStop",
+  "sends": []
+ },
+ {
+  "entry": "103041b5",
+  "method": "MoveBackwardToLocation",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddddd",
+    "opcode": "0x1",
+    "sub": null,
+    "acis": [
+     "MoveBackwardToLocation (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103041e2",
+  "method": "ServerPacketCountStart",
+  "sends": []
+ },
+ {
+  "entry": "103042a0",
+  "method": "RequestPrivateStoreManageCancel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x75",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreManageCancel (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030441c",
+  "method": "RequestExMPCCShowPartyMembersInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x26",
+    "acis": [
+     "RequestExMPCCShowPartyMembersInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030474b",
+  "method": "RequestDeleteMacro",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xc2",
+    "sub": null,
+    "acis": [
+     "RequestDeleteMacro (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103048a9",
+  "method": "RequestDuelAnswerStart",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chddd",
+    "opcode": "0xd0",
+    "sub": "0x28",
+    "acis": [
+     "RequestDuelAnswerStart (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103048ea",
+  "method": "GetAllianceCrestTexFromAllianceCrestID",
+  "sends": []
+ },
+ {
+  "entry": "10304b5b",
+  "method": "RequestPledgePower",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0xc0",
+    "sub": null,
+    "acis": [
+     "RequestPledgePower (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0xc0",
+    "sub": null,
+    "acis": [
+     "RequestPledgePower (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10304dd6",
+  "method": "RequestExOustFromMPCC",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chS",
+    "opcode": "0xd0",
+    "sub": "0xf",
+    "acis": [
+     "RequestExOustFromMPCC (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10305060",
+  "method": "RequestAuthLogin",
+  "sends": []
+ },
+ {
+  "entry": "10305358",
+  "method": "RequestSetAllyCrest",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdb",
+    "opcode": "0x87",
+    "sub": null,
+    "acis": [
+     "RequestSetAllyCrest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10305434",
+  "method": "SendServerStatus",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cc",
+    "opcode": "0x39",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030549d",
+  "method": "RequestCursedWeaponLocation",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x23",
+    "acis": [
+     "RequestCursedWeaponLocation (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103055dd",
+  "method": "GetStaticObject",
+  "sends": []
+ },
+ {
+  "entry": "10305673",
+  "method": "GetPetNearestObject",
+  "sends": []
+ },
+ {
+  "entry": "103056c3",
+  "method": "Destroy",
+  "sends": []
+ },
+ {
+  "entry": "103057b8",
+  "method": "SetPrivateStoreBuyMsg",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x94",
+    "sub": null,
+    "acis": [
+     "SetPrivateStoreMsgBuy (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10305826",
+  "method": "UNetworkHandler",
+  "sends": []
+ },
+ {
+  "entry": "10305916",
+  "method": "RequestAllyInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x8e",
+    "sub": null,
+    "acis": [
+     "RequestAllyInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103059ac",
+  "method": "RequestAddTradeItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0x16",
+    "sub": null,
+    "acis": [
+     "AddTradeItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10305b69",
+  "method": "RequestUseItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x14",
+    "sub": null,
+    "acis": [
+     "UseItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10305df8",
+  "method": "RequestQuestList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x63",
+    "sub": null,
+    "acis": [
+     "RequestQuestList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10305e7a",
+  "method": "ReplyGameGuardQuery",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0xca",
+    "sub": null,
+    "acis": [
+     "GameGuardReply (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030602d",
+  "method": "ContinueServerClose",
+  "sends": []
+ },
+ {
+  "entry": "10306050",
+  "method": "RequestDestroyItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x59",
+    "sub": null,
+    "acis": [
+     "RequestDestroyItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306113",
+  "method": "RequestOpenMinimap",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xcd",
+    "sub": null,
+    "acis": [
+     "RequestShowMiniMap (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103062e9",
+  "method": "SetPrivateStoreBuyList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdb",
+    "opcode": "0x91",
+    "sub": null,
+    "acis": [
+     "SetPrivateStoreListBuy (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306307",
+  "method": "RequestConfirmRefinerItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x2a",
+    "acis": [
+     "RequestConfirmRefinerItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306343",
+  "method": "RequestRemainTime",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xa9",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10306447",
+  "method": "RequestSellItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0x1e",
+    "sub": null,
+    "acis": [
+     "RequestSellItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030653c",
+  "method": "ReplyStartAllianceWar",
+  "sends": []
+ },
+ {
+  "entry": "10306555",
+  "method": "RequestPledgeInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x66",
+    "sub": null,
+    "acis": [
+     "RequestPledgeInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103065d7",
+  "method": "RequestRecipeItemMakeInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xae",
+    "sub": null,
+    "acis": [
+     "RequestRecipeItemMakeInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306681",
+  "method": "RequestRecipeShopManageCancel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xb4",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030670d",
+  "method": "RequestExEnchantSkillInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x6",
+    "acis": [
+     "RequestExEnchantSkillInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306843",
+  "method": "RequestBypassToServer",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x21",
+    "sub": null,
+    "acis": [
+     "RequestBypassToServer (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306960",
+  "method": "BypassUserCmd",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xaa",
+    "sub": null,
+    "acis": [
+     "RequestUserCommand (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103069ec",
+  "method": "GetNearestParty",
+  "sends": []
+ },
+ {
+  "entry": "10306c1c",
+  "method": "RequestMagicSkillUse",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddc",
+    "opcode": "0x2f",
+    "sub": null,
+    "acis": [
+     "RequestMagicSkillUse (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306dca",
+  "method": "RequestBBSWrite",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSSSSSS",
+    "opcode": "0x22",
+    "sub": null,
+    "acis": [
+     "RequestBBSwrite (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306f0f",
+  "method": "GetOnVehicle",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x42",
+    "sub": null,
+    "acis": [
+     "RequestGetOnVehicle (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306fc3",
+  "method": "RequestManorList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x8",
+    "acis": [
+     "RequestManorList (ENTERING)",
+     "RequestManorList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10306fe6",
+  "method": "ReplyStopAllianceWar",
+  "sends": []
+ },
+ {
+  "entry": "103071b7",
+  "method": "RequestExSetPledgeCrestLarge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x11",
+    "acis": [
+     "RequestExSetPledgeCrestLarge (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "chdb",
+    "opcode": "0xd0",
+    "sub": "0x11",
+    "acis": [
+     "RequestExSetPledgeCrestLarge (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103074dc",
+  "method": "RequestBlock",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xa0",
+    "sub": null,
+    "acis": [
+     "RequestBlock (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cdS",
+    "opcode": "0xa0",
+    "sub": null,
+    "acis": [
+     "RequestBlock (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10307694",
+  "method": "RequestMagicItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x3e",
+    "sub": null,
+    "acis": [
+     "DummyPacket (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030772f",
+  "method": "RequestPetitionCancel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x80",
+    "sub": null,
+    "acis": [
+     "RequestPetitionCancel (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10307c5c",
+  "method": "RequestWriteHeroWords",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chS",
+    "opcode": "0xd0",
+    "sub": "0xc",
+    "acis": [
+     "RequestWriteHeroWords (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10307c70",
+  "method": "SendSummonCmd",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ccS",
+    "opcode": "0x39",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10307d4c",
+  "method": "RequestGetItemFromPet",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0x8c",
+    "sub": null,
+    "acis": [
+     "RequestGetItemFromPet (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10307de2",
+  "method": "RequestTargetCancel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0x37",
+    "sub": null,
+    "acis": [
+     "RequestTargetCanceld (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10307f09",
+  "method": "GetVehicle",
+  "sends": []
+ },
+ {
+  "entry": "10307fb8",
+  "method": "RequestTutorialPassCmdToServer",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x7c",
+    "sub": null,
+    "acis": [
+     "RequestTutorialPassCmdToServer (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103082dd",
+  "method": "RequestSendL2FriendSay",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSS",
+    "opcode": "0xcc",
+    "sub": null,
+    "acis": [
+     "RequestSendFriendMsg (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030849f",
+  "method": "SendCharacterInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ccS",
+    "opcode": "0x39",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030855d",
+  "method": "RequestTradeDone",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x17",
+    "sub": null,
+    "acis": [
+     "TradeDone (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10308698",
+  "method": "RequestPackageSendableItemList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x9e",
+    "sub": null,
+    "acis": [
+     "RequestPackageSendableItemList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103086bb",
+  "method": "RequestRecipeBookOpen",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xac",
+    "sub": null,
+    "acis": [
+     "RequestRecipeBookOpen (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103087ab",
+  "method": "RequestHennaUnequipInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xbe",
+    "sub": null,
+    "acis": [
+     "RequestHennaItemRemoveInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103089bd",
+  "method": "RequestSendMsnChatLog",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSSd",
+    "opcode": "0xce",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10308af3",
+  "method": "RequestExEnchantSkill",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x7",
+    "acis": [
+     "RequestExEnchantSkill (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10308b8e",
+  "method": "Action",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddc",
+    "opcode": "0x4",
+    "sub": null,
+    "acis": [
+     "Action (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10308bbb",
+  "method": "RequestJoinPartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x71",
+    "sub": null,
+    "acis": [
+     "RequestPartyMatchDetail (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10308cba",
+  "method": "RequestRecipeShopMessageSet",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0xb1",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopMessageSet (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10308eae",
+  "method": "RequestGMList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x81",
+    "sub": null,
+    "acis": [
+     "RequestGmList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030905c",
+  "method": "AuthReconnect",
+  "sends": []
+ },
+ {
+  "entry": "10309241",
+  "method": "RequestConfirmCastleSiegeWaitingList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0xa5",
+    "sub": null,
+    "acis": [
+     "RequestConfirmSiegeWaitingList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030943f",
+  "method": "RequestRefine",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdddd",
+    "opcode": "0xd0",
+    "sub": "0x2c",
+    "acis": [
+     "RequestRefine (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103095e8",
+  "method": "NotifyQuestMark",
+  "sends": []
+ },
+ {
+  "entry": "103095ed",
+  "method": "RequestStartPledgeWar",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x4d",
+    "sub": null,
+    "acis": [
+     "RequestStartPledgeWar (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309679",
+  "method": "RequestListPartyMatchingWaitingRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdddd",
+    "opcode": "0xd0",
+    "sub": "0x16",
+    "acis": [
+     "RequestListPartyMatchingWaitingRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103096a1",
+  "method": "RequestBuyItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0x1f",
+    "sub": null,
+    "acis": [
+     "RequestBuyItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103097a0",
+  "method": "Atk",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddc",
+    "opcode": "0xa",
+    "sub": null,
+    "acis": [
+     "AttackRequest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103097be",
+  "method": "RequestOustFromPartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x1",
+    "acis": [
+     "RequestOustFromPartyRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309822",
+  "method": "RequestCursedWeaponList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x22",
+    "acis": [
+     "RequestCursedWeaponList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103098ea",
+  "method": "FinishRotating",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x4b",
+    "sub": null,
+    "acis": [
+     "FinishRotating (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309a7f",
+  "method": "GetOffVehicle",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x43",
+    "sub": null,
+    "acis": [
+     "RequestGetOffVehicle (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309afc",
+  "method": "RequestDuelSurrender",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x30",
+    "acis": [
+     "RequestDuelSurrender (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309c00",
+  "method": "StaticClass",
+  "sends": []
+ },
+ {
+  "entry": "10309c46",
+  "method": "MoveWithDelta",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0x41",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10309dfe",
+  "method": "RequestTutorialLinkHtml",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x7b",
+    "sub": null,
+    "acis": [
+     "RequestTutorialLinkHtml (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309e17",
+  "method": "GetItem",
+  "sends": []
+ },
+ {
+  "entry": "10309f4d",
+  "method": "RequestFriendAddReply",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x5f",
+    "sub": null,
+    "acis": [
+     "RequestAnswerFriendInvite (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10309f8e",
+  "method": "RequestGameStart",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdhddd",
+    "opcode": "0xd",
+    "sub": null,
+    "acis": [
+     "CharacterSelected (AUTHED)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030a060",
+  "method": "RequestShortCutUse",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddc",
+    "opcode": "0x34",
+    "sub": null,
+    "acis": [
+     "DummyPacket (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030a51a",
+  "method": "RequestSSQStatus",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cc",
+    "opcode": "0xc7",
+    "sub": null,
+    "acis": [
+     "RequestSSQStatus (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030a641",
+  "method": "ShowQuestList",
+  "sends": []
+ },
+ {
+  "entry": "1030a6d2",
+  "method": "RequestRestart",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x46",
+    "sub": null,
+    "acis": [
+     "RequestRestart (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030a79a",
+  "method": "GetNearestNPC",
+  "sends": []
+ },
+ {
+  "entry": "1030a858",
+  "method": "GetNextFriend",
+  "sends": []
+ },
+ {
+  "entry": "1030a94d",
+  "method": "RequestHennaItemList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xba",
+    "sub": null,
+    "acis": [
+     "RequestHennaList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030a9f7",
+  "method": "RequestHennaItemInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xbb",
+    "sub": null,
+    "acis": [
+     "RequestHennaItemInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030aaa6",
+  "method": "RequestShortCutReg",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x33",
+    "sub": null,
+    "acis": [
+     "RequestShortCutReg (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030ac22",
+  "method": "RequestOustAlly",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x85",
+    "sub": null,
+    "acis": [
+     "AllyDismiss (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030ac31",
+  "method": "RequestChangePetName",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x89",
+    "sub": null,
+    "acis": [
+     "RequestChangePetName (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030ac3b",
+  "method": "RequestHennaEquip",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xbc",
+    "sub": null,
+    "acis": [
+     "RequestHennaEquip (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030ad2b",
+  "method": "RequestCreatePledge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x23",
+    "sub": null,
+    "acis": [
+     "DummyPacket (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030adf3",
+  "method": "SAP",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x30",
+    "sub": null,
+    "acis": [
+     "Appearing (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030ae2f",
+  "method": "RequestLinkHtml",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x20",
+    "sub": null,
+    "acis": [
+     "RequestLinkHtml (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030af7e",
+  "method": "RequestExFishRanking",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x1f",
+    "acis": [
+     "RequestExFishRanking (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b00f",
+  "method": "SendLogOutPacket",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x9",
+    "sub": null,
+    "acis": [
+     "Logout (AUTHED)",
+     "Logout (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b0fa",
+  "method": "RequestPrivateStoreManage",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x73",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreManageSell (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b118",
+  "method": "RequestRecipeShopManageQuit",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xb3",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopManageQuit (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b17c",
+  "method": "GetNextEnemy",
+  "sends": []
+ },
+ {
+  "entry": "1030b19f",
+  "method": "RequestSkillItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x3f",
+    "sub": null,
+    "acis": [
+     "RequestSkillList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b1d1",
+  "method": "GetNextParty",
+  "sends": []
+ },
+ {
+  "entry": "1030b29e",
+  "method": "RequestGiveItemToPet",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x8b",
+    "sub": null,
+    "acis": [
+     "RequestGiveItemToPet (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b46a",
+  "method": "RequestMagicSkillList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ddd",
+    "opcode": "0x2e",
+    "sub": null,
+    "acis": [
+     "DummyPacket (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b500",
+  "method": "RequestHandOverPartyMaster",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chS",
+    "opcode": "0xd0",
+    "sub": "0x4",
+    "acis": [
+     "RequestChangePartyLeader (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b550",
+  "method": "GetQuestList",
+  "sends": []
+ },
+ {
+  "entry": "1030b71c",
+  "method": "RequestJoinAlly",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x82",
+    "sub": null,
+    "acis": [
+     "RequestJoinAlly (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b861",
+  "method": "SendPrivateStoreBuyList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0x79",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreBuy (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030b93d",
+  "method": "RequestTutorialClientEvent",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x7e",
+    "sub": null,
+    "acis": [
+     "RequestTutorialClientEvent (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030baaf",
+  "method": "RequestSCCheck",
+  "sends": [
+   {
+    "server": "login",
+    "format": "cdx",
+    "opcode": "0x6",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030bac3",
+  "method": "RequestReplySurrenderPledgeWar",
+  "sends": []
+ },
+ {
+  "entry": "1030bae6",
+  "method": "RequestProcureCrop",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0xc3",
+    "sub": null,
+    "acis": [
+     "RequestBuyProcure (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030bb04",
+  "method": "RequestServerLogin",
+  "sends": [
+   {
+    "server": "login",
+    "format": "cddc",
+    "opcode": "0x2",
+    "sub": null,
+    "acis": [
+     "RequestServerLogin (LOGIN_AUTHED_LOGIN)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030bb7c",
+  "method": "RequestMultiSellChoose",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddd",
+    "opcode": "0xa7",
+    "sub": null,
+    "acis": [
+     "MultiSellChoose (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030bbc7",
+  "method": "ServerExPacketCountStart",
+  "sends": []
+ },
+ {
+  "entry": "1030bccb",
+  "method": "RequestPrivateStoreBuyQuit",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x93",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreQuitBuy (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030bdb1",
+  "method": "GetNextObject",
+  "sends": []
+ },
+ {
+  "entry": "1030bf28",
+  "method": "RequestRecipeItemMakeSelf",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xaf",
+    "sub": null,
+    "acis": [
+     "RequestRecipeItemMakeSelf (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030bf50",
+  "method": "GetNextNPC",
+  "sends": []
+ },
+ {
+  "entry": "1030bf6e",
+  "method": "GMSnoopEnd",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xab",
+    "sub": null,
+    "acis": [
+     "SnoopQuit (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030bfff",
+  "method": "GetNearestFriend",
+  "sends": []
+ },
+ {
+  "entry": "1030c1d5",
+  "method": "RequestExChangeName",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdSd",
+    "opcode": "0xd0",
+    "sub": "0x31",
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030c1f3",
+  "method": "RequestDismissParty",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x2d",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030c207",
+  "method": "RequestExPledgeCrestLarge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x10",
+    "acis": [
+     "RequestExPledgeCrestLarge (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c248",
+  "method": "RequestPledgePowerGradeList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x1a",
+    "acis": [
+     "RequestPledgePowerGradeList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c270",
+  "method": "RequestWithdrawAlly",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x84",
+    "sub": null,
+    "acis": [
+     "AllyLeave (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c473",
+  "method": "RequestShowboard",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x57",
+    "sub": null,
+    "acis": [
+     "RequestShowBoard (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c4d2",
+  "method": "RequestDestroyQuest",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x64",
+    "sub": null,
+    "acis": [
+     "RequestQuestAbort (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c635",
+  "method": "AnswerJoinPartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x15",
+    "acis": [
+     "AnswerJoinPartyRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c685",
+  "method": "RequestGMCommand",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSdd",
+    "opcode": "0x6e",
+    "sub": null,
+    "acis": [
+     "RequestGMCommand (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c702",
+  "method": "ChangeWaitType",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x1d",
+    "sub": null,
+    "acis": [
+     "RequestChangeWaitType (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c83d",
+  "method": "RequestExAcceptJoinMPCC",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0xe",
+    "acis": [
+     "RequestExAcceptJoinMPCC (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030c8b5",
+  "method": "GetPartyInfoMap",
+  "sends": []
+ },
+ {
+  "entry": "1030c969",
+  "method": "SetMatchedStore",
+  "sends": []
+ },
+ {
+  "entry": "1030ca2c",
+  "method": "RequestSiegeInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x47",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030ca31",
+  "method": "StartRotating",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x4a",
+    "sub": null,
+    "acis": [
+     "StartRotating (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030cc5c",
+  "method": "RequestFriendInvite",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x5e",
+    "sub": null,
+    "acis": [
+     "RequestFriendInvite (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030cd15",
+  "method": "RequestAcquireSkillInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0x6b",
+    "sub": null,
+    "acis": [
+     "RequestAcquireSkillInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d0a8",
+  "method": "RequestAttack",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x4",
+    "sub": null,
+    "acis": [
+     "Action (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d12a",
+  "method": "GetUserIDList",
+  "sends": []
+ },
+ {
+  "entry": "1030d170",
+  "method": "RefreshWSAAsyncSelect",
+  "sends": []
+ },
+ {
+  "entry": "1030d20b",
+  "method": "RequestStopPledgeWar",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x4f",
+    "sub": null,
+    "acis": [
+     "RequestStopPledgeWar (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d535",
+  "method": "RequestSetSeed",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chddb",
+    "opcode": "0xd0",
+    "sub": "0xa",
+    "acis": [
+     "RequestSetSeed (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d6bb",
+  "method": "VoteSociality",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xb9",
+    "sub": null,
+    "acis": [
+     "RequestEvaluate (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d760",
+  "method": "RequestAcquireSkill",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0x6c",
+    "sub": null,
+    "acis": [
+     "RequestAcquireSkill (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d909",
+  "method": "RequestListPartyWating",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0x6f",
+    "sub": null,
+    "acis": [
+     "RequestPartyMatchConfig (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030d9f9",
+  "method": "GetUserOneTimePassword",
+  "sends": []
+ },
+ {
+  "entry": "1030da17",
+  "method": "RequestEnterWorldPacket",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cbddddbdcccccccccccccccccccc",
+    "opcode": "0x3",
+    "sub": null,
+    "acis": [
+     "EnterWorld (ENTERING)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030db02",
+  "method": "RequestExMagicSkillUseGround",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdddddc",
+    "opcode": "0xd0",
+    "sub": "0x2f",
+    "acis": [
+     "RequestExMagicSkillUseGround (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030db75",
+  "method": "GetNextPartyUsingJoyPad",
+  "sends": []
+ },
+ {
+  "entry": "1030dbbb",
+  "method": "RequestSurrenderPledgeWar",
+  "sends": []
+ },
+ {
+  "entry": "1030dcfb",
+  "method": "RequestUnEquipItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x11",
+    "sub": null,
+    "acis": [
+     "RequestUnEquipItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030dd37",
+  "method": "RequestStopAllianceWar",
+  "sends": []
+ },
+ {
+  "entry": "1030dee0",
+  "method": "RequestDismissAlly",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x86",
+    "sub": null,
+    "acis": [
+     "RequestDismissAlly (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030df9e",
+  "method": "RequestCastleSiegeAttackerList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xa2",
+    "sub": null,
+    "acis": [
+     "RequestSiegeAttackerList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e101",
+  "method": "RequestRecipeShopMakeInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0xb5",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopMakeInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e142",
+  "method": "SetImportedPledgeCrestID",
+  "sends": []
+ },
+ {
+  "entry": "1030e264",
+  "method": "RL",
+  "sends": [
+   {
+    "server": "login",
+    "format": "cxddddddhc",
+    "opcode": "0x0",
+    "sub": null,
+    "acis": [
+     "RequestAuthLogin (LOGIN_AUTHED_GG)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e318",
+  "method": "AddNetworkQueue",
+  "sends": []
+ },
+ {
+  "entry": "1030e386",
+  "method": "operator_new",
+  "sends": []
+ },
+ {
+  "entry": "1030e46c",
+  "method": "RequestAnswerJoinAlly",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x83",
+    "sub": null,
+    "acis": [
+     "RequestAnswerJoinAlly (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e485",
+  "method": "RequestEquipItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x10",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030e48f",
+  "method": "RequestOustPartyMember",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x2c",
+    "sub": null,
+    "acis": [
+     "RequestOustPartyMember (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e534",
+  "method": "RequestActionUse",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddc",
+    "opcode": "0x45",
+    "sub": null,
+    "acis": [
+     "RequestActionUse (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e5ac",
+  "method": "RequestPledgeSetAcademyMasterPupil",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdSS",
+    "opcode": "0xd0",
+    "sub": "0x19",
+    "acis": [
+     "RequestPledgeSetAcademyMaster (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e69c",
+  "method": "RequestPrivateStoreList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x78",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030e7be",
+  "method": "RequestDropItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddd",
+    "opcode": "0x12",
+    "sub": null,
+    "acis": [
+     "RequestDropItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030e9f8",
+  "method": "GetNearestEnemy",
+  "sends": []
+ },
+ {
+  "entry": "1030eb5b",
+  "method": "ServerPacketCountStop",
+  "sends": []
+ },
+ {
+  "entry": "1030ec23",
+  "method": "RequestConfirmGemStone",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdddd",
+    "opcode": "0xd0",
+    "sub": "0x2b",
+    "acis": [
+     "RequestConfirmGemStone (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030ed0e",
+  "method": "RequestRestartPoint",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x6d",
+    "sub": null,
+    "acis": [
+     "RequestRestartPoint (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030f245",
+  "method": "RequestPrivateStoreQuit",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x76",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreQuitSell (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030f2ae",
+  "method": "RequestRecipeShopManageList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xb0",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopManageList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030f399",
+  "method": "SendL2ParamSetting",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ccdd",
+    "opcode": "0x39",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1030f8b2",
+  "method": "GetNearestCreature",
+  "sends": []
+ },
+ {
+  "entry": "1030f961",
+  "method": "RequestEnchantItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x58",
+    "sub": null,
+    "acis": [
+     "RequestEnchantItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030f99d",
+  "method": "Tick",
+  "sends": []
+ },
+ {
+  "entry": "1030f9ac",
+  "method": "RequestPCCafeCouponUse",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chS",
+    "opcode": "0xd0",
+    "sub": "0x20",
+    "acis": [
+     "RequestPCCafeCouponUse (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1030fa01",
+  "method": "DispatchNetworkQueue",
+  "sends": []
+ },
+ {
+  "entry": "1030fb32",
+  "method": "GetNextItem",
+  "sends": []
+ },
+ {
+  "entry": "1030fbb9",
+  "method": "UpdateLargePledgeCrest",
+  "sends": []
+ },
+ {
+  "entry": "1030fd7b",
+  "method": "RequestPreviewItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddb",
+    "opcode": "0xc6",
+    "sub": null,
+    "acis": [
+     "RequestPreviewItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103100be",
+  "method": "IsGNOMatch",
+  "sends": []
+ },
+ {
+  "entry": "10310285",
+  "method": "RequestSetCastleSiegeTime",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0xa6",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "103104b0",
+  "method": "RequestNewCharacter",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xe",
+    "sub": null,
+    "acis": [
+     "NewCharacter (AUTHED)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103105a0",
+  "method": "RequestReplyStartPledgeWar",
+  "sends": []
+ },
+ {
+  "entry": "103105a5",
+  "method": "Ride",
+  "sends": []
+ },
+ {
+  "entry": "1031070d",
+  "method": "RequestReload",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xcf",
+    "sub": null,
+    "acis": [
+     "RequestRecordInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031073f",
+  "method": "SocialAction",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x1b",
+    "sub": null,
+    "acis": [
+     "RequestSocialAction (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031085c",
+  "method": "RequestCastleSiegeDefenderList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xa3",
+    "sub": null,
+    "acis": [
+     "RequestSiegeDefenderList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103108d9",
+  "method": "RequestSkillCoolTime",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x9d",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "1031090b",
+  "method": "RequestPrivateStoreBuyManageCancel",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x92",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "103109e2",
+  "method": "RequestTeleport",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x1a",
+    "sub": null,
+    "acis": [
+     "DummyPacket (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cddddd",
+    "opcode": "0x1a",
+    "sub": null,
+    "acis": [
+     "DummyPacket (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10310be5",
+  "method": "GetNextCreature",
+  "sends": []
+ },
+ {
+  "entry": "10310d48",
+  "method": "RequestAutoSoulShot",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x5",
+    "acis": [
+     "RequestAutoSoulShot (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10310e92",
+  "method": "RequestCrystallizeItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x72",
+    "sub": null,
+    "acis": [
+     "RequestCrystallizeItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10310f46",
+  "method": "ClearObjectMap",
+  "sends": []
+ },
+ {
+  "entry": "10311031",
+  "method": "RequestObserverEndPacket",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xb8",
+    "sub": null,
+    "acis": [
+     "ObserverReturn (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031125c",
+  "method": "RequestPetUseItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x8a",
+    "sub": null,
+    "acis": [
+     "RequestPetUseItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103113b0",
+  "method": "IsNotYetLogin",
+  "sends": []
+ },
+ {
+  "entry": "10311554",
+  "method": "GetUser",
+  "sends": []
+ },
+ {
+  "entry": "10311577",
+  "method": "RequestPledgeMemberInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdS",
+    "opcode": "0xd0",
+    "sub": "0x1d",
+    "acis": [
+     "RequestPledgeMemberInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311608",
+  "method": "RequestConfirmCancelItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chd",
+    "opcode": "0xd0",
+    "sub": "0x2d",
+    "acis": [
+     "RequestConfirmCancelItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311685",
+  "method": "RequestCharacterCreate",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSdddddddddddd",
+    "opcode": "0xb",
+    "sub": null,
+    "acis": [
+     "CharacterCreate (AUTHED)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311761",
+  "method": "operator_new",
+  "sends": []
+ },
+ {
+  "entry": "1031177a",
+  "method": "SendWareHouseDepositList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdb",
+    "opcode": "0x31",
+    "sub": null,
+    "acis": [
+     "SendWarehouseDepositList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031188d",
+  "method": "IsPawnCreatePacket",
+  "sends": []
+ },
+ {
+  "entry": "103118c4",
+  "method": "ConfirmDlg",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0xc5",
+    "sub": null,
+    "acis": [
+     "DlgAnswer (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311996",
+  "method": "Say",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x2",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10311a04",
+  "method": "SendTimeCheckPacket",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x97",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10311b3f",
+  "method": "GetRequestedPledgeID",
+  "sends": []
+ },
+ {
+  "entry": "10311db0",
+  "method": "NetPing",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddd",
+    "opcode": "0xa8",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10311e46",
+  "method": "RequestAskJoinPartyRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chS",
+    "opcode": "0xd0",
+    "sub": "0x14",
+    "acis": [
+     "RequestAskJoinPartyRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311e82",
+  "method": "RequestFriendList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x60",
+    "sub": null,
+    "acis": [
+     "RequestFriendList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311e87",
+  "method": "RequestWithDrawalParty",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x2b",
+    "sub": null,
+    "acis": [
+     "RequestWithdrawParty (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311ecd",
+  "method": "RequestPledgeMemberList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x3c",
+    "sub": null,
+    "acis": [
+     "RequestPledgeMemberList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10311f7c",
+  "method": "SetImportedAllyCrestID",
+  "sends": []
+ },
+ {
+  "entry": "10311fe0",
+  "method": "SetPrivateStoreMsg",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x77",
+    "sub": null,
+    "acis": [
+     "SetPrivateStoreMsgSell (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103120f8",
+  "method": "AnswerTradeRequest",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x44",
+    "sub": null,
+    "acis": [
+     "AnswerTradeRequest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103121e3",
+  "method": "CanNotMoveAnymore",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddd",
+    "opcode": "0x5d",
+    "sub": null,
+    "acis": [
+     "CannotMoveAnymoreInVehicle (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cdddd",
+    "opcode": "0x36",
+    "sub": null,
+    "acis": [
+     "CannotMoveAnymore (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103123dc",
+  "method": "RequestMakeMacro",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdSSSccb",
+    "opcode": "0xc1",
+    "sub": null,
+    "acis": [
+     "RequestMakeMacro (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10312562",
+  "method": "ValidatePosition",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddd",
+    "opcode": "0x48",
+    "sub": null,
+    "acis": [
+     "ValidatePosition (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031282d",
+  "method": "GetAllyCrestTex",
+  "sends": []
+ },
+ {
+  "entry": "10312850",
+  "method": "EW",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x3",
+    "sub": null,
+    "acis": [
+     "EnterWorld (ENTERING)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10312bcf",
+  "method": "AddServerPingList",
+  "sends": []
+ },
+ {
+  "entry": "10312bf2",
+  "method": "RequestPetition",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSd",
+    "opcode": "0x7f",
+    "sub": null,
+    "acis": [
+     "RequestPetition (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10312c2e",
+  "method": "GNOManager",
+  "sends": []
+ },
+ {
+  "entry": "10312c60",
+  "method": "RequestItemList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0xf",
+    "sub": null,
+    "acis": [
+     "RequestItemList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031321e",
+  "method": "RequestHennaUnequip",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xbf",
+    "sub": null,
+    "acis": [
+     "RequestHennaRemove (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103132c3",
+  "method": "RequestReplyStopPledgeWar",
+  "sends": []
+ },
+ {
+  "entry": "10313318",
+  "method": "SetPrivateStoreList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0x74",
+    "sub": null,
+    "acis": [
+     "SetPrivateStoreListSell (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313520",
+  "method": "SendDestroyItem",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x59",
+    "sub": null,
+    "acis": [
+     "RequestDestroyItem (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313651",
+  "method": "RequestPledgeReorganizeMember",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdSdS",
+    "opcode": "0xd0",
+    "sub": "0x24",
+    "acis": [
+     "RequestPledgeReorganizeMember (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031366f",
+  "method": "RequestOlympiadMatchList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x13",
+    "acis": [
+     "RequestOlympiadMatchList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103137be",
+  "method": "RequestGiveNickName",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSS",
+    "opcode": "0x55",
+    "sub": null,
+    "acis": [
+     "RequestGiveNickName (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313976",
+  "method": "ResponseAuthGameGuard",
+  "sends": [
+   {
+    "server": "login",
+    "format": "cddddd",
+    "opcode": "0x7",
+    "sub": null,
+    "acis": [
+     "AuthGameGuard (LOGIN_CONNECTED)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313b10",
+  "method": "RequestAnswerJoinPledge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x25",
+    "sub": null,
+    "acis": [
+     "RequestAnswerJoinPledge (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313d04",
+  "method": "RequestProcureCropList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdb",
+    "opcode": "0xd0",
+    "sub": "0x9",
+    "acis": [
+     "RequestProcureCropList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313def",
+  "method": "RequestExitPartyMatchingWaitingRoom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x17",
+    "acis": [
+     "RequestExitPartyMatchingWaitingRoom (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313e0d",
+  "method": "RequestTutorialQuestionMarkPressed",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x7d",
+    "sub": null,
+    "acis": [
+     "RequestTutorialQuestionMark (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313e62",
+  "method": "RequestCharacterRestore",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x62",
+    "sub": null,
+    "acis": [
+     "CharacterRestore (AUTHED)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313ef3",
+  "method": "RequestPledgeWarList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdd",
+    "opcode": "0xd0",
+    "sub": "0x1e",
+    "acis": [
+     "RequestPledgeWarList (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10313fb1",
+  "method": "GetNearestItem",
+  "sends": []
+ },
+ {
+  "entry": "103140dd",
+  "method": "RequestPledgeMemberPowerInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chdS",
+    "opcode": "0xd0",
+    "sub": "0x1b",
+    "acis": [
+     "RequestPledgeMemberPowerInfo (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103140f1",
+  "method": "PetitionVote",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddS",
+    "opcode": "0xc8",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10314295",
+  "method": "RequestStartAllianceWar",
+  "sends": []
+ },
+ {
+  "entry": "103142d6",
+  "method": "RequestPrivateStoreBuyList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x95",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "103142db",
+  "method": "RequestPledgeCrest",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x68",
+    "sub": null,
+    "acis": [
+     "RequestPledgeCrest (AUTHED)",
+     "RequestPledgeCrest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314592",
+  "method": "RequestCharacterDelete",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0xc",
+    "sub": null,
+    "acis": [
+     "CharacterDelete (AUTHED)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314759",
+  "method": "UNetworkHandler",
+  "sends": []
+ },
+ {
+  "entry": "10314808",
+  "method": "~UNetworkHandler",
+  "sends": []
+ },
+ {
+  "entry": "10314817",
+  "method": "SendPrivateStoreBuyBuyList",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0x96",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreSell (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "1031492a",
+  "method": "MTL",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddddddd",
+    "opcode": "0x5c",
+    "sub": null,
+    "acis": [
+     "RequestMoveToLocationInVehicle (IN_GAME)"
+    ]
+   },
+   {
+    "server": "jogo",
+    "format": "cddddddd",
+    "opcode": "0x1",
+    "sub": null,
+    "acis": [
+     "MoveBackwardToLocation (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103149b6",
+  "method": "RequestTrade",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x15",
+    "sub": null,
+    "acis": [
+     "TradeRequest (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "103149c0",
+  "method": "InternalConstructor",
+  "sends": []
+ },
+ {
+  "entry": "10314ac4",
+  "method": "GetPledgeCrestTexFromPledgeCrestID",
+  "sends": []
+ },
+ {
+  "entry": "10314b3c",
+  "method": "RequestExAskJoinMPCC",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chS",
+    "opcode": "0xd0",
+    "sub": "0xd",
+    "acis": [
+     "RequestExAskJoinMPCC (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314b8c",
+  "method": "RequestDismissPledge",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x28",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10314c72",
+  "method": "RequestPledgeExtendedInfo",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cS",
+    "opcode": "0x67",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10314d76",
+  "method": "RequestPrivateStoreBuyManage",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "c",
+    "opcode": "0x90",
+    "sub": null,
+    "acis": [
+     "RequestPrivateStoreManageBuy (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314dcb",
+  "method": "RequestPledgeSetMemberPowerGrade",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "chSd",
+    "opcode": "0xd0",
+    "sub": "0x1c",
+    "acis": [
+     "RequestPledgeSetMemberPowerGrade (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314de9",
+  "method": "RequestRecipeShopListSet",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdb",
+    "opcode": "0xb2",
+    "sub": null,
+    "acis": [
+     "RequestRecipeShopListSet (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314e25",
+  "method": "RequestOlympiadObserverEnd",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "ch",
+    "opcode": "0xd0",
+    "sub": "0x12",
+    "acis": [
+     "RequestOlympiadObserverEnd (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10314ebb",
+  "method": "RequestPackageSend",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cddb",
+    "opcode": "0x9f",
+    "sub": null,
+    "acis": [
+     "RequestPackageSend (IN_GAME)"
+    ]
+   }
+  ]
+ },
+ {
+  "entry": "10315014",
+  "method": "ReviveReply",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cd",
+    "opcode": "0x7a",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10315131",
+  "method": "RequestSEKCustom",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdd",
+    "opcode": "0x49",
+    "sub": null,
+    "acis": null
+   }
+  ]
+ },
+ {
+  "entry": "10401dc0",
+  "method": "(ao conectar no servidor de jogo) FUN_10401dc0",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cdbd",
+    "opcode": "0x0",
+    "sub": null,
+    "acis": [
+     "ProtocolVersion (CONNECTED)"
+    ],
+    "note": "ProtocolVersion: versao 746, lida de \"#Revision: 746 $\" com sscanf(\"%cRevision: %d %c\"); bloco de 0x100 bytes"
+   }
+  ]
+ },
+ {
+  "entry": "1040d000",
+  "method": "(tratador de VersionCheck 0x00) FUN_1040d000",
+  "sends": [
+   {
+    "server": "jogo",
+    "format": "cSddddd",
+    "opcode": "0x8",
+    "sub": null,
+    "acis": [
+     "AuthLogin (CONNECTED)"
+    ],
+    "note": "AuthLogin: conta (UTF-16), playKey2, playKey1, loginKey1, loginKey2, idioma (GLanguageType)"
+   }
+  ]
+ }
+]

@@ -1,0 +1,3 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="HtmlCell" class="html-cell" />
+</ui:UXML>

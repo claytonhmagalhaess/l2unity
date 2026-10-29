@@ -1,0 +1,229 @@
+{
+"mapa": "skylevel",
+"pacote": {
+"versao": 123,
+"licenca": 23,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"Camera": 15,
+"Model": 8,
+"Polys": 8,
+"Brush": 7,
+"NMoon": 5,
+"LevelInfo": 1,
+"SkyZoneInfo": 1,
+"NSun": 1,
+"LevelSummary": 1,
+"Level": 1,
+"PhysicsVolume": 1,
+"ZoneInfo": 1
+},
+"atores_ambiente": [
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 209.51212,
+"Summary": "LevelSummary",
+"VisibleGroups": "241701_flame_marsh,None,sd_bird,sd_insect_day,sd_insect_day_55,sd_insect_night,sd_insect_night_55,sd_lava,sd_lava_55,sd_mountain_wind_loop,sd_wingflap,sd_wolf,tree",
+"CameraLocationDynamic": [
+242.1241,
+264391.9062,
+24570.8398
+],
+"CameraLocationTop": [
+242.1241,
+264391.9062,
+5998.1826
+],
+"CameraLocationFront": [
+242.1241,
+24570.8398,
+41920.0195
+],
+"CameraLocationSide": [
+264391.9062,
+24570.8398,
+4176.0923
+],
+"AmbientVector": [
+0.0457,
+0.0457,
+0.0457
+],
+"AmbientBrightness": 1
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+324.2028,
+264435.1562,
+24535.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+306.322,
+264407.75,
+24574.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<2 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon3",
+"props": {
+"Radius": 245.0,
+"bMoonLight": false,
+"EnvType": 1,
+"bLightChanged": true,
+"bSunAffect": true,
+"Location": [
+290.1241,
+264391.9062,
+24570.8398
+],
+"Skins": "<2 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon1",
+"props": {
+"Radius": 245.0,
+"bMoonLight": false,
+"EnvType": 1,
+"bLightChanged": true,
+"bSunAffect": true,
+"Location": [
+290.1241,
+264391.9062,
+24570.8398
+],
+"Skins": "<2 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon4",
+"props": {
+"Radius": 245.0,
+"bMoonLight": false,
+"EnvType": 2,
+"bLightChanged": true,
+"bSunAffect": true,
+"Location": [
+290.1241,
+264391.9062,
+24570.8398
+],
+"Skins": "<2 bytes>",
+"bDirectional": true,
+"bSelected": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon2",
+"props": {
+"Radius": 245.0,
+"bMoonLight": false,
+"EnvType": 1,
+"bLightChanged": true,
+"bSunAffect": true,
+"Location": [
+290.1241,
+264391.9062,
+24570.8398
+],
+"Skins": "<2 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bMoonLight": false,
+"bLightChanged": true,
+"bSunAffect": true,
+"Location": [
+290.1241,
+264391.9062,
+24570.8398
+],
+"Skins": "<2 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"DistanceFogEnd": 15000.0,
+"bDeleteMe": true,
+"Location": [
+148237.1562,
+-17239.3555,
+-126.7227
+],
+"DrawScale": 10.0,
+"bPendingDelete": true,
+"bSelected": true
+}
+}
+]
+}

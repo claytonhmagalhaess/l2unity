@@ -1,0 +1,31 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Button" uss="L2Input" uss="CharCreationWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="CharCreationWindow" class="char-creation-window">
+    <ui:VisualElement class="char-creation-col-1">
+      <ui:VisualElement tabindex="-1" name="CharCreationDetailWindow" class="char-creation-detail-window">
+        <ui:Instance template="L2Input" template="L2Input" name="UserInputField" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement class="char-creation-col-2">
+      <ui:VisualElement name="CharacterRotateWindow" class="char-creation-rotation">
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TurnLeftButton" tabindex="-1" focusable="false" class="turn-left-button">
+          <ui:VisualElement name="ButtonBg" tabindex="-1" class="l2-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ZoomButton" tabindex="-1" focusable="false" class="zoom-button">
+          <ui:VisualElement name="ButtonBg" tabindex="-1" class="l2-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TurnRightButton" tabindex="-1" focusable="false" class="turn-right-button">
+          <ui:VisualElement name="ButtonBg" tabindex="-1" class="l2-button-bg" />
+        </ui:Button>
+      </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement class="char-creation-col-3">
+      <ui:VisualElement name="MenuWindow" tabindex="-1" class="char-creation-menu">
+        <ui:Instance template="L2Button" template="L2Button" name="CreateButton" class="l2-button-template" />
+        <ui:Instance template="L2Button" template="L2Button" name="PreviousButton" class="l2-button-template" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,24 @@
+Window PartyMatchMakeRoomWnd 356x141 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.PartyMatchWnd.PartyMatch3_Back unk102=PartyMatchMakeRoomWnd unk103=GamingState unk104=0 unk107=1 unk114=0 unk117=0 unk122=270388980 unk126=0 unk127=1 unk128=12 unk130=0 unk131=0 unk132=83909984 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+  TextBox TitletoDo 300x20 @TOP_LEFT->pai.TOP_LEFT(17,20) textAlign=Left offsetY=0 sysstring=1457 textColor=#ffaf9779 emoticon=1 size=[2]
+  TextBox TitleTextBox 94x20 @TOP_LEFT->pai.TOP_LEFT(0,45) textAlign=Right offsetY=0 sysstring=413 textColor=#ffdcdcdc emoticon=1 size=[2]
+  EditBox TitleEditBox 236x17 @TOP_LEFT->pai.TOP_LEFT(103,42) type=NORMAL chatMarkOn=false size=[2]
+  TextBox MaxPartyMemberCountTextBox 94x20 @TOP_LEFT->pai.TOP_LEFT(0,65) textAlign=Right offsetY=0 sysstring=1042 textColor=#ffdcdcdc emoticon=1 size=[2]
+  ComboBox MaxPartyMemberCountComboBox 40x17 @TOP_LEFT->pai.TOP_LEFT(103,62) size=[2] values=[11]
+    - values: sysString=-9999 systemMsg=-9999 text=2 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=3 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=4 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=5 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=6 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=7 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=8 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=9 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=10 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=11 reserved=-9999
+    - values: sysString=-9999 systemMsg=-9999 text=12 reserved=-9999
+  TextBox LevelLimitTextBox 94x20 @TOP_LEFT->pai.TOP_LEFT(0,85) textAlign=Right offsetY=0 sysstring=1030 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox MinLevelTextBox 30x20 @TOP_LEFT->pai.TOP_LEFT(102,85) textAlign=Right offsetY=0 sysstring=1043 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  EditBox MinLevelEditBox 26x17 @TOP_LEFT->pai.TOP_LEFT(131,82) type=NORMAL chatMarkOn=false size=[2]
+  TextBox MaxLevelTextBox 30x20 @TOP_LEFT->pai.TOP_LEFT(172,85) textAlign=Right offsetY=0 sysstring=1044 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  EditBox MaxLevelEditBox 26x17 @TOP_LEFT->pai.TOP_LEFT(201,82) type=NORMAL chatMarkOn=false size=[2]
+  Button OKButton 76x23 @TOP_LEFT->pai.TOP_LEFT(101,110) normalTex=L2UI_CH3.Button.Btn1_normal pushedTex=L2UI_CH3.Button.Btn1_normalOn buttonName=140 size=[2]
+  Button CancelButton 76x23 @TOP_LEFT->pai.TOP_LEFT(181,110) normalTex=L2UI_CH3.Button.Btn1_normal pushedTex=L2UI_CH3.Button.Btn1_normalOn buttonName=141 size=[2]

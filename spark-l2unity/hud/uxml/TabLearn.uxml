@@ -1,0 +1,71 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="Window">
+    <ui:GroupBox name="Content" class="psvroot">
+      <ui:GroupBox name="AllPanel">
+        <ui:GroupBox name="AbilityContent" class="row-ability-content">
+          <ui:GroupBox name="TopLabel">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DF_Button_Ability" class="df-button-active-skills">
+              <ui:VisualElement name="LineWhite" class="df-line-active-skills" />
+            </ui:Button>
+            <ui:Label tabindex="-1" text="Skill to be Learned" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+          </ui:GroupBox>
+          <ui:GroupBox name="SkillBar">
+            <ui:GroupBox name="RowAbility">
+              <ui:GroupBox name="Border" />
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="BlackFrame">
+                    <ui:GroupBox name="imgbox" class="imgbox0">
+                      <ui:GroupBox name="SmallImage" />
+                    </ui:GroupBox>
+                  </ui:GroupBox>
+                </ui:GroupBox>
+                <ui:GroupBox name="TextBox">
+                  <ui:Label tabindex="-1" text="Heal" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NameText" />
+                  <ui:Label tabindex="-1" text="Character Level:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CharacterLevelText" />
+                </ui:GroupBox>
+                <ui:GroupBox>
+                  <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="BlackFrame">
+                    <ui:GroupBox name="imgbox" class="imgbox0">
+                      <ui:GroupBox name="SmallImage" />
+                    </ui:GroupBox>
+                  </ui:GroupBox>
+                </ui:GroupBox>
+                <ui:GroupBox name="TextBox">
+                  <ui:Label tabindex="-1" text="Anti Magic
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NameText" />
+                  <ui:Label tabindex="-1" text="Character Level:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CharacterLevelText" />
+                </ui:GroupBox>
+                <ui:GroupBox>
+                  <ui:Label tabindex="-1" text="8" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+              <ui:GroupBox name="Border" />
+              <ui:GroupBox name="Rows">
+                <ui:GroupBox name="GRow0" class="grow0">
+                  <ui:GroupBox name="BlackFrame">
+                    <ui:GroupBox name="imgbox" class="imgbox0">
+                      <ui:GroupBox name="SmallImage" />
+                    </ui:GroupBox>
+                  </ui:GroupBox>
+                </ui:GroupBox>
+                <ui:GroupBox name="TextBox">
+                  <ui:Label tabindex="-1" text="Ice Bolt" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NameText" />
+                  <ui:Label tabindex="-1" text="Character Level:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CharacterLevelText" />
+                </ui:GroupBox>
+                <ui:GroupBox>
+                  <ui:Label tabindex="-1" text="12" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

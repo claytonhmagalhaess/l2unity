@@ -1,0 +1,98 @@
+{
+ "dll": "LineageCreature.dll",
+ "functions": 657,
+ "by_evidence": {
+  "inferido": 48,
+  "nome": 560,
+  "rtti": 6,
+  "thunk": 1,
+  "eh": 9,
+  "vizinhanca": 32,
+  "vtable": 1
+ },
+ "by_subsystem": {
+  "bibliotecas (CRT/MFC/zlib)": 250,
+  "mundo e atores": 96,
+  "natives de UnrealScript (exec*)": 1,
+  "engine (chamada importada)": 296,
+  "nucleo Unreal (objetos, script VM, IO)": 13,
+  "sistema (chamadas Win32 importadas)": 1
+ },
+ "classes": 14,
+ "top_classes_by_subsystem": {
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    211
+   ],
+   [
+    "type_info",
+    32
+   ],
+   [
+    "std::exception",
+    3
+   ],
+   [
+    "std::bad_exception",
+    2
+   ],
+   [
+    "_LocaleUpdate",
+    1
+   ],
+   [
+    "exception",
+    1
+   ]
+  ],
+  "mundo e atores": [
+   [
+    "AAmbientCreatureFlock",
+    40
+   ],
+   [
+    "(funcao livre nomeada)",
+    33
+   ],
+   [
+    "AAmbientCreature",
+    23
+   ]
+  ],
+  "natives de UnrealScript (exec*)": [
+   [
+    "AAmbientCreature",
+    1
+   ]
+  ],
+  "engine (chamada importada)": [
+   [
+    "ENGINE.DLL::AActor",
+    183
+   ],
+   [
+    "ENGINE.DLL::APawn",
+    110
+   ],
+   [
+    "ENGINE.DLL::AEnvCreatureManagerInfo",
+    3
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "CORE.DLL::UObject",
+    13
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    1
+   ]
+  ]
+ },
+ "funclets_linked": 9,
+ "eh_handlers": 7
+}

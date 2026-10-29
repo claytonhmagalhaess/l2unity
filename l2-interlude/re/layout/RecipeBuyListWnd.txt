@@ -1,0 +1,7 @@
+Window RecipeBuyListWnd 256x401 @CENTER_RIGHT->pai.CENTER_RIGHT(-46,-51) unk101=L2UI_CH3.RecipeWnd.Recipe3_Back unk102=RecipeBuyListWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=663 unk113=0 unk114=3 unk115=1 unk117=0 unk122=4325476 unk123=0 unk124=0 unk125=0 unk126=0 unk127=4390946 unk128=7209057 unk130=0 unk131=0 unk132=589834 unk133=852026 unk134=4391022 unk135=5177353 unk139=Game size=[2]
+  TextBox txtName 245x12 @TOP_LEFT->pai.TOP_LEFT(11,32) textAlign=Left offsetY=0 sysstring=643 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtMP 57x12 @TOP_LEFT->pai.TOP_LEFT(18,323) textAlign=Left offsetY=0 sysstring=644 textColor=#ffdcdcdc emoticon=1 size=[2]
+  Texture texMPBar 0x12 @TOP_LEFT->pai.TOP_LEFT(75,323) file=L2UI_CH3.PlayerStatusWnd.ps_mpbar type=Stretch layer=None u=0.0 v=0.0 uSize=8.0 vSize=12.0 size=[2]
+  TextBox txtAdena 84x17 @TOP_LEFT->pai.TOP_LEFT(73,342) popupType=Text textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TreeCtrl MainTree 238x254 @TOP_LEFT->pai.TOP_LEFT(9,49) saveExpandedNode=false multiExpand=0 size=[2]
+  Button btnClose 76x23 @TOP_LEFT->pai.TOP_LEFT(91,372) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=646 size=[2]

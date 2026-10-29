@@ -1,0 +1,8 @@
+Window PetitionFeedBackWnd 256x401 @BOTTOM_RIGHT->pai.BOTTOM_RIGHT(0,0) unk101=L2UI_CH3.PetitionWnd.petition_fb_back unk102=PetitionFeedBackWnd unk103=GamingState unk104=1 unk107=1 unk111=848 unk114=0 unk117=0 unk122=0 unk126=0 unk127=84066184 unk128=469762054 unk130=0 unk131=0 unk132=18421248 unk133=3247387 unk134=469762060 unk135=67546800 unk139=Game size=[2]
+  RadioButton VeryGood 100x12 @TOP_LEFT->pai.TOP_LEFT(21,52) sysstring=850 radioGroupID=1 isChecked=0 size=[2]
+  RadioButton Good 100x12 @TOP_LEFT->PetitionFeedBackWnd.VeryGood.BOTTOM_LEFT(0,7) sysstring=851 radioGroupID=1 isChecked=0 size=[2]
+  RadioButton Normal 100x12 @TOP_LEFT->PetitionFeedBackWnd.Good.BOTTOM_LEFT(0,7) sysstring=852 radioGroupID=1 isChecked=1 size=[2]
+  RadioButton Bad 100x12 @TOP_LEFT->PetitionFeedBackWnd.Normal.BOTTOM_LEFT(0,7) sysstring=853 radioGroupID=1 isChecked=0 size=[2]
+  RadioButton VeryBad 100x12 @TOP_LEFT->PetitionFeedBackWnd.Bad.BOTTOM_LEFT(0,7) sysstring=854 radioGroupID=1 isChecked=0 size=[2]
+  MultiEdit MultiEdit 240x199 @TOP_LEFT->pai.TOP_LEFT(8,166) size=[2]
+  Button OKButton 76x23 @TOP_LEFT->pai.TOP_LEFT(90,372) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalon buttonName=140 size=[2]

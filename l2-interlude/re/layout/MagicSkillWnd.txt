@@ -1,0 +1,8 @@
+Window MagicSkillWnd 256x335 @TOP_LEFT->pai.TOP_LEFT(0,65) unk100=MainWnd unk101=L2UI_CH3.SkillWnd.skill_back unk102=MagicSkillWnd unk114=0 unk117=0 unk122=0 unk126=0 unk127=270388980 unk128=13082 unk130=0 unk131=0 unk132=5400 unk133=-1061945262 unk134=13277 unk135=271781416 unk139=Game size=[2]
+  Window ASkill 239x280 @TOP_LEFT->pai.TOP_LEFT(9,40) unk114=0 unk117=0 unk122=7143521 unk126=0 unk127=2097266 unk128=6881320 unk130=0 unk131=0 unk132=2818091 unk133=6881312 unk134=589834 unk135=852009 unk139=Game size=[2]
+    ItemWindow SkillItem 239x280 @TOP_LEFT->pai.TOP_LEFT(0,0) popupType=Skill col=6 row=8 maxItemNum=80 iconWidth=32 iconHeight=32 gapX=5 gapY=3 buttonClick=1 useCoolTime=1 outLineUp=l2ui.nwindow.icon_back outLineDown=l2ui.nwindow.icon_click size=[2]
+  Window PSkill 239x280 @TOP_LEFT->pai.TOP_LEFT(9,40) unk114=0 unk117=0 unk122=66998656 unk126=0 unk127=67604728 unk128=67604408 unk130=0 unk131=0 unk132=67601424 unk133=67601864 unk134=67600544 unk135=67600984 unk139=Game size=[2]
+    ItemWindow PItemWnd 239x280 @TOP_LEFT->pai.TOP_LEFT(0,0) popupType=Skill col=6 row=8 maxItemNum=80 iconWidth=32 iconHeight=32 gapX=5 gapY=3 noSelectItem=1 noItemDrag=1 size=[2]
+  Tab TabCtrl 189x23 @TOP_LEFT->pai.TOP_LEFT(12,8) size=[2] tabs=[2]
+    - tabs: buttonName=120 target=ASkill width=94 height=23 normalTex=L2UI_CH3.skillwnd.skill_tab2 pushedTex=L2UI_CH3.skillwnd.skill_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=121 target=PSkill width=94 height=23 normalTex=L2UI_CH3.skillwnd.skill_tab2 pushedTex=L2UI_CH3.skillwnd.skill_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1

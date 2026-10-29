@@ -1,0 +1,15 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2StyleSheet" uss="LoginWindow" uss="ServerListWindow" uss="LicenseWindow" uss="CharSelectWindow" uss="CharCreationWindow" uss="Nameplate" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="NameplatesContainer" focusable="false" usage-hints="GroupTransform" picking-mode="Ignore">
+    <ui:VisualElement name="Spacer" picking-mode="Ignore" />
+  </ui:VisualElement>
+  <ui:VisualElement name="UIContainer">
+    <ui:VisualElement name="BG" picking-mode="Ignore">
+      <ui:VisualElement name="L2Logo" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+  <ui:VisualElement name="UIContainerTooltip" focusable="false" usage-hints="None" picking-mode="Ignore" />
+  <ui:VisualElement name="UIContainerSlot" focusable="false" usage-hints="None" picking-mode="Ignore" />
+  <ui:VisualElement name="Loading" picking-mode="Ignore">
+    <ui:Label tabindex="-1" text="Loading..." parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" />
+  </ui:VisualElement>
+</ui:UXML>

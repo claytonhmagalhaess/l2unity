@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="Frame_DF_Ver" class="frame_df_ver">
+    <ui:VisualElement />
+    <ui:VisualElement name="VisualElement" />
+    <ui:VisualElement name="VisualElement" />
+    <ui:VisualElement name="VisualElement" />
+  </ui:GroupBox>
+</ui:UXML>

@@ -1,0 +1,17 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="BuffWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="BuffWindow" class="buff-window drag-area">
+    <ui:GroupBox name="BuffFrame" class="buff-frame">
+      <ui:VisualElement>
+        <ui:VisualElement />
+        <ui:VisualElement name="VisualElement" />
+        <ui:VisualElement name="VisualElement" />
+        <ui:VisualElement />
+      </ui:VisualElement>
+      <ui:GroupBox name="BuffContainer" class="buff-container">
+        <ui:VisualElement name="NormalBuffs" class="buff-row" />
+        <ui:VisualElement name="SpecialBuffs" class="buff-row" />
+        <ui:VisualElement name="ToggleBuffs" class="buff-row" />
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

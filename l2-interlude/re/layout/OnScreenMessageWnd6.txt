@@ -1,0 +1,7 @@
+Window OnScreenMessageWnd6 800x60 @CENTER_RIGHT->pai.CENTER_RIGHT(-50,0) unk103=GamingState unk104=0 unk107=1 unk108=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=0 unk128=24 unk130=0 unk131=0 unk132=0 unk133=0 unk134=67070952 unk135=0 unk139=Game size=[2]
+  TextBox TextBox6 800x30 @TOP_RIGHT->pai.TOP_RIGHT(0,0) textAlign=Right offsetY=7 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox TextBox6-0 800x30 @TOP_RIGHT->pai.TOP_RIGHT(2,2) textAlign=Right offsetY=7 textColor=#ff000000 emoticon=1 autosize=1 size=[2]
+  TextBox TextBox6-1 800x30 @TOP_RIGHT->pai.TOP_RIGHT(0,30) textAlign=Right offsetY=7 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox TextBox6-1-0 800x30 @TOP_RIGHT->pai.TOP_RIGHT(2,32) textAlign=Right offsetY=7 textColor=#ff000000 emoticon=1 autosize=1 size=[2]
+  TextBox TextBoxsm6 800x30 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox TextBoxsm6-1 800x30 @CENTER_RIGHT->pai.CENTER_RIGHT(0,18) textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]

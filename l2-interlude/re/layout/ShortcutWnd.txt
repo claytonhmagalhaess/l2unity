@@ -1,0 +1,234 @@
+Window ShortcutWnd 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) unk102=ShortcutWnd unk103=GamingState unk107=0 unk108=1 unk114=0 unk117=0 unk122=486789476 unk126=0 unk127=778333783 unk128=1735287116 unk130=0 unk131=0 unk132=538051364 unk133=76286471 unk134=452984871 unk135=64058312 unk139=Game size_percent=[2] size=[2]
+  Window ShortcutWndVertical 46x504 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) unk101=L2UI_CH3.ShortcutWnd.shortcut_backv unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk113=1 unk114=3 unk115=0 unk117=0 unk122=1245451 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=84622376 unk133=84410458 unk134=84183424 unk135=84559232 unk139=Game size=[2]
+    Button ExpandButton 14x14 @TOP_LEFT->pai.TOP_LEFT(8,1) normalTex=L2UI_CH3.ShortcutWnd.shortcut_expandv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_expandv_down size=[2]
+    Button ReduceButton 14x14 @TOP_LEFT->pai.TOP_LEFT(8,1) normalTex=L2UI_CH3.ShortcutWnd.shortcut_minimizev pushedTex=L2UI_CH3.ShortcutWnd.shortcut_minimizev_down size=[2]
+    Button PrevBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(1,13) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prev pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prev_down size=[2]
+    Button NextBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(31,13) normalTex=L2UI_CH3.ShortcutWnd.shortcut_next pushedTex=L2UI_CH3.ShortcutWnd.shortcut_next_down size=[2]
+    Button JoypadBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(1,0) normalTex=L2UI_CH3.ShortcutWnd.shortcut_joypad pushedTex=L2UI_CH3.ShortcutWnd.shortcut_joypad_down size=[2]
+    Button RotateBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(16,0) normalTex=L2UI_CH3.ShortcutWnd.shortcut_rotate pushedTex=L2UI_CH3.ShortcutWnd.shortcut_rotate_down size=[2]
+    Button LockBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(31,0) normalTex=L2UI_CH3.ShortcutWnd.joypad_lock pushedTex=L2UI_CH3.ShortcutWnd.joypad_lock_down size=[2]
+    Button UnlockBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(31,0) normalTex=L2UI_CH3.ShortcutWnd.joypad_unlock pushedTex=L2UI_CH3.ShortcutWnd.joypad_unlock_down size=[2]
+    TextBox PageNumTextBox 20x10 @TOP_CENTER->pai.TOP_CENTER(0,16) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(4,32) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(4,69) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(4,106) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(4,143) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @NONE->pai.TOP_LEFT(4,185) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @NONE->pai.TOP_LEFT(4,222) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @NONE->pai.TOP_LEFT(4,259) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @NONE->pai.TOP_LEFT(4,296) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @NONE->pai.TOP_LEFT(4,338) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @NONE->pai.TOP_LEFT(4,375) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @NONE->pai.TOP_LEFT(4,412) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @NONE->pai.TOP_LEFT(4,449) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(5,32) popupType=Shortcut alwaysShowOutline=false size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(5,69) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(5,106) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(5,143) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut5 @NONE->pai.TOP_LEFT(5,185) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut6 @NONE->pai.TOP_LEFT(5,222) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut7 @NONE->pai.TOP_LEFT(5,259) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut8 @NONE->pai.TOP_LEFT(5,296) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut9 @NONE->pai.TOP_LEFT(5,338) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut10 @NONE->pai.TOP_LEFT(5,375) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut11 @NONE->pai.TOP_LEFT(5,412) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut12 @NONE->pai.TOP_LEFT(5,449) popupType=Shortcut alwaysShowOutline=false
+  Window ShortcutWndVertical_1 46x504 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) unk101=L2UI_CH3.ShortcutWnd.shortcut_backv unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk113=1 unk114=3 unk115=0 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=1 unk127=0 unk128=1 unk129=ShortcutWndVertical unk130=0 unk131=0 unk132=0 unk133=0 unk134=8323095 unk135=0 unk139=Game size=[2]
+    Button PrevBtn2 14x14 @TOP_LEFT->pai.TOP_LEFT(1,13) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prev pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prev_down size=[2]
+    Button NextBtn2 14x14 @TOP_LEFT->pai.TOP_LEFT(31,13) normalTex=L2UI_CH3.ShortcutWnd.shortcut_next pushedTex=L2UI_CH3.ShortcutWnd.shortcut_next_down size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(4,32) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(4,69) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(4,106) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(4,143) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @NONE->pai.TOP_LEFT(4,185) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @NONE->pai.TOP_LEFT(4,222) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @NONE->pai.TOP_LEFT(4,259) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @NONE->pai.TOP_LEFT(4,296) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @NONE->pai.TOP_LEFT(4,338) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @NONE->pai.TOP_LEFT(4,375) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @NONE->pai.TOP_LEFT(4,412) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @NONE->pai.TOP_LEFT(4,449) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    TextBox PageNumTextBox 20x10 @TOP_CENTER->pai.TOP_CENTER(0,16) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(5,32) popupType=Shortcut alwaysShowOutline=false size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(5,69) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(5,106) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(5,143) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut5 @NONE->pai.TOP_LEFT(5,185) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut6 @NONE->pai.TOP_LEFT(5,222) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut7 @NONE->pai.TOP_LEFT(5,259) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut8 @NONE->pai.TOP_LEFT(5,296) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut9 @NONE->pai.TOP_LEFT(5,338) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut10 @NONE->pai.TOP_LEFT(5,375) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut11 @NONE->pai.TOP_LEFT(5,412) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut12 @NONE->pai.TOP_LEFT(5,449) popupType=Shortcut alwaysShowOutline=false
+  Window ShortcutWndVertical_2 46x504 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) unk101=L2UI_CH3.ShortcutWnd.shortcut_backv unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk113=1 unk114=3 unk115=0 unk117=0 unk122=73246704 unk123=0 unk124=0 unk125=0 unk126=1 unk127=0 unk128=1 unk129=ShortcutWndVertical_1 unk130=0 unk131=0 unk132=0 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+    Button PrevBtn3 14x14 @TOP_LEFT->pai.TOP_LEFT(1,13) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prev pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prev_down size=[2]
+    Button NextBtn3 14x14 @TOP_LEFT->pai.TOP_LEFT(31,13) normalTex=L2UI_CH3.ShortcutWnd.shortcut_next pushedTex=L2UI_CH3.ShortcutWnd.shortcut_next_down size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(4,32) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(4,69) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(4,106) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(4,143) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @NONE->pai.TOP_LEFT(4,185) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @NONE->pai.TOP_LEFT(4,222) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @NONE->pai.TOP_LEFT(4,259) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @NONE->pai.TOP_LEFT(4,296) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @NONE->pai.TOP_LEFT(4,338) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @NONE->pai.TOP_LEFT(4,375) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @NONE->pai.TOP_LEFT(4,412) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @NONE->pai.TOP_LEFT(4,449) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    TextBox PageNumTextBox 20x10 @TOP_CENTER->pai.TOP_CENTER(0,16) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(5,32) popupType=Shortcut alwaysShowOutline=false size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(5,69) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(5,106) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(5,143) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut5 @NONE->pai.TOP_LEFT(5,185) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut6 @NONE->pai.TOP_LEFT(5,222) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut7 @NONE->pai.TOP_LEFT(5,259) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut8 @NONE->pai.TOP_LEFT(5,296) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut9 @NONE->pai.TOP_LEFT(5,338) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut10 @NONE->pai.TOP_LEFT(5,375) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut11 @NONE->pai.TOP_LEFT(5,412) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut12 @NONE->pai.TOP_LEFT(5,449) popupType=Shortcut alwaysShowOutline=false
+  Window ShortcutWndHorizontal 504x46 @BOTTOM_RIGHT->ShortcutWnd.ShortcutWndVertical.BOTTOM_RIGHT(0,0) unk101=L2UI_CH3.ShortcutWnd.shortcut_back unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk113=1 unk114=1 unk115=0 unk117=0 unk122=7602291 unk123=0 unk124=0 unk125=0 unk126=0 unk127=4390922 unk128=6357100 unk130=0 unk131=0 unk132=7667758 unk133=6553710 unk134=4390922 unk135=852067 unk139=Game size=[2]
+    Button ExpandButton 14x14 @TOP_LEFT->pai.TOP_LEFT(1,8) normalTex=L2UI_CH3.ShortcutWnd.shortcut_expand pushedTex=L2UI_CH3.ShortcutWnd.shortcut_expand_down size=[2]
+    Button ReduceButton 14x14 @TOP_LEFT->pai.TOP_LEFT(1,8) normalTex=L2UI_CH3.ShortcutWnd.shortcut_minimize pushedTex=L2UI_CH3.ShortcutWnd.shortcut_minimize_down size=[2]
+    Button NextBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(13,1) normalTex=L2UI_CH3.ShortcutWnd.shortcut_nextv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_nextv_down size=[2]
+    Button PrevBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(13,31) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prevv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prevv_down size=[2]
+    Button JoypadBtn 15x15 @TOP_RIGHT->pai.TOP_RIGHT(0,1) normalTex=L2UI_CH3.ShortcutWnd.shortcut_joypad pushedTex=L2UI_CH3.ShortcutWnd.shortcut_joypad_down size=[2]
+    Button RotateBtn 15x15 @TOP_RIGHT->pai.TOP_RIGHT(0,16) normalTex=L2UI_CH3.ShortcutWnd.shortcut_rotate pushedTex=L2UI_CH3.ShortcutWnd.shortcut_rotate_down size=[2]
+    Button LockBtn 15x15 @TOP_RIGHT->pai.TOP_RIGHT(0,31) normalTex=L2UI_CH3.ShortcutWnd.joypad_lock pushedTex=L2UI_CH3.ShortcutWnd.joypad_lock_down size=[2]
+    Button UnlockBtn 15x15 @TOP_RIGHT->pai.TOP_RIGHT(0,31) normalTex=L2UI_CH3.ShortcutWnd.joypad_unlock pushedTex=L2UI_CH3.ShortcutWnd.joypad_unlock_down size=[2]
+    TextBox PageNumTextBox 20x10 @CENTER_LEFT->pai.CENTER_LEFT(10,0) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(32,4) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(69,4) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(106,4) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(143,4) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @NONE->pai.TOP_LEFT(185,4) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @NONE->pai.TOP_LEFT(222,4) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @NONE->pai.TOP_LEFT(259,4) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @NONE->pai.TOP_LEFT(296,4) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @NONE->pai.TOP_LEFT(338,4) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @NONE->pai.TOP_LEFT(375,4) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @NONE->pai.TOP_LEFT(412,4) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @NONE->pai.TOP_LEFT(449,4) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(32,5) popupType=Shortcut alwaysShowOutline=false size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(69,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(106,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(143,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut5 @NONE->pai.TOP_LEFT(185,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut6 @NONE->pai.TOP_LEFT(222,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut7 @NONE->pai.TOP_LEFT(259,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut8 @NONE->pai.TOP_LEFT(296,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut9 @NONE->pai.TOP_LEFT(338,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut10 @NONE->pai.TOP_LEFT(375,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut11 @NONE->pai.TOP_LEFT(412,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut12 @NONE->pai.TOP_LEFT(449,5) popupType=Shortcut alwaysShowOutline=false
+  Window ShortcutWndHorizontal_1 504x46 @BOTTOM_RIGHT->pai.BOTTOM_RIGHT(0,0) unk101=L2UI_CH3.ShortcutWnd.shortcut_back unk104=1 unk106=0 unk107=1 unk108=1 unk113=1 unk114=1 unk115=0 unk117=0 unk122=16805237 unk123=0 unk124=0 unk125=0 unk126=3 unk127=0 unk128=1 unk129=ShortcutWndHorizontal unk130=0 unk131=0 unk132=1277101316 unk133=-244318208 unk134=1699571566 unk135=1769238383 unk139=Game size=[2]
+    Button NextBtn2 14x14 @TOP_LEFT->pai.TOP_LEFT(13,1) normalTex=L2UI_CH3.ShortcutWnd.shortcut_nextv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_nextv_down size=[2]
+    Button PrevBtn2 14x14 @TOP_LEFT->pai.TOP_LEFT(13,31) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prevv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prevv_down size=[2]
+    TextBox PageNumTextBox 20x10 @CENTER_LEFT->pai.CENTER_LEFT(10,0) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(32,4) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(69,4) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(106,4) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(143,4) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @NONE->pai.TOP_LEFT(185,4) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @NONE->pai.TOP_LEFT(222,4) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @NONE->pai.TOP_LEFT(259,4) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @NONE->pai.TOP_LEFT(296,4) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @NONE->pai.TOP_LEFT(338,4) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @NONE->pai.TOP_LEFT(375,4) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @NONE->pai.TOP_LEFT(412,4) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @NONE->pai.TOP_LEFT(449,4) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(32,5) popupType=Shortcut alwaysShowOutline=false size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(69,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(106,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(143,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut5 @NONE->pai.TOP_LEFT(185,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut6 @NONE->pai.TOP_LEFT(222,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut7 @NONE->pai.TOP_LEFT(259,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut8 @NONE->pai.TOP_LEFT(296,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut9 @NONE->pai.TOP_LEFT(338,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut10 @NONE->pai.TOP_LEFT(375,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut11 @NONE->pai.TOP_LEFT(412,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut12 @NONE->pai.TOP_LEFT(449,5) popupType=Shortcut alwaysShowOutline=false
+  Window ShortcutWndHorizontal_2 504x46 @BOTTOM_RIGHT->pai.BOTTOM_RIGHT(0,0) unk101=L2UI_CH3.ShortcutWnd.shortcut_back unk104=1 unk106=0 unk107=1 unk108=1 unk113=1 unk114=1 unk115=0 unk117=0 unk122=-348455427 unk123=0 unk124=0 unk125=0 unk126=3 unk127=0 unk128=1 unk129=ShortcutWndHorizontal_1 unk130=0 unk131=0 unk132=-1502853201 unk133=0 unk134=0 unk135=271046512 unk139=Game size=[2]
+    Button NextBtn3 14x14 @TOP_LEFT->pai.TOP_LEFT(13,1) normalTex=L2UI_CH3.ShortcutWnd.shortcut_nextv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_nextv_down size=[2]
+    Button PrevBtn3 14x14 @TOP_LEFT->pai.TOP_LEFT(13,31) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prevv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prevv_down size=[2]
+    TextBox PageNumTextBox 20x10 @CENTER_LEFT->pai.CENTER_LEFT(10,0) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(32,4) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(69,4) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(106,4) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(143,4) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @NONE->pai.TOP_LEFT(185,4) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @NONE->pai.TOP_LEFT(222,4) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @NONE->pai.TOP_LEFT(259,4) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @NONE->pai.TOP_LEFT(296,4) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @NONE->pai.TOP_LEFT(338,4) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @NONE->pai.TOP_LEFT(375,4) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @NONE->pai.TOP_LEFT(412,4) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @NONE->pai.TOP_LEFT(449,4) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(32,5) popupType=Shortcut alwaysShowOutline=false size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(69,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(106,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(143,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut5 @NONE->pai.TOP_LEFT(185,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut6 @NONE->pai.TOP_LEFT(222,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut7 @NONE->pai.TOP_LEFT(259,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut8 @NONE->pai.TOP_LEFT(296,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut9 @NONE->pai.TOP_LEFT(338,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut10 @NONE->pai.TOP_LEFT(375,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut11 @NONE->pai.TOP_LEFT(412,5) popupType=Shortcut alwaysShowOutline=false
+    ShortcutItemWindow Shortcut12 @NONE->pai.TOP_LEFT(449,5) popupType=Shortcut alwaysShowOutline=false
+  Window ShortcutWndJoypad 172x82 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) unk101=L2UI_CH3.Joypad.joypad_back unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk113=1 unk114=1 unk115=0 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=64050344 unk130=0 unk131=0 unk132=0 unk133=64050344 unk134=271046512 unk135=-1891835141 unk139=Game size=[2]
+    Button NextBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(13,19) normalTex=L2UI_CH3.ShortcutWnd.shortcut_nextv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_nextv_down size=[2]
+    Button PrevBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(13,49) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prevv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prevv_down size=[2]
+    Button JoypadBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(157,34) normalTex=L2UI_CH3.ShortcutWnd.shortcut_joypad pushedTex=L2UI_CH3.ShortcutWnd.shortcut_joypad_down size=[2]
+    Button LockBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(157,19) normalTex=L2UI_CH3.ShortcutWnd.joypad_lock pushedTex=L2UI_CH3.ShortcutWnd.joypad_lock_down size=[2]
+    Button UnlockBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(157,19) normalTex=L2UI_CH3.ShortcutWnd.joypad_unlock pushedTex=L2UI_CH3.ShortcutWnd.joypad_unlock_down size=[2]
+    Button ExpandBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(157,49) normalTex=L2UI_CH3.ShortcutWnd.joypad_change pushedTex=L2UI_CH3.ShortcutWnd.joypad_change_down size=[2]
+    TextBox PageNumTextBox 20x10 @CENTER_LEFT->pai.CENTER_LEFT(10,0) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(38,24) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(75,42) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(112,24) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(75,6) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(39,25) popupType=Shortcut alwaysShowOutline=true size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(76,43) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(113,25) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(76,7) popupType=Shortcut alwaysShowOutline=true
+    Texture JoypadLButtonTex 16x14 @TOP_LEFT->pai.TOP_LEFT(38,6) file=L2UI_ch3.Joypad.joypad_L type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture JoypadRButtonTex 16x14 @TOP_LEFT->pai.TOP_LEFT(130,6) file=L2UI_ch3.Joypad.joypad_R type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Window ShortcutWndJoypadExpand 432x82 @CENTER_RIGHT->pai.CENTER_RIGHT(0,0) unk101=L2UI_CH3.Joypad.joypad2_back unk104=1 unk106=1 unk107=1 unk108=1 unk109=1 unk113=1 unk114=1 unk115=0 unk117=0 unk122=31451248 unk123=0 unk124=0 unk125=0 unk126=0 unk127=12761 unk128=271808480 unk130=0 unk131=0 unk132=1 unk133=0 unk134=0 unk135=4 unk139=Game size=[2]
+    Button NextBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(13,19) normalTex=L2UI_CH3.ShortcutWnd.shortcut_nextv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_nextv_down size=[2]
+    Button PrevBtn 14x14 @TOP_LEFT->pai.TOP_LEFT(13,49) normalTex=L2UI_CH3.ShortcutWnd.shortcut_prevv pushedTex=L2UI_CH3.ShortcutWnd.shortcut_prevv_down size=[2]
+    Button JoypadBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(417,34) normalTex=L2UI_CH3.ShortcutWnd.shortcut_joypad pushedTex=L2UI_CH3.ShortcutWnd.shortcut_joypad_down size=[2]
+    Button LockBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(417,19) normalTex=L2UI_CH3.ShortcutWnd.joypad_lock pushedTex=L2UI_CH3.ShortcutWnd.joypad_lock_down size=[2]
+    Button UnlockBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(417,19) normalTex=L2UI_CH3.ShortcutWnd.joypad_unlock pushedTex=L2UI_CH3.ShortcutWnd.joypad_unlock_down size=[2]
+    Button ExpandBtn 15x15 @TOP_LEFT->pai.TOP_LEFT(417,49) normalTex=L2UI_CH3.ShortcutWnd.joypad_change pushedTex=L2UI_CH3.ShortcutWnd.joypad_change_down size=[2]
+    TextBox PageNumTextBox 20x10 @CENTER_LEFT->pai.CENTER_LEFT(10,0) text=1 textAlign=Center offsetY=10 textColor=#ffdcdcdc emoticon=1 size=[2]
+    Texture JoypadButtonBackTex 128x82 @TOP_LEFT->pai.TOP_LEFT(158,0) file=L2UI_CH3.ShortcutWnd.joypad2_back_over1 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture JoypadLButtonTex 16x14 @TOP_LEFT->pai.TOP_LEFT(38,6) file=L2UI_ch3.Joypad.joypad_L type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture JoypadRButtonTex 16x14 @TOP_LEFT->pai.TOP_LEFT(380,6) file=L2UI_ch3.Joypad.joypad_R type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    ShortcutItemWindow Shortcut1 36x36 @TOP_LEFT->pai.TOP_LEFT(169,25) popupType=Shortcut alwaysShowOutline=true size=[2]
+    ShortcutItemWindow Shortcut2 @NONE->pai.TOP_LEFT(206,43) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut3 @NONE->pai.TOP_LEFT(243,25) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut4 @NONE->pai.TOP_LEFT(206,7) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut5 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut1.TOP_LEFT(-130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut6 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut2.TOP_LEFT(-130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut7 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut3.TOP_LEFT(-130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut8 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut4.TOP_LEFT(-130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut9 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut1.TOP_LEFT(130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut10 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut2.TOP_LEFT(130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut11 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut3.TOP_LEFT(130,0) popupType=Shortcut alwaysShowOutline=true
+    ShortcutItemWindow Shortcut12 @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.Shortcut4.TOP_LEFT(130,0) popupType=Shortcut alwaysShowOutline=true
+    Texture F1Tex 16x16 @TOP_LEFT->pai.TOP_LEFT(168,24) file=L2UI_CH3.ShortcutWnd.shortcut_f01 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+    Texture F2Tex @NONE->pai.TOP_LEFT(205,42) file=L2UI_CH3.ShortcutWnd.shortcut_f02 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F3Tex @NONE->pai.TOP_LEFT(242,24) file=L2UI_CH3.ShortcutWnd.shortcut_f03 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F4Tex @NONE->pai.TOP_LEFT(205,6) file=L2UI_CH3.ShortcutWnd.shortcut_f04 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F5Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F1Tex.TOP_LEFT(-130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f05 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F6Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F2Tex.TOP_LEFT(-130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f06 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F7Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F3Tex.TOP_LEFT(-130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f07 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F8Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F4Tex.TOP_LEFT(-130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f08 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F9Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F1Tex.TOP_LEFT(130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f09 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F10Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F2Tex.TOP_LEFT(130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f10 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F11Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F3Tex.TOP_LEFT(130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f11 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0
+    Texture F12Tex @TOP_LEFT->ShortcutWnd.ShortcutWndJoypadExpand.F4Tex.TOP_LEFT(130,0) file=L2UI_CH3.ShortcutWnd.shortcut_f12 type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0

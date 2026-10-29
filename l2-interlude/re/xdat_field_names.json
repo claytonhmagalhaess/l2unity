@@ -1,0 +1,399 @@
+{
+ "_fonte": "Grava out/re/xdat_field_names.json: nome original (atributo do layout XML) de cada campo unkNNN do Interface.xdat.",
+ "Window (XMLWindowData)": {
+  "unk100": {
+   "xml": "parent",
+   "membro": "+0x88",
+   "tipo": "string",
+   "nota": "janela-mãe lógica"
+  },
+  "unk101": {
+   "xml": "backTex",
+   "membro": "+0x94",
+   "tipo": "string",
+   "nota": "textura de fundo"
+  },
+  "unk102": {
+   "xml": "script",
+   "membro": "+0xA0",
+   "tipo": "string",
+   "nota": "classe UnrealScript da janela"
+  },
+  "unk103": {
+   "xml": "state",
+   "membro": "+0xAC",
+   "tipo": "string",
+   "nota": "estado de UI em que a janela existe"
+  },
+  "unk104": {
+   "xml": "frame",
+   "membro": "+0xB8",
+   "tipo": "bool",
+   "nota": "tem moldura (nó Frame)"
+  },
+  "unk105": {
+   "xml": "iconable",
+   "membro": "+0xBC",
+   "tipo": "bool",
+   "nota": "pode ser minimizada para ícone"
+  },
+  "unk106": {
+   "xml": "stuckable",
+   "membro": "+0xC0",
+   "tipo": "bool",
+   "nota": "gruda em outras janelas"
+  },
+  "unk107": {
+   "xml": "hidden",
+   "membro": "+0xC4",
+   "tipo": "bool",
+   "nota": "começa escondida"
+  },
+  "unk108": {
+   "xml": "alwaysFullAlpha",
+   "membro": "+0xC8",
+   "tipo": "bool",
+   "nota": "ignora a transparência global"
+  },
+  "unk109": {
+   "xml": "savePosition",
+   "membro": "+0xCC",
+   "tipo": "bool",
+   "nota": "grava a posição (WindowsInfo.ini)"
+  },
+  "unk110": {
+   "xml": "saveSize",
+   "membro": "+0xD0",
+   "tipo": "bool",
+   "nota": "grava o tamanho"
+  },
+  "unk111": {
+   "xml": "title",
+   "membro": "+0xE4",
+   "tipo": "int (sysstring)",
+   "nota": "título"
+  },
+  "unk112": {
+   "xml": "resizeframe",
+   "membro": "+0xD4",
+   "tipo": "bool",
+   "nota": "tem faixa de redimensionamento (nó ResizeFrame)"
+  },
+  "unk113": {
+   "xml": "Frame.size",
+   "membro": "+0xEC",
+   "tipo": "enum",
+   "nota": "Small=1, senão 0"
+  },
+  "unk114": {
+   "xml": "Frame.direction",
+   "membro": "+0xF0",
+   "tipo": "enum",
+   "nota": "Left=1, Right=2, Top=3, Bottom=4 (padrão 3)"
+  },
+  "unk115": {
+   "xml": "Frame.exitbutton",
+   "membro": "+0xD8",
+   "tipo": "bool",
+   "nota": "botão fechar"
+  },
+  "unk116": {
+   "xml": "draggable",
+   "membro": "+0xDC",
+   "tipo": "bool",
+   "nota": "arrastável"
+  },
+  "unk117": {
+   "xml": "ResizeFrame.direction",
+   "membro": "+0xF4",
+   "tipo": "enum",
+   "nota": "Left=1, Right=2, Top=3, Bottom=4"
+  },
+  "unk118": {
+   "xml": "ResizeFrame.x",
+   "membro": "+0xF8",
+   "tipo": "int",
+   "nota": ""
+  },
+  "unk119": {
+   "xml": "ResizeFrame.y",
+   "membro": "+0xFC",
+   "tipo": "int",
+   "nota": ""
+  },
+  "unk120": {
+   "xml": "ResizeFrame.width",
+   "membro": "+0x100",
+   "tipo": "float",
+   "nota": ""
+  },
+  "unk121": {
+   "xml": "ResizeFrame.height",
+   "membro": "+0x104",
+   "tipo": "float",
+   "nota": ""
+  },
+  "unk122": {
+   "xml": "ResizeFrame.maxIncrease",
+   "membro": "+0xE8",
+   "tipo": "int",
+   "nota": "quanto a janela pode crescer"
+  },
+  "unk123": {
+   "xml": "Frame.expandbutton",
+   "membro": "+0x118",
+   "tipo": "bool",
+   "nota": "botão expandir"
+  },
+  "unk124": {
+   "xml": "Frame.expandOrgHeight",
+   "membro": "+0x11C",
+   "tipo": "int",
+   "nota": "altura recolhida"
+  },
+  "unk125": {
+   "xml": "Frame.expandExpHeight",
+   "membro": "+0x120",
+   "tipo": "int",
+   "nota": "altura expandida"
+  },
+  "unk126": {
+   "xml": "Drawer.direction",
+   "membro": "+0x124",
+   "tipo": "enum",
+   "nota": "lado da gaveta: Left=1, Right=2, Top=3, Bottom=4"
+  },
+  "unk127": {
+   "xml": "Drawer.offset",
+   "membro": "+0x128",
+   "tipo": "int",
+   "nota": "deslocamento"
+  },
+  "unk128": {
+   "xml": "Drawer.directionFixed",
+   "membro": "+0x12C",
+   "tipo": "bool",
+   "nota": ""
+  },
+  "unk129": {
+   "xml": "Drawer.ownerWindow",
+   "membro": "+0x130",
+   "tipo": "string",
+   "nota": "janela dona da gaveta"
+  },
+  "unk130": {
+   "xml": "ShowHideAnim.ShowAnim.type",
+   "membro": "+0x13C",
+   "tipo": "enum",
+   "nota": "AlphaTransition=3, PositionTransition=4"
+  },
+  "unk131": {
+   "xml": "ShowHideAnim.HideAnim.type",
+   "membro": "+0x140",
+   "tipo": "enum",
+   "nota": "AlphaTransition=3, PositionTransition=4"
+  },
+  "unk132": {
+   "xml": "ShowHideAnim.ShowAnim.direction",
+   "membro": "+0x148",
+   "tipo": "enum",
+   "nota": "Left=1, Right=2, Top=3, Bottom=4"
+  },
+  "unk133": {
+   "xml": "ShowHideAnim.ShowAnim.seconds",
+   "membro": "+0x144",
+   "tipo": "float (bits)",
+   "nota": "duração"
+  },
+  "unk134": {
+   "xml": "ShowHideAnim.HideAnim.direction",
+   "membro": "+0x150",
+   "tipo": "enum",
+   "nota": "Left=1, Right=2, Top=3, Bottom=4"
+  },
+  "unk135": {
+   "xml": "ShowHideAnim.HideAnim.seconds",
+   "membro": "+0x14C",
+   "tipo": "float (bits)",
+   "nota": "duração"
+  },
+  "unk136": {
+   "xml": "Iconable.IconName",
+   "membro": "+0x108",
+   "tipo": "string",
+   "nota": "textura do ícone minimizado"
+  },
+  "unk137": {
+   "xml": "Iconable.TooltipIdx",
+   "membro": "+0x114",
+   "tipo": "int (sysstring)",
+   "nota": "dica do ícone"
+  },
+  "unk138": {
+   "xml": "hookKeyInput",
+   "membro": "+0xE0",
+   "tipo": "bool",
+   "nota": "captura o teclado"
+  },
+  "unk139": {
+   "xml": "WorkingConfiguration",
+   "membro": "+0x158",
+   "tipo": "string",
+   "nota": "configuração (\"Game\")"
+  }
+ },
+ "DefaultProperty (XMLUIData)": {
+  "unk2": {
+   "xml": "alwaysOnTop",
+   "membro": "+0x1C (setter +0x1C)",
+   "tipo": "bool",
+   "nota": ""
+  },
+  "unk3": {
+   "xml": "alwaysOnBack",
+   "membro": "+0x20 (setter +0x20)",
+   "tipo": "bool",
+   "nota": ""
+  },
+  "unk4": {
+   "xml": "(nome da janela-mãe, passado pelo carregador)",
+   "membro": "+0x24",
+   "tipo": "string",
+   "nota": "não é atributo XML"
+  },
+  "unk5": {
+   "xml": "TabOrder.preOrder",
+   "membro": "+0x3C",
+   "tipo": "string",
+   "nota": "controle anterior na ordem de Tab"
+  },
+  "unk6": {
+   "xml": "TabOrder.postOrder",
+   "membro": "+0x48",
+   "tipo": "string",
+   "nota": "próximo controle na ordem de Tab"
+  },
+  "unk7": {
+   "xml": "Position.anchored",
+   "membro": "+0x54",
+   "tipo": "bool",
+   "nota": "6º argumento do setter de Position (+0x2C)"
+  },
+  "unk22": {
+   "xml": "virtual",
+   "membro": "+0x60",
+   "tipo": "bool",
+   "nota": ""
+  },
+  "unk23": {
+   "xml": "passThrough",
+   "membro": "+0x64",
+   "tipo": "bool",
+   "nota": "não captura o mouse"
+  },
+  "unk24": {
+   "xml": "(sem atributo XML)",
+   "membro": "+0x68",
+   "tipo": "int",
+   "nota": "zerado pelo construtor e pelo Reset (slot 29); sempre 0 no arquivo"
+  },
+  "popupType": {
+   "xml": "Tooltip.type",
+   "membro": "+0x6C",
+   "tipo": "string",
+   "nota": ""
+  },
+  "popupValue": {
+   "xml": "Tooltip.text",
+   "membro": "+0x78",
+   "tipo": "int",
+   "nota": ""
+  }
+ },
+ "ListCtrl (XMLListData)": {
+  "unk100": {
+   "xml": "maxRow",
+   "membro": "+0x88",
+   "tipo": "int",
+   "nota": "padrão 100"
+  },
+  "unk101": {
+   "xml": "showRow",
+   "membro": "+0x8C",
+   "tipo": "int",
+   "nota": ""
+  },
+  "unk102": {
+   "xml": "useScroll",
+   "membro": "+0x90",
+   "tipo": "bool",
+   "nota": "padrão 1"
+  },
+  "unk103": {
+   "xml": "contentsHeight",
+   "membro": "+0x94",
+   "tipo": "int",
+   "nota": ""
+  },
+  "unk104": {
+   "xml": "headerHeight",
+   "membro": "+0x98",
+   "tipo": "int",
+   "nota": "padrão 19"
+  },
+  "ListElement.unk108": {
+   "xml": "ListColumn.bNumber",
+   "membro": "coluna+0x8",
+   "tipo": "bool",
+   "nota": "ordena como número"
+  },
+  "ListElement.unk109": {
+   "xml": "ListColumn.bAscend",
+   "membro": "coluna+0xC",
+   "tipo": "bool",
+   "nota": "ordem crescente"
+  },
+  "ListElement.unk110": {
+   "xml": "ListColumn.bClickEnable",
+   "membro": "coluna+0x10",
+   "tipo": "bool",
+   "nota": "cabeçalho clicável"
+  }
+ },
+ "MultiEdit (XMLMultiEditData)": {
+  "unk100": {
+   "xml": "maxRow",
+   "membro": "+0x88",
+   "tipo": "int",
+   "nota": ""
+  },
+  "unk101": {
+   "xml": "showRow",
+   "membro": "+0x8C",
+   "tipo": "int",
+   "nota": ""
+  }
+ },
+ "SliderCtrl (XMLSliderCtrlData)": {
+  "unk111": {
+   "xml": "strDecreaseBtnNormalTexture, strDecreaseBtnDownTexture, strIncreaseBtnNormalTexture, strIncreaseBtnDownTexture",
+   "membro": "+0xAC/+0xB8/+0xC4/+0xD0",
+   "tipo": "4 strings",
+   "nota": "sempre vazias (o leitor esvazia \"undefined\"); 4 índices compactos 0 = os 4 bytes que o esquema lê como int 0"
+  }
+ },
+ "Shortcut (XMLShortcutData)": {
+  "unk0": {
+   "xml": "name",
+   "membro": "",
+   "tipo": "string",
+   "nota": ""
+  },
+  "unk1": {
+   "xml": "state",
+   "membro": "",
+   "tipo": "string",
+   "nota": "estado de UI do conjunto de teclas"
+  }
+ }
+}

@@ -1,0 +1,7138 @@
+{
+ "nwindow_vtable": "0x10287da4",
+ "engine_vtable": "0x10859e04",
+ "engine_slots": 493,
+ "alignment_checked": 44,
+ "alignment_agree": 44,
+ "slots": [
+  {
+   "slot": 0,
+   "offset": "0x0",
+   "nwindow_fn": "0x101b9764",
+   "nwindow_name": "?QueryInterface@UObject@@UAGKABVFGuid@@PAPAX@Z",
+   "overridden": false,
+   "engine_fn": "0x107a47ec",
+   "engine_name": "?QueryInterface@UObject@@UAGKABVFGuid@@PAPAX@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 1,
+   "offset": "0x4",
+   "nwindow_fn": "0x101b976a",
+   "nwindow_name": "?AddRef@UObject@@UAGKXZ",
+   "overridden": false,
+   "engine_fn": "0x107a47f2",
+   "engine_name": "?AddRef@UObject@@UAGKXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 2,
+   "offset": "0x8",
+   "nwindow_fn": "0x101b9770",
+   "nwindow_name": "?Release@UObject@@UAGKXZ",
+   "overridden": false,
+   "engine_fn": "0x107a47f8",
+   "engine_name": "?Release@UObject@@UAGKXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 3,
+   "offset": "0xc",
+   "nwindow_fn": "0x10173480",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x10309237",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 4,
+   "offset": "0x10",
+   "nwindow_fn": "0x101b9776",
+   "nwindow_name": "?ProcessEvent@UObject@@UAEXPAVUFunction@@PAX1@Z",
+   "overridden": false,
+   "engine_fn": "0x107a48c4",
+   "engine_name": "?ProcessEvent@UObject@@UAEXPAVUFunction@@PAX1@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 5,
+   "offset": "0x14",
+   "nwindow_fn": "0x101b977c",
+   "nwindow_name": "?ProcessDelegate@UObject@@UAEXVFName@@PAUFScriptDelegate@@PAX2@Z",
+   "overridden": false,
+   "engine_fn": "0x107a47fe",
+   "engine_name": "?ProcessDelegate@UObject@@UAEXVFName@@PAUFScriptDelegate@@PAX2@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 6,
+   "offset": "0x18",
+   "nwindow_fn": "0x101b9782",
+   "nwindow_name": "?ProcessState@UObject@@UAEXM@Z",
+   "overridden": false,
+   "engine_fn": "0x107a48ca",
+   "engine_name": "?ProcessState@UObject@@UAEXM@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 7,
+   "offset": "0x1c",
+   "nwindow_fn": "0x101b9788",
+   "nwindow_name": "?ProcessRemoteFunction@UObject@@UAEHPAVUFunction@@PAXPAUFFrame@@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a48d0",
+   "engine_name": "?ProcessRemoteFunction@UObject@@UAEHPAVUFunction@@PAXPAUFFrame@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 8,
+   "offset": "0x20",
+   "nwindow_fn": "0x101b978e",
+   "nwindow_name": "?Modify@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a4804",
+   "engine_name": "?Modify@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 9,
+   "offset": "0x24",
+   "nwindow_fn": "0x101b97dc",
+   "nwindow_name": "?PostLoad@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a48d6",
+   "engine_name": "?PostLoad@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 10,
+   "offset": "0x28",
+   "nwindow_fn": "0x10174490",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a4ad4",
+   "engine_name": "?Destroy@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 11,
+   "offset": "0x2c",
+   "nwindow_fn": "0x101b97e2",
+   "nwindow_name": "?Serialize@UObject@@UAEXAAVFArchive@@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a4a2c",
+   "engine_name": "?Serialize@UObject@@UAEXAAVFArchive@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 12,
+   "offset": "0x30",
+   "nwindow_fn": "0x101b9794",
+   "nwindow_name": "?IsPendingKill@UObject@@UAEHXZ",
+   "overridden": false,
+   "engine_fn": "0x107a48e8",
+   "engine_name": "?IsPendingKill@UObject@@UAEHXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 13,
+   "offset": "0x34",
+   "nwindow_fn": "0x101b979a",
+   "nwindow_name": "?GotoState@UObject@@UAE?AW4EGotoState@@VFName@@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a480a",
+   "engine_name": "?GotoState@UObject@@UAE?AW4EGotoState@@VFName@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 14,
+   "offset": "0x38",
+   "nwindow_fn": "0x101b97a0",
+   "nwindow_name": "?GotoLabel@UObject@@UAEHVFName@@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a4810",
+   "engine_name": "?GotoLabel@UObject@@UAEHVFName@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 15,
+   "offset": "0x3c",
+   "nwindow_fn": "0x101b97a6",
+   "nwindow_name": "?InitExecution@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a48ee",
+   "engine_name": "?InitExecution@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 16,
+   "offset": "0x40",
+   "nwindow_fn": "0x101b97ac",
+   "nwindow_name": "?ShutdownAfterError@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a4816",
+   "engine_name": "?ShutdownAfterError@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 17,
+   "offset": "0x44",
+   "nwindow_fn": "0x101b97e8",
+   "nwindow_name": "?PostEditChange@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a48f4",
+   "engine_name": "?PostEditChange@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 18,
+   "offset": "0x48",
+   "nwindow_fn": "0x101b97b2",
+   "nwindow_name": "?CallFunction@UObject@@UAEXAAUFFrame@@QAXPAVUFunction@@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a481c",
+   "engine_name": "?CallFunction@UObject@@UAEXAAUFFrame@@QAXPAVUFunction@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 19,
+   "offset": "0x4c",
+   "nwindow_fn": "0x101b97b8",
+   "nwindow_name": "?ScriptConsoleExec@UObject@@UAEHPBGAAVFOutputDevice@@PAV1@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a4822",
+   "engine_name": "?ScriptConsoleExec@UObject@@UAEHPBGAAVFOutputDevice@@PAV1@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 20,
+   "offset": "0x50",
+   "nwindow_fn": "0x101b97be",
+   "nwindow_name": "?Register@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a4828",
+   "engine_name": "?Register@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 21,
+   "offset": "0x54",
+   "nwindow_fn": "0x101b97c4",
+   "nwindow_name": "?LanguageChange@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a482e",
+   "engine_name": "?LanguageChange@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 22,
+   "offset": "0x58",
+   "nwindow_fn": "0x101b97ca",
+   "nwindow_name": "?ClearL2Game@UObject@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x107a48fa",
+   "engine_name": "?ClearL2Game@UObject@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 23,
+   "offset": "0x5c",
+   "nwindow_fn": "0x101b97d0",
+   "nwindow_name": "?Rename@UObject@@UAEXPBGPAV1@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a4834",
+   "engine_name": "?Rename@UObject@@UAEXPBGPAV1@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 24,
+   "offset": "0x60",
+   "nwindow_fn": "0x101b97d6",
+   "nwindow_name": "?NetDirty@UObject@@UAEXPAVUProperty@@@Z",
+   "overridden": false,
+   "engine_fn": "0x107a4900",
+   "engine_name": "?NetDirty@UObject@@UAEXPAVUProperty@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 25,
+   "offset": "0x64",
+   "nwindow_fn": "0x101b97ee",
+   "nwindow_name": "?IsLoaded@UObject@@UAEHXZ",
+   "overridden": false,
+   "engine_fn": "0x107a4906",
+   "engine_name": "?IsLoaded@UObject@@UAEHXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 26,
+   "offset": "0x68",
+   "nwindow_fn": "0x1016a660",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x1030254a",
+   "engine_name": "?Tick@UL2ConsoleWnd@@UAEXM@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 27,
+   "offset": "0x6c",
+   "nwindow_fn": "0x101411b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 28,
+   "offset": "0x70",
+   "nwindow_fn": "0x1014fe90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TargetUpdate"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 29,
+   "offset": "0x74",
+   "nwindow_fn": "0x101500c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 30,
+   "offset": "0x78",
+   "nwindow_fn": "0x101b96ec",
+   "nwindow_name": "?SetCurrentMakingRace@UL2ConsoleWnd@@UAEXH@Z",
+   "overridden": false,
+   "engine_fn": "0x10307ca7",
+   "engine_name": "?SetCurrentMakingRace@UL2ConsoleWnd@@UAEXH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 31,
+   "offset": "0x7c",
+   "nwindow_fn": "0x10141740",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 32,
+   "offset": "0x80",
+   "nwindow_fn": "0x1014ec80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 33,
+   "offset": "0x84",
+   "nwindow_fn": "0x10148f00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 34,
+   "offset": "0x88",
+   "nwindow_fn": "0x101490a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 35,
+   "offset": "0x8c",
+   "nwindow_fn": "0x1014b950",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 36,
+   "offset": "0x90",
+   "nwindow_fn": "0x10150be0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 37,
+   "offset": "0x94",
+   "nwindow_fn": "0x1014ba00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 38,
+   "offset": "0x98",
+   "nwindow_fn": "0x10142530",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 39,
+   "offset": "0x9c",
+   "nwindow_fn": "0x1014bcc0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 40,
+   "offset": "0xa0",
+   "nwindow_fn": "0x10142740",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 41,
+   "offset": "0xa4",
+   "nwindow_fn": "0x1014be10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 42,
+   "offset": "0xa8",
+   "nwindow_fn": "0x101428d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 43,
+   "offset": "0xac",
+   "nwindow_fn": "0x1014bfd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 44,
+   "offset": "0xb0",
+   "nwindow_fn": "0x1014c140",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 45,
+   "offset": "0xb4",
+   "nwindow_fn": "0x10151020",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 46,
+   "offset": "0xb8",
+   "nwindow_fn": "0x1016ee60",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 47,
+   "offset": "0xbc",
+   "nwindow_fn": "0x101422e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 48,
+   "offset": "0xc0",
+   "nwindow_fn": "0x101423e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 49,
+   "offset": "0xc4",
+   "nwindow_fn": "0x10142480",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 50,
+   "offset": "0xc8",
+   "nwindow_fn": "0x1015a920",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ReceiveTargetLevelDiff"
+   ],
+   "keys": [
+    "LevelDiff"
+   ]
+  },
+  {
+   "slot": 51,
+   "offset": "0xcc",
+   "nwindow_fn": "0x10151830",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryOpenWindow",
+    "EV_InventoryOpenWindow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 52,
+   "offset": "0xd0",
+   "nwindow_fn": "0x10151930",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryClear"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 53,
+   "offset": "0xd4",
+   "nwindow_fn": "0x10152250",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeStart",
+    "EV_TradeStart"
+   ],
+   "keys": [
+    "targetID"
+   ]
+  },
+  {
+   "slot": 54,
+   "offset": "0xd8",
+   "nwindow_fn": "0x10152360",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeAddItem"
+   ],
+   "keys": [
+    "destination",
+    "inventoryList"
+   ]
+  },
+  {
+   "slot": 55,
+   "offset": "0xdc",
+   "nwindow_fn": "0x10152450",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeAddItem"
+   ],
+   "keys": [
+    "destination",
+    "myList"
+   ]
+  },
+  {
+   "slot": 56,
+   "offset": "0xe0",
+   "nwindow_fn": "0x10152540",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeAddItem"
+   ],
+   "keys": [
+    "destination",
+    "otherList"
+   ]
+  },
+  {
+   "slot": 57,
+   "offset": "0xe4",
+   "nwindow_fn": "0x101528c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeOtherOK"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 58,
+   "offset": "0xe8",
+   "nwindow_fn": "0x10152630",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeUpdateInventoryItem"
+   ],
+   "keys": [
+    "add",
+    "delete",
+    "type",
+    "update"
+   ]
+  },
+  {
+   "slot": 59,
+   "offset": "0xec",
+   "nwindow_fn": "0x101527d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeDone"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 60,
+   "offset": "0xf0",
+   "nwindow_fn": "0x10142ce0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 61,
+   "offset": "0xf4",
+   "nwindow_fn": "0x10142d80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 62,
+   "offset": "0xf8",
+   "nwindow_fn": "0x101519f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 63,
+   "offset": "0xfc",
+   "nwindow_fn": "0x10151ad0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryUpdateItem"
+   ],
+   "keys": [
+    "add",
+    "delete",
+    "type",
+    "update"
+   ]
+  },
+  {
+   "slot": 64,
+   "offset": "0x100",
+   "nwindow_fn": "0x10151cb0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryItemListEnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 65,
+   "offset": "0x104",
+   "nwindow_fn": "0x10152ff0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "merchant",
+    "npc",
+    "preview",
+    "type"
+   ]
+  },
+  {
+   "slot": 66,
+   "offset": "0x108",
+   "nwindow_fn": "0x10153190",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShopAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 67,
+   "offset": "0x10c",
+   "nwindow_fn": "0x10152e00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "buy",
+    "merchant",
+    "type"
+   ]
+  },
+  {
+   "slot": 68,
+   "offset": "0x110",
+   "nwindow_fn": "0x10152f60",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShopAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 69,
+   "offset": "0x114",
+   "nwindow_fn": "0x10153250",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryHideWindow",
+    "EV_ShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "merchant",
+    "sell",
+    "type"
+   ]
+  },
+  {
+   "slot": 70,
+   "offset": "0x118",
+   "nwindow_fn": "0x10153400",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShopAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 71,
+   "offset": "0x11c",
+   "nwindow_fn": "0x10152970",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorShopWndOpen"
+   ],
+   "keys": [
+    "adena",
+    "buy",
+    "merchant",
+    "type"
+   ]
+  },
+  {
+   "slot": 72,
+   "offset": "0x120",
+   "nwindow_fn": "0x10152ae0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorShopWndAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 73,
+   "offset": "0x124",
+   "nwindow_fn": "0x10152ba0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorShopWndOpen",
+    "EV_ManorShopWndOpen"
+   ],
+   "keys": [
+    "adena",
+    "merchant",
+    "sell",
+    "type"
+   ]
+  },
+  {
+   "slot": 74,
+   "offset": "0x128",
+   "nwindow_fn": "0x10152d40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorShopWndAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 75,
+   "offset": "0x12c",
+   "nwindow_fn": "0x101536c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryHideWindow",
+    "EV_WarehouseOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "category",
+    "deposit",
+    "type"
+   ]
+  },
+  {
+   "slot": 76,
+   "offset": "0x130",
+   "nwindow_fn": "0x10153870",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_WarehouseAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 77,
+   "offset": "0x134",
+   "nwindow_fn": "0x10153900",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_WarehouseOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "category",
+    "type",
+    "withdraw"
+   ]
+  },
+  {
+   "slot": 78,
+   "offset": "0x138",
+   "nwindow_fn": "0x10153a60",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_WarehouseAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 79,
+   "offset": "0x13c",
+   "nwindow_fn": "0x10171260",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 80,
+   "offset": "0x140",
+   "nwindow_fn": "0x10145370",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 81,
+   "offset": "0x144",
+   "nwindow_fn": "0x1016d6f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 82,
+   "offset": "0x148",
+   "nwindow_fn": "0x1015f190",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TutorialViewerWndShow"
+   ],
+   "keys": [
+    "HtmlString"
+   ]
+  },
+  {
+   "slot": 83,
+   "offset": "0x14c",
+   "nwindow_fn": "0x1015f790",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ArriveNewTutorialQuestion"
+   ],
+   "keys": [
+    "QuestionID"
+   ]
+  },
+  {
+   "slot": 84,
+   "offset": "0x150",
+   "nwindow_fn": "0x10144c50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 85,
+   "offset": "0x154",
+   "nwindow_fn": "0x1015f870",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TutorialViewerWndHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 86,
+   "offset": "0x158",
+   "nwindow_fn": "0x10144c20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 87,
+   "offset": "0x15c",
+   "nwindow_fn": "0x101610a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MinimapDeleteTarget",
+    "EV_MinimapDeleteTarget",
+    "EV_MinimapDeleteTarget",
+    "EV_MinimapDeleteTarget"
+   ],
+   "keys": [
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  {
+   "slot": 88,
+   "offset": "0x160",
+   "nwindow_fn": "0x10161310",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MinimapDeleteTarget"
+   ],
+   "keys": [
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  {
+   "slot": 89,
+   "offset": "0x164",
+   "nwindow_fn": "0x10153490",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SetMaxCount"
+   ],
+   "keys": [
+    "dwarvenRecipe",
+    "inventory",
+    "privateShopBuy",
+    "privateShopSell",
+    "recipe",
+    "warehouseClan",
+    "warehousePrivate"
+   ]
+  },
+  {
+   "slot": 90,
+   "offset": "0x168",
+   "nwindow_fn": "0x101443e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 91,
+   "offset": "0x16c",
+   "nwindow_fn": "0x1015aa00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanInfo"
+   ],
+   "keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ClanNameValue",
+    "ClanRank",
+    "ClanType",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "SkillLevel",
+    "Status"
+   ]
+  },
+  {
+   "slot": 92,
+   "offset": "0x170",
+   "nwindow_fn": "0x1015b1c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanSkillList"
+   ],
+   "keys": [
+    "Count"
+   ]
+  },
+  {
+   "slot": 93,
+   "offset": "0x174",
+   "nwindow_fn": "0x1015b330",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanSkillListAdd"
+   ],
+   "keys": [
+    "SkillID",
+    "SkillLevel"
+   ]
+  },
+  {
+   "slot": 94,
+   "offset": "0x178",
+   "nwindow_fn": "0x1015b450",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanSetAcademyMaster"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 95,
+   "offset": "0x17c",
+   "nwindow_fn": "0x1015b510",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanAuthGradeList"
+   ],
+   "keys": [
+    "Count"
+   ]
+  },
+  {
+   "slot": 96,
+   "offset": "0x180",
+   "nwindow_fn": "0x1015ae50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanInfoUpdate"
+   ],
+   "keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanNameValue",
+    "ClanRank",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "LargeCrestID",
+    "SkillLevel",
+    "Status"
+   ]
+  },
+  {
+   "slot": 97,
+   "offset": "0x184",
+   "nwindow_fn": "0x1015b680",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanDeleteAllMember"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 98,
+   "offset": "0x188",
+   "nwindow_fn": "0x1015b730",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanAddMember"
+   ],
+   "keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ]
+  },
+  {
+   "slot": 99,
+   "offset": "0x18c",
+   "nwindow_fn": "0x1015b970",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanAddMemberMultiple"
+   ],
+   "keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "HaveMaster",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ]
+  },
+  {
+   "slot": 100,
+   "offset": "0x190",
+   "nwindow_fn": "0x1015bbf0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanMemberInfoUpdate"
+   ],
+   "keys": [
+    "Class",
+    "Gender",
+    "HaveMaster",
+    "ID",
+    "Level",
+    "Name",
+    "PledgeType",
+    "Race"
+   ]
+  },
+  {
+   "slot": 101,
+   "offset": "0x194",
+   "nwindow_fn": "0x1015be70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanDeleteMember"
+   ],
+   "keys": [
+    "Name"
+   ]
+  },
+  {
+   "slot": 102,
+   "offset": "0x198",
+   "nwindow_fn": "0x1015bf70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanDeleteAllMember"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 103,
+   "offset": "0x19c",
+   "nwindow_fn": "0x1015c290",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanAuthMember"
+   ],
+   "keys": [
+    "Grade",
+    "Name"
+   ]
+  },
+  {
+   "slot": 104,
+   "offset": "0x1a0",
+   "nwindow_fn": "0x1015c420",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanMemberInfo"
+   ],
+   "keys": [
+    "ClanType",
+    "GradeID",
+    "MasterName",
+    "Name",
+    "NickName",
+    "OrderName"
+   ]
+  },
+  {
+   "slot": 105,
+   "offset": "0x1a4",
+   "nwindow_fn": "0x1015c6a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanWarList"
+   ],
+   "keys": [
+    "ClanName",
+    "Condition",
+    "Page",
+    "Period",
+    "Type"
+   ]
+  },
+  {
+   "slot": 106,
+   "offset": "0x1a8",
+   "nwindow_fn": "0x1015c8b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanSubClanUpdated"
+   ],
+   "keys": [
+    "ClanID",
+    "ClanName",
+    "ClanType",
+    "MasterName"
+   ]
+  },
+  {
+   "slot": 107,
+   "offset": "0x1ac",
+   "nwindow_fn": "0x1015c020",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanMyAuth"
+   ],
+   "keys": [
+    "ClanCrest",
+    "ClanMaster",
+    "Grade",
+    "Join",
+    "ManageMaster",
+    "NickName",
+    "OustMember",
+    "War"
+   ]
+  },
+  {
+   "slot": 108,
+   "offset": "0x1b0",
+   "nwindow_fn": "0x10171f80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 109,
+   "offset": "0x1b4",
+   "nwindow_fn": "0x1016fbb0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 110,
+   "offset": "0x1b8",
+   "nwindow_fn": "0x10172030",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 111,
+   "offset": "0x1bc",
+   "nwindow_fn": "0x10172070",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 112,
+   "offset": "0x1c0",
+   "nwindow_fn": "0x10171f50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 113,
+   "offset": "0x1c4",
+   "nwindow_fn": "0x101720b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 114,
+   "offset": "0x1c8",
+   "nwindow_fn": "0x101720f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 115,
+   "offset": "0x1cc",
+   "nwindow_fn": "0x10172110",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 116,
+   "offset": "0x1d0",
+   "nwindow_fn": "0x1016fdb0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 117,
+   "offset": "0x1d4",
+   "nwindow_fn": "0x10172150",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 118,
+   "offset": "0x1d8",
+   "nwindow_fn": "0x1016fee0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 119,
+   "offset": "0x1dc",
+   "nwindow_fn": "0x10172190",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 120,
+   "offset": "0x1e0",
+   "nwindow_fn": "0x101721d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 121,
+   "offset": "0x1e4",
+   "nwindow_fn": "0x10172200",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 122,
+   "offset": "0x1e8",
+   "nwindow_fn": "0x10170470",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 123,
+   "offset": "0x1ec",
+   "nwindow_fn": "0x101722b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 124,
+   "offset": "0x1f0",
+   "nwindow_fn": "0x101448a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 125,
+   "offset": "0x1f4",
+   "nwindow_fn": "0x101722e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 126,
+   "offset": "0x1f8",
+   "nwindow_fn": "0x10172310",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 127,
+   "offset": "0x1fc",
+   "nwindow_fn": "0x101448e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 128,
+   "offset": "0x200",
+   "nwindow_fn": "0x10172330",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 129,
+   "offset": "0x204",
+   "nwindow_fn": "0x1015e410",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SummonedStatusSpelledList"
+   ],
+   "keys": [
+    "ID",
+    "Max"
+   ]
+  },
+  {
+   "slot": 130,
+   "offset": "0x208",
+   "nwindow_fn": "0x10170010",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 131,
+   "offset": "0x20c",
+   "nwindow_fn": "0x10144540",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 132,
+   "offset": "0x210",
+   "nwindow_fn": "0x10172230",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 133,
+   "offset": "0x214",
+   "nwindow_fn": "0x10144500",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 134,
+   "offset": "0x218",
+   "nwindow_fn": "0x101444c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 135,
+   "offset": "0x21c",
+   "nwindow_fn": "0x10172270",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 136,
+   "offset": "0x220",
+   "nwindow_fn": "0x101703a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 137,
+   "offset": "0x224",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 138,
+   "offset": "0x228",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 139,
+   "offset": "0x22c",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 140,
+   "offset": "0x230",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 141,
+   "offset": "0x234",
+   "nwindow_fn": "0x10157790",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShowBookWnd"
+   ],
+   "keys": [
+    "CurrentMP",
+    "Type"
+   ]
+  },
+  {
+   "slot": 142,
+   "offset": "0x238",
+   "nwindow_fn": "0x101578a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeAddBookItem"
+   ],
+   "keys": [
+    "RecipeID"
+   ]
+  },
+  {
+   "slot": 143,
+   "offset": "0x23c",
+   "nwindow_fn": "0x10157980",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeItemMakeInfo"
+   ],
+   "keys": [
+    "CurrentMP",
+    "MakingResult",
+    "MaxMP",
+    "RecipeID",
+    "Type"
+   ]
+  },
+  {
+   "slot": 144,
+   "offset": "0x240",
+   "nwindow_fn": "0x10157b20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShopShowWnd"
+   ],
+   "keys": [
+    "Type"
+   ]
+  },
+  {
+   "slot": 145,
+   "offset": "0x244",
+   "nwindow_fn": "0x10157c00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShopAddBookItem"
+   ],
+   "keys": [
+    "RecipeID"
+   ]
+  },
+  {
+   "slot": 146,
+   "offset": "0x248",
+   "nwindow_fn": "0x10157ce0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShopAddShopItem"
+   ],
+   "keys": [
+    "CanbeMade",
+    "MakingFee",
+    "RecipeID"
+   ]
+  },
+  {
+   "slot": 147,
+   "offset": "0x24c",
+   "nwindow_fn": "0x10157e20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShowBuyListWnd"
+   ],
+   "keys": [
+    "Adena",
+    "CurrentMP",
+    "MaxMP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 148,
+   "offset": "0x250",
+   "nwindow_fn": "0x10157f90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShopSellItem"
+   ],
+   "keys": [
+    "CanbeMade",
+    "MakingFee",
+    "RecipeID"
+   ]
+  },
+  {
+   "slot": 149,
+   "offset": "0x254",
+   "nwindow_fn": "0x101580d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RecipeShopItemInfo"
+   ],
+   "keys": [
+    "Adena",
+    "CurrentMP",
+    "MakingResult",
+    "MaxMP",
+    "MerchantID",
+    "RecipeID"
+   ]
+  },
+  {
+   "slot": 150,
+   "offset": "0x258",
+   "nwindow_fn": "0x10158290",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateMP"
+   ],
+   "keys": [
+    "CurrentMP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 151,
+   "offset": "0x25c",
+   "nwindow_fn": "0x101583a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateHP"
+   ],
+   "keys": [
+    "CurrentHP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 152,
+   "offset": "0x260",
+   "nwindow_fn": "0x101586d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateCP"
+   ],
+   "keys": [
+    "CurrentCP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 153,
+   "offset": "0x264",
+   "nwindow_fn": "0x101584b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateMaxMP"
+   ],
+   "keys": [
+    "MaxMP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 154,
+   "offset": "0x268",
+   "nwindow_fn": "0x101585c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateMaxHP"
+   ],
+   "keys": [
+    "MaxHP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 155,
+   "offset": "0x26c",
+   "nwindow_fn": "0x101587e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateMaxCP"
+   ],
+   "keys": [
+    "MaxCP",
+    "ServerID"
+   ]
+  },
+  {
+   "slot": 156,
+   "offset": "0x270",
+   "nwindow_fn": "0x101588f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TargetUpdate"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 157,
+   "offset": "0x274",
+   "nwindow_fn": "0x10159b40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 158,
+   "offset": "0x278",
+   "nwindow_fn": "0x101589c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HennaListWndShowHideEquip"
+   ],
+   "keys": [
+    "Adena"
+   ]
+  },
+  {
+   "slot": 159,
+   "offset": "0x27c",
+   "nwindow_fn": "0x10158aa0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HennaListWndAddHennaEquip"
+   ],
+   "keys": [
+    "ClassID",
+    "Description",
+    "HennaID",
+    "IconName",
+    "NumberOfItem"
+   ]
+  },
+  {
+   "slot": 160,
+   "offset": "0x280",
+   "nwindow_fn": "0x10158dd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HennaInfoWndShowHideEquip"
+   ],
+   "keys": [
+    "Adena",
+    "CONchange",
+    "CONnow",
+    "ClassID",
+    "DEXchange",
+    "DEXnow",
+    "DyeIconName",
+    "DyeName",
+    "HennaID",
+    "INTchange",
+    "INTnow",
+    "MENchange",
+    "MENnow",
+    "NumOfItem",
+    "STRchange",
+    "STRnow",
+    "TattooAddName",
+    "TattooIconName",
+    "TattooName",
+    "WITchange",
+    "WITnow"
+   ]
+  },
+  {
+   "slot": 161,
+   "offset": "0x284",
+   "nwindow_fn": "0x10159350",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateHennaInfo"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 162,
+   "offset": "0x288",
+   "nwindow_fn": "0x10159430",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryAddHennaInfo"
+   ],
+   "keys": [
+    "ID",
+    "bActive"
+   ]
+  },
+  {
+   "slot": 163,
+   "offset": "0x28c",
+   "nwindow_fn": "0x10159560",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HennaListWndShowHideUnEquip"
+   ],
+   "keys": [
+    "Adena"
+   ]
+  },
+  {
+   "slot": 164,
+   "offset": "0x290",
+   "nwindow_fn": "0x10159640",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HennaListWndAddHennaUnEquip"
+   ],
+   "keys": [
+    "ClassID",
+    "Description",
+    "HennaID",
+    "IconName",
+    "NumberOfItem"
+   ]
+  },
+  {
+   "slot": 165,
+   "offset": "0x294",
+   "nwindow_fn": "0x10159cd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HennaInfoWndShowHideUnEquip"
+   ],
+   "keys": [
+    "Adena",
+    "CONchange",
+    "CONnow",
+    "ClassID",
+    "DEXchange",
+    "DEXnow",
+    "DyeIconName",
+    "DyeName",
+    "HennaID",
+    "INTchange",
+    "INTnow",
+    "MENchange",
+    "MENnow",
+    "NumOfItem",
+    "STRchange",
+    "STRnow",
+    "TattooAddName",
+    "TattooIconName",
+    "TattooName",
+    "WITchange",
+    "WITnow"
+   ]
+  },
+  {
+   "slot": 166,
+   "offset": "0x298",
+   "nwindow_fn": "0x10143c70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 167,
+   "offset": "0x29c",
+   "nwindow_fn": "0x10143c80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 168,
+   "offset": "0x2a0",
+   "nwindow_fn": "0x10159970",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMAddHennaInfo"
+   ],
+   "keys": [
+    "ID",
+    "bActive"
+   ]
+  },
+  {
+   "slot": 169,
+   "offset": "0x2a4",
+   "nwindow_fn": "0x10159a80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMUpdateHennaInfo"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 170,
+   "offset": "0x2a8",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 171,
+   "offset": "0x2ac",
+   "nwindow_fn": "0x1015a250",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_InventoryToggleWindow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 172,
+   "offset": "0x2b0",
+   "nwindow_fn": "0x10143c90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 173,
+   "offset": "0x2b4",
+   "nwindow_fn": "0x10173ae0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 174,
+   "offset": "0x2b8",
+   "nwindow_fn": "0x10143ca0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 175,
+   "offset": "0x2bc",
+   "nwindow_fn": "0x1014ea30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 176,
+   "offset": "0x2c0",
+   "nwindow_fn": "0x10147460",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 177,
+   "offset": "0x2c4",
+   "nwindow_fn": "0x101456a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 178,
+   "offset": "0x2c8",
+   "nwindow_fn": "0x101456b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 179,
+   "offset": "0x2cc",
+   "nwindow_fn": "0x10164250",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShortcutJoypad"
+   ],
+   "keys": [
+    "OnOff"
+   ]
+  },
+  {
+   "slot": 180,
+   "offset": "0x2d0",
+   "nwindow_fn": "0x1015a4a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShortcutClear"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 181,
+   "offset": "0x2d4",
+   "nwindow_fn": "0x1016f540",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 182,
+   "offset": "0x2d8",
+   "nwindow_fn": "0x10143ed0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 183,
+   "offset": "0x2dc",
+   "nwindow_fn": "0x10143f70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 184,
+   "offset": "0x2e0",
+   "nwindow_fn": "0x10144010",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 185,
+   "offset": "0x2e4",
+   "nwindow_fn": "0x10143e30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 186,
+   "offset": "0x2e8",
+   "nwindow_fn": "0x10143b70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 187,
+   "offset": "0x2ec",
+   "nwindow_fn": "0x1015a560",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_AbnormalStatusNormalItem"
+   ],
+   "keys": [
+    "Max"
+   ]
+  },
+  {
+   "slot": 188,
+   "offset": "0x2f0",
+   "nwindow_fn": "0x1016caa0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_AbnormalStatusNormalItem"
+   ],
+   "keys": [
+    "Max",
+    "OlympiadObserverState"
+   ]
+  },
+  {
+   "slot": 189,
+   "offset": "0x2f4",
+   "nwindow_fn": "0x1015a610",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_AbnormalStatusShortItem"
+   ],
+   "keys": [
+    "Max"
+   ]
+  },
+  {
+   "slot": 190,
+   "offset": "0x2f8",
+   "nwindow_fn": "0x1016d310",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_AbnormalStatusShortItem"
+   ],
+   "keys": [
+    "Max"
+   ]
+  },
+  {
+   "slot": 191,
+   "offset": "0x2fc",
+   "nwindow_fn": "0x1015a6c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_AbnormalStatusEtcItem"
+   ],
+   "keys": [
+    "Max"
+   ]
+  },
+  {
+   "slot": 192,
+   "offset": "0x300",
+   "nwindow_fn": "0x1016cf50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_AbnormalStatusEtcItem"
+   ],
+   "keys": [
+    "Max"
+   ]
+  },
+  {
+   "slot": 193,
+   "offset": "0x304",
+   "nwindow_fn": "0x100bda90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 194,
+   "offset": "0x308",
+   "nwindow_fn": "0x1016f110",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_QuestListEnd",
+    "EV_QuestListEnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 195,
+   "offset": "0x30c",
+   "nwindow_fn": "0x1016ac70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_QuestList"
+   ],
+   "keys": [
+    "Completed",
+    "Level",
+    "QuestID"
+   ]
+  },
+  {
+   "slot": 196,
+   "offset": "0x310",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 197,
+   "offset": "0x314",
+   "nwindow_fn": "0x10163d90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 198,
+   "offset": "0x318",
+   "nwindow_fn": "0x101429b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 199,
+   "offset": "0x31c",
+   "nwindow_fn": "0x10143010",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 200,
+   "offset": "0x320",
+   "nwindow_fn": "0x1015e640",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMemberChanged",
+    "EV_PartyMemberChanged",
+    "EV_PartyMemberChanged"
+   ],
+   "keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "CurMP",
+    "ID",
+    "Level",
+    "MasterID",
+    "MaxCP",
+    "MaxHP",
+    "MaxMP",
+    "Name",
+    "PartyMemberCount",
+    "RoutingType"
+   ]
+  },
+  {
+   "slot": 201,
+   "offset": "0x324",
+   "nwindow_fn": "0x1015eaf0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyUpdateParty"
+   ],
+   "keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "CurMP",
+    "ID",
+    "Level",
+    "MaxCP",
+    "MaxHP",
+    "MaxMP",
+    "Name"
+   ]
+  },
+  {
+   "slot": 202,
+   "offset": "0x328",
+   "nwindow_fn": "0x1015eec0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMemberChanged",
+    "EV_PartyMemberChanged"
+   ],
+   "keys": [
+    "ID",
+    "PartyMemberCount"
+   ]
+  },
+  {
+   "slot": 203,
+   "offset": "0x32c",
+   "nwindow_fn": "0x1015f020",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMemberChanged",
+    "EV_PartyMemberChanged",
+    "EV_PartyMemberChanged"
+   ],
+   "keys": [
+    "PartyMemberCount"
+   ]
+  },
+  {
+   "slot": 204,
+   "offset": "0x330",
+   "nwindow_fn": "0x100bda90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 205,
+   "offset": "0x334",
+   "nwindow_fn": "0x10157710",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillListStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 206,
+   "offset": "0x338",
+   "nwindow_fn": "0x1016c5e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillList"
+   ],
+   "keys": [
+    "ClassID",
+    "Command",
+    "Description",
+    "EnchantName",
+    "IconName",
+    "Level",
+    "Lock",
+    "Name",
+    "Type"
+   ]
+  },
+  {
+   "slot": 207,
+   "offset": "0x33c",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 208,
+   "offset": "0x340",
+   "nwindow_fn": "0x10152120",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_TradeRequestStartExchange"
+   ],
+   "keys": [
+    "targetID"
+   ]
+  },
+  {
+   "slot": 209,
+   "offset": "0x344",
+   "nwindow_fn": "0x101511b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": [
+    "LoadingState"
+   ]
+  },
+  {
+   "slot": 210,
+   "offset": "0x348",
+   "nwindow_fn": "0x1014c260",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 211,
+   "offset": "0x34c",
+   "nwindow_fn": "0x10163fa0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 212,
+   "offset": "0x350",
+   "nwindow_fn": "0x10163f10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 213,
+   "offset": "0x354",
+   "nwindow_fn": "0x101640d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 214,
+   "offset": "0x358",
+   "nwindow_fn": "0x1015f290",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowBoardPacket"
+   ],
+   "keys": [
+    "Address",
+    "Command1",
+    "Command2",
+    "Command3",
+    "Command4",
+    "Command5",
+    "Command6",
+    "Command7",
+    "Command8",
+    "OK"
+   ]
+  },
+  {
+   "slot": 215,
+   "offset": "0x35c",
+   "nwindow_fn": "0x10145410",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 216,
+   "offset": "0x360",
+   "nwindow_fn": "0x10145400",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 217,
+   "offset": "0x364",
+   "nwindow_fn": "0x10151d30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EnchantShow",
+    "EV_EnchantItemList",
+    "EV_EnchantItemList"
+   ],
+   "keys": [
+    "ClassID"
+   ]
+  },
+  {
+   "slot": 218,
+   "offset": "0x368",
+   "nwindow_fn": "0x10152070",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EnchantResult"
+   ],
+   "keys": [
+    "Result"
+   ]
+  },
+  {
+   "slot": 219,
+   "offset": "0x36c",
+   "nwindow_fn": "0x1015a8b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 220,
+   "offset": "0x370",
+   "nwindow_fn": "0x10157260",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillTrainListWndShow"
+   ],
+   "keys": [
+    "Type"
+   ]
+  },
+  {
+   "slot": 221,
+   "offset": "0x374",
+   "nwindow_fn": "0x1016b870",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillTrainInfoWndShow"
+   ],
+   "keys": [
+    "iCastRange",
+    "iEXPConsume",
+    "iLevel",
+    "iMPConsume",
+    "iPercent",
+    "iSPConsume",
+    "strDescription",
+    "strEnchantDesc",
+    "strEnchantName",
+    "strIconName",
+    "strName",
+    "strOperateType"
+   ]
+  },
+  {
+   "slot": 222,
+   "offset": "0x378",
+   "nwindow_fn": "0x1016bea0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillTrainListWndAddSkill"
+   ],
+   "keys": [
+    "bItemConsume",
+    "iEXPConsume",
+    "iID",
+    "iLevel",
+    "iMaxLevel",
+    "iSPConsume",
+    "iType",
+    "strDescription",
+    "strEnchantName",
+    "strIconName",
+    "strName",
+    "strOperateType"
+   ]
+  },
+  {
+   "slot": 223,
+   "offset": "0x37c",
+   "nwindow_fn": "0x1016c400",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillTrainInfoWndAddExtendInfo"
+   ],
+   "keys": [
+    "iNumOfItem",
+    "strIconName",
+    "strName"
+   ]
+  },
+  {
+   "slot": 224,
+   "offset": "0x380",
+   "nwindow_fn": "0x101512c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_Die"
+   ],
+   "keys": [
+    "Agit",
+    "BattleCamp",
+    "Castle",
+    "Original",
+    "Village"
+   ]
+  },
+  {
+   "slot": 225,
+   "offset": "0x384",
+   "nwindow_fn": "0x10151500",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RestartMenuHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 226,
+   "offset": "0x388",
+   "nwindow_fn": "0x10151580",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RestartMenuShow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 227,
+   "offset": "0x38c",
+   "nwindow_fn": "0x10157650",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SkillTrainListWndHide",
+    "EV_SkillTrainListWndHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 228,
+   "offset": "0x390",
+   "nwindow_fn": "0x10161b30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowPlaySceneInterface"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 229,
+   "offset": "0x394",
+   "nwindow_fn": "0x10161be0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowRefineryInteface"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 230,
+   "offset": "0x398",
+   "nwindow_fn": "0x10161c90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowRefineryCancelInteface"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 231,
+   "offset": "0x39c",
+   "nwindow_fn": "0x10161d40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RefineryConfirmTargetItemResult"
+   ],
+   "keys": [
+    "Result",
+    "TargetItemClassID",
+    "TargetItemServerID"
+   ]
+  },
+  {
+   "slot": 232,
+   "offset": "0x3a0",
+   "nwindow_fn": "0x10161e80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RefineryConfirmRefinerItemResult"
+   ],
+   "keys": [
+    "GemStoneClassID",
+    "GemStoneCount",
+    "RefinerItemClassID",
+    "RefinerItemServerID",
+    "Result"
+   ]
+  },
+  {
+   "slot": 233,
+   "offset": "0x3a4",
+   "nwindow_fn": "0x10162020",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RefineryConfirmGemStoneResult"
+   ],
+   "keys": [
+    "GemStoneClassID",
+    "GemStoneCount",
+    "GemStoneServerID",
+    "NecessaryGemStoneCount",
+    "Result"
+   ]
+  },
+  {
+   "slot": 234,
+   "offset": "0x3a8",
+   "nwindow_fn": "0x101621c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RefineryRefineResult"
+   ],
+   "keys": [
+    "Option1",
+    "Option2",
+    "Result"
+   ]
+  },
+  {
+   "slot": 235,
+   "offset": "0x3ac",
+   "nwindow_fn": "0x10162300",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RefineryConfirmCancelItemResult"
+   ],
+   "keys": [
+    "Adena",
+    "CancelItemClassID",
+    "CancelItemServerID",
+    "Option1",
+    "Option2",
+    "Result"
+   ]
+  },
+  {
+   "slot": 236,
+   "offset": "0x3b0",
+   "nwindow_fn": "0x101624d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RefineryRefineCancelResult"
+   ],
+   "keys": [
+    "Result"
+   ]
+  },
+  {
+   "slot": 237,
+   "offset": "0x3b4",
+   "nwindow_fn": "0x10142b00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 238,
+   "offset": "0x3b8",
+   "nwindow_fn": "0x1016b0a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_QuestInfoStart",
+    "EV_QuestInfo"
+   ],
+   "keys": [
+    "QuestDecription",
+    "QuestID",
+    "QuestLevel",
+    "QuestName",
+    "QuestNpcName",
+    "QuestRequirement",
+    "QuestType"
+   ]
+  },
+  {
+   "slot": 239,
+   "offset": "0x3bc",
+   "nwindow_fn": "0x10153b50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ArriveShowQuest"
+   ],
+   "keys": [
+    "QuestID"
+   ]
+  },
+  {
+   "slot": 240,
+   "offset": "0x3c0",
+   "nwindow_fn": "0x1014c4f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 241,
+   "offset": "0x3c4",
+   "nwindow_fn": "0x10153c40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorInfoWndSeedAdd",
+    "EV_ManorInfoWndSeedAdd"
+   ],
+   "keys": [
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "SeedPrice",
+    "SeedRemainCnt",
+    "SeedTotalCnt"
+   ]
+  },
+  {
+   "slot": 242,
+   "offset": "0x3c8",
+   "nwindow_fn": "0x10154170",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorInfoWndCropAdd",
+    "EV_ManorInfoWndCropAdd"
+   ],
+   "keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropTotalCnt",
+    "ManorID",
+    "ManorName",
+    "MerchantOrChamberlain",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ]
+  },
+  {
+   "slot": 243,
+   "offset": "0x3cc",
+   "nwindow_fn": "0x10154700",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorInfoWndDefaultAdd",
+    "EV_ManorInfoWndDefaultAdd"
+   ],
+   "keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "MerchantOrChamberlain",
+    "RewardType1",
+    "RewardType2",
+    "SeedPrice"
+   ]
+  },
+  {
+   "slot": 244,
+   "offset": "0x3d0",
+   "nwindow_fn": "0x10154b60",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorSeedInfoSettingWndAddItemEnd",
+    "EV_ManorSeedInfoSettingWndAddItemEnd",
+    "EV_ManorSeedInfoSettingWndAddItemEnd"
+   ],
+   "keys": [
+    "DefaultSeedPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxSeedTotalCnt",
+    "MinCropPrice",
+    "NextSeedPrice",
+    "RewardType1",
+    "RewardType2",
+    "SeedID",
+    "SeedLevel",
+    "SeedName",
+    "TodayNextSeedTotalCnt",
+    "TodaySeedPrice",
+    "TodaySeedTotalCnt"
+   ]
+  },
+  {
+   "slot": 245,
+   "offset": "0x3d4",
+   "nwindow_fn": "0x101551b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorCropInfoSettingWndAddItemEnd",
+    "EV_ManorCropInfoSettingWndAddItemEnd",
+    "EV_ManorCropInfoSettingWndAddItemEnd"
+   ],
+   "keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "DefaultCropPrice",
+    "ManorID",
+    "ManorName",
+    "MaxCropPrice",
+    "MaxCropTotalCnt",
+    "MinCropPrice",
+    "NextCropPrice",
+    "NextCropTotalCnt",
+    "NextProcureType",
+    "RewardType1",
+    "RewardType2",
+    "TodayCropPrice",
+    "TodayCropTotalCnt",
+    "TodayProcureType"
+   ]
+  },
+  {
+   "slot": 246,
+   "offset": "0x3d8",
+   "nwindow_fn": "0x10155890",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorCropSellWndAddItem",
+    "EV_ManorCropSellWndAddItem"
+   ],
+   "keys": [
+    "CropID",
+    "CropLevel",
+    "CropName",
+    "CropPrice",
+    "CropRemainCnt",
+    "CropServerID",
+    "ManorID",
+    "ManorName",
+    "MyCropCnt",
+    "ProcureType",
+    "RewardType1",
+    "RewardType2"
+   ]
+  },
+  {
+   "slot": 247,
+   "offset": "0x3dc",
+   "nwindow_fn": "0x10155e10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ManorCropSellChangeWndAddItem",
+    "EV_ManorCropSellChangeWndAddItem"
+   ],
+   "keys": [
+    "CropPrice",
+    "CropRemainCnt",
+    "ManorID",
+    "ManorName",
+    "ProcureType"
+   ]
+  },
+  {
+   "slot": 248,
+   "offset": "0x3e0",
+   "nwindow_fn": "0x10156060",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_HeroShowList"
+   ],
+   "keys": [
+    "Max"
+   ]
+  },
+  {
+   "slot": 249,
+   "offset": "0x3e4",
+   "nwindow_fn": "0x10156350",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_OlympiadUserInfo"
+   ],
+   "keys": [
+    "ClassID",
+    "CurCP",
+    "CurHP",
+    "ID",
+    "IsPlayer",
+    "MaxCP",
+    "MaxHP",
+    "Name",
+    "OlympiadObserverState",
+    "PlayerNum"
+   ]
+  },
+  {
+   "slot": 250,
+   "offset": "0x3e8",
+   "nwindow_fn": "0x1016b560",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_OlympiadBuffInfo"
+   ],
+   "keys": [
+    "Max",
+    "PlayerID"
+   ]
+  },
+  {
+   "slot": 251,
+   "offset": "0x3ec",
+   "nwindow_fn": "0x10156650",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_OlympiadMatchEnd",
+    "EV_OlympiadMatchEnd",
+    "EV_OlympiadMatchEnd"
+   ],
+   "keys": [
+    "GamingState",
+    "OlympiadObserverState",
+    "OlympiadTargetWnd",
+    "PlayerNum"
+   ]
+  },
+  {
+   "slot": 252,
+   "offset": "0x3f0",
+   "nwindow_fn": "0x10156920",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_OlympiadMatchEnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 253,
+   "offset": "0x3f4",
+   "nwindow_fn": "0x10164170",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ArriveNewMail"
+   ],
+   "keys": [
+    "IdxMail"
+   ]
+  },
+  {
+   "slot": 254,
+   "offset": "0x3f8",
+   "nwindow_fn": "0x101570e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 255,
+   "offset": "0x3fc",
+   "nwindow_fn": "0x101571a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelEnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 256,
+   "offset": "0x400",
+   "nwindow_fn": "0x1016f420",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 257,
+   "offset": "0x404",
+   "nwindow_fn": "0x10163450",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MultiSellShopID"
+   ],
+   "keys": [
+    "shopID"
+   ]
+  },
+  {
+   "slot": 258,
+   "offset": "0x408",
+   "nwindow_fn": "0x10163500",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MultiSellItemList"
+   ],
+   "keys": [
+    "ID",
+    "OutputRefineryOp1",
+    "OutputRefineryOp2",
+    "classID",
+    "enchant",
+    "index",
+    "itemCount",
+    "itemType",
+    "refineryOp1",
+    "refineryOp2",
+    "slotBitType",
+    "type"
+   ]
+  },
+  {
+   "slot": 259,
+   "offset": "0x40c",
+   "nwindow_fn": "0x10163800",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MultiSellNeededItemList"
+   ],
+   "keys": [
+    "ClassID",
+    "ID",
+    "count",
+    "enchant",
+    "inputRefineryOp1",
+    "inputRefineryOp2",
+    "refineryOp1",
+    "refineryOp2"
+   ]
+  },
+  {
+   "slot": 260,
+   "offset": "0x410",
+   "nwindow_fn": "0x10163a30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MultiSellItemListEnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 261,
+   "offset": "0x414",
+   "nwindow_fn": "0x101452e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 262,
+   "offset": "0x418",
+   "nwindow_fn": "0x10163ab0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ChatWndStatusChange"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 263,
+   "offset": "0x41c",
+   "nwindow_fn": "0x1015f8f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetWndShow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 264,
+   "offset": "0x420",
+   "nwindow_fn": "0x1015f9a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetStatusShow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 265,
+   "offset": "0x424",
+   "nwindow_fn": "0x1015fb40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetSummonedStatusClose"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 266,
+   "offset": "0x428",
+   "nwindow_fn": "0x1015fbd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetSummonedStatusClose"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 267,
+   "offset": "0x42c",
+   "nwindow_fn": "0x1015fc60",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetWndShowNameBtn"
+   ],
+   "keys": [
+    "Show"
+   ]
+  },
+  {
+   "slot": 268,
+   "offset": "0x430",
+   "nwindow_fn": "0x1015fd20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdatePetInfo"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 269,
+   "offset": "0x434",
+   "nwindow_fn": "0x1015fdb0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetInventoryItemStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 270,
+   "offset": "0x438",
+   "nwindow_fn": "0x1015fe40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetInventoryItemList"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 271,
+   "offset": "0x43c",
+   "nwindow_fn": "0x1015ff10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PetInventoryItemUpdate"
+   ],
+   "keys": [
+    "WorkType"
+   ]
+  },
+  {
+   "slot": 272,
+   "offset": "0x440",
+   "nwindow_fn": "0x10146ac0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 273,
+   "offset": "0x444",
+   "nwindow_fn": "0x10146b50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 274,
+   "offset": "0x448",
+   "nwindow_fn": "0x10146c00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 275,
+   "offset": "0x44c",
+   "nwindow_fn": "0x10146a30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 276,
+   "offset": "0x450",
+   "nwindow_fn": "0x10144140",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 277,
+   "offset": "0x454",
+   "nwindow_fn": "0x10144170",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 278,
+   "offset": "0x458",
+   "nwindow_fn": "0x10144160",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 279,
+   "offset": "0x45c",
+   "nwindow_fn": "0x10144580",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 280,
+   "offset": "0x460",
+   "nwindow_fn": "0x10144590",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 281,
+   "offset": "0x464",
+   "nwindow_fn": "0x101445a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 282,
+   "offset": "0x468",
+   "nwindow_fn": "0x101445b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 283,
+   "offset": "0x46c",
+   "nwindow_fn": "0x101445c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 284,
+   "offset": "0x470",
+   "nwindow_fn": "0x10170140",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 285,
+   "offset": "0x474",
+   "nwindow_fn": "0x10170270",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 286,
+   "offset": "0x478",
+   "nwindow_fn": "0x10144800",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 287,
+   "offset": "0x47c",
+   "nwindow_fn": "0x10144810",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 288,
+   "offset": "0x480",
+   "nwindow_fn": "0x10144820",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 289,
+   "offset": "0x484",
+   "nwindow_fn": "0x10144830",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 290,
+   "offset": "0x488",
+   "nwindow_fn": "0x10144840",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 291,
+   "offset": "0x48c",
+   "nwindow_fn": "0x10144850",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 292,
+   "offset": "0x490",
+   "nwindow_fn": "0x1015d4c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfo"
+   ],
+   "keys": [
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanName",
+    "IsOwner",
+    "NowTime",
+    "OwnerName",
+    "SiegeTime"
+   ]
+  },
+  {
+   "slot": 293,
+   "offset": "0x494",
+   "nwindow_fn": "0x1015d880",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoClanList"
+   ],
+   "keys": [
+    "AllianceID",
+    "AllianceMasterName",
+    "AllianceName",
+    "ClanCrestID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ProposeTime",
+    "Type"
+   ]
+  },
+  {
+   "slot": 294,
+   "offset": "0x498",
+   "nwindow_fn": "0x1015dc70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoClanList"
+   ],
+   "keys": [
+    "AllianceID",
+    "AllianceMasterName",
+    "AllianceName",
+    "ClanCrestID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ProposeTime",
+    "Status",
+    "Type"
+   ]
+  },
+  {
+   "slot": 295,
+   "offset": "0x49c",
+   "nwindow_fn": "0x1015e0a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoSelectableTime"
+   ],
+   "keys": [
+    "TimeID"
+   ]
+  },
+  {
+   "slot": 296,
+   "offset": "0x4a0",
+   "nwindow_fn": "0x1015e150",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoClanListEnd"
+   ],
+   "keys": [
+    "Type"
+   ]
+  },
+  {
+   "slot": 297,
+   "offset": "0x4a4",
+   "nwindow_fn": "0x1015e200",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoClanListEnd"
+   ],
+   "keys": [
+    "Type"
+   ]
+  },
+  {
+   "slot": 298,
+   "offset": "0x4a8",
+   "nwindow_fn": "0x1015e2b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoClanListStart"
+   ],
+   "keys": [
+    "Type"
+   ]
+  },
+  {
+   "slot": 299,
+   "offset": "0x4ac",
+   "nwindow_fn": "0x1015e360",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SiegeInfoClanListStart"
+   ],
+   "keys": [
+    "Type"
+   ]
+  },
+  {
+   "slot": 300,
+   "offset": "0x4b0",
+   "nwindow_fn": "0x10144790",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 301,
+   "offset": "0x4b4",
+   "nwindow_fn": "0x101447a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 302,
+   "offset": "0x4b8",
+   "nwindow_fn": "0x1015d1f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SelectDeliverClear",
+    "EV_SelectDeliverAddName"
+   ],
+   "keys": [
+    "id",
+    "name"
+   ]
+  },
+  {
+   "slot": 303,
+   "offset": "0x4bc",
+   "nwindow_fn": "0x1015d370",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DeliverOpenWindow",
+    "EV_DeliverAddItem"
+   ],
+   "keys": [
+    "adena",
+    "destinationID"
+   ]
+  },
+  {
+   "slot": 304,
+   "offset": "0x4c0",
+   "nwindow_fn": "0x10144dd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 305,
+   "offset": "0x4c4",
+   "nwindow_fn": "0x10160010",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingClan"
+   ],
+   "keys": [
+    "AgitID",
+    "AllianceCrestID",
+    "AllianceID",
+    "AllianceName",
+    "CastleID",
+    "ClanID",
+    "ClanMasterName",
+    "ClanName",
+    "ClanNameValue",
+    "ClanRank",
+    "ClanType",
+    "CrestID",
+    "Guilty",
+    "InWar",
+    "SkillLevel",
+    "Status"
+   ]
+  },
+  {
+   "slot": 306,
+   "offset": "0x4c8",
+   "nwindow_fn": "0x10160410",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingClanMemberStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 307,
+   "offset": "0x4cc",
+   "nwindow_fn": "0x101604c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingClanMember"
+   ],
+   "keys": [
+    "ClanType",
+    "Class",
+    "Gender",
+    "ID",
+    "Level",
+    "Name",
+    "Race"
+   ]
+  },
+  {
+   "slot": 308,
+   "offset": "0x4d0",
+   "nwindow_fn": "0x10160710",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingSkillListStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 309,
+   "offset": "0x4d4",
+   "nwindow_fn": "0x1016d860",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingSkillList"
+   ],
+   "keys": [
+    "ClassID",
+    "Command",
+    "Description",
+    "EnchantName",
+    "IconName",
+    "Level",
+    "Lock",
+    "Name",
+    "Type"
+   ]
+  },
+  {
+   "slot": 310,
+   "offset": "0x4d8",
+   "nwindow_fn": "0x100bda90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 311,
+   "offset": "0x4dc",
+   "nwindow_fn": "0x1016dd10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 312,
+   "offset": "0x4e0",
+   "nwindow_fn": "0x101607c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingQuestListStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 313,
+   "offset": "0x4e4",
+   "nwindow_fn": "0x10160870",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingQuestListEnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 314,
+   "offset": "0x4e8",
+   "nwindow_fn": "0x1016dea0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingQuestList"
+   ],
+   "keys": [
+    "Completed",
+    "Level",
+    "QuestID"
+   ]
+  },
+  {
+   "slot": 315,
+   "offset": "0x4ec",
+   "nwindow_fn": "0x10160920",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingQuestItem"
+   ],
+   "keys": [
+    "ClassID",
+    "ItemCount"
+   ]
+  },
+  {
+   "slot": 316,
+   "offset": "0x4f0",
+   "nwindow_fn": "0x10160a30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingInventoryClear"
+   ],
+   "keys": [
+    "InvenLimit"
+   ]
+  },
+  {
+   "slot": 317,
+   "offset": "0x4f4",
+   "nwindow_fn": "0x10160b10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingInventoryAddItem"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 318,
+   "offset": "0x4f8",
+   "nwindow_fn": "0x10160bd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingWarehouseItemListStart"
+   ],
+   "keys": [
+    "adena",
+    "category",
+    "type",
+    "withdraw"
+   ]
+  },
+  {
+   "slot": 319,
+   "offset": "0x4fc",
+   "nwindow_fn": "0x10160d30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMObservingWarehouseItemList"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 320,
+   "offset": "0x500",
+   "nwindow_fn": "0x10144e70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 321,
+   "offset": "0x504",
+   "nwindow_fn": "0x10161450",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MinimapChangeOnTick"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 322,
+   "offset": "0x508",
+   "nwindow_fn": "0x10161500",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MinimapCursedWeaponList"
+   ],
+   "keys": [
+    "NUM"
+   ]
+  },
+  {
+   "slot": 323,
+   "offset": "0x50c",
+   "nwindow_fn": "0x101616d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_MinimapCursedWeaponLocation"
+   ],
+   "keys": [
+    "NUM"
+   ]
+  },
+  {
+   "slot": 324,
+   "offset": "0x510",
+   "nwindow_fn": "0x10161a20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ResolutionChanged"
+   ],
+   "keys": [
+    "NewHeight",
+    "NewWidth"
+   ]
+  },
+  {
+   "slot": 325,
+   "offset": "0x514",
+   "nwindow_fn": "0x101625b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CalculatorWndShowHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 326,
+   "offset": "0x518",
+   "nwindow_fn": "0x10162640",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "bulk",
+    "sellList",
+    "type",
+    "userID"
+   ]
+  },
+  {
+   "slot": 327,
+   "offset": "0x51c",
+   "nwindow_fn": "0x101627e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "bulk",
+    "buy",
+    "type",
+    "userID"
+   ]
+  },
+  {
+   "slot": 328,
+   "offset": "0x520",
+   "nwindow_fn": "0x10162980",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopAddItem",
+    "EV_PrivateShopAddItem"
+   ],
+   "keys": [
+    "bottomList",
+    "sellList",
+    "target",
+    "topList",
+    "type"
+   ]
+  },
+  {
+   "slot": 329,
+   "offset": "0x524",
+   "nwindow_fn": "0x10162c40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopAddItem"
+   ],
+   "keys": [
+    "buy",
+    "target",
+    "topList",
+    "type"
+   ]
+  },
+  {
+   "slot": 330,
+   "offset": "0x528",
+   "nwindow_fn": "0x10007a60",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 331,
+   "offset": "0x52c",
+   "nwindow_fn": "0x10162d90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "buyList",
+    "type",
+    "userID"
+   ]
+  },
+  {
+   "slot": 332,
+   "offset": "0x530",
+   "nwindow_fn": "0x10162f00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopOpenWindow"
+   ],
+   "keys": [
+    "adena",
+    "sell",
+    "type",
+    "userID"
+   ]
+  },
+  {
+   "slot": 333,
+   "offset": "0x534",
+   "nwindow_fn": "0x10163070",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopAddItem",
+    "EV_PrivateShopAddItem"
+   ],
+   "keys": [
+    "bottomList",
+    "buyList",
+    "target",
+    "topList",
+    "type"
+   ]
+  },
+  {
+   "slot": 334,
+   "offset": "0x538",
+   "nwindow_fn": "0x10163300",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PrivateShopAddItem"
+   ],
+   "keys": [
+    "sell",
+    "target",
+    "topList",
+    "type"
+   ]
+  },
+  {
+   "slot": 335,
+   "offset": "0x53c",
+   "nwindow_fn": "0x101505f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 336,
+   "offset": "0x540",
+   "nwindow_fn": "0x10150920",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 337,
+   "offset": "0x544",
+   "nwindow_fn": "0x10150730",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 338,
+   "offset": "0x548",
+   "nwindow_fn": "0x1015fa50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SummonedStatusRemainTime"
+   ],
+   "keys": [
+    "MaxTime",
+    "RemainTime"
+   ]
+  },
+  {
+   "slot": 339,
+   "offset": "0x54c",
+   "nwindow_fn": "0x10166050",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SSQStatus"
+   ],
+   "keys": [
+    "Contribution",
+    "MsgNum1",
+    "MsgNum2",
+    "Period",
+    "SSQStatus",
+    "SSQTeam",
+    "SealStoneAdena",
+    "SelectedSeal",
+    "Team1HuntingMark",
+    "Team1MainEventMark",
+    "Team1Per",
+    "Team1TotalMark",
+    "Team2HuntingMark",
+    "Team2MainEventMark",
+    "Team2Per",
+    "Team2TotalMark"
+   ]
+  },
+  {
+   "slot": 340,
+   "offset": "0x550",
+   "nwindow_fn": "0x10165e70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SSQPreInfo"
+   ],
+   "keys": [
+    "RoomNum",
+    "Winner"
+   ]
+  },
+  {
+   "slot": 341,
+   "offset": "0x554",
+   "nwindow_fn": "0x100bda90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 342,
+   "offset": "0x558",
+   "nwindow_fn": "0x10166400",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SSQMainEvent"
+   ],
+   "keys": [
+    "EventNum",
+    "SSQStatus"
+   ]
+  },
+  {
+   "slot": 343,
+   "offset": "0x55c",
+   "nwindow_fn": "0x10166800",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SSQSealStatus"
+   ],
+   "keys": [
+    "NeedPoint1",
+    "NeedPoint2",
+    "SSQStatus",
+    "SealNum"
+   ]
+  },
+  {
+   "slot": 344,
+   "offset": "0x560",
+   "nwindow_fn": "0x10148610",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 345,
+   "offset": "0x564",
+   "nwindow_fn": "0x1014ed70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 346,
+   "offset": "0x568",
+   "nwindow_fn": "0x10148630",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 347,
+   "offset": "0x56c",
+   "nwindow_fn": "0x1014ee40",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 348,
+   "offset": "0x570",
+   "nwindow_fn": "0x1014ef80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 349,
+   "offset": "0x574",
+   "nwindow_fn": "0x1014f040",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 350,
+   "offset": "0x578",
+   "nwindow_fn": "0x1015ca70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DuelAskStart"
+   ],
+   "keys": [
+    "type",
+    "userName"
+   ]
+  },
+  {
+   "slot": 351,
+   "offset": "0x57c",
+   "nwindow_fn": "0x1015cb90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DuelReady"
+   ],
+   "keys": [
+    "type"
+   ]
+  },
+  {
+   "slot": 352,
+   "offset": "0x580",
+   "nwindow_fn": "0x1015cc50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DuelStart"
+   ],
+   "keys": [
+    "type"
+   ]
+  },
+  {
+   "slot": 353,
+   "offset": "0x584",
+   "nwindow_fn": "0x1015cd10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DuelEnd"
+   ],
+   "keys": [
+    "type"
+   ]
+  },
+  {
+   "slot": 354,
+   "offset": "0x588",
+   "nwindow_fn": "0x1015cdd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DuelUpdateUserInfo"
+   ],
+   "keys": [
+    "ID",
+    "class",
+    "currentCP",
+    "currentHP",
+    "currentMP",
+    "level",
+    "maxCP",
+    "maxHP",
+    "maxMP",
+    "userName"
+   ]
+  },
+  {
+   "slot": 355,
+   "offset": "0x58c",
+   "nwindow_fn": "0x1015d090",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_DuelEnemyRelation"
+   ],
+   "keys": [
+    "bEnemy",
+    "id",
+    "userName"
+   ]
+  },
+  {
+   "slot": 356,
+   "offset": "0x590",
+   "nwindow_fn": "0x1014ce50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 357,
+   "offset": "0x594",
+   "nwindow_fn": "0x10145300",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 358,
+   "offset": "0x598",
+   "nwindow_fn": "0x101b96f2",
+   "nwindow_name": "?L2KeyRemapping@UL2ConsoleWnd@@UAEXAAI0AAJ@Z",
+   "overridden": false,
+   "engine_fn": "0x1030b901",
+   "engine_name": "?L2KeyRemapping@UL2ConsoleWnd@@UAEXAAI0AAJ@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 359,
+   "offset": "0x59c",
+   "nwindow_fn": "0x101b96f8",
+   "nwindow_name": "?ExecLobbyEvent@UL2ConsoleWnd@@UAEXPAGH@Z",
+   "overridden": false,
+   "engine_fn": "0x10302bdf",
+   "engine_name": "?ExecLobbyEvent@UL2ConsoleWnd@@UAEXPAGH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 360,
+   "offset": "0x5a0",
+   "nwindow_fn": "0x101b96fe",
+   "nwindow_name": "?ShowOnlyOneDefaultCharacter@UL2ConsoleWnd@@UAEXH@Z",
+   "overridden": false,
+   "engine_fn": "0x10303cf6",
+   "engine_name": "?ShowOnlyOneDefaultCharacter@UL2ConsoleWnd@@UAEXH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 361,
+   "offset": "0x5a4",
+   "nwindow_fn": "0x101b9704",
+   "nwindow_name": "?ShowAllDefaultCharacter@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x10303a8a",
+   "engine_name": "?ShowAllDefaultCharacter@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 362,
+   "offset": "0x5a8",
+   "nwindow_fn": "0x1016a5a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 363,
+   "offset": "0x5ac",
+   "nwindow_fn": "0x1016aa80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 364,
+   "offset": "0x5b0",
+   "nwindow_fn": "0x101744b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 365,
+   "offset": "0x5b4",
+   "nwindow_fn": "0x1014b580",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 366,
+   "offset": "0x5b8",
+   "nwindow_fn": "0x10141760",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 367,
+   "offset": "0x5bc",
+   "nwindow_fn": "0x10174200",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 368,
+   "offset": "0x5c0",
+   "nwindow_fn": "0x10147380",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 369,
+   "offset": "0x5c4",
+   "nwindow_fn": "0x101b970a",
+   "nwindow_name": "?MoveCameraByState@UL2ConsoleWnd@@UAEXW4L2ConsoleState@@0@Z",
+   "overridden": false,
+   "engine_fn": "0x103111e9",
+   "engine_name": "?MoveCameraByState@UL2ConsoleWnd@@UAEXW4L2ConsoleState@@0@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 370,
+   "offset": "0x5c8",
+   "nwindow_fn": "0x101b9710",
+   "nwindow_name": "?MoveCameraByCharacter@UL2ConsoleWnd@@UAEXW4RaceType@@W4ClassType@@W4L2GenderType@@@Z",
+   "overridden": false,
+   "engine_fn": "0x10315460",
+   "engine_name": "?MoveCameraByCharacter@UL2ConsoleWnd@@UAEXW4RaceType@@W4ClassType@@W4L2GenderType@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 371,
+   "offset": "0x5cc",
+   "nwindow_fn": "0x101b9716",
+   "nwindow_name": "?LoadDefaultCharacterInfo@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x1030890e",
+   "engine_name": "?LoadDefaultCharacterInfo@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 372,
+   "offset": "0x5d0",
+   "nwindow_fn": "0x101b971c",
+   "nwindow_name": "?SpawnDefaultCharacter@UL2ConsoleWnd@@UAEXH@Z",
+   "overridden": false,
+   "engine_fn": "0x1030de04",
+   "engine_name": "?SpawnDefaultCharacter@UL2ConsoleWnd@@UAEXH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 373,
+   "offset": "0x5d4",
+   "nwindow_fn": "0x101b9722",
+   "nwindow_name": "?SpawnDefaultCharacter@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x1030c05e",
+   "engine_name": "?SpawnDefaultCharacter@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 374,
+   "offset": "0x5d8",
+   "nwindow_fn": "0x101b9728",
+   "nwindow_name": "?DestroyDefaultCharacter@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x10312229",
+   "engine_name": "?DestroyDefaultCharacter@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 375,
+   "offset": "0x5dc",
+   "nwindow_fn": "0x101b972e",
+   "nwindow_name": "?InsertSelectCharacterInfo@UL2ConsoleWnd@@UAEXHUUser@@@Z",
+   "overridden": false,
+   "engine_fn": "0x1030737e",
+   "engine_name": "?InsertSelectCharacterInfo@UL2ConsoleWnd@@UAEXHUUser@@@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 376,
+   "offset": "0x5e0",
+   "nwindow_fn": "0x101b9734",
+   "nwindow_name": "?ResetSelectCharacterInfo@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x10314fce",
+   "engine_name": "?ResetSelectCharacterInfo@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 377,
+   "offset": "0x5e4",
+   "nwindow_fn": "0x10141d20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 378,
+   "offset": "0x5e8",
+   "nwindow_fn": "0x101b973a",
+   "nwindow_name": "?SelectedCharacterNum@UL2ConsoleWnd@@UAEXH@Z",
+   "overridden": false,
+   "engine_fn": "0x1031082a",
+   "engine_name": "?SelectedCharacterNum@UL2ConsoleWnd@@UAEXH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 379,
+   "offset": "0x5ec",
+   "nwindow_fn": "0x101b9740",
+   "nwindow_name": "?DefaultCharacterTurn@UL2ConsoleWnd@@UAEXHM@Z",
+   "overridden": false,
+   "engine_fn": "0x10303f8f",
+   "engine_name": "?DefaultCharacterTurn@UL2ConsoleWnd@@UAEXHM@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 380,
+   "offset": "0x5f0",
+   "nwindow_fn": "0x101b9746",
+   "nwindow_name": "?DefaultCharacterStop@UL2ConsoleWnd@@UAEXH@Z",
+   "overridden": false,
+   "engine_fn": "0x10311720",
+   "engine_name": "?DefaultCharacterStop@UL2ConsoleWnd@@UAEXH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 381,
+   "offset": "0x5f4",
+   "nwindow_fn": "0x101b974c",
+   "nwindow_name": "?ResetDefaultCharacterYaw@UL2ConsoleWnd@@UAEXH@Z",
+   "overridden": false,
+   "engine_fn": "0x10310b22",
+   "engine_name": "?ResetDefaultCharacterYaw@UL2ConsoleWnd@@UAEXH@Z",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 382,
+   "offset": "0x5f8",
+   "nwindow_fn": "0x10146e70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 383,
+   "offset": "0x5fc",
+   "nwindow_fn": "0x101465e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 384,
+   "offset": "0x600",
+   "nwindow_fn": "0x101b9752",
+   "nwindow_name": "?PlayIntroMusic@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x10307c2f",
+   "engine_name": "?PlayIntroMusic@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 385,
+   "offset": "0x604",
+   "nwindow_fn": "0x101b9758",
+   "nwindow_name": "?StopIntroMusic@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x10310145",
+   "engine_name": "?StopIntroMusic@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 386,
+   "offset": "0x608",
+   "nwindow_fn": "0x10146f20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 387,
+   "offset": "0x60c",
+   "nwindow_fn": "0x10146fd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 388,
+   "offset": "0x610",
+   "nwindow_fn": "0x1014e7a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 389,
+   "offset": "0x614",
+   "nwindow_fn": "0x10002020",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 390,
+   "offset": "0x618",
+   "nwindow_fn": "0x10146550",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 391,
+   "offset": "0x61c",
+   "nwindow_fn": "0x10142820",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 392,
+   "offset": "0x620",
+   "nwindow_fn": "0x101b975e",
+   "nwindow_name": "?RestoreLobbyMusic@UL2ConsoleWnd@@UAEXXZ",
+   "overridden": false,
+   "engine_fn": "0x10301e1a",
+   "engine_name": "?RestoreLobbyMusic@UL2ConsoleWnd@@UAEXXZ",
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 393,
+   "offset": "0x624",
+   "nwindow_fn": "0x101477e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 394,
+   "offset": "0x628",
+   "nwindow_fn": "0x10163b30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_GMSnoop"
+   ],
+   "keys": [
+    "CharacterName",
+    "ChatMessage",
+    "CreatureID",
+    "SnoopID",
+    "SnoopName",
+    "Type"
+   ]
+  },
+  {
+   "slot": 395,
+   "offset": "0x62c",
+   "nwindow_fn": "0x10165700",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_JoypadLButtonDown"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 396,
+   "offset": "0x630",
+   "nwindow_fn": "0x101657d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_JoypadRButtonDown"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 397,
+   "offset": "0x634",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 398,
+   "offset": "0x638",
+   "nwindow_fn": "0x101658a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowTownMap"
+   ],
+   "keys": [
+    "TownMapName",
+    "UserPosX",
+    "UserPosY"
+   ]
+  },
+  {
+   "slot": 399,
+   "offset": "0x63c",
+   "nwindow_fn": "0x10165a10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ObserverWndShow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 400,
+   "offset": "0x640",
+   "nwindow_fn": "0x10165ad0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ObserverWndHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 401,
+   "offset": "0x644",
+   "nwindow_fn": "0x10165b90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ClanAuth"
+   ],
+   "keys": [
+    "Command",
+    "GradeID"
+   ]
+  },
+  {
+   "slot": 402,
+   "offset": "0x648",
+   "nwindow_fn": "0x1014da90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 403,
+   "offset": "0x64c",
+   "nwindow_fn": "0x1014dbf0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 404,
+   "offset": "0x650",
+   "nwindow_fn": "0x10141c00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 405,
+   "offset": "0x654",
+   "nwindow_fn": "0x1016e8b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 406,
+   "offset": "0x658",
+   "nwindow_fn": "0x101456c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 407,
+   "offset": "0x65c",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 408,
+   "offset": "0x660",
+   "nwindow_fn": "0x10148210",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 409,
+   "offset": "0x664",
+   "nwindow_fn": "0x10148380",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 410,
+   "offset": "0x668",
+   "nwindow_fn": "0x100bda90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 411,
+   "offset": "0x66c",
+   "nwindow_fn": "0x10148350",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 412,
+   "offset": "0x670",
+   "nwindow_fn": "0x10166a70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EnablePetitionFeedback"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 413,
+   "offset": "0x674",
+   "nwindow_fn": "0x10151600",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": [
+    "GAMINGSTATE",
+    "Game",
+    "ShowZoneTitle",
+    "SubZoneName1",
+    "SubZoneName2",
+    "ZoneName"
+   ]
+  },
+  {
+   "slot": 414,
+   "offset": "0x678",
+   "nwindow_fn": "0x1014f1e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 415,
+   "offset": "0x67c",
+   "nwindow_fn": "0x1014f280",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 416,
+   "offset": "0x680",
+   "nwindow_fn": "0x1014f320",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 417,
+   "offset": "0x684",
+   "nwindow_fn": "0x1014f3c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 418,
+   "offset": "0x688",
+   "nwindow_fn": "0x1014f460",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 419,
+   "offset": "0x68c",
+   "nwindow_fn": "0x1014f510",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 420,
+   "offset": "0x690",
+   "nwindow_fn": "0x1014f5c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 421,
+   "offset": "0x694",
+   "nwindow_fn": "0x1014f670",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 422,
+   "offset": "0x698",
+   "nwindow_fn": "0x1014f7c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 423,
+   "offset": "0x69c",
+   "nwindow_fn": "0x1014f860",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 424,
+   "offset": "0x6a0",
+   "nwindow_fn": "0x1014a270",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 425,
+   "offset": "0x6a4",
+   "nwindow_fn": "0x1014a300",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 426,
+   "offset": "0x6a8",
+   "nwindow_fn": "0x1014f740",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 427,
+   "offset": "0x6ac",
+   "nwindow_fn": "0x10166b20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RegenStatus"
+   ],
+   "keys": [
+    "Amount",
+    "Duration",
+    "Ticks",
+    "Type"
+   ]
+  },
+  {
+   "slot": 428,
+   "offset": "0x6b0",
+   "nwindow_fn": "0x10166ca0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": [
+    "EventMatchObserverState",
+    "GamingState"
+   ]
+  },
+  {
+   "slot": 429,
+   "offset": "0x6b4",
+   "nwindow_fn": "0x10166e80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EventMatchGMMessage"
+   ],
+   "keys": [
+    "Message",
+    "Type"
+   ]
+  },
+  {
+   "slot": 430,
+   "offset": "0x6b8",
+   "nwindow_fn": "0x10166fa0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EventMatchUpdateScore"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 431,
+   "offset": "0x6bc",
+   "nwindow_fn": "0x10148710",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 432,
+   "offset": "0x6c0",
+   "nwindow_fn": "0x101487d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 433,
+   "offset": "0x6c4",
+   "nwindow_fn": "0x10167090",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EventMatchUpdateTeamInfo"
+   ],
+   "keys": [
+    "TeamID"
+   ]
+  },
+  {
+   "slot": 434,
+   "offset": "0x6c8",
+   "nwindow_fn": "0x10167190",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EventMatchCreated"
+   ],
+   "keys": [
+    "MatchID"
+   ]
+  },
+  {
+   "slot": 435,
+   "offset": "0x6cc",
+   "nwindow_fn": "0x10167290",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": [
+    "TeamID",
+    "UserID"
+   ]
+  },
+  {
+   "slot": 436,
+   "offset": "0x6d0",
+   "nwindow_fn": "0x101488d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 437,
+   "offset": "0x6d4",
+   "nwindow_fn": "0x10148980",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 438,
+   "offset": "0x6d8",
+   "nwindow_fn": "0x10167420",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EventMatchUpdateUserInfo"
+   ],
+   "keys": [
+    "TeamID",
+    "UserID"
+   ]
+  },
+  {
+   "slot": 439,
+   "offset": "0x6dc",
+   "nwindow_fn": "0x10148a30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 440,
+   "offset": "0x6e0",
+   "nwindow_fn": "0x10167570",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowEventMatchGMWnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 441,
+   "offset": "0x6e4",
+   "nwindow_fn": "0x10167620",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ReceiveMagicSkillUse"
+   ],
+   "keys": [
+    "AttackerID",
+    "DefenderID",
+    "SkillID"
+   ]
+  },
+  {
+   "slot": 442,
+   "offset": "0x6e8",
+   "nwindow_fn": "0x10167770",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ReceiveAttack"
+   ],
+   "keys": [
+    "AttackerID",
+    "AttackerName",
+    "Critical",
+    "DefenderID",
+    "DefenderName",
+    "ShieldDefense"
+   ]
+  },
+  {
+   "slot": 443,
+   "offset": "0x6ec",
+   "nwindow_fn": "0x10148ab0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 444,
+   "offset": "0x6f0",
+   "nwindow_fn": "0x101679b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdateUserInfo"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 445,
+   "offset": "0x6f4",
+   "nwindow_fn": "0x10167a70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_UpdatePetInfo"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 446,
+   "offset": "0x6f8",
+   "nwindow_fn": "0x10167f90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchList"
+   ],
+   "keys": [
+    "PageNum",
+    "RoomCount"
+   ]
+  },
+  {
+   "slot": 447,
+   "offset": "0x6fc",
+   "nwindow_fn": "0x101682c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchStart"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 448,
+   "offset": "0x700",
+   "nwindow_fn": "0x10168370",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchRoomStart"
+   ],
+   "keys": [
+    "LootingMethodID",
+    "MaxLevel",
+    "MaxMember",
+    "MinLevel",
+    "RoomName",
+    "RoomNum",
+    "ZoneID"
+   ]
+  },
+  {
+   "slot": 449,
+   "offset": "0x704",
+   "nwindow_fn": "0x10168590",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchRoomMember"
+   ],
+   "keys": [
+    "MemberCount",
+    "MyMembershipType"
+   ]
+  },
+  {
+   "slot": 450,
+   "offset": "0x708",
+   "nwindow_fn": "0x10168830",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchRoomClose"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 451,
+   "offset": "0x70c",
+   "nwindow_fn": "0x101688f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchRoomMemberUpdate"
+   ],
+   "keys": [
+    "ClassID",
+    "Level",
+    "MemberID",
+    "MemberName",
+    "MembershipType",
+    "UpdateType",
+    "ZoneID"
+   ]
+  },
+  {
+   "slot": 452,
+   "offset": "0x710",
+   "nwindow_fn": "0x10149e20",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 453,
+   "offset": "0x714",
+   "nwindow_fn": "0x10168d90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 454,
+   "offset": "0x718",
+   "nwindow_fn": "0x10168b10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_EventMatchManage"
+   ],
+   "keys": [
+    "FenceStat",
+    "MatchID",
+    "MatchStat",
+    "Team1Name",
+    "Team1Stat",
+    "Team2Name",
+    "Team2Stat"
+   ]
+  },
+  {
+   "slot": 455,
+   "offset": "0x71c",
+   "nwindow_fn": "0x10143b80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 456,
+   "offset": "0x720",
+   "nwindow_fn": "0x101569d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelInfo"
+   ],
+   "keys": [
+    "OwnerName",
+    "PartyMemberNum",
+    "PartyNum",
+    "RoutingType"
+   ]
+  },
+  {
+   "slot": 457,
+   "offset": "0x724",
+   "nwindow_fn": "0x10156b70",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelPartyList"
+   ],
+   "keys": [
+    "MasterID",
+    "MasterName",
+    "PartyNum"
+   ]
+  },
+  {
+   "slot": 458,
+   "offset": "0x728",
+   "nwindow_fn": "0x10156ce0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelPartyMember"
+   ],
+   "keys": [
+    "MemberCount"
+   ]
+  },
+  {
+   "slot": 459,
+   "offset": "0x72c",
+   "nwindow_fn": "0x10156ea0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelPartyUpdate"
+   ],
+   "keys": [
+    "MasterID",
+    "MasterName",
+    "MemberCount",
+    "Type"
+   ]
+  },
+  {
+   "slot": 460,
+   "offset": "0x730",
+   "nwindow_fn": "0x1016f230",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 461,
+   "offset": "0x734",
+   "nwindow_fn": "0x10157030",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowPCCafeCouponUI"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 462,
+   "offset": "0x738",
+   "nwindow_fn": "0x10148b30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 463,
+   "offset": "0x73c",
+   "nwindow_fn": "0x10148bd0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 464,
+   "offset": "0x740",
+   "nwindow_fn": "0x10148c90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 465,
+   "offset": "0x744",
+   "nwindow_fn": "0x10142b90",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 466,
+   "offset": "0x748",
+   "nwindow_fn": "0x1016e950",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowReplayQuitDialogBox",
+    "EV_ObserverWndHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 467,
+   "offset": "0x74c",
+   "nwindow_fn": "0x1016eab0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 468,
+   "offset": "0x750",
+   "nwindow_fn": "0x10167e50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_FishViewportWndShow"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 469,
+   "offset": "0x754",
+   "nwindow_fn": "0x10167ee0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_FishViewportWndHide"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 470,
+   "offset": "0x758",
+   "nwindow_fn": "0x10149150",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 471,
+   "offset": "0x75c",
+   "nwindow_fn": "0x101491f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 472,
+   "offset": "0x760",
+   "nwindow_fn": "0x10149290",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 473,
+   "offset": "0x764",
+   "nwindow_fn": "0x10149340",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 474,
+   "offset": "0x768",
+   "nwindow_fn": "0x101493d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 475,
+   "offset": "0x76c",
+   "nwindow_fn": "0x10149480",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 476,
+   "offset": "0x770",
+   "nwindow_fn": "0x10149530",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 477,
+   "offset": "0x774",
+   "nwindow_fn": "0x101495e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 478,
+   "offset": "0x778",
+   "nwindow_fn": "0x101503a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 479,
+   "offset": "0x77c",
+   "nwindow_fn": "0x10141410",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 480,
+   "offset": "0x780",
+   "nwindow_fn": "0x1014a000",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 481,
+   "offset": "0x784",
+   "nwindow_fn": "0x1014f140",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 482,
+   "offset": "0x788",
+   "nwindow_fn": "0x10169140",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PCCafePointInfo"
+   ],
+   "keys": [
+    "AddPoint",
+    "PeriodType",
+    "PointType",
+    "RemainTime",
+    "TotalPoint"
+   ]
+  },
+  {
+   "slot": 483,
+   "offset": "0x78c",
+   "nwindow_fn": "0x101692f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_SetRadarZoneCode"
+   ],
+   "keys": [
+    "ZoneCode"
+   ]
+  },
+  {
+   "slot": 484,
+   "offset": "0x790",
+   "nwindow_fn": "0x101693e0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_RaidRecord"
+   ],
+   "keys": [
+    "Count",
+    "RaidRank",
+    "SeasonPoint"
+   ]
+  },
+  {
+   "slot": 485,
+   "offset": "0x794",
+   "nwindow_fn": "0x101695f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowGuideWnd"
+   ],
+   "keys": []
+  },
+  {
+   "slot": 486,
+   "offset": "0x798",
+   "nwindow_fn": "0x101696b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_ShowScreenMessage"
+   ],
+   "keys": [
+    "AnimationType",
+    "BackgroundType",
+    "FontSize",
+    "FontType",
+    "LifeTime",
+    "Msg",
+    "MsgColor",
+    "MsgNo",
+    "MsgType",
+    "ShadowType",
+    "WindowType"
+   ]
+  },
+  {
+   "slot": 487,
+   "offset": "0x79c",
+   "nwindow_fn": "0x1016ebf0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 488,
+   "offset": "0x7a0",
+   "nwindow_fn": "0x10169ac0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchWaitListStart"
+   ],
+   "keys": [
+    "AllCount",
+    "Count"
+   ]
+  },
+  {
+   "slot": 489,
+   "offset": "0x7a4",
+   "nwindow_fn": "0x10169be0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_PartyMatchWaitList"
+   ],
+   "keys": [
+    "ClassID",
+    "Level",
+    "Name"
+   ]
+  },
+  {
+   "slot": 490,
+   "offset": "0x7a8",
+   "nwindow_fn": "0x101699d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [
+    "EV_CommandChannelRoutingType"
+   ],
+   "keys": [
+    "RoutingType"
+   ]
+  },
+  {
+   "slot": 491,
+   "offset": "0x7ac",
+   "nwindow_fn": "0x1014a1d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 492,
+   "offset": "0x7b0",
+   "nwindow_fn": "0x1014a1f0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": "0x107a65c5",
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 493,
+   "offset": "0x7b4",
+   "nwindow_fn": "0x10141250",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 494,
+   "offset": "0x7b8",
+   "nwindow_fn": "0x10150430",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 495,
+   "offset": "0x7bc",
+   "nwindow_fn": "0x101421c0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 496,
+   "offset": "0x7c0",
+   "nwindow_fn": "0x101510b0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 497,
+   "offset": "0x7c4",
+   "nwindow_fn": "0x10142af0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 498,
+   "offset": "0x7c8",
+   "nwindow_fn": "0x10142f80",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 499,
+   "offset": "0x7cc",
+   "nwindow_fn": "0x10143030",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 500,
+   "offset": "0x7d0",
+   "nwindow_fn": "0x101430d0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 501,
+   "offset": "0x7d4",
+   "nwindow_fn": "0x101432a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 502,
+   "offset": "0x7d8",
+   "nwindow_fn": "0x100d7680",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 503,
+   "offset": "0x7dc",
+   "nwindow_fn": "0x101435a0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 504,
+   "offset": "0x7e0",
+   "nwindow_fn": "0x10143ae0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 505,
+   "offset": "0x7e4",
+   "nwindow_fn": "0x10143af0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 506,
+   "offset": "0x7e8",
+   "nwindow_fn": "0x10143b00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 507,
+   "offset": "0x7ec",
+   "nwindow_fn": "0x10143b10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 508,
+   "offset": "0x7f0",
+   "nwindow_fn": "0x1014cae0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 509,
+   "offset": "0x7f4",
+   "nwindow_fn": "0x10147de0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 510,
+   "offset": "0x7f8",
+   "nwindow_fn": "0x10147e10",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 511,
+   "offset": "0x7fc",
+   "nwindow_fn": "0x10148d50",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 512,
+   "offset": "0x800",
+   "nwindow_fn": "0x10148e00",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 513,
+   "offset": "0x804",
+   "nwindow_fn": "0x10167b30",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 514,
+   "offset": "0x808",
+   "nwindow_fn": "0x10148ec0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 515,
+   "offset": "0x80c",
+   "nwindow_fn": "0x10148ed0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 516,
+   "offset": "0x810",
+   "nwindow_fn": "0x10148ee0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  },
+  {
+   "slot": 517,
+   "offset": "0x814",
+   "nwindow_fn": "0x10148ef0",
+   "nwindow_name": null,
+   "overridden": true,
+   "engine_fn": null,
+   "engine_name": null,
+   "events": [],
+   "keys": []
+  }
+ ]
+}

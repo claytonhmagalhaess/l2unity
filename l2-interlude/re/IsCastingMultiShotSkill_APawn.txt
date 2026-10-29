@@ -1,0 +1,50 @@
+  104ed8e0  mov    eax, dword ptr [ecx + 0x52c]
+  104ed8e6  cmp    eax, 9
+  104ed8e9  je     0x104ed8f8
+  104ed8eb  cmp    eax, 0xa
+  104ed8ee  je     0x104ed8f8
+  104ed8f0  cmp    eax, 8
+  104ed8f3  je     0x104ed8f8
+  104ed8f5  xor    eax, eax
+  104ed8f7  ret    
+  104ed8f8  mov    eax, 1
+  104ed8fd  ret    
+  104ed8fe  int3   
+  104ed8ff  int3   
+  104ed900  int3   
+  104ed901  int3   
+  104ed902  int3   
+  104ed903  int3   
+  104ed904  int3   
+  104ed905  int3   
+  104ed906  int3   
+  104ed907  int3   
+  104ed908  int3   
+  104ed909  int3   
+  104ed90a  int3   
+  104ed90b  int3   
+  104ed90c  int3   
+  104ed90d  int3   
+  104ed90e  int3   
+  104ed90f  int3   
+  104ed910  mov    eax, dword ptr [esp + 4]
+  104ed914  push   4
+  104ed916  push   eax
+  104ed917  call   dword ptr [0x11d8d8b0] ; -> 11d8d8b0
+  104ed91d  ret    4
+  104ed920  int3   
+  104ed921  int3   
+  104ed922  int3   
+  104ed923  int3   
+  104ed924  int3   
+  104ed925  int3   
+  104ed926  int3   
+  104ed927  int3   
+  104ed928  int3   
+  104ed929  int3   
+  104ed92a  int3   
+  104ed92b  int3   
+  104ed92c  int3   
+  104ed92d  int3   
+  104ed92e  int3   
+  104ed92f  int3   

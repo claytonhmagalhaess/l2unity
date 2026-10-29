@@ -1,0 +1,2 @@
+Window GMMagicSkillWnd 256x355 @TOP_LEFT->pai.TOP_LEFT(0,100) unk102=GMMagicSkillWnd unk103=GamingState unk104=1 unk107=1 unk114=0 unk117=0 unk122=83539936 unk126=0 unk127=83541136 unk128=0 unk130=0 unk131=0 unk132=9633795 unk133=0 unk134=83541264 unk135=84672556 unk139=Game size=[2]
+  Window InnerWnd @NONE->pai.TOP_LEFT(0,20) unk107=0 unk114=0 unk117=0 unk122=13080 unk126=0 unk127=13096 unk128=13097 unk130=0 unk131=0 unk132=13104 unk133=13103 unk134=13106 unk135=13105 unk139=Game
