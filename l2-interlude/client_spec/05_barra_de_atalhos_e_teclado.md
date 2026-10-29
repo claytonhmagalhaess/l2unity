@@ -476,6 +476,51 @@ Teclas ligadas (`export\client_cfg\user.ini:120-200`):
   - [I] com False, o chat fica sempre com foco, e só F-teclas e combinações com modificador funcionam como atalho.
   - [N] Confirmar.
 
+### 5.7 `PlayerPawnMoveTo`, `Attack` e a trava de pedido (`UGameEngine+0x64`)
+
+Achado da vaga world (tarefa #4, 2026-10-29), por desmontagem do `engine.dll` (capstone) e pela decompilação em `re/decomp_all/engine`.
+
+O cliente não manda um novo pedido de clique enquanto o anterior não teve resposta. A trava é o int `+0x64` do `UGameEngine` (global `DAT_10c51044`; `+0x60` é o `UNetworkHandler`, `+0x228` o ponto clicado, `+0x244` o ator sob o cursor).
+
+**Quem liga a trava.** Os dois comandos ficam no exec das ligações de entrada (`FUN_105a9600`, que o Ghidra não decompila: timeout).
+- [O] **`PLAYERPAWNMOVETO`** (string em `0x105aeb87`, ligado ao LeftMouse):
+  - Em `0x105af019`, com `GIsL2NetLogin` ligado, o comando só segue se `GEngine+0x64 == 0` e se o controller e o pawn permitem (`+0x9b4 & 3`, `+0x41c & 1`, pawn `+0x3bc` ≠ 0, `+0xa08 & 5`). Senão retorna sem fazer nada: **com a trava ligada, o clique é ignorado**.
+  - Depois de enviar, liga a trava (`mov [GEngine+0x64], 1`) em três saídas:
+    - `0x105af1ff`: ator com id de servidor (`+0x60 ≠ -1`) e `+0xb8 > 0`. Envia pelo slot `+0x100` do `UNetworkHandler` com (id, posição do pawn `+0x1bc`, Shift = `IsKeyDown(0x10)`). [I] É o `Action` (0x04 `cddddc`, ver 95).
+    - `0x105af391`: o outro ramo do ator, pelo mesmo slot `+0x100`.
+    - `0x105af49b`: chão, com o ponto `GEngine+0x228`. [I] É o `MoveBackwardToLocation` (0x01).
+  - Sem `GIsL2NetLogin` (`0x105af4c6`), o pawn anda localmente e a trava não é usada.
+- [O] **`ATTACK`** (string em `0x105aa2b2`):
+  - **Não consulta** a trava.
+  - Se o alvo atual do controller (vfunc `+0x35c`) tem id de servidor, envia o mesmo slot `+0x100` (alvo, posição do pawn, Shift).
+  - Depois liga a trava **sempre** (`0x105aa3fe`), mesmo quando não enviou nada.
+  - Ignorado com a tecla `0xd2` apertada e com o estado do controller (`+0x3c → +0x435`) em 0, 2 ou 4.
+- [?] Os dois envios pulam o alvo quando `0x1031405b(0x10bdc628, alvo)` é verdadeiro. Não identificado.
+- [O] Fora do `FUN_105a9600`, nenhum acesso pelo `DAT_10c51044` escreve `+0x64`. [?] Não há prazo: sem resposta do servidor, a trava fica ligada.
+
+**Quem desliga a trava** (`*(this+0x64) = 0`). O "eu" é o pawn do controller do viewport (`Client(+0x54) → Viewports(+0x38)[0] → Actor(+0x3c) → Pawn(+0x3bc)`).
+
+| pacote | método (endereço) | condição |
+|---|---|---|
+| 0x25 ActionFailed | `OnActionFail` (`0x10314376`), tratador `FUN_10400d70` | nenhuma: só zera a trava |
+| 0x08 AttackOutofRange | `OnAttackOutofRange` (`0x1030bfa5`), tratador `FUN_10425b80` (vtable `+0x148`) | o `User` existe, tem pawn e o pawn é o meu |
+| 0x09 AttackinCoolTime | `OnAttackinCoolTime` (`0x10305a1f`), tratador `FUN_10425c30` (`+0x14c`) | idem |
+| 0x0a AttackDeadTarget | `OnAttackDeadTarget` (`0x1030c1bc`), tratador `FUN_10425ce0` (`+0x150`) | idem |
+| 0x01 MoveToLocation | `OnMoveToLocation` (`0x1030f1e1`) | o objeto sou eu e o flag `+0x564 & 0x40000` do controller está desligado |
+| 0x60 MoveToPawn | `OnMoveToPawn` (`0x1031407e`), `OnMoveToActor` (`0x103047aa`) | idem (o flag `0x40000` está no `+0x564`) |
+| 0xc5 FlyToLocation | `OnFlyToLocation` (`0x103137e6`) | idem |
+| 0x71 MoveToLocationInVehicle | `OnMoveToLocationInVehicle` (`0x10301118`) | o objeto sou eu |
+| 0x05 Attack | `OnAttack` (`0x10313d81`), `OnAttacked` (`0x10303d82`, `0x1030fa74`), `OnAttackCanceled` (`0x10302d51`) | o atacante sou eu (`OnAttack`) ou o `User` passado sou eu (`OnAttacked`/`OnAttackCanceled`) |
+| 0x29 TargetSelected | `OnTargetSelected` (`0x10313b2e`) | o objeto que selecionou sou eu |
+| 0x2a TargetUnselected | `OnTargetUnselected` (`0x1030e520`) | o objeto sou eu |
+| 0xa6 MyTargetSelected | `OnMyTargetSelected` (`0x1030bb09`) | nenhuma |
+| 0x12 DeleteObject | `OnDeleteUser` (`0x10307914`), `OnDeleteItem` (`0x10314f6a`), `OnDeleteStaticObject` (`0x1030ad12`) | o objeto apagado é o alvo atual (vfunc `+0x35c` do pawn/controller) |
+| [?] (pacote não mapeado no 96) | `OnMoveBackwardToLocation` (`0x10301208`) | o objeto sou eu e o bit `+0x41c & 1` está desligado |
+
+- [O] Nos quatro pacotes sem campos (0x08, 0x09, 0x0a, 0x25), **zerar a trava é o único efeito**. O tratador procura o próprio objeto no mapa de objetos (`FUN_104226e0`, com a chave `DAT_10b1f530`, gravada pelo UserInfo em `FUN_104342f0`), chama o método e registra no log de rede.
+- [O] Esses pacotes não param o ataque automático, não mudam a animação, não cancelam o movimento nem a skill, e não mostram mensagem: a mensagem de sistema vem em outro pacote.
+- [I] O ActionFailed do servidor (aCis manda `ActionFailed.STATIC_PACKET` sempre que recusa uma ação) existe para reabrir o clique.
+
 ---
 
 ## 6. Ações e Macros
