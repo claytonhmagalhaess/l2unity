@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-06-chat` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `02_chat.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
