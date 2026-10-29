@@ -11,6 +11,10 @@
 // sem especular nem reflexo de ambiente. No maximo 3 luzes (D3DDrv ignora SetLight >= 3 [O]; a ordem e a do URP [I]; o
 // filtro +0x34 nao foi decodificado [I] - as luzes estaticas do Lobby passam, o original ilumina os pawns com elas).
 // Neblina depois (spec 08 secao 7).
+// Malhas estaticas sem StaticMeshInstance usavel e sem bUnlit (os planos de luz rhion_orc_light do salao) passam pelo
+// mesmo caminho de luz de hardware no RenderStaticMesh (baked_light_re.md 3.5 [O]): BakedLight usa este shader com o
+// blend do material de efeito, o ambiente D3D da propria zona (_OwnAmbient.w = 1) e a neblina apagando (_FogBlack, blend
+// aditivo).
 Shader "L2Web/Actor"
 {
     Properties
@@ -22,6 +26,8 @@ Shader "L2Web/Actor"
         _SrcBlend ("SrcBlend", Float) = 1
         _DstBlend ("DstBlend", Float) = 0
         _ZWrite ("ZWrite", Float) = 1
+        _OwnAmbient ("Ambiente proprio (w = 1 usa)", Vector) = (0,0,0,0)
+        _FogBlack ("Neblina apaga (blend aditivo)", Float) = 0
     }
     SubShader
     {
@@ -36,6 +42,8 @@ Shader "L2Web/Actor"
             float4 _BaseMap_ST;
             half4 _BaseColor;
             half _Cutoff;
+            float4 _OwnAmbient;
+            half _FogBlack;
         CBUFFER_END
         // globais do L2EnvScene (valores em gama, "unidades de luz")
         float4 _L2ActorAmbient;
@@ -84,7 +92,7 @@ Shader "L2Web/Actor"
                 o.positionCS = p.positionCS;
                 o.uv = TRANSFORM_TEX(v.uv, _BaseMap);
                 float3 n = normalize(TransformObjectToWorldNormal(v.normalOS));
-                float3 L = _L2ActorAmbient.rgb;
+                float3 L = _OwnAmbient.w > 0.5 ? _OwnAmbient.rgb : _L2ActorAmbient.rgb;
                 L += _L2ActorSun.rgb * saturate(dot(n, _MainLightPosition.xyz));
             #if !USE_CLUSTER_LIGHT_LOOP
                 uint count = min(GetAdditionalLightsCount(), 3u);
@@ -115,7 +123,7 @@ Shader "L2Web/Actor"
             #endif
                 float3 cg = saturate(LinearToSRGB(t.rgb) * i.light);
                 float3 c = SRGBToLinear(cg);
-                c = MixFog(c, i.fog);
+                c = _FogBlack > 0.5 ? MixFogColor(c, half3(0, 0, 0), i.fog) : MixFog(c, i.fog);
                 return half4(c, t.a);
             }
             ENDHLSL
