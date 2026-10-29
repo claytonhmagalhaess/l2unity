@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L4-charcreation` |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `89_telas_nativas.md` (NCPawnSetupWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -36,19 +36,36 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Andamento
 
-<!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+- 2026-10-29 — branch `feat/ui-spark-L4-charcreation` saído da ponta do `L3` (`46487cf`).
+- 2026-10-29 — levantamento: setas, regras dos setters (sm81/82/83), girar e zoom já existiam no porte (NCPawnSetupWnd/NCPawnCreateWnd). Entrou `CreateRules` (nome, recusas → sysmsg), `LobbyCreateScreen.ShowFail`, `CreatePanel.Step` público; 4 testes em `SparkCharCreationTests.cs` (`7ce141b`). Pedido 0011 (net + App).
 
 ## Decisões e REA
 
-<!-- Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
+- **Setas**: o Spark usa o `L2ArrowInput` (`ArrowInputManipulator.OnLeftArrowClick/OnRightArrowClick/SelectIndex`); o Interlude usa o `NCSelectCtrl` com `PREV1`/`NEXT1` (já no porte, `CreatePanel`). Os dois circulam; sem escolha, a seta vai para o primeiro (ou o último com ←). As regras dos setters são as do Interlude (raça limpa o resto; sem raça sm81, sem classe sm82, sem sexo sm83; anão com uma classe; penteados por sexo).
+- **Câmeras, girar e zoom**: já no porte (botões do NCPawnCreateWnd → App → LobbyScene). O `ToggleZoomin` do Spark alterna `LoginCameraManager.ZoomIn/ZoomOut` como o botão de zoom. As câmeras por classe/sexo/cabeça são da render (LobbyScene), sem mudança nesta tarefa.
+- **Nome**: a spec do Interlude deixa a validação em aberto (01 §NCPawnCreateWnd "[N] layout e validação de nome"). O campo do porte (NCEditBox 0x1503) já aceita só letras e dígitos até 16; `CreateRules.NameOk` repete a regra; a decisão final é do servidor (`CharacterCreate` do aCis: `REASON_INCORRECT_NAME`, `REASON_16_ENG_CHARS`).
+- **Recusas** (CharCreateFail 0x1a do aCis 0..6) → systemmsg do Interlude **[inferido pelos textos]**: 0 → sm128 "Your character creation has failed.", 1 → sm77 (limite de personagens), 2 → sm79 "This name already exists."; 3–6 → sm128 (**a validar** o texto do cliente original para "16 caracteres", "nome inválido", "criação não permitida", "outro servidor").
+- **Create/Previous**: já no porte (Create Character ou Enter no nome; Previous volta). O `CreateButtonPressed` do Spark abre um `L2ConfirmWindow` antes do `ValidateCharacterCreation`, sem texto na REA → **a validar** (não portado).
 
 ## Entrega
 
-- **Commits:** 
-- **Testes:** 
-- **Tabela comportamento Spark → l2unity → teste:** 
-- **Falta / fora do escopo:** 
+- **Commits:** `7ce141b` UI: criacao de personagem com as recusas do servidor no systemmsg e as setas testadas.
+- **Testes:** `sh Docs/tools/run_tests.sh` → total 528, passou 528, falhou 0 (+4 em `SparkCharCreationTests`).
+- **Tabela comportamento Spark → l2unity → teste:**
+
+| Comportamento Spark | Onde no l2unity | Teste (`SparkCharCreationTests`) |
+|---|---|---|
+| Setas de raça/classe/sexo/cabelo/cor/rosto | `Scripts/UI/CreatePanel.cs:94` (já existia) | `Setas_CirculamOsValores` |
+| Regras dos setters (Interlude sm81/82/83) | `CreatePanel.cs:108` (já existia) | `Setas_SemOAnterior_AvisamComASysmsg` |
+| Validação do nome | `UiLobbySpark.cs:180`, `LobbyCreateScreen.cs:43` | `Nome_E_Recusas` |
+| Recusa do servidor → systemmsg | `UiLobbySpark.cs:186`, `LobbyCreateScreen.cs:103` | `Nome_E_Recusas` |
+| Create/Previous, girar e zoom | `LobbyCreateScreen.cs:45`, `LobbyCreateScreen.cs:64`, `LobbyCreateScreen.cs:68` (já existiam) | `CriarEVoltar_EGirarEZoom` |
+| Câmeras por classe/sexo/cabeça | Render (LobbyScene), já existia | — |
+
+- **Falta / fora do escopo:**
+  - Pedido 0011 (net/App): o código do CharCreateFail para a tela.
+  - A validar: textos das recusas 3–6, confirmação antes de criar do Spark.
 
 ## Pedidos
 
-- <!-- links para pedidos\NNNN-....md abertos por esta tarefa -->
+- [pedido 0011: net/App — código do CharCreateFail](pedidos/0011-ui-charcreatefail.md)
