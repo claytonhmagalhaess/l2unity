@@ -27,7 +27,6 @@ namespace L2Web.UI
         readonly RectTransform partyBox;
         public readonly UiWindow Trade;
         public readonly UiWindow Store;
-        public readonly UiWindow Friends;
         public readonly UiWindow Clan;
         readonly UiWindow ask;
         readonly UiWindow qty;
@@ -71,7 +70,6 @@ namespace L2Web.UI
 
             Trade = new UiWindow("trade", "Troca", root, 420, 300, 120);
             Store = new UiWindow("pstore", "Loja privada", root, 380, 360, 110);
-            Friends = new UiWindow("friends", "Amigos", root, 240, 80, 140);
             Clan = new UiWindow("clan", "Clã", root, 300, 100, 140);
             var size = UiRoot.Size;
             ask = new UiWindow("ask", "Convite", root, 300, size.x / 2 - 150, size.y / 3);
@@ -366,18 +364,10 @@ namespace L2Web.UI
         }
 
         // ------------------------------------------------------------ amigos e cla
+        /// <summary>FriendList 0xfa: a lista vai para a MessengerWnd nativa (GameUi.Messenger, aba "Chat with Friends"); a janela
+        /// "Amigos" do porte saiu (G11). Fica vazio ate a chamada sair do App.cs (pedido a coordenadora no TAREFAS.md).</summary>
         public void FriendList(List<FriendInfo> list)
         {
-            var body = Friends.Body;
-            Friends.Clear();
-            if (list.Count == 0) UiKit.Text(body, "Nenhum amigo. Use /friendinvite nome.", 11, UiKit.Muted);
-            var sorted = list.OrderBy(f => f.Online ? 0 : 1).ThenBy(f => f.Name, StringComparer.CurrentCultureIgnoreCase).ToList();
-            foreach (var f in sorted)
-            {
-                var t = UiKit.Text(body, $"{(f.Online ? "●" : "○")} {f.Name}", 11, f.Online ? Ok : UiKit.Muted);
-                t.name = "friend" + (f.Online ? " online" : "");
-            }
-            Friends.SetTitle($"Amigos ({list.Count(f => f.Online)}/{list.Count})");
         }
 
         public void ClanMembers(PledgeMembersInfo c)
@@ -399,7 +389,7 @@ namespace L2Web.UI
         {
             PartyClear();
             tradePartner = 0;
-            foreach (var w in new[] { Trade, Store, Friends, Clan, ask, qty })
+            foreach (var w in new[] { Trade, Store, Clan, ask, qty })
             {
                 w.OnClose = () => { };
                 w.Hide();
