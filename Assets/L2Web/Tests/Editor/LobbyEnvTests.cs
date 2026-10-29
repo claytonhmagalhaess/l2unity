@@ -68,6 +68,39 @@ namespace L2Web.Tests
         }
 
         [Test]
+        public void Ceu_AnelDeNevoa_TransparenteEmCimaOpacoNoHorizonte()
+        {
+            // lobby_sky_re.md 2.2: anel Brush279, TV -8 texels/uu no WhiteRing 512x128 -> v (UE) 0,016 no topo (z 24482,67) e
+            // 0,757 embaixo (z 24470,8); linhas 2 e 97 do PNG, alfa 0 e 255. Com a UV invertida o anel cobria o ceu de amarelo.
+            var sky = Cache("map/Lobby_sky.json");
+            var png = Path.Combine(Application.streamingAssetsPath, "L2Web", "cache", "raw", "L2_Skies", "Texture", "WhiteRing.png");
+            if (!File.Exists(png)) Assert.Ignore("sem WhiteRing.png");
+            var tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            Assert.IsTrue(tex.LoadImage(File.ReadAllBytes(png)));
+            tex.wrapMode = TextureWrapMode.Repeat;
+            tex.filterMode = FilterMode.Point;
+            float topA = -1, bottomA = -1;
+            foreach (JObject p in (JArray)sky["Brush279/Model283"]["polys"])
+            {
+                var vs = (JArray)p["verts"];
+                var uvs = (JArray)p["uv"];
+                if (vs.Count != 3 || (float)vs[0][2] == (float)vs[1][2] && (float)vs[1][2] == (float)vs[2][2]) continue; // tampa
+                for (var i = 0; i < 3; i++)
+                {
+                    var uv = L2Sky.Uv((float)uvs[i][0], (float)uvs[i][1]);
+                    var a = tex.GetPixelBilinear(uv.x, uv.y).a * 255;
+                    if ((float)vs[i][2] > 24482) topA = a;
+                    else bottomA = a;
+                }
+                break;
+            }
+            Object.DestroyImmediate(tex);
+            Assert.AreEqual(0, topA, 1, "topo do anel");
+            Assert.AreEqual(255, bottomA, 1, "base do anel");
+            Assert.AreEqual(new Vector2(0.5f, 0.75f), L2Sky.Uv(0.5f, 0.25f));
+        }
+
+        [Test]
         public void CataVento_PhysRotating1500PorSegundo()
         {
             var m = Cache("map/Lobby_movers.json");

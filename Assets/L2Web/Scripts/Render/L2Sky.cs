@@ -67,6 +67,13 @@ namespace L2Web.Render
 
         static Vector3 Rel(JArray v) => Coords.ToUnity((float)v[0] - Eye.x, (float)v[1] - Eye.y, (float)v[2] - Eye.z);
 
+        /// <summary>
+        /// UV do Lobby_sky.json (TextureU/TextureV do UE, v = 0 na primeira linha da textura) para o Unity, onde o LoadImage poe a
+        /// primeira linha do PNG em v = 1 (como o BspLightmap). Sem isso o anel de nevoa amostrava o WhiteRing de cabeca para baixo:
+        /// opaco em cima e transparente no horizonte, cobrindo o fundo azul e as nuvens.
+        /// </summary>
+        public static Vector2 Uv(float u, float v) => new(u, 1 - v);
+
         static Material Mat(Texture tex, Color c, BlendMode src, BlendMode dst, int queue)
         {
             var m = RenderMats.Fx(c, false, true, tex, false, false);
@@ -131,7 +138,7 @@ namespace L2Web.Render
                     for (var i = 0; i < vs.Count; i++)
                     {
                         b.v.Add(Rel((JArray)vs[i]));
-                        b.uv.Add(new Vector2((float)uvs[i][0], (float)uvs[i][1]));
+                        b.uv.Add(Uv((float)uvs[i][0], (float)uvs[i][1]));
                     }
                     for (var i = 1; i + 1 < vs.Count; i++)
                     {
