@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-09-lojas` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `07_demais_janelas.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
