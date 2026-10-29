@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-10-cla-amigos` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `07_demais_janelas.md` (clã, amigos) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
