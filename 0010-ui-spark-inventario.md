@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-05-inventario` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `07_demais_janelas.md` (InventoryWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
