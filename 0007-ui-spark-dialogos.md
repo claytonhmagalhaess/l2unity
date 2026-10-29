@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-02-dialogos` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `04_opcoes_e_menus.md` (diálogos), `89_telas_nativas.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
