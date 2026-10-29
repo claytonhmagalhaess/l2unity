@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-07-janelas-hud` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `06_hud_status.md`, `04_opcoes_e_menus.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
