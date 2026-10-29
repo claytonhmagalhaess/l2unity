@@ -92,6 +92,15 @@ namespace L2Web.Tests
             var parsers = UnityParsers(out var inline);
             // pacotes Ex (0xfe + h sub) que o App le: o despacho do 0xfe e manual
             parsers["ex:0x12"] = "UiPackets.ParseExAutoSoulShot";
+            // pet/servo (tarefa #2): os Parse* existem, mas o App.cs ainda nao os despacha (HUD de pet, K5)
+            parsers["0xb0"] = "PetPackets.ParsePetStatusShow";
+            parsers["0xb1"] = "PetPackets.ParsePetInfo";
+            parsers["0xb2"] = "PetPackets.ParsePetItemList";
+            parsers["0xb3"] = "PetPackets.ParsePetInventoryUpdate";
+            parsers["0xb5"] = "PetPackets.ParsePetStatusUpdate";
+            parsers["0xb6"] = "PetPackets.ParsePetDelete";
+            parsers["0xd1"] = "PetPackets.ParseSetSummonRemainTime";
+            parsers["0xee"] = "PetPackets.ParsePartySpelled";
             Assert.Greater(parsers.Count, 40);
             var erros = new List<string>();
             var conferidos = new List<string>();
