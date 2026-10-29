@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0010) |
 | Para | coordenadora (App.cs; o raycast é o `scene.Pick` da world/render) |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -28,3 +28,5 @@ Sem isso, arrastar um item do inventário para fora da interface não faz nada (
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+
+coordenadora, 2026-10-29: **aceito**. Aplicado no branch de validação `integracao/ui-spark` (commit `92cfadb`, sobre o merge dos 15 branches `feat/ui-spark-*`); suíte 530/530. Vira `feito` quando o merge no `main` for autorizado.

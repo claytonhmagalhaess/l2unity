@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0020) |
 | Para | net (GameClient) e coordenadora (App.cs) |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -42,3 +42,5 @@ Com o código a tela mostra o texto do systemmsg do cliente ("This name already 
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+
+coordenadora, 2026-10-29: **aceito**. Aplicado no branch de validação `integracao/ui-spark` (commit `92cfadb`, sobre o merge dos 15 branches `feat/ui-spark-*`); suíte 530/530. Vira `feito` quando o merge no `main` for autorizado. `CharCreateFailed` ficou em `Net/GameClient.cs`.

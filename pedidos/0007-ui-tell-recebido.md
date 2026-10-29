@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0011) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -26,3 +26,5 @@ Sem isso só os sussurros **enviados** entram na lista (a UI já registra no env
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+
+coordenadora, 2026-10-29: **aceito**. Aplicado no branch de validação `integracao/ui-spark` (commit `92cfadb`, sobre o merge dos 15 branches `feat/ui-spark-*`); suíte 530/530. Vira `feito` quando o merge no `main` for autorizado.

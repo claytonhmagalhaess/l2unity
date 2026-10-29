@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0008) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -51,3 +51,5 @@ Sem (1), nada do mapa de teclas do Spark nem a captura de tecla funciona no jogo
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+
+coordenadora, 2026-10-29: **aceito**. Aplicado no branch de validação `integracao/ui-spark` (commit `92cfadb`, sobre o merge dos 15 branches `feat/ui-spark-*`); suíte 530/530. Vira `feito` quando o merge no `main` for autorizado. Só a parte 1 (a tecla passa por `ui.Key` antes do `OnKey`). A parte 2 (`GameAction` para Attack/TargetSelf/NextTarget/Mute/LowDetail) **não** foi feita: o pedido só trazia o esqueleto com `return false`, e com `SparkParity.Keymap` desligada essas teclas não chegam lá.
