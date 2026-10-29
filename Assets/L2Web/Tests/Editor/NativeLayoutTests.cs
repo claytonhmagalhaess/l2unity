@@ -1,4 +1,4 @@
-// G1-G6 da matriz (Docs/validacao.md): as posicoes das telas nativas do Unity (UI/NativeLayout) contra
+// G1-G6 e G11 da matriz (Docs/validacao.md): as posicoes das telas nativas do Unity (UI/NativeLayout) contra
 // Golden/native_layout.json (out/re/native_screen_layout.json com as formulas avaliadas em 1024x768 e 1920x1080).
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +44,9 @@ namespace L2Web.Tests
             yield return ("NCPawnCreateWnd", 1, NativeLayout.CreateRight, -1);
             yield return ("NCPawnCreateWnd", 2, NativeLayout.CreateZoom, -1);
             yield return ("NCKeyCryptWarningDialogBox", 0, NativeLayout.KeyCrypt, -1);
+            yield return ("MessengerWnd", 0, NativeLayout.Messenger, -1);
+            yield return ("MessengerWnd", 2, NativeLayout.MessengerFrame, 0);
+            yield return ("MessengerWnd", 3, NativeLayout.MessengerTabCtrl, 0);
         }
 
         [TestCase("1024x768", 1024, 768)]

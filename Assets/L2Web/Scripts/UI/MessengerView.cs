@@ -1,8 +1,9 @@
-// MessengerWnd nativo (G11; NWindow.dll vtable 0x10257bc4, estudo em 89 MessengerWnd): 256x401 em (384,180) com barra de
-// titulo, faixa msn_back (0,20) 276x28, abas 114x23 (msn_tab2 normal / msn_tab1 escolhida) "MSN Messenger" (ss996) e "Chat with
-// Friends" (ss997) em (12,25); paginas em (0,48) 256x353. A aba do MSN (servico extinto) fica vazia. A de amigos: msn_back0,
-// arvore em (8,45) 240x270 (MessengerModel) com rolagem de 15 px (45 por "notch"). Duplo clique num amigo online abre a
-// L2ChatWnd (256x401, msn_back3, nome em (11,54), caixa (9,96) 238x252, campo (8,360) 239x16).
+// MessengerWnd nativo (G11; NWindow.dll vtable 0x10257bc4; 89 MessengerWnd e NativeLayout.Messenger*): 256x401 em
+// (384,180) com o NCFrameCtrl 0xa03 (barra de titulo do L2Wnd), faixa msn_back (0,20) 276x28, NCTabControl 0xa02 em
+// (12,25) 224x41 com as abas 114x23 a cada 115 px (msn_tab2 normal / msn_tab1 escolhida) "MSN Messenger" (ss996) e "Chat
+// with Friends" (ss997); paginas em (0,48) 256x353, a 1a (MsnWnd) escolhida ao abrir. A aba do MSN (servico extinto) fica
+// vazia. A de amigos: msn_back0, arvore em (8,45) 240x270 (MessengerModel) com rolagem de 15 px (45 por "notch"). Duplo
+// clique num amigo online abre a L2ChatWnd (256x401, msn_back3, nome em (11,54), caixa (9,96) 238x252, campo (8,360) 239x16).
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
@@ -16,9 +17,14 @@ namespace L2Web.UI
     {
         public readonly MessengerModel M = new();
         public readonly L2Wnd Wnd;
-        readonly RectTransform msnPage, friendPage, tree;
-        readonly UiTexButton[] tabs = new UiTexButton[2];
-        int tab;
+        /// <summary>Paginas das abas: MsnWnd (+0x1cc) e L2FriendWnd (+0x1d0).</summary>
+        public readonly RectTransform MsnPage, FriendPage;
+        /// <summary>NCTabControl 0xa02 e os seus NCTabButton.</summary>
+        public readonly RectTransform TabCtrl;
+        public readonly UiTexButton[] Tabs = new UiTexButton[2];
+        readonly RectTransform tree;
+        /// <summary>Aba escolhida (+0x2ec do NCTabControl): 0 = MSN, 1 = amigos.</summary>
+        public int Tab { get; private set; }
         int scroll;
         float lastClick;
         string lastClickName;
@@ -45,22 +51,27 @@ namespace L2Web.UI
             this.layer = layer;
             // [?] o texto do titulo do NCFrameCtrl 0xa03 nao foi rastreado: o do icone minimizado (ss999) sem o atalho
             var title = System.Text.RegularExpressions.Regex.Replace(GameData.SysString(999, "Lineage 2 Messenger"), @"\s*\(.*\)$", "");
-            Wnd = new L2Wnd("MessengerWnd", layer, new WndOpts { Def = Native("MessengerWnd", 256, 401, 384, 180, title), Title = title, AriaLabel = title });
-            var strip = UiRoot.Box("msn_back", Wnd.El, 0, 20, 256, 28);
-            L2WndUtil.Paint(strip, "L2UI_CH3.Msn.msn_back", 276, 28, PaintMode.Normal, 0, 0, 276, 28);
-            msnPage = UiRoot.Box("MsnWnd", Wnd.El, 0, 48, 256, 353);
-            friendPage = UiRoot.Box("L2FriendWnd", Wnd.El, 0, 48, 256, 353);
-            L2WndUtil.Paint(friendPage, "L2UI_CH3.Msn.msn_back0", 256, 353, PaintMode.Normal, 0, 0, 256, 353);
+            var m = NativeLayout.Messenger;
+            Wnd = new L2Wnd("MessengerWnd", layer, new WndOpts { Def = Native("MessengerWnd", m.W, m.H, m.X, m.Y, title), Title = title, AriaLabel = title });
+            var back = NativeLayout.MessengerBack;
+            var strip = UiRoot.Box("msn_back", Wnd.El, back.X, back.Y, Wnd.Size[0], back.H);
+            L2WndUtil.Paint(strip, NativeLayout.MessengerBackTex, back.W, back.H, PaintMode.Normal, 0, 0, back.W, back.H);
+            MsnPage = Page("MsnWnd");
+            FriendPage = Page("L2FriendWnd");
+            L2WndUtil.Paint(FriendPage, "L2UI_CH3.Msn.msn_back0", 256, 353, PaintMode.Normal, 0, 0, 256, 353);
+            var tc = NativeLayout.MessengerTabCtrl;
+            TabCtrl = UiRoot.Box("NCTabControl", Wnd.El, tc.X, tc.Y, tc.W, tc.H);
             for (var i = 0; i < 2; i++)
             {
-                var b = UiRoot.Box("tab" + i, Wnd.El, 12 + 114 * i, 25, 114, 23);
-                tabs[i] = L2WndUtil.Button(b, "L2UI_CH3.Msn.msn_tab2", "L2UI_CH3.Msn.msn_tab1", null, 114, 23);
-                var t = UiRoot.Label(b, GameData.SysString(i == 0 ? 996 : 997, ""), 0, 0, 114, 23, 11, Txt, TextAnchor.MiddleCenter);
+                var r = NativeLayout.MessengerTab(i);
+                var b = UiRoot.Box("tab" + i, TabCtrl, r.X, r.Y, r.W, r.H);
+                Tabs[i] = L2WndUtil.Button(b, NativeLayout.MessengerTabTex, NativeLayout.MessengerTabSelTex, null, r.W, r.H);
+                var t = UiRoot.Label(b, GameData.SysString(NativeLayout.MessengerTabLabel[i], ""), 0, 0, r.W, r.H, 11, Txt, TextAnchor.MiddleCenter);
                 t.raycastTarget = false;
                 var k = i;
-                tabs[i].OnClick = () => SelectTab(k);
+                Tabs[i].OnClick = () => SelectTab(k);
             }
-            var area = UiRoot.Box("L2FriendTreeCtrl", friendPage, 8, 45, 240, 270);
+            var area = UiRoot.Box("L2FriendTreeCtrl", FriendPage, 8, 45, 240, 270);
             area.gameObject.AddComponent<Image>().color = new Color(0, 0, 0, 0.001f);
             area.gameObject.AddComponent<RectMask2D>();
             tree = UiRoot.Box("L2FriendTree", area, 0, 0, 224, 270);
@@ -77,16 +88,24 @@ namespace L2Web.UI
             Render();
         }
 
+        RectTransform Page(string name)
+        {
+            var p = NativeLayout.MessengerPage;
+            return UiRoot.Box(name, Wnd.El, p.X, p.Y, p.W, p.H);
+        }
+
         static string Ss(int i) => GameData.SysString(i, "");
 
-        void SelectTab(int i)
+        /// <summary>Clique numa aba: mostra a pagina dela; a escolhida fica com msn_tab1.</summary>
+        public void SelectTab(int i)
         {
-            tab = i;
-            msnPage.gameObject.SetActive(i == 0);
-            friendPage.gameObject.SetActive(i == 1);
+            Tab = i;
+            MsnPage.gameObject.SetActive(i == 0);
+            FriendPage.gameObject.SetActive(i == 1);
             for (var k = 0; k < 2; k++)
-                if (tabs[k] && tabs[k].Image)
-                    L2WndUtil.Paint((RectTransform)tabs[k].transform, k == i ? "L2UI_CH3.Msn.msn_tab1" : "L2UI_CH3.Msn.msn_tab2", 114, 23, PaintMode.Normal);
+                if (Tabs[k])
+                    L2WndUtil.SkinButton(Tabs[k], k == i ? NativeLayout.MessengerTabSelTex : NativeLayout.MessengerTabTex, NativeLayout.MessengerTabSelTex, null,
+                        NativeLayout.MessengerTabW, NativeLayout.MessengerTabH);
         }
 
         public void Toggle()

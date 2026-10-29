@@ -240,7 +240,7 @@ namespace L2Web.UI
             // ChatWnd.uc:120-127: as 5 abas com SetScrollBarPosition(5, 10, -25) (acima do botao de filtro); a SystemMsgList
             // fica com o (5, 10, 0) do NCChatListBox::OnCreate
             foreach (var n in TabNames) ChatWnd.Log(n)?.SetScrollBarPosition(5, 10, -25);
-            foreach (var (n, t) in new[] { ("ChatFilterBtn", "Filtro do chat"), ("MessengerBtn", "Mensageiro (indisponível)"), ("PartyMatchingBtn", "Party matching (indisponível)") })
+            foreach (var (n, t) in new[] { ("ChatFilterBtn", "Filtro do chat"), ("MessengerBtn", GameData.SysString(996, "MSN Messenger")), ("PartyMatchingBtn", "Party matching (indisponível)") })
             {
                 var el = ChatWnd.Get(n);
                 if (el) UiTooltip.Set(el.gameObject, t);
@@ -285,6 +285,8 @@ namespace L2Web.UI
             ZoneTitle = new ZoneTitleView(Layer);
             Minimap = new MinimapView(Layer);
             Messenger = new MessengerView(Layer);
+            // MessengerBtn do chat: ToggleMsnWindow (ChatWnd.uc:210-212)
+            ChatWnd.OnClick("MessengerBtn", Messenger.Toggle);
             MultiSellWnd = new MultiSellView(Layer)
             {
                 Send = b => this.deps.Send(b), Ask = (id, cb) => Ask(id, cb), HideDialog = () => Answer(false), HideInventory = () => Inv.Hide(),
