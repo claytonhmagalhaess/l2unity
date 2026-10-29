@@ -4,7 +4,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 
 - UI: 198 no original, 43 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 33 tratados no Unity
-- mundo/engine: 57 no original, 19 tratados no Unity
+- mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
 - dados: 7 no original, 2 tratados no Unity
 - log: 6 no original, 2 tratados no Unity
@@ -115,9 +115,9 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x05 | AttackPacket | Attack | UI | EV_ReceiveAttack | tratado |
 | game | 0x06 | DiePacket | Die | UI | EV_Die | tratado |
 | game | 0x07 | RevivePacket | Revive | UI | EV_RestartMenuHide | tratado |
-| game | 0x08 | AttackOutofRangePacket |  | mundo/engine |  | falta |
-| game | 0x09 | AttackinCoolTimePacket |  | mundo/engine |  | falta |
-| game | 0x0a | AttackDeadTargetPacket |  | mundo/engine |  | falta |
+| game | 0x08 | AttackOutofRangePacket |  | mundo/engine |  | tratado |
+| game | 0x09 | AttackinCoolTimePacket |  | mundo/engine |  | tratado |
+| game | 0x0a | AttackDeadTargetPacket |  | mundo/engine |  | tratado |
 | game | 0x0b | SpawnItemPacket | SpawnItem | mundo/engine |  | tratado |
 | game | 0x0c | DropItemPacket | DropItem | mundo/engine |  | tratado |
 | game | 0x0d | GetItemPacket | GetItem | UI nativa (C++, sem EV_) |  | tratado |
@@ -144,7 +144,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x22 | TradeDonePacket | SendTradeDone | UI | EV_TradeDone | tratado |
 | game | 0x23 | CharacterDeleteSuccessPacket | CharDeleteOk | UI nativa (C++, sem EV_) |  | falta |
 | game | 0x24 | CharacterDeleteFailPacket | CharDeleteFail | UI nativa (C++, sem EV_) |  | falta |
-| game | 0x25 | ActionFailPacket | ActionFailed | mundo/engine |  | falta |
+| game | 0x25 | ActionFailPacket | ActionFailed | mundo/engine |  | tratado |
 | game | 0x26 | SeverClosePacket | ServerClose | UI nativa (C++, sem EV_) |  | falta |
 | game | 0x27 | InventoryUpdatePacket | InventoryUpdate | UI | EV_InventoryUpdateItem, EV_ShortcutUpdate | tratado |
 | game | 0x28 | TeleportToLocationPacket | TeleportToLocation | mundo/engine |  | tratado |
