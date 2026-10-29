@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L2-servidores` |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `89_telas_nativas.md` (NCLoginServerWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -36,19 +36,38 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Andamento
 
-<!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+- 2026-10-29 — branch `feat/ui-spark-L2-servidores` saído da ponta do `L1` (`f2e45bb`).
+- 2026-10-29 — `LobbyServerScreen`: Enter/KeypadEnter/Esc com click_01, último servidor escolhido, `SparkStatus`; 3 testes em `SparkServerListTests.cs` (`93e994f`). Pedido 0009 (net + App).
 
 ## Decisões e REA
 
-<!-- Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
+- **Enter/Esc**: o Interlude liga Enter a `ServerSelectOKButton` no `ServerListState` (spec 05 §5.2); o Spark (`ServerSelectWindow.Update`, literal `click_01`) confirma no Enter e volta no Esc, com `click_01`. O Esc não existe na tabela do Interlude: entrou como gesto novo. Sem servidor escolhido o Enter não faz nada.
+- **Licença**: o Spark tem a `LicenseWindow` (Agree → `RequestServerList`, Disagree → volta). O porte **não tem** a tela de licença: o `LoginClient` pede a lista logo depois do LoginOk. O Interlude também tem o `EulaMsgState` (Enter = `EulaWndOKButton`). Pôr a tela no meio do fluxo é mudança do `LoginClient` (net) e do App: fica **fora desta tarefa** (proposta: tarefa própria com net + ui).
+- **Status**: a lista mostra o Traffic do Interlude (FUN_101a99d0: Down/Normal/Heavy/Light, já no porte). O Spark acrescenta "Full" e "GM Only" (literais do `ServerElement`); ficou `LobbyServerScreen.SparkStatus` com "Full" na lotação cheia — **divergência** (o Interlude mostra Heavy), os limites do Spark são **a validar**, e o aCis manda GM Only como Down para quem não é GM (`ServerList.java:29`), então "GM Only" não é detectável. **Aguarda o usuário** para trocar o texto da lista.
+- **Personagens por servidor**: o Spark mostra a contagem; o aCis manda a parte final do ServerList com 0 ("não rastreado", `ServerList.java:85-90`). Pedido 0009 para a net ler; a coluna não existe no NCServerSelectListCtrl do Interlude: **a validar** onde desenhar.
+- **Autologin**: o `L2LoginUI.AutoLogin` do Spark é uma corrotina sem corpo na REA (**a validar**). O que existe: o último servidor usado (byte `lastServer` do ServerList) fica escolhido se estiver no ar (`SetServers(list, lastServer)`; pedido 0009 para o valor chegar).
+- **Duplo clique** na lista: já entrava no servidor (porte); o do Spark e o do Interlude: **a validar**.
 
 ## Entrega
 
-- **Commits:** 
-- **Testes:** 
-- **Tabela comportamento Spark → l2unity → teste:** 
-- **Falta / fora do escopo:** 
+- **Commits:** `93e994f` UI: lista de servidores com Enter/Esc (click_01), ultimo servidor escolhido e status do Spark registrado.
+- **Testes:** `sh Docs/tools/run_tests.sh` → total 520, passou 520, falhou 0 (+3 em `SparkServerListTests`).
+- **Tabela comportamento Spark → l2unity → teste:**
+
+| Comportamento Spark | Onde no l2unity | Teste (`SparkServerListTests`) |
+|---|---|---|
+| Enter confirma e Esc volta (click_01) | `Scripts/UI/LobbyServerScreen.cs:54`, `LobbyServerScreen.cs:152` | `EnterConfirmaEscVolta_ComClick01` |
+| Status Light/Normal/Heavy/Full/Down (GM Only: aCis manda Down) | `LobbyServerScreen.cs:140`, `LobbyServerScreen.cs:125` | `Status_InterludeESpark` |
+| Último servidor / autologin | `LobbyServerScreen.cs:177` | `UltimoServidorUsado_FicaEscolhido` |
+| Duplo clique na lista (a validar) | `LobbyServerScreen.cs:344` (já existia) | — |
+| Licença → RequestServerList | — (o porte não tem a tela) | — |
+
+- **Falta / fora do escopo:**
+  - Pedido 0009 (net/App): `lastServer` e personagens por servidor.
+  - Tela de licença: fora (fluxo do LoginClient); proposta de tarefa própria.
+  - **Aguarda o usuário**: "Full" do Spark no lugar do "Heavy" do Interlude.
+  - A validar: limites do Spark, autologin, duplo clique, coluna de personagens.
 
 ## Pedidos
 
-- <!-- links para pedidos\NNNN-....md abertos por esta tarefa -->
+- [pedido 0009: net/App — lastServer e personagens por servidor](pedidos/0009-ui-serverlist-lastserver.md)
