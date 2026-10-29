@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-03-teclado` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `05_barra_de_atalhos_e_teclado.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
