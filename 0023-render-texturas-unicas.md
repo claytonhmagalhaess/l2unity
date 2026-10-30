@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-texturas-unicas` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | Não há spec do Interlude para isto (é formato de cache do porte). Medidas da coordenadora em "Decisões e REA". Comparação: `analises\spark-l2unity\` (o Spark guarda as texturas em pacotes compartilhados `data_textures_g*` e uma cena por região) |
 | Sessão | render: texturas únicas dos assets |
 | Criada | 2026-10-29 |
@@ -64,6 +64,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 - 2026-10-29 — coordenadora criou a tarefa e recriou a vaga `worktrees\render` a partir do `main` (`0d71a77`).
+- 2026-10-29 — render: branch `feat/render-texturas-unicas`; Library importada (base: 413/413 testes). `dedup_statics_tex.py` testado numa cópia de 20 `.glb` (18 reescritos, 2 sem imagem intactos, 2ª execução sem mudar nenhum byte); teste EditMode novo (416/416). Build "antes" em andamento para as capturas.
 
 ## Decisões e REA
 
