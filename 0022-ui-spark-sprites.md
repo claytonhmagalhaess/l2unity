@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-sprites` (a partir de `integracao/ui-spark`) |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | Mapa visual: `analises\spark-l2unity\hud\uss\*.uss`, `hud\uxml\*.uxml`, `hud\uxml_inventory.md`; texturas em `hud\textures\`. Layout: `Interface.xdat`/`WindowsInfo.ini` (sem mudança) |
 | Sessão | ui: sprites da HUD Spark |
 | Criada | 2026-10-29 |
@@ -51,6 +51,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 - 2026-10-29 — coordenadora criou a tarefa.
+- 2026-10-29 — sub-sessão ui: branch `feat/ui-spark-sprites` criado a partir de `integracao/ui-spark`; lendo USS/UXML do Spark e o carregador `L2WndUtil.Tex`.
 
 ## Decisões e REA
 
