@@ -7,7 +7,7 @@
 //   /music/<nome>.ogg         Ogg do cliente com a assinatura "L2SD" trocada por "OggS" e o CRC da 1a pagina refeito
 //   /icons/<nome>             icone do Icon.utx exportado (nome sem diferenciar caixa)
 //   /l2anim/data.js|calc.js   tabelas do l2anim
-//   /map, /statics, /ui, /bsp, /terrain_ue, /drop, /anim_tables.json, /texts.json  arquivos do cache do l2web
+//   /map, /statics, /statics_tex, /ui, /bsp, /terrain_ue, /drop, /anim_tables.json, /texts.json  arquivos do cache do l2web
 // O que o dev.ts gerava sob demanda (tiles de mapa, BSP, terreno do Unreal, itens no chao e modelos do l2anim ainda
 // nao convertidos) so existe aqui se ja estava no cache: o resto responde 404, como um asset que falta.
 using System;
@@ -46,7 +46,9 @@ namespace L2Web
             if (p.StartsWith("/fx/vm/")) return P("cache", "fx", "vm", p.Substring(7));
             if (p.StartsWith("/fx/")) return P("fx", p.Substring(4));
             // /raw/: texturas exportadas pelo umodel (quadros AnimNext, coronas, particulas: export_fxmat/export_lobby_emitters)
-            if (p.StartsWith("/map/") || p.StartsWith("/statics/") || p.StartsWith("/ui/") || p.StartsWith("/bsp/") || p.StartsWith("/terrain_ue/") || p.StartsWith("/raw/") ||
+            // /statics_tex/: texturas dos .glb de /statics/, uma por conteudo (Docs/tools/dedup_statics_tex.py; o glTFast
+            // resolve a uri "../statics_tex/<sha256>.png" pela URL do .glb)
+            if (p.StartsWith("/map/") || p.StartsWith("/statics/") || p.StartsWith("/statics_tex/") || p.StartsWith("/ui/") || p.StartsWith("/bsp/") || p.StartsWith("/terrain_ue/") || p.StartsWith("/raw/") ||
                 p == "/anim_tables.json" || p == "/texts.json")
                 return P("cache", p.Substring(1).Replace('/', Path.DirectorySeparatorChar));
             return null;
@@ -68,6 +70,8 @@ namespace L2Web
             }
             return d;
         }
+
+        static readonly bool RawLog = Array.IndexOf(Environment.GetCommandLineArgs(), "-l2rawlog") >= 0;
 
         static HttpResponse Ok(byte[] data) => new HttpResponse { Status = 200, Data = data };
         static HttpResponse NotFound(string why = "404") => new HttpResponse { Status = 404, Data = Encoding.UTF8.GetBytes(why) };
@@ -112,7 +116,10 @@ namespace L2Web
                 }
                 // BSP: o dev.ts so servia o .glb quando o tile foi convertido e tinha geometria
                 var file = FileFor(path);
-                if (file != null && File.Exists(file)) return Ok(File.ReadAllBytes(file));
+                var found = file != null && File.Exists(file);
+                // -l2rawlog: cada textura de /raw/ pedida, achada ou nao (#0023, levantamento das que ninguem usa)
+                if (RawLog && path.StartsWith("/raw/")) Debug.Log($"[raw] {(found ? 200 : 404)} {path}");
+                if (found) return Ok(File.ReadAllBytes(file));
                 return NotFound();
             }
             catch (Exception e)
