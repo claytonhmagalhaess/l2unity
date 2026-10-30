@@ -68,12 +68,12 @@ namespace L2Web.Render
                     if (!done.TryGetValue(t, out var bc))
                     {
                         bc = ToBc(t);
+                        BytesAfter += bc.GetRawTextureData<byte>().Length;
                         bc.Apply(false, true);
                         bc.hideFlags |= HideFlags.DontUnloadUnusedAsset;
                         done[t] = bc;
                         Count++;
                         BytesBefore += RgbaBytes(t);
-                        BytesAfter += bc.GetRawTextureData<byte>().Length;
                         if (Count % 500 == 0) Debug.Log($"[gpucomp] {Count} texturas, {BytesBefore / 1048576} MB -> {BytesAfter / 1048576} MB na GPU");
                     }
                     m.SetTexture(id, bc);
@@ -123,7 +123,7 @@ namespace L2Web.Render
                 u.Apply(false, true);
                 sw.Stop();
                 var tBc = sw.Elapsed.TotalMilliseconds;
-                sb.Append($"{Path.GetFileName(f)}\t{t.width}\t{t.height}\t{bc.format}\t{bytes.Length}\t{raw.Length}\t{packed.Length}\t{tPng:0.000}\t{tBc:0.000}\n");
+                sb.Append(FormattableString.Invariant($"{Path.GetFileName(f)}\t{t.width}\t{t.height}\t{bc.format}\t{bytes.Length}\t{raw.Length}\t{packed.Length}\t{tPng:0.000}\t{tBc:0.000}\n"));
                 png += bytes.Length;
                 bcAll += raw.Length;
                 gz += packed.Length;
