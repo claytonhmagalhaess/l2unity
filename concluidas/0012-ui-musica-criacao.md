@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0021) |
 | Para | coordenadora (App.cs) e render (MusicPlayer) |
-| Estado | aceito |
+| Estado | recusado |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -31,3 +31,5 @@ O Spark toca `ct_<raça>` na criação (`SparkMusica`); os mesmos `.ogg` estão 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
 
 coordenadora, 2026-10-29: **aceito**. Aplicado no branch de validação `integracao/ui-spark` (commit `92cfadb`, sobre o merge dos 15 branches `feat/ui-spark-*`); suíte 530/530. Vira `feito` quando o merge no `main` for autorizado. `MusicPlayer.PlayTheme(nome)` (repete o tema até trocar); `ShowChars` volta ao silêncio. A música da tela de seleção continua a validar.
+
+coordenadora, 2026-10-29: **recusado**. O porte da HUD do Spark (#0005) foi descartado pelo usuário; nada disto entrou no `main`.

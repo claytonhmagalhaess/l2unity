@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-04-barra` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `05_barra_de_atalhos_e_teclado.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -41,6 +41,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-10-29 — branch `feat/ui-spark-04-barra` saído da ponta do `03` (`21f7ff5`).
 - 2026-10-29 — `Tests/Editor/TestUi.cs`: o `GameUi` inteiro monta no EditMode (layout do xdat, Option.ini e PlayerPrefs guardados e devolvidos), usado daqui em diante.
 - 2026-10-29 — barra: soltar registra, arrastar o atalho move/troca/remove, botão direito liga o automático dos shots, Ctrl+clique força, quest não vai para a barra, escala; 9 testes em `SparkBarTests.cs` (`7e4057a`). Pedido 0004 à net.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

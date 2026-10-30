@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-07-janelas-hud` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `06_hud_status.md`, `04_opcoes_e_menus.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -40,6 +40,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-07-janelas-hud` saído da ponta do `06` (`877df00`).
 - 2026-10-29 — clique no StatusWnd (RequestSelfTarget/Shift), Alt+clique no buff só como gesto, tamanho do ícone de buff, `PopupMenu`, resumo da sessão (`SessionItems`) no sair, `SparkParity.PartyMenu`/`ExitSummary`; `UiKit.Destroy` no `L2Wnd.SideFrame`/barra e no `L2Digits` (o `Object.Destroy` falhava em EditMode); 9 testes em `SparkHudWindowsTests.cs` (`88bc942`).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-10-cla-amigos` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `07_demais_janelas.md` (clã, amigos) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -43,6 +43,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-10-cla-amigos` saído da ponta do `09` (`2326fb9`).
 - 2026-10-29 — `Scripts/UI/UiFriends.cs` (FriendActions: textos e RequestBlock/RequestFriendList); `GameUi` FriendAdd/Delete/Refresh/Whisper, BlockAction, ClanRequest (gesto); 5 testes em `SparkFriendsTests.cs` (`8973c9c`).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

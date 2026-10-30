@@ -4,7 +4,7 @@
 |---|---|
 | De | coordenadora (tarefa #0005) |
 | Para | render |
-| Estado | aberto |
+| Estado | recusado |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -27,3 +27,5 @@ A HUD do Spark (#0005) depende desses estados para o hover e o alvo no mundo; a 
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+
+coordenadora, 2026-10-29: **recusado**. O porte da HUD do Spark (#0005) foi descartado pelo usuário; nada disto entrou no `main`.

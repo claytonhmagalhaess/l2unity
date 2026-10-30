@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-08-npchtml` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `07_demais_janelas.md` (NpcHtmlWnd), `89_telas_nativas.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -41,6 +41,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-08-npchtml` saído da ponta do `07` (`88bc942`).
 - 2026-10-29 — conferência do `L2Html` contra o `SparkHtml`/`NpcHtmlWindow` (literais da REA); entraram `&$N;`, `msg="id;param"` com confirmação e o bloqueio do bypass `spk_loot`; 7 testes em `SparkHtmlTests.cs` (`6ecd2e3`).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

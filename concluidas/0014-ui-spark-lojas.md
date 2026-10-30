@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-09-lojas` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `07_demais_janelas.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -39,6 +39,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-09-lojas` saído da ponta do `08` (`6ecd2e3`).
 - 2026-10-29 — `Scripts/UI/UiShop.cs` (ShopBasket); a BuyList/SellList passa a abrir a `ShopWnd` do Interface.xdat (antes uma janela genérica com campos); `MultiSellListCtrl.NeededText` com o "(have N)" do Spark atrás de chave; `SparkParity.ShopConfirm`/`MultisellHave`; 6 testes em `SparkShopTests.cs` (`2326fb9`).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

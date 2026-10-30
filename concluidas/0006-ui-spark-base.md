@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-01-base` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `01_framework_e_fluxo.md`, `98_desenho_controles_nativos.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -48,6 +48,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-01-base` saído do `main` (`0d71a77`); suíte de base: 413/413.
 - 2026-10-29 — modelo de interação em `Scripts/UI/UiInteract.cs` (SlotClick, UiSlot, UiSounds, PopupStack, EscChain, UiHover, SparkParity), ganchos de abrir/fechar no `L2Layer`/`L2Wnd`/`UiWindow`, Alt+L, som de aba e tooltip testável; 22 testes novos em `SparkBaseTests.cs` (`2c5fe35`).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

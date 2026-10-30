@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L3-charselect` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `89_telas_nativas.md` (NCLobbyStartWnd, NCPawnSelectWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -39,6 +39,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-L3-charselect` saído da ponta do `L2` (`93e994f`).
 - 2026-10-29 — `LobbyDialog` (o DialogBox do xdat no lobby com a fila da #0007), `CharSelectRules`; `LobbyCharsScreen`: Enter/Esc, `TryStart`, `AskDelete`; 4 testes em `SparkCharSelectTests.cs` (`46487cf`). Pedido 0010 ao App.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

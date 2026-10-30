@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-11-opcoes` |
-| Estado | bloqueada |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `04_opcoes_e_menus.md` (OptionWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -38,6 +38,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 - 2026-10-29 — proposta escrita abaixo (Decisões e REA), a partir de `analises\spark-l2unity\hud\opcoes.md`, da spec 04 §2 (OptionWnd do Interlude) e do `OptionWnd.cs` do porte. **Sem código e sem branch**: a tarefa fica **bloqueada: decisão do usuário** (desenho das Opções). O que as outras tarefas já deixaram pronto para as Opções usar: `SparkKeys.BeginCapture`/`Feed`/`Save` (#0008), `GameUi.SetBarScale` (#0009), `GameUi.SetBuffIconSize` (#0012), `GameUi.ResetLayout` (#0006).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

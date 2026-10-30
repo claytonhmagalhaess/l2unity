@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0010) |
 | Para | net |
-| Estado | aceito |
+| Estado | recusado |
 | Criado | 2026-10-29 |
 
 ## O que precisa
@@ -34,3 +34,5 @@ A UI precisa deles para a lixeira, o cristalizador, soltar no chão e desequipar
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
 
 coordenadora, 2026-10-29: **aceito**. Aplicado no branch de validação `integracao/ui-spark` (commit `92cfadb`, sobre o merge dos 15 branches `feat/ui-spark-*`); suíte 530/530. Vira `feito` quando o merge no `main` for autorizado. Feito pela coordenadora no lugar da vaga net, a pedido do usuário. O `InvPackets` temporário da UI foi apagado e as chamadas passaram para o `UiPackets`.
+
+coordenadora, 2026-10-29: **recusado**. O porte da HUD do Spark (#0005) foi descartado pelo usuário; nada disto entrou no `main`.

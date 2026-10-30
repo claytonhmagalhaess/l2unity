@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-06-chat` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `02_chat.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -41,6 +41,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-10-29 — branch `feat/ui-spark-06-chat` saído da ponta do `05` (`aadb039`).
 - 2026-10-29 — levantamento do que já existia (abaixo, na Entrega).
 - 2026-10-29 — `Scripts/UI/UiChatSpark.cs` (TellNames, ItemLinks, ChatLinkHover), `ChatListModel.LineAt`, ligação no `GameUi` (campo do chat, envio, Shift+clique no inventário, dica nas linhas); 9 testes em `SparkChatTests.cs` (`877df00`). Pedido 0007 ao App.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

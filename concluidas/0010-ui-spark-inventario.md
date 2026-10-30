@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-05-inventario` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `07_demais_janelas.md` (InventoryWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -43,6 +43,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-10-29 — branch `feat/ui-spark-05-inventario` saído da ponta do `04` (`7e4057a`).
 - 2026-10-29 — achado o `InventoryWnd.uc` do Interlude exportado em `tools\l2anim\export\uc\Interface\` (fonte principal desta tarefa).
 - 2026-10-29 — `Scripts/UI/UiInventory.cs` (InvPackets temporário, ItemOrder); `GameUi`: seleção, uso (receita sm798), lixeira (sm74/sm73), cristalizar (sm336), soltar no chão (sm400/sm71), equipar/desequipar arrastando, ordem local gravada por classe, botão de cristalizar só com a skill; 8 testes em `SparkInventoryTests.cs` (`aadb039`). Pedidos 0005 (net) e 0006 (App).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

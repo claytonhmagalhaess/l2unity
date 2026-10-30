@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-03-teclado` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `05_barra_de_atalhos_e_teclado.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -43,6 +43,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-03-teclado` saído da ponta do `02` (`9af9f0b`).
 - 2026-10-29 — `Scripts/UI/UiKeys.cs` (KeyBind, KeyAction, SparkKeys com padrões, captura e persistência; ShortcutRepeat); `GameUi.Key`/`RunKeyAction`/`KeyFrame`; `SparkParity.Keymap`; 13 testes em `SparkKeysTests.cs` (`21f7ff5`). Pedido 0003 ao App.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

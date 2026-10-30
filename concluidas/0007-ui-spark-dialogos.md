@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-02-dialogos` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `04_opcoes_e_menus.md` (diálogos), `89_telas_nativas.md` |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -40,6 +40,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-02-dialogos` saído da ponta do `01` (`2c5fe35`).
 - 2026-10-29 — `Scripts/UI/UiDialogs.cs` (DialogQueue, DialogRequest, SysMsgRoute); o DialogBox do `GameUi` passa a usar a fila (ConfirmDlg, Ask, AskAmount, caixa da group 4); Enter e Esc ligados; 12 testes em `SparkDialogTests.cs` (`9af9f0b`). Pedido 0002 ao App.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

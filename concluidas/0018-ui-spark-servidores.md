@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L2-servidores` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `89_telas_nativas.md` (NCLoginServerWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -38,6 +38,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-L2-servidores` saído da ponta do `L1` (`f2e45bb`).
 - 2026-10-29 — `LobbyServerScreen`: Enter/KeypadEnter/Esc com click_01, último servidor escolhido, `SparkStatus`; 3 testes em `SparkServerListTests.cs` (`93e994f`). Pedido 0009 (net + App).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

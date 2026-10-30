@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | um por tarefa filha: `feat/ui-spark-<NN>-<assunto>` (a 1ª sai do `main`; cada uma sai da ponta da anterior) |
-| Estado | aberta |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | Interlude: `analises\l2-interlude\client_spec\` (layout, medidas, texturas, pacotes). Spark: `analises\spark-l2unity\` (comportamento) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -73,6 +73,7 @@ Pela spec 92 (tabela do aCis), vários números da lista são opcodes **retail d
 ## Andamento
 
 - 2026-10-29 — coordenadora criou as tarefas #0005–#0021 e o pedido 0001.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

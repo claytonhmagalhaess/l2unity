@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L4-charcreation` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `89_telas_nativas.md` (NCPawnSetupWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -38,6 +38,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-L4-charcreation` saído da ponta do `L3` (`46487cf`).
 - 2026-10-29 — levantamento: setas, regras dos setters (sm81/82/83), girar e zoom já existiam no porte (NCPawnSetupWnd/NCPawnCreateWnd). Entrou `CreateRules` (nome, recusas → sysmsg), `LobbyCreateScreen.ShowFail`, `CreatePanel.Step` público; 4 testes em `SparkCharCreationTests.cs` (`7ce141b`). Pedido 0011 (net + App).
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

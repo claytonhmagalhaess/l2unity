@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-sprites` (a partir de `integracao/ui-spark`) |
-| Estado | fazendo |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | Mapa visual: `analises\spark-l2unity\hud\uss\*.uss`, `hud\uxml\*.uxml`, `hud\uxml_inventory.md`; texturas em `hud\textures\`. Layout: `Interface.xdat`/`WindowsInfo.ini` (sem mudança) |
 | Sessão | ui: sprites da HUD Spark |
 | Criada | 2026-10-29 |
@@ -52,6 +52,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — coordenadora criou a tarefa.
 - 2026-10-29 — sub-sessão ui: branch `feat/ui-spark-sprites` criado a partir de `integracao/ui-spark`; lendo USS/UXML do Spark e o carregador `L2WndUtil.Tex`.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 

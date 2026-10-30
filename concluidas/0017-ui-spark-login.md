@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-spark-L1-login` |
-| Estado | pronta p/ merge |
+| Estado | cancelada (descartada pelo usuário em 2026-10-29; branches apagados, nada entrou no `main`) |
 | Spec | `89_telas_nativas.md` (NCAuthWnd) |
 | Sessão | ui: porte da HUD Spark |
 | Criada | 2026-10-29 |
@@ -42,6 +42,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-10-29 — branch `feat/ui-spark-L1-login` saído da ponta do `10` (`8973c9c`).
 - 2026-10-29 — `Scripts/UI/UiLobbySpark.cs` (LoginForm, LoginBlock, LoginTexts); `LobbyLoginScreen`: filtro do ID, Tab, Enter com click_01, `TrySubmit`, `SetBlock`; 4 testes em `SparkLoginTests.cs` (`f2e45bb`). Pedido 0008 ao App.
+- 2026-10-29 — coordenadora: **cancelada a pedido do usuário** ("não ficou bom"). Branches `feat/ui-spark-*` e `integracao/ui-spark` apagados sem merge, worktrees e sub-sessões excluídas, `shared\...\client\spark_hud\` apagada.
 
 ## Decisões e REA
 
