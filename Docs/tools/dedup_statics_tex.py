@@ -12,8 +12,9 @@ Reexecutavel: um .glb sem imagem embutida fica como esta e um PNG que ja existe 
 muda nenhum byte). Antes de reescrever um .glb, copia o original para --backup (se ainda nao estiver la).
 
 Uso: python -I Docs/tools/dedup_statics_tex.py [--statics PASTA] [--tex PASTA] [--backup PASTA] [--only a.glb,b.glb]
-                                               [--check] [--dry-run]
+                                               [--check] [--verify] [--dry-run]
   --check    so confere: todo .glb sem imagem embutida e toda uri apontando para um PNG que existe
+  --verify   compara cada original de --backup com o .glb reescrito (JSON, bytes de cada accessor e de cada imagem)
 """
 import hashlib
 import json
@@ -132,6 +133,38 @@ def dedup(j, bin_, tex_dir, dry):
     return write_glb(j, bytes(out)), pngs
 
 
+def verify(orig, new, statics):
+    """O .glb novo equivale ao original do backup: JSON igual fora de images/bufferViews/buffers e dos indices de
+    bufferView, cada accessor com os mesmos bytes e cada imagem com os mesmos bytes no PNG apontado."""
+    j1, bin1 = read_glb(orig)
+    j2, bin2 = read_glb(new)
+    for k in set(j1) | set(j2):
+        if k in ('images', 'bufferViews', 'buffers', 'accessors'):
+            continue
+        if j1.get(k) != j2.get(k):
+            raise ValueError('campo mudou: ' + k)
+    if len(j1['accessors']) != len(j2['accessors']):
+        raise ValueError('accessors')
+    for a1, a2 in zip(j1['accessors'], j2['accessors']):
+        if {k: v for k, v in a1.items() if k != 'bufferView'} != {k: v for k, v in a2.items() if k != 'bufferView'}:
+            raise ValueError('accessor mudou')
+        v1, v2 = j1['bufferViews'][a1['bufferView']], j2['bufferViews'][a2['bufferView']]
+        o1, o2 = v1.get('byteOffset', 0), v2.get('byteOffset', 0)
+        if bin1[o1:o1 + v1['byteLength']] != bin2[o2:o2 + v2['byteLength']] or v1.get('byteStride') != v2.get('byteStride') \
+                or v1.get('target') != v2.get('target'):
+            raise ValueError('dados de accessor mudaram')
+    if len(j1.get('images', [])) != len(j2.get('images', [])):
+        raise ValueError('images')
+    for i1, i2 in zip(j1.get('images', []), j2.get('images', [])):
+        if i1.get('name') != i2.get('name') or i1.get('mimeType', 'image/png') != i2.get('mimeType'):
+            raise ValueError('nome/tipo de imagem mudou')
+        v = j1['bufferViews'][i1['bufferView']]
+        o = v.get('byteOffset', 0)
+        with open(os.path.join(statics, i2['uri'].replace('/', os.sep)), 'rb') as f:
+            if f.read() != bin1[o:o + v['byteLength']]:
+                raise ValueError('bytes da imagem mudaram: ' + i2['uri'])
+
+
 def main():
     statics = arg('--statics', os.path.join(CACHE, 'statics'))
     tex_dir = arg('--tex', os.path.join(os.path.dirname(os.path.abspath(statics)), 'statics_tex'))
@@ -139,6 +172,17 @@ def main():
     only = arg('--only')
     dry = '--dry-run' in sys.argv
     check = '--check' in sys.argv
+    if '--verify' in sys.argv:
+        ok = bad = 0
+        for f in sorted(x for x in os.listdir(backup) if x.endswith('.glb')):
+            try:
+                verify(open(os.path.join(backup, f), 'rb').read(), open(os.path.join(statics, f), 'rb').read(), statics)
+                ok += 1
+            except Exception as e:  # noqa: BLE001
+                bad += 1
+                print('DIFERENTE', f, e)
+        print(json.dumps(dict(verified=ok, different=bad)))
+        sys.exit(1 if bad else 0)
     files = sorted(f for f in os.listdir(statics) if f.endswith('.glb'))
     if only:
         want = set(only.split(','))
