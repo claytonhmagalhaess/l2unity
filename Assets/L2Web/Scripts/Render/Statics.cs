@@ -64,6 +64,8 @@ namespace L2Web.Render
             GenerateMipMaps = true,
             DefaultMinFilterMode = GLTFast.Schema.Sampler.MinFilterMode.LinearMipmapLinear,
             AnisotropicFilterLevel = 4,
+            // -l2gpucomp (prototipo da #0023): a copia em BC sai da textura legivel
+            TexturesReadable = GpuTexProto.Enabled,
         };
 
         /// <summary>
@@ -222,6 +224,7 @@ namespace L2Web.Render
                         mf.gameObject.AddComponent<MeshCollider>().sharedMesh = mf.sharedMesh;
                         var mr = mf.GetComponent<MeshRenderer>();
                         if (mr) mr.shadowCastingMode = ShadowCastingMode.Off;
+                        if (mr) GpuTexProto.Compress(mr.sharedMaterials);
                     }
                     // lightmap do BSP (FMultiLightMapTexture da hora), quando o mapa tem o <tile>_lm.png
                     var lm = await BspLightmap.Apply(tile, filters);
@@ -328,6 +331,7 @@ namespace L2Web.Render
                     }
                 parts.Add(new Part { Mesh = mf.sharedMesh, Materials = mats, Local = inv * mf.transform.localToWorldMatrix });
             }
+            foreach (var p in parts) GpuTexProto.Compress(p.Materials);
             // Shader/FinalBlend com blend de efeito (chamas, cachoeiras, planos de luz): material Fx animado
             foreach (var p in parts) await MatAnim.Apply(p.Materials);
             // o molde nao precisa ficar na cena: Mesh/materiais pertencem ao GltfImport (mantido vivo no Template)
