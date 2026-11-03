@@ -200,8 +200,8 @@ Coordenadas em pixels, relativas ao canto superior esquerdo da sub-janela. Nota�
   - `UserShortCut` = 1 jogador / 2 pet [R] (`characterType` em `RequestShortCutReg.java`).
   - Para item, ID = objectId do item. Para skill, o servidor completa o nível [R].
   - O servidor responde `ShortCutRegister`, que gera `EV_ShortcutUpdate(ShortcutID)`.
-- [I] Remover = arrastar o ícone do slot para fora da barra, o que envia `RequestShortCutDel RoomNum` (`engine.dll@0x57e924`, `NConsoleWnd::RequestShortCutDel` @0x27ec50). [N] Confirmar se soltar em qualquer área remove ou se precisa ser fora de janelas.
-- [N] **Troca entre slots:** os handlers `NCShortcutItemWnd::OnDragButton`/`OnDropItem` existem. Falta confirmar se soltar sobre um slot ocupado troca os dois (Del+Reg+Reg) ou só substitui. Comportamento esperado do Interlude: soltar slot→slot move, e o atalho de destino vai para a origem.
+- [O] Remover = arrastar o ícone do slot e soltar **fora de qualquer janela** (o ponto solto, com margem de 30 px, também não pode cair na própria barra). `NCShortcutItemWnd::OnDragButton` (`NWindow.dll@0x100478f0`) chama `DeleteItem` (`@0x100472e0`), que envia `RequestShortCutDel RoomNum` (`engine.dll@0x57e924`, `NConsoleWnd::RequestShortCutDel` @0x27ec50). [?] O valor de `[Game] IsLockShortcutWnd` é lido na entrada, mas o desvio não aparece no pseudocódigo (correção #0024, 2026-11-03; `analises\interface-p166\02_interacoes.md`).
+- [O] **Troca entre slots** (`NCShortcutItemWnd::OnDropItem`, `NWindow.dll@0x100480c0`, ramo em que a origem é um `NCShortcutItemWnd`): registra o atalho de origem no slot de destino (`RequestShortCutReg`). Se o destino estava ocupado, registra o atalho antigo do destino no slot de origem (troca); se estava vazio, apaga a origem (move). Nos dois lados, reenvia o soulshot automático quando o atalho estava com ele ligado. Ações 0–14 vão com `UserShortCut=1` e 15–27 com `2`, e o inventário do pet também com `2` (correção #0024, 2026-11-03; `analises\interface-p166\02_interacoes.md`).
 - [O] O macro editor aceita atalhos soltos nas linhas e copia `ItemInfo.MacroCommand` (`MacroEditWnd.uc:139-149`). Ao começar o drag ele destaca o EditBox (`MacroEditWnd.uc:151-171`).
 
 ### 3.6 O que aparece no slot
@@ -282,7 +282,7 @@ Coordenadas em pixels, relativas ao canto superior esquerdo da sub-janela. Nota�
 - [I] Fluxo: **clique direito** num soulshot/spiritshot na barra envia `RequestAutoSoulShot(itemId, 1|0)`. O servidor responde `ExAutoSoulShot(itemId, type)` [R], e o cliente marca ou desmarca todos os slots desse item.
 - [R] O servidor também desliga sozinho quando o item acaba (`Player.java:6914-6943`). Mensagens: "Use of $s1 will be auto" e "No servitor…".
 - [O] No inventário, o clique direito **usa** o item (`InventoryWnd.uc:161-165`) e não liga o automático.
-- [N] Validar o efeito visual do automático (ToggleEffect? moldura?) e se o clique direito em item que não é shot faz algo.
+- [O] O clique direito na barra (`NCShortcutItemWnd::OnRButtonDown`, `NWindow.dll@0x100477f0`) só age se o item for um shot (`FUN_10149ee0`: ids 1463–1467, 1835, 2509–2514, 3947–3952, 5789–5790, 6535–6540, 6645–6647). Envia `(itemId, !automático)`; em qualquer outro atalho não faz nada (correção #0024, 2026-11-03; `analises\interface-p166\02_interacoes.md`). [N] Validar o efeito visual do automático (ToggleEffect? moldura?).
 
 ---
 
@@ -472,9 +472,9 @@ Teclas ligadas (`export\client_cfg\user.ini:120-200`):
 - **Chat × dígitos:**
   - [O] `[Game] EnterChatting` (padrão True no INI) faz o chat perder o foco após cada envio (`ChatWnd.uc:154-157`, `OptionWnd.uc:1112`);
   - [O] o nativo exporta `GIsEnterChatting` (`NWindow.dll` ASCII @0x324d64);
-  - [I] com EnterChatting=True, os dígitos e `-`/`=` disparam atalhos quando o chat está sem foco, e Enter foca o chat;
-  - [I] com False, o chat fica sempre com foco, e só F-teclas e combinações com modificador funcionam como atalho.
-  - [N] Confirmar.
+  - [O] `NConsoleWnd::HandleKeyboardInput` (`NWindow.dll@0x101734e0`): sem Alt, em `GAMINGSTATE`/`OLYMPIADOBSERVERSTATE`, se a tecla é de digitação (`NWndUtil::IsTypingKey` `@0x100624e0`: tudo menos F1–F12, Tab, Esc e NumLock), não há EditBox com foco e `GIsEnterChatting == 0`, dispara `EV_ChatWndSetFocus` (570) e **não** executa atalho;
+  - [O] logo, com EnterChatting=True, letras, dígitos e `-`/`=` sem Alt vão para a tabela do xdat, e Enter foca o chat; com False, toda tecla de digitação sem Alt foca o chat, e só F-teclas, Tab, Esc, NumLock e Alt+tecla funcionam como atalho (correção #0024, 2026-11-03; `analises\interface-p166\02_interacoes.md`).
+  - [N] Se o caractere que causou o foco entra no texto.
 
 ### 5.7 `PlayerPawnMoveTo`, `Attack` e a trava de pedido (`UGameEngine+0x64`)
 
@@ -669,14 +669,14 @@ Fluxo do editor:
 
 ## 8. Lacunas — a validar no nativo
 
-1. **Drag slot→slot:** troca ou substitui? O que exatamente remove (soltar no "vazio", sobre outra janela, na lixeira)?
+1. ~~**Drag slot→slot**~~ **resolvido** (§3.5): troca; remove ao soltar fora de qualquer janela.
 2. **Lock:** bloqueia remover, registrar, mover entre slots e/ou arrastar a janela?
 3. **Cooldown:** confirmar o mapeamento quadro=ângulo (0..359, sentido horário desde as 12h). Confirmar FPS e duração do `CooltimeEnd001..009`. Ver se existe número de segundos. Ver se o escurecimento cobre o ícone inteiro e se o slot fica desabilitado.
 4. **ToggleEffect:** animação (AnimNext? FPS? loop?), onde se aplica (toggle skills, soulshot automático, ambos?).
 5. **Contagem e grau no slot:** posição, fonte e cor da quantidade; se o grau aparece; aparência de skill bloqueada ou indisponível (`bIsLock`, `bDisabled`).
-6. **Clique direito no slot:** só soulshot/spiritshot (auto) ou outra função por tipo?
+6. ~~**Clique direito no slot**~~ **resolvido** (§3.10): só soulshot/spiritshot.
 7. **Uso do atalho:** qual pacote vai por tipo (`RequestShortCutUse` é usado?). Como Ctrl e Shift são passados (force/stand).
-8. **Dígitos × chat:** regra exata de quando `1..0`, `-`, `=` disparam atalhos (`GIsEnterChatting`, foco do EditBox).
+8. ~~**Dígitos × chat**~~ **resolvido** (§5.6): regra de `HandleKeyboardInput`.
 9. **Precedência Escape:** `TargetCancel` (xdat) × `CameraModeSelectingCancel` (`user.ini`). Os dois rodam?
 10. **Resolução de caminho** de controles nas barras extras: plano (`ShortcutWnd.X_1.ShortcutN`) × aninhado (`ShortcutWnd.X.X_1.ShortcutN`). Semântica de `unk126`/`unk129` (acoplamento lateral/superior).
 11. **`joypad2_back_over1..3`:** grupo `ShortcutWnd` (no código) × `Joypad` (no pacote). Confirmar se o destaque do joypad expandido aparece no cliente original.

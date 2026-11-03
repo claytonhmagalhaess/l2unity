@@ -104,7 +104,7 @@ Usado por Warehouse, Shop, ManorShop, PrivateShop e Deliver. Layout típico: 256
 - [O] Duplo clique ou botão move de uma lista para a outra. Arrastar entre listas também move, e `info.AllItemCount > 0` significa "mover tudo" sem perguntar quantidade (`ShopWnd.uc:104-120`).
 - [O] Item empilhável com quantidade > 1 abre `DIALOG_NumberPad` com sm72 ("How many … move?"). Os IDs são `DIALOG_TOP_TO_BOTTOM=111` e `DIALOG_BOTTOM_TO_TOP=222` (`ShopWnd.uc:3-4`, `WarehouseWnd.uc:7-8`). Itens empilháveis iguais (mesmo ClassID) se somam na lista de destino (`WarehouseWnd.uc:175-185`).
 - [O] O controle `InvenWeight` simula o peso com `AddWeight/ReduceWeight/ZeroWeight` (`NWindow\UIAPI_INVENWEIGHT.uc`, usado em `ShopWnd.uc:162-216`).
-- [I] "Mover tudo" (`AllItemCount`) é definido pelo nativo ao arrastar com um modificador de tecla. Qual tecla é **[N]**.
+- [O] "Mover tudo" (`AllItemCount`) é definido pelo nativo quando o arrasto começa com **Alt** apertado e a pilha tem mais de 1: `AllItemCount = min(quantidade, +0x1e90)` (`NCItemWnd` slot 104, `NWindow.dll@0x1002eb00`, `GetAsyncKeyState(VK_MENU)`). Vale para qualquer `ItemWindow` (correção #0024, 2026-11-03; `analises\interface-p166\02_interacoes.md`).
 
 ### 2.3 Fechamento que avisa o servidor
 - [O] `OnSendPacketWhenHiding()` é chamado quando o usuário fecha a janela (X/Esc) e serve para mandar o cancelamento: TradeWnd→`RequestTradeDone(false)` (`TradeWnd.uc:19-22`); PrivateShopWnd→`RequestQuitPrivateShop` (`PrivateShopWnd.uc:38-41,182-192`); RecipeShopWnd→`RequestRecipeShopManageQuit` (`RecipeShopWnd.uc:130`); PartyMatchWnd→`RequestExitPartyMatchingWaitingRoom` (`PartyMatchWnd.uc:27-30`); PartyMatchRoomWnd→sai ou dissolve a sala (`PartyMatchRoomWnd.uc:32-45`). [N] É preciso confirmar se o nativo chama isso só no fechamento pelo usuário, ou também no `HideWindow` do script.
@@ -511,7 +511,7 @@ Enum `GMCOMMAND_*` em `NWindow\UIEventManager.uc:9-15`. [I] Os pacotes `GMView* 
 
 1. **Atalhos → eventos**: qual `EV_*` cada comando nativo gera (`TabShowInventoryWindow`, `ShowInventoryWindow`, `ShowMainWindow Tab=…`, `ShowBoardWindow`, `ShowGMWindow`, `ShowGMPetitionWindow`, `ShowMessengerWindow`, `HideAllWindow`, `CloseAllWindow`), e se `Tab` difere de `V`.
 2. **OnSendPacketWhenHiding**: em que condições o nativo chama (só fechamento pelo usuário? Esc? `CloseAllWindow`?).
-3. **"Mover tudo" (`AllItemCount`)**: tecla modificadora, e se vale para qualquer ItemWindow.
+3. ~~**"Mover tudo" (`AllItemCount`)**~~ **resolvido**: Alt no início do arrasto, em qualquer ItemWindow (§2.2) (correção #0024, 2026-11-03; `analises\interface-p166\02_interacoes.md`).
 4. **Precedência `_wnddefpos` × âncora do xdat** (vários conflitos: Inventory, MultiSell, Shop, Recipe*, Henna, Warehouse) e persistência das posições movidas pelo usuário.
 5. **Drawers (`unk129`/`unk126`/`unk122`/`unk127`)**: lado de acoplamento, offset e se acompanham o movimento do dono (ClanDrawer, Guide, PartyMatch WaitLists, UnionDetail).
 6. **TabCtrl**: troca automática de alvo e preservação do estado das abas do MainWnd.
