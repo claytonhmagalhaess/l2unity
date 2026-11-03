@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | net |
 | Branch | `feat/net-pacotes-interface` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `analises\l2-interlude\client_spec\92_protocolo_opcodes.md`, `94_pacotes_servidor_cliente.md`, `95_pacotes_cliente_servidor.md`, `96_mapa_pacote_evento_janela.md`; `analises\interface-p166\05_lacunas_e_tarefas.md` §2 |
 | Sessão | net: pacotes da interface |
 | Criada | 2026-11-03 |
@@ -45,6 +45,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+
+- 2026-11-03 — branch `feat/net-pacotes-interface` criado a partir do `main` (0d71a77); estado `fazendo`.
 
 ## Decisões e REA
 
