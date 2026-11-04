@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-login` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (89 e as telas do lobby), `Docs/validacao.md` G1–G4 e G10; `analises\interface-p166\03_teclado.md` (estados fora do GamingState) |
 | Sessão | ui: login (#0048) |
 | Criada | 2026-11-04 |
@@ -24,7 +24,7 @@ Os botões New Account, Lost Account, Production Team e Replay não serão imple
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] `Docs/login_lacunas.md`: uma linha para cada coisa que o original faz na parte de login, com a evidência (NWindow/engine no Tryskell ou na REA, `Interface.u`, `.int`, `.ini`, sysstring/systemmsg e pacotes do aCis) e o estado no `l2unity`: igual, corrigido, pedido ou fora do escopo. A tabela cobre pelo menos:
+- [x] `Docs/login_lacunas.md`: uma linha para cada coisa que o original faz na parte de login, com a evidência (NWindow/engine no Tryskell ou na REA, `Interface.u`, `.int`, `.ini`, sysstring/systemmsg e pacotes do aCis) e o estado no `l2unity`: igual, corrigido, pedido ou fora do escopo. A tabela cobre pelo menos:
   - as teclas da tela de login (Tab, Shift+Tab, Enter, Esc) e da lista de servidores;
   - o foco inicial;
   - os limites e as máscaras dos campos;
@@ -33,13 +33,13 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - o contrato de licença, se o Interlude mostrar;
   - a lista de servidores (barra de rolagem, ajuda e qualidade);
   - a música e o som.
-- [ ] Tab e Shift+Tab alternam entre ID e senha, e Enter faz o login, como no original. O foco inicial é o do original.
-- [ ] O Options do login abre a janela que o original abre nessa tela.
-- [ ] Mensagens: cada motivo de erro mostra o texto do original (sysstring/systemmsg com o id certo), na caixa de mensagem nativa (G10), com o botão e o comportamento do original.
-- [ ] Os botões New Account, Lost Account, Production Team e Replay saem da tela, com a janela de funções ajustada ao que sobrar, e a decisão registrada em Decisões.
-- [ ] Todas as outras lacunas do `login_lacunas.md` são corrigidas ou registradas: o que for de `Scripts\Net\` vira pedido para a net, o que for do `App.cs` ou da raiz de `Scripts\` vira pedido para a coordenadora, e o que for da cena 3D vira pedido para a render, todos em `tarefas\pedidos\`.
-- [ ] Testes EditMode para a lógica (foco e teclas, escolha da mensagem por motivo). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
-- [ ] Capturas antes e depois em `Docs/evidencias/login/`, tiradas no aCis local, e linhas G1–G4 e G10 atualizadas em `Docs/validacao.md`.
+- [x] Tab e Shift+Tab alternam entre ID e senha, e Enter faz o login, como no original. O foco inicial é o do original.
+- [ ] O Options do login abre a janela que o original abre nessa tela. *Na UI está feito e testado ao vivo (OptionWnd do xdat por cima do login); o botão só funciona depois do pedido 0037 item 1 (`scrLogin.OptionWindow = OptionWindow;` no App.cs).*
+- [ ] *(parcial)* Mensagens: cada motivo de erro mostra o texto do original (sysstring/systemmsg com o id certo), na caixa de mensagem nativa (G10), com o botão e o comportamento do original. *Feito: sysmsg 86/87 na faixa, LoginFail/AccountKicked já iguais (C1), a caixa NCGaraDialogBox da sysmsg 127 pronta e testada. A G10 era a faixa, não uma caixa. Falta: tirar os textos próprios do App e abrir a caixa na queda da conexão (pedido 0037 itens 2–4) e no Net (pedido 0038).*
+- [x] Os botões New Account, Lost Account, Production Team e Replay saem da tela, com a janela de funções ajustada ao que sobrar, e a decisão registrada em Decisões.
+- [x] Todas as outras lacunas do `login_lacunas.md` são corrigidas ou registradas: o que for de `Scripts\Net\` vira pedido para a net, o que for do `App.cs` ou da raiz de `Scripts\` vira pedido para a coordenadora, e o que for da cena 3D vira pedido para a render, todos em `tarefas\pedidos\`.
+- [x] Testes EditMode para a lógica (foco e teclas, escolha da mensagem por motivo). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`. *Pela sessão de testes: b88e07c 750/750; 23869f4 760 com 1 falha do próprio teste novo (corrigida em e48b6db); `LoginScreenTests` 10/10 em e48b6db e em 90f9a51. A suíte inteira não foi rodada de novo no último commit (só a tela de login mudou depois de 23869f4).*
+- [x] Capturas antes e depois em `Docs/evidencias/login/`, tiradas no aCis local, e linhas G1–G4 e G10 atualizadas em `Docs/validacao.md`.
 
 ## Andamento
 
@@ -52,6 +52,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — novo fluxo de testes (só a sessão de testes abre o Unity): pedido de teste enviado com f1fead1 (compilar, EditMode inteira + `LoginScreenTests`, roteiro ao vivo com capturas antes em b88e07c e depois em f1fead1). Aguardando a resposta em `testes\0048-<n>\`.
 - 2026-11-04 — teste 0048-1: f1fead1 nao compilava (`onFocusSelectAll` so existe no TMP); corrigido em 23869f4. b88e07c: 750/750.
 - 2026-11-04 — teste 0048-2 (23869f4): 760, 759 passaram; a falha era do proprio teste do corte 14/16 (corrigido em e48b6db). Ao vivo: foco Id, Tab, sysmsg 86/87, senha errada, OptionWnd, caixa e login normal ok; o Enter simulado nao logou, a faixa ficava por cima do OptionWnd e a janela de conexao por baixo do botao. Corrigidos em 90f9a51 (Enter tambem pelo `onSubmit` do campo, com log). Capturas em `Docs/evidencias/login/` (df5329b); G1-G4 e G10 da `validacao.md` (b50cd12, 347d3be). Pedido de reteste 0048-3 enviado.
+- 2026-11-04 — teste 0048-3 (90f9a51): compila; `LoginScreenTests` 10/10 (e48b6db e 90f9a51); ao vivo o Enter na senha faz o login (`[login] Enter campo=Pwd senha=11 login=True` e o LoginFail na faixa), o OptionWnd fica por cima da faixa e a janela de conexão na frente. Capturas e resumo em `Docs/evidencias/login/` (5faabb3). Estado `pronta p/ merge`.
 
 ## Decisões e REA
 
@@ -68,9 +69,9 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/ui-login`, sobre `feat/ui-revisao` b88e07c): a3adac7 e 2dc4e52 (tela de login, `LoginAuth`, `LobbyDialogBox`, menu só com Options, `OptionWnd.MoveTo`, testes), d631ad2 (`Docs/login_lacunas.md`), f1fead1 (OptionWnd só o que a tela abriu), 23869f4 (compilação), e48b6db (teste 14/16), 90f9a51 (Enter pelo `onSubmit` com log, OptionWnd sobre a faixa, janela de conexão), df5329b, 5faabb3 (capturas e resumos dos testes 0048-2/0048-3), b50cd12 e 347d3be (G1–G4 e G10).
+- **Testes** (sessão de testes, `testes\0048-1..3\`): compila sem erros; suíte EditMode 760 em 23869f4 (a única falha era do teste novo, corrigida); `LoginScreenTests` 10/10 em 90f9a51. Ao vivo no aCis com l2webtest: menu só com Options, foco inicial no ID, Tab ID↔PWD, "Please enter your ID."/"Please enter your password.", Enter na senha faz o login e mostra o texto do LoginFail, OptionWnd por cima do login, caixa da sysmsg 127 com OK, janela de conexão no Ctrl+Alt+O, login normal até a seleção de personagem. Capturas em `Docs/evidencias/login/`.
+- **Falta / fora do escopo:** pedido 0037 (App.cs: ligar o Options, tirar os textos próprios da faixa, Cancel da lista sem mensagem, caixa na queda da conexão, música; item 6 opcional: ID vazio ao abrir); pedido 0038 (net: contrato no LoginOk e queda sem texto); pedido 0039 (render: música LS01_F). A janela do contrato (`NCEulaWnd`, medidas na `NativeLayout.Eula*`) fica para depois do 0038. Fora: OTP, KeyCrypt, New Account/Lost Account/Production Team/Replay (decisão), polegar da rolagem e ordenação do Quality (1 servidor no aCis). A validar: o caminho do erro de conexão assíncrono (sysmsg 90 inferida) e o `ServerClose` dentro do jogo.
 
 ## Pedidos
 
