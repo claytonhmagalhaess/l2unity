@@ -17,6 +17,13 @@ namespace L2Web.Tests
         public void TextBox_OffsetYSoNaFonteDeDigitos(float offsetY, float fontType, float expected) =>
             Assert.AreEqual(expected, L2Wnd.TextOffsetY(offsetY, fontType));
 
+        [TestCase(1, 0f)] // esquerda: a borda esquerda fica
+        [TestCase(2, 0.5f)] // centro (DetailStatusWnd.txtSTR, 70 px)
+        [TestCase(3, 1f)] // direita (txtCriminalRate, precos das lojas)
+        [TestCase(-9999, 0f)]
+        public void TextBox_AutosizePeloAlinhamento(float textAlign, float expected) =>
+            Assert.AreEqual(expected, L2Wnd.AutoSizeAnchor(textAlign));
+
         [Test]
         public void TextBox_SysstringAntesDoTextDoXdat()
         {

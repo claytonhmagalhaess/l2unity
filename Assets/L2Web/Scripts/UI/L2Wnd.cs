@@ -1152,9 +1152,10 @@ namespace L2Web.UI
             // [?] caixas de largura 0 no xdat ficam como texto livre (AutoText): as cadeias delas nao foram conferidas
             if (r.W <= 0 || r.H <= 0 || Mathf.Abs(r.W - w) < 0.5f) return;
             var c = ctrls[name];
-            // o ponto da propria ancora fica no lugar (TOP_CENTER encolhe pelos dois lados: OnScreenMessageWnd2.TextBox2)
-            var own = Al(c.Anchor?.Parent ?? "TOP_LEFT");
-            var nx = r.X + (r.W - w) * own.x;
+            // RefreshTextCoords com autosize: MoveTo(x + deslocamento do textAlign, y) e SetWindowSize(texto): esquerda (1)
+            // mantem a borda esquerda, centro (2) o centro e direita (3) a borda direita da caixa (DetailStatusWnd txtSTR
+            // centralizado em 70 px, txtCriminalRate a direita em 50 px; os precos das lojas a direita)
+            var nx = r.X + (r.W - w) * AutoSizeAnchor(c.N("textAlign"));
             var nr = new L2Rect(nx, r.Y, w, r.H);
             rects[name] = nr;
             instRects[c] = nr;
@@ -1162,6 +1163,9 @@ namespace L2Web.UI
             if (Mathf.Abs(nx - r.X) > 0.01f) el.anchoredPosition = new Vector2(el.anchoredPosition.x + (nx - r.X), el.anchoredPosition.y);
             Reflow(name, 0);
         }
+
+        /// <summary>Fracao da sobra (largura da caixa - texto) que vai para a esquerda no autosize: 0 esquerda, 0.5 centro, 1 direita.</summary>
+        public static float AutoSizeAnchor(float textAlign) => textAlign == 2 ? 0.5f : textAlign == 3 ? 1f : 0f;
 
         void Reflow(string name, int depth)
         {
