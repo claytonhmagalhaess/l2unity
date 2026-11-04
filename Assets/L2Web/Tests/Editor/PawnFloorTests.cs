@@ -31,16 +31,25 @@ namespace L2Web.Tests
         [Test]
         public void Cidade_PisoBspAcimaDoTerreno_PesNoBsp()
         {
-            // Giran: geodata -3400, piso BSP ~30 abaixo, terreno do Unreal 163 abaixo (fora da janela)
+            // Giran: geodata -3400, piso BSP ~30 abaixo, terreno do Unreal 163 abaixo (o piso e o mais alto)
             Assert.AreEqual(-3430f, GeoTerrain.PickFloor(-3400, -3430, -3563.3f), 1e-3f);
         }
 
         [Test]
-        public void TerrenoForaDaJanela_FicaNoZDoServidor()
+        public void ChaoMaisDeFarDownAbaixo_FicaNoZDoServidor()
         {
-            // ponte ou andar cuja malha ainda nao carregou: o terreno la embaixo nao puxa o pawn
-            Assert.AreEqual(-3400f, GeoTerrain.PickFloor(-3400, null, -3400 - GeoTerrain.TerrainDown - 1));
-            Assert.AreEqual(-3400 - GeoTerrain.TerrainDown, GeoTerrain.PickFloor(-3400, null, -3400 - GeoTerrain.TerrainDown), 1e-3f);
+            Assert.AreEqual(-3400f, GeoTerrain.PickFloor(-3400, null, -3400 - GeoTerrain.FarDown - 1));
+            Assert.AreEqual(-3400f, GeoTerrain.PickFloor(-3400, -3400 - GeoTerrain.FarDown - 1, null));
+            Assert.AreEqual(-3400 - GeoTerrain.FarDown, GeoTerrain.PickFloor(-3400, null, -3400 - GeoTerrain.FarDown), 1e-3f);
+        }
+
+        [Test]
+        public void GeodataSobreObjetoNaoDesenhado_DesceAteOChaoDesenhado()
+        {
+            // Giran, Vokian (80456, 144376): geodata -3408, BSP -3560 (152 abaixo, alem da janela curta de 48), terreno -3576
+            Assert.AreEqual(-3560f, GeoTerrain.PickFloor(-3408, -3560, -3576), 1e-3f);
+            // Ol Mahum (40855, 126906): geodata -1624 sem malha embaixo, terreno -1837 (213 abaixo)
+            Assert.AreEqual(-1837f, GeoTerrain.PickFloor(-1624, null, -1837), 1e-3f);
         }
 
         [Test]
@@ -61,18 +70,45 @@ namespace L2Web.Tests
         }
 
         [Test]
-        public void PisoDeStaticsForaDaJanela_UsaOTerreno()
+        public void PisoDeStaticsAbaixoDoTerreno_UsaOTerreno_AcimaDaJanelaIgnora()
         {
-            Assert.AreEqual(-3430f, GeoTerrain.PickFloor(-3400, -3400 - GeoTerrain.StaticsDown - 1, -3430), 1e-3f);
+            Assert.AreEqual(-3430f, GeoTerrain.PickFloor(-3400, -3460, -3430), 1e-3f);
             Assert.AreEqual(-3400f, GeoTerrain.PickFloor(-3400, -3400 + GeoTerrain.StaticsUp + 1, null));
         }
 
+        // ------------------------------------------------------------ camada do geodata (NearestLayer)
+
         [Test]
-        public void JanelaDoTerreno_CobreODeslocamentoMedido()
+        public void Camada_UmaSo_SempreElaMesmo()
         {
-            // p95 de (geodata - terreno) nos campos medidos: 34-41; p99 82-107 (Docs da tarefa #0056)
-            Assert.GreaterOrEqual(GeoTerrain.TerrainDown, 82f);
-            Assert.GreaterOrEqual(GeoTerrain.StaticsDown, 30f);
+            Assert.AreEqual(-3584f, GeoTerrain.NearestLayer(-3584, -3584, null, false, 1e6f));
+            Assert.AreEqual(-3584f, GeoTerrain.NearestLayer(-3584, -3584, null, false, -1e6f));
+        }
+
+        [Test]
+        public void Camada_PonteDeDuas_AMaisPerto()
+        {
+            // chao -3600, ponte -3300
+            Assert.AreEqual(-3600f, GeoTerrain.NearestLayer(-3600, -3300, null, true, -3590));
+            Assert.AreEqual(-3300f, GeoTerrain.NearestLayer(-3600, -3300, null, true, -3310));
+        }
+
+        [Test]
+        public void Camada_AndarDoMeioSemAsCamadas_NaoPulaParaOutroAndar()
+        {
+            // Cruma Tower (20_21): camada baixa -16104, alta -3720, andar do meio -9048. Antes o pawn que andava no
+            // andar do meio ia para -3720 (6676 acima) a cada passo
+            Assert.IsNull(GeoTerrain.NearestLayer(-16104, -3720, null, true, -9048));
+            Assert.AreEqual(-3720f, GeoTerrain.NearestLayer(-16104, -3720, null, true, -3720 + GeoTerrain.MaxLayerJump), 1e-3f);
+            Assert.IsNull(GeoTerrain.NearestLayer(-16104, -3720, null, true, -3720 - GeoTerrain.MaxLayerJump - 1));
+        }
+
+        [Test]
+        public void Camada_ComTodasAsCamadas_AMaisPertoDeTodas()
+        {
+            var all = new[] { -16104f, -12080f, -9048f, -3720f };
+            Assert.AreEqual(-9048f, GeoTerrain.NearestLayer(-16104, -3720, all, true, -9040));
+            Assert.AreEqual(-12080f, GeoTerrain.NearestLayer(-16104, -3720, all, true, -11000));
         }
 
         // ------------------------------------------------------------ superficie do terreno (SurfaceAt)

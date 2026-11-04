@@ -89,32 +89,60 @@ namespace L2Web.Render
         /// o pawn no z do servidor: UGameEngine::AdjustPawnLocation (engine.c, Tryskell) faz um trace do cilindro de
         /// colisao para baixo, de z + CollisionHeight + 20 ate z - 30 (alargando 30 para cada lado se nao achar), e poe o
         /// pawn no chao que o trace achou; depois o physWalking o mantem sobre a superficie. Aqui: o piso de Statics por
-        /// raio (de z + 8 ate z - 48, em cache por celula de 16) e o terreno do Unreal pela propria malha (SurfaceAt),
-        /// ficando o mais alto dos que estao na janela (PickFloor). Sem nenhum, o z do geodata.
+        /// raio (de z + 8 para baixo, primeiro ate z - 48 e, sem acerto, ate z - FarDown; em cache por celula de 16) e o
+        /// terreno do Unreal pela propria malha (SurfaceAt), ficando o mais alto (PickFloor). Sem nenhum, o z do geodata.
         /// </summary>
         static readonly Dictionary<(int, int, int), float> floorCache = new();
-        static readonly RaycastHit[] floorHits = new RaycastHit[32];
-
-        /// <summary>Janela do piso de Statics (BSP/StaticMesh) em volta do z do geodata (unidades L2).</summary>
-        public const float StaticsUp = 8, StaticsDown = 48;
+        static readonly RaycastHit[] floorHits = new RaycastHit[64];
 
         /// <summary>
-        /// Janela do terreno do Unreal: de z + 20 (o fundo do cilindro no inicio do trace do AdjustPawnLocation) ate
-        /// z - 84 (as duas primeiras voltas do trace: 30 + CollisionHeight ~24 + 30), que cobre o p99 das zonas medidas.
+        /// Quanto o piso de Statics (BSP/StaticMesh) e o terreno podem ficar acima do z do geodata: z + 8 (o raio das cidades,
+        /// validado em Giran) e z + 20 (o fundo do cilindro no inicio do trace do AdjustPawnLocation).
         /// </summary>
-        public const float TerrainUp = 20, TerrainDown = 84;
+        public const float StaticsUp = 8, TerrainUp = 20;
 
         /// <summary>
-        /// Regra do chao do desenho: entre o piso de Statics e o terreno que estiverem nas suas janelas em volta de z, o mais
-        /// alto (o primeiro que um trace de cima para baixo acha). Nenhum: o proprio z.
+        /// Primeiro trecho do raio de Statics (z - 48): cobre o piso das cidades (~30 abaixo do geodata) e quase todo o
+        /// resto; so sem acerto ai o raio continua ate z - FarDown.
+        /// </summary>
+        public const float StaticsNear = 48;
+
+        /// <summary>
+        /// Ate onde o chao pode ficar abaixo do z do geodata: o AdjustPawnLocation alarga o trace 30 para baixo a cada volta
+        /// sem acerto, ate 30 voltas (~900). Pega o geodata sobre coisas que o porte nao desenha (volumes de bloqueio, objetos
+        /// sem malha): na varredura do mapa (Docs/pawns_chao_varredura.md), 69 dos 70 pontos do servidor que sobravam acima
+        /// da janela curta (48 / 84) acham o chao desenhado a 27-472 abaixo.
+        /// </summary>
+        public const float FarDown = 900;
+
+        /// <summary>
+        /// Regra do chao do desenho: o mais alto entre o piso de Statics (ate z + 8) e o terreno (ate z + 20), desde que nao
+        /// mais que FarDown abaixo de z: e o primeiro que um trace de cima para baixo acha. Nenhum: o proprio z.
+        /// Divergencia do original, de proposito: o trace do original tambem alarga para cima (30 por volta); aqui nao, para
+        /// um pawn cujo piso nao foi desenhado nao subir para o telhado (o geodata quase nunca fica abaixo do chao: 0,02%).
         /// </summary>
         public static float PickFloor(float z, float? statics, float? terrain)
         {
             float? best = null;
-            if (statics.HasValue && statics.Value <= z + StaticsUp && statics.Value >= z - StaticsDown) best = statics;
-            if (terrain.HasValue && terrain.Value <= z + TerrainUp && terrain.Value >= z - TerrainDown && (!best.HasValue || terrain.Value > best.Value))
+            if (statics.HasValue && statics.Value <= z + StaticsUp && statics.Value >= z - FarDown) best = statics;
+            if (terrain.HasValue && terrain.Value <= z + TerrainUp && terrain.Value >= z - FarDown && (!best.HasValue || terrain.Value > best.Value))
                 best = terrain;
             return best ?? z;
+        }
+
+        /// <summary>Acerto em Statics mais perto da origem, entre os n primeiros de floorHits (float.MaxValue: nenhum).</summary>
+        static float NearestStatics(int n, Transform statics, out float y)
+        {
+            var best = float.MaxValue;
+            y = 0;
+            for (var i = 0; i < n; i++)
+            {
+                var h = floorHits[i];
+                if (h.distance >= best || !h.collider.transform.IsChildOf(statics)) continue;
+                best = h.distance;
+                y = h.point.y;
+            }
+            return best;
         }
 
         public static float VisualFloor(float x, float y, float z)
@@ -130,15 +158,14 @@ namespace L2Web.Render
                 if (!floorCache.TryGetValue(key, out var off))
                 {
                     var from = Coords.ToUnity(cx * 16 + 8, cy * 16 + 8, z + StaticsUp);
-                    var n = Physics.RaycastNonAlloc(new Ray(from, Vector3.down), floorHits, (StaticsUp + StaticsDown) * S, Physics.AllLayers, QueryTriggerInteraction.Ignore);
-                    var best = float.MaxValue;
-                    var bestY = 0f;
-                    for (var i = 0; i < n; i++)
+                    var n = Physics.RaycastNonAlloc(new Ray(from, Vector3.down), floorHits, (StaticsUp + StaticsNear) * S, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                    var best = NearestStatics(n, s.Statics, out var bestY);
+                    if (best == float.MaxValue)
                     {
-                        var h = floorHits[i];
-                        if (h.distance >= best || !h.collider.transform.IsChildOf(s.Statics)) continue;
-                        best = h.distance;
-                        bestY = h.point.y;
+                        // sem piso perto: o trace do original continua descendo (FarDown)
+                        var far = Coords.ToUnity(cx * 16 + 8, cy * 16 + 8, z - StaticsNear);
+                        n = Physics.RaycastNonAlloc(new Ray(far, Vector3.down), floorHits, (FarDown - StaticsNear) * S, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                        best = NearestStatics(n, s.Statics, out bestY);
                     }
                     off = best < float.MaxValue ? bestY / S - z : float.NaN;
                     if (floorCache.Count > 20000) floorCache.Clear();
@@ -148,6 +175,12 @@ namespace L2Web.Render
             }
             // terreno do Unreal so quando e ele que esta desenhado (sem ele o chao visivel e o proprio geodata)
             var terrain = ueMode ? UeTerrain.SurfaceAt(x, y) : null;
+            // geodata ainda desenhado acima do terreno (sem BSP nem StaticMeshes no tile, ver BuildChunk): o pawn fica nele
+            if (terrain.HasValue && z - terrain.Value >= GeoAboveUe && !hideRaised)
+            {
+                var t = Coords.MapTile(x, y);
+                if (!bspTiles.Contains($"{t.tx}_{t.ty}")) terrain = null;
+            }
             return PickFloor(z, statics, terrain);
         }
 
@@ -420,7 +453,9 @@ namespace L2Web.Render
 
         /// <summary>
         /// Altura do chao em (x, y) mais proxima de zRef: o pawn do cliente anda sobre a superficie (PHYS_Walking);
-        /// aqui a superficie e o geodata, escolhendo entre a camada baixa e a alta da celula. null se o pedaco nao esta carregado.
+        /// aqui a superficie e o geodata, com a camada da celula mais perto de zRef (NearestLayer). O pedaco so traz a camada
+        /// baixa e a alta; nas celulas multicamada, AllLayers (quando ligado) da todas. null se o pedaco nao esta carregado ou
+        /// se a celula tem varios andares e nenhuma camada conhecida esta perto de zRef (o chamador fica com o proprio z).
         /// </summary>
         public static float? GroundHeight(float x, float y, float zRef)
         {
@@ -430,9 +465,41 @@ namespace L2Web.Render
             var cx = Math.Min(Chunk - 1, Math.Max(0, Mathf.FloorToInt((x - o.x) / Cell)));
             var cy = Math.Min(Chunk - 1, Math.Max(0, Mathf.FloorToInt((y - o.y) / Cell)));
             var k = cy * Chunk + cx;
-            int lo = d.Height[k];
-            int hi = d.High[k];
-            return Math.Abs(hi - zRef) < Math.Abs(lo - zRef) ? hi : lo;
+            var multi = (d.Flags[k] & 0x10) != 0;
+            var all = multi ? AllLayers?.Invoke(x, y) : null;
+            return NearestLayer(d.Height[k], d.High[k], all, multi, zRef);
+        }
+
+        /// <summary>
+        /// Todas as camadas do geodata em (x, y), para as celulas multicamada (LocalAssets.GeoLayers, pedido 0051 da #0057;
+        /// ligado no App.cs). null = so a baixa e a alta do pedaco.
+        /// </summary>
+        public static Func<float, float, IReadOnlyList<float>> AllLayers;
+
+        /// <summary>
+        /// Celula de varios andares sem as camadas do meio: so aceita a baixa ou a alta se estiver a ate isto de zRef. Sem
+        /// esse limite, o pawn que anda num andar do meio (Cruma Tower, Tower of Insolence) pulava a cada passo para o andar
+        /// de cima ou o de baixo, a milhares de unidades (#0056: 2317 dos ~41 mil spawns do aCis estao nessas celulas).
+        /// </summary>
+        public const float MaxLayerJump = 128;
+
+        /// <summary>
+        /// Regra da camada: com todas as camadas (all), a mais perto de zRef. So com a baixa e a alta, a mais perto; numa
+        /// celula multicamada, so se estiver a ate MaxLayerJump de zRef, senao null.
+        /// </summary>
+        public static float? NearestLayer(int lo, int hi, IReadOnlyList<float> all, bool multi, float zRef)
+        {
+            if (all is { Count: > 0 })
+            {
+                var b = all[0];
+                for (var i = 1; i < all.Count; i++)
+                    if (Math.Abs(all[i] - zRef) < Math.Abs(b - zRef))
+                        b = all[i];
+                return b;
+            }
+            var best = Math.Abs(hi - zRef) < Math.Abs(lo - zRef) ? hi : lo;
+            if (multi && Math.Abs(best - zRef) > MaxLayerJump) return null;
+            return best;
         }
 
         static void RebuildAll()
