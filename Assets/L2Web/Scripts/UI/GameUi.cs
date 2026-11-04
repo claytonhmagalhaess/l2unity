@@ -144,6 +144,8 @@ namespace L2Web.UI
         public readonly BoardView Board;
         /// <summary>HelpHtmlWnd do xdat (EV_ShowHelp).</summary>
         public readonly HelpHtmlView Help;
+        /// <summary>TutorialViewerWnd (TutorialShowHtml 0xa0 / TutorialCloseHtml 0xa3, #0055).</summary>
+        public readonly TutorialViewerView Tutorial;
         /// <summary>UserPetitionWnd do xdat (EV_ShowUserPetitionWnd, SystemMenuWnd btnPetition).</summary>
         public readonly PetitionView Petition;
         public readonly UiWindow Shop;
@@ -440,6 +442,7 @@ namespace L2Web.UI
             });
             // ajuda e peticao do SystemMenuWnd (#0047)
             Help = new HelpHtmlView(Layer);
+            Tutorial = new TutorialViewerView(Layer, HtmlAct(), b => this.deps.Send(b));
             Petition = new PetitionView(Layer, Dialog, b => this.deps.Send(b), t => this.deps.Chat("sys", t, null));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>

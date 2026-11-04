@@ -86,14 +86,10 @@ namespace L2Web.UI
             var html = ReadL2Text(name);
             UiKit.Clear(help);
             if (html == null) return;
-            var act = new HtmlActions { Link = l => LoadHelp(l.Replace("\\", "/")) };
-            helpHtml = L2Html.Render(html, act, help);
-            // a coluna do L2Html nasce 0x0 (no NpcHtml o pai tem layout): aqui ocupa a largura do viewer (302)
+            var act = new HtmlActions { Link = l => LoadHelp(l.Replace("\\", "/")), File = l => LoadHelp(HelpHtmlView.FileName(l)) };
+            // o viewer do server_help.htm tem 302 de largura; o L2Html poe o documento em (0, 0) com a altura dele
+            helpHtml = L2Html.Render(html, act, help, 302);
             var body = helpHtml.Body;
-            body.anchorMin = body.anchorMax = body.pivot = new Vector2(0, 1);
-            body.anchoredPosition = Vector2.zero;
-            body.sizeDelta = new Vector2(302, 0);
-            body.gameObject.AddComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
             if (Array.IndexOf(Environment.GetCommandLineArgs(), "-l2partlog") >= 0)
             {
                 var texts = body.GetComponentsInChildren<Text>(true);

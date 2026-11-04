@@ -61,11 +61,22 @@ namespace L2Web.UI
         public void HideDeath() => RestartWnd.Hide();
 
         // ------------------------------------------------------------ janela de NPC
+        /// <summary>
+        /// Acoes do HTML do servidor (NConsoleWnd 0x1014cae0): bypass e link vao ao servidor; &lt;a msg&gt; pergunta no
+        /// DialogBox (systemmsg com o $s1); &lt;a cmd&gt; e um comando do chat; $var recusado mostra a systemmsg (204, 329...).
+        /// "Write" (RequestBBSWrite) ainda nao tem pacote: pedido 0034 da net.
+        /// </summary>
         HtmlActions HtmlAct() => new()
         {
             Bypass = c => deps.Send(UiPackets.BypassToServer(c)),
             Link = l => deps.Send(UiPackets.RequestLinkHtml(l)),
             Icon = IconUrl,
+            Confirm = (q, ok) => Dialog.Ask(EDialogType.OKCancel, q, "NpcHtml", (yes, _) =>
+            {
+                if (yes) ok();
+            }),
+            Command = c => OnChatSubmit?.Invoke(c, 0),
+            SystemMessage = id => deps.Chat("sys", GameData.SystemMessage(id, new List<string>()).Text, null),
         };
 
         /// <summary>
@@ -75,7 +86,7 @@ namespace L2Web.UI
         public void ShowHtml(string html, int npcObjectId = 0)
         {
             Npc.Clear();
-            var r = L2Html.Render(html, HtmlAct(), Npc.Body);
+            var r = L2Html.Render(html, HtmlAct(), Npc.Body, NpcHtmlWnd.ViewerWidth);
             var npcName = npcObjectId != 0 ? world?.Get(npcObjectId)?.Name : null;
             Npc.SetTitle(NpcHtmlWnd.TitleFor(r.Title, npcName, GameData.SysString(NpcHtmlWnd.TitleSysString, "")));
             Npc.Show();

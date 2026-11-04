@@ -1,8 +1,15 @@
-// Renderizador do HTML de NPC do Lineage II (NpcHtmlMessage) para uGUI (ui/html.ts). O HTML do servidor e analisado
-// por um parser tolerante proprio (sem scripts) e reconstruido so com as tags conhecidas do cliente: texto (rich text
-// do uGUI: cor, negrito, italico), quebras, paragrafos, centro, tabelas (linhas horizontais de celulas), links e botoes
-// (bypass/link), campos edit/multiedit/combobox (variaveis $nome nas acoes) e imagens (icon.* ou espaco/linha).
-// O texto do servidor nunca vira tag: '<' do texto e trocado por '‹'.
+// Visualizador do HTML do servidor (NpcHtmlMessage, ShowBoard, TutorialShowHtml, help) em uGUI, como o NCHtmlViewer do
+// cliente (REA em Docs/html_suporte.md): o HtmlDoc le o HTML, o HtmlLayout poe cada unidade em pixels na largura do
+// viewer e aqui cada caixa vira um elemento uGUI em posicao absoluta, dentro de um container com a altura do documento (o
+// ScrollRect do HtmlCtrl rola esse container, 3 unidades por entalhe da roda).
+//   Texturas (img, botao): 1:1 a partir do canto de cima, sem esticar, repetidas ou cortadas no tamanho (nw:122560).
+//     icon.* do Icon.utx (/icons/), o resto (L2UI.*, L2UI_CH3.*, sek.*) do textures.json.
+//   Botao (NCButton::DrawButton 0x100034b0): fore normal, back pressionado, "<fore>_over" no realce (ou fore); textura que
+//     nao existe = Default.BlackTexture; value centrado em 0xFFE6DCBE.
+//   Acoes (NConsoleWnd 0x1014cae0 / NCConsole 0x1013d1e0): "bypass" em tokens (-h sai, $var vira o texto do controle) ->
+//     RequestBypassToServer; "link x" -> RequestLinkHtml; "write ..." -> RequestBBSWrite. &lt;a link&gt; carrega o HTML local,
+//     &lt;a cmd&gt; executa o comando do chat, &lt;a msg&gt; pergunta antes (systemmsg com o $s1).
+// O texto do servidor nunca vira tag do rich text: '<' do texto e trocado por '‹'.
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,694 +22,644 @@ namespace L2Web.UI
     /// <summary>Acoes dos links/botoes do HTML.</summary>
     public sealed class HtmlActions
     {
-        /// <summary>"bypass -h cmd" ou "bypass cmd" -> RequestBypassToServer(cmd).</summary>
+        /// <summary>"bypass [-h] cmd ..." -> RequestBypassToServer(cmd ...).</summary>
         public Action<string> Bypass = _ => { };
         /// <summary>"link pasta/arquivo.htm" -> RequestLinkHtml.</summary>
         public Action<string> Link = _ => { };
-        /// <summary>URL de um icone do cliente (icon.xxx), ou null.</summary>
-        public Func<string, string> Icon = _ => null;
+        /// <summary>"Write ..." -> RequestBBSWrite (o resto da acao, com os $var trocados). Nulo = nada.</summary>
+        public Action<string> Write;
+        /// <summary>&lt;a link="arquivo"&gt;: HTML local. Nulo = le de ..\l2text e redesenha no mesmo viewer.</summary>
+        public Action<string> File;
+        /// <summary>&lt;a cmd="..."&gt;: comando do chat (NCChatWnd::ExecuteCommand). Nulo = nada.</summary>
+        public Action<string> Command;
+        /// <summary>URL de um icone do cliente (o nome depois de "icon."), ou null.</summary>
+        public Func<string, string> Icon = GameUi.IconUrl;
+        /// <summary>&lt;a msg="id;texto"&gt;: pergunta antes de executar (texto da pergunta, executar). Nulo = executa direto.</summary>
+        public Action<string, Action> Confirm;
+        /// <summary>Systemmsg de um $var recusado (204, 329...). Nulo = nada.</summary>
+        public Action<int> SystemMessage;
+        /// <summary>NCBBSHtmlViewer: limites do GetData do board e roda de 45 px.</summary>
+        public bool Board;
+        /// <summary>Nomes das entidades &amp;$N; &amp;@N; &amp;#N;.</summary>
+        public IHtmlNames Names = new GameNames();
     }
 
-    /// <summary>Resultado: titulo (&lt;title&gt;) e o container com o conteudo.</summary>
+    /// <summary>Nomes das entidades pelo GameData: sysstring, NPC e item; castelo nao tem tabela no porte ("-").</summary>
+    public sealed class GameNames : IHtmlNames
+    {
+        public string Name(char prefix, int n)
+        {
+            try
+            {
+                switch (prefix)
+                {
+                    case '$': return GameData.SysString(n, null);
+                    case '@': return GameData.NpcName(n);
+                    case '#': return GameData.ItemName(n);
+                    default: return null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+    }
+
+    /// <summary>Resultado: titulo (&lt;title&gt;), o container com o conteudo e o layout.</summary>
     public sealed class RenderedHtml
     {
         public string Title;
         public RectTransform Body;
-    }
-
-    /// <summary>No da arvore do HTML (elemento ou texto).</summary>
-    public sealed class HtmlNode
-    {
-        /// <summary>Tag em minusculas; null = texto.</summary>
-        public string Tag;
-        public string Text;
-        public Dictionary<string, string> Attrs = new();
-        public List<HtmlNode> Children = new();
-        public HtmlNode Parent;
-
-        public string Attr(string k) => Attrs.TryGetValue(k, out var v) ? v : null;
+        public HtmlLayoutResult Layout;
     }
 
     public static class L2Html
     {
-        static readonly Dictionary<string, string> FontColors = new() { ["level"] = "#e8c56e" };
-        static readonly HashSet<string> Void = new() { "br", "br1", "img", "edit", "multiedit", "combobox", "button", "input", "hr", "meta", "link" };
-        static readonly HashSet<string> Raw = new() { "script", "style", "title" };
-        const int FontSize = 11;
-        const float LineH = 16;
-        /// <summary>NCHtmlTagInfo::LoadHtml 0x10: o objeto &lt;br&gt; mede 1 x 9 (altura de uma linha vazia).</summary>
-        public const float BrHeight = 9;
+        /// <summary>Tamanho da fonte do viewer.</summary>
+        public const int FontSize = 11;
+        /// <summary>Altura do 'A' da SmallFont-r ([V]: leitura fraca do .gly, spec 02); a linha tem + 6.</summary>
+        public const float GlyphH = 13;
+        /// <summary>Altura de uma linha de texto (GetTextSize + 6).</summary>
+        public const float LineH = GlyphH + HtmlLayout.Gap;
+        /// <summary>Largura usada quando o viewer ainda nao tem tamanho.</summary>
+        public const float DefaultWidth = 280;
+        /// <summary>&lt;br&gt;: unidade 1 x 9.</summary>
+        public const float BrHeight = HtmlLayout.BrHeight;
+        /// <summary>Unidade de rolagem: altura do 'A' no viewer, 15 no BBS; a roda anda 3 unidades (NCScrollWnd, nw:63319).</summary>
+        public const float ScrollUnit = GlyphH, BoardScrollUnit = 15;
+        /// <summary>Texto do botao: 0xFFE6DCBE.</summary>
+        public static readonly Color32 ButtonText = new(0xe6, 0xdc, 0xbe, 0xff);
 
-        // ------------------------------------------------------------ parser
-        /// <summary>Analisa o HTML em arvore (tolerante: tags sem fechar, atributos sem aspas, entidades).</summary>
-        public static HtmlNode Parse(string html)
-        {
-            var root = new HtmlNode { Tag = "#root" };
-            var cur = root;
-            var i = 0;
-            var n = html?.Length ?? 0;
-            var text = new StringBuilder();
-            void FlushText()
-            {
-                if (text.Length == 0) return;
-                cur.Children.Add(new HtmlNode { Text = Decode(text.ToString()), Parent = cur });
-                text.Clear();
-            }
-            while (i < n)
-            {
-                var ch = html[i];
-                if (ch != '<')
-                {
-                    text.Append(ch);
-                    i++;
-                    continue;
-                }
-                if (string.CompareOrdinal(html, i, "<!--", 0, 4) == 0)
-                {
-                    FlushText();
-                    var end = html.IndexOf("-->", i + 4, StringComparison.Ordinal);
-                    i = end < 0 ? n : end + 3;
-                    continue;
-                }
-                var close = i + 1 < n && html[i + 1] == '/';
-                var j = i + (close ? 2 : 1);
-                if (j >= n || !char.IsLetter(html[j]))
-                {
-                    if (j < n && html[j] == '!')
-                    {
-                        // <!doctype ...>
-                        FlushText();
-                        var e = html.IndexOf('>', j);
-                        i = e < 0 ? n : e + 1;
-                        continue;
-                    }
-                    text.Append(ch);
-                    i++;
-                    continue;
-                }
-                FlushText();
-                var k = j;
-                while (k < n && (char.IsLetterOrDigit(html[k]) || html[k] == '_' || html[k] == '-' || html[k] == ':')) k++;
-                var tag = html.Substring(j, k - j).ToLowerInvariant();
-                var attrs = new Dictionary<string, string>();
-                // atributos
-                while (k < n && html[k] != '>')
-                {
-                    if (char.IsWhiteSpace(html[k]) || html[k] == '/')
-                    {
-                        k++;
-                        continue;
-                    }
-                    var a0 = k;
-                    while (k < n && !char.IsWhiteSpace(html[k]) && html[k] != '=' && html[k] != '>') k++;
-                    var name = html.Substring(a0, k - a0).ToLowerInvariant();
-                    while (k < n && char.IsWhiteSpace(html[k])) k++;
-                    string val = "";
-                    if (k < n && html[k] == '=')
-                    {
-                        k++;
-                        while (k < n && char.IsWhiteSpace(html[k])) k++;
-                        if (k < n && (html[k] == '"' || html[k] == '\''))
-                        {
-                            var q = html[k];
-                            var e = html.IndexOf(q, k + 1);
-                            if (e < 0) e = n;
-                            val = html.Substring(k + 1, e - k - 1);
-                            k = Math.Min(n, e + 1);
-                        }
-                        else
-                        {
-                            var v0 = k;
-                            while (k < n && !char.IsWhiteSpace(html[k]) && html[k] != '>') k++;
-                            val = html.Substring(v0, k - v0);
-                        }
-                    }
-                    if (name.Length > 0 && !attrs.ContainsKey(name)) attrs[name] = Decode(val);
-                }
-                i = Math.Min(n, k + 1);
-                if (close)
-                {
-                    // fecha o elemento aberto mais proximo com essa tag (se houver)
-                    for (var p = cur; p != null && p != root; p = p.Parent)
-                    {
-                        if (p.Tag != tag) continue;
-                        cur = p.Parent;
-                        break;
-                    }
-                    continue;
-                }
-                var node = new HtmlNode { Tag = tag, Attrs = attrs, Parent = cur };
-                // <p>/<tr>/<td> implicitos: abrir outro fecha o anterior
-                if (tag == "p") CloseOpen(ref cur, root, "p", "td", "table");
-                else if (tag == "tr") CloseOpen(ref cur, root, "tr", "table", null);
-                else if (tag == "td" || tag == "th") CloseOpen(ref cur, root, "td", "tr", "table", "th");
-                node.Parent = cur;
-                cur.Children.Add(node);
-                if (Raw.Contains(tag))
-                {
-                    var e = html.IndexOf("</" + tag, i, StringComparison.OrdinalIgnoreCase);
-                    if (e < 0) e = n;
-                    node.Children.Add(new HtmlNode { Text = Decode(html.Substring(i, e - i)), Parent = node });
-                    var gt = html.IndexOf('>', e);
-                    i = gt < 0 ? n : gt + 1;
-                    continue;
-                }
-                if (!Void.Contains(tag)) cur = node;
-            }
-            FlushText();
-            return root;
-        }
+        /// <summary>Analisa o HTML em arvore (HtmlDoc.Parse).</summary>
+        public static HtmlNode Parse(string html) => HtmlDoc.Parse(html);
 
-        // fecha um `tag` aberto, parando nos limites (stop1/stop2/stop3)
-        static void CloseOpen(ref HtmlNode cur, HtmlNode root, string tag, string stop1, string stop2, string alt = null)
+        // ------------------------------------------------------------ medida do texto
+        /// <summary>Medida pela fonte do uGUI (TextGenerator com a fonte e o tamanho do viewer).</summary>
+        public sealed class UiMeasure : IHtmlMeasure
         {
-            for (var p = cur; p != null && p != root; p = p.Parent)
+            readonly TextGenerator gen = new();
+            TextGenerationSettings settings;
+            readonly Dictionary<string, float> cache = new();
+
+            public UiMeasure()
             {
-                if (p.Tag == stop1 || p.Tag == stop2) return;
-                if (p.Tag == tag || (alt != null && p.Tag == alt))
+                settings = new TextGenerationSettings
                 {
-                    cur = p.Parent;
-                    return;
+                    font = UiRoot.Font, fontSize = FontSize, fontStyle = FontStyle.Normal, richText = false, scaleFactor = 1, lineSpacing = 1,
+                    horizontalOverflow = HorizontalWrapMode.Overflow, verticalOverflow = VerticalWrapMode.Overflow, textAnchor = TextAnchor.UpperLeft,
+                    generationExtents = new Vector2(10000, 100), pivot = Vector2.zero, color = Color.white, updateBounds = false,
+                };
+            }
+
+            public float GlyphHeight => GlyphH;
+
+            /// <summary>
+            /// scaleFactor do Canvas onde o texto e desenhado: o Text rasteriza a fonte em tamanho x escala e divide de volta,
+            /// e a largura muda um pouco com o arredondamento (o sublinhado sobrava no gatekeeper com o dpi do Windows).
+            /// </summary>
+            public float Scale
+            {
+                get => settings.scaleFactor;
+                set
+                {
+                    var v = value > 0 ? value : 1;
+                    if (Mathf.Approximately(v, settings.scaleFactor)) return;
+                    settings.scaleFactor = v;
+                    cache.Clear();
                 }
+            }
+
+            public float Width(string text)
+            {
+                if (string.IsNullOrEmpty(text)) return 0;
+                if (cache.TryGetValue(text, out var w)) return w;
+                w = gen.GetPreferredWidth(text, settings) / settings.scaleFactor;
+                cache[text] = w;
+                return w;
             }
         }
 
-        static readonly Regex Entity = new(@"&(#x[0-9a-f]+|#[0-9]+|[a-z]+);?", RegexOptions.IgnoreCase);
+        static UiMeasure measure;
 
-        static string Decode(string s)
-        {
-            if (s.IndexOf('&') < 0) return s;
-            return Entity.Replace(s, m =>
-            {
-                var e = m.Groups[1].Value;
-                try
-                {
-                    if (e.StartsWith("#x", StringComparison.OrdinalIgnoreCase)) return char.ConvertFromUtf32(Convert.ToInt32(e.Substring(2), 16));
-                    if (e.StartsWith("#")) return char.ConvertFromUtf32(int.Parse(e.Substring(1)));
-                }
-                catch
-                {
-                    return m.Value;
-                }
-                switch (e.ToLowerInvariant())
-                {
-                    case "nbsp": return " ";
-                    case "amp": return "&";
-                    case "lt": return "<";
-                    case "gt": return ">";
-                    case "quot": return "\"";
-                    case "apos": return "'";
-                    case "copy": return "©";
-                    default: return m.Value;
-                }
-            });
-        }
+        /// <summary>Medida compartilhada (a fonte e uma so).</summary>
+        public static IHtmlMeasure Measure => measure ??= new UiMeasure();
 
-        // ------------------------------------------------------------ atributos
-        static string Color(string v)
-        {
-            if (string.IsNullOrEmpty(v)) return null;
-            var k = v.Trim().ToLowerInvariant();
-            if (FontColors.TryGetValue(k, out var f)) return f;
-            if (Regex.IsMatch(k, "^[0-9a-f]{6}$")) return "#" + k;
-            if (Regex.IsMatch(k, "^#[0-9a-f]{3,8}$")) return k;
-            if (Regex.IsMatch(k, "^[a-z]+$") && ColorUtility.TryParseHtmlString(k, out var c)) return "#" + ColorUtility.ToHtmlStringRGB(c).ToLowerInvariant();
-            return null;
-        }
+        // ------------------------------------------------------------ texturas
+        static readonly Regex IconRe = new(@"^icon\.(.+)$", RegexOptions.IgnoreCase);
 
-        static float? Size(string v)
-        {
-            if (string.IsNullOrEmpty(v)) return null;
-            var m = Regex.Match(v.Trim(), @"^-?\d+");
-            if (!m.Success) return null;
-            var n = int.Parse(m.Value);
-            return n > 0 ? Math.Min(n, 1000) : (float?)null;
-        }
-
-        /// <summary>Troca $var pelos valores dos campos edit/combobox da janela.</summary>
-        static string Substitute(string action, Dictionary<string, Func<string>> vars) =>
-            Regex.Replace(action, @"\$([A-Za-z0-9_]+)", m => vars.TryGetValue(m.Groups[1].Value, out var f) ? f() : m.Value);
-
-        static readonly Regex BypassRe = new(@"^bypass\s+(?:-h\s+)?(.*)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        static readonly Regex LinkRe = new(@"^link\s+(.*)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        static void RunAction(string action, Dictionary<string, Func<string>> vars, HtmlActions act)
-        {
-            var a = Substitute(action.Trim(), vars);
-            var m = BypassRe.Match(a);
-            if (m.Success)
-            {
-                act.Bypass?.Invoke(m.Groups[1].Value.Trim());
-                return;
-            }
-            var l = LinkRe.Match(a);
-            if (l.Success) act.Link?.Invoke(l.Groups[1].Value.Trim());
-        }
-
-        // ------------------------------------------------------------ renderizacao
-        enum Kind
-        {
-            Text,
-            Link,
-            Button,
-            Edit,
-            Combo,
-            Img,
-        }
-
-        sealed class Item
-        {
-            public Kind Kind;
-            public string Rich;
-            public string Action;
-            public string Var;
-            public bool Multi;
-            public string[] Options;
-            public string Url;
-            public float? W, H;
-            /// <summary>Texturas do botao (fore = normal, back = pressionado).</summary>
-            public string Fore, Back;
-        }
-
-        sealed class Ctx
-        {
-            public Transform Container;
-            public TextAnchor Align = TextAnchor.UpperLeft;
-            public List<Item> Line = new();
-            public Dictionary<string, Func<string>> Vars;
-            public HtmlActions Act;
-            public string Color;
-            public bool Bold, Italic;
-            public bool LastWasBreak = true;
-        }
+        /// <summary>A referencia e um icone do Icon.utx ("icon.xxx").</summary>
+        public static bool IsIcon(string reference) => !string.IsNullOrEmpty(reference) && IconRe.IsMatch(reference.Trim());
 
         /// <summary>
-        /// Renderiza o HTML dentro de `parent` (um container vertical, ex.: UiWindow.Body). Devolve o titulo e o
-        /// container criado (div.l2html).
+        /// URL de uma textura citada pelo HTML: "icon.skill1040" -> o icone do Icon.utx; "L2UI.SquareGray",
+        /// "L2UI_CH3.BigButton3", "sek.cbui94" -> o textures.json da interface. Null se o porte nao tem.
         /// </summary>
-        public static RenderedHtml Render(string html, HtmlActions act, Transform parent)
+        public static string TexUrl(string reference, HtmlActions act = null)
         {
-            var doc = Parse(html ?? "");
-            var title = Find(doc, "title");
-            var root = UiKit.Column(parent, 3, "l2html");
-            var ctx = new Ctx { Container = root, Vars = new Dictionary<string, Func<string>>(), Act = act ?? new HtmlActions() };
-            Walk(doc, ctx);
-            Flush(ctx, false);
-            return new RenderedHtml { Title = title != null ? InnerText(title).Trim() : "", Body = root };
+            if (string.IsNullOrEmpty(reference)) return null;
+            var m = IconRe.Match(reference.Trim());
+            if (m.Success) return (act?.Icon ?? GameUi.IconUrl)(m.Groups[1].Value);
+            return L2WndUtil.Tex(reference.Trim())?.Url;
         }
 
-        static HtmlNode Find(HtmlNode n, string tag)
+        /// <summary>Tamanho da textura em texels (os icones do Icon.utx sao 32 x 32); 0 x 0 se nao existe.</summary>
+        public static Vector2 TexSize(string reference)
         {
-            if (n.Tag == tag) return n;
-            foreach (var c in n.Children)
-            {
-                var f = Find(c, tag);
-                if (f != null) return f;
-            }
-            return null;
-        }
-
-        static string InnerText(HtmlNode n)
-        {
-            if (n.Tag == null) return n.Text;
-            var sb = new StringBuilder();
-            foreach (var c in n.Children) sb.Append(InnerText(c));
-            return sb.ToString();
-        }
-
-        static readonly Regex Ws = new(@"\s+");
-
-        static string Escape(string s) => s.Replace('<', '‹');
-
-        static string Styled(Ctx c, string s)
-        {
-            if (c.Bold) s = "<b>" + s + "</b>";
-            if (c.Italic) s = "<i>" + s + "</i>";
-            if (c.Color != null) s = "<color=" + c.Color + ">" + s + "</color>";
-            return s;
-        }
-
-        static void AddText(Ctx c, string raw)
-        {
-            var t = Ws.Replace(raw, " ").Replace(' ', ' ');
-            if (t.Trim().Length == 0 && t != " ") return;
-            if (c.Line.Count == 0) t = t.TrimStart();
-            if (t.Length == 0) return;
-            var s = Styled(c, Escape(t));
-            if (c.Line.Count > 0 && c.Line[^1].Kind == Kind.Text) c.Line[^1].Rich += s;
-            else c.Line.Add(new Item { Kind = Kind.Text, Rich = s });
-        }
-
-        static void Walk(HtmlNode src, Ctx c)
-        {
-            foreach (var n in src.Children)
-            {
-                if (n.Tag == null)
-                {
-                    AddText(c, n.Text);
-                    continue;
-                }
-                switch (n.Tag)
-                {
-                    case "head":
-                        // <HEAD> sem </HEAD> (server_help.htm): o <BODY> fica dentro dele; como no navegador, o body vale
-                        foreach (var hc in n.Children)
-                            if (hc.Tag == "body")
-                                Walk(hc, c);
-                        continue;
-                    case "title":
-                    case "script":
-                    case "style":
-                        continue;
-                    case "html":
-                    case "body":
-                        Walk(n, c);
-                        continue;
-                    case "br":
-                        Flush(c, BrHeight);
-                        continue;
-                    case "br1":
-                        // NCHtmlTagInfo::LoadHtml 0x35: objeto 1 x 0 com quebra de linha (linha vazia nao ocupa altura)
-                        Flush(c, 0);
-                        continue;
-                    case "p":
-                    case "div":
-                    {
-                        Flush(c, false);
-                        UiKit.Space(c.Container, 4);
-                        var al = c.Align;
-                        var a = (n.Attr("align") ?? "").ToLowerInvariant();
-                        if (a == "center") c.Align = TextAnchor.UpperCenter;
-                        else if (a == "right") c.Align = TextAnchor.UpperRight;
-                        Walk(n, c);
-                        Flush(c, false);
-                        c.Align = al;
-                        UiKit.Space(c.Container, 4);
-                        continue;
-                    }
-                    case "center":
-                    {
-                        Flush(c, false);
-                        var al = c.Align;
-                        c.Align = TextAnchor.UpperCenter;
-                        Walk(n, c);
-                        Flush(c, false);
-                        c.Align = al;
-                        continue;
-                    }
-                    case "font":
-                    {
-                        var old = c.Color;
-                        c.Color = Color(n.Attr("color")) ?? c.Color;
-                        Walk(n, c);
-                        c.Color = old;
-                        continue;
-                    }
-                    case "b":
-                    case "i":
-                    case "u":
-                    {
-                        bool ob = c.Bold, oi = c.Italic;
-                        if (n.Tag == "b") c.Bold = true;
-                        if (n.Tag == "i") c.Italic = true;
-                        Walk(n, c);
-                        c.Bold = ob;
-                        c.Italic = oi;
-                        continue;
-                    }
-                    case "table":
-                        Flush(c, false);
-                        Table(n, c);
-                        continue;
-                    case "a":
-                    {
-                        var sub = new Ctx { Container = c.Container, Vars = c.Vars, Act = c.Act, Color = null, Bold = c.Bold, Italic = c.Italic };
-                        Walk(n, sub);
-                        var sb = new StringBuilder();
-                        foreach (var it in sub.Line)
-                            if (it.Kind == Kind.Text) sb.Append(it.Rich);
-                        var label = sb.ToString();
-                        if (c.Line.Count == 0) label = label.TrimStart();
-                        c.Line.Add(new Item { Kind = Kind.Link, Rich = label, Action = n.Attr("action") ?? "" });
-                        continue;
-                    }
-                    case "button":
-                        // NCHtmlTagInfo::LoadHtml 0x31: value, width, height, back (padrao Default.BlackTexture), fore (padrao
-                        // Default.WhiteTexture), action; o objeto ocupa height + 6 na linha
-                        c.Line.Add(new Item { Kind = Kind.Button, Rich = n.Attr("value") ?? "", Action = n.Attr("action") ?? "", W = Size(n.Attr("width")), H = Size(n.Attr("height")), Fore = n.Attr("fore"), Back = n.Attr("back") });
-                        continue;
-                    case "edit":
-                    case "multiedit":
-                        c.Line.Add(new Item { Kind = Kind.Edit, Var = n.Attr("var"), Multi = n.Tag == "multiedit", W = Size(n.Attr("width")), H = Size(n.Attr("height")) });
-                        continue;
-                    case "combobox":
-                    {
-                        var opts = new List<string>();
-                        foreach (var o in (n.Attr("list") ?? "").Split(';'))
-                            if (o.Length > 0) opts.Add(o);
-                        c.Line.Add(new Item { Kind = Kind.Combo, Var = n.Attr("var"), Options = opts.ToArray(), W = Size(n.Attr("width")) });
-                        continue;
-                    }
-                    case "img":
-                    {
-                        var isrc = n.Attr("src") ?? "";
-                        var m = Regex.Match(isrc, @"^icon\.(.+)$", RegexOptions.IgnoreCase);
-                        var url = m.Success ? c.Act.Icon?.Invoke(m.Groups[1].Value) : null;
-                        c.Line.Add(new Item { Kind = Kind.Img, Url = url, W = Size(n.Attr("width")), H = Size(n.Attr("height")) });
-                        continue;
-                    }
-                    default:
-                        Walk(n, c);
-                        continue;
-                }
-            }
-        }
-
-        static void Table(HtmlNode t, Ctx c)
-        {
-            var table = UiKit.Column(c.Container, 0, "table");
-            var w = Size(t.Attr("width"));
-            if (w != null) UiKit.Layout(table, w.Value, -1, 0);
-            var g = table.GetComponent<VerticalLayoutGroup>();
-            g.childForceExpandWidth = true;
-            var center = (t.Attr("align") ?? "").ToLowerInvariant() == "center" || c.Align == TextAnchor.UpperCenter;
-            RectTransform holder = table;
-            if (w != null)
-            {
-                // largura fixa: o pai alinha (margin: 0 auto quando centralizada)
-                var row = UiKit.Row(c.Container, 0, center ? TextAnchor.UpperCenter : TextAnchor.UpperLeft, "tablewrap");
-                table.SetParent(row, false);
-                holder = row;
-            }
-            foreach (var tr in Rows(t))
-            {
-                var row = UiKit.Row(table, 0, TextAnchor.UpperLeft, "tr");
-                row.GetComponent<HorizontalLayoutGroup>().childForceExpandWidth = false;
-                foreach (var td in tr.Children)
-                {
-                    if (td.Tag != "td" && td.Tag != "th") continue;
-                    var cell = UiKit.Column(row, 0, "td");
-                    cell.GetComponent<VerticalLayoutGroup>().padding = new RectOffset(3, 3, 1, 1);
-                    var cw = Size(td.Attr("width"));
-                    if (cw != null) UiKit.Layout(cell, cw.Value, -1, 0, cw.Value);
-                    else UiKit.Layout(cell, -1, -1, 1);
-                    var al = (td.Attr("align") ?? "").ToLowerInvariant();
-                    var sub = new Ctx
-                    {
-                        Container = cell, Vars = c.Vars, Act = c.Act, Color = c.Color, Bold = c.Bold || td.Tag == "th", Italic = c.Italic,
-                        Align = al == "center" ? TextAnchor.UpperCenter : al == "right" ? TextAnchor.UpperRight : al == "left" ? TextAnchor.UpperLeft : c.Align,
-                    };
-                    Walk(td, sub);
-                    Flush(sub, false);
-                    var va = (td.Attr("valign") ?? "").ToLowerInvariant();
-                    if (va == "middle") cell.GetComponent<VerticalLayoutGroup>().childAlignment = TextAnchor.MiddleLeft;
-                }
-            }
-            _ = holder;
-        }
-
-        static IEnumerable<HtmlNode> Rows(HtmlNode t)
-        {
-            foreach (var n in t.Children)
-            {
-                if (n.Tag == "tr") yield return n;
-                else if (n.Tag == "tbody" || n.Tag == "thead" || n.Tag == "tfoot")
-                    foreach (var r in Rows(n))
-                        yield return r;
-            }
-        }
-
-        static TextAnchor RowAlign(TextAnchor a) => a == TextAnchor.UpperCenter ? TextAnchor.MiddleCenter : a == TextAnchor.UpperRight ? TextAnchor.MiddleRight : TextAnchor.MiddleLeft;
-
-        static Text NewText(Transform parent, string rich, TextAnchor align)
-        {
-            var t = UiKit.Text(parent, rich, FontSize, UiKit.TextColor, FontStyle.Normal, align);
-            t.lineSpacing = 1.3f;
-            UiKit.Layout(t, -1, -1, -1, -1, LineH);
-            return t;
-        }
-
-        // fecha a linha atual. br = veio de um <br> (linha vazia vira um espaco de uma linha)
-        static void Flush(Ctx c, bool br) => Flush(c, br ? BrHeight : -1);
-
-        // fecha a linha atual; emptyH >= 0 = altura que uma linha vazia ocupa (br = 9, br1 = 0), < 0 = nada
-        static void Flush(Ctx c, float emptyH)
-        {
-            var line = c.Line;
-            // espacos no fim da linha
-            if (line.Count > 0 && line[^1].Kind == Kind.Text)
-            {
-                line[^1].Rich = line[^1].Rich.TrimEnd();
-                if (line[^1].Rich.Length == 0) line.RemoveAt(line.Count - 1);
-            }
-            if (line.Count == 0)
-            {
-                if (emptyH > 0) UiKit.Space(c.Container, emptyH);
-                return;
-            }
-            c.Line = new List<Item>();
-            var onlyText = line.TrueForAll(i => i.Kind == Kind.Text);
-            if (onlyText)
-            {
-                var sb = new StringBuilder();
-                foreach (var i in line) sb.Append(i.Rich);
-                NewText(c.Container, sb.ToString(), c.Align);
-                return;
-            }
-            if (line.Count == 1 && line[0].Kind == Kind.Link)
-            {
-                // link sozinho na linha: ocupa a largura e quebra como texto
-                LinkItem(c.Container, line[0], c, c.Align, true);
-                return;
-            }
-            var row = UiKit.Row(c.Container, 0, RowAlign(c.Align), "line");
-            UiKit.Layout(row, -1, -1, -1, -1, LineH);
-            foreach (var it in line)
-            {
-                switch (it.Kind)
-                {
-                    case Kind.Text:
-                    {
-                        var t = NewText(row, it.Rich, TextAnchor.MiddleLeft);
-                        t.horizontalOverflow = HorizontalWrapMode.Overflow;
-                        break;
-                    }
-                    case Kind.Link:
-                        LinkItem(row, it, c, TextAnchor.MiddleLeft, false);
-                        break;
-                    case Kind.Button:
-                    {
-                        var action = it.Action;
-                        var b = UiKit.Button(row, it.Rich, () => RunAction(action, c.Vars, c.Act), 0, Mathf.Max(21, it.H ?? 21));
-                        if (it.W != null)
-                        {
-                            var rt = (RectTransform)b.transform;
-                            var w = Mathf.Max(it.W.Value, rt.sizeDelta.x);
-                            rt.sizeDelta = new Vector2(w, rt.sizeDelta.y);
-                            UiKit.Layout(rt, w, -1, -1, w);
-                            var (normal, pushed, over) = ButtonSkin(it.Fore, it.Back);
-                            L2WndUtil.SkinButton(b, normal, pushed, over, w, rt.sizeDelta.y, true);
-                        }
-                        // margin: 2px
-                        var le = ((RectTransform)b.transform).GetComponent<LayoutElement>();
-                        UiKit.Space(row, 4, 4);
-                        _ = le;
-                        break;
-                    }
-                    case Kind.Edit:
-                    {
-                        var f = UiKit.Input(row, "", it.W ?? 120, it.Multi ? Mathf.Max(18, it.H ?? 40) : 18);
-                        if (it.Multi)
-                        {
-                            f.lineType = InputField.LineType.MultiLineNewline;
-                            f.textComponent.alignment = TextAnchor.UpperLeft;
-                            f.textComponent.horizontalOverflow = HorizontalWrapMode.Wrap;
-                        }
-                        if (!string.IsNullOrEmpty(it.Var)) c.Vars[it.Var] = () => f ? f.text : "";
-                        UiKit.Space(row, 4, 4);
-                        break;
-                    }
-                    case Kind.Combo:
-                    {
-                        // select: botao que alterna entre as opcoes
-                        var opts = it.Options;
-                        var idx = 0;
-                        UiTexButton b = null;
-                        b = UiKit.Button(row, opts.Length > 0 ? opts[0] + " ▼" : "", () =>
-                        {
-                            if (opts.Length == 0) return;
-                            idx = (idx + 1) % opts.Length;
-                            b.Label.text = opts[idx] + " ▼";
-                        }, it.W ?? 0);
-                        if (!string.IsNullOrEmpty(it.Var)) c.Vars[it.Var] = () => opts.Length > 0 ? opts[idx] : "";
-                        UiKit.Space(row, 4, 4);
-                        break;
-                    }
-                    case Kind.Img:
-                        ImgItem(row, it);
-                        break;
-                }
-            }
+            if (IsIcon(reference)) return new Vector2(32, 32);
+            var t = string.IsNullOrEmpty(reference) ? null : L2WndUtil.Tex(reference.Trim());
+            return t != null ? new Vector2(t.W, t.H) : Vector2.zero;
         }
 
         /// <summary>
-        /// Texturas do botao do HTML (NCHtmlButton): `fore` normal e `back` pressionado, esticadas ao width x height. Sem
-        /// `fore` conhecido pelo cliente (ex.: sek.cbui94 dos servidores privados) fica o btn1 generico [I].
+        /// uvRect do desenho 1:1 de uma textura de `tex` texels numa caixa w x h, a partir do canto de cima (UV em texels,
+        /// sem esticar; maior que a textura = repete).
+        /// </summary>
+        public static Rect Uv1To1(Vector2 tex, float w, float h)
+        {
+            if (tex.x <= 0 || tex.y <= 0) return new Rect(0, 0, 1, 1);
+            return new Rect(0, 1 - h / tex.y, w / tex.x, h / tex.y);
+        }
+
+        /// <summary>
+        /// Texturas do botao (NCButton::Initialize(fore, back, "", "")): normal = fore, pressionado = back, realce =
+        /// "&lt;fore&gt;_over" se existir (senao fore); o que nao existe vira Default.BlackTexture.
         /// </summary>
         public static (string normal, string pushed, string over) ButtonSkin(string fore, string back)
         {
-            if (!string.IsNullOrEmpty(fore) && L2WndUtil.Tex(fore) != null)
-                return (fore, !string.IsNullOrEmpty(back) && L2WndUtil.Tex(back) != null ? back : fore, fore);
-            return ("L2UI_ch3.button.btn1_normal", "L2UI_ch3.button.btn1_normalon", "L2UI_ch3.button.btn1_normal_over");
+            string Or(string r) => !string.IsNullOrEmpty(r) && (IsIcon(r) || L2WndUtil.Tex(r) != null) ? r : "Default.BlackTexture";
+            var n = Or(fore);
+            var p = Or(back);
+            var o = !IsIcon(n) && L2WndUtil.Tex(n + "_over") != null ? n + "_over" : n;
+            return (n, p, o);
         }
 
-        static void LinkItem(Transform parent, Item it, Ctx c, TextAnchor align, bool wrap)
+        // ------------------------------------------------------------ acoes
+        /// <summary>Controle com var= na pagina: o texto e o tipo (as regras do GetData mudam).</summary>
+        public sealed class Var
         {
-            var action = it.Action;
-            // NCHtmlTagInfo::Draw (0x100857b0, npchtml_re 3.1): link em 0xFF6699FF sublinhado; sem realce ao passar o mouse
-            var t = NewText(parent, "<color=#6699ff>" + it.Rich + "</color>", align);
-            if (!wrap) t.horizontalOverflow = HorizontalWrapMode.Overflow;
-            t.raycastTarget = true;
-            var b = t.gameObject.AddComponent<UiTexButton>();
-            b.Label = t;
-            b.OnClick = () => RunAction(action, c.Vars, c.Act);
-            var img = UiRoot.Panel(t.rectTransform, 0, 0, 0, 1, new Color32(0x66, 0x99, 0xff, 0xff));
-            img.raycastTarget = false;
-            var line = img.rectTransform;
-            line.name = "sublinhado";
-            // embaixo do texto: com o Text mais largo que a frase (<center>, align=right) o traco segue o alinhamento
-            var ax = UnderlineAnchor(align);
-            line.anchorMin = new Vector2(ax, 0);
-            line.anchorMax = new Vector2(ax, 0);
-            line.pivot = new Vector2(ax, 0);
-            line.anchoredPosition = new Vector2(0, 1);
-            line.sizeDelta = new Vector2(Mathf.Ceil(t.preferredWidth), 1);
+            public Func<string> Get;
+            public HtmlBoxKind Kind;
         }
 
-        /// <summary>Ancora horizontal do sublinhado do link: 0 a esquerda, 0,5 centralizado, 1 a direita.</summary>
-        public static float UnderlineAnchor(TextAnchor align) => align switch
+        /// <summary>Bytes MBCS do texto (ASCII 1, o resto 2).</summary>
+        public static int Mbcs(string s)
         {
-            TextAnchor.UpperCenter or TextAnchor.MiddleCenter or TextAnchor.LowerCenter => 0.5f,
-            TextAnchor.UpperRight or TextAnchor.MiddleRight or TextAnchor.LowerRight => 1f,
-            _ => 0f,
-        };
+            var n = 0;
+            foreach (var c in s ?? "") n += c < 0x80 ? 1 : 2;
+            return n;
+        }
 
-        static void ImgItem(Transform parent, Item it)
+        /// <summary>
+        /// NCHtmlViewer::GetData (nw:123760): o texto do controle, ou null com a systemmsg do motivo. Edit e combobox: sem
+        /// '&amp;', ate 16 bytes (204) e nao so espacos (329); multiedit: 2 a 3000 bytes (329). No BBS (nw:123908): Title e
+        /// ToList ate 160 (327), Comment ate 256 (330), o resto ate 3000 (2009); vazio: Title 328, Content 2008, ToList 2007,
+        /// o resto 329.
+        /// </summary>
+        public static string GetData(string name, Var v, bool board, out int sysmsg)
         {
-            if (it.Url != null)
+            sysmsg = 0;
+            var s = v?.Get?.Invoke() ?? "";
+            var bytes = Mbcs(s);
+            if (board)
             {
-                var w = it.W ?? 32;
-                var h = it.H ?? 32;
-                UiKit.Image(parent, it.Url, w, h);
+                var max = name == "Title" || name == "ToList" ? 160 : name == "Comment" ? 256 : 3000;
+                var tooLong = name == "Title" || name == "ToList" ? 327 : name == "Comment" ? 330 : 2009;
+                if (s.Trim().Length == 0)
+                {
+                    sysmsg = name == "Title" ? 328 : name == "Content" ? 2008 : name == "ToList" ? 2007 : 329;
+                    return null;
+                }
+                if (bytes > max)
+                {
+                    sysmsg = tooLong;
+                    return null;
+                }
+                return s;
+            }
+            if (v != null && v.Kind == HtmlBoxKind.MultiEdit)
+            {
+                if (bytes < 2 || bytes > 3000)
+                {
+                    sysmsg = 329;
+                    return null;
+                }
+                return s;
+            }
+            if (s.IndexOf('&') >= 0 || bytes > 16)
+            {
+                sysmsg = 204;
+                return null;
+            }
+            if (s.Trim().Length == 0)
+            {
+                sysmsg = 329;
+                return null;
+            }
+            return s;
+        }
+
+        /// <summary>ParseToken: separa por espacos; aspas agrupam (e saem).</summary>
+        public static List<string> Tokens(string s)
+        {
+            var l = new List<string>();
+            var sb = new StringBuilder();
+            var q = false;
+            var has = false;
+            foreach (var c in s ?? "")
+            {
+                if (c == '"')
+                {
+                    q = !q;
+                    has = true;
+                    continue;
+                }
+                if (!q && char.IsWhiteSpace(c))
+                {
+                    if (sb.Length > 0 || has) l.Add(sb.ToString());
+                    sb.Clear();
+                    has = false;
+                    continue;
+                }
+                sb.Append(c);
+            }
+            if (sb.Length > 0 || has) l.Add(sb.ToString());
+            return l;
+        }
+
+        /// <summary>
+        /// Comando de um bypass (sem o "bypass"): tokens; o primeiro "-h" sai; "$nome" vira o texto do controle (some se o
+        /// controle nao existe ou o texto e recusado); junta com um espaco. So o token inteiro e trocado ("x$a" nao).
+        /// </summary>
+        public static string BypassCommand(string rest, IReadOnlyDictionary<string, Var> vars, bool board, Action<int> sysmsg)
+        {
+            var toks = Tokens(rest);
+            var h = toks.IndexOf("-h");
+            if (h >= 0) toks.RemoveAt(h);
+            var outT = new List<string>();
+            foreach (var t in toks)
+            {
+                if (t.Length > 1 && t[0] == '$')
+                {
+                    var name = t.Substring(1);
+                    if (vars == null || !vars.TryGetValue(name, out var v)) continue;
+                    var d = GetData(name, v, board, out var msg);
+                    if (d == null)
+                    {
+                        if (msg != 0) sysmsg?.Invoke(msg);
+                        continue;
+                    }
+                    outT.Add(d);
+                    continue;
+                }
+                outT.Add(t);
+            }
+            return string.Join(" ", outT);
+        }
+
+        /// <summary>Executa a acao de um link/botao/edit: "bypass ...", "link arquivo" ou "write ...".</summary>
+        public static void RunAction(string action, IReadOnlyDictionary<string, Var> vars, HtmlActions act)
+        {
+            var a = (action ?? "").Trim();
+            var m = Regex.Match(a, @"^(\S+)\s*(.*)$", RegexOptions.Singleline);
+            if (!m.Success) return;
+            var cmd = m.Groups[1].Value.ToLowerInvariant();
+            var rest = m.Groups[2].Value;
+            switch (cmd)
+            {
+                case "bypass":
+                    act.Bypass?.Invoke(BypassCommand(rest, vars, act.Board, act.SystemMessage));
+                    return;
+                case "link":
+                    act.Link?.Invoke(rest.Trim());
+                    return;
+                case "write":
+                    act.Write?.Invoke(BypassCommand(rest, vars, act.Board, act.SystemMessage));
+                    return;
+            }
+        }
+
+        /// <summary>
+        /// msg="811;Tournament Arena": a systemmsg do numero com o texto depois do ultimo ';' no primeiro $s1; numero 0 ou
+        /// invalido = o proprio texto do msg.
+        /// </summary>
+        public static string ConfirmText(string msg)
+        {
+            if (string.IsNullOrEmpty(msg)) return null;
+            var cut = msg.LastIndexOf(';');
+            var arg = cut >= 0 ? msg.Substring(cut + 1) : "";
+            var head = msg.IndexOf(';') >= 0 ? msg.Substring(0, msg.IndexOf(';')) : msg;
+            var id = HtmlDoc.Int(head) ?? 0;
+            if (id <= 0) return msg;
+            string text;
+            try
+            {
+                text = GameData.SystemMessage(id, new List<string>()).Text;
+            }
+            catch
+            {
+                return msg;
+            }
+            if (string.IsNullOrEmpty(text)) return msg;
+            var i = text.IndexOf("$s1", StringComparison.Ordinal);
+            return i >= 0 ? text.Substring(0, i) + arg + text.Substring(i + 3) : text;
+        }
+
+        // ------------------------------------------------------------ renderizacao
+        /// <summary>
+        /// Renderiza o HTML dentro de `parent` (o conteudo rolavel do HtmlCtrl). `width` = largura do viewer; 0 = a do
+        /// viewport do ScrollRect acima de `parent` (ou DefaultWidth). Devolve o titulo e o container (l2html), que tem
+        /// LayoutElement com a largura e a altura do documento.
+        /// </summary>
+        public static RenderedHtml Render(string html, HtmlActions act, Transform parent, float width = 0)
+        {
+            act ??= new HtmlActions();
+            if (width <= 0) width = ViewerWidth(parent);
+            var cv = parent ? parent.GetComponentInParent<Canvas>() : null;
+            ((UiMeasure)Measure).Scale = cv ? cv.scaleFactor : 1;
+            var lay = HtmlLayout.Run(HtmlDoc.Parse(html ?? "", act.Names), width, Measure);
+            var root = UiRoot.Box("l2html", parent, 0, 0, width, lay.Height);
+            UiKit.Layout(root, width, lay.Height, -1, width, lay.Height);
+            var page = new Page { Root = root, Act = act, Parent = parent, Width = width };
+            Build(lay, page);
+            Wheel(parent, act.Board ? BoardScrollUnit : ScrollUnit);
+            return new RenderedHtml { Title = lay.Title, Body = root, Layout = lay };
+        }
+
+        /// <summary>Largura do viewer: o viewport do ScrollRect acima de `parent`, senao o proprio `parent`.</summary>
+        public static float ViewerWidth(Transform parent)
+        {
+            var sr = parent ? parent.GetComponentInParent<ScrollRect>() : null;
+            var vp = sr ? sr.viewport ? sr.viewport : (RectTransform)sr.transform : null;
+            var w = vp ? vp.rect.width : 0;
+            if (w <= 1 && sr) w = ((RectTransform)sr.transform).rect.width;
+            if (w <= 1 && parent is RectTransform prt) w = prt.rect.width;
+            return w > 1 ? w : DefaultWidth;
+        }
+
+        /// <summary>NCScrollWnd::OnMouseWheel: (delta / 120) x unidade x 3 por entalhe, limitado ao topo e ao fim.</summary>
+        public static float WheelStep(float delta, float unit)
+        {
+            var n = Mathf.Abs(delta) >= 60 ? (int)(delta / 120) : (int)Mathf.Sign(delta);
+            return n * unit * 3;
+        }
+
+        static void Wheel(Transform parent, float unit)
+        {
+            var sr = parent ? parent.GetComponentInParent<ScrollRect>() : null;
+            if (!sr || !sr.content) return;
+            sr.scrollSensitivity = 0;
+            var content = sr.content;
+            var view = sr.viewport ? sr.viewport : (RectTransform)sr.transform;
+            UiEvents.Of(sr.gameObject).OnWheel = e =>
+            {
+                var d = e.scrollDelta.y;
+                if (d == 0) return;
+                var max = Mathf.Max(0, content.rect.height - view.rect.height);
+                var p = content.anchoredPosition;
+                p.y = Mathf.Clamp(p.y - WheelStep(d, unit), 0, max);
+                content.anchoredPosition = p;
+                sr.velocity = Vector2.zero;
+            };
+        }
+
+        static Color32 C(uint argb)
+        {
+            // [V] cor sem alfa (#RRGGBB vira 0x000000FF no GetMatchedColor): o canvas desenha o texto sem o alfa
+            var a = (byte)(argb >> 24);
+            return new Color32((byte)(argb >> 16), (byte)(argb >> 8), (byte)argb, a == 0 ? (byte)255 : a);
+        }
+
+        static string Escape(string s) => s.Replace('<', '‹');
+
+        sealed class Page
+        {
+            public RectTransform Root;
+            public Transform Parent;
+            public float Width;
+            public HtmlActions Act;
+            public readonly Dictionary<string, Var> Vars = new();
+            public readonly List<InputField> Edits = new();
+        }
+
+        static void Build(HtmlLayoutResult lay, Page pg)
+        {
+            var root = pg.Root;
+            if (lay.Background != null) Image(root, lay.Background, 0, 0, pg.Width, lay.Height, pg.Act).name = "imgsrc";
+            foreach (var b in lay.Boxes)
+            {
+                switch (b.Kind)
+                {
+                    case HtmlBoxKind.Fill:
+                    {
+                        var p = UiRoot.Panel(root, b.X, b.Y, b.W, b.H, C(b.Color));
+                        p.name = "bgcolor";
+                        p.raycastTarget = false;
+                        break;
+                    }
+                    case HtmlBoxKind.Image:
+                        if (b.W > 0 && b.H > 0 && b.Tex != null) Image(root, b.Tex, b.X, b.Y, b.W, b.H, pg.Act);
+                        break;
+                    case HtmlBoxKind.Text:
+                        NewText(root, b, Escape(b.Text), b.Color).raycastTarget = false;
+                        break;
+                    case HtmlBoxKind.Link:
+                        LinkItem(root, b, pg);
+                        break;
+                    case HtmlBoxKind.Button:
+                        ButtonItem(root, b, pg);
+                        break;
+                    case HtmlBoxKind.Edit:
+                    case HtmlBoxKind.MultiEdit:
+                        EditItem(root, b, pg);
+                        break;
+                    case HtmlBoxKind.Combo:
+                    {
+                        var el = UiRoot.Box("combobox", root, b.X, b.Y, b.W, b.H);
+                        var cb = new L2Combo(el, b.W, b.H);
+                        cb.SetItems(b.Options ?? Array.Empty<string>());
+                        // SEL: o item com o texto igual; sem SEL (ou sem achar), o primeiro
+                        var sel = b.Sel != null ? Array.IndexOf(b.Options ?? Array.Empty<string>(), b.Sel) : -1;
+                        if (cb.Items.Count > 0) cb.Select(sel >= 0 ? sel : 0);
+                        if (!string.IsNullOrEmpty(b.Var))
+                            pg.Vars[b.Var] = new Var { Kind = HtmlBoxKind.Combo, Get = () => cb.Selected >= 0 && cb.Selected < cb.Items.Count ? cb.Items[cb.Selected] : "" };
+                        break;
+                    }
+                }
+            }
+            if (pg.Edits.Count > 1) root.gameObject.AddComponent<HtmlTabOrder>().Edits = pg.Edits;
+        }
+
+        static RawImage Image(RectTransform root, string tex, float x, float y, float w, float h, HtmlActions act)
+        {
+            var rt = UiRoot.Box("img", root, x, y, w, h);
+            var img = rt.gameObject.AddComponent<RawImage>();
+            img.raycastTarget = false;
+            var url = TexUrl(tex, act);
+            img.uvRect = Uv1To1(TexSize(tex), w, h);
+            L2WndUtil.SetTexture(img, url, true);
+            return img;
+        }
+
+        static Text NewText(RectTransform root, HtmlBox b, string rich, uint color)
+        {
+            // dois pixels a mais de largura: o TextGenerator do Text quebra quando a medida bate exata na borda
+            var t = UiRoot.Label(root, rich, b.X, b.Y, Mathf.Ceil(b.W) + 2, b.H, FontSize, C(color), TextAnchor.UpperLeft);
+            t.horizontalOverflow = HorizontalWrapMode.Overflow;
+            t.verticalOverflow = VerticalWrapMode.Overflow;
+            UiKit.AddShadow(t);
+            return t;
+        }
+
+        static void Click(HtmlBox b, Page pg)
+        {
+            var act = pg.Act;
+            switch (b.LinkType)
+            {
+                case HtmlLinkType.File:
+                    if (act.File != null) act.File(b.Action);
+                    else LoadLocal(b.Action, pg);
+                    return;
+                case HtmlLinkType.Command:
+                    act.Command?.Invoke(b.Action);
+                    return;
+            }
+            var action = b.Action;
+            void Go() => RunAction(action, pg.Vars, act);
+            // msg so no <a action> (o BUTTON nao le MSG)
+            var q = b.Kind == HtmlBoxKind.Link && b.Msg != null && act.Confirm != null ? ConfirmText(b.Msg) : null;
+            if (q != null) act.Confirm(q, Go);
+            else Go();
+        }
+
+        // NCHtmlViewer::OnLink -> LoadHtml(arquivo): o HTML local (..\l2text) no mesmo viewer
+        static void LoadLocal(string file, Page pg)
+        {
+            var html = LobbyServerScreen.ReadL2Text(HelpHtmlView.FileName(file));
+            if (html == null || !pg.Parent) return;
+            UiKit.Clear(pg.Parent);
+            Render(html, pg.Act, pg.Parent, pg.Width);
+            var sr = pg.Parent.GetComponentInParent<ScrollRect>();
+            if (sr) sr.verticalNormalizedPosition = 1;
+        }
+
+        static void LinkItem(RectTransform root, HtmlBox b, Page pg)
+        {
+            // NCHtmlTagInfo::Draw (0x100857b0): link sublinhado; sem realce ao passar o mouse
+            var t = NewText(root, b, Escape(b.Text), b.Color);
+            t.name = "link";
+            t.raycastTarget = true;
+            var btn = t.gameObject.AddComponent<UiTexButton>();
+            btn.Label = t;
+            btn.OnClick = () => Click(b, pg);
+            var line = UiRoot.Panel(t.rectTransform, 0, 0, b.W, 1, C(b.Color));
+            line.raycastTarget = false;
+            line.name = "sublinhado";
+            var lr = line.rectTransform;
+            lr.anchorMin = lr.anchorMax = lr.pivot = new Vector2(0, 0);
+            lr.anchoredPosition = new Vector2(0, 0);
+            // a largura que o Text desenha de fato (a do layout so como reserva)
+            var tw = t.preferredWidth;
+            lr.sizeDelta = new Vector2(Mathf.Ceil(tw > 0 ? Mathf.Min(tw, b.W + 2) : b.W), 1);
+        }
+
+        static readonly Regex SysName = new(@"^&\$(\d+);$");
+
+        /// <summary>value do botao: "&amp;$N;" = sysstring N (SetButtonName), senao o texto como esta.</summary>
+        public static string ButtonLabel(string value)
+        {
+            var m = SysName.Match(value ?? "");
+            if (!m.Success) return value ?? "";
+            try
+            {
+                return GameData.SysString(int.Parse(m.Groups[1].Value), "");
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        static void ButtonItem(RectTransform root, HtmlBox b, Page pg)
+        {
+            var rt = UiRoot.Box("button", root, b.X, b.Y, b.W, b.H);
+            var hit = rt.gameObject.AddComponent<Image>();
+            hit.color = new Color(0, 0, 0, 0);
+            var btn = rt.gameObject.AddComponent<UiTexButton>();
+            btn.Image = L2WndUtil.Bg(rt);
+            UiRoot.Fill(btn.Image.rectTransform);
+            var (n, p, o) = ButtonSkin(b.Fore, b.Back);
+            var nu = TexUrl(n, pg.Act);
+            if (nu == null)
+            {
+                // Default.BlackTexture ainda fora do shared (pedido 0043): o mesmo preto em cor solida
+                hit.color = Color.black;
+                btn.Image.enabled = false;
+            }
+            else
+            {
+                btn.Image.uvRect = Uv1To1(TexSize(n), b.W, b.H);
+                L2WndUtil.SetButtonTextures(btn, nu, TexUrl(p, pg.Act) ?? nu, TexUrl(o, pg.Act) ?? nu);
+            }
+            var label = ButtonLabel(b.Text);
+            if (label.Length > 0)
+            {
+                var t = UiRoot.Label(rt, Escape(label), 0, 0, b.W, b.H, FontSize, ButtonText, TextAnchor.MiddleCenter);
+                UiRoot.Fill(t.rectTransform);
+                t.horizontalOverflow = HorizontalWrapMode.Overflow;
+                t.raycastTarget = false;
+                UiKit.AddShadow(t);
+                btn.Label = t;
+            }
+            btn.OnClick = () => Click(b, pg);
+        }
+
+        static void EditItem(RectTransform root, HtmlBox b, Page pg)
+        {
+            var multi = b.Kind == HtmlBoxKind.MultiEdit;
+            var ct = (b.Type ?? "") switch
+            {
+                "number" => InputField.ContentType.IntegerNumber,
+                "password" => InputField.ContentType.Password,
+                _ => InputField.ContentType.Standard,
+            };
+            var f = UiKit.Input(root, "", b.W, b.H, ct, b.Length);
+            UiRoot.Place((RectTransform)f.transform, b.X, b.Y, b.W, b.H);
+            if (multi)
+            {
+                f.lineType = InputField.LineType.MultiLineNewline;
+                f.textComponent.alignment = TextAnchor.UpperLeft;
+                f.textComponent.horizontalOverflow = HorizontalWrapMode.Wrap;
+            }
+            else if (!string.IsNullOrEmpty(b.Action))
+            {
+                // Enter no edit: OnEditAction executa a action do edit
+                var action = b.Action;
+                f.onSubmit.AddListener(_ => RunAction(action, pg.Vars, pg.Act));
+            }
+            if (!string.IsNullOrEmpty(b.Var)) pg.Vars[b.Var] = new Var { Kind = b.Kind, Get = () => f ? f.text : "" };
+            pg.Edits.Add(f);
+        }
+    }
+
+    /// <summary>InitTabOrder (nw:123363): Tab passa pelos edit/multiedit na ordem do documento, em roda.</summary>
+    public sealed class HtmlTabOrder : MonoBehaviour
+    {
+        public List<InputField> Edits;
+
+        void Update()
+        {
+            var kb = UnityEngine.InputSystem.Keyboard.current;
+            if (kb == null || !kb.tabKey.wasPressedThisFrame || Edits == null) return;
+            for (var i = 0; i < Edits.Count; i++)
+            {
+                if (!Edits[i] || !Edits[i].isFocused) continue;
+                var next = Edits[(i + 1) % Edits.Count];
+                if (!next) return;
+                next.Select();
+                next.ActivateInputField();
                 return;
             }
-            // texturas de UI (L2UI.SquareWhite etc.) viram uma linha/espaco
-            var sw = it.W ?? 0;
-            var sh = it.H ?? 1;
-            var img = UiRoot.Panel(parent, 0, 0, sw, sh, new Color(1, 1, 1, 0.08f));
-            img.name = "l2img";
-            img.raycastTarget = false;
-            UiKit.Layout(img, sw, sh, sw > 0 ? 0 : 1, sw, sh);
         }
     }
 }

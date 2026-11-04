@@ -17,6 +17,8 @@ namespace L2Web.UI
         public const int Width = 0x136, Height = 0x191, TopOffset = 252;
         public const int TitleSysString = 0x1bc;
         public const string Back = "L2UI_ch3.NpcWnd.Npc1_back";
+        /// <summary>Largura do NCHtmlViewer filho: SetRect(7, 30, W - 14, H - 37).</summary>
+        public const int ViewerWidth = Width - 14;
 
         public readonly L2Wnd Wnd;
         /// <summary>Conteudo do HtmlCtrl (container vertical rolavel).</summary>
