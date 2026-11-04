@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-teclado` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T9; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -28,6 +28,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+
+- 2026-11-03 — branch `feat/ui-teclado` criado de `feat/ui-cliques-hud` (61d8222); estado `fazendo`.
 
 ## Decisões e REA
 
