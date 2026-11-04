@@ -381,6 +381,58 @@ namespace L2Web.UI
             return b.T;
         }
 
+        /// <summary>
+        /// ReturnTooltip_NTT_QUESTLIST (ToolTip.uc:1493-1526): nome (ss1200) e repetibilidade (ss1202) pelo nReserved1 da coluna 3
+        /// (0/2 = ss861, 1/3 = ss862).
+        /// </summary>
+        public static CustomTooltip QuestList(string name, int repeatReserved)
+        {
+            var b = new Builder();
+            b.Option(1200, name, true, true, true);
+            b.Option2(1202, repeatReserved == 1 || repeatReserved == 3 ? 862 : 861, true, true, false);
+            return b.T;
+        }
+
+        /// <summary>
+        /// ReturnTooltip_NTT_QUESTINFO (ToolTip.uc:1564-1631): nome (ss1200), requisito (ss1201), largura minima = a maior das
+        /// duas linhas (no minimo 144) + 30, nivel (ss922), repetibilidade (ss1202) e a descricao (szReserved) em 178/190/207.
+        /// O QuestListWnd nao preenche o nReserved1 da coluna 3, entao a repetibilidade sai sempre ss861.
+        /// </summary>
+        public static CustomTooltip QuestInfo(string name, string requirement, string level, int repeatReserved, string desc, Func<string, int> textWidth)
+        {
+            var b = new Builder();
+            b.Option(1200, name, true, true, true);
+            b.Option(1201, requirement, true, true, false);
+            var w1 = textWidth(SysString(1200) + " : " + name);
+            var w2 = textWidth(SysString(1201) + " : " + requirement);
+            b.T.MinimumWidth = Math.Max(MinimumWidth, Math.Max(w1, w2)) + 30;
+            b.Option(922, level, true, true, false);
+            b.Option2(1202, repeatReserved == 1 || repeatReserved == 3 ? 862 : 861, true, true, false);
+            b.Text(desc, Desc, 0, 6, true, false);
+            return b.T;
+        }
+
+        /// <summary>
+        /// QuestToolTip do QuestTreeWnd (InitQuestTooltip, QuestTreeWnd.uc:802-878): os 5 icones QuestWndInfoIcon_1..5 (16 x 16)
+        /// com ss861..865; o QuestListWnd usa so os 2 primeiros.
+        /// </summary>
+        public static CustomTooltip QuestLegend(int count)
+        {
+            var b = new Builder();
+            for (var i = 0; i < count; i++)
+            {
+                var d = b.Start();
+                d.Type = DrawItemType.Texture;
+                d.TexW = d.TexH = 16;
+                d.Tex = "L2UI_CH3.QuestWnd.QuestWndInfoIcon_" + (i + 1);
+                d.OffY = i > 0 ? 2 : 0;
+                d.LineBreak = i > 0;
+                b.End();
+                b.Text("", default, 5, i > 0 ? 2 : 0, false, true, 861 + i);
+            }
+            return b.T;
+        }
+
         /// <summary>ReturnTooltip_NTT_ACTION (ToolTip.uc:824-866): nome e descricao (com largura minima).</summary>
         public static CustomTooltip Action(string name, string desc)
         {

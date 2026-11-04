@@ -43,6 +43,13 @@ namespace L2Web.UI
         /// <summary>Posicao (inteira) do pawn do jogador.</summary>
         public Func<(int x, int y, int z)> Player = () => (0, 0, 0);
         public readonly List<(int x, int y, int z)> Targets = new();
+        /// <summary>SetShowQuest (+0x244): EV_MinimapShowQuest liga, EV_MinimapHideQuest desliga.</summary>
+        public bool ShowQuest;
+        /// <summary>
+        /// Alvo de quest do NCDataManager (+0x5110: x/y/z em +0x64..+0x6c, nome e quest), gravado pelo SetQuestTargetInfo [I];
+        /// global, como no nativo.
+        /// </summary>
+        public static (float x, float y, float z, string name, int questId) Quest = (0, 0, 0, "", 0);
 
         public MinimapModel(L2Zone zone, float w, float h)
         {

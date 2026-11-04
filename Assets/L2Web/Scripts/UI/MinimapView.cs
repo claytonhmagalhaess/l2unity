@@ -147,6 +147,7 @@ namespace L2Web.UI
                 rt.localEulerAngles = new Vector3(0, 0, -(Yaw() * 360f / 65536f + 90f));
             }
             DrawTargets();
+            DrawQuestTarget();
             foreach (var (i, bx, by, on) in M.TownButtons(dragging))
             {
                 plus[i].gameObject.SetActive(on);
@@ -267,6 +268,34 @@ namespace L2Web.UI
             for (var i = n; i < party.Length; i++) party[i].gameObject.SetActive(false);
         }
 
+        RectTransform questMark;
+
+        /// <summary>
+        /// DrawQuestTarget (10189490): com o SetShowQuest e o x/y/z do alvo nao todos 0, MapIcon_Mark 32 x 32 em (px, py - 20), sem
+        /// teste de margem. Dica: o nome do alvo e o nome da quest (so com id &gt; 0) [I: a caixa do nativo virou a dica do porte].
+        /// </summary>
+        void DrawQuestTarget()
+        {
+            var q = MinimapModel.Quest;
+            var on = M.ShowQuest && !(q.x == 0 && q.y == 0 && q.z == 0);
+            if (!on)
+            {
+                if (questMark) questMark.gameObject.SetActive(false);
+                return;
+            }
+            if (!questMark)
+            {
+                questMark = UiRoot.Box("QuestMark", markLayer, 0, 0, 32, 32);
+                var img = L2WndUtil.Paint(questMark, "L2UI_CH3.Minimap.MapIcon_Mark", 32, 32, PaintMode.Normal);
+                if (img) img.raycastTarget = true;
+            }
+            var (px, py) = M.TargetPos((int)q.x, (int)q.y, M.CurMap);
+            questMark.gameObject.SetActive(true);
+            Place(questMark, px - M.ViewX, py - M.ViewY - 20);
+            var name = q.questId > 0 ? QuestData.Client.Name(q.questId) : "";
+            UiTooltip.Set(questMark.gameObject, name.Length > 0 ? q.name + "\n" + name : q.name);
+        }
+
         void DrawTargets()
         {
             var n = 0;
@@ -369,6 +398,18 @@ namespace L2Web.UI
                 }
             });
             L2Events.Register(Ev.EV_MinimapShowReduceBtn, _ => ReduceBtn(true));
+            // MinimapWnd.uc:267-279: SetShowQuest
+            foreach (var (ev, show) in new[] { (Ev.EV_MinimapShowQuest, true), (Ev.EV_MinimapHideQuest, false) })
+                L2Events.Register(ev, _ =>
+                {
+                    NormalCtrl.M.ShowQuest = show;
+                    NormalCtrl.Refresh();
+                    if (ExpandCtrl != null)
+                    {
+                        ExpandCtrl.M.ShowQuest = show;
+                        if (Expand.Visible) ExpandCtrl.Refresh();
+                    }
+                });
             L2Events.Register(Ev.EV_MinimapHideReduceBtn, _ => ReduceBtn(false));
             L2Events.Register(Ev.EV_MinimapUpdateGameTime, p =>
             {

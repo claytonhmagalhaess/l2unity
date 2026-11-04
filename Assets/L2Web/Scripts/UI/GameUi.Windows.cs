@@ -388,6 +388,23 @@ namespace L2Web.UI
                 }
         }
 
+        /// <summary>GetInventoryItemCount(classID): a soma das pilhas com o classID.</summary>
+        public long InventoryCount(int classId) => items.Values.Where(i => i.ItemId == classId).Sum(i => (long)i.Count);
+
+        /// <summary>
+        /// QuestAPI.SetQuestTargetInfo [I]: guarda o alvo no MinimapModel.Quest (o NCDataManager) e liga ou desliga o marcador
+        /// (EV_MinimapShowQuest / EV_MinimapHideQuest). Radar e seta 3D nao existem no porte.
+        /// </summary>
+        public void SetQuestTargetInfo(QuestTreeScript.Target t)
+        {
+            QuestTarget = t;
+            MinimapModel.Quest = t.On ? (t.Pos.x, t.Pos.y, t.Pos.z, t.Name, t.QuestId) : (0, 0, 0, "", 0);
+            L2Events.Dispatch(new PacketEvents.Event(t.On ? Ev.EV_MinimapShowQuest : Ev.EV_MinimapHideQuest, ""));
+        }
+
+        /// <summary>Ultimo SetQuestTargetInfo.</summary>
+        public QuestTreeScript.Target QuestTarget { get; private set; } = new();
+
         /// <summary>DoAction(ClassID): RequestActionUse.</summary>
         public void DoAction(int id) => deps.ActionUse(id);
 

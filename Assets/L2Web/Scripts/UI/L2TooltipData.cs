@@ -69,7 +69,7 @@ namespace L2Web.UI
         }
 
         /// <summary>Indice compacto do UE2: 6 bits no 1o byte (0x80 sinal, 0x40 continua), depois 7 por byte (0x80 continua).</summary>
-        static int Compact(byte[] b, ref int p)
+        public static int Compact(byte[] b, ref int p)
         {
             int b0 = b[p++];
             var v = b0 & 0x3f;

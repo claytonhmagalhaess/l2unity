@@ -176,6 +176,8 @@ namespace L2Web.UI
         public DeliverView DeliverWnd { get; private set; }
         /// <summary>PetStatusWnd, SummonedStatusWnd, PetWnd e SummonedWnd, #0031.</summary>
         public PetView Pets { get; private set; }
+        /// <summary>QuestTreeWnd (aba do MainWnd) e QuestListWnd, #0037.</summary>
+        public QuestView Quests { get; private set; }
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
         public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd, PrivateShopWnd?.Wnd };
@@ -364,6 +366,8 @@ namespace L2Web.UI
             InvScript.HasCrystallize = () => skills.Exists(k => k.Id == 248);
             InvScript.IsCrystallizable = id => ItemStats.Of(id) is { } st && st.CrystalType > 0 && (st.Weapon || st.Armor);
             Main = new L2Wnd("MainWnd", Layer, new WndOpts { Embed = new[] { "DetailStatusWnd", "MagicSkillWnd", "ActionWnd", "ClanWnd", "QuestTreeWnd" }, AriaLabel = "Personagem" });
+            // QuestTreeWnd (aba) e QuestListWnd do xdat (#0037)
+            Quests = new QuestView(Layer, this, b => this.deps.Send(b));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {
