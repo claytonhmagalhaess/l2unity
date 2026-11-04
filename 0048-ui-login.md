@@ -50,6 +50,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — pedidos 0037 (coordenadora, App.cs), 0038 (net, contrato e queda da conexão) e 0039 (render, música LS01_F) (tarefas 8463d73).
 - 2026-11-04 — **parado para compilar e testar**: o Editor da vaga está em Play dentro do jogo (personagem ADMIN, antes dsadasdasd), com "Recompile After Finished Playing"; perguntei à coordenadora se posso parar o Play. O código ainda não foi compilado.
 - 2026-11-04 — novo fluxo de testes (só a sessão de testes abre o Unity): pedido de teste enviado com f1fead1 (compilar, EditMode inteira + `LoginScreenTests`, roteiro ao vivo com capturas antes em b88e07c e depois em f1fead1). Aguardando a resposta em `testes\0048-<n>\`.
+- 2026-11-04 — teste 0048-1: f1fead1 nao compilava (`onFocusSelectAll` so existe no TMP); corrigido em 23869f4. b88e07c: 750/750.
+- 2026-11-04 — teste 0048-2 (23869f4): 760, 759 passaram; a falha era do proprio teste do corte 14/16 (corrigido em e48b6db). Ao vivo: foco Id, Tab, sysmsg 86/87, senha errada, OptionWnd, caixa e login normal ok; o Enter simulado nao logou, a faixa ficava por cima do OptionWnd e a janela de conexao por baixo do botao. Corrigidos em 90f9a51 (Enter tambem pelo `onSubmit` do campo, com log). Capturas em `Docs/evidencias/login/` (df5329b); G1-G4 e G10 da `validacao.md` (b50cd12, 347d3be). Pedido de reteste 0048-3 enviado.
 
 ## Decisões e REA
 
