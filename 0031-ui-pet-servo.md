@@ -62,4 +62,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-- `pedidos9-ui-tipo-invocado.md` (net): tipo do invocado trocado no 0xb0/0xb1.
+- `pedidos/0029-ui-tipo-invocado.md` (net): tipo do invocado trocado no 0xb0/0xb1.
