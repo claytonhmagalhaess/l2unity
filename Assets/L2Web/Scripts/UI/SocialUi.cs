@@ -335,6 +335,8 @@ namespace L2Web.UI
         // ------------------------------------------------------------ loja privada
         public void StoreList(PrivateStoreSellInfo l)
         {
+            // a PrivateShopWnd do xdat (#0036) abre pelos eventos do 0x9b; a janela generica so fica sem o GameUi
+            if (GameUi.Current?.PrivateShopWnd != null) return;
             var body = Store.Body;
             Store.Clear();
             Store.SetTitle($"Loja de {deps.NameOf(l.OwnerId)}{(l.PackageSale ? " (pacote)" : "")}");
