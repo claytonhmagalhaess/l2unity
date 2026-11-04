@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-teclas-movimento` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T10; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | world: teclas de movimento e câmera |
 | Criada | 2026-11-03 |
@@ -29,6 +29,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+- 2026-11-03 — branch `feat/world-teclas-movimento` criado do `main` (`0d71a77`); REA das ligações no engine.dll.
 
 ## Decisões e REA
 
