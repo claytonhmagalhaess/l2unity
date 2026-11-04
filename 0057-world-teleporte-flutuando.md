@@ -52,6 +52,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - Para o próprio, `Movement.LandingZ` segue a regra do L2_Teleport: vale a primeira janela de ±30·i com chão e, dentro dela, o chão mais alto; sem chão até 900, cai. Para os outros, `Movement.FallZ` pega o chão mais alto abaixo do pé, ou o mais próximo se não houver chão abaixo.
 - As camadas vêm do `World.Ground` (contrato: "a altura mais próxima de zRef"), consultado em zRef = pé, +1e6 e −1e6: a mais próxima, a mais alta e a mais baixa. Assim `Render/GeoTerrain.cs` fica intocado (é da #0056).
 - Causa diferente da #0056 (terreno/altura visual fora de Giran). Mandei a evidência para a sessão dela (`local_02fce849…`) e combinei não assentar duas vezes: o Z do movimento fica comigo e a altura do desenho (`DrawHeight`/terreno UE) com ela.
+- Combinado com a #0056 (2026-11-04): as correções se somam e não há ajuste em dobro. A #0057 põe o `Motion.Z` na geodata (Place/ValidateLocation). A #0056 (`df7ea56`, `GeoTerrain.VisualFloor`/`PickFloor`) só muda o que o `DrawHeight` devolve: o piso desenhado mais alto entre BSP/Statics em [z−48, z+8] e o terreno UE em [z−84, z+20]. A #0056 não mexe em `Motion.Z`, `Place` nem `Sync`. Sem a #0057, o Z do TownZone (+110 a +124) fica fora dessas janelas e o pawn não desce.
 
 ## Entrega
 
