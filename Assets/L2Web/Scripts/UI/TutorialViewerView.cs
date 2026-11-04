@@ -23,10 +23,10 @@ namespace L2Web.UI
         /// <summary>Ultimo HTML mostrado (testes e diagnostico).</summary>
         public RenderedHtml Last { get; private set; }
 
-        /// <summary>RequestTutorialLinkHtml 0x7b "S" (pedido 0044: mover para o UiPackets).</summary>
+        /// <summary>RequestTutorialLinkHtml 0x7b "S" (pedido 0047: mover para o UiPackets).</summary>
         public static byte[] RequestTutorialLinkHtml(string link) => new PacketWriter().C(0x7b).S(link ?? "").Bytes();
 
-        /// <summary>RequestTutorialPassCmdToServer 0x7c "S" (pedido 0044: mover para o UiPackets).</summary>
+        /// <summary>RequestTutorialPassCmdToServer 0x7c "S" (pedido 0047: mover para o UiPackets).</summary>
         public static byte[] RequestTutorialPassCmdToServer(string cmd) => new PacketWriter().C(0x7c).S(cmd ?? "").Bytes();
 
         /// <summary>`act` = as acoes do HTML de NPC; o bypass e o link passam para os pacotes do tutorial.</summary>

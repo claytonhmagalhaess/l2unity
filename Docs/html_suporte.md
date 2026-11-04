@@ -209,7 +209,7 @@ Sem nome, o código vira `-`. Com N = 0 ou não numérico, o trecho até o `;` s
   - multiedit aceita de 2 a 3000 bytes (329).
   - O porte faz igual (`L2Html.GetData`) e mostra a systemmsg no chat. A recusa de glifos que faltam na fonte **falta**.
 - `link X` → `RequestLinkHtml`. `Write ...` → `RequestBBSWrite`: o pacote não existe (pedido 0034 da net); `HtmlActions.Write` fica nulo.
-- Viewer do tutorial (`viewType="Tutorial"`, +0x214 = 1): o bypass vai por `RequestTutorialPassCmdToServer` 0x7c e o link por `RequestTutorialLinkHtml` 0x7b (`TutorialViewerView`, pedido 0044).
+- Viewer do tutorial (`viewType="Tutorial"`, +0x214 = 1): o bypass vai por `RequestTutorialPassCmdToServer` 0x7c e o link por `RequestTutorialLinkHtml` 0x7b (`TutorialViewerView`, pedido 0047).
 
 ## 8. Community Board (NCBBSHtmlViewer)
 
