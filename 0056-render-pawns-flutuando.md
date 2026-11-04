@@ -39,6 +39,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — teste 0056-1 (`6187e0a`): suíte 891/891, `PawnFloorTests` 12/12. No offline, o desenho coincide com o terreno UE em Turek, Gludio, Dion, Dragon Valley e fora de Giran; na praça de Giran fica igual (piso BSP). Ao vivo em Plains of Dion, o personagem e os monstros ficam com os pés na grama: parados, correndo, em combate e depois do teleporte. Evidências em `Docs/evidencias/pawns-chao/` (`ae08e57`). Falta o 0056-2 (`791b1c3`: mapa inteiro, andar do meio de Cruma e ToI).
 - 2026-11-04 — teste 0056-2 (`791b1c3`): 895/895; a Cruma e a ToI ficam no andar; ao vivo, pés na grama. Evidências e linha M7 (`e68c8b3`). Estado: pronta p/ merge.
 - 2026-11-04 — a prévia `integracao/pawns-chao` (`954a22b`, com o `AllLayers` ligado) mostrou uma regressão na ToI: o pawn caía um andar (5984 → 4976) no meio do caminho. Causa: um buraco no piso de 116020 a 116116, onde a camada mais perto era a de baixo. Correção em `6f1dcf2`: o `MaxLayerJump` vale também com todas as camadas; teste com as camadas reais. Reteste 0056-3 pedido em cima da prévia.
+- 2026-11-04 — reteste 0056-3 (`954a22b` + `6f1dcf2`, sem commit): 912/912, `PawnFloorTests` 18/18. Na ToI o pawn fica em 5984 em todas as leituras, inclusive no buraco; a Cruma e o Turek ficam iguais ao 0056-2. Evidências em `1d03369`.
 
 ## Decisões e REA
 
@@ -100,9 +101,12 @@ Pedida pela coordenadora depois do novo relato: "numa área de farm o personagem
   - `6187e0a`: conta `l2webtest7`;
   - `791b1c3`: varredura do mapa inteiro, trace até z − 900 e `GroundHeight`/`NearestLayer` em lugares de vários andares;
   - `ae08e57` e `e68c8b3`: evidências e a linha M7 do `Docs/validacao.md`.
+  - `6f1dcf2`: `MaxLayerJump` também com todas as camadas (regressão da ToI na prévia);
+  - `1d03369`: evidências do 0056-3.
 - **Testes** (sessão de testes):
   - 0056-1 (`6187e0a`): 891/891.
   - 0056-2 (`791b1c3`): 895/895, `PawnFloorTests` 16/16, sem falhas (o `main` dá 879/879).
+  - 0056-3 (`6f1dcf2` sobre a prévia `954a22b`, com o `AllLayers` ligado): 912/912, `PawnFloorTests` 18/18; a ToI fica no andar no trecho do buraco.
   - Offline: o desenho coincide com o terreno (±0,001) no Turek, nos campos de Gludio e Dion, em Dragon Valley e fora de Giran; na praça de Giran fica igual ao `main`.
   - Andando: no 1º andar da Cruma e na Tower of Insolence o pawn fica no andar; antes voava 5300 e 4100.
   - Ao vivo (aCis local, `l2webtest7`, Plains of Dion): pés na grama parado, andando, correndo, em combate e depois do teleporte.
