@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0047) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -32,3 +32,4 @@ Nada quebra sem o pedido: as janelas só ficam sem conteúdo.
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito. Rodado o `copy_ui_assets.py` do `eba79cd`: 382 PNG em `shared\StreamingAssets-L2Web\cache\ui\l2_skilltime\Texture\`, 764 chaves novas no `cache\ui\textures.json` (3715 → 4479; backup do anterior no scratchpad da coordenadora) e 111 `help*.htm`/`pet_help*.htm` em `client\l2text\` (14 → 125). Nenhum arquivo existente foi sobrescrito.
