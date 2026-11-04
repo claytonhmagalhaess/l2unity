@@ -442,6 +442,7 @@ namespace L2Web.UI
         {
             public int Bar, Index;
             public RectTransform Rt;
+            public L2Wnd Wnd;
             public UiTexButton Btn;
             public RawImage Icon;
             public Text Letter;
@@ -524,7 +525,7 @@ namespace L2Web.UI
             var hit = rt.gameObject.AddComponent<Image>();
             hit.color = new Color(0, 0, 0, 0);
             var size = host.sizeDelta;
-            var s = new ScSlot { Bar = bar, Index = index, Rt = rt };
+            var s = new ScSlot { Bar = bar, Index = index, Rt = rt, Wnd = w };
             s.Icon = UiRoot.Box("icon", rt, 2, 2, 32, 32).gameObject.AddComponent<RawImage>();
             s.Icon.raycastTarget = false;
             s.Icon.enabled = false;
@@ -551,11 +552,14 @@ namespace L2Web.UI
             s.AutoShot.SetActive(false);
             var hostIdx = scSlots.Count;
             s.Btn.OnClick = () => UseSlot(SlotOfHost(hostIdx), CtrlHeld, ShiftHeld);
+            // OnRButtonDown (nw:0x100477f0): so soulshot/spiritshot alternam o automatico; nos outros atalhos nada
             s.Btn.OnRightClick = () =>
             {
                 var slot = SlotOfHost(hostIdx);
-                if (shortcuts.ContainsKey(slot) && !barsLocked) deps.Send(UiPackets.ShortCutDel(slot));
+                if (!shortcuts.TryGetValue(slot, out var sc) || sc.Type != "item" || !items.TryGetValue(sc.Id, out var it)) return;
+                if (ShortcutBar.IsShot(it.ItemId)) deps.Send(UiPackets.RequestAutoSoulShot(it.ItemId, !autoShots.Contains(it.ItemId)));
             };
+            SlotDraggable(s, hostIdx);
             dropSlots[rt.gameObject] = hostIdx;
             scSlots.Add(s);
         }
@@ -663,6 +667,64 @@ namespace L2Web.UI
             RenderBars();
         }
 
+        /// <summary>
+        /// Arrastar um slot da barra (NCShortcutItemWnd::OnDragButton nw:0x100478f0 / OnDropItem nw:0x100480c0): soltar em outro
+        /// slot troca os dois (e liga de novo o automatico dos shots que estavam ligados); soltar fora da propria barra, com a
+        /// margem de 30 px, apaga. [I] com as barras travadas nao arrasta (o efeito do IsLockShortcutWnd no nativo e [V]).
+        /// </summary>
+        void SlotDraggable(ScSlot s, int hostIdx)
+        {
+            var ev = UiEvents.Of(s.Rt);
+            var dragging = false;
+            ev.OnBeginDrag = _ =>
+            {
+                dragging = !barsLocked && shortcuts.ContainsKey(SlotOfHost(hostIdx));
+                if (!dragging) return;
+                UiTooltip.Dragging = true;
+                if (!dragGhost)
+                {
+                    var rt = UiRoot.Box("DragGhost", UiRoot.Rect, 0, 0, 32, 32);
+                    dragGhost = rt.gameObject.AddComponent<RawImage>();
+                    dragGhost.raycastTarget = false;
+                    dragGhost.color = new Color(1, 1, 1, 0.8f);
+                }
+                dragGhost.texture = s.Icon.texture;
+                dragGhost.enabled = s.Icon.enabled && dragGhost.texture;
+                dragGhost.transform.SetAsLastSibling();
+                dragGhost.gameObject.SetActive(true);
+            };
+            ev.OnDrag = e =>
+            {
+                if (!dragging || !dragGhost) return;
+                var k = UiRoot.PixelScale;
+                UiRoot.Place(dragGhost.rectTransform, e.position.x / k - 16, UiRoot.Size.y - e.position.y / k - 16, 32, 32);
+            };
+            ev.OnEndDrag = e =>
+            {
+                if (!dragging) return;
+                dragging = false;
+                UiTooltip.Dragging = false;
+                if (dragGhost) dragGhost.gameObject.SetActive(false);
+                var src = SlotOfHost(hostIdx);
+                shortcuts.TryGetValue(src, out var srcSc);
+                for (var t = e.pointerCurrentRaycast.gameObject ? e.pointerCurrentRaycast.gameObject.transform : null; t; t = t.parent)
+                {
+                    if (!dropSlots.TryGetValue(t.gameObject, out var host)) continue;
+                    var dst = SlotOfHost(host);
+                    shortcuts.TryGetValue(dst, out var dstSc);
+                    foreach (var st in ShortcutBar.Swap(src, srcSc, dst, dstSc))
+                        deps.Send(st.Sc != null ? UiPackets.ShortCutReg(st.Sc.Type, st.Slot, st.Sc.Id) : UiPackets.ShortCutDel(st.Slot));
+                    foreach (var sc in new[] { srcSc, dstSc })
+                        if (sc != null && sc.Type == "item" && items.TryGetValue(sc.Id, out var it) && ShortcutBar.IsShot(it.ItemId) && autoShots.Contains(it.ItemId))
+                            deps.Send(UiPackets.RequestAutoSoulShot(it.ItemId, true));
+                    return;
+                }
+                var px = UiRoot.PixelScale;
+                var r = s.Wnd.ScreenRect();
+                if (ShortcutBar.DeleteOnDrop(r.X, r.Y, r.W, r.H, e.position.x / px, UiRoot.Size.y - e.position.y / px)) deps.Send(UiPackets.ShortCutDel(src));
+            };
+        }
+
         /// <summary>ShortCutDelete.</summary>
         public void DeleteShortcut(int slot)
         {
@@ -679,11 +741,6 @@ namespace L2Web.UI
         void UseSlot(int slot, bool ctrl, bool shift)
         {
             if (!shortcuts.TryGetValue(slot, out var s)) return;
-            if (s.Type == "item" && ctrl)
-            {
-                if (items.TryGetValue(s.Id, out var it)) deps.Send(UiPackets.RequestAutoSoulShot(it.ItemId, !autoShots.Contains(it.ItemId)));
-                return;
-            }
             if (s.Type == "item") deps.Send(UiPackets.UseItem(s.Id, ctrl));
             else if (s.Type == "skill") deps.Send(UiPackets.MagicSkillUse(s.Id, ctrl, shift));
             else if (s.Type == "action") deps.ActionUse(s.Id);
@@ -715,12 +772,12 @@ namespace L2Web.UI
                 var key = $"{slot}|{s?.Type}|{s?.Id}|{label}|{icon}|{count}|{auto}";
                 if (key == sc.Key) continue;
                 sc.Key = key;
-                var keyName = sc.Bar == 0 ? $"F{sc.Index + 1}" : sc.Bar == 1 ? $"Alt+F{sc.Index + 1}" : $"Ctrl+Shift+F{sc.Index + 1}";
+                var keyName = ShortcutBar.KeyLabel(sc.Bar, sc.Index);
                 // tooltip "Shortcut" (ToolTip.uc:1259-1397); slot vazio, sem dica
                 if (s != null)
                 {
                     var sc0 = s;
-                    UiTooltip.SetCustom(sc.Rt.gameObject, () => ShortcutTooltip(sc0), false, $"{keyName}: {label}");
+                    UiTooltip.SetCustom(sc.Rt.gameObject, () => ShortcutTooltip(sc0), false, keyName.Length > 0 ? $"{keyName}: {label}" : label);
                 }
                 else UiTooltip.Set(sc.Rt.gameObject, "");
                 var url = s != null ? IconUrl(icon) : null;
