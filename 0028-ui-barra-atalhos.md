@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-barra-atalhos` |
-| Estado | aberta |
+| Estado | fazendo |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T4; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -29,6 +29,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+
+- 2026-11-03 — branch `feat/ui-barra-atalhos` criado de `feat/ui-moldura` (fc17ab5): a base prevista (`feat/ui-inventario`, #0026) não existe porque a #0026 está bloqueada; estado `fazendo`.
 
 ## Decisões e REA
 
