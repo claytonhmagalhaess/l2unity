@@ -240,6 +240,21 @@ namespace L2Web.Tests
             Assert.IsNull(L2Html.TexUrl(null));
         }
 
+        [Test]
+        public void Tutorial_AlturaDaJanelaPeloHtml()
+        {
+            // TutorialViewerWnd.uc: clamp(FrameMaxHeight, 256, 672) + 32 + 8
+            Assert.AreEqual(256 + 40, TutorialViewerView.WindowHeight(10));
+            Assert.AreEqual(300 + 40, TutorialViewerView.WindowHeight(300));
+            Assert.AreEqual(672 + 40, TutorialViewerView.WindowHeight(2000));
+            var ev = PacketEvents.TutorialShowHtml("<html><body>oi <a action=\"bypass -h x\">y</a></body></html>");
+            string html = null;
+            Assert.AreEqual(Ev.EV_TutorialViewerWndShow, ev[0].Id);
+            Assert.IsTrue(L2Param.ParseString(ev[0].Param, "HtmlString", ref html));
+            StringAssert.Contains("bypass -h x", html);
+            Assert.AreEqual(Ev.EV_TutorialViewerWndHide, PacketEvents.TutorialCloseHtml()[0].Id);
+        }
+
         // ------------------------------------------------------------ montagem em uGUI
         [Test]
         public void Render_BufferMontaBotoesComIconeETextos()
