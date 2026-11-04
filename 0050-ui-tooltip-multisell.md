@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui, na pasta `worktrees\world` (emprestada: a `worktrees\ui` está com a #0048) |
 | Branch | `feat/ui-tooltip-multisell` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\02_interacoes.md` (tooltips, `InventoryWithIcon` e variantes), `analises\l2-interlude\client_spec\` (MultiSellWnd, ItemInfo/tooltip, 96); `ItemInfoText.cs` e `L2Tooltip.cs` |
 | Sessão | ui: tooltip da multisell (#0050) |
 | Criada | 2026-11-04 |
@@ -21,16 +21,30 @@ No original, o tooltip e o painel mostram as informações completas do item, in
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Levantamento, com evidência (`MultiSellWnd.uc` do `Interface.u` exportado, NWindow no Tryskell ou na REA, `itemname-e.dat`, `armorgrp`/`weapongrp`/`etcitemgrp`, `setitemgrp` ou o equivalente do Interlude), de:
+- [x] Levantamento, com evidência (`MultiSellWnd.uc` do `Interface.u` exportado, NWindow no Tryskell ou na REA, `itemname-e.dat`, `armorgrp`/`weapongrp`/`etcitemgrp`, `setitemgrp` ou o equivalente do Interlude), de:
   - o que o original mostra no tooltip ao passar o mouse sobre um item da lista, sobre um ingrediente e sobre o item escolhido;
   - o que mostra no painel "Item information" (P. Def./P. Atk., peso, grade, tipo, descrição, set e encantamento);
   - os textos das linhas e as cores.
-- [ ] O tooltip dos itens da multisell segue o tipo de tooltip do original, com todas as linhas de item, como o do inventário.
-- [ ] As armaduras de set mostram as informações de set como no original: as peças do conjunto, as peças que o jogador já tem equipadas e os efeitos do set completo e do escudo. Se o Interlude não mostrar set em algum desses lugares, isso fica registrado em Decisões com a evidência.
-- [ ] O painel "Item information" mostra os valores reais (defesa, ataque, peso etc.) lidos dos dados do cliente, e não 0.
-- [ ] O que depender de dado que o `shared` não tem vira pedido de exportação para a coordenadora. O que for do `App.cs` ou de `Scripts\Net\` também vira pedido. Os pedidos vão em `tarefas\pedidos\`.
-- [ ] Testes EditMode para a montagem das linhas do tooltip e do set. `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
-- [ ] Capturas antes e depois em `Docs/evidencias/tooltip-multisell/`, tiradas no aCis local, e uma linha em `Docs/validacao.md`.
+
+  Feito: ver Decisões e REA (com endereços, arquivos e linhas).
+- [x] O tooltip dos itens da multisell segue o tipo de tooltip do original, com todas as linhas de item, como o do inventário.
+
+  Lista: `Inventory` completo. Nomes: `Inventory` do NCItem reduzido, como no original.
+- [x] As armaduras de set mostram as informações de set como no original: as peças do conjunto, as peças que o jogador já tem equipadas e os efeitos do set completo e do escudo. Se o Interlude não mostrar set em algum desses lugares, isso fica registrado em Decisões com a evidência.
+
+  Peças, efeito do set, efeito do escudo e efeito do encantamento aparecem nos tooltips da lista e dos nomes. As peças equipadas não ganham cor na multisell do original (ServerID 0), e isso está registrado em Decisões. As cores ativas estão implementadas e valem no inventário.
+- [x] O painel "Item information" mostra os valores reais (defesa, ataque, peso etc.) lidos dos dados do cliente, e não 0.
+
+  Justificado. O painel já lia o `ItemStats` (6379: 249/4950, ao vivo), e os itens etc agora vêm do `etcitemgrp`. O 0 que o usuário viu é de item customizado do servidor (9516, `custom-a-s-grade-armor`), ausente do `itemdata.json` exportado de um cliente antigo. Fica certo com o pedido 0041, sem mudar código.
+- [x] O que depender de dado que o `shared` não tem vira pedido de exportação para a coordenadora. O que for do `App.cs` ou de `Scripts\Net\` também vira pedido. Os pedidos vão em `tarefas\pedidos\`.
+
+  Pedido 0041. Nada de `App.cs` nem de `Scripts\Net\`.
+- [x] Testes EditMode para a montagem das linhas do tooltip e do set. `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
+
+  `MultiSellTooltipTests`, 9 casos. Suíte 759/759 em `36d8e0a`, contra 750/750 da base.
+- [x] Capturas antes e depois em `Docs/evidencias/tooltip-multisell/`, tiradas no aCis local, e uma linha em `Docs/validacao.md`.
+
+  Linha K34 (`49afb06`).
 
 ## Andamento
 
@@ -43,6 +57,9 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — o Editor da pasta world foi fechado no meio do teste ao vivo. Pelo novo fluxo, a suíte e o roteiro ao vivo (antes `b88e07c` e depois `36d8e0a`) foram pedidos à sessão de testes. Roteiro em `side-session-notes\local_4e5f59ae-…\0050-roteiro-testes.md`.
 - 2026-11-04 — sessão de testes: `36d8e0a` compila sem erros e passa 759/759 na EditMode (a base `b88e07c` dá 750/750), sem falhas novas. Arquivos em `testes\0050-1\suite-36d8e0a\`.
 - 2026-11-04 — pedido 0041 (coordenadora): regerar o `itemdata.json` com o `mp_consume` das armas.
+- 2026-11-04 — ao vivo pela sessão de testes (`testes\0050-1\`): antes, os tooltips só com o nome; depois, a lista com P. Def. 249, Weight 4950, descrição e set, e o nome do produto com 0 e o set. A entrada da 6379 na `s-grade-armor` tem 4 produtos e nenhum ingrediente, então sem tooltip de ingrediente.
+- 2026-11-04 — achada a causa do 0 do painel: itens customizados do servidor fora do `itemdata.json`. Pedido 0041 ampliado com a reexportação, testada numa pasta temporária.
+- 2026-11-04 — evidências e K34 (`49afb06`). Estado `pronta p/ merge`.
 
 ## Decisões e REA
 
@@ -60,7 +77,12 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - O porte faz igual. O "0" que o usuário citou é do **painel**, e lá o original mostra os valores reais (abaixo).
 - [O] **Desenho do tooltip do nome.** O OnPostPaint usa `DrawSimpleTooltip` (`nw:0x100549b0`). O `DrawItemList` (`nw:0x10068be0`) só corta quando `0 < SimpleLineCount`, então com 0 desenha a lista inteira.
 - [O] **Painel "Item information".** O `SetItemInfo` recarrega peso, PDef etc. das tabelas do cliente (07 Apêndice A §2.2). O porte já fazia isso com o `ItemStats` (P. Def. 249 e peso 4950 para a 6379, conferido no Editor). Para item etc, o porte agora usa o peso e o grau do `etcitemgrp` (`MultiSellView.PanelStats`).
-  - A causa do "0" que o usuário viu ainda não está confirmada. O diagnóstico está pedido no roteiro ao vivo, rodada "antes".
+  - [O] **Causa do "0" que o usuário viu.** A lista com Event Medal/Gold Bar é a `custom-a-s-grade-armor` do aCis local (ingredientes 14025 e 3470). Os produtos dela são os ids 9510–9584 (`data\xml\items\custom-armors\armor-remake.xml`); a "Draconic Leather Armor" é a 9516.
+    - O cliente do `shared` (igual ao `reference`) tem esses itens: o `armorgrp.dat` tem 1908 registros e o `ItemName-e.dat` 11059, com a 9516 "Remake".
+    - Já o `itemdata.json` foi exportado de `tools\l2anim\txt`, de um cliente antigo (1014 armaduras, 1313 armas, 9208 nomes). Sem o registro, o `ItemStats` vem nulo e o painel mostra 0.
+    - Ao vivo, a 6379 (que está nos dados) dá 249/4950 já no commit de antes.
+    - Correção: reexportação (pedido 0041), testada; a 9516 sai com P. Def. 186 e peso 7620.
+    - O original, quando o lookup do dado falha, também mostra 0 (07 Apêndice A §2.2). O problema é só o dado exportado.
 - [O] **`GetItemDataType`** (`nw:0x10123620`) devolve `*(dado+4)`: 0 arma, 1 armadura ou joia, 2 etc, e 0 sem dado. O porte usava 0/1/2 (acessório)/5, e foi corrigido (`MultiSellScript.DataType`). Isso muda o ramo do tooltip dos ingredientes e o "+N" do nome.
 
 **Set**
@@ -91,10 +113,19 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/ui-tooltip-multisell`, sobre `feat/ui-revisao` `b88e07c`):
+  - `55350f5`: código (L2Tooltip, L2TooltipData, MultiSell*, ItemInfoText, GameUi e `export_itemdata.py` com `mp_consume`);
+  - `36d8e0a`: `MultiSellTooltipTests`;
+  - `49afb06`: evidências em `Docs/evidencias/tooltip-multisell/` e linha K34 no `Docs/validacao.md`.
+- **Testes:**
+  - suíte EditMode 759/759 em `36d8e0a` pela sessão de testes (base `b88e07c` 750/750), sem falhas novas;
+  - ao vivo no aCis local (Armor Shop, `s-grade-armor`, 6379), antes e depois, sem erros no console.
+- **Falta / fora do escopo:**
+  - pedido 0041 (coordenadora): reexportar o `itemdata.json` do cliente atual. É o que corrige o P. Def./Weight 0 dos itens customizados (a lista que o usuário abriu) e traz o `mp_consume`. Depois dele, vale olhar a `custom-a-s-grade-armor` ao vivo;
+  - opções do aumento (`UIDATA_REFINERYOPTION`): sem a tabela no porte [?];
+  - o símbolo do grau segue como letra (textura não achada, da #0027);
+  - o set da 9516 aponta para os ids 16205–16209, que não têm nome no cliente. Igual ao original, essas peças não saem; só os efeitos aparecem.
 
 ## Pedidos
 
-- 0041 (coordenadora): regerar o `itemdata.json` com o `mp_consume` (`pedidos/0041-ui-itemdata-mpconsume.md`).
+- 0041 (coordenadora): reexportar o `itemdata.json` do cliente atual, com os itens customizados e o `mp_consume` (`pedidos/0041-ui-itemdata-mpconsume.md`).
