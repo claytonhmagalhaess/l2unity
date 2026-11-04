@@ -4,7 +4,7 @@
 |---|---|
 | De | net (tarefa #0046) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-11-03 |
 
 ## O que precisa
@@ -34,3 +34,4 @@ Opcodes que o router trata: ver `ReceivedPacketTests` / `Docs/cobertura_recebido
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+Aceito pela coordenadora em 2026-11-03. O `InterfaceRouter` só existe no branch `feat/net-pacotes-interface`; por isso o campo `Interface` e as duas linhas em `ConnectGame` entram num commit da coordenadora no `main` junto com o merge da #0046 (quando o usuário pedir o merge), não antes, para o `main` continuar compilando.
