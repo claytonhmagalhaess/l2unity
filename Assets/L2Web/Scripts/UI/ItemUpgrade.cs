@@ -488,6 +488,10 @@ namespace L2Web.UI
             Box(Refinery, "ItemDragBox3", R.Gem);
             Box(Refinery, "ItemRefined", R.Result);
             Refinery.ShowCtrl("ItemDragBoxResultWnd", R.Result != null);
+            // ResetReady e os passos escondem o fundo e as animacoes; a de carregar so durante o refino
+            Refinery.ShowCtrl("BackPattern", false);
+            Refinery.ShowCtrl("RefineLoadingAnimation", R.Refining);
+            foreach (var n in new[] { "RefineResultAnimation01", "RefineResultAnimation02", "RefineResultAnimation03" }) Refinery.ShowCtrl(n, false);
             Enable(Refinery, "btnRefine", R.RefineEnabled);
             Enable(Refinery, "btnClose", R.CloseEnabled);
             if (!R.Refining) Refinery.Bar("RefineryProgress", 0, 1);
@@ -496,6 +500,8 @@ namespace L2Web.UI
         void RenderUnrefinery()
         {
             Unrefinery.Text("txtInstruction", U.Instruction);
+            Unrefinery.ShowCtrl("RefineResultAnimation01", false);
+            Unrefinery.ShowCtrl("ItemtounrefineAnim", false);
             Unrefinery.Text("txtAdenaInstruction", U.AdenaText);
             var a = Unrefinery.TextEl("txtAdenaInstruction");
             if (a) a.color = L2Tooltip.GetNumericColor(L2Tooltip.MakeCostString(U.Adena.ToString()));
