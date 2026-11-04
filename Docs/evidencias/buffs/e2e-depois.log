@@ -1,0 +1,45 @@
+2b706c5 Docs: contas de teste do aCis local (l2webtest3 para a #0052)
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+== #0052 depois 2b706c5
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=65 self=Buffs52 83499,148710,-3408"
+b) tempos reais: {
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_buffs_servidor.png (1024, 768)
+== c) injetados
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_inj_0s.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_inj_1s.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_inj_2s.png (1024, 768)
+"n=6 1086:1190 1204:35 274:15 1160:30 102:10 312:-1 "
+== c) tooltips (reinjetado)
+"ok"
+-- tooltip depois_tip_pocao: "Lesser Healing Potion => Lesser Healing Potion |   | Lv |  1 | Remaining Time |  :  | 9초 | Increases HP regeneration significantly. Effect 1."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_pocao.png (1024, 768)
+-- tooltip depois_tip_windwalk: "Wind Walk => Wind Walk |   | Lv |  2 | Remaining Time |  :  | 41초 | Temporarily increases Speed. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_windwalk.png (1024, 768)
+-- tooltip depois_tip_windwalk_2: "Wind Walk => Wind Walk |   | Lv |  2 | Remaining Time |  :  | 36초 | Temporarily increases Speed. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_windwalk_2.png (1024, 768)
+-- tooltip depois_tip_dancefire: "Dance of Fire => Dance of Fire |   | Lv |  1 | Remaining Time |  :  | 13초 | Temporarily increases party members' critical damage. Continuous dancing consumes additional MP. An equipped dual-sword weapon is required to use this skill."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_dancefire.png (1024, 768)
+-- tooltip depois_tip_slow: "Slow => Slow |   | Lv |  1 | Instantly reduces enemy's Speed. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_slow.png (1024, 768)
+-- tooltip depois_tip_vicious: "Vicious Stance => Vicious Stance |   | Lv |  1 | Increases one's critical attack power. MP will be consumed continuously."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_vicious.png (1024, 768)
+-- tooltip depois_tip_peso: "Weight Penalty => Weight Penalty |   | Lv |  1 | Your inventory weight limit exceeds 50%.  HP/MP regeneration and movement are greatly decreased, and any quest progression is suspended."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_peso.png (1024, 768)
+-- tooltip depois_tip_haste: "Haste => Haste |   | Lv |  2 | Remaining Time |  :  | 19Minutes | Temporarily increases Atk. Spd. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_tip_haste.png (1024, 768)
+"ok"
+0 entradas
+== d) grupo injetado
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_grupo_0.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_grupo_F1.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_grupo_F2.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/depois_grupo_F3.png (1024, 768)
+0 entradas
