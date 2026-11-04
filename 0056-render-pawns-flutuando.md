@@ -36,6 +36,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — causa medida (geodata × terreno do Unreal em Giran, Turek, Gludio, Dion, Dragon Valley) e achada no `GeoTerrain.VisualFloor`; correção + `PawnFloorTests` (`df7ea56`).
 - 2026-11-04 — conta `l2webtest7` em `Docs/contas_teste.md`; pedido 0050 (som de passo no `App.cs`); pedido de teste 0056-1 à sessão de testes.
 - 2026-11-04 — escopo ampliado pela coordenadora: mapa inteiro. Varredura offline dos 139 tiles com geodata e de 41 803 pontos do servidor (`Docs/pawns_chao_varredura.md`, scripts em `Docs/tools/pawns_chao/`). Trace até z − 900 e camada certa do geodata em lugares de vários andares (`791b1c3`); pedido 0052 (`GeoTerrain.AllLayers` no `App.cs`, depende do 0051 da #0057).
+- 2026-11-04 — teste 0056-1 (`6187e0a`): suíte 891/891, `PawnFloorTests` 12/12. No offline, o desenho coincide com o terreno UE em Turek, Gludio, Dion, Dragon Valley e fora de Giran; na praça de Giran fica igual (piso BSP). Ao vivo em Plains of Dion, o personagem e os monstros ficam com os pés na grama: parados, correndo, em combate e depois do teleporte. Evidências em `Docs/evidencias/pawns-chao/` (`ae08e57`). Falta o 0056-2 (`791b1c3`: mapa inteiro, andar do meio de Cruma e ToI).
 
 ## Decisões e REA
 
