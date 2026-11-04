@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-barra-atalhos` |
-| Estado | bloqueada |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T4; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -35,6 +35,9 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-03 — `sh Docs/tools/run_tests.sh`: 522/522 (exit 0).
 - 2026-11-03 — evidências offline (`cliques.log`, captura) e linha K18 do `Docs/validacao.md` (`05f7163`). aCis fora do ar.
 - 2026-11-03 — bloqueada: aguardando #0046 no main (o `RequestShortCutReg` com `UserShortCut` 1/2 para as ações de pet) e as tarefas #0032 (macros) e #0031 (pet), também bloqueadas, para as origens macro, receita e pet do critério.
+- 2026-11-03 — desbloqueada: a #0046 entrou no `main` (5d398bb) e a coordenadora fez `git merge main` neste branch.
+- 2026-11-03 — origens macro e receita e o `UserShortCut` 2 das ações de pet (15–27) e do inventário do pet: `DragToBar` público para as janelas das próximas tarefas, rótulo e ícone da macro pelo `InterfaceRouter.Macros`, uso da macro (`UseMacro`, ligado pela #0032) e da receita (`RequestRecipeItemMakeInfo`) (`ef46695`).
+- 2026-11-03 — `sh Docs/tools/run_tests.sh`: 611/611 (exit 0).
 
 ## Decisões e REA
 
@@ -45,12 +48,15 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - [O] `OnDragButton` (`nw:0x100478f0`): soltar fora da própria barra com margem de 30 px apaga (`RequestShortCutDel`). [V] O `IsLockShortcutWnd` é lido mas o desvio não aparece no pseudocódigo; no porte, com as barras travadas o slot não arrasta.
 - [O] Teclas: no xdat do Interlude só a barra principal tem teclas (F1–F12, 1–0, -, =, com Ctrl/Shift); as barras 2 e 3 não têm. O porte dizia Alt+F e Ctrl+Shift+F.
 - O branch nasceu de `feat/ui-moldura` porque a base prevista (`feat/ui-inventario`, #0026) não existe (#0026 bloqueada).
+- [O] `OnDropItem` (`nw:0x100480c0`): ações 0–14 vão com `UserShortCut = 1`, 15–27 (pet) com `2`; itens do inventário do pet também com `2` (`ShortcutBar.UserShortCut`). Na troca entre slots o porte não sabe se um item veio do pet: usa 1 [I].
+- [I] Clique num atalho de receita abre a fabricação (`RequestRecipeItemMakeInfo`); o nativo não foi lido.
+- Macro na barra: ícone `L2UI.MacroWnd.Macro_IconN` e nome do `UIDATA_MACRO` (`InterfaceRouter.Macros`); a execução das linhas é da #0032.
 
 ## Entrega
 
-- **Commits:** `ffdc3fd` (código e `ShortcutBarTests`), `05f7163` (evidências e K18).
-- **Testes:** `ShortcutBarTests` (ids de shot, troca, soltar fora, rótulos); `sh Docs/tools/run_tests.sh` 522/522.
-- **Falta / fora do escopo:** origens macro (#0032), receita (#0043) e pet (#0031) e o `UserShortCut` 1/2 no `RequestShortCutReg` (#0046); capturas da troca e do arrasto (só o log dos cliques); teste ao vivo.
+- **Commits:** `ffdc3fd` (clique direito, troca, apagar arrastando, rótulos), `05f7163` (evidências e K18), `ef46695` (origens macro/receita/pet).
+- **Testes:** `ShortcutBarTests` (ids de shot, troca, soltar fora, rótulos, UserShortCut); `sh Docs/tools/run_tests.sh` 611/611.
+- **Falta / fora do escopo:** as janelas de origem (MacroListWnd #0032, PetWnd #0031, RecipeBook #0043) chamam o `DragToBar` quando entrarem; captura da troca e do arrasto; teste ao vivo.
 
 ## Pedidos
 
