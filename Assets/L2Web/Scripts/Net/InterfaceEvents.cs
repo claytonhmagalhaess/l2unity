@@ -309,6 +309,76 @@ namespace L2Web.Net
         public static List<PacketEvents.Event> PledgeSkillAdd((int Id, int Level) s) =>
             new() { E(Ev.EV_ClanSkillListAdd, P(P("", "SkillID", s.Id), "SkillLevel", s.Level)) };
 
+        // ---------------------------------------------------------------- aprender skill e tatuagem (T15)
+        // Nome, icone e descricao da skill, do item e da tatuagem (strName, strIconName, Name, IconName, DyeName...) vem dos .dat
+        // do cliente: a janela completa pelo id. ClassID no EV_SkillTrainInfoWndAddExtendInfo e chave a mais do l2unity (o
+        // original resolve o item no nativo).
+
+        /// <summary>AcquireSkillList (0x8a): EV_SkillTrainListWndShow (Type) e um EV_SkillTrainListWndAddSkill (iID, iLevel, iSPConsume) por skill.</summary>
+        public static List<PacketEvents.Event> AcquireSkillList(AcquireSkillListInfo l)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_SkillTrainListWndShow, P("", "Type", l.Type)) };
+            foreach (var s in l.Skills) o.Add(E(Ev.EV_SkillTrainListWndAddSkill, P(P(P("", "iID", s.Id), "iLevel", s.Level), "iSPConsume", s.SpCost)));
+            return o;
+        }
+
+        /// <summary>
+        /// AcquireSkillInfo (0x8b): EV_SkillTrainInfoWndShow (Type, iID, iLevel, iSPConsume) e um EV_SkillTrainInfoWndAddExtendInfo
+        /// (iNumOfItem, ClassID) por item exigido.
+        /// </summary>
+        public static List<PacketEvents.Event> AcquireSkillInfo(AcquireSkillInfoInfo s)
+        {
+            var p = P("", "Type", s.Mode);
+            p = P(p, "iID", s.Id);
+            p = P(p, "iLevel", s.Level);
+            var o = new List<PacketEvents.Event> { E(Ev.EV_SkillTrainInfoWndShow, P(p, "iSPConsume", s.SpCost)) };
+            foreach (var q in s.Requirements) o.Add(E(Ev.EV_SkillTrainInfoWndAddExtendInfo, P(P("", "iNumOfItem", q.Count), "ClassID", q.ItemId)));
+            return o;
+        }
+
+        /// <summary>AcquireSkillDone (0x8e): fecha o SkillTrainInfoWnd e o SkillTrainListWnd.</summary>
+        public static List<PacketEvents.Event> AcquireSkillDone() => new() { E(Ev.EV_SkillTrainInfoWndHide), E(Ev.EV_SkillTrainListWndHide) };
+
+        static string Henna(string p, HennaEntry h)
+        {
+            p = P(p, "HennaID", h.HennaId);
+            p = P(p, "ClassID", h.DyeId);
+            p = P(p, "NumOfItem", h.Count);
+            return P(p, "Fee", h.Fee);
+        }
+
+        /// <summary>
+        /// HennaEquipList (0xe2) / HennaRemoveList (0xe5): EV_HennaListWndShowHideEquip/UnEquip (Adena) e um
+        /// EV_HennaListWndAddHennaEquip/UnEquip (HennaID, ClassID, NumOfItem, Fee) por tatuagem.
+        /// </summary>
+        public static List<PacketEvents.Event> HennaList(HennaListInfo l)
+        {
+            var o = new List<PacketEvents.Event> { E(l.Equip ? Ev.EV_HennaListWndShowHideEquip : Ev.EV_HennaListWndShowHideUnEquip, P("", "Adena", l.Adena)) };
+            foreach (var h in l.Hennas) o.Add(E(l.Equip ? Ev.EV_HennaListWndAddHennaEquip : Ev.EV_HennaListWndAddHennaUnEquip, Henna("", h)));
+            return o;
+        }
+
+        /// <summary>HennaItemInfo (0xe3) / HennaItemRemoveInfo (0xe6): EV_HennaInfoWndShowHideEquip/UnEquip com a tatuagem e XXnow/XXchange.</summary>
+        public static List<PacketEvents.Event> HennaItemInfo(HennaItemInfo h)
+        {
+            var p = Henna(P("", "Adena", h.Adena), h.Henna);
+            for (var i = 0; i < 6; i++) p = P(P(p, SkillTrainPackets.HennaStats[i] + "now", h.Now[i]), SkillTrainPackets.HennaStats[i] + "change", h.Change[i]);
+            return new() { E(h.Equip ? Ev.EV_HennaInfoWndShowHideEquip : Ev.EV_HennaInfoWndShowHideUnEquip, p) };
+        }
+
+        /// <summary>
+        /// HennaInfo (0xe4): EV_UpdateHennaInfo com o bonus somado em XXchange (agregado ou por tatuagem: a validar, spec 06 §14) e um
+        /// EV_InventoryAddHennaInfo (ID, bActive) por tatuagem (chaves do NWindow.dll).
+        /// </summary>
+        public static List<PacketEvents.Event> HennaInfo(HennaInfo h)
+        {
+            var p = "";
+            for (var i = 0; i < 6; i++) p = P(p, SkillTrainPackets.HennaStats[i] + "change", h.Stats[i]);
+            var o = new List<PacketEvents.Event> { E(Ev.EV_UpdateHennaInfo, p) };
+            foreach (var (id, active) in h.Hennas) o.Add(E(Ev.EV_InventoryAddHennaInfo, P(P("", "ID", id), "bActive", active ? 1 : 0)));
+            return o;
+        }
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>

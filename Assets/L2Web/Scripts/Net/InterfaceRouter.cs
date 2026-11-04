@@ -36,6 +36,13 @@ namespace L2Web.Net
         public PledgeShowMemberListAllInfo Clan;
         public Action<AskJoinPledgeInfo> OnAskJoinPledge;
 
+        /// <summary>Skills a aprender, a skill escolhida, as listas de tatuagem e as tatuagens equipadas (GetHennaInfo).</summary>
+        public AcquireSkillListInfo SkillTrainList;
+        public AcquireSkillInfoInfo SkillTrainInfo;
+        public HennaListInfo HennaList;
+        public HennaItemInfo HennaItem;
+        public HennaInfo Hennas;
+
         /// <summary>Ultimo pacote de cada janela (a janela le os itens daqui ou do param do evento).</summary>
         public WarehouseListInfo Warehouse;
         public StorageMaxCountInfo StorageMax;
@@ -140,6 +147,28 @@ namespace L2Web.Net
             Ex(0x3e, r => Emit(InterfaceEvents.PledgeWarList(ClanPackets.ParsePledgeReceiveWarList(r))));
             Ex(0x3f, r => Emit(InterfaceEvents.SubPledgeCreated(ClanPackets.ParsePledgeReceiveSubPledgeCreated(r))));
 
+            // ---------------------------------------------------------------- aprender skill e tatuagem (T15)
+            On(0x8a, r =>
+            {
+                SkillTrainList = SkillTrainPackets.ParseAcquireSkillList(r);
+                Emit(InterfaceEvents.AcquireSkillList(SkillTrainList));
+            });
+            On(0x8b, r =>
+            {
+                SkillTrainInfo = SkillTrainPackets.ParseAcquireSkillInfo(r);
+                Emit(InterfaceEvents.AcquireSkillInfo(SkillTrainInfo));
+            });
+            On(0x8e, _ => Emit(InterfaceEvents.AcquireSkillDone()));
+            On(0xe2, r => ShowHennaList(SkillTrainPackets.ParseHennaEquipList(r)));
+            On(0xe5, r => ShowHennaList(SkillTrainPackets.ParseHennaRemoveList(r)));
+            On(0xe3, r => ShowHennaItem(SkillTrainPackets.ParseHennaItemEquipInfo(r)));
+            On(0xe6, r => ShowHennaItem(SkillTrainPackets.ParseHennaItemRemoveInfo(r)));
+            On(0xe4, r =>
+            {
+                Hennas = SkillTrainPackets.ParseHennaInfo(r);
+                Emit(InterfaceEvents.HennaInfo(Hennas));
+            });
+
             // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
             On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));
             On(0x42, r => ShowWarehouse(StorePackets.ParseWarehouseWithdrawList(r)));
@@ -188,6 +217,18 @@ namespace L2Web.Net
         {
             Warehouse = w;
             Emit(InterfaceEvents.Warehouse(w));
+        }
+
+        void ShowHennaList(HennaListInfo l)
+        {
+            HennaList = l;
+            Emit(InterfaceEvents.HennaList(l));
+        }
+
+        void ShowHennaItem(HennaItemInfo h)
+        {
+            HennaItem = h;
+            Emit(InterfaceEvents.HennaItemInfo(h));
         }
 
         void ShowStoreManage(PrivateStoreManageInfo m)

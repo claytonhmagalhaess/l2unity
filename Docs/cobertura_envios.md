@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **100**; não enviados pelo Unity: **145**.
+Envios do original: **245**; com builder no Unity: **108**; não enviados pelo Unity: **137**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -68,6 +68,8 @@ Envios do original: **245**; com builder no Unity: **100**; não enviados pelo U
 | RequestQuestList | jogo | 0x63 |  | `c` | ClanPackets.RequestQuestList |
 | RequestDestroyQuest | jogo | 0x64 |  | `cd` | ClanPackets.RequestQuestAbort |
 | RequestPledgeInfo | jogo | 0x66 |  | `cd` | ClanPackets.RequestPledgeInfo |
+| RequestAcquireSkillInfo | jogo | 0x6b |  | `cddd` | SkillTrainPackets.RequestAcquireSkillInfo |
+| RequestAcquireSkill | jogo | 0x6c |  | `cddd` | SkillTrainPackets.RequestAcquireSkill |
 | RequestRestartPoint | jogo | 0x6d |  | `cd` | GamePackets.RequestRestartPoint |
 | RequestCrystallizeItem | jogo | 0x72 |  | `cdd` | UiPackets.RequestCrystallizeItem |
 | RequestPrivateStoreManage | jogo | 0x73 |  | `c` | StorePackets.RequestPrivateStoreManageSell |
@@ -89,6 +91,12 @@ Envios do original: **245**; com builder no Unity: **100**; não enviados pelo U
 | RequestPackageSend | jogo | 0x9f |  | `cddb` | StorePackets.RequestPackageSend |
 | RequestMultiSellChoose | jogo | 0xa7 |  | `cddddd` | UiPackets.MultiSellChoose |
 | NetPing | jogo | 0xa8 |  | `cddd` | GamePackets.NetPing |
+| RequestHennaItemList | jogo | 0xba |  | `cd` | SkillTrainPackets.RequestHennaList |
+| RequestHennaItemInfo | jogo | 0xbb |  | `cd` | SkillTrainPackets.RequestHennaItemInfo |
+| RequestHennaEquip | jogo | 0xbc |  | `cd` | SkillTrainPackets.RequestHennaEquip |
+| RequestHennaUnequipList | jogo | 0xbd |  | `cd` | SkillTrainPackets.RequestHennaRemoveList |
+| RequestHennaUnequipInfo | jogo | 0xbe |  | `cd` | SkillTrainPackets.RequestHennaItemRemoveInfo |
+| RequestHennaUnequip | jogo | 0xbf |  | `cd` | SkillTrainPackets.RequestHennaRemove |
 | RequestPledgePower | jogo | 0xc0 |  | `cdd` | ClanPackets.RequestPledgePower |
 | RequestPledgePower | jogo | 0xc0 |  | `cddd` | ClanPackets.RequestPledgePower |
 | RequestMakeMacro | jogo | 0xc1 |  | `cdSSSccb` | MacroPackets.RequestMakeMacro |
@@ -143,8 +151,6 @@ Envios do original: **245**; com builder no Unity: **100**; não enviados pelo U
 | RequestFriendList | jogo | 0x60 |  | `c` | não enviado |
 | RequestPledgeExtendedInfo | jogo | 0x67 |  | `cS` | não enviado |
 | RequestPledgeCrest | jogo | 0x68 |  | `cd` | não enviado |
-| RequestAcquireSkillInfo | jogo | 0x6b |  | `cddd` | não enviado |
-| RequestAcquireSkill | jogo | 0x6c |  | `cddd` | não enviado |
 | RequestGMCommand | jogo | 0x6e |  | `cSdd` | não enviado |
 | RequestListPartyWating | jogo | 0x6f |  | `cddd` | não enviado |
 | RequestManagePartyRoom | jogo | 0x70 |  | `cdddddS` | não enviado |
@@ -196,12 +202,6 @@ Envios do original: **245**; com builder no Unity: **100**; não enviados pelo U
 | RequestRecipeShopSellList | jogo | 0xb7 |  | `cd` | não enviado |
 | RequestObserverEndPacket | jogo | 0xb8 |  | `c` | não enviado |
 | VoteSociality | jogo | 0xb9 |  | `cd` | não enviado |
-| RequestHennaItemList | jogo | 0xba |  | `cd` | não enviado |
-| RequestHennaItemInfo | jogo | 0xbb |  | `cd` | não enviado |
-| RequestHennaEquip | jogo | 0xbc |  | `cd` | não enviado |
-| RequestHennaUnequipList | jogo | 0xbd |  | `cd` | não enviado |
-| RequestHennaUnequipInfo | jogo | 0xbe |  | `cd` | não enviado |
-| RequestHennaUnequip | jogo | 0xbf |  | `cd` | não enviado |
 | RequestProcureCrop | jogo | 0xc3 |  | `cddb` | não enviado |
 | RequestBuySeed | jogo | 0xc4 |  | `cddb` | não enviado |
 | RequestPreviewItem | jogo | 0xc6 |  | `cdddb` | não enviado |

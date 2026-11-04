@@ -107,6 +107,15 @@ namespace L2Web.Tests
             yield return C("ClanPackets.RequestPledgeMemberInfo", "RequestPledgeMemberInfo", ClanPackets.RequestPledgeMemberInfo(0, "a"));
             yield return C("ClanPackets.RequestPledgeWarList", "RequestPledgeWarList", ClanPackets.RequestPledgeWarList(0, 0));
             yield return C("ClanPackets.RequestPledgeReorganizeMember", "RequestPledgeReorganizeMember", ClanPackets.RequestPledgeReorganizeMember(true, "a", 100, "b"));
+            // aprender skill e tatuagem (#0046, T15)
+            yield return C("SkillTrainPackets.RequestAcquireSkillInfo", "RequestAcquireSkillInfo", SkillTrainPackets.RequestAcquireSkillInfo(1, 1, 0));
+            yield return C("SkillTrainPackets.RequestAcquireSkill", "RequestAcquireSkill", SkillTrainPackets.RequestAcquireSkill(1, 1, 0));
+            yield return C("SkillTrainPackets.RequestHennaList", "RequestHennaItemList", SkillTrainPackets.RequestHennaList());
+            yield return C("SkillTrainPackets.RequestHennaItemInfo", "RequestHennaItemInfo", SkillTrainPackets.RequestHennaItemInfo(1));
+            yield return C("SkillTrainPackets.RequestHennaEquip", "RequestHennaEquip", SkillTrainPackets.RequestHennaEquip(1));
+            yield return C("SkillTrainPackets.RequestHennaRemoveList", "RequestHennaUnequipList", SkillTrainPackets.RequestHennaRemoveList());
+            yield return C("SkillTrainPackets.RequestHennaItemRemoveInfo", "RequestHennaUnequipInfo", SkillTrainPackets.RequestHennaItemRemoveInfo(1));
+            yield return C("SkillTrainPackets.RequestHennaRemove", "RequestHennaUnequip", SkillTrainPackets.RequestHennaRemove(1));
             // pet (#0046, T7)
             yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
             yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));

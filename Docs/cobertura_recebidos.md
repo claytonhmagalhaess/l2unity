@@ -2,7 +2,7 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 74 tratados no Unity
+- UI: 198 no original, 82 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 34 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
@@ -245,11 +245,11 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x87 | DummyPacket |  | log |  | falta |
 | game | 0x88 | PledgeShowInfoUpdatePacket | PledgeShowInfoUpdate | UI | EV_ClanInfoUpdate | tratado |
 | game | 0x89 | ClientActionPacket |  | UI nativa (C++, sem EV_) |  | falta |
-| game | 0x8a | AcquireSkillListPacket | AcquireSkillList | UI | EV_SkillTrainListWndAddSkill, EV_SkillTrainListWndShow | falta |
-| game | 0x8b | AcquireSkillInfoPacket | AcquireSkillInfo | UI | EV_SkillTrainInfoWndAddExtendInfo, EV_SkillTrainInfoWndShow | falta |
+| game | 0x8a | AcquireSkillListPacket | AcquireSkillList | UI | EV_SkillTrainListWndAddSkill, EV_SkillTrainListWndShow | tratado |
+| game | 0x8b | AcquireSkillInfoPacket | AcquireSkillInfo | UI | EV_SkillTrainInfoWndAddExtendInfo, EV_SkillTrainInfoWndShow | tratado |
 | game | 0x8c | ServerObjectInfoPacket | ServerObjectInfo | mundo/engine |  | falta |
 | game | 0x8d | GMHidePacket |  | mundo/engine |  | falta |
-| game | 0x8e | AcquireSkillDonePacket |  | UI | EV_SkillTrainInfoWndHide, EV_SkillTrainListWndHide | falta |
+| game | 0x8e | AcquireSkillDonePacket |  | UI | EV_SkillTrainInfoWndHide, EV_SkillTrainListWndHide | tratado |
 | game | 0x8f | GMViewCharacterInfoPacket | GMViewCharacterInfo | UI | EV_GMObservingUserInfoUpdate | falta |
 | game | 0x90 | GMViewPledgeInfoPacket | GMViewPledgeInfo | UI | EV_GMObservingClan, EV_GMObservingClanMember, EV_GMObservingClanMemberStart | falta |
 | game | 0x91 | GMViewSkillInfoPacket | GMViewSkillInfo | UI | EV_GMObservingSkillList, EV_GMObservingSkillListStart | falta |
@@ -333,11 +333,11 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xdf | ObserverStartPacket | ObservationMode | UI | EV_ObserverWndShow | falta |
 | game | 0xe0 | ObserverEndPacket | ObservationReturn | UI | EV_ObserverWndHide | falta |
 | game | 0xe1 | ChairSitPacket | ChairSit | mundo/engine |  | falta |
-| game | 0xe2 | HennaEquipListPacket | HennaEquipList | UI | EV_HennaListWndAddHennaEquip, EV_HennaListWndShowHideEquip | falta |
-| game | 0xe3 | HennaItemInfoPacket | HennaItemInfo | UI | EV_HennaInfoWndShowHideEquip | falta |
-| game | 0xe4 | HennaInfoPacket | HennaInfo | UI | EV_InventoryAddHennaInfo, EV_UpdateHennaInfo | falta |
-| game | 0xe5 | HennaUnequipListPacket | HennaRemoveList | UI | EV_HennaListWndAddHennaUnEquip, EV_HennaListWndShowHideUnEquip | falta |
-| game | 0xe6 | HennaUnequipInfoPacket | HennaItemRemoveInfo | UI | EV_HennaInfoWndShowHideUnEquip | falta |
+| game | 0xe2 | HennaEquipListPacket | HennaEquipList | UI | EV_HennaListWndAddHennaEquip, EV_HennaListWndShowHideEquip | tratado |
+| game | 0xe3 | HennaItemInfoPacket | HennaItemInfo | UI | EV_HennaInfoWndShowHideEquip | tratado |
+| game | 0xe4 | HennaInfoPacket | HennaInfo | UI | EV_InventoryAddHennaInfo, EV_UpdateHennaInfo | tratado |
+| game | 0xe5 | HennaUnequipListPacket | HennaRemoveList | UI | EV_HennaListWndAddHennaUnEquip, EV_HennaListWndShowHideUnEquip | tratado |
+| game | 0xe6 | HennaUnequipInfoPacket | HennaItemRemoveInfo | UI | EV_HennaInfoWndShowHideUnEquip | tratado |
 | game | 0xe7 | MacroListPacket | SendMacroList | UI | EV_MacroUpdate | tratado |
 | game | 0xe8 | BuyListSeedPacket | BuyListSeed | UI | EV_ManorShopWndAddItem, EV_ManorShopWndOpen | falta |
 | game | 0xe9 | SellListProcurePacket | SellListProcure | UI | EV_InventoryHideWindow, EV_ManorShopWndAddItem, EV_ManorShopWndOpen | falta |
