@@ -420,6 +420,8 @@ namespace L2Web.UI
             FillActions();
             BindMenus();
             RenderBars();
+            // OnPaint das barras a cada quadro: ToggleEffect e a varredura da recarga
+            Layer.El.gameObject.AddComponent<UiTicker>().OnTick = _ => AnimateBars();
             BuildHudExtras();
             // HUD fixa aparece ao entrar no mundo (ShowHud), janelas de uso sob demanda
         }

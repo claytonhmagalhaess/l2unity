@@ -52,5 +52,64 @@ namespace L2Web.UI
         /// nao tem.
         /// </summary>
         public static string KeyLabel(int bar, int index) => bar == 0 && index >= 0 && index < 12 ? "F" + (index + 1) : "";
+
+        // ---------------------------------------------------------------- sobreposicoes do NCShortcutItemWnd::OnPaint (nw:0x10047b40)
+        /// <summary>
+        /// Contorno do slot com atalho: NCShortcutItemWnd::OnCreate (nw:0x10047520) poe L2UI_CH3.Etc.menu_outline (normal) e
+        /// menu_outline_down (pressionado); nao ha textura de realce.
+        /// </summary>
+        public const string Outline = "L2UI_CH3.Etc.menu_outline", OutlineDown = "L2UI_CH3.Etc.menu_outline_down";
+
+        /// <summary>
+        /// m_pIconToggle = L2_SkillTime.ToggleEffect.ToggleEffect001 com a taxa de quadros (+0x5e4) = 0x41100000 = 9,0
+        /// (OnCreate nw:0x10047520); a cadeia AnimNext tem 13 quadros (ToggleEffect001..013), em laco.
+        /// </summary>
+        public const float ToggleFps = 9f;
+        public const int ToggleFrames = 13;
+
+        /// <summary>Quadro (1..13) do ToggleEffect no instante `seconds`.</summary>
+        public static int ToggleFrame(double seconds) => (int)(System.Math.Floor(System.Math.Max(0, seconds) * ToggleFps) % ToggleFrames) + 1;
+
+        /// <summary>Nome da textura do ToggleEffect no quadro `frame` (1..13).</summary>
+        public static string ToggleTex(int frame) => $"L2_SkillTime.ToggleEffect.ToggleEffect{frame:000}";
+
+        /// <summary>
+        /// OnPaint desenha o ToggleEffect (1, 1, 33, 33) quando o atalho e uma skill de liga/desliga ligada (NCItem::IsToggleSkill
+        /// +0x1f58 e NConsoleWnd::IsToggleOn nw:0x10146830, o id na lista de buffs) ou um item com o automatico (+0x1f68).
+        /// </summary>
+        public static bool ShowToggle(string type, bool toggleSkill, bool toggleOn, bool autoShot) =>
+            type == "skill" ? toggleSkill && toggleOn : type == "item" && autoShot;
+
+        /// <summary>NMagicSkillDataManager::IsToggleSkill (nw:0x101b57d0): operate_type do Skillgrp (+0x20) == 3.</summary>
+        public static bool IsToggleOperateType(int operateType) => operateType == 3;
+
+        /// <summary>CooltimeEnd: 9 quadros em 0,5 s (NCCoolTimeIcon +0x28 = 0x3fe0000000000000; FUN_10030af0 ate fim + 0,5).</summary>
+        public const double EndSeconds = 0.5;
+        public const int EndFrames = 9;
+
+        /// <summary>Quadro da varredura de recarga: Rotation_Type.cooltime0..359, um por grau do tempo decorrido (0x168 quadros).</summary>
+        public static int CoolFrame(double elapsed, double total) =>
+            total <= 0 ? 359 : System.Math.Min(359, System.Math.Max(0, (int)System.Math.Floor(elapsed * 360 / total)));
+
+        /// <summary>
+        /// Estado da recarga no instante `now` (s) para uma recarga iniciada em `start` com `total` s: (fase, quadro).
+        /// Fase 1 = varredura (quadro 0..359), 2 = brilho final (quadro 1..9, nos 0,5 s seguintes), 0 = nada.
+        /// </summary>
+        public static (int phase, int frame) Cool(double start, double total, double now)
+        {
+            if (total <= 0) return (0, 0);
+            var t = now - start;
+            if (t < 0) t = 0;
+            if (t <= total) return (1, CoolFrame(t, total));
+            var e = t - total;
+            if (e <= EndSeconds) return (2, System.Math.Min(EndFrames, (int)System.Math.Floor(e * EndFrames / EndSeconds) + 1));
+            return (0, 0);
+        }
+
+        public static string CoolTex(int frame) => "L2_SkillTime.Rotation_Type.cooltime" + frame;
+        public static string EndTex(int frame) => $"L2_SkillTime.CooltimeEnd.CooltimeEnd00{frame}";
+
+        /// <summary>Som do fim da recarga (IFST_COOLTIME_END, FUN_1014ed50(9) no OnPaint; itemSound.cooltime_end nw:0x249f98).</summary>
+        public const string CoolEndSound = "ItemSound.Signal.cooltime_end";
     }
 }

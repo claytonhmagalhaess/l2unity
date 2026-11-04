@@ -637,9 +637,17 @@ namespace L2Web.UI
             public RawImage Icon;
             public Text Letter;
             public RectTransform Count;
-            public RectTransform Cool;
-            public GameObject AutoShot;
+            /// <summary>Recarga: Rotation_Type.cooltimeN e depois CooltimeEnd00N (OnPaint nw:0x10047b40).</summary>
+            public RawImage Cool;
+            /// <summary>ToggleEffect001..013: skill de liga/desliga ligada ou shot com o automatico.</summary>
+            public RawImage Toggle;
+            /// <summary>L2UI_ch3.ShortcutWnd.shortcut_recipeicon sobre o atalho de receita (tipo 5).</summary>
+            public RawImage Recipe;
             public int CoolSkill;
+            public bool ToggleOn;
+            /// <summary>Recarga que ja tocou o som do fim (a hora de inicio, em ms).</summary>
+            public double CoolEndPlayed = -1;
+            public string CoolTex;
             public string Key;
         }
 
@@ -720,26 +728,25 @@ namespace L2Web.UI
             s.Icon.raycastTarget = false;
             s.Icon.enabled = false;
             s.Letter = UiRoot.Label(rt, "", 0, 0, size.x, size.y, 11, UiKit.Muted, TextAnchor.MiddleCenter);
-            // cooldown: escurece de baixo para cima (scaleY)
-            var cool = UiRoot.Panel(rt, 0, 0, 0, 0, new Color(0, 0, 0, 0.6f));
-            cool.raycastTarget = false;
-            s.Cool = cool.rectTransform;
-            UiRoot.Fill(s.Cool);
-            s.Cool.pivot = new Vector2(0.5f, 0);
-            s.Cool.localScale = new Vector3(1, 0, 1);
-            // contorno dourado do slot com atalho (inventory_outline 64x64 em tamanho natural), realce/pressionado
+            // contorno do slot com atalho (NCShortcutItemWnd::OnCreate nw:0x10047520: Etc.menu_outline / menu_outline_down, 64x64
+            // com a arte em tamanho natural), pressionado; sem textura de realce
             s.Btn = rt.gameObject.AddComponent<UiTexButton>();
             var outline = UiRoot.Box("outline", rt, 0, 0, 0, 0).gameObject.AddComponent<RawImage>();
             outline.raycastTarget = false;
             L2WndUtil.PlaceImage(outline, size.x, size.y, 0, 0, 64, 64, false);
             outline.enabled = false;
             s.Btn.Image = outline;
-            // auto soulshot: borda interna 2px #e8c56e
-            s.AutoShot = UiRoot.Box("autoshot", rt, 0, 0, size.x, size.y).gameObject;
-            var gold = new Color32(0xe8, 0xc5, 0x6e, 0xff);
-            foreach (var (x, y, bw, bh) in new[] { (0f, 0f, size.x, 2f), (0f, size.y - 2, size.x, 2f), (0f, 0f, 2f, size.y), (size.x - 2, 0f, 2f, size.y) })
-                UiRoot.Panel(s.AutoShot.transform, x, y, bw, bh, gold).raycastTarget = false;
-            s.AutoShot.SetActive(false);
+            // OnPaint (nw:0x10047b40), na ordem: ToggleEffect, shortcut_recipeicon e a recarga, todos em (1, 1) 33x33
+            RawImage Overlay(string n)
+            {
+                var img = UiRoot.Box(n, rt, 1, 1, 33, 33).gameObject.AddComponent<RawImage>();
+                img.raycastTarget = false;
+                img.enabled = false;
+                return img;
+            }
+            s.Toggle = Overlay("toggle");
+            s.Recipe = Overlay("recipe");
+            s.Cool = Overlay("cool");
             var hostIdx = scSlots.Count;
             s.Btn.OnClick = () => UseSlot(SlotOfHost(hostIdx), CtrlHeld, ShiftHeld);
             // OnRButtonDown (nw:0x100477f0): so soulshot/spiritshot alternam o automatico; nos outros atalhos nada
@@ -964,7 +971,8 @@ namespace L2Web.UI
                 }
                 // macro: textura L2UI.MacroWnd.Macro_IconN do UIDATA_MACRO (nao e um icone de /icons)
                 var macroTex = s != null && s.Type == "macro" ? L2WndUtil.Tex(MacroOf(s.Id)?.TextureName)?.Url : null;
-                var key = $"{slot}|{s?.Type}|{s?.Id}|{label}|{icon}|{macroTex}|{count}|{auto}";
+                var toggleOn = s != null && s.Type == "skill" && buffs.Exists(b => b.skillId == s.Id);
+                var key = $"{slot}|{s?.Type}|{s?.Id}|{label}|{icon}|{macroTex}|{count}|{auto}|{toggleOn}";
                 if (key == sc.Key) continue;
                 sc.Key = key;
                 var keyName = ShortcutBar.KeyLabel(sc.Bar, sc.Index);
@@ -991,14 +999,17 @@ namespace L2Web.UI
                 }
                 if (sc.Count) UiKit.Destroy(sc.Count.gameObject);
                 sc.Count = count > 1 ? (RectTransform)UiKit.Badge(sc.Rt, L2WndUtil.Compact(count), false).transform.parent : null;
-                sc.AutoShot.SetActive(auto);
+                sc.ToggleOn = ShortcutBar.ShowToggle(s?.Type, s != null && s.Type == "skill" && IsToggleSkill(s.Id), toggleOn, auto);
                 sc.CoolSkill = s != null && s.Type == "skill" ? s.Id : 0;
-                sc.Cool.localScale = new Vector3(1, 0, 1);
+                sc.CoolTex = null;
+                sc.Cool.enabled = false;
+                if (!sc.ToggleOn) sc.Toggle.enabled = false;
+                if (s != null && s.Type == "recipe") L2WndUtil.SetTexture(sc.Recipe, L2WndUtil.Tex("L2UI_ch3.ShortcutWnd.shortcut_recipeicon")?.Url);
+                else sc.Recipe.enabled = false;
                 sc.Btn.Normal = sc.Btn.Pushed = sc.Btn.Over = null;
                 sc.Btn.Refresh();
                 if (s != null)
-                    L2WndUtil.SetButtonTextures(sc.Btn, L2WndUtil.Tex("L2UI_CH3.InventoryWnd.inventory_outline")?.Url,
-                        L2WndUtil.Tex("L2UI_CH3.InventoryWnd.inventory_outline_down")?.Url, L2WndUtil.Tex("L2UI_CH3.InventoryWnd.inventory_outline_over")?.Url);
+                    L2WndUtil.SetButtonTextures(sc.Btn, L2WndUtil.Tex(ShortcutBar.Outline)?.Url, L2WndUtil.Tex(ShortcutBar.OutlineDown)?.Url, null);
                 else
                 {
                     sc.Btn.Normal = sc.Btn.Pushed = sc.Btn.Over = null;

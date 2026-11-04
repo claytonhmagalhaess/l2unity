@@ -84,5 +84,50 @@ namespace L2Web.Tests
             Assert.AreEqual(1, ShortcutBar.UserShortCut("macro", 1001));
             Assert.AreEqual(1, ShortcutBar.UserShortCut("recipe", 3));
         }
+
+        // #0047: sobreposicoes do NCShortcutItemWnd::OnPaint (nw:0x10047b40)
+        [Test]
+        public void ToggleEffect_9QuadrosPorSegundo_EmLaco()
+        {
+            Assert.AreEqual(1, ShortcutBar.ToggleFrame(0));
+            Assert.AreEqual(1, ShortcutBar.ToggleFrame(0.11));
+            Assert.AreEqual(2, ShortcutBar.ToggleFrame(0.112));
+            Assert.AreEqual(13, ShortcutBar.ToggleFrame(12.5 / 9));
+            Assert.AreEqual(1, ShortcutBar.ToggleFrame(13.0 / 9 + 0.001));
+            Assert.AreEqual("L2_SkillTime.ToggleEffect.ToggleEffect001", ShortcutBar.ToggleTex(1));
+            Assert.AreEqual("L2_SkillTime.ToggleEffect.ToggleEffect013", ShortcutBar.ToggleTex(13));
+        }
+
+        [TestCase("item", false, false, true, true)]
+        [TestCase("item", false, false, false, false)]
+        [TestCase("skill", true, true, false, true)]
+        [TestCase("skill", true, false, false, false)]
+        [TestCase("skill", false, true, false, false)]
+        [TestCase("action", false, false, true, false)]
+        public void MolduraDoToggle(string type, bool toggleSkill, bool on, bool auto, bool show) =>
+            Assert.AreEqual(show, ShortcutBar.ShowToggle(type, toggleSkill, on, auto));
+
+        [Test]
+        public void SkillDeLigaDesliga_OperateType3()
+        {
+            Assert.IsTrue(ShortcutBar.IsToggleOperateType(3));
+            Assert.IsFalse(ShortcutBar.IsToggleOperateType(0));
+            Assert.IsFalse(ShortcutBar.IsToggleOperateType(2));
+        }
+
+        [Test]
+        public void Recarga_VarreduraEBrilhoFinal()
+        {
+            // 10 s de recarga iniciada em t = 100
+            Assert.AreEqual((1, 0), ShortcutBar.Cool(100, 10, 100));
+            Assert.AreEqual((1, 90), ShortcutBar.Cool(100, 10, 102.5));
+            Assert.AreEqual((1, 359), ShortcutBar.Cool(100, 10, 110));
+            Assert.AreEqual((2, 1), ShortcutBar.Cool(100, 10, 110.01));
+            Assert.AreEqual((2, 9), ShortcutBar.Cool(100, 10, 110.5));
+            Assert.AreEqual((0, 0), ShortcutBar.Cool(100, 10, 110.51));
+            Assert.AreEqual((0, 0), ShortcutBar.Cool(100, 0, 100));
+            Assert.AreEqual("L2_SkillTime.Rotation_Type.cooltime90", ShortcutBar.CoolTex(90));
+            Assert.AreEqual("L2_SkillTime.CooltimeEnd.CooltimeEnd009", ShortcutBar.EndTex(9));
+        }
     }
 }

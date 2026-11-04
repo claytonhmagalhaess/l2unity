@@ -150,6 +150,83 @@ namespace L2Web.UI
             foreach (var b in list)
                 if (b.SkillId > 0) cat.Add((b.SkillId, b.Level, b.Seconds < 0 ? double.PositiveInfinity : now + b.Seconds * 1000.0));
             RenderBuffs();
+            // IsToggleOn (nw:0x10146830) le a lista de buffs: a moldura das skills de liga/desliga segue a categoria Normal
+            if (cat == buffs) RenderBars();
+        }
+
+        /// <summary>NCItem::IsToggleSkill: operate_type 3 no Skillgrp, no nivel que o personagem tem (ou 1).</summary>
+        bool IsToggleSkill(int id)
+        {
+            var lv = skills.Find(k => k.Id == id)?.Level ?? 1;
+            var r = L2SkillData.Get(id, lv) ?? L2SkillData.Get(id, 1);
+            return r != null && ShortcutBar.IsToggleOperateType(r.OperateType);
+        }
+
+        /// <summary>
+        /// Por quadro (o OnPaint do NCShortcutItemWnd): ToggleEffect a 9 quadros/s e a recarga (cooltime0..359 pelo tempo
+        /// decorrido; CooltimeEnd001..009 nos 0,5 s seguintes, com o som do fim uma vez).
+        /// </summary>
+        void AnimateBars()
+        {
+            if (!skillTimePreloaded && L2WndUtil.Tex(ShortcutBar.ToggleTex(1)) != null)
+            {
+                // os 13 + 360 + 9 quadros (32x32) de uma vez, para a varredura nao esperar a carga de cada um
+                skillTimePreloaded = true;
+                var names = new List<string>();
+                for (var i = 1; i <= ShortcutBar.ToggleFrames; i++) names.Add(ShortcutBar.ToggleTex(i));
+                for (var i = 0; i < 360; i++) names.Add(ShortcutBar.CoolTex(i));
+                for (var i = 1; i <= ShortcutBar.EndFrames; i++) names.Add(ShortcutBar.EndTex(i));
+                foreach (var n in names)
+                    if (L2WndUtil.Tex(n)?.Url is { } u) L2WndUtil.LoadTex(u);
+            }
+            var now = LoadTrack.Now();
+            var toggleTex = L2WndUtil.Tex(ShortcutBar.ToggleTex(ShortcutBar.ToggleFrame(now / 1000.0)))?.Url;
+            foreach (var sc in scSlots)
+            {
+                if (!sc.Rt.gameObject.activeInHierarchy) continue;
+                if (sc.ToggleOn) SetFrame(sc.Toggle, toggleTex);
+                string cool = null;
+                if (sc.CoolSkill != 0 && reuse.TryGetValue(sc.CoolSkill, out var r))
+                {
+                    var start = r.until - r.total;
+                    var (phase, frame) = ShortcutBar.Cool(start / 1000.0, r.total / 1000.0, now / 1000.0);
+                    if (phase == 1) cool = L2WndUtil.Tex(ShortcutBar.CoolTex(frame))?.Url;
+                    else if (phase == 2)
+                    {
+                        cool = L2WndUtil.Tex(ShortcutBar.EndTex(frame))?.Url;
+                        if (sc.CoolEndPlayed != start)
+                        {
+                            sc.CoolEndPlayed = start;
+                            L2WndUtil.UiSound(ShortcutBar.CoolEndSound);
+                        }
+                    }
+                }
+                if (cool == sc.CoolTex) continue;
+                if (cool == null) sc.Cool.enabled = false;
+                else if (!SetFrame(sc.Cool, cool)) continue;
+                sc.CoolTex = cool;
+            }
+        }
+
+        bool skillTimePreloaded;
+
+        /// <summary>
+        /// Troca o quadro sem esconder a imagem enquanto o proximo carrega (as texturas ficam no cache do Http). false = o
+        /// quadro ainda carrega (fica o anterior).
+        /// </summary>
+        static bool SetFrame(RawImage img, string url)
+        {
+            if (url == null)
+            {
+                img.enabled = false;
+                return true;
+            }
+            var task = L2WndUtil.LoadTex(url);
+            if (!task.IsCompleted) return false;
+            var tx = task.Status == System.Threading.Tasks.TaskStatus.RanToCompletion ? task.Result : null;
+            if (img.texture != tx) img.texture = tx;
+            img.enabled = tx;
+            return true;
         }
 
         /// <summary>
@@ -228,12 +305,6 @@ namespace L2Web.UI
         {
             var now = LoadTrack.Now();
             StatusWnd.TickRegen();
-            foreach (var sc in scSlots)
-            {
-                var k = 0f;
-                if (sc.CoolSkill != 0 && reuse.TryGetValue(sc.CoolSkill, out var r)) k = (float)Math.Max(0, (r.until - now) / r.total);
-                if (Mathf.Abs(sc.Cool.localScale.y - k) > 0.001f) sc.Cool.localScale = new Vector3(1, k, 1);
-            }
             foreach (var (t, until) in buffTimers)
             {
                 if (!t) continue;
