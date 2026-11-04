@@ -661,7 +661,11 @@ namespace L2Web.UI
                     buttons[k].Refresh();
                     L2WndUtil.SetButtonTextures(buttons[k], url, url, url);
                 }
-                for (var k = 0; k < targets.Count; k++) ShowCtrl(targets[k], k == i);
+                // abas com o mesmo alvo (as 7 da BoardWnd mostram o HtmlViewer): o alvo aparece se a aba escolhida e uma delas
+                var shown = i >= 0 && i < targets.Count ? targets[i] : null;
+                for (var k = 0; k < targets.Count; k++)
+                    if (targets[k] != shown) ShowCtrl(targets[k], false);
+                ShowCtrl(shown, true);
                 OnTab?.Invoke(c.Name, i, i >= 0 && i < targets.Count ? targets[i] : null);
             }
             for (var i = 0; i < buttons.Count; i++)
