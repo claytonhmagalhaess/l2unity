@@ -195,10 +195,15 @@ namespace L2Web.World
             Motion.MoveMul = moveMul;
         }
 
-        /// <summary>Posicao inicial/teleporte (sem movimento em curso).</summary>
+        /// <summary>
+        /// Posicao inicial/teleporte (sem movimento em curso). O Z do servidor pode estar acima do chao (o aCis manda o Z
+        /// do destino + 10, sem geodata: em Giran o unstuck chega 110-124 acima): como no OnTeleportToLocation, o pawn
+        /// pousa no chao no proximo Step em que ele for conhecido (busca do L2_Teleport para o proprio, queda para os outros).
+        /// </summary>
         public void Place(float x, float y, float z, int? heading = null)
         {
             Motion.Place(x, y, z);
+            Motion.Drop(IsSelf);
             Motion.Dest = null;
             if (heading.HasValue) Motion.Yaw = Motion.DesiredYaw = heading.Value & 0xffff;
             Sync();

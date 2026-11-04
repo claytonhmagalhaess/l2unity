@@ -49,6 +49,78 @@ namespace L2Web.World
         /// <summary>Tick do PlayerController: ValidatePosition a cada 1,2 s enquanto o pawn tem velocidade.</summary>
         public const float ValidateInterval = 1.2f;
 
+        /// <summary>
+        /// UGameEngine::OnTeleportToLocation: o pawn entra em Z do pacote + CollisionHeight + 10 (o pe fica 10 acima do Z;
+        /// o aCis ja manda o Z do destino + 10) e a fisica (ou o L2_Teleport) o poe no chao.
+        /// </summary>
+        public const float TeleportLift = 10;
+        /// <summary>UGameEngine::L2_Teleport: procura o lugar de pouso com traces de z+30i ate z-30i, i = 1..30.</summary>
+        public const float LandingStep = 30;
+        public const int LandingTries = 30;
+        /// <summary>Consulta do chao com zRef extremo: a camada mais alta (+) e a mais baixa (-) da celula.</summary>
+        const float FarRef = 1e6f;
+
+        /// <summary>
+        /// Lugar de pouso do L2_Teleport (engine.dll, "Couldn't find landing place"): o trace i (i = 1..30) vai de pe + 30i
+        /// ate pe - 30i e para no primeiro chao, ou seja, o mais alto dentro da janela; a primeira janela com chao vence.
+        /// null se nenhum chao estiver a ate 900 unidades.
+        /// </summary>
+        public static float? LandingZ(float feet, float? a, float? b = null, float? c = null)
+        {
+            float? best = null;
+            var bestWin = int.MaxValue;
+            void Try(float? h)
+            {
+                if (!h.HasValue) return;
+                var win = Math.Max(1, (int)Math.Ceiling(Math.Abs(h.Value - feet) / LandingStep));
+                if (win > LandingTries) return;
+                if (win < bestWin || (win == bestWin && h.Value > best.Value))
+                {
+                    best = h;
+                    bestWin = win;
+                }
+            }
+            Try(a);
+            Try(b);
+            Try(c);
+            return best;
+        }
+
+        /// <summary>
+        /// Queda (PHYS_Falling) de um pawn posto acima do chao: o chao mais alto abaixo do pe; sem nenhum abaixo, o mais
+        /// proximo. null sem chao.
+        /// </summary>
+        public static float? FallZ(float feet, float? a, float? b = null, float? c = null)
+        {
+            float? below = null, near = null;
+            void Try(float? h)
+            {
+                if (!h.HasValue) return;
+                if (h.Value <= feet && (!below.HasValue || h.Value > below.Value)) below = h;
+                if (!near.HasValue || Math.Abs(h.Value - feet) < Math.Abs(near.Value - feet)) near = h;
+            }
+            Try(a);
+            Try(b);
+            Try(c);
+            return below ?? near;
+        }
+
+        /// <summary>
+        /// Onde o pawn pousa em (x, y) com o pe em `feet`, pelas camadas de `ground` (a mais proxima de feet, a mais alta e
+        /// a mais baixa). `search` = busca do L2_Teleport (o proprio jogador); senao queda. null enquanto nao houver chao
+        /// (geodata do lugar ainda nao carregado).
+        /// </summary>
+        public static float? Land(Func<float, float, float, float?> ground, float x, float y, float feet, bool search)
+        {
+            if (ground == null) return null;
+            var near = ground(x, y, feet);
+            if (!near.HasValue) return null;
+            var top = ground(x, y, FarRef);
+            var low = ground(x, y, -FarRef);
+            if (search) return LandingZ(feet, near, top, low) ?? FallZ(feet, near, top, low);
+            return FallZ(feet, near, top, low);
+        }
+
         public static float Dist3(float ax, float ay, float az, float bx, float by, float bz)
         {
             double dx = ax - bx, dy = ay - by, dz = az - bz;
