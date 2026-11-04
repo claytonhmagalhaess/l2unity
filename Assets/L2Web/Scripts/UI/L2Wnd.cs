@@ -360,6 +360,25 @@ namespace L2Web.UI
             return t;
         }
 
+        /// <summary>
+        /// NCTextBox::SetProperText (nw:0x100527a0): a sysstring (NCTextBox+0x2d8) se definida, senao a systemMsg (+0x2dc), senao
+        /// o text do xdat. Varias TextBox do xdat trazem um text coreano de rascunho junto da sysstring em ingles (ClanWnd title0
+        /// "혈맹명" com ss1321 "Clan", InviteClanPopWnd InviteTitle0 com ss1427...): o text so vale sem as duas.
+        /// </summary>
+        public static string TextBoxText(float sysstring, float systemMsg, string text, Func<int, string> sys, Func<int, string> msg)
+        {
+            if (!float.IsNaN(sysstring) && sysstring >= 0) return sys((int)sysstring) ?? "";
+            if (!float.IsNaN(systemMsg) && systemMsg >= 0) return msg((int)systemMsg) ?? "";
+            return text == null || text == "undefined" ? "" : text;
+        }
+
+        /// <summary>
+        /// Deslocamento vertical do texto da TextBox (NCTextBox::PaintSingleLine/PaintMultiLine, nw:0x10051770/0x10051d50): o
+        /// offsetY do xdat so vale para a fonte de digitos (fontType &gt;= 8); a fonte normal desenha em y = 0.
+        /// </summary>
+        public static float TextOffsetY(float offsetY, float fontType) =>
+            !float.IsNaN(offsetY) && offsetY > 0 && !float.IsNaN(fontType) && fontType >= 8 ? offsetY : 0;
+
         // .l2txt.auto (altura 0) ou tamanho invalido (negativo = auto no CSS): uma linha de texto a partir do topo
         static void AutoText(Text t, L2Rect r, float align)
         {
@@ -398,16 +417,18 @@ namespace L2Web.UI
                     var col = c.S("textColor") ?? "";
                     var color = TxtColor;
                     if (col.StartsWith("#") && col.Length >= 7 && !col.EndsWith("00")) color = UiRoot.Css(col.Substring(0, 7), TxtColor);
-                    var sys = c.N("sysstring");
-                    var s = c.Has("text") && !string.IsNullOrEmpty(c.S("text")) ? c.S("text") : sys > 0 ? GameData.SysString((int)sys, "") : "";
+                    var s = TextBoxText(c.N("sysstring"), c.N("systemMsg"), c.Has("text") ? c.S("text") : null,
+                        id => GameData.SysString(id, ""), id => GameData.SystemMessage(id, new List<string>()).Text ?? "");
                     if (c.Has("backTex")) L2WndUtil.Paint(el, c.S("backTex"), r.W, r.H);
-                    // NCTextBox::PaintSingleLine (nw:0x10051770) desenha a linha em y = 0 da caixa: o texto fica no topo, descido
-                    // pelo offsetY do xdat (as caixas de 30 px usam offsetY 7 ou 10; os rotulos de 19 px em y + 3 ficam na
-                    // altura dos combos de 17 px, ex. VideoTab text0 (0,14) e ResBox (107,11))
+                    // NCTextBox::PaintSingleLine (nw:0x10051770) desenha a linha em y = 0 da caixa: o texto fica no topo (os
+                    // rotulos de 19 px em y + 3 ficam na altura dos combos de 17 px, ex. VideoTab text0 (0,14) e ResBox (107,11)).
+                    // O offsetY (NCTextBox+0x2f8, gravado pelo construtor nw:0x10052c20 a partir do XMLTextBoxData::GetOffsetY)
+                    // so entra no desenho da fonte de digitos (fontType 9..11, FUN_100212f0); com a fonte normal (fontType < 8,
+                    // todas as TextBox do xdat) e ignorado. Aplicar o offsetY descia 10 px o HP/MP/CP/EXP da DetailStatusWnd
                     var anchor = align == 2 ? TextAnchor.UpperCenter : align == 3 ? TextAnchor.UpperRight : TextAnchor.UpperLeft;
                     var t = AddText(el, s, 11, color, anchor);
-                    var offY = c.N("offsetY");
-                    if (offY > 0 && !float.IsNaN(offY)) t.rectTransform.offsetMax = new Vector2(0, -offY);
+                    var offY = TextOffsetY(c.N("offsetY"), c.N("fontType"));
+                    if (offY > 0) t.rectTransform.offsetMax = new Vector2(0, -offY);
                     AutoText(t, r, align);
                     if (c.Name != null && !texts.ContainsKey(c.Name)) texts[c.Name] = t;
                     return 2;
