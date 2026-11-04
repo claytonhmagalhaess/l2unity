@@ -168,9 +168,11 @@ namespace L2Web.UI
         /// <summary>ShopWnd (compra e venda ao NPC) e TradeWnd (troca), #0029.</summary>
         public ShopView ShopWnd { get; private set; }
         public TradeView TradeWnd { get; private set; }
+        /// <summary>WarehouseWnd (armazem privado, de cla, de castelo), #0030.</summary>
+        public WarehouseView WarehouseWnd { get; private set; }
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
-        public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd };
+        public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd };
 
         /// <summary>GameUi ativo (o SocialUi do App passa a troca para a TradeWnd do xdat).</summary>
         public static GameUi Current { get; private set; }
@@ -327,6 +329,8 @@ namespace L2Web.UI
             DialogWnd = Dialog.Wnd;
             // ShopWnd e TradeWnd do xdat (#0029)
             ShopWnd = new ShopView(Layer, this, b => this.deps.Send(b));
+            // WarehouseWnd do xdat (#0030), pelos eventos do InterfaceRouter
+            WarehouseWnd = new WarehouseView(Layer, this, b => this.deps.Send(b));
             TradeWnd = new TradeView(Layer, this, b => this.deps.Send(b))
             {
                 NameOf = id =>
