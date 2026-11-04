@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui3 (vaga nova, `worktrees\ui3`) |
 | Branch | `feat/ui-barras-hp` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\01_janelas.md`, `02_interacoes.md`; `analises\l2-interlude\client_spec\` (StatusWnd, NCStatusBarCtrl/gauge, 89, 90); `Docs/revisao_ui.md` (#0047) |
 | Sessão | ui: barras de HP (#0054) |
 | Criada | 2026-11-04 |
@@ -19,16 +19,16 @@ Esta tarefa confere como o original desenha o texto das barras (fonte, tamanho, 
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Levantamento, com evidência (xdat da StatusWnd, `StatusWnd.uc`, o controle de barra do NWindow no Tryskell ou na REA, fonte do `L2Font`), de:
+- [x] Levantamento, com evidência (xdat da StatusWnd, `StatusWnd.uc`, o controle de barra do NWindow no Tryskell ou na REA, fonte do `L2Font`), de:
   - como o original desenha o texto "atual/máximo" das barras de CP/HP/MP (e da EXP);
   - a fonte, os dígitos, o espaçamento, o alinhamento e a posição;
   - o que acontece quando o texto não cabe;
   - quais janelas usam o mesmo controle.
-- [ ] O texto das barras fica legível e igual ao original com valores de 1 a 5 dígitos, inclusive depois de um buff que aumenta o máximo sem a barra estar cheia, e se atualiza na hora quando o máximo e o atual mudam.
-- [ ] A mesma correção vale para as outras janelas que usam o mesmo controle, ou fica registrado por que não vale.
-- [ ] O que for de `Scripts\Net\` (por exemplo, o StatusUpdate do máximo de HP com buff) vira pedido para a net, e o que for do `App.cs` vira pedido para a coordenadora, em `tarefas\pedidos\`.
-- [ ] Testes EditMode (texto e layout da barra com vários valores). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
-- [ ] Capturas antes e depois em `Docs/evidencias/barras-hp/`, tiradas no aCis local com um buff de HP máximo, e uma linha em `Docs/validacao.md`.
+- [x] O texto das barras fica legível e igual ao original com valores de 1 a 5 dígitos, inclusive depois de um buff que aumenta o máximo sem a barra estar cheia, e se atualiza na hora quando o máximo e o atual mudam.
+- [x] A mesma correção vale para as outras janelas que usam o mesmo controle, ou fica registrado por que não vale.
+- [x] O que for de `Scripts\Net\` (por exemplo, o StatusUpdate do máximo de HP com buff) vira pedido para a net, e o que for do `App.cs` vira pedido para a coordenadora, em `tarefas\pedidos\`.
+- [x] Testes EditMode (texto e layout da barra com vários valores). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
+- [x] Capturas antes e depois em `Docs/evidencias/barras-hp/`, tiradas no aCis local com um buff de HP máximo, e uma linha em `Docs/validacao.md`.
 
 ## Andamento
 
@@ -36,6 +36,10 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — branch `feat/ui-barras-hp` criado de `feat/ui-revisao` (`b88e07c`); linha de base `run_tests.sh` em batchmode: 750/750.
 - 2026-11-04 — causa achada e corrigida: `L2Digits.Draw` reaproveita container e glifos; recorte da barra; `StatusBarTextTests` (11). `run_tests.sh` 761/761 (`851bc82`).
 - 2026-11-04 — conta `l2webtest5` em `Docs/contas_teste.md` (`1eeba74`). Pelo novo fluxo, o Editor da ui3 foi fechado e o teste ao vivo (antes em `b88e07c`, depois em `1eeba74`) e a suíte foram pedidos à sessão de testes.
+- 2026-11-04 — sessão de testes (`testes\0054-1\`): 761/761 em `1eeba74`. Ao vivo no aCis, com o personagem BarrasHp54 em Giran:
+  - **antes**: o redesenho no mesmo quadro deixa "4087/4087" sob "4100/5630" e, 8 s depois, "619/697" sobre restos; 10 textos na HPBar e 7 na MPBar;
+  - **depois**: um texto só (4/4/4), legível no buff e na regeneração.
+  Capturas e linha H1b no `validacao.md` em `6d868a2`. Estado: `pronta p/ merge`.
 
 ## Decisões e REA
 
@@ -75,9 +79,21 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/ui-barras-hp`, a partir de `feat/ui-revisao` `b88e07c`):
+  - `851bc82`: `L2Digits.Draw` reaproveita container e glifos e ganha `Hide`; a StatusBar ganha o `RectMask2D` (SetClip); entram os `StatusBarTextTests`.
+  - `1eeba74`: `Docs/contas_teste.md` (`l2webtest5`).
+  - `6d868a2`: capturas em `Docs/evidencias/barras-hp/` e a linha H1b no `Docs/validacao.md`.
+- **Testes:**
+  - `run_tests.sh` em batchmode: 750/750 em `b88e07c` e 761/761 com a correção (os 11 novos são `StatusBarTextTests`). A sessão de testes confirmou 761/761 em `1eeba74`.
+  - Ao vivo no aCis com `l2webtest5` (antes e depois):
+    - Bless the Body 6 do Buffer: HP 516/516 → 516/697 → 535/697;
+    - três `SetBars` num eval só, que reproduzem o caso do usuário;
+    - 0 erros no console.
+- **Falta / fora do escopo:**
+  - No buff de verdade, o "antes" não sobrepôs nesta rodada: depende de UserInfo e StatusUpdate com valores diferentes caírem no mesmo quadro. O mecanismo foi reproduzido pelo eval e está coberto pelo teste `StatusWnd_BuffDeHpMaximoNoMesmoQuadro`.
+  - As larguras da fonte normal usadas no `GetTextExtent` (`NormalExtent`, 6,5 px por dígito) continuam [?], medidas na captura do original; não houve captura nova do original.
+  - Para quem for roteirizar o Buffer do L2Ketra: `npc_<id>_getbuff <skill> <nível>` sozinho é ignorado. É preciso abrir antes `npc_<id>_Link buffer/Sub/buff.htm` e mandar `getbuff 1045 6 data/html/buffer/Sub/buff.htm`, porque o aCis confere o bypass contra o último HTML enviado.
+  - No merge: `Docs/contas_teste.md` também existe nos branches net, render e `feat/ui-buffs` (juntar as tabelas). O `L2Wnd.cs` tem alteração não commitada da vaga net em outra região.
 
 ## Pedidos
 
