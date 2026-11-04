@@ -154,6 +154,85 @@ namespace L2Web.UI
             return (ShopId, f.Reserved, f.RefineryOp1, f.RefineryOp2, count);
         }
 
+        /// <summary>
+        /// UIDATA_ITEM.GetItemDataType (nw:0x10123620): o tipo do dado do cliente (*(dado+4)): 0 arma, 1 armadura ou joia
+        /// (armorgrp), 2 etc (etcitemgrp); id sem dado = 0.
+        /// </summary>
+        public static int DataType(ItemStats s, bool etc) => s != null && s.Weapon ? 0 : s != null && s.Armor ? 1 : etc ? 2 : 0;
+
+        /// <summary>
+        /// ItemInfo de uma linha da ItemList (popupType Inventory): HandleItemList pede UIDATA_ITEM.GetItemInfo(classID)
+        /// (nw:0x10123940: nome, nome adicional, descricao e os campos do dado pelo tipo; ServerID, Enchanted e MpBonus nao
+        /// sao preenchidos) e por cima poe o ID da entrada (Reserved), slotBitType, itemType, itemCount e a refinaria do
+        /// pacote; com durabilidade &gt; 0 a atual fica cheia (MultiSellWnd.uc:164-190).
+        /// </summary>
+        public static TooltipItem ListTooltip(Product p, string name, string addName, string desc, ItemStats s, L2TooltipData.EtcItemRecord etc)
+        {
+            var t = new TooltipItem { ClassId = p.ClassId, CurrentDurability = 0 };
+            var kind = s != null && s.Weapon ? 0 : s != null && s.Armor ? 1 : etc != null ? 2 : -1;
+            if (p.ClassId >= 0 && kind >= 0)
+            {
+                t.Name = name ?? "";
+                t.AdditionalName = addName ?? "";
+                t.Description = (desc ?? "").Replace("\\n", "\n");
+                switch (kind)
+                {
+                    case 0:
+                        t.Weight = s.Weight;
+                        t.WeaponType = s.WeaponType;
+                        t.PhysicalDamage = s.PAtk;
+                        t.MagicalDamage = s.MAtk;
+                        t.ShieldDefense = s.ShieldPDef;
+                        t.ShieldDefenseRate = s.ShieldRate;
+                        t.Durability = s.Durability;
+                        t.CurrentDurability = -1;
+                        t.CrystalType = s.CrystalType;
+                        t.AttackSpeed = s.Speed;
+                        t.MpConsume = s.MpConsume;
+                        t.AvoidModify = s.Avoid;
+                        t.SoulshotCount = s.SoulShot;
+                        t.SpiritshotCount = s.SpiritShot;
+                        break;
+                    case 1:
+                        t.Weight = s.Weight;
+                        t.Durability = s.Durability;
+                        t.CrystalType = s.CrystalType;
+                        t.ArmorType = s.ArmorType;
+                        t.AvoidModify = s.Avoid;
+                        t.PhysicalDefense = s.PDef;
+                        t.MagicalDefense = s.MDef;
+                        break;
+                    case 2:
+                        t.Weight = etc.Weight;
+                        t.Durability = etc.Durability;
+                        t.CrystalType = etc.CrystalType;
+                        t.ConsumeType = etc.ConsumeType;
+                        t.ItemSubType = etc.EtcItemType;
+                        break;
+                }
+            }
+            t.Reserved = p.Reserved;
+            t.SlotBitType = p.SlotBitType;
+            t.ItemType = p.ItemType;
+            t.ItemNum = p.ItemNum;
+            t.RefineryOp1 = p.RefineryOp1;
+            t.RefineryOp2 = p.RefineryOp2;
+            if (t.Durability > 0) t.CurrentDurability = t.Durability;
+            return t;
+        }
+
+        /// <summary>
+        /// NCNameCtrl::SetNameData modo 1 (nw:0x1004b310): o tooltip "Inventory" dos nomes da MultiSellItemInfo e da
+        /// MultiSellNeededItem sai de um NCItem novo (construtor FUN_1002cd30) com so nome, ClassID, ItemType, Enchanted,
+        /// CrystalType e ItemNum; o resto fica no padrao do construtor: 0, e -1 em WeaponType, ArmorType, Reserved,
+        /// RefineryOp1/2 e CurrentDurability (sem nome adicional, descricao, peso nem atributos).
+        /// </summary>
+        public static TooltipItem NameTooltip(string name, int classId, int itemType, int enchant, int crystal, int count) => new()
+        {
+            Name = name ?? "", ClassId = classId, ItemType = itemType, Enchanted = enchant, CrystalType = crystal, ItemNum = count,
+            ItemSubType = -1, WeaponType = -1, ArmorType = -1, Reserved = -1, Level = -1, RefineryOp1 = -1, RefineryOp2 = -1, CurrentDurability = -1,
+        };
+
         public void OnEvent(int id, string p)
         {
             switch (id)

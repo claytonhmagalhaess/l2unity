@@ -12,7 +12,11 @@ namespace L2Web.UI
     {
         public bool Weapon, Armor;
         public int Weight, WeaponType, CrystalType, PAtk, MAtk, ShieldPDef, ShieldRate, Avoid, Speed, SoulShot, SpiritShot, BodyPart;
+        /// <summary>mp_consume do weapongrp (coluna 14 do itemdata.json, quando exportada; 0 sem ela).</summary>
+        public int MpConsume;
         public int ArmorType, PDef, MDef, MpBonus;
+        /// <summary>Durabilidade dos dados (-1 = sem; os itens sombra tem o maximo).</summary>
+        public int Durability = -1;
         public string AddName = "", Description = "";
 
         static Dictionary<int, ItemStats> all;
@@ -35,20 +39,21 @@ namespace L2Web.UI
                 foreach (var p in ((Newtonsoft.Json.Linq.JObject)j["w"]).Properties())
                 {
                     var v = (Newtonsoft.Json.Linq.JArray)p.Value;
-                    int I(int k) => (int)(double)v[k];
+                    int I(int k) => unchecked((int)(long)(double)v[k]);
                     all[int.Parse(p.Name)] = new ItemStats
                     {
-                        Weapon = true, Weight = I(0), WeaponType = I(3), CrystalType = I(4), PAtk = I(5), MAtk = I(6), ShieldPDef = I(7),
+                        Weapon = true, Weight = I(0), Durability = I(2), WeaponType = I(3), CrystalType = I(4), PAtk = I(5), MAtk = I(6), ShieldPDef = I(7),
                         ShieldRate = I(8), Avoid = I(9), Speed = I(10), SoulShot = I(11), SpiritShot = I(12), BodyPart = I(13),
+                        MpConsume = v.Count > 14 ? I(14) : 0,
                     };
                 }
                 foreach (var p in ((Newtonsoft.Json.Linq.JObject)j["a"]).Properties())
                 {
                     var v = (Newtonsoft.Json.Linq.JArray)p.Value;
-                    int I(int k) => (int)(double)v[k];
+                    int I(int k) => unchecked((int)(long)(double)v[k]);
                     all[int.Parse(p.Name)] = new ItemStats
                     {
-                        Armor = true, Weight = I(0), ArmorType = I(3), CrystalType = I(4), Avoid = I(5), PDef = I(6), MDef = I(7), MpBonus = I(8), BodyPart = I(9),
+                        Armor = true, Weight = I(0), Durability = I(2), ArmorType = I(3), CrystalType = I(4), Avoid = I(5), PDef = I(6), MDef = I(7), MpBonus = I(8), BodyPart = I(9),
                     };
                 }
                 foreach (var p in ((Newtonsoft.Json.Linq.JObject)j["n"]).Properties())

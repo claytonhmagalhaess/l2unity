@@ -111,7 +111,10 @@ namespace L2Web.UI
             if (add.Length > 0) x += 2 + Label(row, add, x + 2, 0, w, Add).preferredWidth;
             if (grade != null) x += 2 + 14;
             if (cnt.Length > 0) Label(row, cnt, x + 2, 0, w, Name);
-            UiTooltip.Set(row.gameObject, ItemInfoText.MainName(name, enchant, itemType) + (count > 1 ? " (" + count + ")" : ""));
+            // OnPostPaint (nw:0x1004b600): DrawSimpleTooltip do tooltip "Inventory" montado no SetNameData
+            var tip = UiTooltip.SetCustom(row.gameObject, () => L2Tooltip.Item(MultiSellScript.NameTooltip(name, classId, itemType, enchant, crystal, count)),
+                text: ItemInfoText.MainName(name, enchant, itemType));
+            tip.Simple = true;
             var img = row.gameObject.AddComponent<Image>();
             img.color = new Color(0, 0, 0, 0.001f);
         }
@@ -127,9 +130,9 @@ namespace L2Web.UI
                 Slot(0, GameData.ItemIcon(p.ClassId));
                 // a vista de detalhes posiciona o icone em (9, 3)/(10, 4)
                 foreach (Transform t in content) ((RectTransform)t).anchoredPosition += new Vector2(-1, 1);
-                NameCtrl(0, GameData.ItemName(p.ClassId), p.ClassId, p.ItemType, 0, ItemStats.Of(p.ClassId)?.CrystalType ?? 0, p.ItemNum, true);
+                NameCtrl(0, GameData.ItemName(p.ClassId), p.ClassId, p.ItemType, 0, MultiSellView.Crystal(p.ClassId), p.ItemNum, true);
                 var (lines, hh) = ItemInfoText.Detail(new ItemInfoText.Product { ClassId = p.ClassId, ItemType = p.ItemType, SlotBitType = p.SlotBitType },
-                    ItemStats.Of(p.ClassId), ss, d => Measure(d, 200, true));
+                    MultiSellView.PanelStats(p.ClassId), ss, d => Measure(d, 200, true));
                 foreach (var l in lines)
                 {
                     if (l.Kind == "header") Label(content, l.Value, l.X, l.Y, 200, Gold);
@@ -149,7 +152,7 @@ namespace L2Web.UI
                 var p = products[i];
                 if (p == null) continue;
                 Slot(i, GameData.ItemIcon(p.ClassId));
-                NameCtrl(i, GameData.ItemName(p.ClassId), p.ClassId, p.ItemType, 0, ItemStats.Of(p.ClassId)?.CrystalType ?? 0, p.ItemNum, true);
+                NameCtrl(i, GameData.ItemName(p.ClassId), p.ClassId, p.ItemType, 0, MultiSellView.Crystal(p.ClassId), p.ItemNum, true);
             }
             contentH = 36 * n + 5;
         }
@@ -187,8 +190,8 @@ namespace L2Web.UI
             S.SysString = i => GameData.SysString(i, "");
             S.ItemName = GameData.ItemName;
             S.ItemIcon = GameData.ItemIcon;
-            S.ItemDataType = id => ItemStats.Of(id) is { } s ? s.Weapon ? 0 : s.Armor ? (IsAccessory(s.BodyPart) ? 2 : 1) : 5 : 5;
-            S.ItemCrystalType = id => ItemStats.Of(id)?.CrystalType ?? 0;
+            S.ItemDataType = id => MultiSellScript.DataType(ItemStats.Of(id), L2TooltipData.EtcItem(id) != null);
+            S.ItemCrystalType = Crystal;
             info = new MultiSellListCtrl(Wnd.Get("ItemInfo"), true);
             needed = new MultiSellListCtrl(Wnd.Get("NeededItem"), false);
             foreach (var ev in new[] { Ev.EV_MultiSellShopID, Ev.EV_MultiSellItemList, Ev.EV_MultiSellNeededItemList, Ev.EV_MultiSellItemListEnd })
@@ -210,8 +213,30 @@ namespace L2Web.UI
             });
         }
 
-        // brincos, colar, aneis: acessorio (ItemType 2) no tipo de dados do cliente
-        static bool IsAccessory(int body) => body == 0x2 || body == 0x4 || body == 0x6 || body == 0x8 || body == 0x10 || body == 0x20 || body == 0x30;
+        /// <summary>UIDATA_ITEM.GetItemCrystalType: o grau do dado do cliente (weapongrp/armorgrp ou etcitemgrp).</summary>
+        public static int Crystal(int id) => ItemStats.Of(id) is { } s && (s.Weapon || s.Armor) ? s.CrystalType : L2TooltipData.EtcItem(id)?.CrystalType ?? 0;
+
+        /// <summary>
+        /// Dados que o SetItemInfo recarrega do cliente (nw:0x10184860, FUN_10187a60): arma e armadura do weapongrp/armorgrp;
+        /// etc (tipo 2) so o peso, a durabilidade e o grau do etcitemgrp; nome adicional e descricao do ItemName-e.
+        /// </summary>
+        public static ItemStats PanelStats(int id)
+        {
+            var s = ItemStats.Of(id);
+            if (s != null && (s.Weapon || s.Armor)) return s;
+            var e = L2TooltipData.EtcItem(id);
+            if (e == null) return s;
+            return new ItemStats { Weight = e.Weight, Durability = e.Durability, CrystalType = e.CrystalType, AddName = s?.AddName ?? "", Description = s?.Description ?? "" };
+        }
+
+        /// <summary>Tooltip "Inventory" de uma linha da ItemList (o ItemInfo do HandleItemList).</summary>
+        public static CustomTooltip ListTip(MultiSellScript.Product p)
+        {
+            var n = L2TooltipData.ItemName(p.ClassId);
+            var s = ItemStats.Of(p.ClassId);
+            return L2Tooltip.Item(MultiSellScript.ListTooltip(p, n?.Name ?? GameData.ItemName(p.ClassId), n?.AddName ?? s?.AddName ?? "", n?.Desc ?? s?.Description ?? "", s,
+                L2TooltipData.EtcItem(p.ClassId)));
+        }
 
         void Count(string s, bool enabled)
         {
@@ -239,7 +264,7 @@ namespace L2Web.UI
             foreach (var e in S.ItemList)
             {
                 var f = e.ItemInfoList[0];
-                data.Add(new SlotData { Icon = GameData.ItemIcon(f.ClassId), Title = GameData.ItemName(f.ClassId), Count = f.ItemNum });
+                data.Add(new SlotData { Icon = GameData.ItemIcon(f.ClassId), Title = GameData.ItemName(f.ClassId), Count = f.ItemNum, Tip = () => ListTip(f) });
             }
             var slots = L2WndUtil.FillItemWindow(Wnd, "ItemList", data, GameUi.IconUrl);
             for (var i = 0; i < slots.Count; i++)
