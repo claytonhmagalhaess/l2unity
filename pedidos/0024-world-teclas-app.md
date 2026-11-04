@@ -4,7 +4,7 @@
 |---|---|
 | De | world (tarefa #0034) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-11-03 |
 
 ## O que precisa
@@ -35,5 +35,7 @@ Compila: a suíte rodou com o patch aplicado na vaga world (ver Entrega da #0034
 Sem o patch, a lógica nova (`KeyboardMove`, `CameraKeys`, `ScreenShot`) fica no branch com testes, mas nenhuma tecla a usa: Espaço/Ctrl, NumLock, NumPad e PrintScrn continuam sem efeito no jogo. Nada quebra.
 
 ## Resposta
+
+Aceito pela coordenadora em 2026-11-03. O patch depende do código de `Scripts\World` do branch `feat/world-teclas-movimento`; aplico no `main` num commit da coordenadora junto com o merge da #0034, quando o usuário pedir (conferido: `git apply --check` passa no `main` atual). Se a #0033 (ui) mexer em `OnKey`/`ReadInput` antes, resolvo o conflito no merge.
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
