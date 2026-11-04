@@ -244,8 +244,52 @@ namespace L2Web.UI
         SlotData ItemData(InvItem it)
         {
             var name = GameData.ItemName(it.ItemId);
-            var title = $"{(it.Enchant != 0 ? "+" + it.Enchant + " " : "")}{name}{(it.Count > 1 ? " (" + Fmt(it.Count) + ")" : "")}{(it.Equipped ? " · " + (Body.TryGetValue(it.BodyPart, out var b) ? b : "equipado") : "")}\nDuplo clique: usar/equipar · arraste para a barra";
-            return new SlotData { Icon = GameData.ItemIcon(it.ItemId), Title = title, Count = it.Count, Badge = it.Enchant != 0 ? "+" + it.Enchant : null, Cls = it.Equipped ? "equipped" : null };
+            var title = $"{(it.Enchant != 0 ? "+" + it.Enchant + " " : "")}{name}{(it.Count > 1 ? " (" + Fmt(it.Count) + ")" : "")}";
+            var tip = TooltipItemOf(it);
+            return new SlotData
+            {
+                Icon = GameData.ItemIcon(it.ItemId), Title = title, Count = it.Count, Badge = it.Enchant != 0 ? "+" + it.Enchant : null, Cls = it.Equipped ? "equipped" : null,
+                Tip = () => L2Tooltip.Item(tip),
+            };
+        }
+
+        /// <summary>
+        /// ItemInfo do item do inventario para o tooltip "Inventory": tipo (Type2 = EItemType), slot, encantamento,
+        /// quantidade e os atributos de cliente (ItemStats: weapongrp/armorgrp/ItemName-e). [I] empilhavel = Type2 &gt;= 3 (o
+        /// pacote nao traz o ConsumeType); sem o peso dos etcitem e o maximo de mana dos itens sombra (sem o etcitemgrp).
+        /// </summary>
+        public static TooltipItem TooltipItemOf(InvItem it)
+        {
+            var s = ItemStats.Of(it.ItemId);
+            var t = new TooltipItem
+            {
+                ClassId = it.ItemId, ServerId = it.ObjectId, Name = GameData.ItemName(it.ItemId), ItemType = it.Type2, SlotBitType = it.BodyPart,
+                Enchanted = it.Enchant, ItemNum = it.Count, ConsumeType = it.Type2 >= 3 ? 2 : 0,
+                AdditionalName = s?.AddName ?? "", Description = (s?.Description ?? "").Replace("\\n", "\n"),
+            };
+            if (s == null) return t;
+            t.CrystalType = s.CrystalType;
+            t.Weight = s.Weight;
+            t.ArmorType = s.ArmorType;
+            t.AvoidModify = s.Avoid;
+            if (s.Weapon)
+            {
+                t.WeaponType = s.WeaponType;
+                t.PhysicalDamage = s.PAtk;
+                t.MagicalDamage = s.MAtk;
+                t.AttackSpeed = s.Speed;
+                t.SoulshotCount = s.SoulShot;
+                t.SpiritshotCount = s.SpiritShot;
+                t.ShieldDefense = s.ShieldPDef;
+                t.ShieldDefenseRate = s.ShieldRate;
+            }
+            else
+            {
+                t.PhysicalDefense = s.PDef;
+                t.MagicalDefense = s.MDef;
+                t.MpBonus = s.MpBonus;
+            }
+            return t;
         }
 
         void BindItem(UiTexButton b, InvItem it)
@@ -344,6 +388,7 @@ namespace L2Web.UI
             var ev = UiEvents.Of(b);
             ev.OnBeginDrag = _ =>
             {
+                UiTooltip.Dragging = true;
                 var icon = b.transform.Find("icon")?.GetComponent<RawImage>();
                 if (!dragGhost)
                 {
@@ -365,6 +410,7 @@ namespace L2Web.UI
             };
             ev.OnEndDrag = e =>
             {
+                UiTooltip.Dragging = false;
                 if (dragGhost) dragGhost.gameObject.SetActive(false);
                 for (var t = e.pointerCurrentRaycast.gameObject ? e.pointerCurrentRaycast.gameObject.transform : null; t; t = t.parent)
                 {

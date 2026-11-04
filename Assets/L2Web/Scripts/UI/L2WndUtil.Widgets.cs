@@ -43,7 +43,8 @@ namespace L2Web.UI
                 UiKit.FillSlot(rt, iconUrl?.Invoke(d.Icon), d.Title, d.Count, d.Badge, Mathf.Min(iw, ih));
                 if (d.Cls != null && d.Cls.Contains("disabled")) rt.gameObject.AddComponent<CanvasGroup>().alpha = 0.45f;
                 if (d.Cls != null && d.Cls.Contains("equipped")) rt.name = "slot equipped";
-                UiTooltip.Set(rt.gameObject, d.Title);
+                if (d.Tip != null) UiTooltip.SetCustom(rt.gameObject, d.Tip, d.LiveTip, d.Title);
+                else UiTooltip.Set(rt.gameObject, d.Title);
                 outList.Add(b);
             }
             var rows = (list.Count + cols - 1) / cols;
