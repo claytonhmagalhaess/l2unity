@@ -46,6 +46,23 @@ namespace L2Web.UI
                 case "SetShortcutPage":
                     SetPage(0, num);
                     return true;
+                case "ChatWndSetFocus":
+                    // HandleKeyboardInput com o Enter Chat desligado: EV_ChatWndSetFocus (o ChatWnd.uc foca o campo)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetFocus, ""));
+                    return true;
+                case "ShowMacroListWindow":
+                    // NCConsole::ShowMacroListWnd -> EV_MacroShowListWnd (MacroListWnd.uc)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_MacroShowListWnd, ""));
+                    return true;
+                case "ApplyMinFrame":
+                    // [I] alterna o "manter FPS minimo" (Option.ini [Video] IsKeepMinFrameRate) e avisa com EV_MinFrameRateChanged
+                    L2Options.SetBool("Video", "IsKeepMinFrameRate", !L2Options.GetBool("Video", "IsKeepMinFrameRate"));
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_MinFrameRateChanged, L2Param.Add("", "MinFrameRate", L2Options.GetBool("Video", "IsKeepMinFrameRate") ? 1 : 0)));
+                    return true;
+                case "ShowGMPetitionWindow":
+                    // [I] a janela de peticao do usuario (UserPetitionWnd.uc registra EV_ShowUserPetitionWnd)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ShowUserPetitionWnd, ""));
+                    return true;
                 case "FocusChatWindow":
                     // com o DialogBox aberto o Enter e a acao padrao dele (DoDefaultAction) [I]
                     if (Dialog.Enter()) return true;

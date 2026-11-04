@@ -567,6 +567,43 @@ namespace L2Web.UI
             ChatInput.lineType = InputField.LineType.SingleLine;
             ChatInput.characterLimit = L2Chat.MaxInput;
             ChatInput.onEndEdit.AddListener(OnChatEndEdit);
+            // ChatWnd.uc:361-366: EV_ChatWndSetFocus foca o campo; EV_ChatWndSetString troca o texto (nomes de sussurro)
+            L2Events.Register(Ev.EV_ChatWndSetFocus, _ => FocusChat());
+            L2Events.Register(Ev.EV_ChatWndSetString, p =>
+            {
+                string s = null;
+                if (!L2Param.ParseString(p, "String", ref s) || !ChatInput) return;
+                ChatInput.text = s;
+                ChatInput.caretPosition = s.Length;
+            });
+            // nomes de sussurro: quem sussurrou ou para quem se sussurrou (CreatureSay tipo 2)
+            L2Events.Register(Ev.EV_ChatMessage, p =>
+            {
+                var t = 0;
+                string m = null;
+                if (L2Param.ParseInt(p, "Type", ref t) && t == 2 && L2Param.ParseString(p, "Msg", ref m)) Whisper.Add(ChatWhisper.Sender(m));
+            });
+            // NCEditBox::OnKeyDown (nw:0x10019880) no campo de chat: setas para cima e para baixo mandam ao NCChatWnd os codigos
+            // 4 e 5 (ChangeWhisperName 1 e 0) [I]; o codigo 3 (AttachWhisperName) [V] nao tem tecla achada
+            ChatInput.gameObject.AddComponent<UiTicker>().OnTick = _ =>
+            {
+                var kb = UnityEngine.InputSystem.Keyboard.current;
+                if (kb == null || !ChatInput.isFocused) return;
+                string s = null;
+                if (kb.upArrowKey.wasPressedThisFrame) s = Whisper.Change(1);
+                else if (kb.downArrowKey.wasPressedThisFrame) s = Whisper.Change(0);
+                if (s != null) L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetString, L2Param.Add("", "String", s)));
+            };
+        }
+
+        /// <summary>Nomes de sussurro do campo do chat (NCChatWnd).</summary>
+        public readonly ChatWhisper Whisper = new();
+
+        /// <summary>AttachWhisperName: poe "\"nome " no campo (sem nome, o ultimo que sussurrou).</summary>
+        public void AttachWhisperName(string name = null)
+        {
+            var s = Whisper.Attach(name);
+            if (s != null) L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetString, L2Param.Add("", "String", s)));
         }
 
         void OnChatEndEdit(string _)
