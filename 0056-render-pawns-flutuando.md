@@ -108,7 +108,7 @@ Pedida pela coordenadora depois do novo relato: "numa área de farm o personagem
 - **Falta / fora do escopo:**
   - Pedido 0052 (`GeoTerrain.AllLayers = LocalAssets.GeoLayers`), que a coordenadora aplica no branch de prévia junto do 0051. Sem ele, num andar do meio o pawn fica no z do servidor em vez da camada exata.
   - Pedido 0050 (som de passo).
-  - O 0056-2 ao vivo não fez Giran, o pós-teleporte nem a Cruma, porque o autofarm do servidor assumiu a conta `l2webtest7` (ver o README das evidências). O pós-teleporte ficou coberto pelo 0056-1 e a Cruma pelo offline.
+  - O 0056-2 ao vivo não fez Giran, o pós-teleporte nem a Cruma, porque o autofarm/phantom do L2Ketra no aCis assumiu o personagem Chao56 (`l2webtest7`) depois do `/unstuck`; os eventos PvP Zone e Party Zone do servidor também teleportam jogadores durante os testes. Isso fica fora do porte e o aCis não foi alterado (ver o README das evidências). O pós-teleporte ficou coberto pelo 0056-1 e a Cruma pelo offline.
   - O teleporte em si é da #0057.
   - Não há captura do cliente original.
   - Nado e voo não existem no porte (o original não faz o ajuste para eles).
