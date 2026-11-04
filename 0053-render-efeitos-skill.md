@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-efeitos-skill` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\09_efeitos_skill.md`; `Docs/efeitos.md` (matriz de validação dos efeitos); `Render/Fx/` |
 | Sessão | render: efeitos de skill (#0053) |
 | Criada | 2026-11-04 |

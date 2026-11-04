@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0026) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-03 |
 
 ## O que precisa
@@ -29,3 +29,4 @@ Sem isso, arrastar um item do inventário para fora de qualquer janela larga o i
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito no `main` (`12a8e52`): `ui.GroundAt` pelo `scene.Pick`. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

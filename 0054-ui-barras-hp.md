@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui3 (vaga nova, `worktrees\ui3`) |
 | Branch | `feat/ui-barras-hp` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\01_janelas.md`, `02_interacoes.md`; `analises\l2-interlude\client_spec\` (StatusWnd, NCStatusBarCtrl/gauge, 89, 90); `Docs/revisao_ui.md` (#0047) |
 | Sessão | ui: barras de HP (#0054) |
 | Criada | 2026-11-04 |

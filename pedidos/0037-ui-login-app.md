@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0048) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -66,3 +66,4 @@ Sem 1, o botão Options não faz nada (a janela de conexão do porte foi para o 
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: itens 1 a 4 feitos no `main` (`12a8e52`). Item 5 (música) espera o pedido 0039 da render; item 6 (ID vazio) é decisão do usuário, mantido como está. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0050) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -43,3 +43,4 @@ O código não quebra sem o pedido: o `ItemStats` só lê a coluna 14 quando ela
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito: `txt-cliente` gerado (l2dec413 + l2disasm) e `export_itemdata.py` do `main`: armas 2014, armaduras 1908, nomes 9766; `a[9516]` P. Def. 186, `w[13][14]` = 1; nenhum item antigo mudou. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

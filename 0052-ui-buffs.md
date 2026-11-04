@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui2 (vaga nova, `worktrees\ui2`) |
 | Branch | `feat/ui-buffs` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\02_interacoes.md` (tooltip `AbnormalStatus`, AbnormalStatusWnd), `analises\l2-interlude\client_spec\` (AbnormalStatusWnd, 96, pacotes AbnormalStatusUpdate/PartySpelled/ShortBuffStatusUpdate); `Docs/revisao_ui.md` (#0047) |
 | Sessão | ui: buffs (#0052) |
 | Criada | 2026-11-04 |

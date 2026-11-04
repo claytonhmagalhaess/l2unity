@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-login` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (89 e as telas do lobby), `Docs/validacao.md` G1–G4 e G10; `analises\interface-p166\03_teclado.md` (estados fora do GamingState) |
 | Sessão | ui: login (#0048) |
 | Criada | 2026-11-04 |

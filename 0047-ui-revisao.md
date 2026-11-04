@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-revisao` (nasce de `feat/ui-grupo-uniao-duelo`, fim da cadeia #0026–#0045) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\01_janelas.md`, `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` (UI em `01`–`07`, `89`, `90`, `91`, `96`, `98`) |
 | Sessão | ui: revisão da interface |
 | Criada | 2026-11-04 |

@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui, na pasta `worktrees\world` (emprestada: a `worktrees\ui` está com a #0048) |
 | Branch | `feat/ui-tooltip-multisell` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\02_interacoes.md` (tooltips, `InventoryWithIcon` e variantes), `analises\l2-interlude\client_spec\` (MultiSellWnd, ItemInfo/tooltip, 96); `ItemInfoText.cs` e `L2Tooltip.cs` |
 | Sessão | ui: tooltip da multisell (#0050) |
 | Criada | 2026-11-04 |

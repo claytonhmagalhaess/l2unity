@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0051) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -149,3 +149,4 @@ Detalhes em `Docs/acoes.md` (branch).
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: itens 1 (DoAction) e 3 (sem o texto em português do JoinParty) feitos no `main` (`12a8e52`). Item 2 (executores `dlg` e `local:replay`) fica aberto. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

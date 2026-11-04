@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui4 (vaga nova, `worktrees\ui4`) |
 | Branch | `feat/ui-html` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (NCHtmlViewer, NpcHtmlMessage, ShowBoard, 89, 96); `analises\interface-p166\02_interacoes.md` (roda e cliques no `NCHtmlViewer`); `UI/L2Html.cs` |
 | Sessão | ui: HTML do servidor (#0055) |
 | Criada | 2026-11-04 |

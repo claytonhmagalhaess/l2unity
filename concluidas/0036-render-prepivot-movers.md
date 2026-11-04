@@ -4,7 +4,7 @@
 |---|---|
 | De | render (tarefa #0049) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -31,3 +31,4 @@ O código do branch já lê `prePivot` (`LobbyMovers.ActorOf`, `MapEnv`, `Static
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito: `export_map_emitters.py Lobby` rodado no `main`; só a chave `prePivot` mudou (8 vinhas com (0, 0, 3000), moinho e árvore `null`), `Lobby_emitters.json` igual. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

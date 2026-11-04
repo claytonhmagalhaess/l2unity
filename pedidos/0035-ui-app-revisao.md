@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0047) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | aceito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -26,3 +26,4 @@ O item 1 manda pacote em dobro ao servidor; o 2 deixa a troca fora do DialogBox 
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: item 1 (duelo) feito no `main` (`12a8e52`). Item 2 (troca) fica aberto: o `AskTrade` continua até a UI da pergunta de troca (TradeWnd.uc:309-354) entrar. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

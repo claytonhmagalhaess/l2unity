@@ -4,7 +4,7 @@
 |---|---|
 | De | ui4 (tarefa #0055) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -31,3 +31,4 @@ Sem isso, a janela do tutorial dos novatos (o "?" do aCis e as quests de tutoria
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito no `main` (`12a8e52`): handlers 0xa0 e 0xa3. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

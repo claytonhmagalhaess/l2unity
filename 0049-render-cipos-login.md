@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-cipos-login` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `Docs/validacao.md` G8 ("Moinho e vinhas"); `analises\l2-interlude\client_spec\` (cena do login); estudo `lobby_sway_re.md` da volta 23 (citado na `validacao.md`) |
 | Sessão | render: cipós do login (#0049) |
 | Criada | 2026-11-04 |

@@ -4,7 +4,7 @@
 |---|---|
 | De | ui4 (tarefa #0055) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -26,3 +26,4 @@ Sem isso, os 738 botões `back="sek.cbui92" fore="sek.cbui94"` (painel do admin 
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito: `copy_html_textures.py` do `main`: 409 chaves novas (305 sek + 104 default), nenhuma alterada. `run_tests.sh` no `main`: 879/879 (`12a8e52`).

@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui, na pasta `worktrees\net` (emprestada: a `worktrees\ui` está com a #0048 e a `worktrees\world` com a #0050) |
 | Branch | `feat/ui-status-acoes-cla` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\01_janelas.md`, `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` (DetailStatusWnd, ActionWnd, ClanWnd, 89, 90, 91, 96); `Docs/revisao_ui.md` (#0047) |
 | Sessão | ui: status, ações e clã (#0051) |
 | Criada | 2026-11-04 |
