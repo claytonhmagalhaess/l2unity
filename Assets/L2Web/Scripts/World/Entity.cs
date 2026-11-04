@@ -195,16 +195,25 @@ namespace L2Web.World
             Motion.MoveMul = moveMul;
         }
 
-        /// <summary>Posicao inicial/teleporte (sem movimento em curso).</summary>
+        /// <summary>
+        /// Posicao inicial/teleporte (sem movimento em curso). O Z do servidor pode estar acima do chao (o aCis manda o Z
+        /// do destino + 10, sem geodata: em Giran o unstuck chega 110-124 acima): como no OnTeleportToLocation, o pawn
+        /// pousa no chao no proximo Step em que ele for conhecido (busca do L2_Teleport para o proprio, queda para os outros;
+        /// NPCs e itens caem no maximo NpcMaxFall e ninguem sobe mais que MaxRise: ver Movement.Land).
+        /// </summary>
         public void Place(float x, float y, float z, int? heading = null)
         {
             Motion.Place(x, y, z);
+            Motion.Drop(IsSelf, Kind == "self" || Kind == "player" ? Movement.TeleportMaxFall : Movement.NpcMaxFall);
             Motion.Dest = null;
             if (heading.HasValue) Motion.Yaw = Motion.DesiredYaw = heading.Value & 0xffff;
             Sync();
         }
 
         bool IsSelf => Kind == "self";
+
+        /// <summary>Pouso de outro pawn so vai para o log ([pouso]) se mudar o Z ao menos isto; o proprio sempre.</summary>
+        const float LogLandDelta = 16;
 
         public void ServerMove(float tx, float ty, float tz, float ox, float oy, float oz)
         {
@@ -241,7 +250,12 @@ namespace L2Web.World
                 var d = Turning * TurnSpeed * dt;
                 Motion.Yaw = Motion.DesiredYaw = (Motion.Yaw + d + 65536) % 65536;
             }
+            Motion.Layers = world?.GroundLayers;
+            var landing = Motion.Landing;
+            var z0 = Motion.Z;
             var moved = Motion.Step(dt, ground, target);
+            if (landing && !Motion.Landing && (IsSelf || Math.Abs(Motion.Z - z0) >= LogLandDelta))
+                Debug.Log($"[pouso] {Kind} {ObjectId} ({Motion.X:0},{Motion.Y:0}) z do pacote {z0:0} -> chao {Motion.Z:0} ({Motion.Z - z0:+0;-0;0})");
             Sync();
             return moved;
         }

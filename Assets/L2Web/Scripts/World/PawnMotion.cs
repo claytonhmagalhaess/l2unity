@@ -1,5 +1,6 @@
 // Posicao, velocidade, rotacao e correcao de sincronia de um pawn (PawnMotion de client/world/movement.ts).
 using System;
+using System.Collections.Generic;
 
 namespace L2Web.World
 {
@@ -27,6 +28,18 @@ namespace L2Web.World
         public float TurnRate;
         /// <summary>Teve velocidade no ultimo passo.</summary>
         public bool Moving;
+        /// <summary>
+        /// Pouso pendente depois de um teleporte ou de surgir (Z do servidor, que pode estar acima do chao): o proximo Step
+        /// com chao conhecido poe o pe nele. Search = busca do L2_Teleport (o proprio jogador); senao queda.
+        /// </summary>
+        public bool Landing;
+        public bool LandingSearch;
+        /// <summary>Pe (Z) de onde o pouso parte: Z do pacote + TeleportLift.</summary>
+        public float LandingFeet;
+        /// <summary>Queda maxima do pouso pendente (Movement.TeleportMaxFall ou NpcMaxFall).</summary>
+        public float LandingMaxFall = Movement.TeleportMaxFall;
+        /// <summary>Todas as camadas do geodata em (x, y), se a cena as expuser (World.GroundLayers); null usa so o ground.</summary>
+        public Func<float, float, IReadOnlyList<float>> Layers;
 
         /// <summary>APawn::GetCurSpeed(-1): velocidade base (sem moveMul) do modo atual, com a fase inicial de caminhada.</summary>
         public float BaseSpeed()
@@ -86,6 +99,7 @@ namespace L2Web.World
             {
                 Place(pos.X, pos.Y, pos.Z);
                 Yaw = DesiredYaw = heading & 0xffff;
+                Drop(true);
                 return;
             }
             var d = Movement.Dist3(this, pos);
@@ -116,6 +130,29 @@ namespace L2Web.World
         }
 
         /// <summary>
+        /// Arma o pouso a partir do Z atual (OnTeleportToLocation / L2_Teleport): `search` para o proprio jogador (busca do
+        /// lugar de pouso), senao queda ate o chao abaixo.
+        /// </summary>
+        public void Drop(bool search, float maxFall = Movement.TeleportMaxFall)
+        {
+            Landing = true;
+            LandingSearch = search;
+            LandingMaxFall = maxFall;
+            LandingFeet = Z + Movement.TeleportLift;
+        }
+
+        /// <summary>Resolve o pouso pendente se o chao em (X, Y) ja for conhecido. Devolve true se pousou.</summary>
+        public bool TryLand(Func<float, float, float, float?> ground)
+        {
+            if (!Landing) return false;
+            var z = Movement.Land(ground, Layers, X, Y, LandingFeet, Z, LandingSearch, LandingMaxFall);
+            if (!z.HasValue) return false;
+            Z = z.Value;
+            Landing = false;
+            return true;
+        }
+
+        /// <summary>
         /// Um tick: correcao de sincronia, deslocamento ate o destino, rotacao a RotationRate.
         /// ground(x, y, z) devolve a altura do chao mais proxima (geodata) ou null.
         /// Devolve true se o pawn se moveu. Sem `target`, usa Dest (como o parametro padrao do TS).
@@ -134,6 +171,7 @@ namespace L2Web.World
                     Corr = 0;
                 }
             }
+            TryLand(ground);
             var moved = false;
             if (target != null)
             {
@@ -158,6 +196,8 @@ namespace L2Web.World
                     Y += dy * k;
                     Z = ground?.Invoke(X, Y, nz) ?? nz;
                 }
+                // pouso ainda pendente (sem chao aqui): parte do Z de agora quando o chao chegar
+                if (Landing) LandingFeet = Z + Movement.TeleportLift;
                 moved = true;
             }
             else MoveTime = 0;

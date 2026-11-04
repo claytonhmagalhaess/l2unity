@@ -1,0 +1,32 @@
+-- console (pouso / teleporte)
+   log [raw28] 61 7c ad 00 10 c4 45 01 00 c0 41 02 00 b8 f2 ff ff 13 6c 00 00
+   log [raw28] 28 62 b1 00 10 40 3d 00 00 7a 2e 02 00 79 f5 ff ff 00 00 00 00
+   log [raw28] 61 03 a4 00 10 cf 3c 00 00 28 2e 02 00 78 f5 ff ff ef 39 00 00
+   log [raw28] 28 62 b1 00 10 d7 a0 fe ff f7 9b 01 00 f6 f1 ff ff 00 00 00 00
+   log [raw28] 28 62 b1 00 10 e2 45 01 00 58 45 02 00 26 f3 ff ff 00 00 00 00
+   log [raw28] 28 62 b1 00 10 e8 3d 01 00 74 42 02 00 f4 f2 ff ff 00 00 00 00
+303b026 World: log [pouso] com o Z do pacote e o do chao (#0057)
+-- [pouso] na entrada
+   log [pouso] self 268480866 (81384,148084) z do pacote -3340 -> chao -3464 (-124)
+   log [pouso] npc 268475616 (80510,149250) z do pacote -3508 -> chao -3160 (+348)
+   log [pouso] npc 268475607 (80518,147922) z do pacote -3506 -> chao -3080 (+426)
+   log [pouso] npc 268475608 (80518,147873) z do pacote -3506 -> chao -3048 (+458)
+   log [pouso] npc 268475615 (80511,149183) z do pacote -3508 -> chao -3056 (+452)
+   log [raw28] 28 62 b1 00 10 f2 45 01 00 55 45 02 00 26 f3 ff ff 00 00 00 00
+   log [pouso] self 268480866 (83442,148821) z do pacote -3290 -> chao -3400 (-110)
+   log [pouso] npc 268475615 (80511,149183) z do pacote -3508 -> chao -3056 (+452)
+   log [pouso] npc 268475608 (80518,147873) z do pacote -3506 -> chao -3048 (+458)
+   log [pouso] npc 268475607 (80518,147922) z do pacote -3506 -> chao -3080 (+426)
+   log [pouso] npc 268475616 (80510,149250) z do pacote -3508 -> chao -3160 (+348)
+   log [raw28] 28 62 b1 00 10 1d 42 01 00 60 46 02 00 f4 f2 ff ff 00 00 00 00
+   log [pouso] self 268480866 (82461,149088) z do pacote -3340 -> chao -3464 (-124)
+   log [pouso] npc 268475616 (80510,149250) z do pacote -3508 -> chao -3160 (+348)
+   log [pouso] npc 268475607 (80518,147922) z do pacote -3506 -> chao -3080 (+426)
+   log [pouso] npc 268475608 (80518,147873) z do pacote -3506 -> chao -3048 (+458)
+   log [pouso] npc 268475615 (80511,149183) z do pacote -3508 -> chao -3056 (+452)
+   log [pouso] player 268481025 (82938,148114) z do pacote -3441 -> chao -3464 (-23)
+   log [raw28] 28 62 b1 00 10 da a0 fe ff ef 9b 01 00 f6 f1 ff ff 00 00 00 00
+   log [pouso] self 268480866 (-89894,105455) z do pacote -3594 -> chao -3576 (+18)
+   log [pouso] npc 268480842 (-90174,102501) z do pacote -3392 -> chao -3408 (-16)
+   log [pouso] npc 268449986 (-87806,104647) z do pacote -3368 -> chao -3384 (-16)
+   log [pouso] npc 268449798 (-86861,104181) z do pacote -3312 -> chao -3328 (-16)

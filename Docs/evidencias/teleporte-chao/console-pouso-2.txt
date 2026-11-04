@@ -1,0 +1,16 @@
+-- [pouso] na entrada
+   log [pouso] self 268480845 (81976,148376) z do pacote -3464 -> chao -3464 (0)
+   log [raw28] 28 4d b1 00 10 9c 3e 01 00 3d 41 02 00 f4 f2 ff ff 00 00 00 00
+   log [pouso] self 268480845 (81564,147773) z do pacote -3340 -> chao -3464 (-124)
+   log [raw28] 28 4d b1 00 10 ad 6f 02 00 95 cb ff ff 2e f5 ff ff 00 00 00 00
+   log [pouso] self 268480845 (159661,-13419) z do pacote -2770 -> chao -2848 (-78)
+   log [raw28] 28 4d b1 00 10 3a 42 01 00 6b 46 02 00 f4 f2 ff ff 00 00 00 00
+   log [pouso] self 268480845 (82490,149099) z do pacote -3340 -> chao -3464 (-124)
+   log [raw28] 28 4d b1 00 10 cc a0 fe ff 14 9c 01 00 f6 f1 ff ff 00 00 00 00
+   log [pouso] self 268480845 (-89908,105492) z do pacote -3594 -> chao -3584 (+10)
+   log [pouso] npc 268449852 (-90123,108448) z do pacote -3504 -> chao -3520 (-16)
+   log [pouso] npc 268480842 (-90174,102501) z do pacote -3392 -> chao -3408 (-16)
+   log [raw28] 28 4d b1 00 10 ae 3e 01 00 33 41 02 00 f4 f2 ff ff 00 00 00 00
+   log [pouso] self 268480845 (81582,147763) z do pacote -3340 -> chao -3464 (-124)
+   log [raw28] 28 4d b1 00 10 cb 67 01 00 04 30 03 00 e2 f1 ff ff 00 00 00 00
+   log [pouso] self 268480845 (92107,208900) z do pacote -3614 -> chao -3624 (-10)
