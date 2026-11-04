@@ -172,6 +172,8 @@ namespace L2Web.UI
         public WarehouseView WarehouseWnd { get; private set; }
         /// <summary>PrivateShopWnd (PT_Buy, PT_Sell, PT_BuyList, PT_SellList), #0036.</summary>
         public PrivateShopView PrivateShopWnd { get; private set; }
+        /// <summary>SelectDeliverWnd e DeliverWnd (frete), #0042.</summary>
+        public DeliverView DeliverWnd { get; private set; }
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
         public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd, PrivateShopWnd?.Wnd };
@@ -335,6 +337,8 @@ namespace L2Web.UI
             WarehouseWnd = new WarehouseView(Layer, this, b => this.deps.Send(b));
             // PrivateShopWnd do xdat (#0036): comprar/vender nas lojas dos outros e montar a propria
             PrivateShopWnd = new PrivateShopView(Layer, this, b => this.deps.Send(b)) { NameOf = id => this.world?.Get(id)?.Name ?? "" };
+            // SelectDeliverWnd e DeliverWnd do xdat (#0042), pelos eventos do InterfaceRouter
+            DeliverWnd = new DeliverView(Layer, this, b => this.deps.Send(b));
             TradeWnd = new TradeView(Layer, this, b => this.deps.Send(b))
             {
                 NameOf = id =>
