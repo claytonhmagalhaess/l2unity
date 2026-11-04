@@ -54,13 +54,18 @@ namespace L2Web.Tests
         [Test]
         public void Botao_ForeNormalBackPressionado()
         {
+            // NCButton::Initialize(fore, back, "", ""): o realce e "<fore>_over" quando existe (#0055)
             var (n, p, o) = L2Html.ButtonSkin("L2UI_ch3.btn1_normal", "L2UI_ch3.btn1_normalOn");
             Assert.AreEqual("L2UI_ch3.btn1_normal", n);
             Assert.AreEqual("L2UI_ch3.btn1_normalOn", p);
-            Assert.AreEqual("L2UI_ch3.btn1_normal", o);
-            // textura que o cliente nao tem (servidor privado): botao generico
+            Assert.AreEqual("L2UI_ch3.btn1_normal_over", o);
+            // sem o _over: a propria fore; icone do Icon.utx: normal e pressionado
+            var (n1, p1, o1) = L2Html.ButtonSkin("icon.skill1040", "icon.skill0000");
+            Assert.AreEqual(("icon.skill1040", "icon.skill0000", "icon.skill1040"), (n1, p1, o1));
+            // textura que nao existe: Default.BlackTexture (sek.* so depois do pedido 0043)
             var (n2, _, _) = L2Html.ButtonSkin("sek.cbui94", "sek.cbui92");
-            Assert.AreEqual("L2UI_ch3.button.btn1_normal", n2);
+            Assert.AreEqual(L2WndUtil.Tex("sek.cbui94") != null ? "sek.cbui94" : "Default.BlackTexture", n2);
+            Assert.AreEqual("Default.BlackTexture", L2Html.ButtonSkin("nada.nada", null).normal);
             Assert.AreEqual(9, L2Html.BrHeight);
         }
     }

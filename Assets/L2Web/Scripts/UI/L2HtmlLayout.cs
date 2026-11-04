@@ -1,13 +1,17 @@
-// Layout do HTML do servidor como o NCHtmlViewer: cada tag vira um "objeto" (texto, link, botao, imagem, campo, tabela)
-// posto em linhas da esquerda para a direita, quebrando quando passa da largura; a linha tem a altura do maior objeto e
-// os objetos sao alinhados pelo align do bloco (center/right). A tabela calcula as larguras das colunas (width fixo,
-// o resto dividido igualmente), faz o layout de cada celula com a largura dela e a linha da tabela fica com a altura da
-// maior celula. O resultado e uma lista de caixas em pixels (x para a direita, y para baixo) que o L2Html monta em uGUI.
-// Sem UnityEngine: a medida do texto vem de IHtmlMeasure (TextGenerator no jogo, uma tabela fixa nos testes).
+// Layout do HTML do servidor como o NCHtmlViewer (REA em Docs/html_suporte.md; nw: = linha do nwindow.c):
+//   NCHtmlFrame::LoadHtml (0x100876c0, nw:124333) cria as "unidades" do corpo e de cada td; NCHtmlFrame::Align
+//   (0x10082a10, nw:120091) as empilha em y. So o texto corre na linha: trechos de texto seguidos (com <font> entre eles)
+//   continuam na mesma linha e quebram na largura. Imagem, botao, edit, multiedit, combobox, tabela, <br> (1 x 9) e <br1>
+//   (1 x 0) ficam cada um na sua linha, em x = 0 ou alinhados pelo topo da pilha de alinhamento (<center>, td align).
+//   Unidade de texto: altura = linhas x (altura do 'A' + 6). Botao e edit ocupam h + 6.
+//   NCHtmlTable (LoadHtml 0x100860a0, Align 0x10083d10): coluna = maior td (width e minimo, fixwidth fixa), largura
+//   natural = soma(col + 2(border + padding) + spacing) + spacing + 2 border; com width ou estouro as colunas escalam na
+//   proporcao; celula = max(height, conteudo) - 6; valign padrao meio; bgcolor so na tabela inteira.
+// O resultado e uma lista de caixas em pixels (x para a direita, y para baixo) que o L2Html monta em uGUI. Sem UnityEngine:
+// a medida do texto vem de IHtmlMeasure (TextGenerator no jogo, uma tabela fixa nos testes).
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace L2Web.UI
 {
@@ -16,24 +20,35 @@ namespace L2Web.UI
     {
         /// <summary>Largura em pixels de `text` (sem quebra).</summary>
         float Width(string text);
-        /// <summary>Altura de uma linha de texto.</summary>
-        float LineHeight { get; }
+        /// <summary>Altura do glifo 'A' (GetTextSize de uma linha).</summary>
+        float GlyphHeight { get; }
     }
 
     public enum HtmlBoxKind
     {
         /// <summary>Trecho de texto (uma linha, sem quebra).</summary>
         Text,
-        /// <summary>Trecho de link (uma linha; um link quebrado vira varios trechos com a mesma acao).</summary>
+        /// <summary>Trecho de link (uma linha; um link quebrado vira varios trechos com o mesmo Id).</summary>
         Link,
         Button,
         Edit,
         MultiEdit,
         Combo,
-        /// <summary>Textura (img src, ou fundo de celula/tabela).</summary>
+        /// <summary>Textura 1:1 (img src), repetida ou cortada no tamanho da caixa.</summary>
         Image,
-        /// <summary>Retangulo de cor solida (bgcolor).</summary>
+        /// <summary>Retangulo de cor solida (bgcolor, border).</summary>
         Fill,
+    }
+
+    public enum HtmlLinkType
+    {
+        None,
+        /// <summary>&lt;a action&gt;: NCActionLinker (bypass / link / write).</summary>
+        Action,
+        /// <summary>&lt;a link&gt;: NCFileLinker, carrega o HTML local.</summary>
+        File,
+        /// <summary>&lt;a cmd&gt;: NCChatWnd::ExecuteCommand.</summary>
+        Command,
     }
 
     /// <summary>Uma caixa do layout em pixels do viewer.</summary>
@@ -44,19 +59,27 @@ namespace L2Web.UI
         public string Text;
         /// <summary>Cor ARGB (texto, link, fill).</summary>
         public uint Color;
+        public HtmlLinkType LinkType;
+        /// <summary>action (link/botao/edit), arquivo (link=) ou comando (cmd=).</summary>
         public string Action;
-        /// <summary>msg="id;texto" (confirmacao antes da acao).</summary>
+        /// <summary>msg="id;texto" do &lt;a action&gt; (confirmacao antes da acao).</summary>
         public string Msg;
         public string Var;
         public string[] Options;
-        /// <summary>Textura (img src, background).</summary>
+        /// <summary>combobox sel=.</summary>
+        public string Sel;
+        /// <summary>Textura (img src).</summary>
         public string Tex;
         /// <summary>Texturas do botao: fore = normal, back = pressionado.</summary>
         public string Fore, Back;
-        /// <summary>edit type (number, password...).</summary>
+        /// <summary>edit type (normal, password, number, date, time).</summary>
         public string Type;
+        /// <summary>edit length (0 = pela largura).</summary>
+        public int Length;
         /// <summary>Indice do link/botao no documento (os trechos de um mesmo link tem o mesmo).</summary>
         public int Id;
+
+        public HtmlBox Copy() => (HtmlBox)MemberwiseClone();
 
         public override string ToString() => $"{Kind} {X},{Y} {W}x{H} {Text ?? Tex ?? Fore}";
     }
@@ -65,67 +88,30 @@ namespace L2Web.UI
     {
         public string Title = "";
         public float Width, Height;
+        /// <summary>html imgsrc (fundo do viewer); null = "Transparent"/sem.</summary>
+        public string Background;
+        /// <summary>html textani="1" (animacao do texto; o porte nao anima).</summary>
+        public bool TextAnim;
         public readonly List<HtmlBox> Boxes = new();
     }
 
     public static class HtmlLayout
     {
-        // ------------------------------------------------------------ medidas (NCHtmlTagInfo / NCHtmlViewer)
-        /// <summary>Cor padrao do texto.</summary>
-        public static uint TextColor = 0xFFDCD9CF;
-        /// <summary>NCHtmlTagInfo::Draw: link em 0xFF6699FF.</summary>
+        // ------------------------------------------------------------ medidas e cores (REA)
+        /// <summary>Texto: 0xFFDCDCDC.</summary>
+        public static uint TextColor = 0xFFDCDCDC;
+        /// <summary>Link: 0xFF6699FF sublinhado (a cor do &lt;font&gt; em volta, se houver).</summary>
         public static uint LinkColor = 0xFF6699FF;
-        /// <summary>NCHtmlTagInfo::LoadHtml: o &lt;br&gt; e um objeto 1 x 9 (altura de uma linha vazia).</summary>
-        public static float BrHeight = 9;
-        /// <summary>O botao ocupa height + 6 na linha (3 em cima, 3 embaixo).</summary>
-        public static float ButtonPad = 3;
-        /// <summary>Largura e altura padrao do botao sem width/height.</summary>
-        public static float ButtonW = 80, ButtonH = 21;
-        /// <summary>Edit sem width/height.</summary>
-        public static float EditW = 120, EditH = 18, MultiEditH = 40;
-        /// <summary>Combobox sem width/height.</summary>
-        public static float ComboW = 80, ComboH = 18;
-        /// <summary>cellpadding / cellspacing padrao da tabela.</summary>
-        public static float CellPadding = 0, CellSpacing = 0;
-        /// <summary>Espaco antes e depois do &lt;p&gt;.</summary>
-        public static float ParagraphGap = 0;
-
-        // ------------------------------------------------------------ estado
-        sealed class Obj
-        {
-            public HtmlBoxKind Kind;
-            public float W, H;
-            /// <summary>Margem vertical (botao: 3 em cima e embaixo).</summary>
-            public float PadY;
-            public HtmlBox Box;
-            /// <summary>Caixas de uma tabela/celula (relativas ao objeto).</summary>
-            public List<HtmlBox> Inner;
-            public bool Break;
-            /// <summary>Texto: espaco entre este e o objeto anterior da mesma corrida (para juntar).</summary>
-            public bool IsWord, SpaceBefore;
-        }
-
-        sealed class Flow
-        {
-            public float Width;
-            public float Y;
-            public Align Align = Align.Left;
-            public readonly List<Obj> Line = new();
-            public float LineW;
-            public readonly List<HtmlBox> Out = new();
-            public uint Color = TextColor;
-            public bool Bold;
-            public IHtmlMeasure M;
-            public Ctx Doc;
-            /// <summary>Largura minima pedida pelo conteudo (para a tabela sem width).</summary>
-            public float MaxRight;
-            public bool PendingSpace;
-        }
-
-        sealed class Ctx
-        {
-            public int NextId;
-        }
+        /// <summary>Borda da tabela: 0xFFDCDCDC.</summary>
+        public static uint BorderColor = 0xFFDCDCDC;
+        /// <summary>&lt;br&gt; = unidade 1 x 9; &lt;br1&gt; = 1 x 0.</summary>
+        public const float BrHeight = 9, Br1Height = 0;
+        /// <summary>Espaco abaixo de cada unidade de texto, botao e edit (GetTextSize + 6).</summary>
+        public const float Gap = 6;
+        /// <summary>Padroes: button 10 x 10, edit 50 x 15, multiedit 50 x 40, combobox 30 x 21 (altura fixa).</summary>
+        public const float ButtonW = 10, ButtonH = 10, EditW = 50, EditH = 15, MultiEditW = 50, MultiEditH = 40, ComboW = 30, ComboH = 21;
+        /// <summary>Padroes da tabela: cellpadding 1, cellspacing 2, border 0.</summary>
+        public const int CellPadding = 1, CellSpacing = 2;
 
         public enum Align
         {
@@ -134,11 +120,45 @@ namespace L2Web.UI
             Right,
         }
 
-        public enum VAlign
+        enum VAlign
         {
             Top,
             Middle,
             Bottom,
+        }
+
+        // ------------------------------------------------------------ unidades
+        sealed class Span
+        {
+            public string Text;
+            public uint Color;
+            public HtmlLinkType Link;
+            public string Action, Msg;
+            public int Id;
+        }
+
+        sealed class Unit
+        {
+            public bool IsText;
+            public Span Span;
+            public float W, H;
+            /// <summary>Controle/imagem (posicao relativa a unidade).</summary>
+            public HtmlBox Box;
+            /// <summary>Tabela: Align na largura disponivel -> (largura, altura, caixas relativas a tabela).</summary>
+            public Func<float, (float w, float h, List<HtmlBox> boxes)> Layout;
+            public Align Align;
+        }
+
+        sealed class Ctx
+        {
+            public IHtmlMeasure M;
+            public int NextId;
+            public readonly List<uint> Colors = new();
+            public readonly List<Align> Aligns = new();
+            /// <summary>&lt;a&gt; aberto: vale para a proxima unidade.</summary>
+            public Span PendingLink;
+            public float LineH => M.GlyphHeight + Gap;
+            public Align CurAlign => Aligns.Count > 0 ? Aligns[Aligns.Count - 1] : Align.Left;
         }
 
         /// <summary>Layout de um documento (raiz do HtmlDoc.Parse) numa largura.</summary>
@@ -146,449 +166,552 @@ namespace L2Web.UI
         {
             var r = new HtmlLayoutResult { Width = width };
             var title = HtmlDoc.Find(doc, "title");
-            if (title != null) r.Title = Regex.Replace(HtmlDoc.InnerText(title), @"\s+", " ").Trim();
-            var f = new Flow { Width = width, M = m, Doc = new Ctx() };
-            Walk(doc, f);
-            EndLine(f, false);
-            r.Height = f.Y;
-            r.Boxes.AddRange(f.Out);
+            if (title != null) r.Title = HtmlDoc.InnerText(title).Trim();
+            // AnalyzeHtml: sem <html> nao aparece nada; o conteudo vai ate o </html> ou o fim
+            var html = HtmlDoc.Find(doc, "html");
+            if (html == null) return r;
+            var bg = html.Attr("imgsrc");
+            if (!string.IsNullOrEmpty(bg) && !bg.Equals("Transparent", StringComparison.OrdinalIgnoreCase)) r.Background = bg;
+            r.TextAnim = html.Attr("textani") == "1";
+            var c = new Ctx { M = m };
+            var units = new List<Unit>();
+            Load(html, c, units);
+            r.Height = Place(units, width, c, r.Boxes);
             return r;
         }
 
         /// <summary>Layout de um HTML (texto) numa largura.</summary>
-        public static HtmlLayoutResult Run(string html, float width, IHtmlMeasure m) => Run(HtmlDoc.Parse(html ?? ""), width, m);
+        public static HtmlLayoutResult Run(string html, float width, IHtmlMeasure m, IHtmlNames names = null) => Run(HtmlDoc.Parse(html ?? "", names), width, m);
 
-        // ------------------------------------------------------------ fluxo
-        static void Walk(HtmlNode src, Flow f)
+        // ------------------------------------------------------------ LoadHtml: arvore -> unidades
+        static void Add(List<Unit> units, Unit u, Ctx c)
+        {
+            u.Align = c.CurAlign;
+            units.Add(u);
+        }
+
+        static void Load(HtmlNode src, Ctx c, List<Unit> units)
         {
             foreach (var n in src.Children)
             {
                 if (n.Tag == null)
                 {
-                    AddText(f, n.Text, null, 0);
+                    var link = c.PendingLink;
+                    c.PendingLink = null;
+                    var top = c.Colors.Count > 0 ? c.Colors[c.Colors.Count - 1] : (uint?)null;
+                    var sp = link ?? new Span();
+                    sp.Text = n.Text;
+                    sp.Color = top ?? (link != null ? LinkColor : TextColor);
+                    Add(units, new Unit { IsText = true, Span = sp }, c);
+                    continue;
+                }
+                if (n.Unknown)
+                {
+                    Load(n, c, units);
                     continue;
                 }
                 switch (n.Tag)
                 {
-                    case "head":
-                        // <HEAD> sem </HEAD> (server_help.htm): o <BODY> fica dentro dele
-                        foreach (var hc in n.Children)
-                            if (hc.Tag == "body")
-                                Walk(hc, f);
-                        continue;
                     case "title":
-                    case "script":
-                    case "style":
+                    case "extend":
                         continue;
-                    case "br":
-                        Add(f, new Obj { Kind = HtmlBoxKind.Text, W = 0, H = BrHeight, Break = true });
-                        continue;
-                    case "br1":
-                        Add(f, new Obj { Kind = HtmlBoxKind.Text, W = 0, H = 0, Break = true });
-                        continue;
-                    case "p":
+                    case "font":
                     {
-                        EndLine(f, false);
-                        f.Y += ParagraphGap;
-                        var al = f.Align;
-                        f.Align = AlignOf(n.Attr("align"), f.Align);
-                        Walk(n, f);
-                        EndLine(f, false);
-                        f.Align = al;
-                        f.Y += ParagraphGap;
+                        // a abertura so empilha com color; o fechamento sempre desempilha (nw:124474-124487)
+                        var col = n.Attrs.ContainsKey("color") ? HtmlDoc.Color(n.Attr("color")) : null;
+                        if (col != null) c.Colors.Add(col.Value);
+                        Load(n, c, units);
+                        if (n.Closed && c.Colors.Count > 0) c.Colors.RemoveAt(c.Colors.Count - 1);
                         continue;
                     }
                     case "center":
                     {
-                        EndLine(f, false);
-                        var al = f.Align;
-                        f.Align = Align.Center;
-                        Walk(n, f);
-                        EndLine(f, false);
-                        f.Align = al;
-                        continue;
-                    }
-                    case "font":
-                    {
-                        var old = f.Color;
-                        f.Color = HtmlDoc.Color(n.Attr("color")) ?? f.Color;
-                        Walk(n, f);
-                        f.Color = old;
+                        c.Aligns.Add(Align.Center);
+                        Load(n, c, units);
+                        if (n.Closed && c.Aligns.Count > 0) c.Aligns.RemoveAt(c.Aligns.Count - 1);
                         continue;
                     }
                     case "a":
                     {
-                        var id = ++f.Doc.NextId;
-                        var label = new StringBuilder();
-                        Collect(n, label);
-                        AddText(f, label.ToString(), n, id);
+                        var sp = new Span { Id = ++c.NextId };
+                        if (n.Attrs.ContainsKey("action"))
+                        {
+                            sp.Link = HtmlLinkType.Action;
+                            sp.Action = n.Attr("action");
+                            sp.Msg = n.Attr("msg");
+                        }
+                        else if (n.Attrs.ContainsKey("cmd"))
+                        {
+                            sp.Link = HtmlLinkType.Command;
+                            sp.Action = n.Attr("cmd");
+                        }
+                        else if (n.Attrs.ContainsKey("link"))
+                        {
+                            sp.Link = HtmlLinkType.File;
+                            sp.Action = n.Attr("link");
+                        }
+                        c.PendingLink = sp.Link != HtmlLinkType.None ? sp : null;
+                        Load(n, c, units);
+                        continue;
+                    }
+                    case "br":
+                        c.PendingLink = null;
+                        Add(units, new Unit { W = 1, H = BrHeight }, c);
+                        continue;
+                    case "br1":
+                        c.PendingLink = null;
+                        Add(units, new Unit { W = 1, H = Br1Height }, c);
+                        continue;
+                    case "img":
+                    {
+                        c.PendingLink = null;
+                        var w = Num(n.Attr("width"), 0);
+                        var h = Num(n.Attr("height"), 0);
+                        var isrc = n.Attr("src");
+                        var box = new HtmlBox { Kind = HtmlBoxKind.Image, W = w, H = h, Tex = string.IsNullOrEmpty(isrc) ? null : isrc };
+                        Add(units, new Unit { W = w, H = h, Box = box }, c);
                         continue;
                     }
                     case "button":
                     {
-                        var w = HtmlDoc.Size(n.Attr("width")) ?? ButtonW;
-                        var h = HtmlDoc.Size(n.Attr("height")) ?? ButtonH;
+                        c.PendingLink = null;
+                        var w = Num(n.Attr("width"), ButtonW);
+                        var h = Num(n.Attr("height"), ButtonH);
                         var box = new HtmlBox
                         {
-                            Kind = HtmlBoxKind.Button, W = w, H = h, Text = n.Attr("value") ?? "", Action = n.Attr("action") ?? "", Msg = n.Attr("msg"),
-                            Fore = n.Attr("fore"), Back = n.Attr("back"), Id = ++f.Doc.NextId, Color = TextColor,
+                            Kind = HtmlBoxKind.Button, W = w, H = h, Text = n.Attr("value") ?? "", Action = n.Attr("action") ?? "", LinkType = HtmlLinkType.Action,
+                            Fore = n.Attr("fore") ?? "Default.BlackTexture", Back = n.Attr("back") ?? "Default.WhiteTexture", Id = ++c.NextId,
                         };
-                        Add(f, new Obj { Kind = HtmlBoxKind.Button, W = w, H = h, PadY = ButtonPad, Box = box });
+                        Add(units, new Unit { W = w, H = h + Gap, Box = box }, c);
                         continue;
                     }
                     case "edit":
                     case "multiedit":
                     {
+                        c.PendingLink = null;
                         var multi = n.Tag == "multiedit";
-                        var w = HtmlDoc.Size(n.Attr("width")) ?? EditW;
-                        var h = HtmlDoc.Size(n.Attr("height")) ?? (multi ? MultiEditH : EditH);
-                        var box = new HtmlBox { Kind = multi ? HtmlBoxKind.MultiEdit : HtmlBoxKind.Edit, W = w, H = h, Var = n.Attr("var"), Type = n.Attr("type") };
-                        Add(f, new Obj { Kind = box.Kind, W = w, H = h, Box = box });
+                        var w = Num(n.Attr("width"), multi ? MultiEditW : EditW);
+                        var h = Num(n.Attr("height"), multi ? MultiEditH : EditH) + Gap;
+                        var box = new HtmlBox
+                        {
+                            Kind = multi ? HtmlBoxKind.MultiEdit : HtmlBoxKind.Edit, W = w, H = h, Var = n.Attr("var"), Type = n.Attr("type"),
+                            Length = multi ? 0 : Math.Max(0, HtmlDoc.Int(n.Attr("length")) ?? 0), Action = multi ? null : n.Attr("action"),
+                            LinkType = HtmlLinkType.Action,
+                        };
+                        Add(units, new Unit { W = w, H = h, Box = box }, c);
                         continue;
                     }
                     case "combobox":
                     {
-                        var w = HtmlDoc.Size(n.Attr("width")) ?? ComboW;
-                        var h = HtmlDoc.Size(n.Attr("height")) ?? ComboH;
+                        c.PendingLink = null;
+                        var w = Num(n.Attr("width"), ComboW);
                         var opts = new List<string>();
                         foreach (var o in (n.Attr("list") ?? "").Split(';'))
                             if (o.Length > 0) opts.Add(o);
-                        var box = new HtmlBox { Kind = HtmlBoxKind.Combo, W = w, H = h, Var = n.Attr("var"), Options = opts.ToArray() };
-                        Add(f, new Obj { Kind = HtmlBoxKind.Combo, W = w, H = h, Box = box });
-                        continue;
-                    }
-                    case "img":
-                    {
-                        var isrc = n.Attr("src");
-                        var w = HtmlDoc.Size(n.Attr("width")) ?? 0;
-                        var h = HtmlDoc.Size(n.Attr("height")) ?? 0;
-                        var box = new HtmlBox { Kind = HtmlBoxKind.Image, W = w, H = h, Tex = string.IsNullOrEmpty(isrc) ? null : isrc };
-                        Add(f, new Obj { Kind = HtmlBoxKind.Image, W = w, H = h, Box = box });
+                        var box = new HtmlBox { Kind = HtmlBoxKind.Combo, W = w, H = ComboH, Var = n.Attr("var"), Options = opts.ToArray(), Sel = n.Attr("sel") };
+                        // [I] a unidade com h + 6 como o botao
+                        Add(units, new Unit { W = w, H = ComboH + Gap, Box = box }, c);
                         continue;
                     }
                     case "table":
-                        Table(n, f);
+                        c.PendingLink = null;
+                        Add(units, Table(n, c), c);
                         continue;
                     default:
-                        // html, body e as tags que o cliente nao conhece: so o conteudo
-                        Walk(n, f);
+                        // html, body, head, tr/td fora de tabela e as tags que o cliente ignora: so o conteudo
+                        Load(n, c, units);
                         continue;
                 }
             }
         }
 
-        static Align AlignOf(string v, Align dflt)
+        static float Num(string v, float dflt)
         {
-            switch ((v ?? "").Trim().ToLowerInvariant())
-            {
-                case "center": return Align.Center;
-                case "right": return Align.Right;
-                case "left": return Align.Left;
-                default: return dflt;
-            }
+            var n = HtmlDoc.Int(v);
+            return n is > 0 ? n.Value : dflt;
         }
 
-        static VAlign VAlignOf(string v, VAlign dflt)
-        {
-            switch ((v ?? "").Trim().ToLowerInvariant())
-            {
-                case "top": return VAlign.Top;
-                case "middle":
-                case "center": return VAlign.Middle;
-                case "bottom": return VAlign.Bottom;
-                default: return dflt;
-            }
-        }
+        // ------------------------------------------------------------ Align: unidades -> caixas
+        static float AlignX(Align a, float W, float w) => a == Align.Center ? (float)Math.Floor((W - w) / 2) : a == Align.Right ? W - w : 0;
 
-        // texto do link (o cliente le o texto entre <a> e </a>; tags dentro dele so contribuem o texto)
-        static void Collect(HtmlNode n, StringBuilder sb)
+        /// <summary>Empilha as unidades numa largura; devolve a altura. As caixas vao para `out` (relativas ao frame).</summary>
+        static float Place(List<Unit> units, float W, Ctx c, List<HtmlBox> outBoxes)
         {
-            foreach (var c in n.Children)
+            float y = 0;
+            for (var i = 0; i < units.Count;)
             {
-                if (c.Tag == null) sb.Append(c.Text);
-                else if (c.Tag == "br" || c.Tag == "br1") sb.Append(' ');
-                else Collect(c, sb);
-            }
-        }
-
-        static readonly Regex Ws = new(@"[ \t\r\n\f\v]+");
-
-        // quebra o texto em palavras e poe na linha (link = mesma cor do link e a acao)
-        static void AddText(Flow f, string raw, HtmlNode link, int id)
-        {
-            if (string.IsNullOrEmpty(raw)) return;
-            var t = Ws.Replace(raw, " ");
-            if (t.Length == 0) return;
-            if (t[0] == ' ') f.PendingSpace = true;
-            var words = t.Split(' ');
-            var first = true;
-            foreach (var w0 in words)
-            {
-                if (!first) f.PendingSpace = true;
-                first = false;
-                if (w0.Length == 0) continue;
-                var w = w0.Replace(' ', ' ');
-                var kind = link != null ? HtmlBoxKind.Link : HtmlBoxKind.Text;
-                var box = new HtmlBox
+                var u = units[i];
+                if (u.IsText)
                 {
-                    Kind = kind, Text = w, Color = link != null ? LinkColor : f.Color, Id = id,
-                    Action = link?.Attr("action") ?? (link != null ? "" : null), Msg = link?.Attr("msg"),
-                };
-                var space = f.PendingSpace && f.Line.Count > 0;
-                f.PendingSpace = false;
-                Add(f, new Obj { Kind = kind, W = f.M.Width(w), H = f.M.LineHeight, Box = box, IsWord = true, SpaceBefore = space });
-            }
-            if (t[t.Length - 1] == ' ') f.PendingSpace = true;
-        }
-
-        static float SpaceW(Flow f) => f.M.Width(" ");
-
-        // poe um objeto na linha; quebra antes se nao cabe (a nao ser que a linha esteja vazia)
-        static void Add(Flow f, Obj o)
-        {
-            if (o.Break)
-            {
-                // br/br1: entra na linha (a altura dele conta so se a linha estiver vazia) e fecha
-                if (f.Line.Count == 0) f.Line.Add(o);
-                EndLine(f, true);
-                return;
-            }
-            var gap = o.SpaceBefore ? SpaceW(f) : 0;
-            if (f.Line.Count > 0 && f.LineW + gap + o.W > f.Width + 0.01f)
-            {
-                EndLine(f, false);
-                gap = 0;
-                o.SpaceBefore = false;
-            }
-            if (!o.IsWord && f.PendingSpace && f.Line.Count > 0) gap = SpaceW(f);
-            f.PendingSpace = false;
-            o.SpaceBefore = gap > 0;
-            f.Line.Add(o);
-            f.LineW += gap + o.W;
-        }
-
-        /// <summary>Fecha a linha: altura = maior objeto; alinha e gera as caixas.</summary>
-        static void EndLine(Flow f, bool fromBreak)
-        {
-            if (f.Line.Count == 0)
-            {
-                f.PendingSpace = false;
-                return;
-            }
-            float h = 0;
-            foreach (var o in f.Line) h = Math.Max(h, o.H + 2 * o.PadY);
-            var lw = f.LineW;
-            var x = f.Align == Align.Center ? Math.Max(0, (f.Width - lw) / 2) : f.Align == Align.Right ? Math.Max(0, f.Width - lw) : 0;
-            x = (float)Math.Floor(x);
-            HtmlBox run = null;
-            var sw = SpaceW(f);
-            foreach (var o in f.Line)
-            {
-                if (o.SpaceBefore) x += sw;
-                // objetos alinhados pela base da linha (texto e botoes na mesma linha)
-                var y = f.Y + h - o.H - o.PadY;
-                if (o.IsWord)
-                {
-                    // palavras seguidas com a mesma cor/acao viram um trecho so
-                    if (run != null && run.Kind == o.Box.Kind && run.Color == o.Box.Color && run.Id == o.Box.Id && Math.Abs(run.X + run.W - (x - (o.SpaceBefore ? sw : 0))) < 0.01f)
-                    {
-                        run.Text += (o.SpaceBefore ? " " : "") + o.Box.Text;
-                        run.W = x + o.W - run.X;
-                    }
-                    else
-                    {
-                        run = o.Box;
-                        run.X = x;
-                        run.Y = y;
-                        run.W = o.W;
-                        run.H = o.H;
-                        f.Out.Add(run);
-                    }
+                    // trechos de texto seguidos com o mesmo alinhamento: uma corrida que quebra na largura
+                    var j = i;
+                    var run = new List<Span>();
+                    while (j < units.Count && units[j].IsText && units[j].Align == u.Align) run.Add(units[j++].Span);
+                    y += Text(run, u.Align, W, y, c, outBoxes);
+                    i = j;
+                    continue;
                 }
-                else
+                if (u.Layout != null)
                 {
-                    run = null;
-                    if (o.Inner != null)
-                        foreach (var b in o.Inner)
-                        {
-                            b.X += x;
-                            b.Y += y;
-                            f.Out.Add(b);
-                        }
-                    else if (o.Box != null)
+                    var (tw, th, inner) = u.Layout(W);
+                    var tx = AlignX(u.Align, W, tw);
+                    foreach (var b in inner)
                     {
-                        o.Box.X = x;
-                        o.Box.Y = y;
-                        o.Box.W = o.W;
-                        o.Box.H = o.H;
-                        f.Out.Add(o.Box);
+                        b.X += tx;
+                        b.Y += y;
+                        outBoxes.Add(b);
                     }
+                    y += th;
+                    i++;
+                    continue;
                 }
-                x += o.W;
+                var x = AlignX(u.Align, W, u.W);
+                if (u.Box != null)
+                {
+                    var b = u.Box.Copy();
+                    b.X = x;
+                    b.Y = y;
+                    outBoxes.Add(b);
+                }
+                y += u.H;
+                i++;
             }
-            f.MaxRight = Math.Max(f.MaxRight, lw);
-            f.Y += h;
-            f.Line.Clear();
-            f.LineW = 0;
-            f.PendingSpace = false;
+            return y;
         }
 
-        // ------------------------------------------------------------ tabela
-        static IEnumerable<HtmlNode> Rows(HtmlNode t)
+        sealed class Tok
         {
-            foreach (var n in t.Children)
+            public string Text;
+            public float W;
+            public bool Space;
+            public Span Span;
+        }
+
+        // pedacos da corrida: palavras e espacos (os de dentro nao sao colapsados)
+        static List<Tok> Tokens(List<Span> run, IHtmlMeasure m)
+        {
+            var l = new List<Tok>();
+            foreach (var s in run)
             {
-                if (n.Tag == "tr") yield return n;
-                else if (n.Tag == "tbody" || n.Tag == "thead" || n.Tag == "tfoot")
-                    foreach (var r in Rows(n))
-                        yield return r;
+                var t = s.Text.Replace('\t', ' ');
+                var k = 0;
+                while (k < t.Length)
+                {
+                    var sp = t[k] == ' ';
+                    var e = k;
+                    while (e < t.Length && (t[e] == ' ') == sp) e++;
+                    var piece = t.Substring(k, e - k);
+                    l.Add(new Tok { Text = piece, W = m.Width(piece), Space = sp, Span = s });
+                    k = e;
+                }
             }
-        }
-
-        static List<HtmlNode> Cells(HtmlNode tr)
-        {
-            var l = new List<HtmlNode>();
-            foreach (var c in tr.Children)
-                if (c.Tag == "td" || c.Tag == "th")
-                    l.Add(c);
             return l;
         }
 
-        /// <summary>Largura pedida pela celula: fixwidth, senao width.</summary>
-        static float? CellWidth(HtmlNode td) => HtmlDoc.Size(td.Attr("fixwidth")) ?? HtmlDoc.Size(td.Attr("width"));
-
-        static void Table(HtmlNode t, Flow f)
+        /// <summary>Uma corrida de texto: quebra por palavra na largura; devolve a altura (linhas x LineH).</summary>
+        static float Text(List<Span> run, Align al, float W, float y0, Ctx c, List<HtmlBox> outBoxes)
         {
-            // a tabela comeca numa linha nova e a proxima coisa vem embaixo dela
-            EndLine(f, false);
-            var pad = HtmlDoc.Int(t.Attr("cellpadding")) is int cp && cp >= 0 ? cp : CellPadding;
-            var spacing = HtmlDoc.Int(t.Attr("cellspacing")) is int cs && cs >= 0 ? cs : CellSpacing;
-            var border = HtmlDoc.Int(t.Attr("border")) ?? 0;
-            var rows = new List<List<HtmlNode>>();
-            foreach (var tr in Rows(t)) rows.Add(Cells(tr));
-            var cols = 0;
-            foreach (var r in rows) cols = Math.Max(cols, r.Count);
-            var tw = HtmlDoc.Size(t.Attr("width"));
-            // larguras das colunas: o maior width de cada coluna; as sem width dividem o que sobra
-            var colW = new float?[cols];
-            foreach (var r in rows)
-                for (var i = 0; i < r.Count; i++)
+            var lines = new List<List<Tok>>();
+            var line = new List<Tok>();
+            float x = 0;
+            void NewLine()
+            {
+                while (line.Count > 0 && line[line.Count - 1].Space)
                 {
-                    var cw = CellWidth(r[i]);
-                    if (cw != null) colW[i] = Math.Max(colW[i] ?? 0, cw.Value);
+                    x -= line[line.Count - 1].W;
+                    line.RemoveAt(line.Count - 1);
                 }
-            var avail = tw ?? f.Width;
-            float fixedSum = 0;
-            var free = 0;
-            for (var i = 0; i < cols; i++)
-            {
-                if (colW[i] != null) fixedSum += colW[i].Value;
-                else free++;
+                lines.Add(line);
+                line = new List<Tok>();
+                x = 0;
             }
-            var inner = avail - spacing * (cols + 1);
-            var widths = new float[cols];
-            if (tw == null && free > 0)
+            foreach (var t in Tokens(run, c.M))
             {
-                // tabela sem width: as colunas sem width ficam com a largura do conteudo, limitada ao que sobra
-                var rest = Math.Max(0, inner - fixedSum);
-                var natural = new float[cols];
-                foreach (var r in rows)
-                    for (var i = 0; i < r.Count; i++)
-                        if (colW[i] == null)
-                            natural[i] = Math.Max(natural[i], Natural(r[i], f, rest) + 2 * pad);
-                float nsum = 0;
-                for (var i = 0; i < cols; i++)
-                    if (colW[i] == null)
-                        nsum += natural[i];
-                for (var i = 0; i < cols; i++)
-                    widths[i] = colW[i] ?? (nsum <= rest || nsum <= 0 ? natural[i] : natural[i] * rest / nsum);
-            }
-            else
-            {
-                var each = free > 0 ? Math.Max(0, (inner - fixedSum) / free) : 0;
-                for (var i = 0; i < cols; i++) widths[i] = colW[i] ?? each;
-            }
-            float total = spacing;
-            for (var i = 0; i < cols; i++) total += widths[i] + spacing;
-            var tableW = tw ?? total;
-            var boxes = new List<HtmlBox>();
-            var bg = HtmlDoc.Color(t.Attr("bgcolor"));
-            var tbg = t.Attr("background");
-            var tableBgIndex = boxes.Count;
-            float y = spacing;
-            foreach (var r in rows)
-            {
-                // altura da linha = maior celula (ou height)
-                var cellsOut = new List<(List<HtmlBox> boxes, float x, float w, float h, VAlign va, HtmlNode td)>();
-                float rowH = 0;
-                float x = spacing;
-                for (var i = 0; i < r.Count; i++)
+                if (t.Space)
                 {
-                    var td = r[i];
-                    var w = widths[i];
-                    var sub = new Flow
-                    {
-                        Width = Math.Max(0, w - 2 * pad), M = f.M, Doc = f.Doc, Color = f.Color, Bold = f.Bold || td.Tag == "th",
-                        Align = AlignOf(td.Attr("align"), Align.Left),
-                    };
-                    Walk(td, sub);
-                    EndLine(sub, false);
-                    var ch = sub.Y + 2 * pad;
-                    var fh = HtmlDoc.Size(td.Attr("fixheight")) ?? HtmlDoc.Size(td.Attr("height"));
-                    if (fh != null) ch = Math.Max(ch, fh.Value);
-                    rowH = Math.Max(rowH, ch);
-                    cellsOut.Add((sub.Out, x, w, sub.Y, VAlignOf(td.Attr("valign"), VAlign.Middle), td));
-                    x += w + spacing;
+                    // espaco no comeco de uma linha quebrada some
+                    if (line.Count == 0 && lines.Count > 0) continue;
+                    line.Add(t);
+                    x += t.W;
+                    continue;
                 }
-                var trH = HtmlDoc.Size(r.Count > 0 ? r[0].Parent?.Attr("height") : null);
-                if (trH != null) rowH = Math.Max(rowH, trH.Value);
-                foreach (var c in cellsOut)
+                if (x > 0 && x + t.W > W) NewLine();
+                if (t.W > W && W > 0)
                 {
-                    var cbg = HtmlDoc.Color(c.td.Attr("bgcolor"));
-                    if (cbg != null) boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = c.x, Y = y, W = c.w, H = rowH, Color = cbg.Value });
-                    var cb = c.td.Attr("background");
-                    if (!string.IsNullOrEmpty(cb)) boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Image, X = c.x, Y = y, W = c.w, H = rowH, Tex = cb });
-                    var dy = c.va == VAlign.Top ? pad : c.va == VAlign.Bottom ? rowH - pad - c.h : (rowH - c.h) / 2;
-                    dy = (float)Math.Floor(dy);
-                    foreach (var b in c.boxes)
+                    // palavra maior que a linha: quebra por caractere (a Engine testa x + glifo > largura)
+                    var sb = new StringBuilder();
+                    foreach (var ch in t.Text)
                     {
-                        b.X += c.x + pad;
-                        b.Y += y + dy;
-                        boxes.Add(b);
+                        var cw = c.M.Width(sb.ToString() + ch);
+                        if (sb.Length > 0 && x + cw > W)
+                        {
+                            var piece = sb.ToString();
+                            line.Add(new Tok { Text = piece, W = c.M.Width(piece), Span = t.Span });
+                            NewLine();
+                            sb.Clear();
+                        }
+                        sb.Append(ch);
                     }
-                    if (border > 0) Frame(boxes, c.x, y, c.w, rowH, border);
+                    if (sb.Length > 0)
+                    {
+                        var piece = sb.ToString();
+                        var pw = c.M.Width(piece);
+                        line.Add(new Tok { Text = piece, W = pw, Span = t.Span });
+                        x += pw;
+                    }
+                    continue;
                 }
-                y += rowH + spacing;
+                line.Add(t);
+                x += t.W;
             }
-            var tableH = Math.Max(y, HtmlDoc.Size(t.Attr("height")) ?? 0);
-            if (!string.IsNullOrEmpty(tbg)) boxes.Insert(tableBgIndex, new HtmlBox { Kind = HtmlBoxKind.Image, X = 0, Y = 0, W = tableW, H = tableH, Tex = tbg });
-            if (bg != null) boxes.Insert(tableBgIndex, new HtmlBox { Kind = HtmlBoxKind.Fill, X = 0, Y = 0, W = tableW, H = tableH, Color = bg.Value });
-            if (border > 0) Frame(boxes, 0, 0, tableW, tableH, border);
-            // a tabela e um objeto na sua propria linha, alinhado pelo align dela (ou o do bloco)
-            var al = f.Align;
-            f.Align = AlignOf(t.Attr("align"), f.Align);
-            f.Line.Add(new Obj { Kind = HtmlBoxKind.Fill, W = tableW, H = tableH, Inner = boxes });
-            f.LineW = tableW;
-            EndLine(f, false);
-            f.Align = al;
+            if (line.Count > 0 || lines.Count == 0) NewLine();
+            var lh = c.LineH;
+            for (var li = 0; li < lines.Count; li++)
+            {
+                var ln = lines[li];
+                float lw = 0;
+                foreach (var t in ln) lw += t.W;
+                var lx = AlignX(al, W, lw);
+                HtmlBox cur = null;
+                foreach (var t in ln)
+                {
+                    if (cur != null && cur.Id == t.Span.Id && cur.Color == t.Span.Color && ReferenceEquals(cur.Action, t.Span.Action) && cur.LinkType == t.Span.Link)
+                    {
+                        cur.Text += t.Text;
+                        cur.W += t.W;
+                    }
+                    else
+                    {
+                        cur = new HtmlBox
+                        {
+                            Kind = t.Span.Link != HtmlLinkType.None ? HtmlBoxKind.Link : HtmlBoxKind.Text, X = lx, Y = y0 + li * lh, W = t.W, H = c.M.GlyphHeight,
+                            Text = t.Text, Color = t.Span.Color, LinkType = t.Span.Link, Action = t.Span.Action, Msg = t.Span.Msg, Id = t.Span.Id,
+                        };
+                        outBoxes.Add(cur);
+                    }
+                    lx += t.W;
+                }
+            }
+            // caixas so de espaco nao desenham nada
+            outBoxes.RemoveAll(b => (b.Kind == HtmlBoxKind.Text || b.Kind == HtmlBoxKind.Link) && b.Text.Trim().Length == 0 && b.Y >= y0);
+            return lines.Count * lh;
         }
 
+        // ------------------------------------------------------------ medidas sem layout (para as colunas)
+        /// <summary>Largura natural (maior unidade, texto sem quebrar) e minima (maior unidade que nao quebra, ou 'A').</summary>
+        static (float natural, float min) Measure(List<Unit> units, Ctx c)
+        {
+            float nat = 0, min = c.M.Width("A");
+            for (var i = 0; i < units.Count;)
+            {
+                var u = units[i];
+                if (u.IsText)
+                {
+                    float w = 0;
+                    var j = i;
+                    while (j < units.Count && units[j].IsText && units[j].Align == u.Align) w += c.M.Width(units[j++].Span.Text.Replace('\t', ' '));
+                    nat = Math.Max(nat, w);
+                    i = j;
+                    continue;
+                }
+                nat = Math.Max(nat, u.W);
+                min = Math.Max(min, u.W);
+                i++;
+            }
+            return (nat, min);
+        }
+
+        // ------------------------------------------------------------ tabela
+        // TR dentro da tabela (atravessando tags desconhecidas; outra TABLE nao); o resto e ignorado
+        static void Rows(HtmlNode t, List<HtmlNode> rows)
+        {
+            foreach (var n in t.Children)
+            {
+                if (n.Tag == "tr") rows.Add(n);
+                else if (n.Tag != null && n.Tag != "table" && n.Tag != "td") Rows(n, rows);
+            }
+        }
+
+        static void Cells(HtmlNode tr, List<HtmlNode> cells)
+        {
+            foreach (var n in tr.Children)
+            {
+                if (n.Tag == "td") cells.Add(n);
+                else if (n.Tag != null && n.Tag != "table" && n.Tag != "tr") Cells(n, cells);
+            }
+        }
+
+        sealed class Cell
+        {
+            public HtmlNode Td;
+            public List<Unit> Units;
+            public float Pref, Min;
+            public Align Align;
+            public VAlign VAlign;
+        }
+
+        static Align TdAlign(string v)
+        {
+            switch ((v ?? "").Trim().ToUpperInvariant())
+            {
+                case "CENTER": return Align.Center;
+                case "RIGHT": return Align.Right;
+                default: return Align.Left;
+            }
+        }
+
+        // VALIGN: sem atributo ou CENTER = meio; BOTTOM = base; TOP e o resto = topo (nw:122873-122891)
+        static VAlign TdVAlign(string v)
+        {
+            if (v == null) return VAlign.Middle;
+            switch (v.Trim().ToUpperInvariant())
+            {
+                case "CENTER": return VAlign.Middle;
+                case "BOTTOM": return VAlign.Bottom;
+                default: return VAlign.Top;
+            }
+        }
+
+        static Unit Table(HtmlNode t, Ctx c)
+        {
+            var pad = HtmlDoc.Int(t.Attr("cellpadding")) is int cp && cp >= 0 ? cp : CellPadding;
+            var sp = HtmlDoc.Int(t.Attr("cellspacing")) is int cs && cs >= 0 ? cs : CellSpacing;
+            var bd = HtmlDoc.Int(t.Attr("border")) is int b && b > 0 ? b : 0;
+            var trs = new List<HtmlNode>();
+            Rows(t, trs);
+            var rows = new List<List<Cell>>();
+            var cols = 0;
+            foreach (var tr in trs)
+            {
+                var tds = new List<HtmlNode>();
+                Cells(tr, tds);
+                var row = new List<Cell>();
+                foreach (var td in tds)
+                {
+                    // td align empilha o alinhamento do conteudo (sem o atributo, 0 = esquerda: cancela o <center> de fora)
+                    var cell = new Cell { Td = td, Units = new List<Unit>(), Align = TdAlign(td.Attr("align")), VAlign = TdVAlign(td.Attr("valign")) };
+                    c.Aligns.Add(cell.Align);
+                    var link = c.PendingLink;
+                    Load(td, c, cell.Units);
+                    c.PendingLink = link;
+                    c.Aligns.RemoveAt(c.Aligns.Count - 1);
+                    var (nat, min) = Measure(cell.Units, c);
+                    var wv = td.Attr("width");
+                    var w = HtmlDoc.Percent(wv) ? 0 : HtmlDoc.Int(wv) ?? 0;
+                    cell.Pref = Math.Max(w, nat);
+                    var fw = HtmlDoc.Int(td.Attr("fixwidth"));
+                    if (fw is > 0) cell.Pref = fw.Value;
+                    cell.Min = min;
+                    row.Add(cell);
+                }
+                cols = Math.Max(cols, row.Count);
+                rows.Add(row);
+            }
+            var colW = new float[cols];
+            foreach (var r in rows)
+                for (var i = 0; i < r.Count; i++)
+                    colW[i] = Math.Max(colW[i], r[i].Pref);
+            float natural = sp + 2 * bd;
+            for (var i = 0; i < cols; i++) natural += colW[i] + 2 * (bd + pad) + sp;
+            var tw = t.Attr("width");
+            // para as colunas do frame de fora a tabela mede o width numerico, ou a largura natural
+            var measureW = HtmlDoc.Int(tw) is int mw && mw > 0 && !HtmlDoc.Percent(tw) ? mw : natural;
+            return new Unit { W = measureW, H = 0, Layout = disp => AlignTable(t, c, rows, cols, colW, natural, disp, pad, sp, bd) };
+        }
+
+        // Table::Align (0x10083d10, nw:121120) na largura disponivel `disp`
+        static (float, float, List<HtmlBox>) AlignTable(HtmlNode t, Ctx c, List<List<Cell>> rows, int cols, float[] colW, float natural, float disp, int pad, int sp, int bd)
+        {
+            var tw = t.Attr("width");
+            float T;
+            var scale = false;
+            if (HtmlDoc.Int(tw) is int twn && twn > 0)
+            {
+                T = HtmlDoc.Percent(tw) ? (float)Math.Floor(twn * disp / 100f) : twn;
+                scale = true;
+            }
+            else if (natural >= disp)
+            {
+                T = disp;
+                scale = true;
+            }
+            else T = natural;
+            var cw = new float[cols];
+            for (var i = 0; i < cols; i++) cw[i] = scale && natural > 0 ? (float)Math.Floor(colW[i] * T / natural) : colW[i];
+            // layout das celulas e altura das linhas
+            var laid = new List<List<(List<HtmlBox> boxes, float h, float w)>>();
+            var rowH = new float[rows.Count];
+            for (var ri = 0; ri < rows.Count; ri++)
+            {
+                var lr = new List<(List<HtmlBox>, float, float)>();
+                for (var i = 0; i < rows[ri].Count; i++)
+                {
+                    var cell = rows[ri][i];
+                    var w = Math.Max(cw[i], cell.Min);
+                    var boxes = new List<HtmlBox>();
+                    var ch = Place(cell.Units, w, c, boxes);
+                    var th = HtmlDoc.Int(cell.Td.Attr("height")) ?? 0;
+                    var h = Math.Max(0, Math.Max(th, ch) - Gap);
+                    rowH[ri] = Math.Max(rowH[ri], h);
+                    lr.Add((boxes, h, w));
+                }
+                laid.Add(lr);
+            }
+            float naturalH = sp + 2 * bd;
+            float sumRows = 0;
+            foreach (var h in rowH)
+            {
+                naturalH += h + 2 * (bd + pad) + sp;
+                sumRows += h;
+            }
+            var H = naturalH;
+            var hAttr = HtmlDoc.Int(t.Attr("height")) ?? 0;
+            if (hAttr > naturalH && rowH.Length > 0)
+            {
+                // as linhas esticam na proporcao
+                var extra = hAttr - naturalH;
+                for (var ri = 0; ri < rowH.Length; ri++) rowH[ri] += sumRows > 0 ? (float)Math.Floor(extra * rowH[ri] / sumRows) : (float)Math.Floor(extra / rowH.Length);
+                H = hAttr;
+            }
+            var inner = new List<HtmlBox>();
+            var bg = t.Attrs.ContainsKey("bgcolor") ? HtmlDoc.Color(t.Attr("bgcolor")) : null;
+            if (bg != null) inner.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = 0, Y = 0, W = T, H = H, Color = bg.Value });
+            if (bd > 0) Frame(inner, 0, 0, T, H, bd);
+            float y = sp + 2 * bd + pad;
+            for (var ri = 0; ri < rows.Count; ri++)
+            {
+                float x = sp + 2 * bd + pad;
+                for (var i = 0; i < rows[ri].Count; i++)
+                {
+                    var (boxes, h, w) = laid[ri][i];
+                    var cell = rows[ri][i];
+                    var dy = cell.VAlign == VAlign.Top ? 0 : cell.VAlign == VAlign.Bottom ? rowH[ri] - h : (float)Math.Floor(rowH[ri] / 2 - h / 2);
+                    foreach (var bx in boxes)
+                    {
+                        bx.X += x;
+                        bx.Y += y + dy;
+                        inner.Add(bx);
+                    }
+                    if (bd > 0) Frame(inner, x - pad - bd, y - pad - bd, cw[i] + 2 * (pad + bd), rowH[ri] + 2 * (pad + bd), bd);
+                    x += cw[i] + 2 * (bd + pad) + sp;
+                }
+                y += rowH[ri] + 2 * (bd + pad) + sp;
+            }
+            return (T, H, inner);
+        }
+
+        // border N: N retangulos de 1 px
         static void Frame(List<HtmlBox> boxes, float x, float y, float w, float h, int b)
         {
-            const uint c = 0xFF808080;
-            boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x, Y = y, W = w, H = b, Color = c });
-            boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x, Y = y + h - b, W = w, H = b, Color = c });
-            boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x, Y = y, W = b, H = h, Color = c });
-            boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x + w - b, Y = y, W = b, H = h, Color = c });
-        }
-
-        // largura natural do conteudo de uma celula (a maior linha sem quebrar, limitada a `max`)
-        static float Natural(HtmlNode td, Flow f, float max)
-        {
-            var sub = new Flow { Width = Math.Max(1, max), M = f.M, Doc = new Ctx(), Color = f.Color };
-            Walk(td, sub);
-            EndLine(sub, false);
-            return Math.Min(max, sub.MaxRight);
+            for (var k = 0; k < b; k++)
+            {
+                float x0 = x + k, y0 = y + k, w0 = w - 2 * k, h0 = h - 2 * k;
+                if (w0 <= 0 || h0 <= 0) break;
+                boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x0, Y = y0, W = w0, H = 1, Color = BorderColor });
+                boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x0, Y = y0 + h0 - 1, W = w0, H = 1, Color = BorderColor });
+                boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x0, Y = y0, W = 1, H = h0, Color = BorderColor });
+                boxes.Add(new HtmlBox { Kind = HtmlBoxKind.Fill, X = x0 + w0 - 1, Y = y0, W = 1, H = h0, Color = BorderColor });
+            }
         }
     }
 }

@@ -33,11 +33,25 @@ namespace L2Web.Tests
             }
         }
 
-        [TestCase(TextAnchor.UpperLeft, 0f)]
-        [TestCase(TextAnchor.MiddleCenter, 0.5f)]
-        [TestCase(TextAnchor.UpperCenter, 0.5f)]
-        [TestCase(TextAnchor.MiddleRight, 1f)]
-        public void Html_SublinhadoSegueOAlinhamento(TextAnchor align, float x) => Assert.AreEqual(x, L2Html.UnderlineAnchor(align));
+        [Test]
+        public void Html_SublinhadoNaLarguraDoTrecho()
+        {
+            // #0055: cada trecho de link e uma caixa do tamanho do texto (centrada pelo layout); o sublinhado ocupa a caixa
+            var go = new GameObject("teste-link", typeof(RectTransform));
+            try
+            {
+                var r = L2Html.Render("<html><center><a action=\"bypass x\">Teleport</a></center></html>", new HtmlActions { Names = null }, go.transform, 296);
+                var link = r.Layout.Boxes.Find(b => b.Kind == HtmlBoxKind.Link);
+                Assert.Greater(link.X, 0);
+                var line = r.Body.Find("link/sublinhado") as RectTransform;
+                Assert.IsNotNull(line);
+                Assert.AreEqual(Mathf.Ceil(link.W), line.sizeDelta.x);
+            }
+            finally
+            {
+                Object.DestroyImmediate(go);
+            }
+        }
 
         [Test]
         public void Board_BypassDasAbas()

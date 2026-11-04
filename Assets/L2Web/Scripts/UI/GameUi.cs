@@ -423,7 +423,7 @@ namespace L2Web.UI
             });
             // ajuda e peticao do SystemMenuWnd (#0047)
             Help = new HelpHtmlView(Layer);
-            Tutorial = new TutorialViewerView(Layer, HtmlAct());
+            Tutorial = new TutorialViewerView(Layer, HtmlAct(), b => this.deps.Send(b));
             Petition = new PetitionView(Layer, Dialog, b => this.deps.Send(b), t => this.deps.Chat("sys", t, null));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>

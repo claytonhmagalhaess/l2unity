@@ -86,7 +86,7 @@ namespace L2Web.UI
             var html = ReadL2Text(name);
             UiKit.Clear(help);
             if (html == null) return;
-            var act = new HtmlActions { Link = l => LoadHelp(l.Replace("\\", "/")) };
+            var act = new HtmlActions { Link = l => LoadHelp(l.Replace("\\", "/")), File = l => LoadHelp(HelpHtmlView.FileName(l)) };
             // o viewer do server_help.htm tem 302 de largura; o L2Html poe o documento em (0, 0) com a altura dele
             helpHtml = L2Html.Render(html, act, help, 302);
             var body = helpHtml.Body;

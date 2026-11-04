@@ -30,6 +30,10 @@ namespace L2Web.UI
         bool btnLock, pageLock, selecting;
         List<string> parts = new();
         int partTimer, lockTimer;
+        /// <summary>NCBBSHtmlViewer +0x25c: trava os cliques do HTML depois de uma acao aceita (OnTimer de 10 s ou pagina nova).</summary>
+        bool htmlLock;
+        int htmlLockToken;
+        public const int HtmlLockMs = 10000;
 
         public BoardView(L2Layer layer, Action<byte[]> send, Func<HtmlActions> htmlActions)
         {
@@ -134,9 +138,37 @@ namespace L2Web.UI
         {
             var body = Clear();
             if (!body) return;
-            // HtmlViewer do xdat (633 x 474, NCBBSHtmlViewer)
-            L2Html.Render(string.Join("", parts), htmlActions(), body, HtmlViewerWidth);
+            // HtmlViewer do xdat (633 x 474, NCBBSHtmlViewer): limites do GetData do BBS, roda de 45 px e a trava de 10 s
+            htmlLock = false;
+            L2Html.Render(string.Join("", parts), BoardActions(htmlActions()), body, HtmlViewerWidth);
         }
+
+        /// <summary>
+        /// NCBBSHtmlViewer::OnAction / OnHtmlButton (nw:119222-119355): com a trava ligada o clique e ignorado; uma acao
+        /// enviada liga a trava, que o OnTimer (10 s, timer 0xFF032113) ou a proxima pagina desligam.
+        /// </summary>
+        HtmlActions BoardActions(HtmlActions a)
+        {
+            a.Board = true;
+            Action<string> Locked(Action<string> send) => send == null ? null : s =>
+            {
+                if (htmlLock) return;
+                htmlLock = true;
+                var tok = ++htmlLockToken;
+                send(s);
+                Later(HtmlLockMs, () =>
+                {
+                    if (tok == htmlLockToken) htmlLock = false;
+                });
+            };
+            a.Bypass = Locked(a.Bypass);
+            a.Link = Locked(a.Link);
+            a.Write = Locked(a.Write);
+            return a;
+        }
+
+        /// <summary>A trava do HTML do board esta ligada (testes).</summary>
+        public bool HtmlLocked => htmlLock;
 
         /// <summary>Largura do HtmlViewer do xdat (0 = a do viewport).</summary>
         float HtmlViewerWidth => HelpHtmlView.ViewerWidth(Wnd.Ctrl("HtmlViewer"));

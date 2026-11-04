@@ -62,7 +62,7 @@ namespace L2Web.UI
             var body = Wnd.Content("HtmlViewer");
             if (!body) return;
             UiKit.Clear(body);
-            L2Html.Render(html, new HtmlActions { Link = Load }, body, ViewerWidth(Wnd.Ctrl("HtmlViewer")));
+            L2Html.Render(html, new HtmlActions { Link = Load, File = Load }, body, ViewerWidth(Wnd.Ctrl("HtmlViewer")));
             var sr = body.GetComponentInParent<ScrollRect>();
             if (sr) sr.verticalNormalizedPosition = 1;
         }

@@ -6,6 +6,9 @@
 //   fica com (largura - 15) x (janela - 32 - 9); ShowWindowWithFocus.
 //   EV_TutorialViewerWndHide: HideWindow.
 // Os eventos vem do TutorialShowHtml 0xa0 (S html) e do TutorialCloseHtml 0xa3 (PacketEvents; despacho no App.cs).
+// viewType=Tutorial (+0x214 = 1, nw:191921): o bypass sai pela variante do tutorial (RequestTutorialPassCmdToServer 0x7c) e
+// o "link x" pelo RequestTutorialLinkHtml 0x7b (o aCis entrega os dois a quest "Tutorial").
+using L2Web.Net;
 using UnityEngine;
 
 namespace L2Web.UI
@@ -20,9 +23,21 @@ namespace L2Web.UI
         /// <summary>Ultimo HTML mostrado (testes e diagnostico).</summary>
         public RenderedHtml Last { get; private set; }
 
-        public TutorialViewerView(L2Layer layer, HtmlActions act)
+        /// <summary>RequestTutorialLinkHtml 0x7b "S" (pedido 0044: mover para o UiPackets).</summary>
+        public static byte[] RequestTutorialLinkHtml(string link) => new PacketWriter().C(0x7b).S(link ?? "").Bytes();
+
+        /// <summary>RequestTutorialPassCmdToServer 0x7c "S" (pedido 0044: mover para o UiPackets).</summary>
+        public static byte[] RequestTutorialPassCmdToServer(string cmd) => new PacketWriter().C(0x7c).S(cmd ?? "").Bytes();
+
+        /// <summary>`act` = as acoes do HTML de NPC; o bypass e o link passam para os pacotes do tutorial.</summary>
+        public TutorialViewerView(L2Layer layer, HtmlActions act, System.Action<byte[]> send)
         {
             this.act = act ?? new HtmlActions();
+            if (send != null)
+            {
+                this.act.Bypass = c => send(RequestTutorialPassCmdToServer(c));
+                this.act.Link = l => send(RequestTutorialLinkHtml(l));
+            }
             Wnd = new L2Wnd(Name, layer, new WndOpts { AriaLabel = "Tutorial" });
             L2Events.Register(Ev.EV_TutorialViewerWndShow, p =>
             {
