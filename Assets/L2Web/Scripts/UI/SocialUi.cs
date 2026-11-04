@@ -106,14 +106,20 @@ namespace L2Web.UI
             ask.Show();
         }
 
+        // Textos das perguntas pelas systemmsg do original (OnReceiveAskJoinParty, OnReceiveTradeDemand e
+        // OnReceiveFriendAddRequest abrem o DialogBox nativo com a mensagem do id): 66, 100 e 516.
+        public const int MsgAskJoinParty = 66, MsgAskTrade = 100, MsgAskFriend = 516;
+
+        static string Msg(int id, string name) => GameData.SystemMessage(id, new List<string> { name ?? "" }).Text ?? "";
+
         public void AskParty(string requestor) =>
-            AskYesNo($"{requestor} convidou você para a party.", ok => deps.Send(SocialPackets.AnswerJoinParty(ok)));
+            AskYesNo(Msg(MsgAskJoinParty, requestor), ok => deps.Send(SocialPackets.AnswerJoinParty(ok)));
 
         public void AskTrade(int senderId) =>
-            AskYesNo($"{deps.NameOf(senderId)} quer trocar itens com você.", ok => deps.Send(SocialPackets.AnswerTradeRequest(ok)));
+            AskYesNo(Msg(MsgAskTrade, deps.NameOf(senderId)), ok => deps.Send(SocialPackets.AnswerTradeRequest(ok)));
 
         public void AskFriend(string requestor) =>
-            AskYesNo($"{requestor} quer adicionar você como amigo.", ok => deps.Send(SocialPackets.AnswerFriendInvite(ok)));
+            AskYesNo(Msg(MsgAskFriend, requestor), ok => deps.Send(SocialPackets.AnswerFriendInvite(ok)));
 
         // ------------------------------------------------------------ party
         public void PartyAll(PartyAllInfo p)
