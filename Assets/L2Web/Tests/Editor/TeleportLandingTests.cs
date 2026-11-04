@@ -98,6 +98,12 @@ namespace L2Web.Tests
             // baixa, a busca nao acha nada a 900 e a queda iria a -5104 (14 mil abaixo): fica no Z do servidor
             Assert.AreEqual(9017f, Movement.Land(Layers(-5104, 10080), null, 115410, 16829, 9027, 9017, true));
             Assert.AreEqual(9017f, Movement.Land(Layers(-5104, 10080), null, 115410, 16829, 9027, 9017, false));
+            // GroundHeight da #0056: multicamada devolve so a camada a ate 128 do zRef (null se nenhuma): nas consultas
+            // de +-1e6 vem null, e a celula continua multicamada (ate 150 para baixo, 30 para cima)
+            System.Func<float, float, float, float?> g56 = (_, _, zr) => System.Math.Abs(zr - 8992) <= 128 ? 8992 : (float?)null;
+            Assert.AreEqual(8992f, Movement.Land(g56, null, 0, 0, 9027, 9017, true));
+            System.Func<float, float, float, float?> g56far = (_, _, zr) => System.Math.Abs(zr + 3080) <= 128 ? -3080 : (float?)null;
+            Assert.AreEqual(-3200f, Movement.Land(g56far, null, 0, 0, -3190, -3200, true)); // 110 acima: telhado, fica
         }
 
         [Test]

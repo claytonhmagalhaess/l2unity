@@ -146,7 +146,9 @@ namespace L2Web.World
                 if (!near.HasValue) return null;
                 var top = ground(x, y, FarRef);
                 var low = ground(x, y, -FarRef);
-                exact = !(top.HasValue && low.HasValue && top.Value != low.Value);
+                // uma camada so quando a mais alta e a mais baixa existem e coincidem; o GroundHeight da #0056 devolve null
+                // para zRef longe de todas as camadas de uma celula multicamada, e isso tambem conta como multicamada
+                exact = top.HasValue && low.HasValue && top.Value == low.Value;
                 hs = new[] { near, top, low };
             }
             var reach = exact ? maxFall : Math.Min(maxFall, MultiLayerTrust);
