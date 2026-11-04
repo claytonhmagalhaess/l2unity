@@ -82,6 +82,8 @@ namespace L2Web.UI
         public int? LeaderX;
         /// <summary>Compacta: dica da janela do slot.</summary>
         public string SlotTooltip = "";
+        /// <summary>StatusIconBuff/StatusIconDebuff: os efeitos do ultimo EV_PartySpelledList, na ordem do pacote.</summary>
+        public List<(int id, int level)> Spelled = new();
         public int MaxCp, Cp, MaxHp, Hp, MaxMp, Mp;
         public bool Visible;
     }
@@ -94,7 +96,7 @@ namespace L2Web.UI
         public int Height => Compact ? 26 : 46;
         public readonly PartySlot[] Slots = new PartySlot[MaxCount];
         public int CurCount;
-        /// <summary>m_CurBf: 0 nada, 1 buffs, 2 debuffs (as grades ficam vazias: EV_PartySpelledList nao tem emissor).</summary>
+        /// <summary>m_CurBf: 0 nada, 1 buffs, 2 debuffs (as grades vem do EV_PartySpelledList, PartySpelled tipo 0).</summary>
         public int CurBf;
         /// <summary>Compacta: m_MasterID guardado entre eventos.</summary>
         public int MasterId;
@@ -130,9 +132,32 @@ namespace L2Web.UI
                 case Ev.EV_PartyDeleteAllParty:
                 case Ev.EV_Restart: Clear(); break;
                 case Ev.EV_ShowBuffIcon: NextBuffMode(); break;
+                case Ev.EV_PartySpelledList: Spelled(param); break;
                 default: return;
             }
             Changed();
+        }
+
+        /// <summary>Tamanho dos icones das grades (info.Size: 16, compacta 10), sem fundo: o passo e o proprio tamanho.</summary>
+        public int BuffSize => Compact ? 10 : 16;
+
+        /// <summary>
+        /// HandlePartySpelledList (PartyWnd.uc:422-493): ID &lt; 1 ou fora do grupo, ignora; senao limpa as duas grades do slot e
+        /// guarda os SkillID_i/Level_i com id &gt; 0 (a divisao por IsDebuff fica em StatusIcon.PartyGrids).
+        /// </summary>
+        void Spelled(string p)
+        {
+            var id = Int(p, "ID");
+            if (id < 1) return;
+            var idx = FindPartyId(id);
+            if (idx < 0) return;
+            var l = Slots[idx].Spelled = new List<(int, int)>();
+            var max = Int(p, "Max");
+            for (var i = 0; i < max; i++)
+            {
+                var sid = Int(p, "SkillID_" + i);
+                if (sid > 0) l.Add((sid, Int(p, "Level_" + i)));
+            }
         }
 
         /// <summary>Tooltip do btnBuff: o proximo modo (1496/1497/1498).</summary>
@@ -167,6 +192,7 @@ namespace L2Web.UI
             s.ClassTex = "";
             s.MaxCp = s.Cp = s.MaxHp = s.Hp = s.MaxMp = s.Mp = 0;
             s.Id = 0;
+            s.Spelled = new List<(int, int)>();
         }
 
         void CopyStatus(int d, int src)
@@ -196,6 +222,8 @@ namespace L2Web.UI
             a.Hp = b.Hp;
             a.MaxMp = b.MaxMp;
             a.Mp = b.Mp;
+            // as duas grades sao copiadas linha a linha (GetItem/AddCol)
+            a.Spelled = new List<(int, int)>(b.Spelled);
         }
 
         /// <summary>ResizeWnd: altura = 46 (26) x membros; a PartyWnd aparece sem SmallPartyWnd, a compacta com.</summary>
@@ -343,7 +371,7 @@ namespace L2Web.UI
                 var sc = s;
                 s.Changed = () => Render(sc);
             }
-            foreach (var ev in new[] { Ev.EV_PartyAddParty, Ev.EV_PartyUpdateParty, Ev.EV_PartyDeleteParty, Ev.EV_PartyDeleteAllParty, Ev.EV_ShowBuffIcon, Ev.EV_Restart })
+            foreach (var ev in new[] { Ev.EV_PartyAddParty, Ev.EV_PartyUpdateParty, Ev.EV_PartyDeleteParty, Ev.EV_PartyDeleteAllParty, Ev.EV_ShowBuffIcon, Ev.EV_PartySpelledList, Ev.EV_Restart })
             {
                 var id = ev;
                 L2Events.Register(id, p =>
@@ -531,6 +559,63 @@ namespace L2Web.UI
                 w.Bar("barCP" + i, sl.Cp, sl.MaxCp);
                 w.Bar("barHP" + i, sl.Hp, sl.MaxHp);
                 w.Bar("barMP" + i, sl.Mp, sl.MaxMp);
+                RenderSpelled(w, s, i);
+            }
+        }
+
+        readonly Dictionary<string, string> spelledKey = new();
+
+        /// <summary>
+        /// StatusIconBuff/StatusIconDebuff do slot: SetAnchor(slot, "TopRight", "TopLeft", -3, 5) (PartyWnd.uc:71-75), icones de
+        /// 16 (10) sem fundo, 12 por linha; debuff com a moldura do NCStatusIconCtrl. noClip e noTooltip ligados no xdat: sem
+        /// numero, sem piscar e sem tooltip. UpdateBuff: m_CurBf 1 mostra os buffs, 2 os debuffs, 0 nenhum.
+        /// </summary>
+        void RenderSpelled(L2Wnd w, PartyScript s, int i)
+        {
+            var slot = w.Get("PartyStatusWnd" + i);
+            var grids = StatusIcon.PartyGrids(s.Slots[i].Spelled, L2SkillData.IsDebuff);
+            for (var g = 0; g < 2; g++)
+            {
+                var name = (g == 0 ? "StatusIconBuff" : "StatusIconDebuff") + i;
+                var el = w.Get(name);
+                if (!el) continue;
+                w.ShowCtrl(name, s.CurBf == g + 1);
+                var size = s.BuffSize;
+                var sr = w.Rect("PartyStatusWnd" + i);
+                var x = sr.W - 3f;
+                var y = 5f;
+                if (el.parent != slot)
+                {
+                    x += sr.X;
+                    y += sr.Y;
+                }
+                el.anchorMin = el.anchorMax = el.pivot = new Vector2(0, 1);
+                el.anchoredPosition = new Vector2(x, -y);
+                var cells = grids.FindAll(c => c.grid == g);
+                var key = size + ":" + string.Join(",", cells.ConvertAll(c => c.id + "/" + c.level));
+                if (spelledKey.TryGetValue(w.Name + name, out var k0) && k0 == key) continue;
+                spelledKey[w.Name + name] = key;
+                UiKit.Clear(el);
+                int cols = 0, rows = 0;
+                foreach (var c in cells)
+                {
+                    cols = Math.Max(cols, c.col + 1);
+                    rows = Math.Max(rows, c.row + 1);
+                    var d = UiRoot.Box("buff", el, c.col * size, c.row * size, size, size);
+                    var url = GameUi.IconUrl(GameData.SkillIcon(c.id));
+                    if (url != null)
+                    {
+                        var img = UiRoot.Box("icon", d, 0, 0, size, size).gameObject.AddComponent<RawImage>();
+                        img.raycastTarget = false;
+                        L2WndUtil.SetTexture(img, url);
+                    }
+                    if (g == 1)
+                    {
+                        var fr = UiRoot.Box("debuff", d, 0, 0, size, size);
+                        L2WndUtil.Paint(fr, "L2UI_CH3.PlayerStatusWnd.debuff", size, size, PaintMode.Stretch, 0, 0, 26, 26);
+                    }
+                }
+                el.sizeDelta = new Vector2(cols * size, rows * size);
             }
         }
 
