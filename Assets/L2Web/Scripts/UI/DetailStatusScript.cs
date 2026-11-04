@@ -79,7 +79,7 @@ namespace L2Web.UI
             long load = Stat(u, "load"), maxLoad = Stat(u, "maxLoad");
             // :352 fTmp = 100 * CarringWeight / CarryWeight (float; sem maximo o porte mostra 0.00)
             var weight = maxLoad > 0 ? 100.0 * load / maxLoad : 0;
-            // nUserRank so existe quando o net guarda o pledgeClass do UserInfo (pedido 0043, net)
+            // nUserRank so existe quando o net guarda o pledgeClass do UserInfo (pedido 0044, net)
             var rank = u.Stats != null && u.Stats.TryGetValue("pledgeClass", out var pc) ? RankSysString(pc) : -1;
             return new List<(string, string)>
             {
