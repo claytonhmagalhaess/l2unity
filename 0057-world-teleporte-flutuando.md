@@ -69,7 +69,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - Isso é uma saída **limpa** do Play, acionada pelo Editor: sem exceção antes, sem domain reload e sem crash. A tela preta e o `App` null são o estado depois de sair do Play.
   - Em todo o log não há nenhuma exceção de `Movement`, `PawnMotion`, `Entity` nem `LocalAssets.GeoLayers`/`LoadRegion`; as referências a `Entity.cs:258` são o stack trace do `Debug.Log` do `[pouso]`.
   - Nenhum código do porte sai do Play: os `Application.Quit` de `App.cs`, `GameUi` e `Dev` não valem no Editor.
-  - A validar: o que pediu a saída (um comando do `unity` CLI, por exemplo um `playmode stop`, ou o Editor). Reprodução pedida à sessão de testes com o `Editor.log` preservado.
+  - **Reprodução 0057-3** (`testes7-3\`, sem NPC e sem Navigator): o Play caiu de novo entre 20:28:26 e 20:28:56, logo depois do pouso do 2º teleporte (−3340 → −3464). Nessa janela a sessão de testes estava parada no sleep, sem mandar comando. No trecho do Editor.log, a linha 1391 tem um `Asset Pipeline Refresh … RefreshV2(NoUpdateAssetOptions)`, e a 1392 já é a saída limpa (`OnApplicationQuit` e a cena de backup). Também ali não há nenhuma exceção do porte.
+  - **Inferido:** a saída foi pedida de fora do jogo, por um `unity command` (`editor.playmode stop`, ou um runner de testes) que chegou ao Editor da `worktrees	este`. Era o único aberto depois que o Editor do usuário caiu às 20:21. Isso fica com a coordenadora: identificar quem rodou comandos do Unity às 19:57–20:02 e às 20:28:26–20:28:56. **Não é do #0057.**
 
 ## Entrega
 
