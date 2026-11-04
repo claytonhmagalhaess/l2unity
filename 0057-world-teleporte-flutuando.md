@@ -35,6 +35,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — REA do `OnTeleportToLocation`/`L2_Teleport`/`OnValidateLocation` (Tryskell `engine.c`), aCis (`Escape`, `Creature.teleportTo`, `TownZone.xml`, `ValidatePosition`, `Appearing`) e geodata `22_22.l2d` nos spawns de Giran.
 - 2026-11-04 — pouso depois do teleporte/surgimento em `PawnMotion`/`Movement`/`Entity` + `TeleportLandingTests` (9) (`5fb74d9`); log `[pouso]` (`303b026`).
 - 2026-11-04 — pedido de teste enviado à sessão de testes (compilar, suíte, roteiro ao vivo antes/depois: unstuck e gatekeeper). Aviso à #0056 com a evidência.
+- 2026-11-04 — relato novo (farm pelo Global Gatekeeper): medidos os 2119 destinos de teleporte do aCis contra a geodata (`Docs/teleporte_z.md`/`.tsv`). Achado e corrigido o pouso em célula multicamada (`6080d43`). Pedido 0051 (todas as camadas). Pedido de teste atualizado para `6080d43`, com farm e unstuck saindo do farm.
 
 ## Decisões e REA
 
@@ -53,6 +54,9 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - As camadas vêm do `World.Ground` (contrato: "a altura mais próxima de zRef"), consultado em zRef = pé, +1e6 e −1e6: a mais próxima, a mais alta e a mais baixa. Assim `Render/GeoTerrain.cs` fica intocado (é da #0056).
 - Causa diferente da #0056 (terreno/altura visual fora de Giran). Mandei a evidência para a sessão dela (`local_02fce849…`) e combinei não assentar duas vezes: o Z do movimento fica comigo e a altura do desenho (`DrawHeight`/terreno UE) com ela.
 - Combinado com a #0056 (2026-11-04): as correções se somam e não há ajuste em dobro. A #0057 põe o `Motion.Z` na geodata (Place/ValidateLocation). A #0056 (`df7ea56`, `GeoTerrain.VisualFloor`/`PickFloor`) só muda o que o `DrawHeight` devolve: o piso desenhado mais alto entre BSP/Statics em [z−48, z+8] e o terreno UE em [z−84, z+20]. A #0056 não mexe em `Motion.Z`, `Place` nem `Sync`. Sem a #0057, o Z do TownZone (+110 a +124) fica fora dessas janelas e o pawn não desce.
+- **Todos os teleportes (Observado):** `Gatekeeper` e `GlobalTeleport` (`goto`, `randomTeleport`, `goto_chaotic_zone`, `gotoPvpZone`), o unstuck e a volta à cidade usam todos `teleportTo(loc, 20 ou 50)`, isto é, o Z fixo do XML + 10, sem geodata. Medição em `Docs/teleporte_z.md`. Nos 2108 destinos com geodata, o pacote fica de −26 a +1054 do chão: 437 ficam mais de 24 acima e 64 mais de 8 abaixo. No Global Gatekeeper, as páginas de farm (`levelup`, `solo-zone`) ficam até 26 da geodata, exceto 12035 (+78) e 40047 (+98). Os destinos de cidade ficam até 24 abaixo. Inferido: a flutuação grande nos farms vem do chão desenhado (#0056), não do Z do teleporte.
+- **Multicamada (Observado na medição, corrigido em `6080d43`):** o `GroundHeight` só guarda a camada mais baixa e a mais alta (o `LocalAssets.LoadRegion` descarta as do meio). Na versão `5fb74d9`, a queda em Baium/ToI/catacumbas ia para a camada do fundo, até 14 mil abaixo. Agora a célula multicamada só pousa até `Movement.MultiLayerTrust` = 150 do pé e, mais longe, fica no Z do servidor. Nas 18 972 amostras, isso dá zero camadas erradas; com limite de 200 já seriam 108. Ficam 10 destinos acima: Dark Elven Village +166, Elven Village +124, Baium 1 e o 213 +25, o 211 +1054. Eles ficam com o pedido 0051, que dá ao `World.GroundLayers` todas as camadas e aplica a regra exata do original.
+- **Limite de 900:** só o teleporte 211 passa dele. O original loga "Couldn't find landing place" e cai; o porte fica no Z sem as camadas e cai como o original com elas.
 
 ## Entrega
 
@@ -62,4 +66,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-Nenhum por enquanto.
+- [0051](pedidos/0051-world-geodata-camadas.md) — coordenadora: `LocalAssets.GeoLayers` + `world.GroundLayers` no `App.cs` (todas as camadas do geodata para o pouso). Aberto.
