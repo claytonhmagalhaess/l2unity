@@ -40,6 +40,8 @@ namespace L2Web.UI
         static readonly string[] ProtocolNames = { "Servidor com HWID (versão 515, ClientGuard = NONE)", "aCis original (versão 746)" };
 
         LoginAuth.Field focusedLast;
+        /// <summary>O OptionWnd que esta tela trouxe para o OptionHost (null = nenhum).</summary>
+        OptionWnd hosted;
         InputField refocus;
         int submittedFrame = -1;
 
@@ -170,13 +172,15 @@ namespace L2Web.UI
             }
             L2WndUtil.UiSound(LoginAuth.WindowOpenSound);
             w.MoveTo(OptionHost);
+            hosted = w;
             w.Win.Show();
         }
 
         /// <summary>Saindo do LoginState: o OptionWnd fecha e volta a camada do jogo.</summary>
         void HideOptionWnd()
         {
-            var w = OptionWindow?.Invoke();
+            var w = hosted;
+            hosted = null;
             if (w == null || w.Win.El.parent != OptionHost) return;
             w.Win.Hide();
             w.ReturnHome();
