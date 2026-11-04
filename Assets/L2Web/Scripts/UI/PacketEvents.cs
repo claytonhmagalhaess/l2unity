@@ -310,10 +310,13 @@ namespace L2Web.UI
             return new List<Event> { new Event(Ev.EV_ShowBoardPacket, p) };
         }
 
-        /// <summary>PrivateStoreList (0x9b): abre a loja do outro jogador (type sell) e um evento por item (target).</summary>
+        /// <summary>
+        /// PrivateStoreList (0x9b): abre a loja de venda do outro jogador e um evento por item (target). O type e "buy"
+        /// (PT_Buy: o jogador compra; PrivateShopWnd.uc, spec 07 §5.3); "sell" e vender para a loja de compra do outro (0xb8).
+        /// </summary>
         public static List<Event> PrivateStore(PrivateStoreSellInfo s)
         {
-            var p = L2Param.Add("", "type", "sell");
+            var p = L2Param.Add("", "type", "buy");
             p = L2Param.Add(p, "adena", s.Adena);
             p = L2Param.Add(p, "userID", s.OwnerId);
             p = L2Param.Add(p, "bulk", s.PackageSale ? 1 : 0);
