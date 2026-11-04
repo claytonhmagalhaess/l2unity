@@ -18,6 +18,8 @@ sys.path.insert(0, os.path.join(L2ANIM, 'scripts'))
 import ukx_parse  # noqa: E402
 import unr_inventory as ui  # noqa: E402
 
+ui.NOISE.discard('PrePivot')  # o inventario descarta; aqui ele posiciona a malha (prePivot)
+
 MAP = sys.argv[1] if len(sys.argv) > 1 else 'Lobby'
 CLIENT = sys.argv[2] if len(sys.argv) > 2 else r'C:\Program Files (x86)\Lineage II Interlude'
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Assets', 'StreamingAssets', 'L2Web', 'cache')
@@ -86,7 +88,7 @@ def main():
                 keys.append({'pos': list(kp) if kp else [0, 0, 0], 'rot': list(kr) if kr else [0, 0, 0]})
             doors.append({'name': e['name'], 'mesh': pr.get('StaticMesh'), 'loc': pr.get('Location'), 'rot': pr.get('Rotation', [0, 0, 0]),
                           'basePos': pr.get('BasePos'), 'baseRot': pr.get('BaseRot'), 'scale': pr.get('DrawScale', 1.0),
-                          'scale3d': pr.get('DrawScale3D', [1, 1, 1]), 'keys': keys, 'serverId': pr.get('L2ServerObjectID'),
+                          'scale3d': pr.get('DrawScale3D', [1, 1, 1]), 'prePivot': pr.get('PrePivot'), 'keys': keys, 'serverId': pr.get('L2ServerObjectID'),
                           'serverRealId': pr.get('L2ServerObjectRealID'), 'serverType': pr.get('L2ServerObjectType'),
                           'openingSound': pr.get('OpeningSound'), 'openedSound': pr.get('OpenedSound'),
                           'closingSound': pr.get('ClosingSound'), 'closedSound': pr.get('ClosedSound'),
@@ -99,7 +101,9 @@ def main():
                                'rot': pr.get('Rotation', [0, 0, 0]), 'scale': pr.get('DrawScale', 1.0), 'scale3d': pr.get('DrawScale3D', [1, 1, 1]),
                                'physics': pr.get('Physics', 0), 'rotationRate': pr.get('RotationRate'),
                                'l2RotatorRate': pr.get('L2RotatorRate'), 'l2RotatorMax': pr.get('L2RotatorMax'),
-                               'l2AccelRatio': pr.get('L2AccelRatio'), 'groups': pr.get('Group', '')})
+                               'l2AccelRatio': pr.get('L2AccelRatio'), 'groups': pr.get('Group', ''),
+                               # Actor.PrePivot (AActor::LocalToWorld: Location - PrePivot*S*R): as vinhas do login tem (0, 0, 3000)
+                               'prePivot': pr.get('PrePivot')})
     json.dump({'movers': movers, 'doors': doors}, open(os.path.join(os.path.dirname(OUT), MAP + '_movers.json'), 'w'), indent=1, default=str)
     print('movers', len(movers), 'portas', len(doors))
     out = []

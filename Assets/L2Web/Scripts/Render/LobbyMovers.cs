@@ -2,7 +2,9 @@
 //  - Physics = PHYS_Rotating (5) com bFixedRotationDir: o cata-vento da vila humana. AActor::physicsRotation (engine
 //    0x1030d2ce): delta = RotationRate * dt (FRotator * float, inteiro por eixo) e fixedTurn soma o delta a rotacao
 //    (& 0xFFFF) a cada quadro.
-//  - MovableStaticMeshActor (vinhas do login): AMovableStaticMeshActor::physL2Movement; ver Sway.
+//  - MovableStaticMeshActor (vinhas do login): AMovableStaticMeshActor::physL2Movement; ver Sway. As 8 vinhas tem
+//    PrePivot (0, 0, 3000) no .unr: a malha fica 300 UU abaixo de Location e balanca como pendulo pendurado nele
+//    (Statics.ActorMatrix); sem o prePivot no json ficavam acima do quadro do login.
 // A instancia estatica do mesmo ator (Statics) e escondida e substituida pela movel.
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -61,14 +63,9 @@ namespace L2Web.Render
                 var sway = Sway.From(o);
                 var rotating = physics == 5 && rr != null;
                 if (!rotating && sway == null && (string)o["cls"] != "MovableStaticMeshActor") continue;
-                var loc = ((JArray)o["loc"]).ToObject<float[]>();
-                var rot = (o["rot"] as JArray)?.ToObject<float[]>() ?? new float[3];
-                var s3 = (o["scale3d"] as JArray)?.ToObject<float[]>();
-                var a = new Statics.MapActor
-                {
-                    Name = (string)o["name"], Mesh = mesh, Url = "/statics/" + mesh + ".glb", Loc = loc, Rot = rot,
-                    Scale = (float?)o["scale"] ?? 1, Scale3d = s3,
-                };
+                var a = ActorOf(o);
+                var loc = a.Loc;
+                var rot = a.Rot;
                 Hide(statics, mesh, Coords.ToUnity(loc[0], loc[1], loc[2]));
                 var inst = await Statics.Spawn(a, Root);
                 if (inst == null || !Root) continue;
@@ -80,6 +77,18 @@ namespace L2Web.Render
                     RatePitch = rotating ? (int)rr[0] : 0, RateYaw = rotating ? (int)rr[1] : 0, RateRoll = rotating ? (int)rr[2] : 0, Sway = sway,
                 });
             }
+        }
+
+        /// <summary>O ator de uma linha do &lt;mapa&gt;_movers.json (malha, posicao, rotacao, escalas e PrePivot).</summary>
+        public static Statics.MapActor ActorOf(JObject o)
+        {
+            var mesh = (string)o["mesh"];
+            return new Statics.MapActor
+            {
+                Name = (string)o["name"], Mesh = mesh, Url = "/statics/" + mesh + ".glb", Loc = ((JArray)o["loc"]).ToObject<float[]>(),
+                Rot = (o["rot"] as JArray)?.ToObject<float[]>() ?? new float[3], Scale = (float?)o["scale"] ?? 1,
+                Scale3d = (o["scale3d"] as JArray)?.ToObject<float[]>(), PrePivot = (o["prePivot"] as JArray)?.ToObject<float[]>(),
+            };
         }
 
         /// <summary>Esconde a instancia estatica do mesmo ator (mesmo nome de malha, mesma posicao).</summary>

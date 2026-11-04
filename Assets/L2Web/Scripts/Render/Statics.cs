@@ -25,6 +25,8 @@ namespace L2Web.Render
             public float[] Rot;
             public float Scale = 1;
             public float[] Scale3d;
+            /// <summary>Actor.PrePivot do .unr (UE, espaco da malha); null = (0, 0, 0).</summary>
+            public float[] PrePivot;
         }
 
         sealed class MapJson
@@ -96,7 +98,13 @@ namespace L2Web.Render
                 for (var c = 0; c < 3; c++)
                     m[r, c] = (float)(A(P[r], P[c]) * n[r] * n[c]);
             var loc = a.Loc ?? new float[3];
-            m.SetColumn(3, (Vector4)Coords.ToUnity(loc[0], loc[1], loc[2]) + new Vector4(0, 0, 0, 1));
+            var t = Coords.ToUnity(loc[0], loc[1], loc[2]);
+            // AActor::LocalToWorld (Engine.dll export 0x4ad9, decomp_all/engine/00002.c:9880) [O]: a linha de translacao e
+            // Location - PrePivot * (S R), PrePivot (+0x28c) no espaco da malha; o ponto p da malha vai para
+            // Location + (p - PrePivot) S R e a rotacao gira em volta de Location (as vinhas do login: PrePivot (0, 0, 3000))
+            if (a.PrePivot is { Length: >= 3 } pp && (pp[0] != 0 || pp[1] != 0 || pp[2] != 0))
+                t -= m.MultiplyVector(Coords.ToUnity(pp[0], pp[1], pp[2]));
+            m.SetColumn(3, (Vector4)t + new Vector4(0, 0, 0, 1));
             return m;
         }
 
