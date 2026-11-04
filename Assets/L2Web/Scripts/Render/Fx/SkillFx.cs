@@ -599,7 +599,7 @@ namespace L2Web.Render.Fx
             PlaySkillSoundData(mi.MagicID, mi.LevelID, type, self.Location, self);
         }
 
-        void PlaySkillSoundData(int skillId, int level, int type, Vector3 at, IFxActor voiceOf)
+        public void PlaySkillSoundData(int skillId, int level, int type, Vector3 at, IFxActor voiceOf)
         {
             if (PlaySound == null || Tables?["skillsounds"] is not JObject ss) return;
             var row = ss[$"{skillId}_{level}"] as JObject ?? ss[$"{skillId}_1"] as JObject;

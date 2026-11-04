@@ -397,6 +397,8 @@ namespace L2Web.Render
             SkillFx.VoiceOf = a => a is L2Web.Render.Fx.FxPawn p && p.E.Kind != "npc" ? L2Web.Render.Fx.SkillFx.VoiceIndex(p.E.Model) : -1;
             SkillFx.WeaponLength = (a, right) => a is L2Web.Render.Fx.FxPawn p ? p.E.Actor.AttachedLength(right ? "rhand" : "lhand") : 0;
             Casts.Legacy.WeaponLength = SkillFx.WeaponLength;
+            // CurWeaponType (pawn+0x71d = GetAnimType) [I: mesmo indice do .int que o porte usa nas animacoes]
+            Casts.Legacy.WeaponType = a => a is L2Web.Render.Fx.FxPawn p ? p.E.Widx : 0;
             Casts.Legacy.DamageEffect = a => a is L2Web.Render.Fx.FxPawn p ? DamageEffectOf(p.E) : null;
             Fx.Sound = (name, pos, vol, radius, pitch) => SkillFx.PlaySound(name, pos, vol, radius);
         }

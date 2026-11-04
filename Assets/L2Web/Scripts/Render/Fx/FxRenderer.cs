@@ -2,6 +2,7 @@
 // UV por subdivisao e BlendBetweenSubdivisions), feixes (0x10313057), fitas (ribbon), malhas (UMeshEmitter::RenderParticles
 // 0x10311833: matriz por particula, cor por TFactor) e malhas de vertices. Simulacao em UE; os vertices vao para o Unity
 // com Coords.ToUnity. Material: shader L2Web/Particle com o blending da tabela §4.5.1.
+// Mistura em gama: o shader e desenhado pelo FxGammaPass (ver FxGammaPass.cs).
 // [I] V da textura: o UE tem (0,0) no topo e o Unity na base, logo v_unity = 1 - v_ue (lacuna §4.8.1, a conferir na captura).
 using System;
 using System.Collections.Generic;
@@ -221,11 +222,15 @@ namespace L2Web.Render.Fx
             ev.I.Clear();
         }
 
+        /// <summary>TFactor da particula de malha (§4.5.4): P.Color / 255 sem conversao de espaco de cor (o shader mistura em gama).</summary>
+        public static Vector4 MeshTint(Color32 c) => new Vector4(c.r / 255f, c.g / 255f, c.b / 255f, c.a / 255f);
+
         void End(EmitterView ev)
         {
             var m = ev.Mesh;
             m.Clear();
             if (ev.V.Count == 0) return;
+            FxGammaPass.DrawnFrame = Time.frameCount;
             m.SetVertices(ev.V);
             m.SetUVs(0, ev.Uv0);
             m.SetUVs(1, ev.Uv1);
@@ -462,22 +467,28 @@ namespace L2Web.Render.Fx
                 ref var p = ref e.Particles[i];
                 if (!p.IsActive) continue;
                 var m = C * MeshMatrixUe(a, e, in p) * Cinv;
-                var col = (Color)p.Color;
-                col = new Color(Mathf.Pow(col.r, 2.2f), Mathf.Pow(col.g, 2.2f), Mathf.Pow(col.b, 2.2f), col.a);
                 for (var k = 0; k < t.Parts.Count; k++)
                 {
                     var part = t.Parts[k];
-                    var mat = !d.UseMeshBlendMode && ev.PartMats != null && k < ev.PartMats.Length ? ev.PartMats[k] : part.Materials.Length > 0 ? part.Materials[0] : null;
+                    var own = !(!d.UseMeshBlendMode && ev.PartMats != null && k < ev.PartMats.Length);
+                    var mat = !own ? ev.PartMats[k] : part.Materials.Length > 0 ? part.Materials[0] : null;
                     if (!mat) continue;
                     ev.Block.Clear();
-                    if (!d.UseMeshBlendMode || d.UseParticleColor)
+                    if (!own)
                     {
-                        // [I] cor da particula como TFactor: multiplica a cor do material (linear)
-                        ev.Block.SetColor(ColorId, col);
-                        ev.Block.SetColor(BaseColorId, col);
+                        // TFactor = P.Color/255 no L2Web/Particle, que mistura em gama: o valor vai cru (SetColor
+                        // converteria de gama para linear no projeto linear)
+                        ev.Block.SetVector(ColorId, MeshTint(p.Color));
+                    }
+                    else if (d.UseParticleColor)
+                    {
+                        // material proprio da malha (glTF, linear): SetColor faz a unica conversao gama -> linear [I]
+                        ev.Block.SetColor(ColorId, p.Color);
+                        ev.Block.SetColor(BaseColorId, p.Color);
                     }
                     Graphics.DrawMesh(part.Mesh, m * part.Local, mat, Root.gameObject.layer, null, 0, ev.Block, false, false, false);
                 }
+                FxGammaPass.DrawnFrame = Time.frameCount;
             }
         }
 
