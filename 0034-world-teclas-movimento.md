@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-teclas-movimento` |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T10; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | world: teclas de movimento e câmera |
 | Criada | 2026-11-03 |

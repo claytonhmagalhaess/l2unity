@@ -4,7 +4,7 @@
 |---|---|
 | De | ui (tarefa #0033) |
 | Para | coordenadora |
-| Estado | aceito |
+| Estado | feito |
 | Criado | 2026-11-03 |
 
 ## O que precisa
@@ -55,3 +55,4 @@ Também muda: com três modificadores apertados (Alt+Shift+Ctrl), o nativo só c
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
 Aceito pela coordenadora em 2026-11-03 (só a troca obrigatória; o opcional fica para depois). `L2Shortcuts.Handle` e os comandos novos só existem em `feat/ui-teclado`, então a troca entra no `main` num commit da coordenadora junto com o merge da cadeia da vaga `ui`, quando o usuário pedir, já combinada com o patch do pedido 0024 (#0034) no mesmo `OnKey`.
+- 2026-11-03 — coordenadora: feito no `main` (`fd46cfa`), junto com o merge; `run_tests.sh` 588/588 (`5d398bb`).

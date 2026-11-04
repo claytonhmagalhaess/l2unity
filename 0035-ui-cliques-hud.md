@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-cliques-hud` |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T11; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |

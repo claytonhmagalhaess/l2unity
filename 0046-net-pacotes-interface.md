@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | net |
 | Branch | `feat/net-pacotes-interface` |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\92_protocolo_opcodes.md`, `94_pacotes_servidor_cliente.md`, `95_pacotes_cliente_servidor.md`, `96_mapa_pacote_evento_janela.md`; `analises\interface-p166\05_lacunas_e_tarefas.md` §2 |
 | Sessão | net: pacotes da interface |
 | Criada | 2026-11-03 |

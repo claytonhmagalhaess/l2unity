@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-texturas-unicas` |
-| Estado | pronta p/ merge (fase 3: bloqueada: decisão do usuário) |
+| Estado | no main |
 | Spec | Não há spec do Interlude para isto (é formato de cache do porte). Medidas da coordenadora em "Decisões e REA". Comparação: `analises\spark-l2unity\` (o Spark guarda as texturas em pacotes compartilhados `data_textures_g*` e uma cena por região) |
 | Sessão | render: texturas únicas dos assets |
 | Criada | 2026-10-29 |

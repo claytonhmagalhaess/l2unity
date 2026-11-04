@@ -4,7 +4,7 @@
 |---|---|
 | De | world (tarefa #0034) |
 | Para | coordenadora |
-| Estado | aceito |
+| Estado | feito |
 | Criado | 2026-11-03 |
 
 ## O que precisa
@@ -39,3 +39,4 @@ Sem o patch, a lógica nova (`KeyboardMove`, `CameraKeys`, `ScreenShot`) fica no
 Aceito pela coordenadora em 2026-11-03. O patch depende do código de `Scripts\World` do branch `feat/world-teclas-movimento`; aplico no `main` num commit da coordenadora junto com o merge da #0034, quando o usuário pedir (conferido: `git apply --check` passa no `main` atual). Se a #0033 (ui) mexer em `OnKey`/`ReadInput` antes, resolvo o conflito no merge.
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-03 — coordenadora: feito no `main` (`0f11bd9`), junto com o merge; `run_tests.sh` 588/588 (`5d398bb`).
