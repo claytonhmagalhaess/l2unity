@@ -75,6 +75,110 @@ namespace L2Web.Tests
             yield return C("UiPackets.RequestSellItem", "RequestSellItem", UiPackets.RequestSellItem(1, new List<(int, int, int)> { (1, 57, 1) }));
             yield return C("UiPackets.MultiSellChoose", "RequestMultiSellChoose", UiPackets.MultiSellChoose(1, 2, 3));
             yield return C("UiPackets.RequestAutoSoulShot", "RequestAutoSoulShot", UiPackets.RequestAutoSoulShot(1835, true));
+            // inventario (#0046, T2)
+            yield return C("UiPackets.RequestUnEquipItem", "RequestUnEquipItem", UiPackets.RequestUnEquipItem(0x4000));
+            yield return C("UiPackets.RequestDropItem", "RequestDropItem", UiPackets.RequestDropItem(1, 1, 2, 3, 4));
+            yield return C("UiPackets.RequestDestroyItem", "RequestDestroyItem", UiPackets.RequestDestroyItem(1, 1));
+            yield return C("UiPackets.RequestCrystallizeItem", "RequestCrystallizeItem", UiPackets.RequestCrystallizeItem(1, 1));
+            // macro (#0046, T8)
+            yield return C("MacroPackets.RequestMakeMacro", "RequestMakeMacro", MacroPackets.RequestMakeMacro(new MacroInfo
+            {
+                Name = "m", Description = "d", Acronym = "a", Commands = { new MacroCmd { Entry = 1, Type = 3, D1 = 2, Command = "/sit" } },
+            }));
+            yield return C("MacroPackets.RequestDeleteMacro", "RequestDeleteMacro", MacroPackets.RequestDeleteMacro(1));
+            // quests e cla (#0046, T13/T14)
+            yield return C("ClanPackets.RequestQuestList", "RequestQuestList", ClanPackets.RequestQuestList());
+            yield return C("ClanPackets.RequestQuestAbort", "RequestDestroyQuest", ClanPackets.RequestQuestAbort(1));
+            yield return C("ClanPackets.RequestPledgeMemberList", "RequestPledgeMemberList", ClanPackets.RequestPledgeMemberList());
+            yield return C("ClanPackets.RequestPledgeInfo", "RequestPledgeInfo", ClanPackets.RequestPledgeInfo(1));
+            yield return C("ClanPackets.RequestJoinPledge", "RequestJoinPledge", ClanPackets.RequestJoinPledge(1, 0));
+            yield return C("ClanPackets.RequestAnswerJoinPledge", "RequestAnswerJoinPledge", ClanPackets.RequestAnswerJoinPledge(true));
+            yield return C("ClanPackets.RequestWithdrawPledge", "RequestWithDrawalPledge", ClanPackets.RequestWithdrawPledge());
+            yield return C("ClanPackets.RequestOustPledgeMember", "RequestOustPledgeMember", ClanPackets.RequestOustPledgeMember("a"));
+            yield return C("ClanPackets.RequestGiveNickName", "RequestGiveNickName", ClanPackets.RequestGiveNickName("a", "b"));
+            yield return C("ClanPackets.RequestStartPledgeWar", "RequestStartPledgeWar", ClanPackets.RequestStartPledgeWar("a"));
+            yield return C("ClanPackets.RequestStopPledgeWar", "RequestStopPledgeWar", ClanPackets.RequestStopPledgeWar("a"));
+            yield return C("ClanPackets.RequestPledgePower", "RequestPledgePower", ClanPackets.RequestPledgePower(6, 1));
+            yield return C("ClanPackets.RequestPledgePower", "RequestPledgePower", ClanPackets.RequestPledgePower(6, 2, 1));
+            yield return C("ClanPackets.RequestPledgeSetAcademyMaster", "RequestPledgeSetAcademyMasterPupil", ClanPackets.RequestPledgeSetAcademyMaster(true, "a", "b"));
+            yield return C("ClanPackets.RequestPledgePowerGradeList", "RequestPledgePowerGradeList", ClanPackets.RequestPledgePowerGradeList());
+            yield return C("ClanPackets.RequestPledgeMemberPowerInfo", "RequestPledgeMemberPowerInfo", ClanPackets.RequestPledgeMemberPowerInfo(0, "a"));
+            yield return C("ClanPackets.RequestPledgeSetMemberPowerGrade", "RequestPledgeSetMemberPowerGrade", ClanPackets.RequestPledgeSetMemberPowerGrade("a", 6));
+            yield return C("ClanPackets.RequestPledgeMemberInfo", "RequestPledgeMemberInfo", ClanPackets.RequestPledgeMemberInfo(0, "a"));
+            yield return C("ClanPackets.RequestPledgeWarList", "RequestPledgeWarList", ClanPackets.RequestPledgeWarList(0, 0));
+            yield return C("ClanPackets.RequestPledgeReorganizeMember", "RequestPledgeReorganizeMember", ClanPackets.RequestPledgeReorganizeMember(true, "a", 100, "b"));
+            // aprender skill e tatuagem (#0046, T15)
+            yield return C("SkillTrainPackets.RequestAcquireSkillInfo", "RequestAcquireSkillInfo", SkillTrainPackets.RequestAcquireSkillInfo(1, 1, 0));
+            yield return C("SkillTrainPackets.RequestAcquireSkill", "RequestAcquireSkill", SkillTrainPackets.RequestAcquireSkill(1, 1, 0));
+            yield return C("SkillTrainPackets.RequestHennaList", "RequestHennaItemList", SkillTrainPackets.RequestHennaList());
+            yield return C("SkillTrainPackets.RequestHennaItemInfo", "RequestHennaItemInfo", SkillTrainPackets.RequestHennaItemInfo(1));
+            yield return C("SkillTrainPackets.RequestHennaEquip", "RequestHennaEquip", SkillTrainPackets.RequestHennaEquip(1));
+            yield return C("SkillTrainPackets.RequestHennaRemoveList", "RequestHennaUnequipList", SkillTrainPackets.RequestHennaRemoveList());
+            yield return C("SkillTrainPackets.RequestHennaItemRemoveInfo", "RequestHennaUnequipInfo", SkillTrainPackets.RequestHennaItemRemoveInfo(1));
+            yield return C("SkillTrainPackets.RequestHennaRemove", "RequestHennaUnequip", SkillTrainPackets.RequestHennaRemove(1));
+            // fabricacao (#0046, T19)
+            yield return C("RecipePackets.RequestRecipeBookOpen", "RequestRecipeBookOpen", RecipePackets.RequestRecipeBookOpen(1));
+            yield return C("RecipePackets.RequestRecipeItemDelete", "RequestRecipeItemDelete", RecipePackets.RequestRecipeItemDelete(1));
+            yield return C("RecipePackets.RequestRecipeItemMakeInfo", "RequestRecipeItemMakeInfo", RecipePackets.RequestRecipeItemMakeInfo(1));
+            yield return C("RecipePackets.RequestRecipeItemMakeSelf", "RequestRecipeItemMakeSelf", RecipePackets.RequestRecipeItemMakeSelf(1));
+            yield return C("RecipePackets.RequestRecipeShopManageList", "RequestRecipeShopManageList", RecipePackets.RequestRecipeShopManageList());
+            yield return C("RecipePackets.RequestRecipeShopMessageSet", "RequestRecipeShopMessageSet", RecipePackets.RequestRecipeShopMessageSet("m"));
+            yield return C("RecipePackets.RequestRecipeShopListSet", "RequestRecipeShopListSet", RecipePackets.RequestRecipeShopListSet(new List<(int, int)> { (1, 1) }));
+            yield return C("RecipePackets.RequestRecipeShopManageQuit", "RequestRecipeShopManageQuit", RecipePackets.RequestRecipeShopManageQuit());
+            yield return C("RecipePackets.RequestRecipeShopManageCancel", "RequestRecipeShopManageCancel", RecipePackets.RequestRecipeShopManageCancel());
+            yield return C("RecipePackets.RequestRecipeShopMakeInfo", "RequestRecipeShopMakeInfo", RecipePackets.RequestRecipeShopMakeInfo(1, 1));
+            yield return C("RecipePackets.RequestRecipeShopMakeDo", "RequestRecipeShopMakeDo", RecipePackets.RequestRecipeShopMakeDo(1, 1, 1));
+            yield return C("RecipePackets.RequestRecipeShopSellList", "RequestRecipeShopSellList", RecipePackets.RequestRecipeShopSellList(1));
+            // melhoria de item (#0046, T20)
+            yield return C("EnchantPackets.RequestEnchantItem", "RequestEnchantItem", EnchantPackets.RequestEnchantItem(1));
+            yield return C("EnchantPackets.RequestConfirmTargetItem", "RequestConfirmTargetItem", EnchantPackets.RequestConfirmTargetItem(1));
+            yield return C("EnchantPackets.RequestConfirmRefinerItem", "RequestConfirmRefinerItem", EnchantPackets.RequestConfirmRefinerItem(1, 2));
+            yield return C("EnchantPackets.RequestConfirmGemStone", "RequestConfirmGemStone", EnchantPackets.RequestConfirmGemStone(1, 2, 3, 4));
+            yield return C("EnchantPackets.RequestRefine", "RequestRefine", EnchantPackets.RequestRefine(1, 2, 3, 4));
+            yield return C("EnchantPackets.RequestConfirmCancelItem", "RequestConfirmCancelItem", EnchantPackets.RequestConfirmCancelItem(1));
+            yield return C("EnchantPackets.RequestRefineCancel", "RequestRefineCancel", EnchantPackets.RequestRefineCancel(1));
+            // busca de grupo, uniao e duelo (#0046, T21)
+            yield return C("PartyMatchPackets.RequestPartyMatchConfig", "RequestListPartyWating", PartyMatchPackets.RequestPartyMatchConfig(1, 0, 1));
+            yield return C("PartyMatchPackets.RequestPartyMatchList", "RequestManagePartyRoom", PartyMatchPackets.RequestPartyMatchList(0, 9, 1, 80, 0, "s"));
+            yield return C("PartyMatchPackets.RequestPartyMatchDetail", "RequestJoinPartyRoom", PartyMatchPackets.RequestPartyMatchDetail(1));
+            yield return C("PartyMatchPackets.RequestOustFromPartyRoom", "RequestOustFromPartyRoom", PartyMatchPackets.RequestOustFromPartyRoom(1));
+            yield return C("PartyMatchPackets.RequestDismissPartyRoom", "RequestDismissPartyRoom", PartyMatchPackets.RequestDismissPartyRoom(1));
+            yield return C("PartyMatchPackets.RequestWithdrawPartyRoom", "RequestWithdrawPartyRoom", PartyMatchPackets.RequestWithdrawPartyRoom(1));
+            yield return C("PartyMatchPackets.RequestChangePartyLeader", "RequestHandOverPartyMaster", PartyMatchPackets.RequestChangePartyLeader("a"));
+            yield return C("PartyMatchPackets.RequestAskJoinPartyRoom", "RequestAskJoinPartyRoom", PartyMatchPackets.RequestAskJoinPartyRoom("a"));
+            yield return C("PartyMatchPackets.AnswerJoinPartyRoom", "AnswerJoinPartyRoom", PartyMatchPackets.AnswerJoinPartyRoom(true));
+            yield return C("PartyMatchPackets.RequestListPartyMatchingWaitingRoom", "RequestListPartyMatchingWaitingRoom", PartyMatchPackets.RequestListPartyMatchingWaitingRoom(1, 1, 80, 0));
+            yield return C("PartyMatchPackets.RequestExitPartyMatchingWaitingRoom", "RequestExitPartyMatchingWaitingRoom", PartyMatchPackets.RequestExitPartyMatchingWaitingRoom());
+            yield return C("PartyMatchPackets.RequestExAskJoinMPCC", "RequestExAskJoinMPCC", PartyMatchPackets.RequestExAskJoinMPCC("a"));
+            yield return C("PartyMatchPackets.RequestExAcceptJoinMPCC", "RequestExAcceptJoinMPCC", PartyMatchPackets.RequestExAcceptJoinMPCC(true));
+            yield return C("PartyMatchPackets.RequestExOustFromMPCC", "RequestExOustFromMPCC", PartyMatchPackets.RequestExOustFromMPCC("a"));
+            yield return C("PartyMatchPackets.RequestExMPCCShowPartyMembersInfo", "RequestExMPCCShowPartyMembersInfo", PartyMatchPackets.RequestExMPCCShowPartyMembersInfo(1));
+            yield return C("PartyMatchPackets.RequestDuelStart", "RequestDuelStart", PartyMatchPackets.RequestDuelStart("a", false));
+            yield return C("SocialPackets.DuelAnswerStart", "RequestDuelAnswerStart", SocialPackets.DuelAnswerStart(1, true));
+            yield return C("PartyMatchPackets.RequestDuelSurrender", "RequestDuelSurrender", PartyMatchPackets.RequestDuelSurrender());
+            // pet (#0046, T7)
+            yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
+            yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));
+            yield return C("PetPackets.RequestGetItemFromPet", "RequestGetItemFromPet", PetPackets.RequestGetItemFromPet(1, 1));
+            yield return C("PetPackets.RequestChangePetName", "RequestChangePetName", PetPackets.RequestChangePetName("Rex"));
+            yield return C("PetPackets.RequestPetGetItem", "RequestPetGetItem", PetPackets.RequestPetGetItem(1));
+            yield return C("PetPackets.RequestActionUse", "RequestActionUse", PetPackets.RequestActionUse(16));
+            // armazem, frete e loja privada (#0046, T6/T12/T18)
+            var dbItems = new List<(int, int)> { (1, 1) };
+            yield return C("StorePackets.SendWarehouseDepositList", "SendWareHouseDepositList", StorePackets.SendWarehouseDepositList(dbItems));
+            yield return C("StorePackets.SendWarehouseWithdrawList", "SendWareHouseWithdrawList", StorePackets.SendWarehouseWithdrawList(dbItems));
+            yield return C("StorePackets.RequestPackageSendableItemList", "RequestPackageSendableItemList", StorePackets.RequestPackageSendableItemList(1));
+            yield return C("StorePackets.RequestPackageSend", "RequestPackageSend", StorePackets.RequestPackageSend(1, dbItems));
+            yield return C("StorePackets.RequestPrivateStoreManageSell", "RequestPrivateStoreManage", StorePackets.RequestPrivateStoreManageSell());
+            yield return C("StorePackets.SetPrivateStoreListSell", "SetPrivateStoreList", StorePackets.SetPrivateStoreListSell(false, new List<(int, int, int)> { (1, 1, 1) }));
+            yield return C("StorePackets.RequestPrivateStoreQuitSell", "RequestPrivateStoreQuit", StorePackets.RequestPrivateStoreQuitSell());
+            yield return C("StorePackets.SetPrivateStoreMsgSell", "SetPrivateStoreMsg", StorePackets.SetPrivateStoreMsgSell("m"));
+            yield return C("StorePackets.RequestPrivateStoreManageBuy", "RequestPrivateStoreBuyManage", StorePackets.RequestPrivateStoreManageBuy());
+            yield return C("StorePackets.SetPrivateStoreListBuy", "SetPrivateStoreBuyList", StorePackets.SetPrivateStoreListBuy(new List<(int, int, int, int, int)> { (1, 0, 0, 1, 1) }));
+            yield return C("StorePackets.RequestPrivateStoreQuitBuy", "RequestPrivateStoreBuyQuit", StorePackets.RequestPrivateStoreQuitBuy());
+            yield return C("StorePackets.SetPrivateStoreMsgBuy", "SetPrivateStoreBuyMsg", StorePackets.SetPrivateStoreMsgBuy("m"));
+            yield return C("StorePackets.RequestPrivateStoreSell", "SendPrivateStoreBuyBuyList",
+                StorePackets.RequestPrivateStoreSell(1, new List<(int, int, int, int, int, int)> { (1, 1, 0, 0, 1, 1) }));
             // social
             yield return C("SocialPackets.RequestJoinParty", "RequestJoinParty", SocialPackets.RequestJoinParty("nome"));
             yield return C("SocialPackets.AnswerJoinParty", "RequestAnswerJoinParty", SocialPackets.AnswerJoinParty(true));

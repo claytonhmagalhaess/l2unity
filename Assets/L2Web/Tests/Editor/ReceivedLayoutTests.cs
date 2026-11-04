@@ -20,13 +20,23 @@ namespace L2Web.Tests
         /// <summary>Opcode -> "Classe.Metodo" do 1o Parse*(r) de cada On(0x.., r =>) do App.cs (o que le o pacote).</summary>
         static Dictionary<string, string> UnityParsers(out List<string> inline)
         {
-            var src = File.ReadAllText(Path.Combine(Application.dataPath, "L2Web", "Scripts", "App.cs"));
+            var scripts = Path.Combine(Application.dataPath, "L2Web", "Scripts");
             var res = new Dictionary<string, string>();
             inline = new List<string>();
-            var ms = Regex.Matches(src, @"\bOn\((0x[0-9a-f]+), (r|_) =>");
+            Scan(File.ReadAllText(Path.Combine(scripts, "App.cs")), @"\bOn\((0x[0-9a-f]+), (r|_) =>", "", res, inline);
+            // InterfaceRouter (#0046): On(0x.., r =>) e Ex(0x.., r =>) dos pacotes Ex (chave "ex:0x..")
+            var router = File.ReadAllText(Path.Combine(scripts, "Net", "InterfaceRouter.cs"));
+            Scan(router, @"\bOn\((0x[0-9a-f]+), (r|_) =>", "", res, inline);
+            Scan(router, @"\bEx\((0x[0-9a-f]+), (r|_) =>", "ex:", res, inline);
+            return res;
+        }
+
+        static void Scan(string src, string pattern, string prefix, Dictionary<string, string> res, List<string> inline)
+        {
+            var ms = Regex.Matches(src, pattern);
             for (var i = 0; i < ms.Count; i++)
             {
-                var op = ms[i].Groups[1].Value;
+                var op = prefix == "" ? ms[i].Groups[1].Value : prefix + "0x" + System.Convert.ToInt32(ms[i].Groups[1].Value, 16).ToString("x");
                 if (ms[i].Groups[2].Value == "_") continue; // nao le nada
                 var end = i + 1 < ms.Count ? ms[i + 1].Index : src.Length;
                 var block = src.Substring(ms[i].Index, end - ms[i].Index);
@@ -35,7 +45,6 @@ namespace L2Web.Tests
                 if (p.Success && (!raw.Success || raw.Index > p.Index)) res[op] = p.Groups[1].Value + "." + p.Groups[2].Value;
                 else inline.Add(op);
             }
-            return res;
         }
 
         static int Width(string t) => t[0] switch { 'c' => 1, 'h' => 2, 'd' => 4, 'Q' => 8, 'f' => 8, 'S' => 4, 'b' => int.Parse(t.Substring(1)), _ => 0 };
@@ -92,15 +101,7 @@ namespace L2Web.Tests
             var parsers = UnityParsers(out var inline);
             // pacotes Ex (0xfe + h sub) que o App le: o despacho do 0xfe e manual
             parsers["ex:0x12"] = "UiPackets.ParseExAutoSoulShot";
-            // pet/servo (tarefa #2): os Parse* existem, mas o App.cs ainda nao os despacha (HUD de pet, K5)
-            parsers["0xb0"] = "PetPackets.ParsePetStatusShow";
-            parsers["0xb1"] = "PetPackets.ParsePetInfo";
-            parsers["0xb2"] = "PetPackets.ParsePetItemList";
-            parsers["0xb3"] = "PetPackets.ParsePetInventoryUpdate";
-            parsers["0xb5"] = "PetPackets.ParsePetStatusUpdate";
-            parsers["0xb6"] = "PetPackets.ParsePetDelete";
-            parsers["0xd1"] = "PetPackets.ParseSetSummonRemainTime";
-            parsers["0xee"] = "PetPackets.ParsePartySpelled";
+            // pet/servo (0xb0-0xb6, 0xd1, 0xee): lidos no InterfaceRouter (#0046)
             Assert.Greater(parsers.Count, 40);
             var erros = new List<string>();
             var conferidos = new List<string>();
