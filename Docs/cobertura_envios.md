@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Unity: **189**.
+Envios do original: **245**; com builder no Unity: **60**; não enviados pelo Unity: **185**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -19,6 +19,8 @@ Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Un
 | RequestGameStart | jogo | 0x0d |  | `cdhddd` | GamePackets.CharacterSelected |
 | RequestNewCharacter | jogo | 0x0e |  | `c` | GamePackets.NewCharacter |
 | RequestItemList | jogo | 0x0f |  | `c` | UiPackets.RequestItemList |
+| RequestUnEquipItem | jogo | 0x11 |  | `cd` | UiPackets.RequestUnEquipItem |
+| RequestDropItem | jogo | 0x12 |  | `cddddd` | UiPackets.RequestDropItem |
 | RequestUseItem | jogo | 0x14 |  | `cdd` | UiPackets.UseItem |
 | RequestTrade | jogo | 0x15 |  | `cd` | SocialPackets.TradeRequest |
 | RequestAddTradeItem | jogo | 0x16 |  | `cddd` | SocialPackets.AddTradeItem |
@@ -46,6 +48,7 @@ Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Un
 | StartRotating | jogo | 0x4a |  | `cdd` | GamePackets.StartRotating |
 | FinishRotating | jogo | 0x4b |  | `cdd` | GamePackets.FinishRotating |
 | RequestShowboard | jogo | 0x57 |  | `cd` | UiPackets.RequestShowBoard |
+| RequestDestroyItem | jogo | 0x59 |  | `cdd` | UiPackets.RequestDestroyItem |
 | MTL | jogo | 0x5c |  | `cddddddd` | GamePackets.MoveTo |
 | CanNotMoveAnymore | jogo | 0x5d |  | `cddddd` | GamePackets.CannotMoveAnymore |
 | RequestFriendInvite | jogo | 0x5e |  | `cS` | SocialPackets.FriendInvite |
@@ -53,6 +56,7 @@ Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Un
 | RequestFriendDel | jogo | 0x61 |  | `cS` | SocialPackets.FriendDel |
 | RequestCharacterRestore | jogo | 0x62 |  | `cd` | GamePackets.CharacterRestore |
 | RequestRestartPoint | jogo | 0x6d |  | `cd` | GamePackets.RequestRestartPoint |
+| RequestCrystallizeItem | jogo | 0x72 |  | `cdd` | UiPackets.RequestCrystallizeItem |
 | SendPrivateStoreBuyList | jogo | 0x79 |  | `cddb` | SocialPackets.PrivateStoreBuy |
 | RequestMultiSellChoose | jogo | 0xa7 |  | `cddddd` | UiPackets.MultiSellChoose |
 | NetPing | jogo | 0xa8 |  | `cddd` | GamePackets.NetPing |
@@ -68,9 +72,7 @@ Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Un
 | EW | jogo | 0x03 |  | `cS` | não enviado |
 | RequestAttack | jogo | 0x04 |  | `cdddd` | não enviado |
 | RequestEquipItem | jogo | 0x10 |  | `cdd` | não enviado |
-| RequestUnEquipItem | jogo | 0x11 |  | `cd` | não enviado |
 | RequestDropItemFromPet | jogo | 0x12 |  | `cddddd` | não enviado |
-| RequestDropItem | jogo | 0x12 |  | `cddddd` | não enviado |
 | RequestTeleport | jogo | 0x1a |  | `cdddd` | não enviado |
 | RequestTeleport | jogo | 0x1a |  | `cddddd` | não enviado |
 | SocialAction | jogo | 0x1b |  | `cd` | não enviado |
@@ -106,7 +108,6 @@ Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Un
 | RequestSetPledgeCrest | jogo | 0x53 |  | `cdb` | não enviado |
 | RequestGiveNickName | jogo | 0x55 |  | `cSS` | não enviado |
 | RequestEnchantItem | jogo | 0x58 |  | `cd` | não enviado |
-| RequestDestroyItem | jogo | 0x59 |  | `cdd` | não enviado |
 | SendDestroyItem | jogo | 0x59 |  | `cdd` | não enviado |
 | SendBypassBuildCmd | jogo | 0x5b |  | `cS` | não enviado |
 | RequestFriendList | jogo | 0x60 |  | `c` | não enviado |
@@ -121,7 +122,6 @@ Envios do original: **245**; com builder no Unity: **56**; não enviados pelo Un
 | RequestListPartyWating | jogo | 0x6f |  | `cddd` | não enviado |
 | RequestManagePartyRoom | jogo | 0x70 |  | `cdddddS` | não enviado |
 | RequestJoinPartyRoom | jogo | 0x71 |  | `cdddd` | não enviado |
-| RequestCrystallizeItem | jogo | 0x72 |  | `cdd` | não enviado |
 | RequestPrivateStoreManage | jogo | 0x73 |  | `c` | não enviado |
 | SetPrivateStoreList | jogo | 0x74 |  | `cddb` | não enviado |
 | RequestPrivateStoreManageCancel | jogo | 0x75 |  | `c` | não enviado |

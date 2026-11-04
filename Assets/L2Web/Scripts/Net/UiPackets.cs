@@ -210,9 +210,10 @@ namespace L2Web.Net
             return items;
         }
 
-        static readonly Dictionary<int, string> ScTypes = new Dictionary<int, string> { [1] = "item", [2] = "skill", [3] = "action", [4] = "macro" };
-        /// <summary>Codigo do tipo de atalho ("item" 1, "skill" 2, "action" 3, "macro" 4).</summary>
-        public static readonly Dictionary<string, int> ScCode = new Dictionary<string, int> { ["item"] = 1, ["skill"] = 2, ["action"] = 3, ["macro"] = 4 };
+        // 5 = receita no Interlude (spec 05 §3); o ShortcutType do aCis vai so ate MACRO (4) e nao registra receitas
+        static readonly Dictionary<int, string> ScTypes = new Dictionary<int, string> { [1] = "item", [2] = "skill", [3] = "action", [4] = "macro", [5] = "recipe" };
+        /// <summary>Codigo do tipo de atalho ("item" 1, "skill" 2, "action" 3, "macro" 4, "recipe" 5).</summary>
+        public static readonly Dictionary<string, int> ScCode = new Dictionary<string, int> { ["item"] = 1, ["skill"] = 2, ["action"] = 3, ["macro"] = 4, ["recipe"] = 5 };
 
         static Shortcut ReadShortcut(PacketReader r, bool init)
         {
@@ -352,9 +353,28 @@ namespace L2Web.Net
         public static byte[] RequestItemList() => new PacketWriter().C(0x0f).Bytes();
         public static byte[] RequestSkillList() => new PacketWriter().C(0x3f).Bytes();
         public static byte[] MagicSkillUse(int skillId, bool ctrl = false, bool shift = false) => new PacketWriter().C(0x2f).D(skillId).D(ctrl ? 1 : 0).C(shift ? 1 : 0).Bytes();
-        /// <summary>type: "item" | "skill" | "action" | "macro".</summary>
-        public static byte[] ShortCutReg(string type, int slot, int id) => new PacketWriter().C(0x33).D(ScCode[type]).D(slot).D(id).D(0).Bytes();
+        /// <summary>
+        /// RequestShortCutReg 0x33 "dddd": tipo ("item" | "skill" | "action" | "macro" | "recipe"), slot + pagina*12, id e
+        /// UserShortCut (characterType do aCis): 1 jogador, 2 pet (acoes 15-27 e itens do inventario do pet, nw:0x100480c0).
+        /// </summary>
+        public static byte[] ShortCutReg(string type, int slot, int id, int userShortCut = 1) =>
+            new PacketWriter().C(0x33).D(ScCode[type]).D(slot).D(id).D(userShortCut).Bytes();
         public static byte[] ShortCutDel(int slot) => new PacketWriter().C(0x35).D(slot).Bytes();
+
+        // ---------------------------------------------------------------- inventario (T2, InventoryWnd.uc)
+
+        /// <summary>RequestUnEquipItem 0x11 "d": slotBitType do item (bodyPart do ItemList; o aCis desequipa pelo slot).</summary>
+        public static byte[] RequestUnEquipItem(int slotBitType) => new PacketWriter().C(0x11).D(slotBitType).Bytes();
+
+        /// <summary>RequestDropItem 0x12 "ddddd": objectId, quantidade e o ponto do mundo (coordenadas do L2) onde largar.</summary>
+        public static byte[] RequestDropItem(int objectId, int count, int x, int y, int z) =>
+            new PacketWriter().C(0x12).D(objectId).D(count).D(x).D(y).D(z).Bytes();
+
+        /// <summary>RequestDestroyItem 0x59 "dd": objectId e quantidade (lixeira do inventario).</summary>
+        public static byte[] RequestDestroyItem(int objectId, int count) => new PacketWriter().C(0x59).D(objectId).D(count).Bytes();
+
+        /// <summary>RequestCrystallizeItem 0x72 "dd": objectId e quantidade.</summary>
+        public static byte[] RequestCrystallizeItem(int objectId, int count) => new PacketWriter().C(0x72).D(objectId).D(count).Bytes();
         public static byte[] DlgAnswer(int messageId, bool answer, int requesterId) => new PacketWriter().C(0xc5).D(messageId).D(answer ? 1 : 0).D(requesterId).Bytes();
 
         /// <summary>ShowBoard 0x6e (Community Board): C mostrar, 8 x S bypass dos botoes do topo, S "id\bhtml".</summary>

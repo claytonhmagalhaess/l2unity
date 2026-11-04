@@ -75,6 +75,11 @@ namespace L2Web.Tests
             yield return C("UiPackets.RequestSellItem", "RequestSellItem", UiPackets.RequestSellItem(1, new List<(int, int, int)> { (1, 57, 1) }));
             yield return C("UiPackets.MultiSellChoose", "RequestMultiSellChoose", UiPackets.MultiSellChoose(1, 2, 3));
             yield return C("UiPackets.RequestAutoSoulShot", "RequestAutoSoulShot", UiPackets.RequestAutoSoulShot(1835, true));
+            // inventario (#0046, T2)
+            yield return C("UiPackets.RequestUnEquipItem", "RequestUnEquipItem", UiPackets.RequestUnEquipItem(0x4000));
+            yield return C("UiPackets.RequestDropItem", "RequestDropItem", UiPackets.RequestDropItem(1, 1, 2, 3, 4));
+            yield return C("UiPackets.RequestDestroyItem", "RequestDestroyItem", UiPackets.RequestDestroyItem(1, 1));
+            yield return C("UiPackets.RequestCrystallizeItem", "RequestCrystallizeItem", UiPackets.RequestCrystallizeItem(1, 1));
             // social
             yield return C("SocialPackets.RequestJoinParty", "RequestJoinParty", SocialPackets.RequestJoinParty("nome"));
             yield return C("SocialPackets.AnswerJoinParty", "RequestAnswerJoinParty", SocialPackets.AnswerJoinParty(true));
