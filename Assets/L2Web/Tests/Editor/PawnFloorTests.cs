@@ -108,7 +108,70 @@ namespace L2Web.Tests
         {
             var all = new[] { -16104f, -12080f, -9048f, -3720f };
             Assert.AreEqual(-9048f, GeoTerrain.NearestLayer(-16104, -3720, all, true, -9040));
-            Assert.AreEqual(-12080f, GeoTerrain.NearestLayer(-16104, -3720, all, true, -11000));
+            Assert.AreEqual(-12080f, GeoTerrain.NearestLayer(-16104, -3720, all, true, -12000));
+            // a mais perto ainda longe (> MaxLayerJump): fica no proprio z
+            Assert.IsNull(GeoTerrain.NearestLayer(-16104, -3720, all, true, -11000));
+        }
+
+        // Tower of Insolence, linha y = 13896, celulas de x = 115956 a 116260: todas as camadas reais do geodata 23_18.l2d
+        // (Docs/tools/pawns_chao/multi.py cell_layers). De 116020 a 116116 o andar 5984 tem um buraco.
+        static readonly int[][] ToiRow =
+        {
+            new[] { 10192, 5984, 4976, 3952, 2944, 1936, 928, -320, -2128, -3280, -5104 },
+            new[] { 10112, 7280, 5984, 4976, 3952, 1936, 928, -304, -2128, -3280, -5104 },
+            new[] { 10112, 7296, 5984, 4976, 3952, 1936, 928, -304, -2128, -3280 },
+            new[] { 10112, 7296, 5984, 4976, 3952, 1936, 928, -304, -2128, -3264 },
+            new[] { 8848, 7936, 4976, 3952, 1936, 928, -288, -3264 },
+            new[] { 10112, 8832, 7936, 4976, 3952, 1936, 928, -3264 },
+            new[] { 10112, 8816, 7936, 4976, 3952, 1936, 928, -3248, -5104 },
+            new[] { 10112, 8800, 7920, 4976, 3952, 1936, 928, -272, -3248, -5104 },
+            new[] { 10112, 8800, 7920, 4976, 3952, 1936, 928, -272, -2128, -3248, -5104 },
+            new[] { 10112, 8784, 7904, 4976, 3952, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 8784, 7904, 4976, 3952, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 8768, 7328, 5984, 4976, 3952, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7328, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7344, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7344, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7344, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7360, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7360, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7360, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+            new[] { 7360, 5984, 4976, 3952, 2944, 1936, 928, -272, -2128, -3232, -5104 },
+        };
+
+        static float? ToiGround(float x, float y, float zRef, bool allLayers)
+        {
+            var i = Mathf.Clamp(Mathf.FloorToInt(x / 16) - Mathf.FloorToInt(115956 / 16f), 0, ToiRow.Length - 1);
+            var row = ToiRow[i];
+            int lo = int.MaxValue, hi = int.MinValue;
+            var all = new float[row.Length];
+            for (var k = 0; k < row.Length; k++)
+            {
+                all[k] = row[k];
+                lo = Math.Min(lo, row[k]);
+                hi = Math.Max(hi, row[k]);
+            }
+            return GeoTerrain.NearestLayer(lo, hi, allLayers ? all : null, true, zRef);
+        }
+
+        [TestCase(true)]
+        [TestCase(false)]
+        public void ToI_AndandoSobreOBuracoDoAndar_NaoCaiUmAndar(bool allLayers)
+        {
+            // OfflineView do teste pawns-1: Begin(115956, 13896, 5984) e ServerMove ate (116256, 13896, 5984). Com o
+            // AllLayers ligado o pawn caia para 4976 em x ~116018 e so voltava a 5984 no destino
+            var m = new L2Web.World.PawnMotion();
+            m.Place(115956, 13896, 5984);
+            m.ServerMove(new L2Web.World.Vec3(116256, 13896, 5984), new L2Web.World.Vec3(115956, 13896, 5984), true);
+            var maxDev = 0f;
+            for (var t = 0; t < 400 && m.Dest != null; t++)
+            {
+                m.Step(0.05f, (x, y, z) => ToiGround(x, y, z, allLayers));
+                maxDev = Mathf.Max(maxDev, Mathf.Abs(m.Z - 5984));
+            }
+            Assert.IsNull(m.Dest, "chegou ao destino");
+            Assert.AreEqual(116256f, m.X, 1e-3f);
+            Assert.AreEqual(0f, maxDev, 1e-3f, "o pawn saiu do andar 5984 no caminho");
         }
 
         // ------------------------------------------------------------ superficie do terreno (SurfaceAt)
