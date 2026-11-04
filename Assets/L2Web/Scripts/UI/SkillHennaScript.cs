@@ -15,6 +15,8 @@ namespace L2Web.UI
         {
             public int Id, DyeId;
             public string Name = "", Icon = "", Desc = "", AddName = "";
+            /// <summary>O icone sem o pacote "icon." (o nome dos icones do porte).</summary>
+            public string IconName => Icon.StartsWith("icon.", StringComparison.OrdinalIgnoreCase) ? Icon.Substring(5) : Icon;
         }
 
         public static Dictionary<int, Row> Parse(byte[] b)
@@ -236,7 +238,7 @@ namespace L2Web.UI
             Texts["txtAdena" + sfx] = cost;
             Texts["txtAdenaString" + sfx] = SysString(469);
             Texts["txtTattooInfo" + sfx] = SysString(639);
-            Texts["textureTattooIconName" + sfx] = h?.Icon ?? "";
+            Texts["textureTattooIconName" + sfx] = h?.IconName ?? "";
             Texts["txtTattooName" + sfx] = equip ? h?.Name ?? "" : SysString(652) + ":" + (h?.Name ?? "");
             Texts["txtTattooAddName" + sfx] = h?.AddName ?? "";
             foreach (var s in SkillTrainPacketsStats)

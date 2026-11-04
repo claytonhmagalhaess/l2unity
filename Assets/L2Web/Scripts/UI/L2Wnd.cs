@@ -120,6 +120,9 @@ namespace L2Web.UI
         Text titleEl;
         RectTransform frameEl;
 
+        /// <summary>Janela que embute esta (opts.Embed), para as ancoras em controles dela.</summary>
+        readonly L2Wnd hostWnd;
+
         public L2Wnd(string name, L2Layer layer, WndOpts opts = null, L2Wnd host = null)
         {
             opts ??= new WndOpts();
@@ -133,6 +136,7 @@ namespace L2Web.UI
             // AbnormalStatusWnd) tem so a alca de arrastar
             Frame = opts.Frame ?? (def.WndN("frame") == 1 && def.WndN("Frame.direction") == 3);
             embedded = host != null;
+            hostWnd = host;
             // nomes podem repetir (os 3 txtBasic da ActionWnd): cada instancia tem sua definicao herdada; o nome resolve
             // so ancoras e pais (primeira ocorrencia)
             var byName = new Dictionary<string, L2Ctrl>();
@@ -281,6 +285,14 @@ namespace L2Web.UI
             {
                 var refName = string.IsNullOrEmpty(a.Ctrl) ? "" : a.Ctrl.Substring(a.Ctrl.LastIndexOf('.') + 1);
                 var rf = refName != "" && ctrls.ContainsKey(refName) && refName != name ? CtrlRect(refName, depth + 1) : parent;
+                // sub-janela embutida (SkillTrainInfoWnd.SubWndNormal) ancorada num controle da janela que a embute
+                if (refName != "" && !ctrls.ContainsKey(refName) && hostWnd != null && hostWnd.ctrls.ContainsKey(refName))
+                {
+                    var hr = hostWnd.CtrlRect(refName);
+                    var da = Def.Anchor;
+                    var simple = da == null || (da.Parent == "TOP_LEFT" && da.This == "TOP_LEFT");
+                    rf = new L2Rect(hr.X - (simple && da != null ? da.X : 0), hr.Y - (simple && da != null ? da.Y : 0), hr.W, hr.H);
+                }
                 // no xdat, anchor.this e o ponto da referencia e anchor.parent o ponto deste controle
                 var p = Al(a.This);
                 var t = Al(a.Parent);

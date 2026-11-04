@@ -127,7 +127,7 @@ namespace L2Web.UI
                     L2Param.ParseInt(p, "HennaID", ref id);
                     L2Param.ParseInt(p, "Fee", ref fee);
                     var h = HennaGrp.Get(id);
-                    Henna.Add(id, h?.Name ?? "", h?.Icon ?? "", h?.Desc ?? "", fee);
+                    Henna.Add(id, h?.Name ?? "", h?.IconName ?? "", h?.Desc ?? "", fee);
                     hennaTree.Render(Henna);
                 });
 
