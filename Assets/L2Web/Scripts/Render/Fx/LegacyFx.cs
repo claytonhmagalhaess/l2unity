@@ -651,7 +651,88 @@ namespace L2Web.Render.Fx
             Run(FnExplosion, skillId, ctx, 3, caster);
         }
 
-        public void SpawnNTransientEffect(IFxActor pawn, int skillId, int level, IFxActor target) => Run(FnTransient, skillId, Ctx(pawn, target, level), 1);
+        public void SpawnNTransientEffect(IFxActor pawn, int skillId, int level, IFxActor target)
+        {
+            if (ShotGrade(skillId, out var spirit, out var grade))
+            {
+                // os casos dos shots dependem de soulshot.int por tipo de arma e do comprimento da malha da mao; a tabela
+                // gerada por execucao simbolica so tem a 1a variante (vazia) para o caso comum (#0053)
+                var made = ShotEffect(pawn, grade, spirit, WeaponType(pawn));
+                if (made.Count > 0) Fx.PlaySkillSoundData(skillId, level, 1, pawn.Location, pawn);
+                return;
+            }
+            Run(FnTransient, skillId, Ctx(pawn, target, level), 1);
+        }
+
+        /// <summary>CurWeaponType do pawn (pawn+0x71d = GetAnimType): indice do soulshot.int HAND, 1HS, 2HS, DUAL, POLE, BOW, THROW, DUALFIST.</summary>
+        public Func<IFxActor, int> WeaponType = _ => 0;
+
+        /// <summary>Secoes de tipo de arma do soulshot.int na ordem de FL2GameData::SoulShotDataLoad (0x10448xxx, +0x7f5ec + i*8) [O].</summary>
+        public static readonly string[] ShotWeaponTypes = { "HAND", "1HS", "2HS", "DUAL", "POLE", "BOW", "THROW", "DUALFIST" };
+        /// <summary>Secoes de grau do soulshot.int (indice 0..5; o caso usa (id - base) % 5 + 1) [O].</summary>
+        public static readonly string[] ShotGrades = { "None", "D", "C", "B", "A", "S" };
+
+        /// <summary>
+        /// Casos de shot do SpawnNTransientEffect (0x104efb30) [O]: 0x7f7 soulshot sem grau; 0x866..0x86a soulshot D..S;
+        /// 0x7ff/0x80d spiritshot e blessed sem grau; 0x86b..0x874 spiritshot e blessed D..S, grau = (id - base) % 5 + 1.
+        /// </summary>
+        public static bool ShotGrade(int id, out bool spirit, out int grade)
+        {
+            spirit = false;
+            grade = 0;
+            if (id == 0x7f7) return true;
+            if (id >= 0x866 && id <= 0x86a) { grade = (id - 0x866) % 5 + 1; return true; }
+            spirit = true;
+            if (id == 0x7ff || id == 0x80d) return true;
+            if (id >= 0x86b && id <= 0x874) { grade = (id - 0x86b) % 5 + 1; return true; }
+            spirit = false;
+            return false;
+        }
+
+        /// <summary>Escolha da classe por mao (0x104eff80 / 0x104f0404) [O]: valor do soulshot.int 1 = arma longa (malha com
+        /// comprimento > 12, ou sem dado) usa "OnSticks" com StartVelocityRange.X = comprimento (30 sem dado), arma curta "OnBooks";
+        /// 0 = "OnBooks"; -1 = nada. Sem malha na mao, nada. Devolve (campo, velocidade) ou null.</summary>
+        public static (string field, float velocity, bool sticks)? ShotChoice(int value, float length, bool spirit)
+        {
+            if (length <= 0 || value == -1) return null;
+            var pre = spirit ? "Spirit" : "";
+            if (value == 1 && length > 12) return (pre + "OnSticks", length, true);
+            return (pre + "OnBooks", 30f, false);
+        }
+
+        /// <summary>Spawna o efeito de ativacao dos shots nas maos (LH primeiro, depois RH), preso ao osso da mao [O].</summary>
+        public List<FxEmitterActor> ShotEffect(IFxActor pawn, int grade, bool spirit, int weaponType)
+        {
+            var made = new List<FxEmitterActor>();
+            if (pawn == null) return made;
+            var type = ShotWeaponTypes[Mathf.Clamp(weaponType, 0, ShotWeaponTypes.Length - 1)];
+            foreach (var rh in new[] { false, true })
+            {
+                var raw = (string)Soulshot?[type]?[rh ? "RH" : "LH"];
+                var value = int.TryParse((raw ?? "0").Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) ? v : 0;
+                var choice = ShotChoice(value, WeaponLength(pawn, rh), spirit);
+                if (choice == null) continue;
+                var (field, vel, sticks) = choice.Value;
+                var cls = (string)Soulshot?[ShotGrades[Mathf.Clamp(grade, 0, 5)]]?[field];
+                if (string.IsNullOrEmpty(cls)) continue;
+                var fx = Fx.W.Spawn(cls, Vector3.zero, FRotator.Zero, pawn);
+                if (fx == null) continue;
+                var bone = rh ? pawn.RHandBoneName : pawn.LHandBoneName;
+                var frame = string.IsNullOrEmpty(bone) || bone == "None" ? null : pawn.Bone(bone);
+                if (frame == null) { fx.Destroy(); continue; }
+                if (!sticks && !rh) fx.RelativeRotation = new FRotator(0, 0x4000, 0);
+                if (sticks)
+                    for (var k = 0; k < Math.Min(2, fx.Emitters.Count); k++)
+                    {
+                        var r = fx.Emitters[k].D.StartVelocityRange;
+                        r.X = new FRange(vel, vel);
+                        fx.Emitters[k].D.StartVelocityRange = r;
+                    }
+                Attach(fx, frame);
+                made.Add(fx);
+            }
+            return made;
+        }
 
         /// <summary>Executa o caso: escolhe a variante pelas condicoes, spawna os efeitos e toca o som se algo nasceu.</summary>
         public List<FxEmitterActor> Run(string fn, int skillId, LegacyCtx ctx, int soundType, IFxActor soundSrc = null)
