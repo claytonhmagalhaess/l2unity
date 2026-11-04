@@ -57,6 +57,7 @@ namespace L2Web.Dev
             }
             foreach (Transform c in UiRoot.Rect) c.gameObject.SetActive(false);
             World = new GameWorld { Ground = GeoTerrain.GroundHeight };
+            if (LocalAssets.Available) GeoTerrain.AllLayers = LocalAssets.GeoLayers; // pedido 0052 (#0056)
             L2Web.World.Entities.SetDrawHeight(GeoTerrain.VisualFloor);
             Scene = new GameScene(null, World);
             if (!Scene.Env.TimeForced) Scene.Env.Env.OnClientSetTime(720, 0);

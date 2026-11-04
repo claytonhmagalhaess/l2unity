@@ -107,6 +107,11 @@ namespace L2Web
         async Task Init()
         {
             world.Ground = GeoTerrain.GroundHeight;
+            if (LocalAssets.Available)
+            {
+                world.GroundLayers = LocalAssets.GeoLayers;   // pedido 0051 (#0057): pouso do teleporte em celula multicamada
+                GeoTerrain.AllLayers = LocalAssets.GeoLayers; // pedido 0052 (#0056): camada certa ao andar
+            }
             Entities.SetDrawHeight(GeoTerrain.VisualFloor);
             var bootCam = BootCamera();
             loading = null;

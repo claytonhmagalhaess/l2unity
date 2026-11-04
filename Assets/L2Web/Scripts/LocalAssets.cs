@@ -223,6 +223,8 @@ namespace L2Web
         {
             public short[] Height, High;
             public byte[] Flags;
+            /// <summary>Celulas com mais de uma camada (bloco 0xd2): indice (y*RegionCells + x) -> todas as alturas.</summary>
+            public Dictionary<int, short[]> Multi;
         }
 
         static readonly Dictionary<string, Region> regions = new();
@@ -239,7 +241,7 @@ namespace L2Web
             {
                 var buf = File.ReadAllBytes(file);
                 var n = RegionCells * RegionCells;
-                reg = new Region { Height = new short[n], High = new short[n], Flags = new byte[n] };
+                reg = new Region { Height = new short[n], High = new short[n], Flags = new byte[n], Multi = new Dictionary<int, short[]>() };
                 var p = 0;
                 short I16()
                 {
@@ -283,10 +285,12 @@ namespace L2Web
                                 int layers = buf[p++];
                                 short best = 32767, top = -32768;
                                 var bestN = 0;
+                                var all = layers > 1 ? new short[layers] : null;
                                 for (var l = 0; l < layers; l++)
                                 {
                                     var nswe = buf[p++];
                                     var h = I16();
+                                    if (all != null) all[l] = h;
                                     if (h < best)
                                     {
                                         best = h;
@@ -298,6 +302,7 @@ namespace L2Web
                                 reg.Height[i] = best;
                                 reg.High[i] = top;
                                 reg.Flags[i] = (byte)((bestN & 0x0f) | (layers > 1 ? 0x10 : 0));
+                                if (all != null) reg.Multi[i] = all;
                             }
                         }
                         else throw new InvalidDataException($"{file}: tipo de bloco desconhecido 0x{type:x} em {p - 1}");
@@ -305,6 +310,27 @@ namespace L2Web
             }
             lock (regions) regions[key] = reg;
             return reg;
+        }
+
+        /// <summary>
+        /// Todas as camadas do geodata no ponto (x, y) do mundo L2 (pouso do teleporte #0057, andares do #0056); null se a
+        /// regiao nao estiver no disco. Celula de uma camada devolve um elemento.
+        /// </summary>
+        public static IReadOnlyList<float> GeoLayers(float x, float y)
+        {
+            var gx = (int)Math.Floor((x + 294912f) / 16f); // 294912 = (20 - 11) * 32768: origem do tile 11
+            var gy = (int)Math.Floor((y + 262144f) / 16f); // 262144 = (18 - 10) * 32768: origem do tile 10
+            if (gx < 0 || gy < 0) return null;
+            var reg = LoadRegion(11 + gx / RegionCells, 10 + gy / RegionCells);
+            if (reg == null) return null;
+            var i = (gy % RegionCells) * RegionCells + gx % RegionCells;
+            if (reg.Multi != null && reg.Multi.TryGetValue(i, out var all))
+            {
+                var o = new float[all.Length];
+                for (var k = 0; k < all.Length; k++) o[k] = all[k];
+                return o;
+            }
+            return new float[] { reg.Height[i] };
         }
 
         /// <summary>Pedaco 128x128: Int16 baixa[] + Int16 alta[] + Uint8 flags[] (formato do /terrain do dev.ts).</summary>
