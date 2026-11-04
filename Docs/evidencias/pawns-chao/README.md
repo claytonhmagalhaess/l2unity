@@ -31,3 +31,12 @@ Capturas e logs da sessão de testes. O "antes" é o `main` `eb1f39d` e o "depoi
   | Turek | desenho = Z do geodata (−3584, −3584, −3552) | — | −3606,5 / −3608,8 / −3581,0, igual ao `SurfaceAt` (±0,001) |
 
 - **Ao vivo** (aCis local, `l2webtest7`, Plains of Dion): `campo_parado`, `campo_andando`, `campo_correndo` e `campo_combate`. Os pés do personagem e dos monstros (Monster Eye Destroyer, Kadif Werewolf) ficam na grama: Self.Z −3720 e desenho −3753,3. Não foram feitos `giran_vivo`, `campo_pos_teleporte` nem `cruma_andando`, porque o servidor assumiu o personagem (autofarm do L2Ketra, ver `e2e-vivo.log`). Em `autofarm_orc_barracks.png`, em Orc Barracks, os pés ficam na grama: Z −3856, desenho −3874.
+
+## 0056-3 (`6f1dcf2` sobre a prévia `integracao/pawns-chao` `954a22b`, com o `AllLayers` ligado), pasta `0056-3/`
+
+Na prévia, o pawn caía um andar na Tower of Insolence: andando de (115956, 13896, 5984) até 116256, ia para 4976 por causa do buraco do piso entre 116020 e 116116. O `6f1dcf2` aplica o `MaxLayerJump` também com todas as camadas.
+
+- Suíte: 912/912, `PawnFloorTests` 18/18.
+- ToI: 3 rodadas, e o Z fica em 5984 (desenho 5961) em todas as leituras, inclusive no trecho do buraco.
+- Cruma, 1º andar: −9048 em todas as leituras.
+- Turek: o desenho é igual ao `SurfaceAt`.

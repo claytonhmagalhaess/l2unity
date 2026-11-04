@@ -484,20 +484,23 @@ namespace L2Web.Render
         public const float MaxLayerJump = 128;
 
         /// <summary>
-        /// Regra da camada: com todas as camadas (all), a mais perto de zRef. So com a baixa e a alta, a mais perto; numa
-        /// celula multicamada, so se estiver a ate MaxLayerJump de zRef, senao null.
+        /// Regra da camada: a camada mais perto de zRef, entre todas (all) ou so a baixa e a alta. Numa celula multicamada,
+        /// so se estiver a ate MaxLayerJump de zRef, senao null (o pawn fica no proprio z). Vale tambem com todas as
+        /// camadas: na Tower of Insolence (116020..116116, 13896) o andar 5984 tem um buraco de 6 celulas e a camada mais
+        /// perto e o andar de baixo (4976, -1008); sem o limite, o pawn caia um andar no meio do caminho e ficava la ate o
+        /// destino (prévia integracao/pawns-chao, #0056).
         /// </summary>
         public static float? NearestLayer(int lo, int hi, IReadOnlyList<float> all, bool multi, float zRef)
         {
+            float best;
             if (all is { Count: > 0 })
             {
-                var b = all[0];
+                best = all[0];
                 for (var i = 1; i < all.Count; i++)
-                    if (Math.Abs(all[i] - zRef) < Math.Abs(b - zRef))
-                        b = all[i];
-                return b;
+                    if (Math.Abs(all[i] - zRef) < Math.Abs(best - zRef))
+                        best = all[i];
             }
-            var best = Math.Abs(hi - zRef) < Math.Abs(lo - zRef) ? hi : lo;
+            else best = Math.Abs(hi - zRef) < Math.Abs(lo - zRef) ? hi : lo;
             if (multi && Math.Abs(best - zRef) > MaxLayerJump) return null;
             return best;
         }
