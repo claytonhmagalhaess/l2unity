@@ -1,0 +1,45 @@
+== #0052 antes b88e07c
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=0"
+"criando"
+"scrChars chars=1 Buffs52"
+"ok"
+"scrGame inWorld=True ents=66 self=Buffs52 83499,148710,-3408"
+0 entradas
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_ao_entrar.png (1024, 768)
+== b) tempos reais: "n=36 1040:14318 1388:14318 1036:14318 1035:14318 1045:14318 1062:14318 1204:143
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_buffs_servidor.png (1024, 768)
+== c) injetados
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_inj_0s.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_inj_3s.png (1024, 768)
+"n=6 1086:1190 1204:35 274:15 1160:30 102:10 312:inf "
+"L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Wind Walk Nv 2] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Entangle Nv 1] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Lesser Healing Potion Nv 1] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Slow Nv 1] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Dance of Fire Nv 1] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Vicious Stance Nv 1] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Haste Nv 2] ; L2Layer/L2Wnd AbnormalStatusWnd/StatusIcon/buff/ [Weight Penalty Nv 1] ; "
+0 entradas
+== c) tooltips (reinjetado)
+"ok"
+-- tooltip antes_tip_pocao: "Lesser Healing Potion Nv 1 => Lesser Healing Potion |   | Lv |  1 | Remaining Time |  :  | 8초 | Increases HP regeneration significantly. Effect 1."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_pocao.png (1024, 768)
+-- tooltip antes_tip_windwalk: "Wind Walk Nv 2 => Wind Walk |   | Lv |  2 | Remaining Time |  :  | 40초 | Temporarily increases Speed. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_windwalk.png (1024, 768)
+-- tooltip antes_tip_dancefire: "Dance of Fire Nv 1 => Dance of Fire |   | Lv |  1 | Remaining Time |  :  | 16초 | Temporarily increases party members' critical damage. Continuous dancing consumes additional MP. An equipped dual-sword weapon is required to use this skill."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_dancefire.png (1024, 768)
+-- tooltip antes_tip_slow: "Slow Nv 1 => Slow |   | Lv |  1 | Instantly reduces enemy's Speed. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_slow.png (1024, 768)
+-- tooltip antes_tip_vicious: "Vicious Stance Nv 1 => Vicious Stance |   | Lv |  1 | Increases one's critical attack power. MP will be consumed continuously."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_vicious.png (1024, 768)
+-- tooltip antes_tip_peso: "Weight Penalty Nv 1 => Weight Penalty |   | Lv |  1 | Your inventory weight limit exceeds 50%.  HP/MP regeneration and movement are greatly decreased, and any quest progression is suspended."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_peso.png (1024, 768)
+-- tooltip antes_tip_haste: "Haste Nv 2 => Haste |   | Lv |  2 | Remaining Time |  :  | 19Minutes | Temporarily increases Atk. Spd. Effect 2."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_tip_haste.png (1024, 768)
+"ok"
+0 entradas
+== d) grupo injetado
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_grupo_0.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_grupo_F1.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_grupo_F2.png (1024, 768)
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0052-1/antes_grupo_F3.png (1024, 768)
+0 entradas
