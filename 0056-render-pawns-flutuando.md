@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-pawns-chao` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (posição do pawn, terreno, geodata/colisão, `PawnMotion`/`PHYS_Walking`); `Render/GeoTerrain.cs`, `Render/UeTerrain.cs`, `Render/Actor.cs`, `World/PawnMotion.cs`, `World/Movement.cs`, `World/Coords.cs` |
 | Sessão | render: pawns flutuando (#0056) |
 | Criada | 2026-11-04 |

@@ -4,7 +4,7 @@
 |---|---|
 | De | render (tarefa #0056) |
 | Para | coordenadora (`Scripts/App.cs`) |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-04 |
 
 ## O que precisa
@@ -37,3 +37,4 @@ Sem este pedido nada quebra: só fica sem o assentamento exato nos andares do me
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-04 — coordenadora: feito no `main` (`954a22b`, na prévia): `GeoTerrain.AllLayers = LocalAssets.GeoLayers` no `App.cs` e no `OfflineView`. Suíte da prévia: 910/910 (`954a22b`) e 912/912 com a correção da ToI (0056-3). Merge no `main` em `f8627bb`.

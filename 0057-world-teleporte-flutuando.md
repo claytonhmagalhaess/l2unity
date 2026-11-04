@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-teleporte-chao` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (TeleportToLocation 0x28, ValidateLocation, StopMove, MoveToLocation, posição e Z do pawn, 94, 96); `World/Movement.cs`, `World/PawnMotion.cs`, `World/Entity.cs`, `World/World.cs`; despacho no `App.cs` |
 | Sessão | world: teleporte e unstuck (#0057) |
 | Criada | 2026-11-04 |
