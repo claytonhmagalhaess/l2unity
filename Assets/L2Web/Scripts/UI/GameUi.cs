@@ -447,6 +447,12 @@ namespace L2Web.UI
                 if (mainTopTab == 1) deps.Send(UiPackets.RequestSkillList());
             };
             Main.SelectTab("MainTabCtrl", 0);
+            // DetailStatusWnd.OnEvent (:52-55): EV_UpdateHennaInfo guarda o bonus das tatuagens e refaz o status
+            L2Events.Register(Ev.EV_UpdateHennaInfo, p =>
+            {
+                detailHenna = DetailStatusScript.Henna.Parse(p);
+                if (lastUser != null) RenderStatus(lastUser, ExpPercent(lastUser.Level, Stat(lastUser, "exp")));
+            });
             FillActions();
             BindMenus();
             RenderBars();
@@ -642,10 +648,22 @@ namespace L2Web.UI
             }
         }
 
-        static void DetailBar(L2Wnd w, string tex, string txt, double cur, double max, string label = null)
+        static void DetailBar(L2Wnd w, string tex, string txt, int cur, int max)
         {
-            w.TexWidth(tex, (float)Math.Round(85 * (max > 0 ? Math.Min(1, cur / max) : 0)));
-            w.Text(txt, label ?? $"{Math.Round(cur)}/{Math.Round(max)}");
+            DetailTex(w, tex, DetailStatusScript.Bar(cur, max), null);
+            w.Text(txt, $"{cur}/{max}");
+        }
+
+        /// <summary>UIAPI_WINDOW.SetWindowSize(tex, size, 12) numa Texture esticada, com SetTexture opcional (peso).</summary>
+        static void DetailTex(L2Wnd w, string name, int width, string file)
+        {
+            var el = w.Get(name);
+            var c = w.Ctrl(name);
+            if (!el || c == null) return;
+            el.sizeDelta = new Vector2(width, DetailStatusScript.BarHeight);
+            var f = string.IsNullOrEmpty(file) ? c.S("file") : file;
+            var img = L2WndUtil.Paint(el, f, Math.Max(1, width), DetailStatusScript.BarHeight, PaintMode.Stretch, c.N0("u"), c.N0("v"), c.N0("uSize"), c.N0("vSize"));
+            if (img) img.enabled = width > 0;
         }
 
         /// <summary>
@@ -716,36 +734,33 @@ namespace L2Web.UI
                 if (t1) t1.color = nameColor;
                 w.Text("txtName2", "");
             }
-            w.Text("txtLvName", $"{u.Level} {GameData.ClassName(u.ClassId)}");
-            // :356-385: o nome do cla em 176,155,121 ou ss431 "No Clan" em branco; sem brasao o texto vai para x = 68
+            // :356-385: o nome do cla em 176,155,121 ou ss431 "No Clan" em branco; com brasao o texto vai para x = 88, sem ele x = 68
             var clan = u.ClanId > 0 ? ClanName(u.ClanId) ?? "" : "";
             w.Text("txtPledge", u.ClanId > 0 ? clan : GameData.SysString(431, ""));
             var tp = w.TextEl("txtPledge");
             if (tp) tp.color = u.ClanId > 0 ? DetailPledgeColor : (Color32)Color.white;
+            // brasao do cla (UIDATA_CLAN.GetCrestTexture): o porte ainda nao tem a textura do brasao, entao fica a posicao sem ele
+            w.ShowCtrl("texPledgeCrest", false);
             var elp = w.Get("txtPledge");
             if (elp) elp.anchoredPosition = new Vector2(68, elp.anchoredPosition.y);
-            void Bar(string tex, string txt, double cur, double max, string label = null) => DetailBar(w, tex, txt, cur, max, label);
-            Bar("texHP", "txtHP", u.Hp, u.MaxHp);
-            Bar("texMP", "txtMP", u.Mp, u.MaxMp);
-            Bar("texCP", "txtCP", u.Cp, u.MaxCp);
-            Bar("texExp", "txtExp", pct, 100, F2(pct) + "%");
-            var load = Stat(u, "load");
-            var maxLoad = Stat(u, "maxLoad");
-            Bar("texWeight", "txtWeight", load, maxLoad, $"{Math.Round(load / (double)Math.Max(1, maxLoad) * 100)}%");
-            w.Text("txtSP", Stat(u, "sp").ToString());
-            var vals = new (string, string)[]
+            // :386-395: heroi ou nobre (UserInfo; pedido 0034 item 1)
+            var hero = DetailStatusScript.HeroTexture(Stat(u, "hero") != 0, Stat(u, "noble") != 0);
+            if (string.IsNullOrEmpty(hero)) w.ShowCtrl("texHero", false);
+            else
             {
-                ("txtPhysicalAttack", Stat(u, "pAtk").ToString()), ("txtPhysicalDefense", Stat(u, "pDef").ToString()), ("txtHitRate", Stat(u, "accuracy").ToString()),
-                ("txtCriticalRate", Stat(u, "crit").ToString()), ("txtPhysicalAttackSpeed", Stat(u, "pAtkSpd").ToString()), ("txtMagicalAttack", Stat(u, "mAtk").ToString()),
-                ("txtMagicDefense", Stat(u, "mDef").ToString()), ("txtPhysicalAvoid", Stat(u, "evasion").ToString()),
-                ("txtMovingSpeed", Math.Round(u.RunSpd * u.MoveMul).ToString(CultureInfo.InvariantCulture)),
-                ("txtMagicCastingSpeed", Stat(u, "mAtkSpd").ToString()), ("txtSTR", Stat(u, "STR").ToString()), ("txtDEX", Stat(u, "DEX").ToString()),
-                ("txtCON", Stat(u, "CON").ToString()), ("txtINT", Stat(u, "INT").ToString()), ("txtWIT", Stat(u, "WIT").ToString()), ("txtMEN", Stat(u, "MEN").ToString()),
-                ("txtCriminalRate", Stat(u, "karma").ToString()), ("txtPVP", $"{Stat(u, "pvp")} / {Stat(u, "pk")}"), ("txtSociality", "0"), ("txtRemainSulffrage", "0"),
-            };
+                w.ShowCtrl("texHero", true);
+                var c = w.Ctrl("texHero");
+                var el = w.Get("texHero");
+                if (el && c != null) L2WndUtil.Paint(el, hero, el.sizeDelta.x, el.sizeDelta.y);
+            }
+            foreach (var (k, v) in DetailStatusScript.Texts(u, pct, detailHenna, id => GameData.SysString(id, ""))) w.Text(k, v);
+            // :573-608 UpdateWeightBar: a textura do peso muda com a porcentagem (ps_weightbar1..4)
+            var weightTex = PetScript.WeightTexture((int)Stat(u, "load"), (int)Stat(u, "maxLoad"));
+            foreach (var (tex, width) in DetailStatusScript.Bars(u, pct)) DetailTex(w, tex, width, tex == "texWeight" ? weightTex : null);
             w.ShowCtrl("txtGmMoving", false);
-            foreach (var (k, v) in vals) w.Text(k, v);
         }
+
+        DetailStatusScript.Henna detailHenna = new();
 
         // ------------------------------------------------------------ chat
         /// <summary>Campo de digitacao do chat (ChatEditBox).</summary>
