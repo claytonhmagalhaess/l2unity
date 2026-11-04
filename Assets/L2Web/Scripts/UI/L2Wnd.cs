@@ -161,6 +161,7 @@ namespace L2Web.UI
             // NCFrameCtrl lateral (frame = 1, Frame.size = 1, Frame.direction = 1): smallbar1/2/3 numa faixa de 12 px
             else if (def.WndN("frame") == 1 && def.WndN("Frame.size") == 1 && def.WndN("Frame.direction") == 1) SideFrame(Size[1]);
             foreach (var c in def.Children) Build(c, El, Vector2.zero);
+            foreach (var (sa, areaH) in scrollAreas) WrapScrollArea(sa, areaH);
             if (frameEl) Track(El, frameEl, 3);
             // NCResizeFrame (xdat resizeframe = 1): a faixa fica por cima de tudo
             if (host == null && def.WndN("resizeframe") == 1) BuildResizeFrame(def);
@@ -445,6 +446,9 @@ namespace L2Web.UI
                 }
                 case "ShortcutItemWindow":
                     return 2;
+                case "ScrollArea":
+                    scrollAreas.Add((el, c.N("areaHeight")));
+                    return 2;
                 case "Tab":
                     BuildTab(c, el);
                     return 2;
@@ -565,6 +569,32 @@ namespace L2Web.UI
             if (float.IsNaN(id) || id < 0) return;
             var t = GameData.SysString((int)id, "");
             if (!string.IsNullOrEmpty(t)) UiTooltip.Set(el.gameObject, t);
+        }
+
+        readonly List<(RectTransform el, float areaHeight)> scrollAreas = new();
+
+        /// <summary>
+        /// ScrollArea do xdat (areaHeight = altura do conteudo): os filhos vao para um conteudo dessa altura, recortado pela
+        /// area e rolado pela roda (MacroEditWnd.areaEdit: 242x239 com 318 de conteudo).
+        /// </summary>
+        static void WrapScrollArea(RectTransform el, float areaH)
+        {
+            var w = el.sizeDelta.x;
+            var h = float.IsNaN(areaH) || areaH < el.sizeDelta.y ? el.sizeDelta.y : areaH;
+            var kids = new List<Transform>();
+            foreach (Transform t in el) kids.Add(t);
+            var content = UiRoot.Box("scrollcontent", el, 0, 0, w, h);
+            foreach (var t in kids) t.SetParent(content, false);
+            var g = el.gameObject.GetComponent<Image>() ?? el.gameObject.AddComponent<Image>();
+            g.color = new Color(0, 0, 0, 0);
+            el.gameObject.AddComponent<RectMask2D>();
+            var sr = el.gameObject.AddComponent<ScrollRect>();
+            sr.horizontal = false;
+            sr.movementType = ScrollRect.MovementType.Clamped;
+            sr.inertia = false;
+            sr.scrollSensitivity = 20;
+            sr.viewport = el;
+            sr.content = content;
         }
 
         /// <summary>Botao com as 3 texturas (normal, pressionado, realce) em tamanho natural.</summary>
