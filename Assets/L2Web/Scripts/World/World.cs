@@ -345,6 +345,11 @@ namespace L2Web.World
 
         /// <summary>Altura do chao (geodata) usada pelo movimento; definida pela cena quando o terreno existe.</summary>
         public Func<float, float, float, float?> Ground = (_, _, _) => null;
+        /// <summary>
+        /// Todas as camadas do geodata em (x, y) (pouso do teleporte com a regra exata do L2_Teleport); null enquanto a cena
+        /// nao as expuser: o pouso usa so o Ground (mais alta, mais baixa e a mais proxima).
+        /// </summary>
+        public Func<float, float, IReadOnlyList<float>> GroundLayers;
 
         int frame;
         /// <summary>Personagens animados no ultimo quadro (diagnostico de desempenho).</summary>

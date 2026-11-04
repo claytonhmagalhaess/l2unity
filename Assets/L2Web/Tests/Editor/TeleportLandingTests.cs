@@ -71,21 +71,60 @@ namespace L2Web.Tests
         [Test]
         public void Land_SemChaoAte900_ProprioCai()
         {
-            Assert.AreEqual(-1500f, Movement.Land(Floor(-1500), 0, 0, 0, true));
-            Assert.IsNull(Movement.Land(NoGround, 0, 0, 0, true));
-            Assert.IsNull(Movement.Land(null, 0, 0, 0, true));
+            Assert.AreEqual(-1500f, Movement.Land(Floor(-1500), null, 0, 0, 0, -10, true));
+            Assert.IsNull(Movement.Land(NoGround, null, 0, 0, 0, -10, true));
+            Assert.IsNull(Movement.Land(null, null, 0, 0, 0, -10, true));
         }
 
         [Test]
-        public void Land_DuasCamadas_UsaAltaEBaixa()
+        public void Land_DuasCamadas_SoConfiaAte150()
         {
             // ponte: chao em -3464 e tabuleiro em -3100; teleporte para -3340 (pe -3330)
             var g = Layers(-3464, -3100);
-            // busca (proprio): -3464 na janela 5 (134), -3100 na 8 (230): pousa embaixo
-            Assert.AreEqual(-3464f, Movement.Land(g, 0, 0, -3330, true));
-            // teleporte para cima do tabuleiro: os outros caem no tabuleiro, nao atravessam
-            Assert.AreEqual(-3100f, Movement.Land(g, 0, 0, -3050, false));
-            Assert.AreEqual(-3464f, Movement.Land(g, 0, 0, -3200, false));
+            // busca (proprio): -3464 na janela 5 (134), -3100 na 8 (230): pousa embaixo (134 <= 150)
+            Assert.AreEqual(-3464f, Movement.Land(g, null, 0, 0, -3330, -3340, true));
+            // os outros caem no tabuleiro, nao atravessam
+            Assert.AreEqual(-3100f, Movement.Land(g, null, 0, 0, -3050, -3060, false));
+            // 264 abaixo numa celula multicamada: pode haver camada no meio que o porte nao conhece; fica no Z
+            Assert.AreEqual(-3210f, Movement.Land(g, null, 0, 0, -3200, -3210, false));
+        }
+
+        [Test]
+        public void Land_MulticamadaLonge_FicaNoZ()
+        {
+            // Baium (teleportLocations 50021): z 9007 + 10; camadas 10080 ... 8992 ... -5104. So com a mais alta e a mais
+            // baixa, a busca nao acha nada a 900 e a queda iria a -5104 (14 mil abaixo): fica no Z do servidor
+            Assert.AreEqual(9017f, Movement.Land(Layers(-5104, 10080), null, 115410, 16829, 9027, 9017, true));
+            Assert.AreEqual(9017f, Movement.Land(Layers(-5104, 10080), null, 115410, 16829, 9027, 9017, false));
+        }
+
+        [Test]
+        public void Land_ComTodasAsCamadas_RegraDoOriginal()
+        {
+            float[] baium = { 10080, 8992, 6992, 5008, 3952, 2944, 1936, 928, -640, -2128, -3616, -5104 };
+            System.Collections.Generic.IReadOnlyList<float> All(float x, float y) => baium;
+            Assert.AreEqual(8992f, Movement.Land(Layers(-5104, 10080), All, 0, 0, 9027, 9017, true));
+            Assert.AreEqual(8992f, Movement.Land(Layers(-5104, 10080), All, 0, 0, 9027, 9017, false));
+            // Dark Elven Village (TownZone 11404, 16699, -4500): camadas 7136 e -4656; pe -4480 -> 176 abaixo
+            float[] de = { 7136, -4656 };
+            System.Collections.Generic.IReadOnlyList<float> De(float x, float y) => de;
+            Assert.AreEqual(-4656f, Movement.Land(Layers(-4656, 7136), De, 0, 0, -4480, -4490, true));
+            // sem as camadas, a multicamada a 176 fica no Z
+            Assert.AreEqual(-4490f, Movement.Land(Layers(-4656, 7136), null, 0, 0, -4480, -4490, true));
+            // lista vazia = sem camadas conhecidas: volta ao ground
+            System.Collections.Generic.IReadOnlyList<float> None(float x, float y) => new float[0];
+            Assert.AreEqual(-3464f, Movement.Land(Floor(-3464), None, 0, 0, -3330, -3340, true));
+        }
+
+        [Test]
+        public void PawnMotion_UsaAsCamadas()
+        {
+            var p = new PawnMotion { Layers = (_, _) => new float[] { 10080, 8992, -5104 } };
+            p.Place(115410, 16829, 9017);
+            p.Drop(true);
+            p.Step(0.016f, Layers(-5104, 10080), null);
+            Assert.AreEqual(8992f, p.Z);
+            Assert.IsFalse(p.Landing);
         }
 
         [Test]

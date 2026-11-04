@@ -4,6 +4,7 @@
 // animacao de movimento (0x10624cc0), tick do PlayerController (ValidatePosition) e defaults do LineagePawn.
 // Porte de client/world/movement.ts. Coordenadas em unidades do L2.
 using System;
+using System.Collections.Generic;
 
 namespace L2Web.World
 {
@@ -61,28 +62,33 @@ namespace L2Web.World
         const float FarRef = 1e6f;
 
         /// <summary>
+        /// Celula multicamada com so a camada mais alta e a mais baixa conhecidas (o geodata do porte guarda so essas duas):
+        /// as do meio sao desconhecidas, entao o pouso so vale ate esta distancia do pe; mais longe, fica no Z do servidor.
+        /// Medido em todos os destinos de teleporte do aCis (Docs/teleporte_z.md): ate 150 nenhuma camada errada; 200 ja erra.
+        /// </summary>
+        public const float MultiLayerTrust = 150;
+
+        /// <summary>
         /// Lugar de pouso do L2_Teleport (engine.dll, "Couldn't find landing place"): o trace i (i = 1..30) vai de pe + 30i
         /// ate pe - 30i e para no primeiro chao, ou seja, o mais alto dentro da janela; a primeira janela com chao vence.
         /// null se nenhum chao estiver a ate 900 unidades.
         /// </summary>
-        public static float? LandingZ(float feet, float? a, float? b = null, float? c = null)
+        public static float? LandingZ(float feet, params float?[] floors)
         {
             float? best = null;
             var bestWin = int.MaxValue;
-            void Try(float? h)
+            if (floors == null) return null;
+            foreach (var h in floors)
             {
-                if (!h.HasValue) return;
+                if (!h.HasValue) continue;
                 var win = Math.Max(1, (int)Math.Ceiling(Math.Abs(h.Value - feet) / LandingStep));
-                if (win > LandingTries) return;
+                if (win > LandingTries) continue;
                 if (win < bestWin || (win == bestWin && h.Value > best.Value))
                 {
                     best = h;
                     bestWin = win;
                 }
             }
-            Try(a);
-            Try(b);
-            Try(c);
             return best;
         }
 
@@ -90,35 +96,46 @@ namespace L2Web.World
         /// Queda (PHYS_Falling) de um pawn posto acima do chao: o chao mais alto abaixo do pe; sem nenhum abaixo, o mais
         /// proximo. null sem chao.
         /// </summary>
-        public static float? FallZ(float feet, float? a, float? b = null, float? c = null)
+        public static float? FallZ(float feet, params float?[] floors)
         {
             float? below = null, near = null;
-            void Try(float? h)
+            if (floors == null) return null;
+            foreach (var h in floors)
             {
-                if (!h.HasValue) return;
+                if (!h.HasValue) continue;
                 if (h.Value <= feet && (!below.HasValue || h.Value > below.Value)) below = h;
                 if (!near.HasValue || Math.Abs(h.Value - feet) < Math.Abs(near.Value - feet)) near = h;
             }
-            Try(a);
-            Try(b);
-            Try(c);
             return below ?? near;
         }
 
         /// <summary>
-        /// Onde o pawn pousa em (x, y) com o pe em `feet`, pelas camadas de `ground` (a mais proxima de feet, a mais alta e
-        /// a mais baixa). `search` = busca do L2_Teleport (o proprio jogador); senao queda. null enquanto nao houver chao
-        /// (geodata do lugar ainda nao carregado).
+        /// Novo Z do pawn que pousa em (x, y) com o pe em `feet` (`keepZ` = Z atual, mantido quando nao da para confiar no
+        /// chao); null enquanto o chao do lugar nao for conhecido (geodata ainda nao carregado). `search` = busca do
+        /// L2_Teleport (o proprio jogador); senao queda.
+        /// Com `layers` (todas as camadas da celula) a regra e a do original. Sem elas, so com `ground` (a camada mais
+        /// proxima de zRef, entre a mais alta e a mais baixa): celula de uma camada pousa igual; multicamada so ate
+        /// MultiLayerTrust do pe.
         /// </summary>
-        public static float? Land(Func<float, float, float, float?> ground, float x, float y, float feet, bool search)
+        public static float? Land(Func<float, float, float, float?> ground, Func<float, float, IReadOnlyList<float>> layers,
+            float x, float y, float feet, float keepZ, bool search)
         {
+            var all = layers?.Invoke(x, y);
+            if (all != null && all.Count > 0)
+            {
+                var hs = new float?[all.Count];
+                for (var i = 0; i < hs.Length; i++) hs[i] = all[i];
+                return (search ? LandingZ(feet, hs) : null) ?? FallZ(feet, hs);
+            }
             if (ground == null) return null;
             var near = ground(x, y, feet);
             if (!near.HasValue) return null;
             var top = ground(x, y, FarRef);
             var low = ground(x, y, -FarRef);
-            if (search) return LandingZ(feet, near, top, low) ?? FallZ(feet, near, top, low);
-            return FallZ(feet, near, top, low);
+            var multi = top.HasValue && low.HasValue && top.Value != low.Value;
+            var z = search ? LandingZ(feet, near, top, low) : FallZ(feet, near, top, low);
+            if (!multi) return z ?? FallZ(feet, near, top, low);
+            return z.HasValue && Math.Abs(z.Value - feet) <= MultiLayerTrust ? z.Value : keepZ;
         }
 
         public static float Dist3(float ax, float ay, float az, float bx, float by, float bz)

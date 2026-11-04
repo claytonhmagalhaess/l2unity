@@ -249,6 +249,7 @@ namespace L2Web.World
                 var d = Turning * TurnSpeed * dt;
                 Motion.Yaw = Motion.DesiredYaw = (Motion.Yaw + d + 65536) % 65536;
             }
+            Motion.Layers = world?.GroundLayers;
             var landing = Motion.Landing;
             var z0 = Motion.Z;
             var moved = Motion.Step(dt, ground, target);
