@@ -350,7 +350,14 @@ namespace L2Web.UI
             });
             L2Events.Register(Ev.EV_RefineryRefineResult, p =>
             {
-                R.RefineResult(p);
+                // RefineryWnd.uc:670-672: Result 0 = OnClickCancelButton (fecha a janela)
+                if (!R.RefineResult(p))
+                {
+                    refineAt = -1;
+                    R.P1 = R.P2 = R.P3 = R.P4 = false;
+                    Refinery.Hide();
+                    return;
+                }
                 RenderRefinery();
             });
             Refinery.OnClick("btnRefine", () =>

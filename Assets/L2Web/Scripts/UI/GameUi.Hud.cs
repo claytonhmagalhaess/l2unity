@@ -318,6 +318,7 @@ namespace L2Web.UI
         {
             var now = LoadTrack.Now();
             StatusWnd.TickRegen();
+            PartyMatch?.Hook(Router());
             foreach (var (t, until) in buffTimers)
             {
                 if (!t) continue;

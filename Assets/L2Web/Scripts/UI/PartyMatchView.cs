@@ -16,8 +16,10 @@ namespace L2Web.UI
         public readonly WaitListScript W = new(), OutW = new();
         public readonly UnionScript U = new();
         public readonly DuelScript D = new();
-        /// <summary>RequestDuelAnswerStart(type, rejeitando, resposta): falta no Net (pedido 0032).</summary>
-        public Func<int, int, int, byte[]> DuelAnswer;
+        /// <summary>RequestDuelAnswerStart(type, rejeitando, resposta): SocialPackets.DuelAnswerStart (aCis le tipo e aceito).</summary>
+        public Func<int, int, int, byte[]> DuelAnswer = (type, _, answer) => SocialPackets.DuelAnswerStart(type, answer == 1);
+        /// <summary>Esconde sem o OnSendPacketWhenHiding (o servidor fechou: EV_PartyMatchRoomStart/Close).</summary>
+        bool quietHide;
         readonly GameUi ui;
         readonly Action<byte[]> send;
         readonly L2ListCtrl rooms, members, wait, outWait, parties, partyMembers;
@@ -90,11 +92,11 @@ namespace L2Web.UI
                     new L2ListCtrl.Cell { Text = r.Members + "/" + r.MaxMembers },
                 }));
             });
-            L2Events.Register(Ev.EV_PartyMatchRoomStart, _ => Match.Hide());
-            // OnSendPacketWhenHiding: RequestExitPartyMatchingWaitingRoom; OnHide fecha o criar sala
+            L2Events.Register(Ev.EV_PartyMatchRoomStart, _ => QuietHide(Match));
+            // OnSendPacketWhenHiding: RequestExitPartyMatchingWaitingRoom (so quando o jogador fecha); OnHide fecha o criar sala
             Match.OnClose = () =>
             {
-                send(PartyMatchPackets.RequestExitPartyMatchingWaitingRoom());
+                if (!quietHide) send(PartyMatchPackets.RequestExitPartyMatchingWaitingRoom());
                 MakeRoom.Hide();
             };
             Match.OnClick("RefreshBtn", () => RoomList(1));
@@ -210,7 +212,7 @@ namespace L2Web.UI
             L2Events.Register(Ev.EV_PartyMatchRoomClose, _ =>
             {
                 R.Started = false;
-                Room.Hide();
+                QuietHide(Room);
                 if (!R.RequestedExit) return;
                 RoomList(1);
                 MakeRoom.Hide();
@@ -236,6 +238,16 @@ namespace L2Web.UI
                 L2Param.ParseInt(p, "ColorB", ref b);
                 Room.Log("PartyRoomChatWindow")?.Add(msg, "sys", new Color32((byte)r, (byte)g, (byte)b, 255));
             });
+            // OnCompleteEditBox (PartyMatchRoomWnd.uc:487-497): ProcessPartyMatchChatMessage e limpa o campo [I: Say2 tipo 14,
+            // PARTYMATCH_ROOM, o canal em que o EV_PartyMatchChatMessage chega]
+            var chat = Room.Edit("PartyRoomChatEditBox");
+            if (chat)
+                chat.onSubmit.AddListener(t =>
+                {
+                    if (!string.IsNullOrEmpty(t)) send(GamePackets.Say2(t, 14));
+                    chat.text = "";
+                    chat.ActivateInputField();
+                });
             Room.OnClick("WaitListButton", () =>
             {
                 M.WaitListOpen = !M.WaitListOpen;
@@ -263,6 +275,7 @@ namespace L2Web.UI
             // OnSendPacketWhenHiding: sair pela moldura tambem fecha a busca de vez
             Room.OnClose = () =>
             {
+                if (quietHide) return;
                 if (exiting)
                 {
                     exiting = false;
@@ -276,6 +289,42 @@ namespace L2Web.UI
         }
 
         bool exiting;
+
+        /// <summary>HideWindow pelo script (resposta do servidor): sem o pacote de saida do OnClose.</summary>
+        void QuietHide(L2Wnd w)
+        {
+            quietHide = true;
+            try
+            {
+                w.Hide();
+            }
+            finally
+            {
+                quietHide = false;
+            }
+        }
+
+        InterfaceRouter hooked;
+
+        /// <summary>
+        /// Convites sem EV_ que o engine pergunta direto (ExAskJoinPartyRoom FE:34 e ExAskJoinMPCC FE:27): DialogBox com
+        /// sm1727 / sm1529 e a resposta AnswerJoinPartyRoom / RequestExAcceptJoinMPCC. O router nasce a cada conexao, entao o
+        /// GameUi chama isto no Tick.
+        /// </summary>
+        public void Hook(InterfaceRouter r)
+        {
+            if (r == null || r == hooked) return;
+            hooked = r;
+            r.OnAskJoinPartyRoom = name => AskJoin(1727, name, ok => send(PartyMatchPackets.AnswerJoinPartyRoom(ok)));
+            r.OnAskJoinMPCC = name => AskJoin(1529, name, ok => send(PartyMatchPackets.RequestExAcceptJoinMPCC(ok)));
+        }
+
+        void AskJoin(int sm, string name, Action<bool> answer)
+        {
+            if (ui.Dialog.S.InUse) ui.Dialog.Hide();
+            var text = GameData.SystemMessage(sm, new List<string> { name ?? "" }).Text;
+            ui.Dialog.Ask(EDialogType.OKCancel, text, "PartyMatchWnd", (ok, _) => answer(ok));
+        }
 
         void ExitRoom() => send(R.Exit() ? PartyMatchPackets.RequestDismissPartyRoom(R.Number) : PartyMatchPackets.RequestWithdrawPartyRoom(R.Number));
 
