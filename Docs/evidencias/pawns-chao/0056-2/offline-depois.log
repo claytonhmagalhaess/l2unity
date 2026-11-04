@@ -1,0 +1,33 @@
+791b1c3 #0056: varredura do mapa inteiro; trace ate z-900 e camada certa do geodata em varios andares
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+== turek (-89839,105362,-3584)
+report: "terreno: 9 pedaços do geodata em volta de -89839, 105362 | cenário: 2076 objetos de 144 malhas em 17_21 (636 mil triângulos) · BSP: 10 mil triângulos em 17_21 | terreno do Unreal: 17_21"
+"Z=-3584 desenho=-898,39,-3606,514 terreno=-3606,514"
+captura pawns-chao_turek_depois.png
+0 entradas
+== gludio_campo (-12000,170000,-3536)
+report: "terreno: 9 pedaços do geodata em volta de -12000, 170000 | cenário: 2579 objetos de 208 malhas em 19_23 (629 mil triângulos) · BSP: 5 mil triângulos em 19_23 | terreno do Unreal: 19_23"
+"Z=-3536 desenho=-120,-3570,4 terreno=-3570,399"
+captura pawns-chao_gludio_campo_depois.png
+0 entradas
+== dion_campo (23000,154000,-2960)
+report: "terreno: 9 pedaços do geodata em volta de 23000, 154000 | cenário: 1993 objetos de 315 malhas em 20_22 (507 mil triângulos) · BSP: 5 mil triângulos em 20_22 | terreno do Unreal: 20_22"
+"Z=-2960 desenho=230,-2988,413 terreno=-2988,413"
+captura pawns-chao_dion_campo_depois.png
+0 entradas
+== dragon_valley (73024,118485,-3704)
+report: "terreno: 9 pedaços do geodata em volta de 73024, 118485 | cenário: 1217 objetos de 59 malhas em 22_21 (344 mil triângulos) | terreno do Unreal: 22_21"
+"Z=-3704 desenho=730,24,-3725,82 terreno=-3725,82"
+captura pawns-chao_dragon_valley_depois.png
+0 entradas
+== giran_fora (85000,140000,-3512)
+report: "terreno: 9 pedaços do geodata em volta de 85000, 140000 | cenário: 1936 objetos de 287 malhas em 22_22 (426 mil triângulos) · BSP: 5 mil triângulos em 22_22 | terreno do Unreal: 22_22"
+"Z=-3512 desenho=850,-3546,389 terreno=-3546,39"
+captura pawns-chao_giran_fora_depois.png
+0 entradas
+== giran_praca (83400,147943,-3400)
+report: "terreno: 9 pedaços do geodata em volta de 83400, 147943 | cenário: 1936 objetos de 287 malhas em 22_22 (426 mil triângulos) · BSP: 5 mil triângulos em 22_22 | terreno do Unreal: 22_22"
+"Z=-3400 desenho=834,-3432 terreno=-3570,341"
+captura pawns-chao_giran_praca_depois.png
+0 entradas
