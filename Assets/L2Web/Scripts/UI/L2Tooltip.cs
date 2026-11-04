@@ -247,8 +247,8 @@ namespace L2Web.UI
 
         /// <summary>
         /// ReturnTooltip_NTT_ITEM (ToolTip.uc:213-822): "Inventory", "InventoryPrice1", "InventoryPrice2",
-        /// "InventoryPrice1HideEnchant", "InventoryPrice1HideEnchantStackable", "InventoryPrice2PrivateShop". Sem os conjuntos
-        /// (GetSetItemIDList) e as opcoes do augment (UIDATA_REFINERYOPTION): o cliente do porte nao tem essas tabelas.
+        /// "InventoryPrice1HideEnchant", "InventoryPrice1HideEnchantStackable", "InventoryPrice2PrivateShop", com o bloco de
+        /// conjunto do ItemName-e (#0050). Sem as opcoes do augment (UIDATA_REFINERYOPTION): so o cabecalho e o ss1491.
         /// </summary>
         public static CustomTooltip Item(TooltipItem it, string type = "Inventory")
         {
@@ -319,6 +319,7 @@ namespace L2Web.UI
                     if (it.SpiritshotCount > 0) b.Option(496, "X " + it.SpiritshotCount, true, true, false);
                     b.Option(52, it.Weight.ToString(), true, true, false);
                     if (it.MpConsume != 0) b.Option(320, it.MpConsume.ToString(), true, true, false);
+                    if (it.RefineryOp1 != 0 || it.RefineryOp2 != 0) Refinery(b, it);
                     break;
                 }
                 case 1:
@@ -333,8 +334,7 @@ namespace L2Web.UI
                     else
                     {
                         if (slot.Length > 0) b.Option(0, slot, false, true, false);
-                        // IsMagicalArmor (FUN_10164d80): armadura de mago [I] = ArmorType 3
-                        if (it.ArmorType == 3) b.Option(388, it.MpBonus.ToString(), true, true, false);
+                        if (IsMagicalArmor(it)) b.Option(388, it.MpBonus.ToString(), true, true, false);
                         b.Option(95, ItemInfoText.Def(it.CrystalType, it.Enchanted, it.PhysicalDefense).ToString(), true, true, false);
                         b.Option(52, it.Weight.ToString(), true, true, false);
                     }
@@ -377,8 +377,170 @@ namespace L2Web.UI
                 large = true;
                 b.Text(it.Description, Desc, offY: 6, br: true, one: false);
             }
+            if (it.ClassId > 0 && SetBlock(b, it)) large = true;
             if (large) b.T.MinimumWidth = MinimumWidth;
             return b.T;
+        }
+
+        /// <summary>UIDATA_REFINERYOPTION.GetQuality (sem a tabela no porte: 0, a cor padrao) [?].</summary>
+        public static Func<int, int> RefineryQuality = _ => 0;
+
+        /// <summary>UIDATA_REFINERYOPTION.GetOptionDescription: ate 3 linhas da opcao (sem a tabela no porte: nenhuma) [?].</summary>
+        public static Func<int, string[]> RefineryOptionDescription = _ => null;
+
+        /// <summary>GetRefineryColor (ToolTip.uc:1906-1936): 2 azul, 3 roxo, 4 vermelho; 1 e o resto 187/181/138.</summary>
+        public static Color32 RefineryColor(int quality) => quality switch
+        {
+            2 => new Color32(132, 174, 216, 255),
+            3 => new Color32(193, 112, 202, 255),
+            4 => new Color32(225, 109, 109, 255),
+            _ => new Color32(187, 181, 138, 255),
+        };
+
+        /// <summary>
+        /// Efeito do aumento na arma (ToolTip.uc:452-526): espaco, ss1490 em branco, as linhas das duas opcoes na cor da
+        /// qualidade do RefineryOp2 e ss1491 na mesma cor. Sem o RefineryOp2 a cor fica 0,0,0 (as variaveis locais do script).
+        /// </summary>
+        static void Refinery(Builder b, TooltipItem it)
+        {
+            b.Blank(12);
+            b.Option(1490, "", true, false, false);
+            b.Color(255, 255, 255);
+            var c = it.RefineryOp2 != 0 ? RefineryColor(RefineryQuality(it.RefineryOp2)) : new Color32(0, 0, 0, 255);
+            foreach (var op in new[] { it.RefineryOp1, it.RefineryOp2 })
+            {
+                if (op == 0 || RefineryOptionDescription(op) is not { } lines) continue;
+                foreach (var l in lines)
+                {
+                    if (string.IsNullOrEmpty(l)) continue;
+                    b.Option(0, l, false, true, false);
+                    b.Color(c);
+                }
+            }
+            b.Option(1491, "", true, false, false);
+            b.Color(c);
+            if (!string.IsNullOrEmpty(it.Description)) b.Blank(12);
+        }
+
+        /// <summary>Quantos pares (lista de ids, efeito) de conjunto o ToolTip.uc percorre (TOOLTIP_SETITEM_MAX).</summary>
+        public const int SetItemMax = 3;
+
+        public static readonly Color32 SetPieceNormal = new(112, 115, 123, 255), SetPieceEnable = new(176, 185, 205, 255);
+        public static readonly Color32 SetEffectNormal = new(128, 127, 103, 255), SetEffectEnable = new(183, 178, 122, 255);
+        public static readonly Color32 SetEnchantNormal = new(74, 92, 104, 255), SetEnchantEnable = new(111, 146, 169, 255);
+
+        /// <summary>Dados de conjunto (UIDATA_ITEM): lista de ids do par idx, efeito do par, efeito e contagem do encantamento.</summary>
+        public static Func<int, int, int[]> SetItemIdList = L2TooltipData.SetItemIdList;
+        public static Func<int, int, string> SetItemEffect = L2TooltipData.SetItemEffect;
+        public static Func<int, string> SetItemEnchantEffect = L2TooltipData.SetItemEnchantEffect;
+        public static Func<int, int> SetItemEnchantCount = L2TooltipData.SetItemEnchantCount;
+        /// <summary>UIDATA_ITEM.GetItemName (vazio = a linha da peca nao entra).</summary>
+        public static Func<int, string> ItemNameOf = id => L2TooltipData.ItemName(id)?.Name ?? "";
+
+        /// <summary>
+        /// NCInventoryManager da lista de equipados (lista 2, GetEquipItemCount le +0x1c): FindItem pelo ServerID
+        /// (FUN_101b2b30) e FindItemByClassID (FUN_101b2b50) com o encantamento da peca (FUN_101b2720). -1 = nao equipado.
+        /// </summary>
+        public static Func<int, bool> EquippedServer = _ => false;
+        public static Func<int, int> EquippedClassEnchant = _ => -1;
+
+        /// <summary>
+        /// IsMagicalArmor (UIScript, FUN_10164d80): pelo ClassID nos dados do cliente [I] ArmorType 3 (robe); sem dados, o
+        /// ArmorType do item.
+        /// </summary>
+        public static Func<TooltipItem, bool> IsMagicalArmor = it => (ItemStats.Of(it.ClassId)?.ArmorType ?? it.ArmorType) == 3;
+
+        /// <summary>
+        /// Bloco de conjunto do ReturnTooltip_NTT_ITEM (ToolTip.uc:727-805): para idx 0..2 as pecas da lista (menos o proprio
+        /// item) em 112/115/123 com Condition Type=Equip, e o efeito do par em 128/127/103 (Type=SetEffect); no fim o efeito do
+        /// encantamento em 74/92/104 (Type=EnchantEffect). As cores de "ativo" saem na hora de desenhar (ConditionColor).
+        /// </summary>
+        static bool SetBlock(Builder b, TooltipItem it)
+        {
+            var any = false;
+            for (var idx = 0; idx < SetItemMax; idx++)
+            {
+                foreach (var id in SetItemIdList(it.ClassId, idx))
+                {
+                    any = true;
+                    if (id == it.ClassId) continue;
+                    var name = ItemNameOf(id);
+                    if (string.IsNullOrEmpty(name)) continue;
+                    b.Text(name, SetPieceNormal, offY: 6, br: true,
+                        cond: Cond("Type", "Equip", "ServerID", it.ServerId, "EquipID", id, "NormalColor", "112,115,123", "EnableColor", "176,185,205"));
+                }
+                var eff = SetItemEffect(it.ClassId, idx);
+                if (string.IsNullOrEmpty(eff)) continue;
+                any = true;
+                b.Text(eff, SetEffectNormal, offY: 6, br: true, one: false,
+                    cond: Cond("Type", "SetEffect", "ServerID", it.ServerId, "ClassID", it.ClassId, "EffectID", idx, "NormalColor", "128,127,103", "EnableColor",
+                        "183,178,122"));
+            }
+            var ench = SetItemEnchantEffect(it.ClassId);
+            if (!string.IsNullOrEmpty(ench))
+            {
+                any = true;
+                b.Text(ench, SetEnchantNormal, offY: 6, br: true, one: false,
+                    cond: Cond("Type", "EnchantEffect", "ServerID", it.ServerId, "ClassID", it.ClassId, "NormalColor", "74,92,104", "EnableColor", "111,146,169"));
+            }
+            return any;
+        }
+
+        /// <summary>ParamAdd em sequencia (chave, valor, ...).</summary>
+        static string Cond(params object[] kv)
+        {
+            var o = "";
+            for (var i = 0; i + 1 < kv.Length; i += 2) o = L2Param.Add(o, (string)kv[i], kv[i + 1].ToString());
+            return o;
+        }
+
+        static int CondInt(string cond, string key)
+        {
+            var v = 0;
+            L2Param.ParseInt(cond, key, ref v);
+            return v;
+        }
+
+        static bool AllEquipped(int classId, int lastIdx, int minEnchant)
+        {
+            for (var idx = 0; idx <= lastIdx; idx++)
+                foreach (var id in SetItemIdList(classId, idx))
+                    if (EquippedClassEnchant(id) < Math.Max(0, minEnchant)) return false;
+            return true;
+        }
+
+        /// <summary>
+        /// Cor de um item com Condition (NWndUtil::DrawItemList, nw:0x10067f50.., 00003.c:14897-15290): Equip = ativa se o
+        /// item do tooltip (ServerID) e a peca (EquipID) estao equipados; SetEffect = ativa se o item esta equipado e todas as
+        /// pecas das listas 0..EffectID tambem; EnchantEffect = ativa se o item esta equipado, a contagem &gt;= 1 e todas as
+        /// pecas das 3 listas estao equipadas com encantamento &gt;= a contagem. Sem Condition, a cor do item.
+        /// </summary>
+        public static Color32 ConditionColor(DrawItem d)
+        {
+            var c = d.Condition ?? "";
+            if (c.Length == 0) return d.Color;
+            var type = "";
+            L2Param.ParseString(c, "Type", ref type);
+            var server = CondInt(c, "ServerID");
+            bool on;
+            switch (type)
+            {
+                case "Equip":
+                    on = EquippedServer(server) && EquippedClassEnchant(CondInt(c, "EquipID")) >= 0;
+                    return on ? SetPieceEnable : SetPieceNormal;
+                case "SetEffect":
+                    on = EquippedServer(server) && AllEquipped(CondInt(c, "ClassID"), CondInt(c, "EffectID"), 0);
+                    return on ? SetEffectEnable : SetEffectNormal;
+                case "EnchantEffect":
+                {
+                    var cls = CondInt(c, "ClassID");
+                    var n = SetItemEnchantCount(cls);
+                    on = n >= 1 && EquippedServer(server) && AllEquipped(cls, SetItemMax - 1, n);
+                    return on ? SetEnchantEnable : SetEnchantNormal;
+                }
+                default:
+                    return d.Color;
+            }
         }
 
         /// <summary>
@@ -594,7 +756,7 @@ namespace L2Web.UI
                         o.Runs.Add(new Run
                         {
                             Item = d, Text = grade ? s.Substring(1, 6) : s, Grade = grade, X = x, Y = lineY + d.OffY, W = size.x, H = size.y, WrapW = wrap,
-                            Color = d.Color.a == 0 ? DefaultColor : d.Color, Line = lines,
+                            Color = ConditionColor(d) is var col && col.a == 0 ? DefaultColor : col, Line = lines,
                         });
                         x += size.x;
                         lineH = Mathf.Max(lineH, d.OffY + size.y);

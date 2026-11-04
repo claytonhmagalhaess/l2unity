@@ -12,7 +12,7 @@ TXT = sys.argv[1] if len(sys.argv) > 1 else r'C:\Users\Clayton\workspace-claude\
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Assets',
                                                          'StreamingAssets', 'L2Web', 'cache', 'itemdata.json')
 W_COLS = ['weight', 'material', 'durability', 'weapon_type', 'crystal_type', 'patt', 'matt', 'shield_pdef', 'shield_rate', 'avoid_mod',
-          'speed', 'SS_count', 'SPS_count', 'body_part']
+          'speed', 'SS_count', 'SPS_count', 'body_part', 'mp_consume']
 A_COLS = ['weight', 'material', 'durability', 'armor_type', 'crystal_type', 'avoid_mod', 'pdef', 'mdef', 'mpbonus', 'body_part']
 
 

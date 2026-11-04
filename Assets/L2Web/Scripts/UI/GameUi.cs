@@ -242,6 +242,14 @@ namespace L2Web.UI
         /// Cria a interface em `root` (um RectTransform em tela cheia, ex.: filho de UiRoot.Rect). Precisa de
         /// GameData.LoadTexts e L2WndUtil.LoadL2Ui prontos.
         /// </summary>
+        /// <summary>FindItemByClassID na lista de equipados: o encantamento da peca, ou -1 se nao estiver equipada.</summary>
+        int EquippedEnchant(int classId)
+        {
+            foreach (var e in items.Values)
+                if (e.Equipped && e.ItemId == classId) return e.Enchant;
+            return -1;
+        }
+
         public GameUi(RectTransform root, WorldT world, UiDeps deps)
         {
             Root = root;
@@ -249,6 +257,9 @@ namespace L2Web.UI
             this.world = world;
             this.deps = deps ?? new UiDeps();
             Layer = new L2Layer(root);
+            // cores "ativas" do bloco de conjunto dos tooltips: a lista de equipados do NCInventoryManager
+            L2Tooltip.EquippedServer = sid => items.TryGetValue(sid, out var e) && e.Equipped;
+            L2Tooltip.EquippedClassEnchant = EquippedEnchant;
             Shop = new UiWindow("shop", "Loja", root, 380, 380, 100);
             Npc = new NpcHtmlWnd(Layer);
             Board = new BoardView(Layer, b => this.deps.Send(b), HtmlAct);
