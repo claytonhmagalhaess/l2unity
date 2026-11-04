@@ -192,25 +192,21 @@ namespace L2Web.UI
                 }
                 if (!w.Visible) w.Show();
                 var big = S.Big;
+                // cor e fonte antes do texto (o autosize mede o texto com a fonte certa)
+                foreach (var n in new[] { "TextBox" + i, "TextBox" + i + "-0", "TextBox" + i + "-1", "TextBox" + i + "-1-0", "TextBoxsm" + i, "TextBoxsm" + i + "-1" })
+                {
+                    var t = w.TextEl(n);
+                    if (!t) continue;
+                    if (!n.EndsWith("-0")) t.color = S.Color;
+                    // [I] a fonte grande do nativo nao foi lida: 22 nas caixas grandes
+                    if (!n.Contains("sm")) t.fontSize = 22;
+                }
                 w.Text("TextBox" + i, big ? S.Line1 : "");
                 w.Text("TextBox" + i + "-0", big ? S.Line1 : "");
                 w.Text("TextBox" + i + "-1", big ? S.Line2 : "");
                 w.Text("TextBox" + i + "-1-0", big ? S.Line2 : "");
                 w.Text("TextBoxsm" + i, big ? "" : S.Line1);
                 w.Text("TextBoxsm" + i + "-1", big ? "" : S.Line2);
-                foreach (var n in new[] { "TextBox" + i, "TextBox" + i + "-1", "TextBoxsm" + i, "TextBoxsm" + i + "-1" })
-                {
-                    var t = w.TextEl(n);
-                    if (!t) continue;
-                    t.color = S.Color;
-                    // [I] a fonte grande do nativo nao foi lida: 22 nas caixas grandes
-                    if (big && !n.Contains("sm")) t.fontSize = 22;
-                }
-                foreach (var n in new[] { "TextBox" + i + "-0", "TextBox" + i + "-1-0" })
-                {
-                    var t = w.TextEl(n);
-                    if (t && big) t.fontSize = 22;
-                }
                 if (i == 2) w.ShowCtrl("texturetype1", S.Background);
                 var cg = w.El.TryGetComponent<CanvasGroup>(out var g) ? g : w.El.gameObject.AddComponent<CanvasGroup>();
                 cg.alpha = S.Alpha / 255f;

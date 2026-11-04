@@ -1122,10 +1122,14 @@ namespace L2Web.UI
             // [?] caixas de largura 0 no xdat ficam como texto livre (AutoText): as cadeias delas nao foram conferidas
             if (r.W <= 0 || r.H <= 0 || Mathf.Abs(r.W - w) < 0.5f) return;
             var c = ctrls[name];
-            var nr = new L2Rect(r.X, r.Y, w, r.H);
+            // o ponto da propria ancora fica no lugar (TOP_CENTER encolhe pelos dois lados: OnScreenMessageWnd2.TextBox2)
+            var own = Al(c.Anchor?.Parent ?? "TOP_LEFT");
+            var nx = r.X + (r.W - w) * own.x;
+            var nr = new L2Rect(nx, r.Y, w, r.H);
             rects[name] = nr;
             instRects[c] = nr;
             el.sizeDelta = new Vector2(w, el.sizeDelta.y);
+            if (Mathf.Abs(nx - r.X) > 0.01f) el.anchoredPosition = new Vector2(el.anchoredPosition.x + (nx - r.X), el.anchoredPosition.y);
             Reflow(name, 0);
         }
 
