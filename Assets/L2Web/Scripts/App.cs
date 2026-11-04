@@ -2580,8 +2580,15 @@ namespace L2Web
         void OnKey(Key key, bool alt, bool ctrl, bool shift)
         {
             if (gc == null) return;
-            var action = L2Shortcuts.Find("GamingState", L2Shortcuts.Vk(key), ctrl, alt, shift);
-            if (action != null)
+            // NConsoleWnd::HandleKeyboardInput (03 §1 da #0024): EnterChatting, prioridade dos modificadores, tabela do estado
+            var (kind, action) = L2Shortcuts.Handle("GamingState", L2Shortcuts.Vk(key), alt, shift, ctrl,
+                L2Options.GetBool("Game", "EnterChatting", true), UiRoot.TypingInField());
+            if (kind == L2Shortcuts.KeyResult.ChatFocus)
+            {
+                ui.Command("ChatWndSetFocus", new Dictionary<string, string>(), ctrl, shift);
+                return;
+            }
+            if (kind == L2Shortcuts.KeyResult.Command)
             {
                 RunCommand(action, ctrl, shift);
                 return;
