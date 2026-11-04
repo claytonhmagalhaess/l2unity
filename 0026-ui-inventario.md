@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-inventario` |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T2; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -32,17 +32,28 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-11-03 — bloqueada: aguardando #0046 no main. C→S `RequestUnEquipItem` 0x11, `RequestDestroyItem` 0x59 e `RequestCrystallizeItem` 0x72 não existem no `main` (o `RequestDropItem` já existe). Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
 - 2026-11-03 — desbloqueada (#0046 no `main`); branch `feat/ui-inventario` criado de `feat/ui-barra-atalhos` (ef46695); estado `fazendo`.
+- 2026-11-03 — `InventoryScript` e a ligação no `GameUi` (`d0c6e9a`).
+- 2026-11-03 — `sh Docs/tools/run_tests.sh`: 618/618 (exit 0).
+- 2026-11-03 — pedido 0027 (`App.cs` liga o `GroundAt`); evidências offline e linha K19 (`5d75c28`). aCis fora do ar.
 
 ## Decisões e REA
 
 <!-- o que foi descoberto ou decidido, marcado como Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
 
+- [O] Ramos portados de `IL:InventoryWnd.uc`: clique direito e duplo = `UseItem` (`:156-163`); `OnDropItem` (`:184-345`) por origem e destino; `OnDropItemSource("Console")` (`:347-383`) com `GetClickLocation`; `HandleDialogOK` (`:1100-1140`), com número vazio largando 1. Alt no início do arrasto (`nw:0x1002eb00`) põe a pilha toda em `AllItemCount`.
+- [O] O ramo "mover para o fim" do script (soltar fora de um slot na mesma lista) começa do índice −1 e não usa o item arrastado (bug do original). O porte move o item arrastado para o fim.
+- [I] Receita: pelo nome do item ("Recipe…"), porque o tipo do etcitem não está no porte. [V] `PopMsgNum` sempre 0 (sem o etcitemgrp).
+- [I] Empilhável = Type2 ≥ 3 (o pacote não traz o ConsumeType). Cristalizável = grau > 0 e arma/armadura; habilidade = skill 248 aprendida.
+- [I] `PetAPI.RequestGetItemFromPet(id, n, bEquip)`: o pacote não tem o bEquip; o porte só tira o item do pet.
+- [I] Som `IFST_TRASH_BASKET` não tocado (o nome do som do console não foi lido).
+- A ordem do inventário fica na memória (o `SaveItemOrder` grava num arquivo do cliente, não portado).
+
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits:** `d0c6e9a` (código e `InventoryTests`), `5d75c28` (evidências e K19).
+- **Testes:** `InventoryTests` (usar, equipar/desequipar, lixeira, cristalizar, largar, pet, reordenar); `sh Docs/tools/run_tests.sh` 618/618.
+- **Falta / fora do escopo:** pedido 0027 (largar onde o mouse soltou); receita/PopMsgNum pelo etcitemgrp; gravar a ordem dos itens; teste ao vivo. Pedidos: `pedidos/0027-ui-groundat-app.md`.
 
 ## Pedidos
 
-Nenhum por enquanto.
+- [0027 — App.cs: GroundAt para largar item](pedidos/0027-ui-groundat-app.md)
