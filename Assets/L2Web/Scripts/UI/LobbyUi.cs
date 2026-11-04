@@ -96,6 +96,25 @@ namespace L2Web.UI
             return m;
         }
 
+        /// <summary>
+        /// Janela de funcoes menor que o 120x138 (o login so com Options, #0048): lobby_menuback em duas partes, o topo
+        /// (altura - 4) e as 4 ultimas linhas da arte (134..138), para a borda de baixo continuar desenhada.
+        /// </summary>
+        public static RectTransform ShortMenu(RectTransform screen, NRect rect, float[] ys, (string Text, System.Action Click)[] buttons, out Button[] made)
+        {
+            var m = rect.Apply(UiRoot.Box("lb-menu", screen));
+            const string tex = "L2UI_CH3.LobbyWnd.lobby_menuback";
+            var h = rect.H;
+            var top = UiRoot.Box("menuback_top", m, 0, 0, rect.W, h - 4);
+            L2WndUtil.Paint(top, tex, rect.W, h - 4, PaintMode.Normal, 0, 0, rect.W, h - 4);
+            var bottom = UiRoot.Box("menuback_bottom", m, 0, h - 4, rect.W, 4);
+            L2WndUtil.Paint(bottom, tex, rect.W, 4, PaintMode.Normal, 0, 134, rect.W, 4);
+            made = new Button[buttons.Length];
+            for (var i = 0; i < buttons.Length; i++)
+                made[i] = LobbySkin.BigButton(m, buttons[i].Text, NativeLayout.FunctionButton(ys[i]), buttons[i].Click);
+            return m;
+        }
+
         /// <summary>Logos do login e da selecao de servidor (NativeLayout.StartLogo/MiniLogo), em tamanho natural.</summary>
         public static void Logos(RectTransform screen)
         {
@@ -121,6 +140,30 @@ namespace L2Web.UI
         /// <summary>msg(el, text, kind): kind "" | "err" | "ok".</summary>
         /// <summary>A faixa de mensagens (NCMessageWnd) comum as telas do lobby; null antes de BuildScreens.</summary>
         public static LobbyMessageBand Band;
+
+        static LobbyDialogBox dialog;
+
+        /// <summary>O NCGaraDialogBox do lobby, criado junto da faixa (null antes de BuildScreens).</summary>
+        public static LobbyDialogBox Dialog
+        {
+            get
+            {
+                if (dialog == null && Band != null && Band.Root) dialog = new LobbyDialogBox((RectTransform)Band.Root.parent);
+                return dialog;
+            }
+        }
+
+        /// <summary>NConsoleWnd::ServerClose fora do jogo: caixa com a systemmsg 127; o OK chama `gotoLogin`.</summary>
+        public static void ShowServerClose(System.Action gotoLogin)
+        {
+            var d = Dialog;
+            if (d == null)
+            {
+                gotoLogin?.Invoke();
+                return;
+            }
+            d.ShowServerClose(gotoLogin);
+        }
 
         public static void Msg(Text t, string text, string kind = "")
         {

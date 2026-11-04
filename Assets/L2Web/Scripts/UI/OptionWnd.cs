@@ -62,6 +62,21 @@ namespace L2Web.UI
             else Win.Show();
         }
 
+        /// <summary>
+        /// RegisterState("OptionWnd", "LoginState") (OptionWnd.uc:112-113): a mesma janela abre na tela de login. O porte a
+        /// desenha por cima de `host` (a tela de login) e a devolve a camada do jogo com ReturnHome.
+        /// </summary>
+        public void MoveTo(RectTransform host)
+        {
+            if (host && Win.El.parent != host) Win.El.SetParent(host, false);
+        }
+
+        /// <summary>Devolve a janela a camada onde foi criada (a do jogo).</summary>
+        public void ReturnHome() => MoveTo(Win.Layer.El);
+
+        /// <summary>A janela esta aberta dentro de `host`.</summary>
+        public bool ShownIn(RectTransform host) => Win.Visible && Win.El.parent == host;
+
         // ------------------------------------------------------------ leitura (Init*Option)
         void InitAll()
         {

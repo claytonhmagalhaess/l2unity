@@ -56,6 +56,30 @@ namespace L2Web.UI
         public static readonly float[] LobbyFunctionY = { 20, 45, 95 };
         public static readonly float[] CreateFunctionY = { 20, 45 };
         public static NRect FunctionButton(float y) => new(13, y, 96, 23);
+        /// <summary>
+        /// #0048: o login so tem Options (New Account, Lost Account, Production Team e Replay sairam, a pedido do usuario).
+        /// A janela encolhe para um botao com as margens do original (8 em cima, 8 embaixo) e mantem a borda de baixo em
+        /// H - 62 (a do 120x138 em H - 200), largura e x iguais. Nao e medida do NWindow: e o ajuste da decisao.
+        /// </summary>
+        public static readonly NRect LoginFunctionWnd = new(-154, -62 - 39, 120, 39, 1, 1);
+        public static readonly float[] LoginOnlyOptionsY = { 8 };
+
+        // ---- NCEulaWnd (criada pelo NCConsole em 0x1013f765): SetRect(0.5W - 273, 0.5H - 212, 546, 425), lobby3_back;
+        // texto (NCNoticeInfoWnd) em (6, 6, 536, 375); Agree (sysstring 599, id 0xa000fa) em (196, 396) e Disagree
+        // (sysstring 600, 0xa000fb) em (276, 396), 76x23 com btn1_normal/btn1_normalon (OnCreate 0x10190910)
+        public static readonly NRect Eula = new(-273, -212, 546, 425, 0.5f, 0.5f);
+        public static readonly NRect EulaText = new(6, 6, 536, 375);
+        public static readonly NRect EulaAgree = new(196, 396, 76, 23);
+        public static readonly NRect EulaDisagree = new(276, 396, 76, 23);
+
+        // ---- NCGaraDialogBox (NCConsole+0x228, criada em 0x1013ff90): 306x128 (construtor 0x10012260: +0x348/+0x34c),
+        // CenterCenter; fundo Calculate12_back esticado, warningicon 24x24 em (11, 8), texto #DCDCDC em (41, 9) com largura
+        // W - 48 (OnPaint 0x1000f700); OK (sysstring 140, id 0x1004) sozinho no centro em (W/2 - 38, 99) para os ids
+        // 0x1d/0x1f/0x10/0x50 (FUN_1000f9d0), 76x23 btn1_normal
+        public static readonly NRect GaraDialog = new(-153, -64, 306, 128, 0.5f, 0.5f);
+        public static readonly NRect GaraIcon = new(11, 8, 24, 24);
+        public static readonly NRect GaraText = new(41, 9, 306 - 48, 80);
+        public static readonly NRect GaraCenterOk = new(306 * 0.5f - 38, 99, 76, 23);
 
         // ---- NCLoginServerWnd 316x542 (centralizada), com NCServerSelectWnd (0,0,316,330) e NCServerInfoWnd (0,337,316,205)
         public static readonly NRect LoginServer = new(-158, -271, 316, 542, 0.5f, 0.5f);
