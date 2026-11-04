@@ -12,6 +12,7 @@ Os testes ao vivo rodam na sessão de testes (seção "Testes" do `CLAUDE.md` do
 | `l2webtest4` | `l2webtest4` | #0053 (efeitos de skill; personagens `FxMago` e `FxGuerreiro`) |
 | `l2webtest5` | `l2webtest5` | #0054 (barras de HP) |
 | `l2webtest6` | `l2webtest6` | #0055 (HTML do servidor) |
+| `l2webtest7` | `l2webtest7` | #0056 (pawns no chão fora de Giran) |
 
 Personagens novos nascem no nível 20 em Giran com os buffs do macro `MACRO_FIGHTER_PVP`/`MACRO_MAGE_PVP` (`config\players.properties`, `data\xml\bufferSkills.xml`), entre eles canções e danças de 2 min. O NPC 10002 (Buffer) dá o mesmo macro pelo bypass `npc_<objectId>_MACRO_FIGHTER_PVP`.
 

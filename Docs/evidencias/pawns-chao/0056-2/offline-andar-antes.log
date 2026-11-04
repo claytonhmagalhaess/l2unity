@@ -1,0 +1,20 @@
+eb1f39d Docs: suite no main apos o merge geral (#0026-#0055 e pedidos de App.cs): 879/879
+status: up_to_date errors: 0 warnings: 0
+== cruma_1andar (15012,109656,-9048) -> (15312,109656,-9048)
+report: "terreno: 9 pedaços do geodata em volta de 15012, 109656 | cenário: 3205 objetos de 196 malhas em 20_21 (559 mil triângulos) · BSP: 11 mil triângulos em 20_21 | terreno do Unreal: 20_21"
+parado: "15012;109656;-9048 desenho_y=-9075"
+1s: "15144,79;109656;-3720 desenho_y=-3755"
+3s: "15312;109656;-3656 desenho_y=-3656"
+0 entradas
+== toi (115956,13896,5984) -> (116256,13896,5984)
+report: "terreno: 9 pedaços do geodata em volta de 115956, 13896 | cenário: 2548 objetos de 161 malhas em 23_18 (806 mil triângulos) · BSP: 16 mil triângulos em 23_18 | terreno do Unreal: 23_18"
+parado: "115956;13896;5984 desenho_y=5961"
+1s: "116082,2;13896;10112 desenho_y=10097,31"
+3s: "116256;13896;7360 desenho_y=7343,317"
+0 entradas
+== turek_andando (-89839,105362,-3584) -> (-89539,105362,-3584)
+report: "terreno: 9 pedaços do geodata em volta de -89839, 105362 | cenário: 2076 objetos de 144 malhas em 17_21 (636 mil triângulos) · BSP: 10 mil triângulos em 17_21 | terreno do Unreal: 17_21"
+parado: "-89839;105362;-3584 desenho_y=-3584"
+1s: "-89713,01;105362;-3584 desenho_y=-3584"
+3s: "-89539;105362;-3552 desenho_y=-3552"
+0 entradas
