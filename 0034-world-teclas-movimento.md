@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-teclas-movimento` |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T10; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | world: teclas de movimento e câmera |
 | Criada | 2026-11-03 |
@@ -19,17 +19,20 @@ Ordem: única tarefa da vaga `world` nesta rodada; o branch nasce de `main`. Dep
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Comportamento igual ao Interlude: Espaço/Ctrl sobem e descem voando ou nadando; NumLock corre sem parar; NumPad 7/9/4/6/1/3 zoom e 8/2 altura; PrintScrn captura a tela.
-- [ ] Cada handler segue a linha correspondente de `analises\interface-p166\02_interacoes.md` e `03_teclado.md` (passar o mouse, cliques, Shift/Ctrl/Alt, arrastar, roda, teclas); divergências ficam em Decisões e REA com a evidência.
-- [ ] Pacotes: C→S `MoveBackwardToLocation`, `ValidatePosition` (já usados).
-- [ ] Testes EditMode novos para a lógica (estado da janela, regras de clique e arrasto, montagem dos dados) e `sh Docs/tools/run_tests.sh` sem falhas novas em relação ao `main`.
-- [ ] Capturas em `Docs/evidencias/teclas-movimento/` (offline, ou no aCis local quando estiver no ar) mostrando cada interação do critério.
-- [ ] Linha em `Docs/validacao.md` com o que foi validado e como.
+- [x] Comportamento igual ao Interlude: Espaço/Ctrl sobem e descem voando ou nadando; NumLock corre sem parar; NumPad 7/9/4/6/1/3 zoom e 8/2 altura; PrintScrn captura a tela. — lógica em `Scripts\World` com a REA do engine; **divergência**: Espaço/Ctrl só sobem/descem no modo câmera do 0xf1 `CameraMode` (Decisões). As teclas só agem no jogo depois do pedido 0024 (`App.cs`).
+- [x] Cada handler segue a linha correspondente de `analises\interface-p166_interacoes.md` e `03_teclado.md` (passar o mouse, cliques, Shift/Ctrl/Alt, arrastar, roda, teclas); divergências ficam em Decisões e REA com a evidência.
+- [x] Pacotes: C→S `MoveBackwardToLocation`, `ValidatePosition` (já usados). — o teclado manda `MoveBackwardToLocation` (`GamePackets.MoveTo`); o `ValidatePosition` não mudou.
+- [x] Testes EditMode novos para a lógica (estado da janela, regras de clique e arrasto, montagem dos dados) e `sh Docs/tools/run_tests.sh` sem falhas novas em relação ao `main`. — `UserIniKeysTests` (14); 427/427.
+- [x] Capturas em `Docs/evidencias/teclas-movimento/` (offline, ou no aCis local quando estiver no ar) mostrando cada interação do critério. — offline (aCis fora do ar); ver o `README.md` da pasta.
+- [x] Linha em `Docs/validacao.md` com o que foi validado e como. — M6.
 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 - 2026-11-03 — branch `feat/world-teclas-movimento` criado do `main` (`0d71a77`); REA das ligações no engine.dll.
+- 2026-11-03 — `KeyboardMove`/`UserIniKeys`, `CameraKeys`, `ScreenShot` e `UserIniKeysTests` (`6738869`, `.meta` em `d314cdf`; a mensagem do `6738869` diz 15 testes, são 14).
+- 2026-11-03 — ligação no `App.cs` feita só localmente e salva em `Docs/evidencias/teclas-movimento/app-cs.patch` → pedido 0024. `run_tests.sh` com o patch aplicado: 427/427.
+- 2026-11-03 — capturas offline e linha M6 do `Docs/validacao.md` (`96f404e`). `App.cs` devolvido ao `main` no branch.
 
 ## Decisões e REA
 
@@ -72,10 +75,18 @@ Fontes: `analises\l2-interlude\re\decomp_all\engine\` (`00004.c` ResetKeyboardMo
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/world-teclas-movimento`): `6738869` (código e testes), `d314cdf` (`.meta`), `96f404e` (evidências e M6). O branch não mexe no `App.cs`.
+- **Testes:** `sh Docs/tools/run_tests.sh` com o patch do pedido 0024 aplicado: **427 total, 427 passaram, 0 falhas**, sem avisos novos de compilação (só os 5 antigos de `LobbyScene`/`VideoOptions`). `UserIniKeysTests`: 14, todos passaram.
+- **Falta / fora do escopo:**
+  - **pedido 0024:** aplicar o `app-cs.patch` no `App.cs`. Sem ele, nenhuma tecla nova age.
+  - teste ao vivo das teclas no aCis (estava fora do ar), com destaque para PrintScreen e NumPad com o NumLock desligado ([V] em Decisões).
+  - [V] se o aCis precisa do `CannotMoveAnymore` ao desligar o NumLock.
+  - Fora do escopo:
+    - a correção da spec 05 §5.6 e do `03_teclado.md` §4 ("voo/nado" → modo câmera do 0xf1), que é da sessão de análise;
+    - o `L2Camera.Wheel` (render) com passo 20 em vez do `Speed=50` do `user.ini` e sem as regras de 1/8 e de altura no mínimo (o `CameraKeys.ZoomPress` já as tem e pode ser reaproveitado);
+    - o resto do modo câmera do 0xf1 (física de voo, câmera livre);
+    - GreyPlus/GreyMinus etc. (baixa prioridade).
 
 ## Pedidos
 
-Nenhum por enquanto.
+- `pedidos4-world-teclas-app.md`: ligar as teclas no `App.cs` (coordenadora). Aberto.
