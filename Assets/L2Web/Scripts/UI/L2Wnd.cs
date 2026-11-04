@@ -625,6 +625,10 @@ namespace L2Web.UI
             tabs[c.Name] = (buttons, targets, Select);
         }
 
+        /// <summary>Botao da aba `i` do controle Tab `tab` (null se nao ha).</summary>
+        public UiTexButton TabButton(string tab, int i) =>
+            tab != null && tabs.TryGetValue(tab, out var t) && i >= 0 && i < t.buttons.Count ? t.buttons[i] : null;
+
         /// <summary>Seleciona a aba `i` do controle Tab `tab`.</summary>
         public void SelectTab(string tab, int i)
         {
@@ -716,6 +720,63 @@ namespace L2Web.UI
             var close = UiRoot.Box("l2close", frameEl, w - 7 - 16, 2, 16, 16);
             var b = L2WndUtil.Button(close, "L2UI_CH3.FrameCtrl.FrameCloseBtn", "L2UI_CH3.FrameCtrl.FrameCloseOnBtn", "L2UI_CH3.FrameCtrl.FrameCloseBtn_Over", 16, 16);
             b.OnClick = Hide;
+            // NCFrameCtrl (nw:0x1001b580): com iconable, o FrameMiniBtn fica 25 px a esquerda da borda direita (o fechar fica a 8)
+            if (Def.WndN("iconable") == 1)
+            {
+                var mini = UiRoot.Box("nodrag l2mini", frameEl, w - 25 - 16, 3, 16, 16);
+                var mb = L2WndUtil.Button(mini, "L2UI_CH3.FrameCtrl.FrameMiniBtn", "L2UI_CH3.FrameCtrl.FrameMiniOnBtn", "L2UI_CH3.FrameCtrl.FrameMiniBtn", 16, 16);
+                mb.OnClick = Minimize;
+            }
+        }
+
+        // ------------------------------------------------------------ minimizar para icone (Iconize)
+        /// <summary>OnMinimize do script: quem trata chama Iconize (MainWnd.uc:18-34); sem ele, o icone do xdat.</summary>
+        public Action OnMinimize;
+        RectTransform iconEl;
+
+        /// <summary>true enquanto a janela esta minimizada no icone.</summary>
+        public bool Minimized => iconEl && iconEl.gameObject.activeSelf;
+
+        /// <summary>Botao de minimizar da moldura (NCWnd::MinimizeWindow, nw:0x10059860).</summary>
+        public void Minimize()
+        {
+            if (OnMinimize != null) OnMinimize();
+            else Iconize(Def.WndS("Iconable.IconName"), (int)Def.N0(L2XdatFields.Unk("Window", "Iconable.TooltipIdx") ?? "Iconable.TooltipIdx"));
+        }
+
+        /// <summary>
+        /// UIAPI_WINDOW.Iconize(janela, textura, dica): esconde a janela (som 6 do MinimizeWindow) e mostra o icone com a
+        /// dica (sysstring). [I] o icone fica no canto superior esquerdo da janela, 32 x 32; o clique nele devolve a janela.
+        /// </summary>
+        public void Iconize(string texture, int tooltip)
+        {
+            var t = L2WndUtil.Tex(texture);
+            if (!iconEl)
+            {
+                iconEl = UiRoot.Box("L2Icon " + Name, Layer.El, 0, 0, 32, 32);
+                var ib = L2WndUtil.Button(iconEl, texture, texture, texture, 32, 32);
+                ib.OnClick = Restore;
+            }
+            var b = iconEl.GetComponent<UiTexButton>();
+            if (b && t != null)
+            {
+                b.Normal = b.Pushed = b.Over = null;
+                b.Refresh();
+                L2WndUtil.SetButtonTextures(b, t.Url, t.Url, t.Url);
+            }
+            UiTooltip.Set(iconEl.gameObject, tooltip > 0 ? GameData.SysString(tooltip, "") : "");
+            var r = ScreenRect();
+            iconEl.anchoredPosition = new Vector2(r.X, -r.Y);
+            Hide();
+            iconEl.SetAsLastSibling();
+            iconEl.gameObject.SetActive(true);
+        }
+
+        /// <summary>Clique no icone: a janela volta e o icone some.</summary>
+        public void Restore()
+        {
+            if (iconEl) iconEl.gameObject.SetActive(false);
+            Show();
         }
 
         /// <summary>SetWindowSize: novo tamanho (a moldura lateral acompanha a altura).</summary>

@@ -180,6 +180,8 @@ namespace L2Web.UI
         L2Log chatLog;
         string chatTab = "NormalChat";
         int mainTab = -1;
+        /// <summary>Aba de cima da MainWnd (GetTopIndex do MainTabCtrl).</summary>
+        int mainTopTab;
         (int listId, List<MultisellEntry> entries)? multisell;
         List<string> boardParts = new();
         int boardTimer;
@@ -247,7 +249,10 @@ namespace L2Web.UI
                     ChatInput.text = L2Chat.TabPrefix[Math.Max(0, Array.IndexOf(TabNames, tgt))] + t;
                 }
                 ChatWnd.Log(tgt)?.ScrollToEnd();
+                // a aba destacada continua na tela (o TabCtrl so esconde as que estao na janela)
+                foreach (var k in splitChats.Keys) ChatWnd.Get(TabNames[k])?.gameObject.SetActive(true);
             };
+            BindChatSplit();
             ChatWnd.ShowCtrl("LanguageTexture", false);
             // ChatWnd.uc:120-127: as 5 abas com SetScrollBarPosition(5, 10, -25) (acima do botao de filtro); a SystemMsgList
             // fica com o (5, 10, 0) do NCChatListBox::OnCreate
@@ -314,8 +319,16 @@ namespace L2Web.UI
             };
             Inv.OnClick("TrashButton", () => this.deps.Chat("sys", "Arraste um item para a lixeira para destruí-lo (ainda não disponível).", null));
             Main = new L2Wnd("MainWnd", Layer, new WndOpts { Embed = new[] { "DetailStatusWnd", "MagicSkillWnd", "ActionWnd", "ClanWnd", "QuestTreeWnd" }, AriaLabel = "Personagem" });
+            // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
+            Main.OnMinimize = () =>
+            {
+                int[] tips = { 194, 196, 197, 895, 198 };
+                var i = Mathf.Clamp(mainTopTab, 0, 4);
+                Main.Iconize("L2UI_CH3.TABBUTTON.MainWndTabIcon" + (i + 1), tips[i]);
+            };
             Main.OnTab = (_, i, _) =>
             {
+                mainTopTab = i;
                 var tabs = Main.Ctrl("MainTabCtrl")?.J["tabs"] as JArray;
                 var tip = tabs != null && i >= 0 && i < tabs.Count ? (int)L2Ctrl.ToNum(tabs[i]["tooltip"], -1) : -1;
                 var t = GameData.SysString(tip, "");
@@ -637,6 +650,90 @@ namespace L2Web.UI
                     UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
             }
             if (text.Length > 0) OnChatSubmit?.Invoke(text, tab);
+        }
+
+        // ------------------------------------------------------------ abas destacadas do chat (OnTabSplit / OnTabMerge)
+        /// <summary>Abas fora da janela: indice -> (pai, posicao e tamanho dentro do ChatWnd).</summary>
+        readonly Dictionary<int, (Transform parent, Vector2 pos, Vector2 size)> splitChats = new();
+
+        /// <summary>
+        /// Arrastar uma aba do ChatTabCtrl para fora da janela destaca a lista (OnTabSplit); arrastar a aba de volta para dentro
+        /// junta (OnTabMerge). [I] o gesto do NCTabCtrl (o nativo que chama os dois eventos) nao foi lido.
+        /// </summary>
+        void BindChatSplit()
+        {
+            for (var i = 0; i < TabNames.Length; i++)
+            {
+                var k = i;
+                var b = ChatWnd.TabButton("ChatTabCtrl", i);
+                if (!b) continue;
+                var ev = UiEvents.Of(b);
+                ev.OnBeginDrag = _ => { };
+                ev.OnDrag = _ => { };
+                ev.OnEndDrag = e =>
+                {
+                    var px = UiRoot.PixelScale;
+                    var p = new Vector2(e.position.x / px, UiRoot.Size.y - e.position.y / px);
+                    var r = ChatWnd.ScreenRect();
+                    var inside = p.x >= r.X && p.y >= r.Y && p.x < r.X + r.W && p.y < r.Y + r.H;
+                    if (!inside) TabSplit(k, p);
+                    else TabMerge(k);
+                };
+            }
+        }
+
+        /// <summary>Abas destacadas (indices de TabNames).</summary>
+        public IReadOnlyCollection<int> SplitTabs => splitChats.Keys;
+
+        /// <summary>
+        /// ChatWnd.uc:229-264 OnTabSplit: seleciona a aba, tira o tamanho relativo (SetWindowSizeRel -1), a lista vira janela
+        /// solta (SetSettledWnd) e ganha o fundo (EnableTexture). Fica onde a aba foi solta, com o tamanho de antes.
+        /// </summary>
+        public void TabSplit(int k, Vector2 at)
+        {
+            if (k < 0 || k >= TabNames.Length || splitChats.ContainsKey(k)) return;
+            var el = ChatWnd.Get(TabNames[k]);
+            if (!el) return;
+            ChatWnd.SelectTab("ChatTabCtrl", k);
+            splitChats[k] = (el.parent, el.anchoredPosition, el.sizeDelta);
+            el.SetParent(Layer.El, false);
+            el.anchoredPosition = new Vector2(Mathf.Round(at.x), -Mathf.Round(at.y));
+            el.gameObject.SetActive(true);
+            el.SetAsLastSibling();
+            // EnableTexture(true): o fundo das listas do chat [I] Chatting_Back3 (o corpo do ChatWnd)
+            var back = el.Find("splitback");
+            if (!back) L2WndUtil.Paint(UiRoot.Box("splitback", el, 0, 0, el.sizeDelta.x, el.sizeDelta.y), "L2UI_CH3.ChatWnd.Chatting_Back3", el.sizeDelta.x, el.sizeDelta.y, PaintMode.Tile).transform.parent.SetAsFirstSibling();
+            else back.gameObject.SetActive(true);
+            var ev = UiEvents.Of(el);
+            ev.OnBeginDrag = _ => { };
+            ev.OnDrag = e =>
+            {
+                if (!splitChats.ContainsKey(k)) return;
+                el.anchoredPosition += e.delta / UiRoot.PixelScale;
+            };
+            ev.OnEndDrag = _ => { };
+            ChatWnd.Log(TabNames[k])?.Invalidate();
+        }
+
+        /// <summary>
+        /// ChatWnd.uc:266-300 OnTabMerge: volta para dentro do ChatWnd na posicao e no tamanho da NormalChat (relativo, -46 de
+        /// altura) e sem o fundo.
+        /// </summary>
+        public void TabMerge(int k)
+        {
+            if (!splitChats.TryGetValue(k, out var o)) return;
+            splitChats.Remove(k);
+            var el = ChatWnd.Get(TabNames[k]);
+            if (!el) return;
+            el.SetParent(o.parent, false);
+            var normal = ChatWnd.Get(TabNames[0]);
+            el.anchoredPosition = normal && k != 0 ? normal.anchoredPosition : o.pos;
+            el.sizeDelta = normal && k != 0 ? normal.sizeDelta : o.size;
+            el.Find("splitback")?.gameObject.SetActive(false);
+            var ev = UiEvents.Of(el);
+            ev.OnDrag = null;
+            ChatWnd.SelectTab("ChatTabCtrl", k);
+            ChatWnd.Log(TabNames[k])?.Invalidate();
         }
 
         /// <summary>Foco no campo do chat (Enter no jogo).</summary>
