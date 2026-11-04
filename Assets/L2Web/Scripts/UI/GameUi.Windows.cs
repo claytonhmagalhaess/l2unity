@@ -498,7 +498,8 @@ namespace L2Web.UI
                 var id = active[k].Id;
                 // MagicSkillWnd.uc:45-54: OnClickItem -> UseSkill (clique simples)
                 bs[k].OnClick = () => deps.Send(UiPackets.MagicSkillUse(id, CtrlHeld, ShiftHeld));
-                Draggable(bs[k], "skill", id);
+                var sname = GameData.SkillName(id, active[k].Level);
+                Draggable(bs[k], "skill", id, false, (e, _) => Macros?.DropOnEditLine(e, "skill", sname, null));
             }
             L2WndUtil.FillItemWindow(w, "PItemWnd", passive.Select(Data).ToList(), IconUrl);
         }
@@ -514,7 +515,7 @@ namespace L2Web.UI
                 {
                     var id = list[k];
                     bs[k].OnClick = () => deps.ActionUse(id);
-                    Draggable(bs[k], "action", id);
+                    Draggable(bs[k], "action", id, false, (e, _) => Macros?.DropOnEditLine(e, "action", GameData.ActionName(id), L2TooltipData.Action(id)?.Cmd));
                 }
             }
             Fill("ActionBasicItem", ActionsBasic);

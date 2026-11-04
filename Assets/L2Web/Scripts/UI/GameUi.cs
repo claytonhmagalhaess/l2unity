@@ -165,6 +165,8 @@ namespace L2Web.UI
         /// <summary>MessengerWnd nativo (lista de amigos).</summary>
         public readonly MessengerView Messenger;
         public readonly L2Wnd RestartWnd;
+        /// <summary>Janelas de macro (#0032).</summary>
+        public MacroView Macros { get; private set; }
         /// <summary>DialogBox (UICommonAPI: DialogShow, DialogIsMine...).</summary>
         public readonly DialogBoxView Dialog;
         public readonly L2Wnd DialogWnd;
@@ -304,6 +306,8 @@ namespace L2Web.UI
                 Send = b => this.deps.Send(b), Ask = (id, cb) => Ask(id, cb), HideDialog = () => Dialog.Hide(), HideInventory = () => Inv.Hide(),
             };
             BuildRadar();
+            // MacroListWnd / MacroEditWnd / MacroInfoWnd (#0032): as linhas da macro rodam pelo chat
+            Macros = new MacroView(Layer, this, b => this.deps.Send(b)) { Run = t => OnChatSubmit?.Invoke(t, 0) };
 
             // ---- reinicio e dialogo
             RestartWnd = new L2Wnd("RestartMenuWnd", Layer, new WndOpts { AriaLabel = "Você morreu", Movable = false });
