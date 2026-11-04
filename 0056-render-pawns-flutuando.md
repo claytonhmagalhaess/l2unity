@@ -68,7 +68,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - **A validar ao vivo:** pés no chão nos campos (pedido de teste 0056-1).
 - **Fora (World, não há nado/voo no porte):** o original não faz o ajuste para pawn nadando ou voando. O porte não tem esses estados (`ChangeMoveType.Swimming` é lido mas não usado); quando tiver, o `DrawHeight` deve devolver o z do servidor para eles.
-- **#0057 (world, teleporte):** a altura desenhada depois do teleporte passa pelo mesmo `VisualFloor`. Nota para a sessão world na pasta de notas compartilhada.
+- **#0057 (world, teleporte), combinado com a sessão world:** as causas são diferentes e se somam. No `/unstuck`, o aCis manda o Z do `TownZone.xml` + 10, sem consultar a geodata: 110 a 124 acima da geodata em Giran, fora das janelas do `VisualFloor`, e por isso o pawn não descia. A #0057 (`feat/world-teleporte-chao`, `303b026`) faz o pouso do `Motion.Z` no geodata (`Entity.Place`/`ValidateLocation` → `PawnMotion`, só em `World/`). A #0056 não mexe em `Motion.Z`, `Place` nem `Sync`: só muda o que o `DrawHeight` devolve (do geodata para o chão desenhado). Sem ajuste em dobro.
 
 ## Entrega
 
