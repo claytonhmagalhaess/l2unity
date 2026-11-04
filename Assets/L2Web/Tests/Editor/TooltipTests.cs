@@ -275,10 +275,17 @@ namespace L2Web.Tests
 
             var a = new List<byte>();
             a.AddRange(BitConverter.GetBytes(1));
-            foreach (var v in new[] { 1, 0, -1, 1, 2, -2, 5 }) a.AddRange(BitConverter.GetBytes(v));
-            foreach (var s in new[] { "Sit/Stand", "icon.action001", "Toggle Sit/Stand.", "sitstand" }) a.AddRange(FStr(s));
+            // tag, id, type, category; n compacto (1) e o NPC -2; 3 ASCF; o comando em UNICODE (d bytes + UTF-16)
+            foreach (var v in new[] { 1, 0, -1, 1 }) a.AddRange(BitConverter.GetBytes(v));
+            a.Add(1);
+            a.AddRange(BitConverter.GetBytes(-2));
+            foreach (var s in new[] { "Sit/Stand", "icon.action001", "Toggle Sit/Stand." }) a.AddRange(FStr(s));
+            var cmd = System.Text.Encoding.Unicode.GetBytes("sitstand");
+            a.AddRange(BitConverter.GetBytes(cmd.Length));
+            a.AddRange(cmd);
             var ac = L2TooltipData.ParseActionNames(a.ToArray());
             Assert.AreEqual(("Sit/Stand", "icon.action001", "Toggle Sit/Stand.", "sitstand"), (ac[0].Name, ac[0].Icon, ac[0].Desc, ac[0].Cmd));
+            Assert.AreEqual((1, -2), (ac[0].Category, ac[0].Npcs[0]));
         }
     }
 }

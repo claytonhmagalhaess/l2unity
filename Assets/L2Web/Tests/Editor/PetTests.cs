@@ -130,7 +130,20 @@ namespace L2Web.Tests
             Assert.AreEqual((4, 5, 14111), (real[15].Category, real[22].Category, real[22].Npcs[0]), "category e a lista de NPCs do actionname-e");
         }
 
-        /// <summary>actionname-e.dat minimo: d tag, d id, d type, d category, d n, n x d, 4 FStrings vazias.</summary>
+        [Test]
+        public void Acoes_ArquivoDoCliente()
+        {
+            var f = GameData.ClientFile("actionname-e.dat");
+            if (!System.IO.File.Exists(f)) Assert.Ignore("sem o actionname-e.dat do cliente");
+            var all = L2TooltipData.ParseActionNames(L2Files.Decrypt(System.IO.File.ReadAllBytes(f)));
+            Assert.AreEqual(102, all.Count);
+            Assert.AreEqual((4, "Change Movement Mode", "pethold"), (all[15].Category, all[15].Name, all[15].Cmd));
+            Assert.AreEqual(772, all[22].Npcs.Length);
+            CollectionAssert.AreEqual(new[] { 21, 22, 23, 45, 52, 53 }, PetScript.ActionList(all.Values.OrderBy(a => a.Id), PetScript.ActionSummon, 14111), "Kat the Cat");
+            CollectionAssert.AreEqual(new[] { 15, 16, 17, 18, 19, 54 }, PetScript.ActionList(all.Values.OrderBy(a => a.Id), PetScript.ActionPet, 12077), "lobo");
+        }
+
+        /// <summary>actionname-e.dat minimo: d tag, d id, d type, d category, n compacto, n x d, 3 ASCF vazias e o comando vazio.</summary>
         static byte[] ActionDat(params (int id, int cat, int[] npcs)[] rows)
         {
             var b = new List<byte>();
@@ -142,9 +155,10 @@ namespace L2Web.Tests
                 D(id);
                 D(-1);
                 D(cat);
-                D(npcs.Length);
+                b.Add((byte)npcs.Length);
                 foreach (var n in npcs) D(n);
-                for (var k = 0; k < 4; k++) b.Add(0);
+                for (var k = 0; k < 3; k++) b.Add(0);
+                D(0);
             }
             return b.ToArray();
         }

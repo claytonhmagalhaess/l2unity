@@ -40,8 +40,9 @@ namespace L2Web.UI
         }
 
         /// <summary>
-        /// actionname-e.dat: d tag, d id, d type, d category, d n, n x d (categorias), e as FString nome, icone, descricao e
-        /// comando (a ordem das colunas do txt do l2disasm).
+        /// actionname-e.dat: d tag, d id, d type, d category (EActionCategory), indice compacto n, n x d (NPCs; -2 = qualquer
+        /// um), as ASCF nome, icone e descricao, e o comando em UNICODE (d tamanho em bytes + UTF-16). O txt do l2disasm le o n
+        /// como d, o que desalinha a partir do primeiro registro.
         /// </summary>
         public static Dictionary<int, ActionName> ParseActionNames(byte[] b)
         {
@@ -54,14 +55,32 @@ namespace L2Web.UI
                 var id = BitConverter.ToInt32(b, p);
                 var cat = BitConverter.ToInt32(b, p + 8);
                 p += 12; // id, type, category
-                var cnt = BitConverter.ToInt32(b, p);
-                p += 4;
+                var cnt = Compact(b, ref p);
                 var npcs = new int[Math.Max(0, cnt)];
                 for (var k = 0; k < npcs.Length; k++, p += 4) npcs[k] = BitConverter.ToInt32(b, p);
-                var a = new ActionName { Id = id, Category = cat, Npcs = npcs, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p), Cmd = L2Texts.FString(b, ref p) };
+                var a = new ActionName { Id = id, Category = cat, Npcs = npcs, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p) };
+                var len = BitConverter.ToInt32(b, p);
+                p += 4;
+                a.Cmd = System.Text.Encoding.Unicode.GetString(b, p, Math.Max(0, len)).TrimEnd('\0');
+                p += Math.Max(0, len);
                 o[id] = a;
             }
             return o;
+        }
+
+        /// <summary>Indice compacto do UE2: 6 bits no 1o byte (0x80 sinal, 0x40 continua), depois 7 por byte (0x80 continua).</summary>
+        static int Compact(byte[] b, ref int p)
+        {
+            int b0 = b[p++];
+            var v = b0 & 0x3f;
+            if ((b0 & 0x40) != 0)
+                for (var sh = 6; ; sh += 7)
+                {
+                    int x = b[p++];
+                    v |= (x & 0x7f) << sh;
+                    if ((x & 0x80) == 0) break;
+                }
+            return (b0 & 0x80) != 0 ? -v : v;
         }
 
         static string None(string s) => s == "none" ? "" : s ?? "";
