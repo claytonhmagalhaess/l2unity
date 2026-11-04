@@ -69,4 +69,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-- [0051](pedidos/0051-world-geodata-camadas.md) — coordenadora: `LocalAssets.GeoLayers` + `world.GroundLayers` no `App.cs` (todas as camadas do geodata para o pouso). Aberto.
+- [0051](pedidos/0051-world-geodata-camadas.md) — coordenadora: `LocalAssets.GeoLayers` + `world.GroundLayers` no `App.cs` (todas as camadas do geodata para o pouso). Aceito: a coordenadora decidiu que o `LocalAssets.GeoLayers` sai no branch da #0056, com a mesma assinatura, e que a linha do `App.cs` entra no merge. A prévia para o usuário será main + #0056 + #0057 + 0051. Nada muda neste branch.
