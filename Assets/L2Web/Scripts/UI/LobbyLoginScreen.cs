@@ -37,7 +37,7 @@ namespace L2Web.UI
         static readonly Color EditBorder = new Color32(0x3f, 0x3b, 0x31, 0xff);
         static readonly Color EditBack = new Color32(0x0d, 0x0d, 0x0c, 0xe6);
         public static readonly string[] Protocols = { "hwid515", "acis" };
-        static readonly string[] ProtocolNames = { "Servidor com HWID (versão 515, ClientGuard = NONE)", "aCis original (versão 746)" };
+        static readonly string[] ProtocolNames = { "HWID (515, sem ClientGuard)", "aCis (746)" };
 
         LoginAuth.Field focusedLast;
         /// <summary>O OptionWnd que esta tela trouxe para o OptionHost (null = nenhum).</summary>
@@ -46,7 +46,7 @@ namespace L2Web.UI
         /// <summary>Campo que acabou de ganhar o foco: o InputField legado seleciona tudo; o NCEditBox nao.</summary>
         InputField caretEnd;
         int caretFrames;
-        int submittedFrame = -1;
+        int submittedFrame = -1, enterFrame = -1;
 
         public LobbyLoginScreen(RectTransform parent)
         {
@@ -108,6 +108,10 @@ namespace L2Web.UI
             LobbySkin.Label(Options, "Assets: \"local\" (cópia em StreamingAssets) ou a URL do tools/dev.ts do l2web.", 10, 106, 310, 32, 10, new Color32(0x9a, 0x94, 0x84, 0xff));
             Options.gameObject.SetActive(false);
 
+            // Enter pelo proprio campo (o InputField legado trata o Enter do teclado e desativa o campo); o Keys cobre o
+            // mesmo Enter pelo Input System. O Submit ignora o segundo no mesmo quadro.
+            Pass.onSubmit.AddListener(_ => EnterOn(LoginAuth.Field.Pwd));
+            User.onSubmit.AddListener(_ => EnterOn(LoginAuth.Field.Id));
             Root.gameObject.AddComponent<UiTicker>().OnTick = _ => Keys();
             UiEvents.Of(Root).OnLateUpdate = LateKeys;
         }
@@ -172,6 +176,9 @@ namespace L2Web.UI
                 return;
             }
             L2WndUtil.UiSound(LoginAuth.WindowOpenSound);
+            // a faixa NCMessageWnd vem depois das telas na raiz do lobby: o host vai para o fim dela, por cima de tudo
+            if (Root.parent && OptionHost.parent != Root.parent) OptionHost.SetParent(Root.parent, false);
+            OptionHost.SetAsLastSibling();
             w.MoveTo(OptionHost);
             hosted = w;
             w.Win.Show();
@@ -193,17 +200,26 @@ namespace L2Web.UI
             var kb = Keyboard.current;
             if (kb == null) return;
             if ((kb.leftCtrlKey.isPressed || kb.rightCtrlKey.isPressed) && (kb.leftAltKey.isPressed || kb.rightAltKey.isPressed) && kb.oKey.wasPressedThisFrame)
+            {
                 Options.gameObject.SetActive(!Options.gameObject.activeSelf);
+                Options.SetAsLastSibling();
+            }
             // o foco antes do EventSystem processar a tecla (o Enter desativa o campo no mesmo quadro)
             var f = Focused != LoginAuth.Field.None ? Focused : focusedLast;
             if (kb.tabKey.wasPressedThisFrame && (f != LoginAuth.Field.None || !OtherFieldFocused()))
                 refocus = LoginAuth.TabNext(f) == LoginAuth.Field.Id ? User : Pass;
-            if ((kb.enterKey.wasPressedThisFrame || kb.numpadEnterKey.wasPressedThisFrame) && f != LoginAuth.Field.None)
-            {
-                // o NCEditBox nao perde o foco com o Enter
-                refocus = f == LoginAuth.Field.Id ? User : Pass;
-                if (LoginAuth.EnterSubmits(f, Pass.text)) Submit();
-            }
+            if ((kb.enterKey.wasPressedThisFrame || kb.numpadEnterKey.wasPressedThisFrame) && f != LoginAuth.Field.None) EnterOn(f);
+        }
+
+        /// <summary>Enter num campo: o NCEditBox nao perde o foco; so a senha com texto faz o login.</summary>
+        void EnterOn(LoginAuth.Field f)
+        {
+            if (enterFrame == Time.frameCount) return;
+            enterFrame = Time.frameCount;
+            refocus = f == LoginAuth.Field.Id ? User : Pass;
+            var go = LoginAuth.EnterSubmits(f, Pass.text);
+            Debug.Log($"[login] Enter campo={f} senha={Pass.text.Length} login={go}");
+            if (go) Submit();
         }
 
         void LateKeys()
