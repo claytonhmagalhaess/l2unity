@@ -525,9 +525,17 @@ namespace L2Web.UI
                     Draggable(bs[k], "action", id, false, (e, _) => Macros?.DropOnEditLine(e, "action", GameData.ActionName(id), L2TooltipData.Action(id)?.Cmd));
                 }
             }
-            Fill("ActionBasicItem", ActionsBasic);
-            Fill("ActionPartyItem", ActionsParty);
-            Fill("ActionSocialItem", ActionsSocial);
+            // HandleActionList (ActionWnd.uc:93-139): ACTION_BASIC/PARTY/SOCIAL = categorias 1/2/3 do actionname-e, na ordem dos
+            // ids (a basica inclui Duel 58 e Withdraw 59); as listas fixas so sem o .dat
+            var all = L2TooltipData.AllActions();
+            int[] Cat(int c, int[] fallback)
+            {
+                var ids = all.Where(a => a.Category == c).Select(a => a.Id).ToArray();
+                return ids.Length > 0 ? ids : fallback;
+            }
+            Fill("ActionBasicItem", Cat(1, ActionsBasic));
+            Fill("ActionPartyItem", Cat(2, ActionsParty));
+            Fill("ActionSocialItem", Cat(3, ActionsSocial));
         }
 
         // ------------------------------------------------------------ arrastar para a barra (dragstart/drop)

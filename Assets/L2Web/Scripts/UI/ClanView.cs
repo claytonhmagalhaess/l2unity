@@ -278,7 +278,11 @@ namespace L2Web.UI
                 S.DrawerOnShow();
                 RenderButtons();
             };
-            Drawer.OnClose = () => S.DrawerVisible = false;
+            Drawer.OnClose = () =>
+            {
+                S.DrawerVisible = false;
+                S.ResetOpening();
+            };
             foreach (var ok in new[] { "Clan1_OKBtn", "Clan2_OKBtn", "Clan3_OKBtn", "Clan4_OKBtn", "Clan5_OKBtn", "Clan7_OKBtn", "ClanWar_OKBtn" })
                 Drawer.OnClick(ok, HideDrawer);
             string Selected() => S.DrawerText.TryGetValue("Clan1_CurrentSelectedMemberName", out var n) ? n : "";
@@ -371,10 +375,12 @@ namespace L2Web.UI
             }
         }
 
-        void HideDrawer()
+        /// <summary>ClanDrawerWnd.HideWindow (ClanDrawerWnd.uc:1625-1633): esconde e chama o ResetOpeningVariables do ClanWnd.</summary>
+        public void HideDrawer()
         {
             Drawer.Hide();
             S.DrawerVisible = false;
+            S.ResetOpening();
         }
 
         /// <summary>SetStateAndShow: mostra o drawer e so o painel do estado.</summary>

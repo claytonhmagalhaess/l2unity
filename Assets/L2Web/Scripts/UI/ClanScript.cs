@@ -491,7 +491,8 @@ namespace L2Web.UI
             public string State = "";
         }
 
-        void ResetOpening()
+        /// <summary>ResetOpeningVariables (ClanWnd): nenhum painel aberto (o proximo clique de qualquer botao abre).</summary>
+        public void ResetOpening()
         {
             for (var i = 1; i < Active.Length; i++) Active[i] = false;
         }

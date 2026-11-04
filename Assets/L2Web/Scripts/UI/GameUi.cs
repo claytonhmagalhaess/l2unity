@@ -83,8 +83,8 @@ namespace L2Web.UI
         };
 
         /// <summary>Acoes da ActionWnd: basicas, de grupo e sociais (actionname-e).</summary>
-        static readonly int[] ActionsBasic = { 0, 1, 2, 3, 4, 5, 6, 10, 28, 37, 51, 38, 40, 57, 55 };
-        static readonly int[] ActionsParty = { 7, 8, 9, 11, 50, 56, 58, 60 };
+        static readonly int[] ActionsBasic = { 0, 1, 2, 3, 4, 5, 6, 10, 28, 37, 38, 40, 51, 55, 57, 58, 59 };
+        static readonly int[] ActionsParty = { 7, 8, 9, 11, 50, 56, 60 };
         static readonly int[] ActionsSocial = { 12, 13, 14, 24, 25, 26, 29, 30, 31, 33, 34, 35 };
 
         /// <summary>Experiencia acumulada para cada nivel (Experience.LEVEL do servidor; nivel 0 inatingivel).</summary>
@@ -223,7 +223,6 @@ namespace L2Web.UI
         bool vertical;
         L2Log chatLog;
         string chatTab = "NormalChat";
-        int mainTab = -1;
         /// <summary>Aba de cima da MainWnd (GetTopIndex do MainTabCtrl).</summary>
         int mainTopTab;
         (int listId, List<MultisellEntry> entries)? multisell;
@@ -412,15 +411,23 @@ namespace L2Web.UI
                 int[] tips = { 194, 196, 197, 895, 198 };
                 var i = Mathf.Clamp(mainTopTab, 0, 4);
                 Main.Iconize("L2UI_CH3.TABBUTTON.MainWndTabIcon" + (i + 1), tips[i]);
+                Clan.S.ResetOpening();
             };
+            // OnClickButton MainTabCtrl0..4 (MainWnd.uc:36-68): titulo ss433/119/127/439/118; fora da aba Cla esconde o
+            // ClanDrawerWnd; todas zeram as variaveis de abertura do ClanWnd
             Main.OnTab = (_, i, _) =>
             {
                 mainTopTab = i;
-                var tabs = Main.Ctrl("MainTabCtrl")?.J["tabs"] as JArray;
-                var tip = tabs != null && i >= 0 && i < tabs.Count ? (int)L2Ctrl.ToNum(tabs[i]["tooltip"], -1) : -1;
-                var t = GameData.SysString(tip, "");
-                t = Regex.Replace(t, @"\s*\(.*\)$", "");
-                Main.SetTitle(t.Length > 0 ? t : "Personagem");
+                int[] titles = { 433, 119, 127, 439, 118 };
+                if (i >= 0 && i < titles.Length) Main.SetTitle(GameData.SysString(titles[i], ""));
+                if (i != 3 && Clan.Drawer.Visible) Clan.HideDrawer();
+                Clan.S.ResetOpening();
+            };
+            // MagicSkillWnd.OnShow (MagicSkillWnd.uc:17-21): RequestSkillList ao mostrar a aba
+            if (Main.Embedded.TryGetValue("MagicSkillWnd", out var skillTab)) skillTab.OnShow += () => deps.Send(UiPackets.RequestSkillList());
+            Main.OnShow += () =>
+            {
+                if (mainTopTab == 1) deps.Send(UiPackets.RequestSkillList());
             };
             Main.SelectTab("MainTabCtrl", 0);
             FillActions();
@@ -448,21 +455,25 @@ namespace L2Web.UI
             foreach (var w in Layer.Windows.Values.ToList()) w.Hide();
         }
 
+        /// <summary>
+        /// ShowMainWindow Tab=x (T/K/C/N/U): aberta na mesma aba fecha; senao abre nessa aba. A aba visivel e a do TabCtrl
+        /// (mainTopTab), que tambem muda pelo clique.
+        /// </summary>
         void OpenMain(int tab)
         {
-            if (Main.Visible && mainTab == tab)
+            if (Main.Visible && mainTopTab == tab)
             {
                 Main.Hide();
                 return;
             }
             Main.Show();
             Main.SelectTab("MainTabCtrl", tab);
-            mainTab = tab;
         }
 
         void BindMenus()
         {
-            MenuWnd.OnClick("BtnCharInfo", () => OpenMain(0));
+            // ToggleOpenCharInfoWnd (MenuWnd.uc:25-37): so alterna a MainWnd, na aba em que estava
+            MenuWnd.OnClick("BtnCharInfo", () => Main.Toggle());
             MenuWnd.OnClick("BtnInventory", () => Inv.Toggle());
             // MenuWnd.uc:17-19, 55-58: Map = RequestOpenMinimap (o servidor responde com o ShowMiniMap); as dicas sao as
             // sysstrings do popupValue do xdat (434, 195, 925, 193)
