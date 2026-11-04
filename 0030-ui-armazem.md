@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-armazem` |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T6; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -31,16 +31,26 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 
 - 2026-11-03 — bloqueada: aguardando #0046 no main. S→C `WarehouseDepositList` 0x41 / `WarehouseWithdrawList` 0x42 e C→S `SendWarehouseDepositList` 0x31 / `SendWarehouseWithdrawList` 0x32 não existem no `main`. Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
+- 2026-11-03 — desbloqueada (#0046 no `main`); branch `feat/ui-armazem` criado de `feat/ui-loja-troca` (13ead7a).
+- 2026-11-03 — `WarehouseScript`, `WarehouseView` e `ListWnd.FromParam` (`1348fcc`).
+- 2026-11-03 — `sh Docs/tools/run_tests.sh`: 635/635 (exit 0).
+- 2026-11-03 — captura offline e linha K22 (`088c20a`). aCis fora do ar.
 
 ## Decisões e REA
 
 <!-- o que foi descoberto ou decidido, marcado como Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
 
+- [O] `IL:WarehouseWnd.uc` portado: duas listas que juntam pelo classID nos dois sentidos; empilhável com mais de 1 e sem Alt pede o número (NumberPad sm72 com DefaultOK); taxa `KEEPING_PRICE` 30 por item embaixo no depósito; contador `(n/max)` com `m_maxPrivateCount` (do `EV_SetMaxCount warehousePrivate`) no privado e 200 nos outros; textos 138/132 (depósito) e 132/133 (retirada); títulos 1216/1217/1218/131 pela categoria; OK manda o dbID (`reserved`) e a quantidade.
+- [O] `OnClickItem` na TopList fecha o NumberPad desta janela.
+- O `HandleDialogOK` do script não limita o número ao que a lista tem (diferente da venda da loja): portado igual.
+- Os itens chegam pelo `EV_WarehouseAddItem` do `InterfaceRouter` (#0046); o `reserved` do ItemInfo é o dbID.
+- Divergências: barra de peso (`InvenWeight`) não desenhada; [I] empilhável = itemType ≥ 3.
+
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits:** `1348fcc` (código e `WarehouseTests`), `088c20a` (evidências e K22).
+- **Testes:** `WarehouseTests` (depósito com taxa, contador e pedido; retirada; ItemInfo do evento); `sh Docs/tools/run_tests.sh` 635/635.
+- **Falta / fora do escopo:** barra de peso; teste ao vivo (depositar e retirar no aCis).
 
 ## Pedidos
 

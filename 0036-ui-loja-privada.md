@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-loja-privada` |
-| Estado | bloqueada |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T12; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -32,16 +32,28 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 2026-11-03 — bloqueada: aguardando #0046 no main. S→C `PrivateStoreManageListSell` 0x9a / `PrivateStoreManageListBuy` 0xb7 e os C→S `SetPrivateStore*`/`RequestPrivateStoreManage*` não existem no `main` (e o item 1 do pedido 0025). Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
 - 2026-11-03 — adiantado o item 1 do pedido 0025: `PacketEvents.PrivateStore` (0x9b) passa a mandar `type=buy` (PT_Buy), no branch `feat/ui-barra-atalhos` (`86c006d`, `PrivateStoreEventTests`; suíte 523/523). Continua bloqueada pelos pacotes de montar a loja.
+- 2026-11-03 — branch `feat/ui-loja-privada` criado de `feat/ui-armazem` (088c20a).
+- 2026-11-03 — `PrivateShopScript` e `PrivateShopView` (`4f50ac6`).
+- 2026-11-03 — `sh Docs/tools/run_tests.sh`: 646/646 (exit 0).
+- 2026-11-03 — captura offline e linha K23 (`b353182`). aCis fora do ar.
 
 ## Decisões e REA
 
 <!-- o que foi descoberto ou decidido, marcado como Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
 
+- [O] `IL:PrivateShopWnd.uc` portado nos 4 modos: o PT_Buy e a loja própria de venda andam pelo serverID; o PT_Sell e a própria de compra, pelo classID. Na loja própria, mover pede o preço (NumberPad sm322 venda / sm585 compra, `editType=number`, sem All); preço ≥ 2.000.000.000 = sm1369; fora de `DefaultPrice/5..×5` (`IsProperPrice`) confirma sm569; depois a quantidade (sm72 venda / sm570 compra) ou vai direto (Alt = tudo; não empilhável = 1). Na loja de compra própria, um item não empilhável vira uma linha por unidade, e tirar de baixo não volta para cima.
+- [O] PT_Buy em pacote (`bulk`) move a lista inteira; PT_Sell com `ItemNum` 0 está desabilitado; vender mais do que a loja quer = sm1036. O OK do PT_Buy/PT_Sell confere os preços e, fora da faixa, pede a confirmação sm569 (`DIALOG_CONFIRM_PRICE_FINAL` repete o OK sem a conferência).
+- [O] `MessageButton`: OKCancelInput sm334 com até 29 caracteres e o título atual. `StopButton` e o `OnSendPacketWhenHiding` desmontam a loja própria (`RequestPrivateStoreQuitSell/Buy`).
+- [I] O título editado vai ao servidor na hora (`SetPrivateStoreMsgSell/Buy`); o `SetPrivateShopMessage` do nativo não foi lido.
+- Item 1 do pedido 0025: o 0x9b manda `type=buy` (`86c006d`); os itens 2–4 entraram na #0029.
+- A janela genérica de loja do `SocialUi.StoreList` não abre mais: o 0x9b chega pelos eventos do `PacketEvents.PrivateStore` (`App.cs`).
+- Divergência: barra de peso não desenhada.
+
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits:** `86c006d` (type=buy no 0x9b), `4f50ac6` (código e `PrivateShopTests`), `b353182` (evidências e K23).
+- **Testes:** `PrivateShopTests` (cadeia de preço, Alt, compra própria, pacote, venda limitada, faixa de preço, títulos), `PrivateStoreEventTests`; `sh Docs/tools/run_tests.sh` 646/646.
+- **Falta / fora do escopo:** barra de peso; teste ao vivo (montar e usar as lojas no aCis).
 
 ## Pedidos
 
