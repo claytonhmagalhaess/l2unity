@@ -292,6 +292,19 @@ namespace L2Web.UI
             return t;
         }
 
+        /// <summary>Tooltip "Skill" (MagicSkillWnd): nome, encantamento, nivel, tipo, custos, alcance e descricao do skillname-e.</summary>
+        public static CustomTooltip SkillTooltip(int id, int level)
+        {
+            var r = L2SkillData.Get(id, level);
+            var add = L2TooltipData.EnchantName(id, level);
+            var lv = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : level;
+            return L2Tooltip.Skill(GameData.SkillName(id, level), add, lv, L2TooltipData.OperateType(id, level, i => GameData.SysString(i, "")),
+                r?.HpConsume ?? 0, r?.MpConsume ?? 0, r?.CastRange ?? -1, L2TooltipData.Skill(id, level)?.Desc ?? "");
+        }
+
+        /// <summary>Tooltip "Action" (ActionWnd): nome e descricao do actionname-e.</summary>
+        public static CustomTooltip ActionTooltip(int id) => L2Tooltip.Action(GameData.ActionName(id), L2TooltipData.Action(id)?.Desc ?? "");
+
         void BindItem(UiTexButton b, InvItem it)
         {
             var oid = it.ObjectId;
@@ -348,7 +361,8 @@ namespace L2Web.UI
             SlotData Data(SkillInfo s)
             {
                 var name = $"{GameData.SkillName(s.Id, s.Level)} Nv {s.Level}";
-                return new SlotData { Icon = GameData.SkillIcon(s.Id), Title = name + (s.Passive ? " (passiva)" : "\nDuplo clique: usar · arraste para a barra"), Cls = s.Disabled ? "disabled" : null };
+                int id = s.Id, lv = s.Level;
+                return new SlotData { Icon = GameData.SkillIcon(s.Id), Title = name, Cls = s.Disabled ? "disabled" : null, Tip = () => SkillTooltip(id, lv) };
             }
             var bs = L2WndUtil.FillItemWindow(w, "SkillItem", active.Select(Data).ToList(), IconUrl);
             for (var k = 0; k < bs.Count; k++)
@@ -366,7 +380,7 @@ namespace L2Web.UI
             void Fill(string ctrl, int[] ids)
             {
                 var list = ids.Where(id => GameData.ActionName(id) != $"ação {id}").ToList();
-                var bs = L2WndUtil.FillItemWindow(w, ctrl, list.Select(id => new SlotData { Icon = GameData.ActionIcon(id), Title = $"{GameData.ActionName(id)}\nClique: usar · arraste para a barra" }).ToList(), IconUrl);
+                var bs = L2WndUtil.FillItemWindow(w, ctrl, list.Select(id => new SlotData { Icon = GameData.ActionIcon(id), Title = GameData.ActionName(id), Tip = () => ActionTooltip(id) }).ToList(), IconUrl);
                 for (var k = 0; k < bs.Count; k++)
                 {
                     var id = list[k];
@@ -701,7 +715,13 @@ namespace L2Web.UI
                 if (key == sc.Key) continue;
                 sc.Key = key;
                 var keyName = sc.Bar == 0 ? $"F{sc.Index + 1}" : sc.Bar == 1 ? $"Alt+F{sc.Index + 1}" : $"Ctrl+Shift+F{sc.Index + 1}";
-                UiTooltip.Set(sc.Rt.gameObject, $"{keyName}: {label}{(s != null ? "\nBotão direito: remover" : "\nArraste um item, skill ou ação para cá")}");
+                // tooltip "Shortcut" (ToolTip.uc:1259-1397); slot vazio, sem dica
+                if (s != null)
+                {
+                    var sc0 = s;
+                    UiTooltip.SetCustom(sc.Rt.gameObject, () => ShortcutTooltip(sc0), false, $"{keyName}: {label}");
+                }
+                else UiTooltip.Set(sc.Rt.gameObject, "");
                 var url = s != null ? IconUrl(icon) : null;
                 sc.Letter.text = s != null && url == null ? (label.Length > 2 ? label.Substring(0, 2) : label) : "";
                 var letter = sc.Letter;
@@ -746,6 +766,29 @@ namespace L2Web.UI
         /// <summary>GetMSCommandData(nome): skill aprendida com esse nome (sem diferenciar maiusculas), ou 0.</summary>
         public int SkillByName(string name) =>
             skills.FirstOrDefault(k => string.Equals(GameData.SkillName(k.Id, k.Level), name, StringComparison.OrdinalIgnoreCase))?.Id ?? 0;
+
+        /// <summary>Tooltip "Shortcut": item (encantamento, nome, grau, quantidade), skill (nome, nivel, MP) ou so o nome.</summary>
+        CustomTooltip ShortcutTooltip(Shortcut s)
+        {
+            switch (s.Type)
+            {
+                case "item":
+                    return items.TryGetValue(s.Id, out var it) ? L2Tooltip.Shortcut(1, TooltipItemOf(it)) : L2Tooltip.Shortcut(1, new TooltipItem { Name = ShortcutLabel(s) });
+                case "skill":
+                {
+                    var lv = skills.FirstOrDefault(k => k.Id == s.Id)?.Level ?? s.Level;
+                    if (lv == 0) lv = 1;
+                    var r = L2SkillData.Get(s.Id, lv);
+                    var add = L2TooltipData.EnchantName(s.Id, lv);
+                    var shown = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : lv;
+                    return L2Tooltip.Shortcut(2, new TooltipItem { Name = GameData.SkillName(s.Id, lv), Level = shown, MpConsume = r?.MpConsume ?? 0 }, add);
+                }
+                case "action":
+                    return L2Tooltip.Shortcut(3, new TooltipItem { Name = GameData.ActionName(s.Id) });
+                default:
+                    return L2Tooltip.Shortcut(4, new TooltipItem { Name = ShortcutLabel(s) });
+            }
+        }
 
         string ShortcutLabel(Shortcut s)
         {

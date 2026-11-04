@@ -381,6 +381,94 @@ namespace L2Web.UI
             return b.T;
         }
 
+        /// <summary>ReturnTooltip_NTT_ACTION (ToolTip.uc:824-866): nome e descricao (com largura minima).</summary>
+        public static CustomTooltip Action(string name, string desc)
+        {
+            var b = new Builder();
+            b.Text(name);
+            if (!string.IsNullOrEmpty(desc))
+            {
+                b.T.MinimumWidth = MinimumWidth;
+                b.Text(desc, Desc, offY: 6, br: true, one: false);
+            }
+            return b.T;
+        }
+
+        static void SkillHead(Builder b, string name, string addName, int level)
+        {
+            b.Text(name);
+            if (!string.IsNullOrEmpty(addName)) b.Text(addName, AddNameColor, offX: 5);
+            b.Text(" ");
+            b.Text("", Grey, id: 88);
+            b.Text(" " + level, Gold);
+        }
+
+        /// <summary>
+        /// ReturnTooltip_NTT_SKILL (ToolTip.uc:868-999): nome, nome do encantamento, " Lv N", tipo de operacao, HP (1195), MP
+        /// (320), alcance (321, se &gt;= 0) e descricao. `level` ja e o GetEnchantSkillLevel quando ha nome de encantamento.
+        /// </summary>
+        public static CustomTooltip Skill(string name, string addName, int level, string operateType, int hp, int mp, int range, string desc)
+        {
+            var b = new Builder();
+            b.T.MinimumWidth = MinimumWidth;
+            SkillHead(b, name, addName, level);
+            b.Text(operateType ?? "", Gold, offY: 6, br: true);
+            if (hp > 0) b.Option(1195, hp.ToString(), true, true, false);
+            if (mp > 0) b.Option(320, mp.ToString(), true, true, false);
+            if (range >= 0) b.Option(321, range.ToString(), true, true, false);
+            if (!string.IsNullOrEmpty(desc)) b.Text(desc, Desc, offY: 6, br: true, one: false);
+            return b.T;
+        }
+
+        /// <summary>
+        /// ReturnTooltip_NTT_ABNORMALSTATUS (ToolTip.uc:1001-1134): como a skill, sem custos; se nao for debuff e houver tempo
+        /// (Reserved &gt;= 0), "Remaining Time : " + MakeBuffTimeStr.
+        /// </summary>
+        public static CustomTooltip AbnormalStatus(string name, string addName, int level, bool debuff, int remainSec, string desc)
+        {
+            var b = new Builder();
+            b.T.MinimumWidth = MinimumWidth;
+            SkillHead(b, name, addName, level);
+            if (!debuff && remainSec >= 0)
+            {
+                b.Text("", Grey, offY: 6, br: true, id: 1199);
+                b.Text(" : ", Grey, offY: 6);
+                b.Text(MakeBuffTimeStr(remainSec), Gold, offY: 6, cond: "Type=RemainTime");
+            }
+            if (!string.IsNullOrEmpty(desc)) b.Text(desc, Desc, offY: 6, br: true, one: false);
+            return b.T;
+        }
+
+        /// <summary>
+        /// ReturnTooltip_NTT_SHORTCUT (ToolTip.uc:1259-1397), pelo EShortCutItemType: 1 item (encantamento, nome, grau,
+        /// quantidade), 2 skill (nome, encantamento, " Lv N", " (MP:custo)"), 3/4/5 acao, macro e receita (so o nome).
+        /// </summary>
+        public static CustomTooltip Shortcut(int scType, TooltipItem it, string addName = "")
+        {
+            var b = new Builder();
+            switch (scType)
+            {
+                case 1:
+                    ItemEnchant(b, it);
+                    ItemName(b, it.Name, it);
+                    ItemGrade(b, it);
+                    ItemCount(b, it);
+                    break;
+                case 2:
+                    SkillHead(b, it.Name, addName, it.Level);
+                    b.Text(" (");
+                    b.Text("", id: 91);
+                    b.Text(":" + it.MpConsume + ")");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    b.Text(it.Name);
+                    break;
+            }
+            return b.T;
+        }
+
         // ------------------------------------------------------------ layout (CalculateDrawItemListRect / DrawItemList)
         /// <summary>Um pedaco desenhado: texto (ou o simbolo de grau) ou textura, em coordenadas do conteudo.</summary>
         public sealed class Run

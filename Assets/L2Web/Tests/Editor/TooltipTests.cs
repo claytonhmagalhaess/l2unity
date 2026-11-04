@@ -147,6 +147,46 @@ namespace L2Web.Tests
             Assert.AreEqual(3, t.SimpleLineCount);
         }
 
+        [Test]
+        public void Skill_E_Buff()
+        {
+            var s = L2Tooltip.Skill("Power Strike", "", 9, "Active Skill", 0, 37, 40, "Golpe.");
+            CollectionAssert.AreEqual(new[] { "Power Strike", " ", "#88", " 9", "Active Skill", "#320", " : ", "37", "#321", " : ", "40", "Golpe." }, Seq(s));
+            Assert.AreEqual(L2Tooltip.MinimumWidth, s.MinimumWidth);
+            var enc = L2Tooltip.Skill("Power Strike", "Power", 3, "Active Skill", 5, 0, -1, "");
+            CollectionAssert.AreEqual(new[] { "Power Strike", "Power", " ", "#88", " 3", "Active Skill", "#1195", " : ", "5" }, Seq(enc));
+            Assert.AreEqual(5, enc.DrawList[1].OffX);
+            var buff = L2Tooltip.AbnormalStatus("Haste", "", 2, false, 1199, "Velocidade.");
+            CollectionAssert.AreEqual(new[] { "Haste", " ", "#88", " 2", "#1199", " : ", "19#1111", "Velocidade." }, Seq(buff));
+            Assert.AreEqual("Type=RemainTime", buff.DrawList[6].Condition);
+            var deb = L2Tooltip.AbnormalStatus("Poison", "", 1, true, 30, "");
+            CollectionAssert.AreEqual(new[] { "Poison", " ", "#88", " 1" }, Seq(deb), "debuff nao mostra o tempo");
+        }
+
+        [Test]
+        public void Shortcut_PorTipo()
+        {
+            var item = L2Tooltip.Shortcut(1, new TooltipItem { Name = "Soulshot", ItemType = 5, ConsumeType = 2, ItemNum = 4500, CrystalType = 1 });
+            CollectionAssert.AreEqual(new[] { "Soulshot", " ", "`graded`", " (4,500)" }, Seq(item));
+            var skill = L2Tooltip.Shortcut(2, new TooltipItem { Name = "Dash", Level = 2, MpConsume = 13 });
+            CollectionAssert.AreEqual(new[] { "Dash", " ", "#88", " 2", " (", "#91", ":13)" }, Seq(skill));
+            foreach (var k in new[] { 3, 4, 5 }) CollectionAssert.AreEqual(new[] { "Sit/Stand" }, Seq(L2Tooltip.Shortcut(k, new TooltipItem { Name = "Sit/Stand" })));
+        }
+
+        [Test]
+        public void Acao_E_Texto()
+        {
+            CollectionAssert.AreEqual(new[] { "Sit/Stand" }, Seq(L2Tooltip.Action("Sit/Stand", "")));
+            var a = L2Tooltip.Action("Sit/Stand", "Senta.");
+            Assert.AreEqual(L2Tooltip.MinimumWidth, a.MinimumWidth);
+            Assert.IsFalse(a.DrawList[1].OneLine);
+            Assert.IsTrue(L2Tooltip.Text("x").DrawList[0].OneLine);
+            Assert.AreEqual(925, L2Tooltip.Text("", 925).DrawList[0].Id);
+            Assert.AreEqual(0, L2Tooltip.Text("", 0).DrawList.Count);
+            var d = L2Tooltip.Text("descricao", desc: true);
+            Assert.AreEqual(("178,190,207", 144), (Rgb(d.DrawList[0].Color), d.MinimumWidth));
+        }
+
         // ---------------------------------------------------------------- layout e posicao
         /// <summary>6 px por caractere, 12 de altura; com quebra, linhas de `wrap`.</summary>
         static Vector2 Fake(string s, float wrap)
@@ -196,16 +236,6 @@ namespace L2Web.Tests
         }
 
         [Test]
-        public void Texto_UmaLinhaOuDescricao()
-        {
-            Assert.IsTrue(L2Tooltip.Text("x").DrawList[0].OneLine);
-            Assert.AreEqual(925, L2Tooltip.Text("", 925).DrawList[0].Id);
-            Assert.AreEqual(0, L2Tooltip.Text("", 0).DrawList.Count);
-            var d = L2Tooltip.Text("descricao", desc: true);
-            Assert.AreEqual(("178,190,207", 144), (Rgb(d.DrawList[0].Color), d.MinimumWidth));
-        }
-
-        [Test]
         public void Posicao_AcimaAbaixoEBordas()
         {
             Assert.AreEqual(new Vector2(100, 150), L2Tooltip.Place(100, 200, 80, 50, 1280), "acima do canto");
@@ -214,5 +244,41 @@ namespace L2Web.Tests
             Assert.AreEqual(new Vector2(0, 150), L2Tooltip.Place(-10, 200, 80, 50, 1280));
         }
 
+        // ---------------------------------------------------------------- .dat
+        static byte[] FStr(string s)
+        {
+            // FString do L2 em ASCII: tamanho (com o \0) num byte compacto
+            var a = Encoding.ASCII.GetBytes(s);
+            var o = new List<byte> { (byte)(a.Length + 1) };
+            o.AddRange(a);
+            o.Add(0);
+            return o.ToArray();
+        }
+
+        [Test]
+        public void SkillName_E_ActionName()
+        {
+            var b = new List<byte>();
+            b.AddRange(BitConverter.GetBytes(2));
+            foreach (var (id, lv, add) in new[] { (3, 1, "none"), (3, 101, "Power") })
+            {
+                b.AddRange(BitConverter.GetBytes(id));
+                b.AddRange(BitConverter.GetBytes(lv));
+                b.AddRange(FStr("Power Strike"));
+                b.AddRange(FStr("Gathers power."));
+                b.AddRange(FStr(add));
+                b.AddRange(FStr("none"));
+            }
+            var sk = L2TooltipData.ParseSkillNames(b.ToArray());
+            Assert.AreEqual(("Power Strike", "Gathers power.", ""), (sk[(3, 1)].Name, sk[(3, 1)].Desc, sk[(3, 1)].Add1));
+            Assert.AreEqual("Power", sk[(3, 101)].Add1);
+
+            var a = new List<byte>();
+            a.AddRange(BitConverter.GetBytes(1));
+            foreach (var v in new[] { 1, 0, -1, 1, 2, -2, 5 }) a.AddRange(BitConverter.GetBytes(v));
+            foreach (var s in new[] { "Sit/Stand", "icon.action001", "Toggle Sit/Stand.", "sitstand" }) a.AddRange(FStr(s));
+            var ac = L2TooltipData.ParseActionNames(a.ToArray());
+            Assert.AreEqual(("Sit/Stand", "icon.action001", "Toggle Sit/Stand.", "sitstand"), (ac[0].Name, ac[0].Icon, ac[0].Desc, ac[0].Cmd));
+        }
     }
 }

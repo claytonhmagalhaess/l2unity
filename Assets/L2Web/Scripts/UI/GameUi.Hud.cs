@@ -159,7 +159,9 @@ namespace L2Web.UI
                 var d = UiRoot.Box("buff", box, col * 26, row * 26, 26, 26);
                 L2WndUtil.Paint(d, "L2UI.EtcWndBack.AbnormalBack", 26, 26);
                 var name = $"{GameData.SkillName(skillId, level)} Nv {level}";
-                UiTooltip.Set(d.gameObject, name);
+                int sid = skillId, slv = level;
+                var end = until;
+                UiTooltip.SetCustom(d.gameObject, () => BuffTooltip(sid, slv, end), true, name);
                 var url = IconUrl(GameData.SkillIcon(skillId));
                 if (url != null)
                 {
@@ -189,6 +191,19 @@ namespace L2Web.UI
             cg.alpha = rows == 0 ? 0 : 1;
             cg.blocksRaycasts = rows > 0;
             Tick();
+        }
+
+        /// <summary>
+        /// Tooltip "AbnormalStatus": nome, encantamento, nivel, tempo restante (MakeBuffTimeStr, so fora dos debuffs e com
+        /// tempo) e descricao.
+        /// </summary>
+        static CustomTooltip BuffTooltip(int id, int level, double until)
+        {
+            var r = L2SkillData.Get(id, level);
+            var add = L2TooltipData.EnchantName(id, level);
+            var lv = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : level;
+            var remain = double.IsInfinity(until) ? -1 : (int)Math.Max(0, Math.Floor((until - LoadTrack.Now()) / 1000));
+            return L2Tooltip.AbnormalStatus(GameData.SkillName(id, level), add, lv, L2SkillData.IsDebuff(id, level), remain, L2TooltipData.Skill(id, level)?.Desc ?? "");
         }
 
         /// <summary>Atualiza contadores (reuso nos atalhos, tempo dos buffs) e o alvo. Chamado algumas vezes por segundo.</summary>
