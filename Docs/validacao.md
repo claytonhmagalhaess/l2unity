@@ -399,4 +399,4 @@ Tabelas de cobertura geradas: `Docs\cobertura_envios.md` (245 envios), `Docs\cob
   - Clã: os rótulos saem da sysstring em inglês, não do rascunho coreano do xdat.
   - Ações: tabela em `Docs/acoes.md`; as 12 sociais, Sit/Stand, Walk/Run, as lojas, Party Matching e a barra de atalhos foram conferidas no servidor com o patch do pedido 0045.
   - Capturas antes e depois: `Docs/evidencias/status-acoes-cla/`.
-  - Suíte no Editor aberto: 782/782 + 4 (autosize).
+  - Suíte no Editor aberto: 786/786 (746 na `feat/ui-revisao`). O `XdatLayoutTests` passou a conferir o autosize pelo `textAlign`.
