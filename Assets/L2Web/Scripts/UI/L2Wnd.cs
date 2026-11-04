@@ -401,8 +401,13 @@ namespace L2Web.UI
                     var sys = c.N("sysstring");
                     var s = c.Has("text") && !string.IsNullOrEmpty(c.S("text")) ? c.S("text") : sys > 0 ? GameData.SysString((int)sys, "") : "";
                     if (c.Has("backTex")) L2WndUtil.Paint(el, c.S("backTex"), r.W, r.H);
-                    var anchor = align == 2 ? TextAnchor.MiddleCenter : align == 3 ? TextAnchor.MiddleRight : TextAnchor.MiddleLeft;
+                    // NCTextBox::PaintSingleLine (nw:0x10051770) desenha a linha em y = 0 da caixa: o texto fica no topo, descido
+                    // pelo offsetY do xdat (as caixas de 30 px usam offsetY 7 ou 10; os rotulos de 19 px em y + 3 ficam na
+                    // altura dos combos de 17 px, ex. VideoTab text0 (0,14) e ResBox (107,11))
+                    var anchor = align == 2 ? TextAnchor.UpperCenter : align == 3 ? TextAnchor.UpperRight : TextAnchor.UpperLeft;
                     var t = AddText(el, s, 11, color, anchor);
+                    var offY = c.N("offsetY");
+                    if (offY > 0 && !float.IsNaN(offY)) t.rectTransform.offsetMax = new Vector2(0, -offY);
                     AutoText(t, r, align);
                     if (c.Name != null && !texts.ContainsKey(c.Name)) texts[c.Name] = t;
                     return 2;
