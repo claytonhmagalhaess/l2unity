@@ -174,6 +174,8 @@ namespace L2Web.UI
         public PrivateShopView PrivateShopWnd { get; private set; }
         /// <summary>SelectDeliverWnd e DeliverWnd (frete), #0042.</summary>
         public DeliverView DeliverWnd { get; private set; }
+        /// <summary>PetStatusWnd, SummonedStatusWnd, PetWnd e SummonedWnd, #0031.</summary>
+        public PetView Pets { get; private set; }
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
         public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd, PrivateShopWnd?.Wnd };
@@ -339,6 +341,8 @@ namespace L2Web.UI
             PrivateShopWnd = new PrivateShopView(Layer, this, b => this.deps.Send(b)) { NameOf = id => this.world?.Get(id)?.Name ?? "" };
             // SelectDeliverWnd e DeliverWnd do xdat (#0042), pelos eventos do InterfaceRouter
             DeliverWnd = new DeliverView(Layer, this, b => this.deps.Send(b));
+            // barrinhas e janelas do pet e do servo (#0031), pelos eventos do InterfaceRouter
+            Pets = new PetView(Layer, this, b => this.deps.Send(b));
             TradeWnd = new TradeView(Layer, this, b => this.deps.Send(b))
             {
                 NameOf = id =>

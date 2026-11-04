@@ -59,17 +59,18 @@ namespace L2Web.UI
 
         /// <summary>
         /// ParamToItemInfo: o ItemInfo de um evento (chaves do InterfaceEvents.Item: classID, serverID, itemNum, itemType,
-        /// enchanted, damaged, price, defaultPrice, reserved). Empilhavel [I] = itemType &gt;= 3.
+        /// enchanted, damaged, equipped, price, defaultPrice, reserved). Empilhavel [I] = itemType &gt;= 3.
         /// </summary>
         public static ListItem FromParam(string p)
         {
-            int cls = 0, sid = 0, type = 5, ench = 0, dmg = 0, res = 0, price = 0, def = 0, num = 0;
+            int cls = 0, sid = 0, type = 5, ench = 0, dmg = 0, res = 0, price = 0, def = 0, num = 0, eq = 0;
             L2Param.ParseInt(p, "classID", ref cls);
             L2Param.ParseInt(p, "serverID", ref sid);
             L2Param.ParseInt(p, "itemNum", ref num);
             L2Param.ParseInt(p, "itemType", ref type);
             L2Param.ParseInt(p, "enchanted", ref ench);
             L2Param.ParseInt(p, "damaged", ref dmg);
+            L2Param.ParseInt(p, "equipped", ref eq);
             L2Param.ParseInt(p, "reserved", ref res);
             L2Param.ParseInt(p, "price", ref price);
             L2Param.ParseInt(p, "defaultPrice", ref def);
@@ -77,6 +78,7 @@ namespace L2Web.UI
             i.Damaged = dmg;
             i.Reserved = res;
             i.DefaultPrice = def;
+            i.Equipped = eq > 0;
             return i;
         }
 

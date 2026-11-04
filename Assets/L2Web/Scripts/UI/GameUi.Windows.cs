@@ -346,6 +346,8 @@ namespace L2Web.UI
                 InvExec(InvScript.DropToWorld(info));
                 return;
             }
+            // PetWnd.OnDropItem("PetInvenWnd") vindo do InventoryItem: RequestGiveItemToPet
+            if (Pets != null && Pets.DropFromInventory(e, info)) return;
             string target = null;
             Transform slotT = null;
             for (var t = hit.transform; t && t != Inv.El.transform; t = t.parent)
@@ -372,6 +374,22 @@ namespace L2Web.UI
             }
             InvExec(InvScript.Drop(target, info));
         }
+
+        /// <summary>InventoryWnd.OnDropItem de um item que vem de outra janela (o inventario do pet): lista ou equipamento.</summary>
+        public void DropOnInventory(PointerEventData e, InventoryScript.Item info)
+        {
+            var hit = e.pointerCurrentRaycast.gameObject;
+            if (!hit || !Inv.Visible) return;
+            for (var t = hit.transform; t && t != Inv.El.transform; t = t.parent)
+                if (t.name == "InventoryItem" || t.name.StartsWith("EquipItem"))
+                {
+                    InvExec(InvScript.Drop(t.name, info));
+                    return;
+                }
+        }
+
+        /// <summary>DoAction(ClassID): RequestActionUse.</summary>
+        public void DoAction(int id) => deps.ActionUse(id);
 
         /// <summary>Executa o que o script pediu: pacote ou DialogBox (com o HandleDialogOK de volta).</summary>
         void InvExec(InventoryScript.Act a)

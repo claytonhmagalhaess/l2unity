@@ -12,6 +12,8 @@ namespace L2Web.UI
         public int ClassId, ServerId, ConsumeType, Enchant, ItemType, Weight, Reserved, Damaged;
         public long ItemNum, Price, DefaultPrice;
         public bool ShowCount = true;
+        /// <summary>bEquipped (inventario do pet: ForeTexture petitem_click).</summary>
+        public bool Equipped;
         public string Name = "";
 
         public ListItem Copy() => (ListItem)MemberwiseClone();

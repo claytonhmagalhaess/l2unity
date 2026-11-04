@@ -17,6 +17,10 @@ namespace L2Web.UI
         {
             public int Id;
             public string Name = "", Icon = "", Desc = "", Cmd = "";
+            /// <summary>EActionCategory (1 basica, 2 grupo, 3 social, 4 pet, 5 servo).</summary>
+            public int Category;
+            /// <summary>Lista de NPCs da acao (-2 = qualquer um) [I].</summary>
+            public int[] Npcs = Array.Empty<int>();
         }
 
         /// <summary>skillname-e.dat: d id, d nivel, FString nome, descricao, desc_add1, desc_add2 ("none" = vazio).</summary>
@@ -48,10 +52,13 @@ namespace L2Web.UI
             {
                 p += 4; // tag
                 var id = BitConverter.ToInt32(b, p);
+                var cat = BitConverter.ToInt32(b, p + 8);
                 p += 12; // id, type, category
                 var cnt = BitConverter.ToInt32(b, p);
-                p += 4 + 4 * Math.Max(0, cnt);
-                var a = new ActionName { Id = id, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p), Cmd = L2Texts.FString(b, ref p) };
+                p += 4;
+                var npcs = new int[Math.Max(0, cnt)];
+                for (var k = 0; k < npcs.Length; k++, p += 4) npcs[k] = BitConverter.ToInt32(b, p);
+                var a = new ActionName { Id = id, Category = cat, Npcs = npcs, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p), Cmd = L2Texts.FString(b, ref p) };
                 o[id] = a;
             }
             return o;
@@ -86,6 +93,15 @@ namespace L2Web.UI
         {
             actions ??= Load("actionname-e.dat", ParseActionNames, new Dictionary<int, ActionName>());
             return actions.TryGetValue(id, out var a) ? a : null;
+        }
+
+        /// <summary>Todas as acoes do actionname-e, na ordem dos ids.</summary>
+        public static List<ActionName> AllActions()
+        {
+            actions ??= Load("actionname-e.dat", ParseActionNames, new Dictionary<int, ActionName>());
+            var l = new List<ActionName>(actions.Values);
+            l.Sort((a, b) => a.Id.CompareTo(b.Id));
+            return l;
         }
 
         /// <summary>
