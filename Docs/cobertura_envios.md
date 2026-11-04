@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Unity: **183**.
+Envios do original: **245**; com builder no Unity: **75**; não enviados pelo Unity: **170**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -34,6 +34,8 @@ Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Un
 | RequestWithDrawalParty | jogo | 0x2b |  | `c` | SocialPackets.WithdrawParty |
 | RequestOustPartyMember | jogo | 0x2c |  | `cS` | SocialPackets.OustPartyMember |
 | RequestMagicSkillUse | jogo | 0x2f |  | `cddc` | UiPackets.MagicSkillUse |
+| SendWareHouseDepositList | jogo | 0x31 |  | `cdb` | StorePackets.SendWarehouseDepositList |
+| SendWareHouseWithdrawList | jogo | 0x32 |  | `cdb` | StorePackets.SendWarehouseWithdrawList |
 | RequestShortCutReg | jogo | 0x33 |  | `cdddd` | UiPackets.ShortCutReg |
 | RequestShortCutDel | jogo | 0x35 |  | `cd` | UiPackets.ShortCutDel |
 | CanNotMoveAnymore | jogo | 0x36 |  | `cdddd` | GamePackets.CannotMoveAnymore |
@@ -57,7 +59,18 @@ Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Un
 | RequestCharacterRestore | jogo | 0x62 |  | `cd` | GamePackets.CharacterRestore |
 | RequestRestartPoint | jogo | 0x6d |  | `cd` | GamePackets.RequestRestartPoint |
 | RequestCrystallizeItem | jogo | 0x72 |  | `cdd` | UiPackets.RequestCrystallizeItem |
+| RequestPrivateStoreManage | jogo | 0x73 |  | `c` | StorePackets.RequestPrivateStoreManageSell |
+| SetPrivateStoreList | jogo | 0x74 |  | `cddb` | StorePackets.SetPrivateStoreListSell |
+| RequestPrivateStoreQuit | jogo | 0x76 |  | `c` | StorePackets.RequestPrivateStoreQuitSell |
+| SetPrivateStoreMsg | jogo | 0x77 |  | `cS` | StorePackets.SetPrivateStoreMsgSell |
 | SendPrivateStoreBuyList | jogo | 0x79 |  | `cddb` | SocialPackets.PrivateStoreBuy |
+| RequestPrivateStoreBuyManage | jogo | 0x90 |  | `c` | StorePackets.RequestPrivateStoreManageBuy |
+| SetPrivateStoreBuyList | jogo | 0x91 |  | `cdb` | StorePackets.SetPrivateStoreListBuy |
+| RequestPrivateStoreBuyQuit | jogo | 0x93 |  | `c` | StorePackets.RequestPrivateStoreQuitBuy |
+| SetPrivateStoreBuyMsg | jogo | 0x94 |  | `cS` | StorePackets.SetPrivateStoreMsgBuy |
+| SendPrivateStoreBuyBuyList | jogo | 0x96 |  | `cddb` | StorePackets.RequestPrivateStoreSell |
+| RequestPackageSendableItemList | jogo | 0x9e |  | `cd` | StorePackets.RequestPackageSendableItemList |
+| RequestPackageSend | jogo | 0x9f |  | `cddb` | StorePackets.RequestPackageSend |
 | RequestMultiSellChoose | jogo | 0xa7 |  | `cddddd` | UiPackets.MultiSellChoose |
 | NetPing | jogo | 0xa8 |  | `cddd` | GamePackets.NetPing |
 | RequestMakeMacro | jogo | 0xc1 |  | `cdSSSccb` | MacroPackets.RequestMakeMacro |
@@ -90,8 +103,6 @@ Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Un
 | RequestDismissParty | jogo | 0x2d |  | `c` | não enviado |
 | RequestMagicSkillList | jogo | 0x2e |  | `ddd` | não enviado |
 | SAP | jogo | 0x30 |  | `c` | não enviado |
-| SendWareHouseDepositList | jogo | 0x31 |  | `cdb` | não enviado |
-| SendWareHouseWithdrawList | jogo | 0x32 |  | `cdb` | não enviado |
 | RequestShortCutUse | jogo | 0x34 |  | `cddc` | não enviado |
 | SendServerStatus | jogo | 0x39 |  | `cc` | não enviado |
 | SendSummonCmd | jogo | 0x39 |  | `ccS` | não enviado |
@@ -124,11 +135,7 @@ Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Un
 | RequestListPartyWating | jogo | 0x6f |  | `cddd` | não enviado |
 | RequestManagePartyRoom | jogo | 0x70 |  | `cdddddS` | não enviado |
 | RequestJoinPartyRoom | jogo | 0x71 |  | `cdddd` | não enviado |
-| RequestPrivateStoreManage | jogo | 0x73 |  | `c` | não enviado |
-| SetPrivateStoreList | jogo | 0x74 |  | `cddb` | não enviado |
 | RequestPrivateStoreManageCancel | jogo | 0x75 |  | `c` | não enviado |
-| RequestPrivateStoreQuit | jogo | 0x76 |  | `c` | não enviado |
-| SetPrivateStoreMsg | jogo | 0x77 |  | `cS` | não enviado |
 | RequestPrivateStoreList | jogo | 0x78 |  | `cd` | não enviado |
 | ReviveReply | jogo | 0x7a |  | `cd` | não enviado |
 | RequestTutorialLinkHtml | jogo | 0x7b |  | `cS` | não enviado |
@@ -151,17 +158,10 @@ Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Un
 | RequestGetItemFromPet | jogo | 0x8c |  | `cddd` | não enviado |
 | RequestAllyInfo | jogo | 0x8e |  | `c` | não enviado |
 | RequestPetGetItem | jogo | 0x8f |  | `cd` | não enviado |
-| RequestPrivateStoreBuyManage | jogo | 0x90 |  | `c` | não enviado |
-| SetPrivateStoreBuyList | jogo | 0x91 |  | `cdb` | não enviado |
 | RequestPrivateStoreBuyManageCancel | jogo | 0x92 |  | `c` | não enviado |
-| RequestPrivateStoreBuyQuit | jogo | 0x93 |  | `c` | não enviado |
-| SetPrivateStoreBuyMsg | jogo | 0x94 |  | `cS` | não enviado |
 | RequestPrivateStoreBuyList | jogo | 0x95 |  | `cd` | não enviado |
-| SendPrivateStoreBuyBuyList | jogo | 0x96 |  | `cddb` | não enviado |
 | SendTimeCheckPacket | jogo | 0x97 |  | `cdd` | não enviado |
 | RequestSkillCoolTime | jogo | 0x9d |  | `c` | não enviado |
-| RequestPackageSendableItemList | jogo | 0x9e |  | `cd` | não enviado |
-| RequestPackageSend | jogo | 0x9f |  | `cddb` | não enviado |
 | RequestBlock | jogo | 0xa0 |  | `cd` | não enviado |
 | RequestBlock | jogo | 0xa0 |  | `cdS` | não enviado |
 | RequestCastleSiegeInfo | jogo | 0xa1 |  | `cd` | não enviado |

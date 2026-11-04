@@ -27,6 +27,10 @@ namespace L2Web.Net
         public int CustomType1, CustomType2;
         /// <summary>Preco do item nas listas que o trazem (armazem, loja privada...); null nas demais.</summary>
         public int? Price, DefaultPrice;
+        /// <summary>dbID dos itens do armazem e do frete (o d depois do customType2), que vai nos envios.</summary>
+        public int? Reserved;
+        /// <summary>Quantidade maxima negociavel (PrivateStoreListBuy).</summary>
+        public int? Limit;
         /// <summary>InventoryUpdate: 0 sem mudanca, 1 adicionado, 2 modificado, 3 removido. null no ItemList.</summary>
         public int? Change;
     }

@@ -2,11 +2,11 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 44 tratados no Unity
+- UI: 198 no original, 52 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 33 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
-- dados: 7 no original, 2 tratados no Unity
+- dados: 7 no original, 3 tratados no Unity
 - log: 6 no original, 2 tratados no Unity
 - rede: 2 no original, 2 tratados no Unity
 - sem tratador: 1 no original, 0 tratados no Unity
@@ -60,7 +60,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x2b | ExOlympiadModePacket | ExOlympiadMode | UI | EV_OlympiadMatchEnd, EV_OlympiadTargetShow | falta |
 | ex | 0x2c | ExOlympiadMatchEndPacket | ExOlympiadMatchEnd | UI | EV_OlympiadMatchEnd | falta |
 | ex | 0x2d | ExMailArrivedPacket | ExMailArrived | UI | EV_ArriveNewMail | falta |
-| ex | 0x2e | ExStorageMaxCountPacket | ExStorageMaxCount | UI | EV_SetMaxCount | falta |
+| ex | 0x2e | ExStorageMaxCountPacket | ExStorageMaxCount | UI | EV_SetMaxCount | tratado |
 | ex | 0x2f | ExEventMatchManagePacket |  | UI | EV_EventMatchManage | falta |
 | ex | 0x30 | ExMultiPartyCommandChannelInfoPacket | ExMultiPartyCommandChannelInfo | UI | EV_CommandChannelInfo, EV_CommandChannelPartyList | falta |
 | ex | 0x31 | ExPCCafePointInfoPacket | ExPCCafePointInfo | UI | EV_PCCafePointInfo | falta |
@@ -172,8 +172,8 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x3e | DismissPartyPacket |  | UI | EV_ChatMessage, EV_SystemMessage | falta |
 | game | 0x3f | SetDismissPartyPacket |  | UI | EV_ChatMessage, EV_SystemMessage | falta |
 | game | 0x40 | MagicAndSkillList |  | UI nativa (C++, sem EV_) |  | falta |
-| game | 0x41 | WareHouseDepositListPacket | WarehouseDepositList | UI | EV_InventoryHideWindow, EV_WarehouseAddItem, EV_WarehouseOpenWindow | falta |
-| game | 0x42 | WareHouseWithdrawListPacket | WarehouseWithdrawList | UI | EV_WarehouseAddItem, EV_WarehouseOpenWindow | falta |
+| game | 0x41 | WareHouseDepositListPacket | WarehouseDepositList | UI | EV_InventoryHideWindow, EV_WarehouseAddItem, EV_WarehouseOpenWindow | tratado |
+| game | 0x42 | WareHouseWithdrawListPacket | WarehouseWithdrawList | UI | EV_WarehouseAddItem, EV_WarehouseOpenWindow | tratado |
 | game | 0x43 | WareHouseDonePacket |  | UI | EV_ChatMessage, EV_SystemMessage | falta |
 | game | 0x44 | ShortCutRegisterPacket | ShortCutRegister | UI | EV_ShortcutUpdate | tratado |
 | game | 0x45 | ShortCutInitPacket | ShortCutInit | UI | EV_ShortcutClear, EV_ShortcutUpdate | tratado |
@@ -261,7 +261,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x97 | PartyRoomInfoPacket | PartyMatchDetail | UI | EV_PartyMatchRoomStart | falta |
 | game | 0x98 | PlaySoundPacket | PlaySound | mundo/engine |  | falta |
 | game | 0x99 | StaticObjectPacket | StaticObjectInfo | mundo/engine |  | tratado |
-| game | 0x9a | PrivateStoreManageList | PrivateStoreManageListSell | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | falta |
+| game | 0x9a | PrivateStoreManageList | PrivateStoreManageListSell | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |
 | game | 0x9b | PrivateStoreList | PrivateStoreListSell | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |
 | game | 0x9c | PrivateStoreMsg | PrivateStoreMsgSell | dados |  | tratado |
 | game | 0x9d |  | ShowMiniMap | UI | EV_ShowMinimap | tratado |
@@ -290,9 +290,9 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xb4 | AllianceInfoPacket | AllianceInfo | ignorado |  | ignorado (igual) |
 | game | 0xb5 | PetStatusUpdatePacket | PetStatusUpdate | UI | EV_UpdatePetInfo | falta |
 | game | 0xb6 | PetDeletePacket | PetDelete | UI | EV_PetSummonedStatusClose | falta |
-| game | 0xb7 | PrivateStoreBuyManageList | PrivateStoreManageListBuy | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | falta |
-| game | 0xb8 | PrivateStoreBuyList | PrivateStoreListBuy | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | falta |
-| game | 0xb9 | PrivateStoreBuyMsg | PrivateStoreMsgBuy | dados |  | falta |
+| game | 0xb7 | PrivateStoreBuyManageList | PrivateStoreManageListBuy | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |
+| game | 0xb8 | PrivateStoreBuyList | PrivateStoreListBuy | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |
+| game | 0xb9 | PrivateStoreBuyMsg | PrivateStoreMsgBuy | dados |  | tratado |
 | game | 0xba | VehicleStartPacket | VehicleStarted | mundo/engine |  | falta |
 | game | 0xbb | RequestTimeCheckPacket |  | mundo/engine |  | falta |
 | game | 0xbc | StartAllianceWarPacket |  | UI nativa (C++, sem EV_) |  | falta |
@@ -301,8 +301,8 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xbf | ReplyStopAllianceWarPacket |  | ignorado |  | ignorado (igual) |
 | game | 0xc0 | SurrenderAllianceWarPacket |  | ignorado |  | ignorado (igual) |
 | game | 0xc1 | SkillCoolTimePacket | SkillCoolTime | UI nativa (C++, sem EV_) |  | falta |
-| game | 0xc2 | PackageToListPacket | PackageToList | UI | EV_SelectDeliverAddName, EV_SelectDeliverClear | falta |
-| game | 0xc3 | PackageSendableListPacket | PackageSendableList | UI | EV_DeliverAddItem, EV_DeliverOpenWindow | falta |
+| game | 0xc2 | PackageToListPacket | PackageToList | UI | EV_SelectDeliverAddName, EV_SelectDeliverClear | tratado |
+| game | 0xc3 | PackageSendableListPacket | PackageSendableList | UI | EV_DeliverAddItem, EV_DeliverOpenWindow | tratado |
 | game | 0xc4 | EarthQuakePacket | Earthquake | mundo/engine |  | falta |
 | game | 0xc5 | FlyToLoactionPacket | FlyToLocation | mundo/engine |  | falta |
 | game | 0xc6 | BlockListPacket |  | ignorado |  | ignorado (igual) |

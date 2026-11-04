@@ -86,6 +86,22 @@ namespace L2Web.Tests
                 Name = "m", Description = "d", Acronym = "a", Commands = { new MacroCmd { Entry = 1, Type = 3, D1 = 2, Command = "/sit" } },
             }));
             yield return C("MacroPackets.RequestDeleteMacro", "RequestDeleteMacro", MacroPackets.RequestDeleteMacro(1));
+            // armazem, frete e loja privada (#0046, T6/T12/T18)
+            var dbItems = new List<(int, int)> { (1, 1) };
+            yield return C("StorePackets.SendWarehouseDepositList", "SendWareHouseDepositList", StorePackets.SendWarehouseDepositList(dbItems));
+            yield return C("StorePackets.SendWarehouseWithdrawList", "SendWareHouseWithdrawList", StorePackets.SendWarehouseWithdrawList(dbItems));
+            yield return C("StorePackets.RequestPackageSendableItemList", "RequestPackageSendableItemList", StorePackets.RequestPackageSendableItemList(1));
+            yield return C("StorePackets.RequestPackageSend", "RequestPackageSend", StorePackets.RequestPackageSend(1, dbItems));
+            yield return C("StorePackets.RequestPrivateStoreManageSell", "RequestPrivateStoreManage", StorePackets.RequestPrivateStoreManageSell());
+            yield return C("StorePackets.SetPrivateStoreListSell", "SetPrivateStoreList", StorePackets.SetPrivateStoreListSell(false, new List<(int, int, int)> { (1, 1, 1) }));
+            yield return C("StorePackets.RequestPrivateStoreQuitSell", "RequestPrivateStoreQuit", StorePackets.RequestPrivateStoreQuitSell());
+            yield return C("StorePackets.SetPrivateStoreMsgSell", "SetPrivateStoreMsg", StorePackets.SetPrivateStoreMsgSell("m"));
+            yield return C("StorePackets.RequestPrivateStoreManageBuy", "RequestPrivateStoreBuyManage", StorePackets.RequestPrivateStoreManageBuy());
+            yield return C("StorePackets.SetPrivateStoreListBuy", "SetPrivateStoreBuyList", StorePackets.SetPrivateStoreListBuy(new List<(int, int, int, int, int)> { (1, 0, 0, 1, 1) }));
+            yield return C("StorePackets.RequestPrivateStoreQuitBuy", "RequestPrivateStoreBuyQuit", StorePackets.RequestPrivateStoreQuitBuy());
+            yield return C("StorePackets.SetPrivateStoreMsgBuy", "SetPrivateStoreBuyMsg", StorePackets.SetPrivateStoreMsgBuy("m"));
+            yield return C("StorePackets.RequestPrivateStoreSell", "SendPrivateStoreBuyBuyList",
+                StorePackets.RequestPrivateStoreSell(1, new List<(int, int, int, int, int, int)> { (1, 1, 0, 0, 1, 1) }));
             // social
             yield return C("SocialPackets.RequestJoinParty", "RequestJoinParty", SocialPackets.RequestJoinParty("nome"));
             yield return C("SocialPackets.AnswerJoinParty", "RequestAnswerJoinParty", SocialPackets.AnswerJoinParty(true));

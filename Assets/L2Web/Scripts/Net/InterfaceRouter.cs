@@ -19,6 +19,15 @@ namespace L2Web.Net
         public readonly MacroBook Macros = new MacroBook();
         public Action<SendMacroListInfo> OnMacroList;
 
+        /// <summary>Ultimo pacote de cada janela (a janela le os itens daqui ou do param do evento).</summary>
+        public WarehouseListInfo Warehouse;
+        public StorageMaxCountInfo StorageMax;
+        public List<DeliverTarget> DeliverTargets;
+        public PackageSendableListInfo Deliver;
+        public PrivateStoreManageInfo StoreManage;
+        public PrivateStoreBuyListInfo StoreBuyList;
+        public Action<PrivateStoreMsgInfo> OnPrivateStoreMsgBuy;
+
         /// <param name="emit">Destino dos eventos (padrao: L2Events.Dispatch).</param>
         public InterfaceRouter(GameClient gc, Action<List<PacketEvents.Event>> emit = null)
         {
@@ -39,6 +48,34 @@ namespace L2Web.Net
                 OnMacroList?.Invoke(m);
             });
 
+            // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
+            On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));
+            On(0x42, r => ShowWarehouse(StorePackets.ParseWarehouseWithdrawList(r)));
+            Ex(0x2e, r =>
+            {
+                StorageMax = StorePackets.ParseExStorageMaxCount(r);
+                Emit(InterfaceEvents.StorageMaxCount(StorageMax));
+            });
+            On(0xc2, r =>
+            {
+                DeliverTargets = StorePackets.ParsePackageToList(r);
+                Emit(InterfaceEvents.PackageToList(DeliverTargets));
+            });
+            On(0xc3, r =>
+            {
+                Deliver = StorePackets.ParsePackageSendableList(r);
+                Emit(InterfaceEvents.PackageSendableList(Deliver));
+            });
+            On(0x9a, r => ShowStoreManage(StorePackets.ParsePrivateStoreManageListSell(r)));
+            On(0xb7, r => ShowStoreManage(StorePackets.ParsePrivateStoreManageListBuy(r)));
+            On(0xb8, r =>
+            {
+                StoreBuyList = StorePackets.ParsePrivateStoreListBuy(r);
+                Emit(InterfaceEvents.PrivateStoreBuyList(StoreBuyList));
+            });
+            // sem EV_: o titulo da loja de compra vai para o nome do personagem no mundo (como o PrivateStoreMsgSell no App)
+            On(0xb9, r => OnPrivateStoreMsgBuy?.Invoke(StorePackets.ParsePrivateStoreMsgBuy(r)));
+
             offs.Add(gc.On(0xfe, r =>
             {
                 if (ex.TryGetValue(r.H(), out var fn)) fn(r);
@@ -53,6 +90,18 @@ namespace L2Web.Net
         {
             foreach (var off in offs) off();
             offs.Clear();
+        }
+
+        void ShowWarehouse(WarehouseListInfo w)
+        {
+            Warehouse = w;
+            Emit(InterfaceEvents.Warehouse(w));
+        }
+
+        void ShowStoreManage(PrivateStoreManageInfo m)
+        {
+            StoreManage = m;
+            Emit(InterfaceEvents.PrivateStoreManage(m));
         }
 
         void On(int op, Action<PacketReader> fn) => offs.Add(gc.On(op, fn));

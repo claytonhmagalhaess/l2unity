@@ -20,8 +20,8 @@ namespace L2Web.Net
 
         /// <summary>
         /// Campos de item que vem no pacote, com as chaves do ItemInfo (ParamToItemInfo, spec 90): classID, serverID, itemNum,
-        /// itemType (type2), slotBitType, enchanted, damaged (customType1), equipped, reserved (customType2), refineryOp1/2
-        /// (aumento, 16 bits cada) e currentDurability (mana). price e defaultPrice so onde o pacote traz preco.
+        /// itemType (type2), slotBitType, enchanted, damaged (customType1), equipped, refineryOp1/2 (aumento, 16 bits cada) e
+        /// currentDurability (mana). price, defaultPrice e reserved (dbID do armazem e do frete) so onde o pacote os traz.
         /// </summary>
         public static string Item(string p, InvItem it)
         {
@@ -33,13 +33,89 @@ namespace L2Web.Net
             p = P(p, "enchanted", it.Enchant);
             p = P(p, "damaged", it.CustomType1);
             p = P(p, "equipped", it.Equipped ? 1 : 0);
-            p = P(p, "reserved", it.CustomType2);
             p = P(p, "refineryOp1", it.Augmentation & 0xffff);
             p = P(p, "refineryOp2", (it.Augmentation >> 16) & 0xffff);
             p = P(p, "currentDurability", it.Mana);
             if (it.Price != null) p = P(p, "price", it.Price.Value);
             if (it.DefaultPrice != null) p = P(p, "defaultPrice", it.DefaultPrice.Value);
+            if (it.Reserved != null) p = P(p, "reserved", it.Reserved.Value);
             return p;
+        }
+
+        // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
+
+        /// <summary>
+        /// WarehouseDepositList (0x41) / WithdrawList (0x42): o deposito fecha o inventario (EV_InventoryHideWindow), depois
+        /// EV_WarehouseOpenWindow (type deposit/withdraw, category, adena) e um EV_WarehouseAddItem por item.
+        /// </summary>
+        public static List<PacketEvents.Event> Warehouse(WarehouseListInfo w)
+        {
+            var o = new List<PacketEvents.Event>();
+            if (w.Deposit) o.Add(E(Ev.EV_InventoryHideWindow));
+            var p = P("", "type", w.Deposit ? "deposit" : "withdraw");
+            p = P(p, "category", w.Category);
+            o.Add(E(Ev.EV_WarehouseOpenWindow, P(p, "adena", w.Adena)));
+            foreach (var it in w.Items) o.Add(E(Ev.EV_WarehouseAddItem, Item("", it)));
+            return o;
+        }
+
+        /// <summary>ExStorageMaxCount (FE:2e): EV_SetMaxCount com os 7 limites (chaves do NWindow.dll, spec 91).</summary>
+        public static List<PacketEvents.Event> StorageMaxCount(StorageMaxCountInfo m)
+        {
+            var p = P("", "inventory", m.Inventory);
+            p = P(p, "warehousePrivate", m.WarehousePrivate);
+            p = P(p, "warehouseClan", m.WarehouseClan);
+            p = P(p, "privateShopSell", m.PrivateShopSell);
+            p = P(p, "privateShopBuy", m.PrivateShopBuy);
+            p = P(p, "dwarvenRecipe", m.DwarvenRecipe);
+            p = P(p, "recipe", m.Recipe);
+            return new List<PacketEvents.Event> { E(Ev.EV_SetMaxCount, p) };
+        }
+
+        /// <summary>PackageToList (0xc2): EV_SelectDeliverClear e um EV_SelectDeliverAddName (name, id) por personagem.</summary>
+        public static List<PacketEvents.Event> PackageToList(List<DeliverTarget> l)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_SelectDeliverClear) };
+            foreach (var t in l) o.Add(E(Ev.EV_SelectDeliverAddName, P(P("", "name", t.Name), "id", t.ObjectId)));
+            return o;
+        }
+
+        /// <summary>PackageSendableList (0xc3): EV_DeliverOpenWindow (adena, destinationID) e um EV_DeliverAddItem por item.</summary>
+        public static List<PacketEvents.Event> PackageSendableList(PackageSendableListInfo s)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_DeliverOpenWindow, P(P("", "adena", s.Adena), "destinationID", s.TargetId)) };
+            foreach (var it in s.Items) o.Add(E(Ev.EV_DeliverAddItem, Item("", it)));
+            return o;
+        }
+
+        static PacketEvents.Event ShopOpen(string type, int adena, int userId, bool bulk)
+        {
+            var p = P("", "type", type);
+            p = P(p, "adena", adena);
+            p = P(p, "userID", userId);
+            return E(Ev.EV_PrivateShopOpenWindow, P(p, "bulk", bulk ? 1 : 0));
+        }
+
+        static PacketEvents.Event ShopItem(string target, InvItem it) => E(Ev.EV_PrivateShopAddItem, Item(P("", "target", target), it));
+
+        /// <summary>
+        /// PrivateStoreManageListSell (0x9a) / ManageListBuy (0xb7): EV_PrivateShopOpenWindow (type sellList/buyList), o
+        /// inventario em topList e a loja em bottomList (PrivateShopWnd: PT_SellList / PT_BuyList).
+        /// </summary>
+        public static List<PacketEvents.Event> PrivateStoreManage(PrivateStoreManageInfo m)
+        {
+            var o = new List<PacketEvents.Event> { ShopOpen(m.Sell ? "sellList" : "buyList", m.Adena, m.OwnerId, m.PackageSale) };
+            foreach (var it in m.Inventory) o.Add(ShopItem("topList", it));
+            foreach (var it in m.Store) o.Add(ShopItem("bottomList", it));
+            return o;
+        }
+
+        /// <summary>PrivateStoreListBuy (0xb8): vender para a loja de compra de outro (type sell, PT_Sell), os pedidos em topList.</summary>
+        public static List<PacketEvents.Event> PrivateStoreBuyList(PrivateStoreBuyListInfo b)
+        {
+            var o = new List<PacketEvents.Event> { ShopOpen("sell", b.Adena, b.OwnerId, false) };
+            foreach (var it in b.Items) o.Add(ShopItem("topList", it));
+            return o;
         }
 
         // ---------------------------------------------------------------- macro (T8)
