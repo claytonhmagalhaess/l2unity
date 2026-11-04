@@ -7,39 +7,7 @@ using UnityEngine;
 
 namespace L2Web.UI
 {
-    /// <summary>XMLTreeNodeItemInfo: texto, textura ou espaco, na ordem do no.</summary>
-    public sealed class TreeItem
-    {
-        public enum Kind
-        {
-            Text,
-            Texture,
-            Blank,
-        }
-
-        public Kind Type;
-        public string Text = "", Tex = "";
-        /// <summary>Alfa 0 = cor padrao do TreeCtrl.</summary>
-        public Color32 Color;
-        public int OffX, OffY, TexW, TexH, BlankH;
-        public bool LineBreak;
-    }
-
-    /// <summary>XMLTreeNodeInfo: o nome completo (pai.nome), botao de abrir, dica e os itens.</summary>
-    public sealed class TreeNode
-    {
-        public string Name = "";
-        public TreeNode Parent;
-        public readonly List<TreeNode> Children = new();
-        public readonly List<TreeItem> Items = new();
-        public int OffX, OffY;
-        public bool ShowButton, Expanded;
-        public string BtnExpand = "", BtnCollapse = "", Tooltip = "";
-        /// <summary>Fundo do no aberto (TextSelect/TextSelect2) e o fundo do no de descricao.</summary>
-        public bool ExpandedBack, DrawBackground;
-    }
-
-    public sealed class QuestTreeScript
+    public sealed class QuestTreeScript : TreeModel
     {
         public const int MaxCount = 25;
         public const int DialogAbort = 0, DialogNoQuest = 1;
@@ -52,7 +20,6 @@ namespace L2Web.UI
         public Func<int, string> ItemName = GameData.ItemName;
         public Func<int, string> ItemIcon = GameData.ItemIcon;
 
-        public readonly TreeNode Root = new() { Name = "" };
         public int QuestNum;
         int oldQuestId = -1;
         string curNodeName = "";
@@ -63,77 +30,11 @@ namespace L2Web.UI
 
         public QuestTreeScript(QuestData data) => Data = data;
 
-        // ------------------------------------------------------------ TreeCtrl
-        public TreeNode Find(string name)
+        /// <summary>DeleteNode: tambem tira as quantidades dos itens do no.</summary>
+        public override void DeleteNode(string name)
         {
-            if (string.IsNullOrEmpty(name)) return Root;
-            TreeNode Walk(TreeNode n)
-            {
-                foreach (var c in n.Children)
-                {
-                    if (c.Name == name) return c;
-                    if (name.StartsWith(c.Name + ".", StringComparison.Ordinal))
-                    {
-                        var r = Walk(c);
-                        if (r != null) return r;
-                    }
-                }
-                return null;
-            }
-            return Walk(Root);
-        }
-
-        /// <summary>InsertNode: o nome devolvido e pai.nome (sem pai, so o nome); "" se o pai nao existe ou o nome repete.</summary>
-        public string InsertNode(string parent, TreeNode n, string shortName)
-        {
-            var p = Find(parent);
-            if (p == null) return "";
-            n.Name = string.IsNullOrEmpty(parent) ? shortName : parent + "." + shortName;
-            if (Find(n.Name) != null) return "";
-            n.Parent = p;
-            p.Children.Add(n);
-            return n.Name;
-        }
-
-        public void DeleteNode(string name)
-        {
-            var n = Find(name);
-            if (n == null || n == Root) return;
-            n.Parent.Children.Remove(n);
+            base.DeleteNode(name);
             itemCounts.RemoveAll(x => x.node == name || x.node.StartsWith(name + ".", StringComparison.Ordinal));
-        }
-
-        /// <summary>GetChildNode: os filhos separados por "|".</summary>
-        public string ChildNodes(string name)
-        {
-            var n = Find(name);
-            if (n == null) return "";
-            var l = new List<string>();
-            foreach (var c in n.Children) l.Add(c.Name);
-            return string.Join("|", l);
-        }
-
-        /// <summary>
-        /// SetExpandedNode / clique no botao: multiExpand = 0 no xdat [I] = abrir um no fecha os irmaos abertos.
-        /// </summary>
-        public void SetExpanded(string name, bool on)
-        {
-            var n = Find(name);
-            if (n == null || n == Root) return;
-            if (on)
-                foreach (var s in n.Parent.Children)
-                    if (s != n) s.Expanded = false;
-            n.Expanded = on;
-        }
-
-        /// <summary>GetExpandedNode(tree, "root"): o filho aberto do root (so o primeiro conta no script).</summary>
-        public string ExpandedNode()
-        {
-            var r = Find("root");
-            if (r == null) return "";
-            foreach (var c in r.Children)
-                if (c.Expanded) return c.Name;
-            return "";
         }
 
         // ------------------------------------------------------------ eventos
@@ -209,7 +110,9 @@ namespace L2Web.UI
                 var name = Data?.Name(questId) ?? "";
                 var q = new TreeNode
                 {
-                    Tooltip = name, ShowButton = true, ExpandedBack = true,
+                    Tooltip = name, ShowButton = true,
+                    ExpLeft = "L2UI_CH3.ListCtrl.TextSelect", ExpRight = "L2UI_CH3.ListCtrl.TextSelect2", ExpOffY = 1, ExpH = 13, ExpRightW = 32,
+                    ExpLeftU = 16, ExpLeftV = 13, ExpRightU = 32, ExpRightV = 13,
                     BtnExpand = "L2UI_CH3.QUESTWND.QuestWndPlusBtn", BtnCollapse = "L2UI_CH3.QUESTWND.QuestWndMinusBtn",
                 };
                 var qn = InsertNode("root", q, questId.ToString());
@@ -355,21 +258,6 @@ namespace L2Web.UI
             return true;
         }
 
-        /// <summary>Nos visiveis em ordem, com a profundidade (os filhos so com o pai aberto; o "root" sempre aberto).</summary>
-        public List<(TreeNode node, int depth)> Visible()
-        {
-            var o = new List<(TreeNode, int)>();
-            void Walk(TreeNode n, int depth)
-            {
-                foreach (var c in n.Children)
-                {
-                    o.Add((c, depth));
-                    if (c.Expanded || c.Name == "root") Walk(c, depth + 1);
-                }
-            }
-            Walk(Root, 0);
-            return o;
-        }
     }
 
     /// <summary>QuestListWnd.uc: as linhas do EV_QuestInfo (ExShowQuestInfo FE:19) e o "Location" do NPC inicial.</summary>

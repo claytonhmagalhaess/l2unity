@@ -16,9 +16,6 @@ namespace L2Web.UI
         public readonly QuestListScript L = new();
         readonly GameUi ui;
         readonly Action<byte[]> send;
-        RectTransform treeEl, content;
-        float treeOffset, treeH;
-        static readonly Color TextColor = new Color32(0xdc, 0xdc, 0xdc, 0xff);
 
         public QuestView(L2Layer layer, GameUi ui, Action<byte[]> send)
         {
@@ -86,19 +83,19 @@ namespace L2Web.UI
             if (chk) chk.onValueChanged.AddListener(_ => UpdateTargetInfo());
             var tip = Tree.Get("QuestToolTip");
             if (tip) UiTooltip.SetCustom(tip.gameObject, () => L2Tooltip.QuestLegend(5), false, "");
-            treeEl = Tree.Get("MainTree");
-            if (!treeEl) return;
-            treeH = treeEl.sizeDelta.y;
-            var hit = treeEl.TryGetComponent<Image>(out var img) ? img : treeEl.gameObject.AddComponent<Image>();
-            hit.color = new Color(0, 0, 0, 0.001f);
-            treeEl.gameObject.AddComponent<RectMask2D>();
-            content = UiRoot.Box("content", treeEl, 0, 0, treeEl.sizeDelta.x, treeH);
-            UiEvents.Of(treeEl).OnWheel = e =>
+            tree = new L2TreeCtrl(Tree, "MainTree")
             {
-                treeOffset = Mathf.Clamp(treeOffset + Mathf.Sign(e.scrollDelta.y) * 15, Mathf.Min(0, treeH - content.sizeDelta.y), 0);
-                content.anchoredPosition = new Vector2(0, -treeOffset);
+                OnClick = n =>
+                {
+                    if (!n.ShowButton) return;
+                    S.SetExpanded(n.Name, !n.Expanded);
+                    if (n.Name.StartsWith("root", StringComparison.Ordinal)) UpdateTargetInfo();
+                    RenderTree();
+                },
             };
         }
+
+        L2TreeCtrl tree;
 
         bool NpcPos => Tree?.Check("chkNpcPosBox")?.isOn ?? false;
 
@@ -124,132 +121,13 @@ namespace L2Web.UI
             });
         }
 
-        static readonly TextGenerator gen = new();
+        static float Measure(string s, float wrapW, bool height) => L2TreeCtrl.Measure(s, wrapW, height);
 
-        static float Measure(string s, float wrapW, bool height)
-        {
-            var gs = new TextGenerationSettings
-            {
-                font = UiRoot.Font, fontSize = 11, scaleFactor = 1, richText = false,
-                horizontalOverflow = wrapW > 0 ? HorizontalWrapMode.Wrap : HorizontalWrapMode.Overflow, verticalOverflow = VerticalWrapMode.Overflow,
-                generationExtents = new Vector2(wrapW > 0 ? wrapW : 4000, 4000), pivot = Vector2.zero,
-            };
-            return height ? gen.GetPreferredHeight(s ?? "", gs) : gen.GetPreferredWidth(s ?? "", gs);
-        }
-
-        /// <summary>
-        /// Desenha os nos visiveis [I: o NCTreeCtrl nao foi lido]: x = soma dos deslocamentos ate o no; botao 14 x 14; itens em
-        /// fila (bLineBreak e espaco quebram a linha); texto longo quebra na largura que sobra; o no aberto ganha o fundo
-        /// TextSelect/TextSelect2 (altura 13, y + 1) e a descricao um fundo escuro de 211.
-        /// </summary>
+        /// <summary>O MainTree pelo L2TreeCtrl; o clique num no com botao abre ou fecha e, nos "root...", recalcula o alvo.</summary>
         public void RenderTree()
         {
             Tree?.Text("txtQuestNum", S.CountText);
-            if (!content) return;
-            UiKit.Clear(content);
-            var width = treeEl.sizeDelta.x;
-            float y = 0;
-            foreach (var (node, _) in S.Visible())
-            {
-                var x = 0f;
-                for (var n = node; n != null && n != S.Root; n = n.Parent) x += n.OffX;
-                y += node.OffY;
-                var row = UiRoot.Box("node " + node.Name, content, 0, y, width, 14);
-                var top = y;
-                if (node.Expanded && node.ExpandedBack)
-                {
-                    var back = UiRoot.Box("back", row, x, 1, width - x - 2 - 32, 13);
-                    L2WndUtil.Paint(back, "L2UI_CH3.ListCtrl.TextSelect", back.sizeDelta.x, 13, PaintMode.Stretch, 0, 0, 16, 13);
-                    var back2 = UiRoot.Box("back2", row, width - 2 - 32, 1, 32, 13);
-                    L2WndUtil.Paint(back2, "L2UI_CH3.ListCtrl.TextSelect2", 32, 13, PaintMode.Stretch, 0, 0, 32, 13);
-                }
-                RectTransform bg = null;
-                if (node.DrawBackground)
-                {
-                    bg = UiRoot.Box("descback", row, x, -2, 211, 14);
-                    bg.gameObject.AddComponent<Image>().color = new Color(0, 0, 0, 0.35f);
-                    bg.GetComponent<Image>().raycastTarget = false;
-                }
-                var start = x;
-                if (node.ShowButton)
-                {
-                    var b = UiRoot.Box("btn", row, x, 0, 14, 14);
-                    L2WndUtil.Paint(b, node.Expanded ? node.BtnCollapse : node.BtnExpand, 14, 14, PaintMode.Normal);
-                    start += 14;
-                }
-                float cx = start, lineH = node.ShowButton ? 14 : 0, ly = 0;
-                foreach (var it in node.Items)
-                {
-                    if (it.Type == TreeItem.Kind.Blank)
-                    {
-                        ly += lineH + it.BlankH;
-                        lineH = 0;
-                        cx = start;
-                        continue;
-                    }
-                    if (it.LineBreak && cx > start)
-                    {
-                        ly += lineH;
-                        lineH = 0;
-                        cx = start;
-                    }
-                    var px = cx + it.OffX;
-                    var py = ly + it.OffY;
-                    if (it.Type == TreeItem.Kind.Texture)
-                    {
-                        var t = UiRoot.Box("tex", row, px, py, it.TexW, it.TexH);
-                        var url = it.Tex.StartsWith("L2UI", StringComparison.OrdinalIgnoreCase) ? null : GameUi.IconUrl(it.Tex);
-                        if (url != null)
-                        {
-                            var img = t.gameObject.AddComponent<RawImage>();
-                            img.raycastTarget = false;
-                            L2WndUtil.SetTexture(img, url);
-                        }
-                        else L2WndUtil.Paint(t, it.Tex, it.TexW, it.TexH, PaintMode.Stretch);
-                        cx = px + it.TexW;
-                        lineH = Mathf.Max(lineH, py - ly + it.TexH);
-                        continue;
-                    }
-                    var room = width - px - 4;
-                    // o "\n" escrito do questname-e.dat e a quebra de linha
-                    var text = it.Text.Replace("\\n", "\n");
-                    var w = Measure(text, 0, false);
-                    var wrap = w > room || text.Contains("\n");
-                    var c = it.Color.a > 0 ? (Color)it.Color : TextColor;
-                    var label = UiRoot.Label(row, text, px, py, wrap ? room : w + 2, 14, 11, c, TextAnchor.UpperLeft);
-                    label.supportRichText = false;
-                    label.horizontalOverflow = wrap ? HorizontalWrapMode.Wrap : HorizontalWrapMode.Overflow;
-                    label.verticalOverflow = VerticalWrapMode.Overflow;
-                    label.raycastTarget = false;
-                    var th = wrap ? Mathf.Ceil(label.preferredHeight) : 14;
-                    label.rectTransform.sizeDelta = new Vector2(label.rectTransform.sizeDelta.x, th);
-                    cx = px + (wrap ? room : w);
-                    lineH = Mathf.Max(lineH, py - ly + th);
-                }
-                var h = Mathf.Max(14, ly + lineH);
-                row.sizeDelta = new Vector2(width, h);
-                if (bg) bg.sizeDelta = new Vector2(211, h + 4);
-                y = top + h;
-                if (node.ShowButton)
-                {
-                    // o no e um botao: o clique abre ou fecha (OnClickButton com o nome do no) e recalcula o alvo
-                    var hit = row.gameObject.AddComponent<Image>();
-                    hit.color = new Color(0, 0, 0, 0.001f);
-                    var btn = row.gameObject.AddComponent<UiTexButton>();
-                    var name = node.Name;
-                    var open = node.Expanded;
-                    btn.OnClick = () =>
-                    {
-                        S.SetExpanded(name, !open);
-                        if (name.StartsWith("root", StringComparison.Ordinal)) UpdateTargetInfo();
-                        RenderTree();
-                    };
-                    if (node.Tooltip.Length > 0) UiTooltip.Set(row.gameObject, node.Tooltip);
-                }
-            }
-            content.sizeDelta = new Vector2(width, Mathf.Max(treeH, y));
-            treeOffset = Mathf.Clamp(treeOffset, Mathf.Min(0, treeH - content.sizeDelta.y), 0);
-            content.anchoredPosition = new Vector2(0, -treeOffset);
+            tree?.Render(S);
         }
 
         // ------------------------------------------------------------ QuestListWnd
