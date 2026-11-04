@@ -125,13 +125,14 @@ namespace L2Web.UI
         /// <summary>BuyList: janela de compra.</summary>
         public void BuyList(BuyListInfo l)
         {
-            TradeWindow("Comprar", l.Money, l.Items, cart => deps.Send(UiPackets.RequestBuyItem(l.ListId, cart.Select(c => (c.item.ItemId, c.count)).ToList())));
+            // ShopWnd do xdat (ShopWnd.uc, #0029)
+            ShopWnd.Buy(l);
         }
 
         /// <summary>SellList: janela de venda.</summary>
         public void SellList(SellListInfo l)
         {
-            TradeWindow("Vender", l.Money, l.Items, cart => deps.Send(UiPackets.RequestSellItem(0, cart.Select(c => (c.item.ObjectId, c.item.ItemId, c.count)).ToList())));
+            ShopWnd.Sell(l);
         }
 
         static RectTransform MiniSlot(Transform parent, string icon, string name)

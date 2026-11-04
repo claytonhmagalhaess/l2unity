@@ -204,7 +204,21 @@ namespace L2Web.UI
 
         public static List<Event> TradeRequest(TradeRequestInfo t) => new() { new Event(Ev.EV_TradeRequestStartExchange, L2Param.Add("", "targetID", t.SenderId)) };
 
-        public static List<Event> TradeStart(TradeStartInfo t) => new() { new Event(Ev.EV_TradeStart, L2Param.Add("", "targetID", t.PartnerId)) };
+        /// <summary>
+        /// TradeStart (0x1e, spec 96; pedido 0025): EV_TradeStart (targetId, a chave do TradeWnd.uc) e um EV_TradeAddItem
+        /// destination=inventoryList com o ItemInfo de cada item. O EV_InventoryHideWindow do par fica de fora: o
+        /// HandleStartTrade do TradeWnd.uc ja fecha o inventario, e o golden so tem as chaves nativas misturadas desse evento.
+        /// </summary>
+        public static List<Event> TradeStart(TradeStartInfo t)
+        {
+            var outp = new List<Event> { new Event(Ev.EV_TradeStart, L2Param.Add("", "targetId", t.PartnerId)) };
+            foreach (var i in t.Items) outp.Add(new Event(Ev.EV_TradeAddItem, TradeItemParam("inventoryList", i)));
+            return outp;
+        }
+
+        /// <summary>ItemInfo (chaves do InterfaceEvents.Item) de um item da troca, com o destination.</summary>
+        static string TradeItemParam(string destination, TradeItem i) =>
+            InterfaceEvents.Item(L2Param.Add("", "destination", destination), new InvItem { ObjectId = i.ObjectId, ItemId = i.ItemId, Count = i.Count, Enchant = i.Enchant, Mana = -1 });
 
         public static List<Event> TradeDone() => new() { new Event(Ev.EV_TradeDone, "") };
 
@@ -225,7 +239,7 @@ namespace L2Web.UI
         {
             var outp = new List<Event> { new Event(Ev.EV_InventoryClear, "") };
             if (l.Show) outp.Add(new Event(Ev.EV_InventoryOpenWindow, ""));
-            foreach (var _ in l.Items) outp.Add(new Event(Ev.EV_InventoryAddItem, ""));
+            foreach (var it in l.Items) outp.Add(new Event(Ev.EV_InventoryAddItem, InterfaceEvents.Item("", it)));
             outp.Add(new Event(Ev.EV_InventoryItemListEnd, ""));
             return outp;
         }
@@ -249,12 +263,28 @@ namespace L2Web.UI
         {
             var outp = new List<Event>();
             foreach (var it in items)
-                outp.Add(new Event(Ev.EV_InventoryUpdateItem, L2Param.Add("", "type", it.Change switch { 1 => "add", 3 => "delete", _ => "update" })));
+                outp.Add(new Event(Ev.EV_InventoryUpdateItem, InterfaceEvents.Item(L2Param.Add("", "type", it.Change switch { 1 => "add", 3 => "delete", _ => "update" }), it)));
             return outp;
         }
 
         /// <summary>TradeOwnAdd (0x20) / TradeOtherAdd (0x21): EV_TradeAddItem com destination myList / otherList (TradeWnd.uc).</summary>
         public static List<Event> TradeAdd(bool own) => new() { new Event(Ev.EV_TradeAddItem, L2Param.Add("", "destination", own ? "myList" : "otherList")) };
+
+        /// <summary>TradeAdd com o ItemInfo do item (pedido 0025, item 4).</summary>
+        public static List<Event> TradeAdd(bool own, TradeItem i) => new() { new Event(Ev.EV_TradeAddItem, TradeItemParam(own ? "myList" : "otherList", i)) };
+
+        /// <summary>
+        /// BuyList (0x11) / SellList (0x10) com os itens (pedido 0025, itens 3 e 4): a venda fecha o inventario antes
+        /// (EV_InventoryHideWindow); cada EV_ShopAddItem leva o ItemInfo (classID, serverID, itemNum, price...).
+        /// </summary>
+        public static List<Event> Shop(string type, int merchant, int adena, int npc, IList<ShopItem> items)
+        {
+            var outp = Shop(type, merchant, adena, npc, 0);
+            if (type == "sell") outp.Insert(0, new Event(Ev.EV_InventoryHideWindow, ""));
+            foreach (var i in items)
+                outp.Add(new Event(Ev.EV_ShopAddItem, InterfaceEvents.Item("", new InvItem { ObjectId = i.ObjectId, ItemId = i.ItemId, Count = i.Count, Enchant = i.Enchant, Type2 = i.Type2, Mana = -1, Price = i.Price })));
+            return outp;
+        }
 
         static string Member(string p, PartyMember m)
         {
@@ -321,7 +351,8 @@ namespace L2Web.UI
             p = L2Param.Add(p, "userID", s.OwnerId);
             p = L2Param.Add(p, "bulk", s.PackageSale ? 1 : 0);
             var outp = new List<Event> { new Event(Ev.EV_PrivateShopOpenWindow, p) };
-            foreach (var _ in s.Items) outp.Add(new Event(Ev.EV_PrivateShopAddItem, L2Param.Add("", "target", "topList")));
+            foreach (var i in s.Items)
+                outp.Add(new Event(Ev.EV_PrivateShopAddItem, InterfaceEvents.Item(L2Param.Add("", "target", "topList"), new InvItem { ObjectId = i.ObjectId, ItemId = i.ItemId, Count = i.Count, Enchant = i.Enchant, Mana = -1, Price = i.Price })));
             return outp;
         }
 

@@ -195,6 +195,13 @@ namespace L2Web.UI
         // ------------------------------------------------------------ troca
         public void TradeStart(TradeStartInfo t)
         {
+            // TradeWnd do xdat (#0029); a janela generica so fica sem o GameUi
+            if (GameUi.Current?.TradeWnd is { } tw)
+            {
+                Store.Hide();
+                tw.Start(t, GameUi.Current.TradeCloses());
+                return;
+            }
             tradePartner = t.PartnerId;
             tradeOwn = new List<TradeItem>();
             tradeOther = new List<TradeItem>();
@@ -205,18 +212,29 @@ namespace L2Web.UI
 
         public void OwnAdd(TradeItem i)
         {
+            if (GameUi.Current?.TradeWnd is { } tw)
+            {
+                tw.Add(true, i);
+                return;
+            }
             tradeOwn.Add(i);
             RenderTrade(tradeCandidates);
         }
 
         public void OtherAdd(TradeItem i)
         {
+            if (GameUi.Current?.TradeWnd is { } tw)
+            {
+                tw.Add(false, i);
+                return;
+            }
             tradeOther.Add(i);
             RenderTrade(tradeCandidates);
         }
 
         public void Pressed(bool own)
         {
+            if (!own && GameUi.Current?.TradeWnd is { } tw) tw.OtherOk();
             if (own) stateOwn = true;
             else stateOther = true;
             RenderTrade(tradeCandidates);
@@ -224,6 +242,7 @@ namespace L2Web.UI
 
         public void TradeEnd(bool done)
         {
+            GameUi.Current?.TradeWnd?.Done();
             tradePartner = 0;
             Trade.OnClose = () => { };
             Trade.Hide();

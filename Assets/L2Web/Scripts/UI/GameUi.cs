@@ -165,6 +165,16 @@ namespace L2Web.UI
         /// <summary>MessengerWnd nativo (lista de amigos).</summary>
         public readonly MessengerView Messenger;
         public readonly L2Wnd RestartWnd;
+        /// <summary>ShopWnd (compra e venda ao NPC) e TradeWnd (troca), #0029.</summary>
+        public ShopView ShopWnd { get; private set; }
+        public TradeView TradeWnd { get; private set; }
+
+        /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
+        public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd };
+
+        /// <summary>GameUi ativo (o SocialUi do App passa a troca para a TradeWnd do xdat).</summary>
+        public static GameUi Current { get; private set; }
+
         /// <summary>Janelas de macro (#0032).</summary>
         public MacroView Macros { get; private set; }
         /// <summary>DialogBox (UICommonAPI: DialogShow, DialogIsMine...).</summary>
@@ -203,6 +213,7 @@ namespace L2Web.UI
         public GameUi(RectTransform root, WorldT world, UiDeps deps)
         {
             Root = root;
+            Current = this;
             this.world = world;
             this.deps = deps ?? new UiDeps();
             Layer = new L2Layer(root);
@@ -314,6 +325,18 @@ namespace L2Web.UI
             L2WndUtil.Paint(RestartWnd.El, "L2UI_CH3.Calculate.Calculate12_back", 128, 128);
             Dialog = new DialogBoxView(Layer);
             DialogWnd = Dialog.Wnd;
+            // ShopWnd e TradeWnd do xdat (#0029)
+            ShopWnd = new ShopView(Layer, this, b => this.deps.Send(b));
+            TradeWnd = new TradeView(Layer, this, b => this.deps.Send(b))
+            {
+                NameOf = id =>
+                {
+                    var e = this.world?.Get(id);
+                    if (e == null) return "";
+                    var clan = e.ClanId > 0 ? ClanName(e.ClanId) : "";
+                    return string.IsNullOrEmpty(clan) ? e.Name : e.Name + " - " + clan;
+                },
+            };
 
             // ---- inventario e janela principal
             Inv = new L2Wnd("InventoryWnd", Layer, new WndOpts { AriaLabel = "Inventário" });
