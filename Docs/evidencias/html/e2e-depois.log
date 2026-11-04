@@ -1,0 +1,35 @@
+d96d606 Docs: html_suporte.md, tags e atributos do NCHtmlViewer e o estado no porte (#0055)
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+== #0055 depois d96d606
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=65 self=Html55 83352,147992,-3400"
+== buffer
+"npc=268477412"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_buffer_menu.png (1024, 768)
+"npc_268477412_Link buffer/Sub/buff.htm"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_buffer_buff.png (1024, 768)
+== gatekeeper
+"npc=268479868"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_gatekeeper.png (1024, 768)
+== quest
+"npc_268479868_Quest"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_quest.png (1024, 768)
+"ok"
+== board
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_board.png (1024, 768)
+"top"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_board_top.png (1024, 768)
+"region"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_board_region.png (1024, 768)
+0 entradas
+== board aba Region pelo clique
+"click tab"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/depois_board_region_clique.png (1024, 768)
+   log [html] board (4090): bbs_settings | bbs_market | bbs_raidinfo | bbs_ranking | bbs_nav siege/siege.htm | bbs_autofarm;voiced_bot;bbs_settings | bbs_autofarm;voiced_shared;bbs_settings
+   log [html] board (1515): voiced_join;bbs_home | voiced_leave;bbs_home

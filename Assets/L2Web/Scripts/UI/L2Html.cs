@@ -114,11 +114,27 @@ namespace L2Web.UI
 
             public float GlyphHeight => GlyphH;
 
+            /// <summary>
+            /// scaleFactor do Canvas onde o texto e desenhado: o Text rasteriza a fonte em tamanho x escala e divide de volta,
+            /// e a largura muda um pouco com o arredondamento (o sublinhado sobrava no gatekeeper com o dpi do Windows).
+            /// </summary>
+            public float Scale
+            {
+                get => settings.scaleFactor;
+                set
+                {
+                    var v = value > 0 ? value : 1;
+                    if (Mathf.Approximately(v, settings.scaleFactor)) return;
+                    settings.scaleFactor = v;
+                    cache.Clear();
+                }
+            }
+
             public float Width(string text)
             {
                 if (string.IsNullOrEmpty(text)) return 0;
                 if (cache.TryGetValue(text, out var w)) return w;
-                w = gen.GetPreferredWidth(text, settings);
+                w = gen.GetPreferredWidth(text, settings) / settings.scaleFactor;
                 cache[text] = w;
                 return w;
             }
@@ -359,6 +375,8 @@ namespace L2Web.UI
         {
             act ??= new HtmlActions();
             if (width <= 0) width = ViewerWidth(parent);
+            var cv = parent ? parent.GetComponentInParent<Canvas>() : null;
+            ((UiMeasure)Measure).Scale = cv ? cv.scaleFactor : 1;
             var lay = HtmlLayout.Run(HtmlDoc.Parse(html ?? "", act.Names), width, Measure);
             var root = UiRoot.Box("l2html", parent, 0, 0, width, lay.Height);
             UiKit.Layout(root, width, lay.Height, -1, width, lay.Height);
@@ -540,7 +558,9 @@ namespace L2Web.UI
             var lr = line.rectTransform;
             lr.anchorMin = lr.anchorMax = lr.pivot = new Vector2(0, 0);
             lr.anchoredPosition = new Vector2(0, 0);
-            lr.sizeDelta = new Vector2(Mathf.Ceil(b.W), 1);
+            // a largura que o Text desenha de fato (a do layout so como reserva)
+            var tw = t.preferredWidth;
+            lr.sizeDelta = new Vector2(Mathf.Ceil(tw > 0 ? Mathf.Min(tw, b.W + 2) : b.W), 1);
         }
 
         static readonly Regex SysName = new(@"^&\$(\d+);$");

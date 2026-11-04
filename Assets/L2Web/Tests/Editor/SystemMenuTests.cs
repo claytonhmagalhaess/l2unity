@@ -45,7 +45,7 @@ namespace L2Web.Tests
                 Assert.Greater(link.X, 0);
                 var line = r.Body.Find("link/sublinhado") as RectTransform;
                 Assert.IsNotNull(line);
-                Assert.AreEqual(Mathf.Ceil(link.W), line.sizeDelta.x);
+                Assert.AreEqual(Mathf.Ceil(link.W), line.sizeDelta.x, 1f);
             }
             finally
             {
