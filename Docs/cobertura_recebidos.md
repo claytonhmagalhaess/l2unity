@@ -2,11 +2,11 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 82 tratados no Unity
+- UI: 198 no original, 87 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 34 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
-- dados: 7 no original, 3 tratados no Unity
+- dados: 7 no original, 4 tratados no Unity
 - log: 6 no original, 2 tratados no Unity
 - rede: 2 no original, 2 tratados no Unity
 - sem tratador: 1 no original, 0 tratados no Unity
@@ -321,12 +321,12 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xd3 | NetPingPacket |  | rede |  | tratado |
 | game | 0xd4 | DicePacket | Dice | mundo/engine |  | falta |
 | game | 0xd5 | SnoopPacket | Snoop | UI | EV_GMSnoop | falta |
-| game | 0xd6 | RecipeBookItemListPacket | RecipeBookItemList | UI | EV_RecipeAddBookItem, EV_RecipeShowBookWnd | falta |
-| game | 0xd7 | RecipeItemMakeInfoPacket | RecipeItemMakeInfo | UI | EV_RecipeItemMakeInfo | falta |
-| game | 0xd8 | RecipeShopManageListPacket | RecipeShopManageList | UI | EV_RecipeShopAddBookItem, EV_RecipeShopAddShopItem, EV_RecipeShopShowWnd | falta |
-| game | 0xd9 | RecipeShopSellListPacket | RecipeShopSellList | UI | EV_RecipeShopSellItem, EV_RecipeShowBuyListWnd | falta |
-| game | 0xda | RecipeShopItemInfoPacket | RecipeShopItemInfo | UI | EV_RecipeShopItemInfo | falta |
-| game | 0xdb | RecipeShopMsgPacket | RecipeShopMsg | dados |  | falta |
+| game | 0xd6 | RecipeBookItemListPacket | RecipeBookItemList | UI | EV_RecipeAddBookItem, EV_RecipeShowBookWnd | tratado |
+| game | 0xd7 | RecipeItemMakeInfoPacket | RecipeItemMakeInfo | UI | EV_RecipeItemMakeInfo | tratado |
+| game | 0xd8 | RecipeShopManageListPacket | RecipeShopManageList | UI | EV_RecipeShopAddBookItem, EV_RecipeShopAddShopItem, EV_RecipeShopShowWnd | tratado |
+| game | 0xd9 | RecipeShopSellListPacket | RecipeShopSellList | UI | EV_RecipeShopSellItem, EV_RecipeShowBuyListWnd | tratado |
+| game | 0xda | RecipeShopItemInfoPacket | RecipeShopItemInfo | UI | EV_RecipeShopItemInfo | tratado |
+| game | 0xdb | RecipeShopMsgPacket | RecipeShopMsg | dados |  | tratado |
 | game | 0xdc | ShowCalcPacket | ShowCalculator | UI | EV_CalculatorWndShowHide | falta |
 | game | 0xdd | MonRaceInfoPacket | MonRaceInfo | mundo/engine |  | falta |
 | game | 0xde | ShowTownMapPacket | ShowTownMap | UI | EV_ShowTownMap | falta |

@@ -116,6 +116,19 @@ namespace L2Web.Tests
             yield return C("SkillTrainPackets.RequestHennaRemoveList", "RequestHennaUnequipList", SkillTrainPackets.RequestHennaRemoveList());
             yield return C("SkillTrainPackets.RequestHennaItemRemoveInfo", "RequestHennaUnequipInfo", SkillTrainPackets.RequestHennaItemRemoveInfo(1));
             yield return C("SkillTrainPackets.RequestHennaRemove", "RequestHennaUnequip", SkillTrainPackets.RequestHennaRemove(1));
+            // fabricacao (#0046, T19)
+            yield return C("RecipePackets.RequestRecipeBookOpen", "RequestRecipeBookOpen", RecipePackets.RequestRecipeBookOpen(1));
+            yield return C("RecipePackets.RequestRecipeItemDelete", "RequestRecipeItemDelete", RecipePackets.RequestRecipeItemDelete(1));
+            yield return C("RecipePackets.RequestRecipeItemMakeInfo", "RequestRecipeItemMakeInfo", RecipePackets.RequestRecipeItemMakeInfo(1));
+            yield return C("RecipePackets.RequestRecipeItemMakeSelf", "RequestRecipeItemMakeSelf", RecipePackets.RequestRecipeItemMakeSelf(1));
+            yield return C("RecipePackets.RequestRecipeShopManageList", "RequestRecipeShopManageList", RecipePackets.RequestRecipeShopManageList());
+            yield return C("RecipePackets.RequestRecipeShopMessageSet", "RequestRecipeShopMessageSet", RecipePackets.RequestRecipeShopMessageSet("m"));
+            yield return C("RecipePackets.RequestRecipeShopListSet", "RequestRecipeShopListSet", RecipePackets.RequestRecipeShopListSet(new List<(int, int)> { (1, 1) }));
+            yield return C("RecipePackets.RequestRecipeShopManageQuit", "RequestRecipeShopManageQuit", RecipePackets.RequestRecipeShopManageQuit());
+            yield return C("RecipePackets.RequestRecipeShopManageCancel", "RequestRecipeShopManageCancel", RecipePackets.RequestRecipeShopManageCancel());
+            yield return C("RecipePackets.RequestRecipeShopMakeInfo", "RequestRecipeShopMakeInfo", RecipePackets.RequestRecipeShopMakeInfo(1, 1));
+            yield return C("RecipePackets.RequestRecipeShopMakeDo", "RequestRecipeShopMakeDo", RecipePackets.RequestRecipeShopMakeDo(1, 1, 1));
+            yield return C("RecipePackets.RequestRecipeShopSellList", "RequestRecipeShopSellList", RecipePackets.RequestRecipeShopSellList(1));
             // pet (#0046, T7)
             yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
             yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));

@@ -43,6 +43,12 @@ namespace L2Web.Net
         public HennaItemInfo HennaItem;
         public HennaInfo Hennas;
 
+        /// <summary>Livro de receitas e as listas da loja de fabricacao.</summary>
+        public RecipeBookInfo RecipeBook;
+        public RecipeShopManageInfo RecipeShopManage;
+        public RecipeShopSellInfo RecipeShopSell;
+        public Action<PrivateStoreMsgInfo> OnRecipeShopMsg;
+
         /// <summary>Ultimo pacote de cada janela (a janela le os itens daqui ou do param do evento).</summary>
         public WarehouseListInfo Warehouse;
         public StorageMaxCountInfo StorageMax;
@@ -168,6 +174,27 @@ namespace L2Web.Net
                 Hennas = SkillTrainPackets.ParseHennaInfo(r);
                 Emit(InterfaceEvents.HennaInfo(Hennas));
             });
+
+            // ---------------------------------------------------------------- fabricacao (T19)
+            On(0xd6, r =>
+            {
+                RecipeBook = RecipePackets.ParseRecipeBookItemList(r);
+                Emit(InterfaceEvents.RecipeBook(RecipeBook));
+            });
+            On(0xd7, r => Emit(InterfaceEvents.RecipeMakeInfo(RecipePackets.ParseRecipeItemMakeInfo(r))));
+            On(0xd8, r =>
+            {
+                RecipeShopManage = RecipePackets.ParseRecipeShopManageList(r);
+                Emit(InterfaceEvents.RecipeShopManage(RecipeShopManage));
+            });
+            On(0xd9, r =>
+            {
+                RecipeShopSell = RecipePackets.ParseRecipeShopSellList(r);
+                Emit(InterfaceEvents.RecipeShopSell(RecipeShopSell));
+            });
+            On(0xda, r => Emit(InterfaceEvents.RecipeShopItem(RecipePackets.ParseRecipeShopItemInfo(r))));
+            // sem EV_: titulo da loja de fabricacao para o nome no mundo
+            On(0xdb, r => OnRecipeShopMsg?.Invoke(RecipePackets.ParseRecipeShopMsg(r)));
 
             // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
             On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));

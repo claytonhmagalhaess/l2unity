@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **108**; não enviados pelo Unity: **137**.
+Envios do original: **245**; com builder no Unity: **120**; não enviados pelo Unity: **125**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -91,6 +91,18 @@ Envios do original: **245**; com builder no Unity: **108**; não enviados pelo U
 | RequestPackageSend | jogo | 0x9f |  | `cddb` | StorePackets.RequestPackageSend |
 | RequestMultiSellChoose | jogo | 0xa7 |  | `cddddd` | UiPackets.MultiSellChoose |
 | NetPing | jogo | 0xa8 |  | `cddd` | GamePackets.NetPing |
+| RequestRecipeBookOpen | jogo | 0xac |  | `cd` | RecipePackets.RequestRecipeBookOpen |
+| RequestRecipeItemDelete | jogo | 0xad |  | `cd` | RecipePackets.RequestRecipeItemDelete |
+| RequestRecipeItemMakeInfo | jogo | 0xae |  | `cd` | RecipePackets.RequestRecipeItemMakeInfo |
+| RequestRecipeItemMakeSelf | jogo | 0xaf |  | `cd` | RecipePackets.RequestRecipeItemMakeSelf |
+| RequestRecipeShopManageList | jogo | 0xb0 |  | `c` | RecipePackets.RequestRecipeShopManageList |
+| RequestRecipeShopMessageSet | jogo | 0xb1 |  | `cS` | RecipePackets.RequestRecipeShopMessageSet |
+| RequestRecipeShopListSet | jogo | 0xb2 |  | `cdb` | RecipePackets.RequestRecipeShopListSet |
+| RequestRecipeShopManageQuit | jogo | 0xb3 |  | `c` | RecipePackets.RequestRecipeShopManageQuit |
+| RequestRecipeShopManageCancel | jogo | 0xb4 |  | `c` | RecipePackets.RequestRecipeShopManageCancel |
+| RequestRecipeShopMakeInfo | jogo | 0xb5 |  | `cdd` | RecipePackets.RequestRecipeShopMakeInfo |
+| RequestRecipeShopMakeDo | jogo | 0xb6 |  | `cddd` | RecipePackets.RequestRecipeShopMakeDo |
+| RequestRecipeShopSellList | jogo | 0xb7 |  | `cd` | RecipePackets.RequestRecipeShopSellList |
 | RequestHennaItemList | jogo | 0xba |  | `cd` | SkillTrainPackets.RequestHennaList |
 | RequestHennaItemInfo | jogo | 0xbb |  | `cd` | SkillTrainPackets.RequestHennaItemInfo |
 | RequestHennaEquip | jogo | 0xbc |  | `cd` | SkillTrainPackets.RequestHennaEquip |
@@ -188,18 +200,6 @@ Envios do original: **245**; com builder no Unity: **108**; não enviados pelo U
 | RequestRemainTime | jogo | 0xa9 |  | `c` | não enviado |
 | BypassUserCmd | jogo | 0xaa |  | `cd` | não enviado |
 | GMSnoopEnd | jogo | 0xab |  | `cd` | não enviado |
-| RequestRecipeBookOpen | jogo | 0xac |  | `cd` | não enviado |
-| RequestRecipeItemDelete | jogo | 0xad |  | `cd` | não enviado |
-| RequestRecipeItemMakeInfo | jogo | 0xae |  | `cd` | não enviado |
-| RequestRecipeItemMakeSelf | jogo | 0xaf |  | `cd` | não enviado |
-| RequestRecipeShopManageList | jogo | 0xb0 |  | `c` | não enviado |
-| RequestRecipeShopMessageSet | jogo | 0xb1 |  | `cS` | não enviado |
-| RequestRecipeShopListSet | jogo | 0xb2 |  | `cdb` | não enviado |
-| RequestRecipeShopManageQuit | jogo | 0xb3 |  | `c` | não enviado |
-| RequestRecipeShopManageCancel | jogo | 0xb4 |  | `c` | não enviado |
-| RequestRecipeShopMakeInfo | jogo | 0xb5 |  | `cdd` | não enviado |
-| RequestRecipeShopMakeDo | jogo | 0xb6 |  | `cddd` | não enviado |
-| RequestRecipeShopSellList | jogo | 0xb7 |  | `cd` | não enviado |
 | RequestObserverEndPacket | jogo | 0xb8 |  | `c` | não enviado |
 | VoteSociality | jogo | 0xb9 |  | `cd` | não enviado |
 | RequestProcureCrop | jogo | 0xc3 |  | `cddb` | não enviado |

@@ -379,6 +379,62 @@ namespace L2Web.Net
             return o;
         }
 
+        // ---------------------------------------------------------------- fabricacao (T19, spec 07 §6)
+
+        /// <summary>RecipeBookItemList (0xd6): EV_RecipeShowBookWnd (Type) e um EV_RecipeAddBookItem (RecipeID) por receita.</summary>
+        public static List<PacketEvents.Event> RecipeBook(RecipeBookInfo b)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_RecipeShowBookWnd, P("", "Type", b.Type)) };
+            foreach (var (id, _) in b.Recipes) o.Add(E(Ev.EV_RecipeAddBookItem, P("", "RecipeID", id)));
+            return o;
+        }
+
+        /// <summary>RecipeItemMakeInfo (0xd7): EV_RecipeItemMakeInfo (RecipeID, CurrentMP, MaxMP, MakingResult, Type).</summary>
+        public static List<PacketEvents.Event> RecipeMakeInfo(RecipeMakeInfo m)
+        {
+            var p = P("", "RecipeID", m.RecipeId);
+            p = P(p, "CurrentMP", m.CurrentMp);
+            p = P(p, "MaxMP", m.MaxMp);
+            p = P(p, "MakingResult", m.MakingResult);
+            return new() { E(Ev.EV_RecipeItemMakeInfo, P(p, "Type", m.Type)) };
+        }
+
+        static string ShopEntry(RecipeShopEntry e) => P(P(P("", "RecipeID", e.RecipeId), "CanbeMade", e.CanBeMade), "MakingFee", e.Fee);
+
+        /// <summary>
+        /// RecipeShopManageList (0xd8): EV_RecipeShopShowWnd (Type), um EV_RecipeShopAddBookItem (RecipeID) por receita do livro e
+        /// um EV_RecipeShopAddShopItem (RecipeID, CanbeMade, MakingFee) por receita da loja.
+        /// </summary>
+        public static List<PacketEvents.Event> RecipeShopManage(RecipeShopManageInfo m)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_RecipeShopShowWnd, P("", "Type", m.Type)) };
+            foreach (var (id, _) in m.Book) o.Add(E(Ev.EV_RecipeShopAddBookItem, P("", "RecipeID", id)));
+            foreach (var e in m.Shop) o.Add(E(Ev.EV_RecipeShopAddShopItem, ShopEntry(e)));
+            return o;
+        }
+
+        /// <summary>RecipeShopSellList (0xd9): EV_RecipeShowBuyListWnd (ServerID, CurrentMP, MaxMP, Adena) e um EV_RecipeShopSellItem por receita.</summary>
+        public static List<PacketEvents.Event> RecipeShopSell(RecipeShopSellInfo s)
+        {
+            var p = P("", "ServerID", s.OwnerId);
+            p = P(p, "CurrentMP", s.CurrentMp);
+            p = P(p, "MaxMP", s.MaxMp);
+            var o = new List<PacketEvents.Event> { E(Ev.EV_RecipeShowBuyListWnd, P(p, "Adena", s.Adena)) };
+            foreach (var e in s.Items) o.Add(E(Ev.EV_RecipeShopSellItem, ShopEntry(e)));
+            return o;
+        }
+
+        /// <summary>RecipeShopItemInfo (0xda): EV_RecipeShopItemInfo (MerchantID, RecipeID, CurrentMP, MaxMP, MakingResult, Adena).</summary>
+        public static List<PacketEvents.Event> RecipeShopItem(RecipeShopItemInfo i)
+        {
+            var p = P("", "MerchantID", i.OwnerId);
+            p = P(p, "RecipeID", i.RecipeId);
+            p = P(p, "CurrentMP", i.CurrentMp);
+            p = P(p, "MaxMP", i.MaxMp);
+            p = P(p, "MakingResult", i.MakingResult);
+            return new() { E(Ev.EV_RecipeShopItemInfo, P(p, "Adena", i.Adena)) };
+        }
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>
