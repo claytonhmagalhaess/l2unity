@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-teleporte-chao` (nasce de `main`) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (TeleportToLocation 0x28, ValidateLocation, StopMove, MoveToLocation, posição e Z do pawn, 94, 96); `World/Movement.cs`, `World/PawnMotion.cs`, `World/Entity.cs`, `World/World.cs`; despacho no `App.cs` |
 | Sessão | world: teleporte e unstuck (#0057) |
 | Criada | 2026-11-04 |
@@ -20,14 +20,17 @@ O usuário usou o unstuck (`/unstuck`, que teleporta para a cidade) no aCis loca
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Causa registrada em Decisões e REA com a evidência:
+- [x] Causa registrada em Decisões e REA com a evidência:
   - o pseudocódigo do engine no Tryskell ou na REA para o handler do TeleportToLocation, a física/ajuste ao chão logo depois e o `ValidatePosition`/`ValidateLocation` enviado;
   - o que o aCis manda no `/unstuck` (`Escape`, `TeleportToLocation`, Z da geodata), comparando o Z do pacote com o chão do porte no mesmo ponto.
-- [ ] Depois do `/unstuck`, do teleporte pelo gatekeeper e do teleporte de GM, o personagem fica com os pés no chão no destino, em Giran e fora dela. Os pawns em volta também ficam no chão, e os pawns que somem e reaparecem no alcance também.
-- [ ] Se a causa for a mesma da #0056 (terreno ou altura do chão na área render), a correção fica com a #0056. Esta tarefa registra a evidência do caminho do teleporte e combina pela coordenadora. Não mexa em `Render/GeoTerrain.cs`, `UeTerrain.cs` nem `Actor.cs`, que são da #0056.
-- [ ] O que for do `App.cs` vira pedido para a coordenadora com o trecho exato, e o que for de `Net/` vira pedido para a net, em `tarefas\pedidos\`.
-- [ ] Testes EditMode para a regra corrigida. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
-- [ ] Capturas antes e depois em `Docs/evidencias/teleporte-chao/`, tiradas pela sessão de testes no aCis local (unstuck, gatekeeper), e uma linha em `Docs/validacao.md`.
+- [x] Depois do `/unstuck`, do teleporte pelo gatekeeper e do teleporte de GM, o personagem fica com os pés no chão no destino, em Giran e fora dela. Os pawns em volta também ficam no chão, e os pawns que somem e reaparecem no alcance também.
+  - Ao vivo, 0057-1 e 0057-2: unstuck em Giran (−124 e −110) e unstuck saindo do farm; gatekeeper comum e Global Gatekeeper (levelup 12035, −78; solo-zone, −10); jogadores (−23) e monstros (−16) em volta; os NPCs das lojas ficam no Z ao reaparecer.
+  - **Justificado:** o teleporte de GM não foi rodado. A conta de teste não é GM, e o banco do aCis não foi alterado. Ele passa pelo mesmo `Creature.teleportTo` → 0x28 → `Entity.Place`, coberto pelos testes e pela medição de `Docs/teleporte_z.md`.
+  - **Ressalva:** 10 destinos multicamada (Dark/Elven Village, Baium, ToI) ficam no Z do servidor até o pedido 0051 (prévia da coordenadora). A flutuação sobre o terreno UE fora de cidade é da #0056 (`df7ea56`).
+- [x] Se a causa for a mesma da #0056 (terreno ou altura do chão na área render), a correção fica com a #0056. Esta tarefa registra a evidência do caminho do teleporte e combina pela coordenadora. Não mexa em `Render/GeoTerrain.cs`, `UeTerrain.cs` nem `Actor.cs`, que são da #0056.
+- [x] O que for do `App.cs` vira pedido para a coordenadora com o trecho exato, e o que for de `Net/` vira pedido para a net, em `tarefas\pedidos\`.
+- [x] Testes EditMode para a regra corrigida. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
+- [x] Capturas antes e depois em `Docs/evidencias/teleporte-chao/`, tiradas pela sessão de testes no aCis local (unstuck, gatekeeper), e uma linha em `Docs/validacao.md`.
 
 ## Andamento
 
@@ -37,6 +40,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — pedido de teste enviado à sessão de testes (compilar, suíte, roteiro ao vivo antes/depois: unstuck e gatekeeper). Aviso à #0056 com a evidência.
 - 2026-11-04 — relato novo (farm pelo Global Gatekeeper): medidos os 2119 destinos de teleporte do aCis contra a geodata (`Docs/teleporte_z.md`/`.tsv`). Achado e corrigido o pouso em célula multicamada (`6080d43`). Pedido 0051 (todas as camadas). Pedido de teste atualizado para `6080d43`, com farm e unstuck saindo do farm.
 - 2026-11-04 — teste ao vivo 0057-1 (A = `eb1f39d`, B = `303b026`), em `testes\0057-1\`. Suíte 888/888. Unstuck em Giran: A fica em −3340 flutuando; B pousa de −3290 para −3400 com os pés no chão. Bug achado em B: os NPCs das lojas de Giran subiam até o telhado do geodata. Corrigido em `ea03f2f`: o pouso fica na faixa [pé − queda máxima, pé + 30], com queda máxima de 900 para jogadores e 100 para NPCs e itens. Medido também nos 40 814 spawns do `spawnlist`. Evidências em `Docs/evidencias/teleporte-chao/` (`a075a25`). Reteste 0057-2 pedido.
+- 2026-11-04 — reteste 0057-2 em `7736c54`: suíte 894/894 e ao vivo ok (lojas de Giran, unstuck, farm 12035, solo-zone, unstuck saindo do farm). Evidências e linha em `validacao.md` (`75628c3`). Estado: pronta p/ merge.
 
 ## Decisões e REA
 
@@ -63,9 +67,23 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/world-teleporte-chao`):
+  - `5fb74d9`: pouso depois do teleporte e ao surgir, com `TeleportLandingTests`.
+  - `303b026`: log `[pouso]`.
+  - `6080d43`: limite de 150 em multicamada, `World.GroundLayers` e `Docs/teleporte_z.md`.
+  - `ea03f2f`: sobe no máximo 30 e NPC cai no máximo 100.
+  - `a075a25`: evidências do 0057-1.
+  - `7736c54`: detecção de multicamada compatível com o `GroundHeight` da #0056.
+  - `75628c3`: evidências do 0057-2 e a linha em `validacao.md`.
+  - Arquivos: `World/Movement.cs`, `World/PawnMotion.cs`, `World/Entity.cs`, `World/World.cs`, `Tests/Editor/TeleportLandingTests.cs`, `Docs/teleporte_z.md` e `.tsv`, `Docs/evidencias/teleporte-chao/`, `Docs/validacao.md`.
+- **Testes:**
+  - Sessão de testes, em `7736c54`: compilação sem erros e suíte 894/894 (main 879 + `TeleportLandingTests` 15).
+  - Ao vivo no aCis local: 0057-1 (A = `eb1f39d`, B = `303b026`, que achou o bug dos NPCs de loja, corrigido em `ea03f2f`) e 0057-2 (B = `7736c54`), com 0 erros no console. Resultados em `testes\0057-1\` e `testes\0057-2\`.
+- **Falta / fora do escopo:**
+  - Pedido 0051 (`LocalAssets.GeoLayers` e `world.GroundLayers` no `App.cs`): a coordenadora aplica na prévia. Sem ele, os 10 destinos multicamada da tabela ficam no Z do servidor.
+  - Teleporte de GM não rodado ao vivo (a conta não é GM).
+  - A altura desenhada sobre o terreno UE é da #0056.
+  - `Movement.FallZ` ficou só como utilitário testado; o `Land` não o usa mais.
 
 ## Pedidos
 
