@@ -832,7 +832,7 @@ namespace L2Web.UI
             }
             else
             {
-                var a = Def.Anchor;
+                var a = AnchorOverride ?? Def.Anchor;
                 var rf = new L2Rect(0, 0, vp.x, vp.y);
                 var oc = a != null && !string.IsNullOrEmpty(a.Ctrl) ? a.Ctrl.Split('.')[0] : null;
                 if (oc != null && Layer.Windows.TryGetValue(oc, out var other) && other != this) rf = other.ScreenRect();
@@ -850,6 +850,20 @@ namespace L2Web.UI
         }
 
         bool dragging;
+
+        /// <summary>Ancora trocada pelo script (SetAnchor); null = a do xdat.</summary>
+        public L2Anchor AnchorOverride;
+
+        /// <summary>
+        /// UIAPI_WINDOW.SetAnchor(janela, "", pontoDaTela, pontoDaJanela, x, y): passa a valer essa ancora na tela e a posicao
+        /// arrastada se perde.
+        /// </summary>
+        public void SetAnchor(string screenPoint, string wndPoint, float x, float y)
+        {
+            AnchorOverride = new L2Anchor { This = screenPoint, Parent = wndPoint, X = x, Y = y };
+            Moved = null;
+            if (Visible) Place();
+        }
 
         /// <summary>FUN_1004fad0: algum dos cantos (x,y), (x+w,y), (x,y+h), (x+w,y+h) dentro da tela.</summary>
         public static bool AnyCornerOnScreen(float x, float y, float w, float h, Vector2 vp)

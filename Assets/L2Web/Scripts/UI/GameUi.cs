@@ -165,6 +165,8 @@ namespace L2Web.UI
         /// <summary>MessengerWnd nativo (lista de amigos).</summary>
         public readonly MessengerView Messenger;
         public readonly L2Wnd RestartWnd;
+        /// <summary>DialogBox (UICommonAPI: DialogShow, DialogIsMine...).</summary>
+        public readonly DialogBoxView Dialog;
         public readonly L2Wnd DialogWnd;
         public readonly L2Wnd Inv;
         public readonly L2Wnd Main;
@@ -188,7 +190,6 @@ namespace L2Web.UI
         readonly Dictionary<int, (double until, double total)> reuse = new();
         readonly HashSet<int> autoShots = new();
         readonly List<(int skillId, int level, double until)> buffs = new();
-        Action<bool> dialogAnswer;
         Entity target;
 
         /// <summary>
@@ -289,23 +290,15 @@ namespace L2Web.UI
             ChatWnd.OnClick("MessengerBtn", Messenger.Toggle);
             MultiSellWnd = new MultiSellView(Layer)
             {
-                Send = b => this.deps.Send(b), Ask = (id, cb) => Ask(id, cb), HideDialog = () => Answer(false), HideInventory = () => Inv.Hide(),
+                Send = b => this.deps.Send(b), Ask = (id, cb) => Ask(id, cb), HideDialog = () => Dialog.Hide(), HideInventory = () => Inv.Hide(),
             };
             BuildRadar();
 
             // ---- reinicio e dialogo
             RestartWnd = new L2Wnd("RestartMenuWnd", Layer, new WndOpts { AriaLabel = "Você morreu", Movable = false });
             L2WndUtil.Paint(RestartWnd.El, "L2UI_CH3.Calculate.Calculate12_back", 128, 128);
-            DialogWnd = new L2Wnd("DialogBox", Layer, new WndOpts { AriaLabel = "Confirmação" });
-            DialogWnd.ShowCtrl("NumberPad", false);
-            DialogWnd.El.sizeDelta = new Vector2(306, DialogWnd.El.sizeDelta.y);
-            var dback = DialogWnd.Get("BackTexture");
-            if (dback) L2WndUtil.Paint(dback, "L2UI_ch3.Calculate.Calculate12_back", 306, 128);
-            foreach (var n in new[] { "DialogReadingText", "DialogBoxEdit", "DialogProgress", "CenterOKButton" }) DialogWnd.ShowCtrl(n, false);
-            DialogWnd.LabelButton("OKButton", GameData.SysString(140, "OK"));
-            DialogWnd.LabelButton("CancelButton", GameData.SysString(141, "Cancel"));
-            DialogWnd.OnClick("OKButton", () => Answer(true));
-            DialogWnd.OnClick("CancelButton", () => Answer(false));
+            Dialog = new DialogBoxView(Layer);
+            DialogWnd = Dialog.Wnd;
 
             // ---- inventario e janela principal
             Inv = new L2Wnd("InventoryWnd", Layer, new WndOpts { AriaLabel = "Inventário" });
@@ -770,7 +763,7 @@ namespace L2Web.UI
             target = null;
             foreach (var w in new[] { Board, Shop }) w.Hide();
             Npc.Hide();
-            DialogWnd.OnClose = () => { };
+            Dialog.Hide();
             HideHud();
             ClearChat();
             RenderBars();

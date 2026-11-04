@@ -47,6 +47,8 @@ namespace L2Web.UI
                     SetPage(0, num);
                     return true;
                 case "FocusChatWindow":
+                    // com o DialogBox aberto o Enter e a acao padrao dele (DoDefaultAction) [I]
+                    if (Dialog.Enter()) return true;
                     FocusChat();
                     return true;
                 case "ShowPartyBuff":

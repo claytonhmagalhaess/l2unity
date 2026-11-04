@@ -714,46 +714,21 @@ namespace L2Web.UI
         }
 
         // ------------------------------------------------------------ confirmacao (DialogBox)
-        /// <summary>ConfirmDlg: pergunta com OK/Cancelar (DlgAnswer).</summary>
+        /// <summary>
+        /// ConfirmDlg (0xed, nativo no original): pergunta com OK/Cancelar no DialogBox; a resposta vai no DlgAnswer. Um dialogo
+        /// aberto e fechado antes (o nativo nao passa pelo m_bInUse do script).
+        /// </summary>
         public void Confirm(int messageId, IList<string> prms, int requesterId)
         {
             var m = GameData.SystemMessage(messageId, prms);
-            DialogWnd.Text("DialogText", m.Text);
-            var t = DialogWnd.TextEl("DialogText");
-            if (t)
-            {
-                t.horizontalOverflow = HorizontalWrapMode.Wrap;
-                t.alignment = TextAnchor.UpperLeft;
-            }
-            dialogAnswer = ok => deps.Send(UiPackets.DlgAnswer(messageId, ok, requesterId));
-            DialogWnd.OnClose = () => Answer(false);
-            DialogWnd.Show();
+            Dialog.Ask(EDialogType.OKCancel, m.Text, "ConfirmDlg", (ok, _) => deps.Send(UiPackets.DlgAnswer(messageId, ok, requesterId)));
         }
 
-        /// <summary>DialogShow(DIALOG_Warning, sysmsg) local: OK chama `answer(true)`; Cancelar so fecha.</summary>
+        /// <summary>DialogShow(DIALOG_Warning, sysmsg) local: OK chama `answer(true)`; Cancelar `answer(false)`.</summary>
         public void Ask(int messageId, Action<bool> answer)
         {
-            Answer(false);
             var m = GameData.SystemMessage(messageId, new List<string>());
-            DialogWnd.Text("DialogText", m.Text);
-            var t = DialogWnd.TextEl("DialogText");
-            if (t)
-            {
-                t.horizontalOverflow = HorizontalWrapMode.Wrap;
-                t.alignment = TextAnchor.UpperLeft;
-            }
-            dialogAnswer = answer;
-            DialogWnd.OnClose = () => Answer(false);
-            DialogWnd.Show();
-        }
-
-        void Answer(bool ok)
-        {
-            var f = dialogAnswer;
-            dialogAnswer = null;
-            DialogWnd.OnClose = () => { };
-            DialogWnd.Hide();
-            f?.Invoke(ok);
+            Dialog.Ask(EDialogType.Warning, m.Text, "GameUi", (ok, _) => answer(ok));
         }
     }
 }
