@@ -49,6 +49,9 @@ namespace L2Web.Net
         public RecipeShopSellInfo RecipeShopSell;
         public Action<PrivateStoreMsgInfo> OnRecipeShopMsg;
 
+        /// <summary>Pergaminho do ultimo ChooseInventoryItem (o ItemEnchantWnd filtra o inventario com ele).</summary>
+        public int EnchantScroll;
+
         /// <summary>Ultimo pacote de cada janela (a janela le os itens daqui ou do param do evento).</summary>
         public WarehouseListInfo Warehouse;
         public StorageMaxCountInfo StorageMax;
@@ -195,6 +198,22 @@ namespace L2Web.Net
             On(0xda, r => Emit(InterfaceEvents.RecipeShopItem(RecipePackets.ParseRecipeShopItemInfo(r))));
             // sem EV_: titulo da loja de fabricacao para o nome no mundo
             On(0xdb, r => OnRecipeShopMsg?.Invoke(RecipePackets.ParseRecipeShopMsg(r)));
+
+            // ---------------------------------------------------------------- melhoria de item (T20)
+            On(0x6f, r =>
+            {
+                EnchantScroll = EnchantPackets.ParseChooseInventoryItem(r);
+                Emit(InterfaceEvents.EnchantShow(EnchantScroll));
+            });
+            On(0x81, r => Emit(InterfaceEvents.EnchantResult(EnchantPackets.ParseEnchantResult(r))));
+            Ex(0x50, _ => Emit(InterfaceEvents.RefineryShow(false)));
+            Ex(0x51, _ => Emit(InterfaceEvents.RefineryShow(true)));
+            Ex(0x52, r => Emit(InterfaceEvents.RefineryTarget(EnchantPackets.ParseExConfirmVariationItem(r))));
+            Ex(0x53, r => Emit(InterfaceEvents.RefineryRefiner(EnchantPackets.ParseExConfirmVariationRefiner(r))));
+            Ex(0x54, r => Emit(InterfaceEvents.RefineryGemStone(EnchantPackets.ParseExConfirmVariationGemstone(r))));
+            Ex(0x55, r => Emit(InterfaceEvents.RefineryResult(EnchantPackets.ParseExVariationResult(r))));
+            Ex(0x56, r => Emit(InterfaceEvents.RefineryCancelItem(EnchantPackets.ParseExConfirmCancelItem(r))));
+            Ex(0x57, r => Emit(InterfaceEvents.RefineryCancelResult(EnchantPackets.ParseExVariationCancelResult(r))));
 
             // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
             On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));

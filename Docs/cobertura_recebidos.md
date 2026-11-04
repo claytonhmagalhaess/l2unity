@@ -2,7 +2,7 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 87 tratados no Unity
+- UI: 198 no original, 97 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 34 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
@@ -94,14 +94,14 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x4d | ExDuelStart | ExDuelStart | UI | EV_DuelStart | falta |
 | ex | 0x4e |  | ExDuelEnd | UI | EV_DuelEnd | falta |
 | ex | 0x4f | ExDuelUpdateUserInfo | ExDuelUpdateUserInfo | UI | EV_DuelUpdateUserInfo | falta |
-| ex | 0x50 | ExShowVariationMakeWindow | ExShowVariationMakeWindow | UI | EV_ShowRefineryInteface | falta |
-| ex | 0x51 | ExShowVariationCancelWindow | ExShowVariationCancelWindow | UI | EV_ShowRefineryCancelInteface | falta |
-| ex | 0x52 | ExPutItemResultForVariationMake | ExConfirmVariationItem | UI | EV_RefineryConfirmTargetItemResult | falta |
-| ex | 0x53 | ExPutIntensiveResultForVariationMake | ExConfirmVariationRefiner | UI | EV_RefineryConfirmRefinerItemResult | falta |
-| ex | 0x54 | ExPutCommissionResultForVariationMake | ExConfirmVariationGemstone | UI | EV_RefineryConfirmGemStoneResult | falta |
-| ex | 0x55 | ExVariationResult | ExVariationResult | UI | EV_RefineryRefineResult | falta |
-| ex | 0x56 | ExPutItemResultForVariationCancel | ExConfirmCancelItem | UI | EV_RefineryConfirmCancelItemResult | falta |
-| ex | 0x57 | ExVariationCancelResult | ExVariationCancelResult | UI | EV_RefineryRefineCancelResult | falta |
+| ex | 0x50 | ExShowVariationMakeWindow | ExShowVariationMakeWindow | UI | EV_ShowRefineryInteface | tratado |
+| ex | 0x51 | ExShowVariationCancelWindow | ExShowVariationCancelWindow | UI | EV_ShowRefineryCancelInteface | tratado |
+| ex | 0x52 | ExPutItemResultForVariationMake | ExConfirmVariationItem | UI | EV_RefineryConfirmTargetItemResult | tratado |
+| ex | 0x53 | ExPutIntensiveResultForVariationMake | ExConfirmVariationRefiner | UI | EV_RefineryConfirmRefinerItemResult | tratado |
+| ex | 0x54 | ExPutCommissionResultForVariationMake | ExConfirmVariationGemstone | UI | EV_RefineryConfirmGemStoneResult | tratado |
+| ex | 0x55 | ExVariationResult | ExVariationResult | UI | EV_RefineryRefineResult | tratado |
+| ex | 0x56 | ExPutItemResultForVariationCancel | ExConfirmCancelItem | UI | EV_RefineryConfirmCancelItemResult | tratado |
+| ex | 0x57 | ExVariationCancelResult | ExVariationCancelResult | UI | EV_RefineryRefineCancelResult | tratado |
 | ex | 0x58 | ExDuelEnemyRelation | ExDuelEnemyRelation | ignorado |  | ignorado (igual) |
 | ex | 0x59 | ExPlayAnimation |  | mundo/engine |  | falta |
 | ex | 0x5a | ExMPCCPartyInfoUpdate | ExMPCCPartyInfoUpdate | UI | EV_CommandChannelPartyUpdate | falta |
@@ -218,7 +218,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x6c | PledgeCrestPacket | PledgeCrest | mundo/engine |  | falta |
 | game | 0x6d | SetupGaugePacket | SetupGauge | mundo/engine |  | tratado |
 | game | 0x6e | ShowBoardPacket | ShowBoard | UI | EV_ShowBoardPacket | tratado |
-| game | 0x6f | ChooseInventoryItemPacket | ChooseInventoryItem | UI | EV_EnchantItemList, EV_EnchantShow | falta |
+| game | 0x6f | ChooseInventoryItemPacket | ChooseInventoryItem | UI | EV_EnchantItemList, EV_EnchantShow | tratado |
 | game | 0x70 | DummyPacket |  | log |  | falta |
 | game | 0x71 | MoveToLocationInVehiclePacket | MoveToLocationInVehicle | mundo/engine |  | falta |
 | game | 0x72 | StopMoveInVehiclePacket | StopMoveInVehicle | mundo/engine |  | falta |
@@ -236,7 +236,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x7e | LogOutOkPacket | LeaveWorld | UI nativa (C++, sem EV_) |  | tratado |
 | game | 0x7f | AbnormalStatusUpdatePacket | AbnormalStatusUpdate | UI | EV_AbnormalStatusNormalItem | tratado |
 | game | 0x80 | QuestListPacket | QuestList | UI | EV_QuestListEnd, EV_QuestListStart | tratado |
-| game | 0x81 | EnchantResultPacket | EnchantResult | UI | EV_EnchantResult | falta |
+| game | 0x81 | EnchantResultPacket | EnchantResult | UI | EV_EnchantResult | tratado |
 | game | 0x82 | PledgeShowMemberListDeleteAllPacket | PledgeShowMemberListDeleteAll | UI | EV_ClanDeleteAllMember | tratado |
 | game | 0x83 | PledgeInfoPacket | PledgeInfo | dados |  | falta |
 | game | 0x84 | PledgeExtendedInfoPacket |  | UI nativa (C++, sem EV_) |  | falta |

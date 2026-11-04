@@ -129,6 +129,14 @@ namespace L2Web.Tests
             yield return C("RecipePackets.RequestRecipeShopMakeInfo", "RequestRecipeShopMakeInfo", RecipePackets.RequestRecipeShopMakeInfo(1, 1));
             yield return C("RecipePackets.RequestRecipeShopMakeDo", "RequestRecipeShopMakeDo", RecipePackets.RequestRecipeShopMakeDo(1, 1, 1));
             yield return C("RecipePackets.RequestRecipeShopSellList", "RequestRecipeShopSellList", RecipePackets.RequestRecipeShopSellList(1));
+            // melhoria de item (#0046, T20)
+            yield return C("EnchantPackets.RequestEnchantItem", "RequestEnchantItem", EnchantPackets.RequestEnchantItem(1));
+            yield return C("EnchantPackets.RequestConfirmTargetItem", "RequestConfirmTargetItem", EnchantPackets.RequestConfirmTargetItem(1));
+            yield return C("EnchantPackets.RequestConfirmRefinerItem", "RequestConfirmRefinerItem", EnchantPackets.RequestConfirmRefinerItem(1, 2));
+            yield return C("EnchantPackets.RequestConfirmGemStone", "RequestConfirmGemStone", EnchantPackets.RequestConfirmGemStone(1, 2, 3, 4));
+            yield return C("EnchantPackets.RequestRefine", "RequestRefine", EnchantPackets.RequestRefine(1, 2, 3, 4));
+            yield return C("EnchantPackets.RequestConfirmCancelItem", "RequestConfirmCancelItem", EnchantPackets.RequestConfirmCancelItem(1));
+            yield return C("EnchantPackets.RequestRefineCancel", "RequestRefineCancel", EnchantPackets.RequestRefineCancel(1));
             // pet (#0046, T7)
             yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
             yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));

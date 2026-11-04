@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **120**; não enviados pelo Unity: **125**.
+Envios do original: **245**; com builder no Unity: **127**; não enviados pelo Unity: **118**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -58,6 +58,7 @@ Envios do original: **245**; com builder no Unity: **120**; não enviados pelo U
 | RequestStopPledgeWar | jogo | 0x4f |  | `cS` | ClanPackets.RequestStopPledgeWar |
 | RequestGiveNickName | jogo | 0x55 |  | `cSS` | ClanPackets.RequestGiveNickName |
 | RequestShowboard | jogo | 0x57 |  | `cd` | UiPackets.RequestShowBoard |
+| RequestEnchantItem | jogo | 0x58 |  | `cd` | EnchantPackets.RequestEnchantItem |
 | RequestDestroyItem | jogo | 0x59 |  | `cdd` | UiPackets.RequestDestroyItem |
 | MTL | jogo | 0x5c |  | `cddddddd` | GamePackets.MoveTo |
 | CanNotMoveAnymore | jogo | 0x5d |  | `cddddd` | GamePackets.CannotMoveAnymore |
@@ -114,11 +115,17 @@ Envios do original: **245**; com builder no Unity: **120**; não enviados pelo U
 | RequestMakeMacro | jogo | 0xc1 |  | `cdSSSccb` | MacroPackets.RequestMakeMacro |
 | RequestDeleteMacro | jogo | 0xc2 |  | `cd` | MacroPackets.RequestDeleteMacro |
 | ConfirmDlg | jogo | 0xc5 |  | `cddd` | UiPackets.DlgAnswer |
+| RequestRefineCancel | jogo | 0xd0 | 0x2e | `chd` | EnchantPackets.RequestRefineCancel |
+| RequestConfirmTargetItem | jogo | 0xd0 | 0x29 | `chd` | EnchantPackets.RequestConfirmTargetItem |
+| RequestConfirmRefinerItem | jogo | 0xd0 | 0x2a | `chdd` | EnchantPackets.RequestConfirmRefinerItem |
 | RequestManorList | jogo | 0xd0 | 0x08 | `ch` | GamePackets.RequestManorList |
+| RequestRefine | jogo | 0xd0 | 0x2c | `chdddd` | EnchantPackets.RequestRefine |
 | RequestPledgePowerGradeList | jogo | 0xd0 | 0x1a | `ch` | ClanPackets.RequestPledgePowerGradeList |
 | RequestPledgeSetAcademyMasterPupil | jogo | 0xd0 | 0x19 | `chdSS` | ClanPackets.RequestPledgeSetAcademyMaster |
+| RequestConfirmGemStone | jogo | 0xd0 | 0x2b | `chdddd` | EnchantPackets.RequestConfirmGemStone |
 | RequestAutoSoulShot | jogo | 0xd0 | 0x05 | `chdd` | UiPackets.RequestAutoSoulShot |
 | RequestPledgeMemberInfo | jogo | 0xd0 | 0x1d | `chdS` | ClanPackets.RequestPledgeMemberInfo |
+| RequestConfirmCancelItem | jogo | 0xd0 | 0x2d | `chd` | EnchantPackets.RequestConfirmCancelItem |
 | RequestPledgeReorganizeMember | jogo | 0xd0 | 0x24 | `chdSdS` | ClanPackets.RequestPledgeReorganizeMember |
 | RequestPledgeWarList | jogo | 0xd0 | 0x1e | `chdd` | ClanPackets.RequestPledgeWarList |
 | RequestPledgeMemberPowerInfo | jogo | 0xd0 | 0x1b | `chdS` | ClanPackets.RequestPledgeMemberPowerInfo |
@@ -157,7 +164,6 @@ Envios do original: **245**; com builder no Unity: **120**; não enviados pelo U
 | RequestSEKCustom | jogo | 0x49 |  | `cdd` | não enviado |
 | RequestSetPledgeCrest | jogo | 0x53 |  | `cd` | não enviado |
 | RequestSetPledgeCrest | jogo | 0x53 |  | `cdb` | não enviado |
-| RequestEnchantItem | jogo | 0x58 |  | `cd` | não enviado |
 | SendDestroyItem | jogo | 0x59 |  | `cdd` | não enviado |
 | SendBypassBuildCmd | jogo | 0x5b |  | `cS` | não enviado |
 | RequestFriendList | jogo | 0x60 |  | `c` | não enviado |
@@ -213,9 +219,7 @@ Envios do original: **245**; com builder no Unity: **120**; não enviados pelo U
 | RequestSendMsnChatLog | jogo | 0xce |  | `cSSd` | não enviado |
 | RequestReload | jogo | 0xcf |  | `c` | não enviado |
 | RequestDuelStart | jogo | 0xd0 | 0x27 | `chSd` | não enviado |
-| RequestRefineCancel | jogo | 0xd0 | 0x2e | `chd` | não enviado |
 | RequestGetBossRecord | jogo | 0xd0 | 0x18 | `chd` | não enviado |
-| RequestConfirmTargetItem | jogo | 0xd0 | 0x29 | `chd` | não enviado |
 | RequestSetCrop | jogo | 0xd0 | 0x0b | `chddb` | não enviado |
 | RequestWithdrawPartyRoom | jogo | 0xd0 | 0x03 | `chdd` | não enviado |
 | RequestDismissPartyRoom | jogo | 0xd0 | 0x02 | `chdd` | não enviado |
@@ -223,13 +227,11 @@ Envios do original: **245**; com builder no Unity: **120**; não enviados pelo U
 | RequestDuelAnswerStart | jogo | 0xd0 | 0x28 | `chddd` | não enviado |
 | RequestExOustFromMPCC | jogo | 0xd0 | 0x0f | `chS` | não enviado |
 | RequestCursedWeaponLocation | jogo | 0xd0 | 0x23 | `ch` | não enviado |
-| RequestConfirmRefinerItem | jogo | 0xd0 | 0x2a | `chdd` | não enviado |
 | RequestExEnchantSkillInfo | jogo | 0xd0 | 0x06 | `chdd` | não enviado |
 | RequestExSetPledgeCrestLarge | jogo | 0xd0 | 0x11 | `chd` | não enviado |
 | RequestExSetPledgeCrestLarge | jogo | 0xd0 | 0x11 | `chdb` | não enviado |
 | RequestWriteHeroWords | jogo | 0xd0 | 0x0c | `chS` | não enviado |
 | RequestExEnchantSkill | jogo | 0xd0 | 0x07 | `chdd` | não enviado |
-| RequestRefine | jogo | 0xd0 | 0x2c | `chdddd` | não enviado |
 | RequestListPartyMatchingWaitingRoom | jogo | 0xd0 | 0x16 | `chdddd` | não enviado |
 | RequestOustFromPartyRoom | jogo | 0xd0 | 0x01 | `chd` | não enviado |
 | RequestCursedWeaponList | jogo | 0xd0 | 0x22 | `ch` | não enviado |
@@ -242,9 +244,7 @@ Envios do original: **245**; com builder no Unity: **120**; não enviados pelo U
 | RequestExAcceptJoinMPCC | jogo | 0xd0 | 0x0e | `chdd` | não enviado |
 | RequestSetSeed | jogo | 0xd0 | 0x0a | `chddb` | não enviado |
 | RequestExMagicSkillUseGround | jogo | 0xd0 | 0x2f | `chdddddc` | não enviado |
-| RequestConfirmGemStone | jogo | 0xd0 | 0x2b | `chdddd` | não enviado |
 | RequestPCCafeCouponUse | jogo | 0xd0 | 0x20 | `chS` | não enviado |
-| RequestConfirmCancelItem | jogo | 0xd0 | 0x2d | `chd` | não enviado |
 | RequestAskJoinPartyRoom | jogo | 0xd0 | 0x14 | `chS` | não enviado |
 | RequestOlympiadMatchList | jogo | 0xd0 | 0x13 | `ch` | não enviado |
 | RequestProcureCropList | jogo | 0xd0 | 0x09 | `chdb` | não enviado |

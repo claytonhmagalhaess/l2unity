@@ -435,6 +435,55 @@ namespace L2Web.Net
             return new() { E(Ev.EV_RecipeShopItemInfo, P(p, "Adena", i.Adena)) };
         }
 
+        // ---------------------------------------------------------------- melhoria de item (T20, spec 07 §4.2-4.4)
+
+        /// <summary>
+        /// ChooseInventoryItem (0x6f): EV_EnchantShow (ClassID do pergaminho). O EV_EnchantItemList (os itens do inventario que o
+        /// pergaminho aceita) o nativo monta a partir do inventario: fica com quem tem o ItemList (App/UI).
+        /// </summary>
+        public static List<PacketEvents.Event> EnchantShow(int scrollId) => new() { E(Ev.EV_EnchantShow, P("", "ClassID", scrollId)) };
+
+        /// <summary>EnchantResult (0x81): EV_EnchantResult; Result (0 sucesso, 1 falha, 2 cancelado) e chave a mais do l2unity.</summary>
+        public static List<PacketEvents.Event> EnchantResult(int result) => new() { E(Ev.EV_EnchantResult, P("", "Result", result)) };
+
+        /// <summary>ExShowVariationMakeWindow (FE:50) / CancelWindow (FE:51).</summary>
+        public static List<PacketEvents.Event> RefineryShow(bool cancel) => new() { E(cancel ? Ev.EV_ShowRefineryCancelInteface : Ev.EV_ShowRefineryInteface) };
+
+        /// <summary>FE:52: EV_RefineryConfirmTargetItemResult (TargetItemServerID, TargetItemClassID, Result).</summary>
+        public static List<PacketEvents.Event> RefineryTarget(VariationTargetInfo t) =>
+            new() { E(Ev.EV_RefineryConfirmTargetItemResult, P(P(P("", "TargetItemServerID", t.ServerId), "TargetItemClassID", t.ClassId), "Result", t.Result)) };
+
+        /// <summary>FE:53: EV_RefineryConfirmRefinerItemResult (RefinerItemServerID, RefinerItemClassID, Result, GemStoneCount, GemStoneClassID).</summary>
+        public static List<PacketEvents.Event> RefineryRefiner(VariationRefinerInfo v)
+        {
+            var p = P(P("", "RefinerItemServerID", v.ServerId), "RefinerItemClassID", v.ClassId);
+            p = P(P(p, "Result", v.Result), "GemStoneCount", v.GemStoneCount);
+            return new() { E(Ev.EV_RefineryConfirmRefinerItemResult, P(p, "GemStoneClassID", v.GemStoneClassId)) };
+        }
+
+        /// <summary>FE:54: EV_RefineryConfirmGemStoneResult (GemStoneServerID, GemStoneClassID, Result, NecessaryGemStoneCount, GemStoneCount).</summary>
+        public static List<PacketEvents.Event> RefineryGemStone(VariationGemStoneInfo g)
+        {
+            var p = P(P("", "GemStoneServerID", g.ServerId), "GemStoneClassID", g.ClassId);
+            p = P(P(p, "Result", g.Result), "NecessaryGemStoneCount", g.NecessaryCount);
+            return new() { E(Ev.EV_RefineryConfirmGemStoneResult, P(p, "GemStoneCount", g.GemStoneCount)) };
+        }
+
+        /// <summary>FE:55: EV_RefineryRefineResult (Option1, Option2, Result).</summary>
+        public static List<PacketEvents.Event> RefineryResult(VariationResultInfo v) =>
+            new() { E(Ev.EV_RefineryRefineResult, P(P(P("", "Option1", v.Option1), "Option2", v.Option2), "Result", v.Result)) };
+
+        /// <summary>FE:56: EV_RefineryConfirmCancelItemResult (CancelItemServerID, CancelItemClassID, Option1, Option2, Adena, Result).</summary>
+        public static List<PacketEvents.Event> RefineryCancelItem(VariationCancelItemInfo c)
+        {
+            var p = P(P("", "CancelItemServerID", c.ServerId), "CancelItemClassID", c.ClassId);
+            p = P(P(p, "Option1", c.Option1), "Option2", c.Option2);
+            return new() { E(Ev.EV_RefineryConfirmCancelItemResult, P(P(p, "Adena", c.Adena), "Result", c.Result)) };
+        }
+
+        /// <summary>FE:57: EV_RefineryRefineCancelResult (Result).</summary>
+        public static List<PacketEvents.Event> RefineryCancelResult(int result) => new() { E(Ev.EV_RefineryRefineCancelResult, P("", "Result", result)) };
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>
