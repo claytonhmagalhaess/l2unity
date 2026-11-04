@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui2 (vaga nova, `worktrees\ui2`) |
 | Branch | `feat/ui-buffs` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\02_interacoes.md` (tooltip `AbnormalStatus`, AbnormalStatusWnd), `analises\l2-interlude\client_spec\` (AbnormalStatusWnd, 96, pacotes AbnormalStatusUpdate/PartySpelled/ShortBuffStatusUpdate); `Docs/revisao_ui.md` (#0047) |
 | Sessão | ui: buffs (#0052) |
 | Criada | 2026-11-04 |
@@ -29,20 +29,20 @@ Esta tarefa compara tudo com o original e implementa igual.
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Levantamento, com evidência (`AbnormalStatusWnd.uc` e as janelas de buff do grupo e do pet no `Interface.u` exportado, NWindow no Tryskell ou na REA, `skillname-e.dat`/`skillgrp`, pacotes no aCis), de:
+- [x] Levantamento, com evidência (`AbnormalStatusWnd.uc` e as janelas de buff do grupo e do pet no `Interface.u` exportado, NWindow no Tryskell ou na REA, `skillname-e.dat`/`skillgrp`, pacotes no aCis), de:
   - a ordem e o agrupamento dos ícones por tipo (buff, debuff, dança/canção, toggle) e as linhas;
   - o número máximo e a quebra de linha;
   - o texto do tempo restante sobre o ícone: a partir de quantos segundos aparece, o formato, a fonte, a cor e a posição;
   - o piscar perto do fim, se existir;
   - o tooltip de cada tipo: nome, nível, descrição, tempo restante e formato, e as diferenças entre buff, debuff, toggle e passiva;
   - o clique, com e sem modificador, e se cancela ou não no Interlude.
-- [ ] O tempo restante aparece sobre o ícone como no original, inclusive para os buffs com menos de 60 s, e conta regressivamente sem pedir nada ao servidor.
-- [ ] O tooltip de cada tipo é igual ao do original.
-- [ ] Os toggles e as passivas que o original mostra na janela aparecem e somem conforme liga e desliga, com o visual do original.
-- [ ] A janela de buffs do grupo (PartySpelled) e a do pet seguem o mesmo comportamento, quando o original faz assim.
-- [ ] Todas as divergências são corrigidas ou registradas. O que for de `Scripts\Net\` vira pedido para a net, e o que for do `App.cs` vira pedido para a coordenadora, em `tarefas\pedidos\`.
-- [ ] Testes EditMode para a lógica (formato do tempo, ordem e agrupamento, linhas do tooltip por tipo). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
-- [ ] Capturas antes e depois em `Docs/evidencias/buffs/`, tiradas no aCis local, e uma linha em `Docs/validacao.md`.
+- [x] O tempo restante aparece sobre o ícone como no original, inclusive para os buffs com menos de 60 s, e conta regressivamente sem pedir nada ao servidor. (Ao vivo com buffs injetados: "43" → "40" e "23" → "20" em ~1 s; poção "7" → "4". Os buffs reais deste servidor (L2Ketra) duram ~4 h, canções e danças inclusive, então nenhum baixou de 60 s numa sessão.)
+- [x] O tooltip de cada tipo é igual ao do original. (Conferido contra o `ToolTip.uc` e o `MakeTimeStr` nativo, e ao vivo para buff, dança, poção, debuff, toggle e Etc. Não há captura do cliente original para comparar lado a lado, porque os binários de `reference\` não podem ser executados.)
+- [x] Os toggles e as passivas que o original mostra na janela aparecem e somem conforme liga e desliga, com o visual do original. (Toggle: Normal com -1, sem número nem tempo; visto ao vivo com o Vicious Stance injetado. Passivas: o aCis não as manda e o original não as gera sozinho; ver Decisões.)
+- [x] A janela de buffs do grupo (PartySpelled) e a do pet seguem o mesmo comportamento, quando o original faz assim.
+- [x] Todas as divergências são corrigidas ou registradas. O que for de `Scripts\Net\` vira pedido para a net, e o que for do `App.cs` vira pedido para a coordenadora, em `tarefas\pedidos\`.
+- [x] Testes EditMode para a lógica (formato do tempo, ordem e agrupamento, linhas do tooltip por tipo). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
+- [x] Capturas antes e depois em `Docs/evidencias/buffs/`, tiradas no aCis local, e uma linha em `Docs/validacao.md`.
 
 ## Andamento
 
@@ -54,6 +54,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — `StatusIconTests` (26 casos) (`36d24ed`). Suíte em batchmode: 776/776.
 - 2026-11-04 — `Docs/contas_teste.md` com a conta `l2webtest3` (`2b706c5`). Pedido 0040 para a net (params do PartySpelled).
 - 2026-11-04 — Novo protocolo de testes: Editor da ui2 fechado. Teste ao vivo (antes no b88e07c, depois no 2b706c5) pedido à sessão de testes.
+- 2026-11-04 — Sessão de testes (`testes\0052-1\`): 776/776 em 2b706c5, 0 erros no console nas duas rodadas, capturas antes/depois. Capturas recortadas em `Docs/evidencias/buffs/` e K3/K4/K10 do `Docs/validacao.md` (`84876bf`).
 
 ## Decisões e REA
 
@@ -81,9 +82,22 @@ Endereços `nw:` = `analises\l2-interlude\re\decomp_all\nwindow` (00002.c, salvo
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** em `feat/ui-buffs` (sobre `feat/ui-revisao` b88e07c):
+  - `69e831f` UI: AbnormalStatusWnd como o NCStatusIconCtrl (`UI/StatusIcon.cs` novo, `GameUi.Hud.cs`, `GameUi.cs`, `GameUi.Windows.cs`);
+  - `76b81f7` UI: PartyWnd desenha as grades de buff e debuff do EV_PartySpelledList (`PartyWnd.cs`);
+  - `36d24ed` Testes: `StatusIconTests` (26 casos);
+  - `2b706c5` Docs: `Docs/contas_teste.md` (conta `l2webtest3`);
+  - `84876bf` Docs: `Docs/evidencias/buffs/` e K3/K4/K10 do `Docs/validacao.md`.
+  - Nenhum commit no `L2Tooltip.cs`, `ItemInfoText.cs` ou `MultiSell*`, então não há conflito com a #0050. No `GameUi.cs` mudaram três trechos: a declaração de `buffs`, o registro do `EV_Die` junto da AbnormalStatusWnd e o `UiTicker` chamando `AnimateBuffs`.
+- **Testes:** `sh Docs/tools/run_tests.sh` em batchmode: base `feat/ui-revisao` 750/750; `feat/ui-buffs` 776/776, sem falhas (repetido pela sessão de testes em 2b706c5). Ao vivo no aCis local (`l2webtest3`, personagem Buffs52), antes e depois: buffs do servidor, buffs injetados de cada tipo com os tooltips e grupo injetado com os três modos do F (`Docs/evidencias/buffs/`, `e2e-antes.log`, `e2e-depois.log`).
+- **O que muda para o usuário:** o tempo abaixo de 60 s aparece grande, na fonte de dígitos, e conta sozinho; o ícone pisca nos últimos 30 s; a poção mostra o tempo pequeno e centrado; o tooltip mostra o tempo que conta; os membros do grupo mostram buffs ou debuffs à direita do slot (tecla F).
+- **Falta / fora do escopo:**
+  - Comparar lado a lado com uma captura do cliente original (precisa que o usuário rode o cliente oficial).
+  - Ver ao vivo um buff real abaixo de 60 s: no L2Ketra os buffs duram ~4 h. Uma poção de buff curto ou um servidor com as durações padrão mostra isso.
+  - Corrigir a spec (`96_mapa_pacote_evento_janela.md:84`, `06_hud_status.md:241`, `97_cobertura.md:60`): o EV_PartySpelledList tem emissor (`FUN_1015e410`). Fica para uma tarefa de REA/spec.
+  - Pedido 0040 para a net (params `ID`/`Level_i`/`Sec_i` em todos os tipos do PartySpelled). Não bloqueia.
+  - "19Minutes" sem espaço: é o `"%d%s"` do `MakeTimeStr` com a sysstring 1111 como está no `sysstring-e.dat`, igual ao nativo. O "초" dos segundos também vem do binário.
+  - A OlympiadBuff1/2Wnd não existe no porte.
 
 ## Pedidos
 
