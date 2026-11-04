@@ -317,7 +317,9 @@ namespace L2Web.UI
             {
                 if (invDirty) RenderInv();
             };
-            Inv.OnClick("TrashButton", () => this.deps.Chat("sys", "Arraste um item para a lixeira para destruí-lo (ainda não disponível).", null));
+            // TrashButton/CrystallizeButton so recebem item arrastado (InventoryWnd.uc OnDropItem); o clique nao faz nada
+            InvScript.HasCrystallize = () => skills.Exists(k => k.Id == 248);
+            InvScript.IsCrystallizable = id => ItemStats.Of(id) is { } st && st.CrystalType > 0 && (st.Weapon || st.Armor);
             Main = new L2Wnd("MainWnd", Layer, new WndOpts { Embed = new[] { "DetailStatusWnd", "MagicSkillWnd", "ActionWnd", "ClanWnd", "QuestTreeWnd" }, AriaLabel = "Personagem" });
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>

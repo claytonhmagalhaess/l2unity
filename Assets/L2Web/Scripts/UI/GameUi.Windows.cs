@@ -305,11 +305,137 @@ namespace L2Web.UI
         /// <summary>Tooltip "Action" (ActionWnd): nome e descricao do actionname-e.</summary>
         public static CustomTooltip ActionTooltip(int id) => L2Tooltip.Action(GameData.ActionName(id), L2TooltipData.Action(id)?.Desc ?? "");
 
-        void BindItem(UiTexButton b, InvItem it)
+        void BindItem(UiTexButton b, InvItem it, string src)
         {
-            var oid = it.ObjectId;
-            b.OnDoubleClick = () => deps.Send(UiPackets.UseItem(oid, CtrlHeld));
-            Draggable(b, "item", oid);
+            // InventoryWnd.uc:156-163: duplo clique e clique direito usam o item (UseItem: receita e PopMsgNum confirmam)
+            b.OnDoubleClick = () => InvUse(it);
+            b.OnRightClick = () => InvUse(it);
+            Draggable(b, "item", it.ObjectId, false, (e, alt) => InvDrop(e, it, src, alt));
+        }
+
+        // ------------------------------------------------------------ inventario (InventoryWnd.uc, #0026)
+        public readonly InventoryScript InvScript = new();
+        /// <summary>Ordem dos itens no InventoryItem e no QuestItem (SwapItems, so no cliente).</summary>
+        readonly List<int> invOrder = new(), questOrder = new();
+        /// <summary>GetClickLocation: ponto do mundo sob o cursor (L2); sem ele, os pes do personagem [I].</summary>
+        public Func<Vector2, Vector3?> GroundAt = _ => null;
+
+        InventoryScript.Item InvInfo(InvItem it, string src, bool alt)
+        {
+            var name = GameData.ItemName(it.ItemId);
+            var stack = it.Type2 >= 3;
+            return new InventoryScript.Item
+            {
+                Src = src, ServerId = it.ObjectId, ClassId = it.ItemId, ItemType = it.Type2, SlotBitType = it.BodyPart, ConsumeType = stack ? 2 : 0,
+                ItemNum = it.Count, AllItemCount = alt && it.Count > 1 ? it.Count : 0, Name = name,
+                // [I] receita: o nome do etcitem (o tipo do etcitemgrp nao esta no porte); PopMsgNum [V]
+                Recipe = name.StartsWith("Recipe"),
+            };
+        }
+
+        void InvUse(InvItem it) => InvExec(InvScript.UseItem(InvInfo(it, "InventoryItem", false)));
+
+        /// <summary>Soltar um item do inventario fora da barra: lista, equipamento, lixeira, cristalizar ou o mundo (Console).</summary>
+        void InvDrop(PointerEventData e, InvItem it, string src, bool alt)
+        {
+            var info = InvInfo(it, src, alt);
+            var hit = e.pointerCurrentRaycast.gameObject;
+            if (!hit)
+            {
+                InvExec(InvScript.DropToWorld(info));
+                return;
+            }
+            string target = null;
+            Transform slotT = null;
+            for (var t = hit.transform; t && t != Inv.El.transform; t = t.parent)
+            {
+                if (t.name == "slot" || t.name == "slot equipped") slotT = t;
+                if (t.name == "InventoryItem" || t.name == "QuestItem" || t.name == "TrashButton" || t.name == "CrystallizeButton" || t.name.StartsWith("EquipItem"))
+                {
+                    target = t.name;
+                    break;
+                }
+            }
+            if (target == null) return;
+            if (target == src && (src == "InventoryItem" || src == "QuestItem"))
+            {
+                var order = src == "QuestItem" ? questOrder : invOrder;
+                var from = order.IndexOf(it.ObjectId);
+                var to = slotT ? slotT.GetSiblingIndex() : -1;
+                if (from >= 0 && to != from)
+                {
+                    InventoryScript.Reorder(order, from, to);
+                    RenderInv();
+                }
+                return;
+            }
+            InvExec(InvScript.Drop(target, info));
+        }
+
+        /// <summary>Executa o que o script pediu: pacote ou DialogBox (com o HandleDialogOK de volta).</summary>
+        void InvExec(InventoryScript.Act a)
+        {
+            if (a == null) return;
+            switch (a.Kind)
+            {
+                case "use":
+                    deps.Send(UiPackets.UseItem(a.ServerId, CtrlHeld));
+                    break;
+                case "unequip":
+                    deps.Send(UiPackets.RequestUnEquipItem(a.SlotBitType));
+                    break;
+                case "getpet":
+                    // [I] o bEquip do PetAPI (tirar do pet e equipar) nao tem campo no pacote: so tira
+                    deps.Send(PetPackets.RequestGetItemFromPet(a.ServerId, (int)a.Count));
+                    break;
+                case "drop":
+                {
+                    var p = dropAt ?? SelfPos();
+                    deps.Send(UiPackets.RequestDropItem(a.ServerId, (int)a.Count, Mathf.RoundToInt(p.x), Mathf.RoundToInt(p.y), Mathf.RoundToInt(p.z)));
+                    break;
+                }
+                case "destroy":
+                    deps.Send(UiPackets.RequestDestroyItem(a.ServerId, (int)a.Count));
+                    break;
+                case "crystallize":
+                    deps.Send(UiPackets.RequestCrystallizeItem(a.ServerId, (int)a.Count));
+                    break;
+                case "dialog":
+                {
+                    if (a.DlgId == InventoryScript.DialogDropItem || a.DlgId == InventoryScript.DialogDropItemAll || a.DlgId == InventoryScript.DialogDropItemAskCount)
+                    {
+                        var m = UnityEngine.InputSystem.Mouse.current;
+                        dropAt = m != null ? GroundAt(m.position.ReadValue()) : null;
+                    }
+                    var msg = GameData.SystemMessage(a.MsgId, new List<string> { a.Name, "" }).Text;
+                    if (Dialog.S.InUse) Dialog.Hide();
+                    Dialog.SetParamInt((int)a.Param);
+                    int id = a.DlgId, res = a.ServerId;
+                    var r2 = a.Reserved2;
+                    Dialog.Ask(a.DlgType, msg, "InventoryWnd", (ok, text) =>
+                    {
+                        if (ok) InvExec(InvScript.DialogOk(id, res, r2, text));
+                    });
+                    break;
+                }
+            }
+        }
+
+        Vector3? dropAt;
+
+        Vector3 SelfPos()
+        {
+            var me = world?.Self;
+            return me != null ? new Vector3(me.X, me.Y, me.Z) : Vector3.zero;
+        }
+
+        /// <summary>Itens na ordem guardada; os novos vao para o fim.</summary>
+        static List<InvItem> Ordered(List<InvItem> list, List<int> order)
+        {
+            order.RemoveAll(id => !list.Exists(i => i.ObjectId == id));
+            foreach (var i in list)
+                if (!order.Contains(i.ObjectId)) order.Add(i.ObjectId);
+            return list.OrderBy(i => order.IndexOf(i.ObjectId)).ToList();
         }
 
         bool invDirty;
@@ -339,12 +465,14 @@ namespace L2Web.UI
                 var n = names.FirstOrDefault(x => !used.Contains(x)) ?? names[0];
                 used.Add(n);
                 var bs = L2WndUtil.FillItemWindow(w, n, new[] { ItemData(it) }, IconUrl);
-                if (bs.Count > 0) BindItem(bs[0], it);
+                if (bs.Count > 0) BindItem(bs[0], it, n);
             }
+            normal = Ordered(normal, invOrder);
+            quest = Ordered(quest, questOrder);
             var nb = L2WndUtil.FillItemWindow(w, "InventoryItem", normal.Select(ItemData).ToList(), IconUrl);
-            for (var k = 0; k < nb.Count; k++) BindItem(nb[k], normal[k]);
+            for (var k = 0; k < nb.Count; k++) BindItem(nb[k], normal[k], "InventoryItem");
             var qb = L2WndUtil.FillItemWindow(w, "QuestItem", quest.Select(ItemData).ToList(), IconUrl);
-            for (var k = 0; k < qb.Count; k++) BindItem(qb[k], quest[k]);
+            for (var k = 0; k < qb.Count; k++) BindItem(qb[k], quest[k], "QuestItem");
             w.Text("AdenaText", Fmt(adena));
             w.Text("ItemCount", $"({list.Count})");
             w.SetTitle($"Inventário ({list.Count})");
@@ -402,14 +530,20 @@ namespace L2Web.UI
         /// Torna o botao arrastavel para a barra de atalhos (origem do OnDropItem do NCShortcutItemWnd): item, skill, acao,
         /// macro ou receita; `fromPet` = item do inventario do pet (UserShortCut 2).
         /// </summary>
-        public void DragToBar(UiTexButton b, string type, int id, bool fromPet = false) => Draggable(b, type, id, fromPet);
+        public void DragToBar(UiTexButton b, string type, int id, bool fromPet = false, Action<PointerEventData, bool> elsewhere = null) =>
+            Draggable(b, type, id, fromPet, elsewhere);
 
-        void Draggable(UiTexButton b, string type, int id, bool fromPet = false)
+        /// <summary>
+        /// `elsewhere` recebe o soltar que nao caiu num slot da barra, com o Alt do inicio do arrasto (AllItemCount, nw:0x1002eb00).
+        /// </summary>
+        void Draggable(UiTexButton b, string type, int id, bool fromPet = false, Action<PointerEventData, bool> elsewhere = null)
         {
+            var altAtStart = false;
             var ev = UiEvents.Of(b);
             ev.OnBeginDrag = _ =>
             {
                 UiTooltip.Dragging = true;
+                altAtStart = Keyboard.current != null && Keyboard.current.altKey.isPressed;
                 var icon = b.transform.Find("icon")?.GetComponent<RawImage>();
                 if (!dragGhost)
                 {
@@ -438,8 +572,9 @@ namespace L2Web.UI
                     if (!dropSlots.TryGetValue(t.gameObject, out var host)) continue;
                     var slot = SlotOfHost(host);
                     if (!barsLocked && slot >= 0) deps.Send(UiPackets.ShortCutReg(type, slot, id, ShortcutBar.UserShortCut(type, id, fromPet)));
-                    break;
+                    return;
                 }
+                elsewhere?.Invoke(e, altAtStart);
             };
         }
 
