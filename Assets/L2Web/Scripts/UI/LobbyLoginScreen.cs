@@ -43,6 +43,9 @@ namespace L2Web.UI
         /// <summary>O OptionWnd que esta tela trouxe para o OptionHost (null = nenhum).</summary>
         OptionWnd hosted;
         InputField refocus;
+        /// <summary>Campo que acabou de ganhar o foco: o InputField legado seleciona tudo; o NCEditBox nao.</summary>
+        InputField caretEnd;
+        int caretFrames;
         int submittedFrame = -1;
 
         public LobbyLoginScreen(RectTransform parent)
@@ -125,8 +128,6 @@ namespace L2Web.UI
             f.contentType = InputField.ContentType.Standard;
             f.lineType = InputField.LineType.SingleLine;
             f.onValidateInput = (_, _, c) => LoginAuth.AcceptChar(c) ? c : '\0';
-            // o NCEditBox nao seleciona o texto ao ganhar o foco
-            f.onFocusSelectAll = false;
             return f;
         }
 
@@ -213,6 +214,14 @@ namespace L2Web.UI
                 refocus = null;
                 if (EventSystem.current) EventSystem.current.SetSelectedGameObject(f.gameObject);
                 f.ActivateInputField();
+                // a ativacao acontece no LateUpdate do proprio campo, no quadro seguinte
+                caretEnd = f;
+                caretFrames = 2;
+            }
+            else if (caretEnd != null && --caretFrames <= 0)
+            {
+                if (caretEnd.isFocused) caretEnd.MoveTextEnd(false);
+                caretEnd = null;
             }
             focusedLast = Focused;
         }
