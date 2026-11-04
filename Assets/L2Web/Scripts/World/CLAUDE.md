@@ -6,9 +6,11 @@ Estado do mundo e regras de jogo do lado do cliente: entidades, movimento e vali
 
 Trava de pedido do clique (`ActionLatch`, `UGameEngine+0x64`): `05_barra_de_atalhos_e_teclado.md` §5.7.
 
-**Arquivos**: `World`, `Entities`/`Entity`, `Movement`, `PawnMotion`, `Combat`, `Skills`, `L2Calc`, `Coords`, `ActionLatch`.
+Teclas de movimento e câmera do `user.ini` (`KeyboardMove`, `CameraKeys`, `ScreenShot`): `05_barra_de_atalhos_e_teclado.md` §5.6 e `analises\interface-p166\03_teclado.md` §4. A ligação às teclas fica no `App.cs` (da coordenadora).
 
-**Testes**: `MovementTests`, `MovementParityTests`, `CombatTests`, `CombatParityTests`, `SkillDataTests`, `PawnSelectTests`, `CreateRuleTests`, `DefPosTests`, `ZoneTests`, `ActionFailTests`.
+**Arquivos**: `World`, `Entities`/`Entity`, `Movement`, `PawnMotion`, `Combat`, `Skills`, `L2Calc`, `Coords`, `ActionLatch`, `KeyboardMove` (`UserIniKeys`), `CameraKeys`, `ScreenShot`.
+
+**Testes**: `MovementTests`, `MovementParityTests`, `CombatTests`, `CombatParityTests`, `SkillDataTests`, `PawnSelectTests`, `CreateRuleTests`, `DefPosTests`, `ZoneTests`, `ActionFailTests`, `UserIniKeysTests`.
 
 **Regras**
 - O servidor manda: o cliente prevê e corrige, nunca decide posição ou dano por conta própria.
