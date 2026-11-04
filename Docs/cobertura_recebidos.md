@@ -2,8 +2,8 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 60 tratados no Unity
-- UI nativa (C++, sem EV_): 61 no original, 33 tratados no Unity
+- UI: 198 no original, 74 tratados no Unity
+- UI nativa (C++, sem EV_): 61 no original, 34 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
 - dados: 7 no original, 3 tratados no Unity
@@ -71,13 +71,13 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x36 | ExSetMpccRouting |  | UI | EV_CommandChannelRoutingType | falta |
 | ex | 0x37 | ExShowAdventurerGuideBook | ExShowAdventurerGuideBook | UI | EV_ShowGuideWnd | falta |
 | ex | 0x38 | ExShowScreenMessage | ExShowScreenMessage | UI | EV_ShowScreenMessage | falta |
-| ex | 0x39 | PledgeSkillListPacket | PledgeSkillList | UI | EV_ClanSkillList | falta |
-| ex | 0x3a | PledgeSkillListAddPacket | PledgeSkillListAdd | UI | EV_ClanSkillListAdd | falta |
-| ex | 0x3b | PledgePowerGradeList | PledgePowerGradeList | UI | EV_ClanAuthGradeList | falta |
-| ex | 0x3c | PledgeReceivePowerInfo | PledgeReceivePowerInfo | UI | EV_ClanAuthMember | falta |
-| ex | 0x3d | PledgeReceiveMemberInfo | PledgeReceiveMemberInfo | UI | EV_ClanMemberInfo | falta |
-| ex | 0x3e | PledgeReceiveWarList | PledgeReceiveWarList | UI | EV_ClanWarList | falta |
-| ex | 0x3f | PledgeReceiveSubPledgeCreated | PledgeReceiveSubPledgeCreated | UI | EV_ClanSubClanUpdated | falta |
+| ex | 0x39 | PledgeSkillListPacket | PledgeSkillList | UI | EV_ClanSkillList | tratado |
+| ex | 0x3a | PledgeSkillListAddPacket | PledgeSkillListAdd | UI | EV_ClanSkillListAdd | tratado |
+| ex | 0x3b | PledgePowerGradeList | PledgePowerGradeList | UI | EV_ClanAuthGradeList | tratado |
+| ex | 0x3c | PledgeReceivePowerInfo | PledgeReceivePowerInfo | UI | EV_ClanAuthMember | tratado |
+| ex | 0x3d | PledgeReceiveMemberInfo | PledgeReceiveMemberInfo | UI | EV_ClanMemberInfo | tratado |
+| ex | 0x3e | PledgeReceiveWarList | PledgeReceiveWarList | UI | EV_ClanWarList | tratado |
+| ex | 0x3f | PledgeReceiveSubPledgeCreated | PledgeReceiveSubPledgeCreated | UI | EV_ClanSubClanUpdated | tratado |
 | ex | 0x40 | ExRedSkyPacket | ExRedSky | mundo/engine |  | falta |
 | ex | 0x41 | PledgeReceiveUpdatePower |  | UI | EV_ClanMyAuth | falta |
 | ex | 0x42 | FlySelfDestinationPacket |  | mundo/engine |  | falta |
@@ -155,9 +155,9 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x2d | SocialActionPacket | SocialAction | mundo/engine |  | falta |
 | game | 0x2e | ChangeMoveTypePacket | ChangeMoveType | mundo/engine |  | tratado |
 | game | 0x2f | ChangeWaitTypePacket | ChangeWaitType | mundo/engine |  | tratado |
-| game | 0x30 | ManagePledgePowerPacket | ManagePledgePower | UI | EV_ClanAuth | falta |
+| game | 0x30 | ManagePledgePowerPacket | ManagePledgePower | UI | EV_ClanAuth | tratado |
 | game | 0x31 | CreatePledgePacket |  | UI | EV_ChatMessage, EV_SystemMessage | falta |
-| game | 0x32 | AskJoinPledgePacket | AskJoinPledge | UI nativa (C++, sem EV_) |  | falta |
+| game | 0x32 | AskJoinPledgePacket | AskJoinPledge | UI nativa (C++, sem EV_) |  | tratado |
 | game | 0x33 | JoinPledgePacket | JoinPledge | UI | EV_ChatMessage, EV_SystemMessage | falta |
 | game | 0x34 | WithdrawalPledgePacket |  | UI | EV_ChatMessage, EV_SystemMessage | falta |
 | game | 0x35 | OustPledgeMemberPacket |  | UI | EV_ChatMessage, EV_SystemMessage | falta |
@@ -191,9 +191,9 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x51 | PartySmallWindowDeletePacket | PartySmallWindowDelete | UI | EV_PartyDeleteParty, EV_PartyMemberChanged | tratado |
 | game | 0x52 | PartySmallWindowUpdatePacket | PartySmallWindowUpdate | UI | EV_PartyUpdateParty | tratado |
 | game | 0x53 | PledgeShowMemberListAllPacket | PledgeShowMemberListAll | UI | EV_ClanAddMemberMultiple, EV_ClanInfo | tratado |
-| game | 0x54 | PledgeShowMemberListUpdatePacket | PledgeShowMemberListUpdate | UI | EV_ClanMemberInfoUpdate | falta |
-| game | 0x55 | PledgeShowMemberListAddPacket | PledgeShowMemberListAdd | UI | EV_ClanAddMember | falta |
-| game | 0x56 | PledgeShowMemberListDeletePacket | PledgeShowMemberListDelete | UI | EV_ClanDeleteMember | falta |
+| game | 0x54 | PledgeShowMemberListUpdatePacket | PledgeShowMemberListUpdate | UI | EV_ClanMemberInfoUpdate | tratado |
+| game | 0x55 | PledgeShowMemberListAddPacket | PledgeShowMemberListAdd | UI | EV_ClanAddMember | tratado |
+| game | 0x56 | PledgeShowMemberListDeletePacket | PledgeShowMemberListDelete | UI | EV_ClanDeleteMember | tratado |
 | game | 0x57 | MagicListPacket |  | ignorado |  | ignorado (igual) |
 | game | 0x58 | SkillListPacket | SkillList | UI | EV_SkillList, EV_SkillListStart | tratado |
 | game | 0x59 | VehicleInfoPacket | VehicleInfo | mundo/engine |  | falta |
@@ -235,15 +235,15 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x7d | FriendAddRequest | FriendAddRequest | UI nativa (C++, sem EV_) |  | tratado |
 | game | 0x7e | LogOutOkPacket | LeaveWorld | UI nativa (C++, sem EV_) |  | tratado |
 | game | 0x7f | AbnormalStatusUpdatePacket | AbnormalStatusUpdate | UI | EV_AbnormalStatusNormalItem | tratado |
-| game | 0x80 | QuestListPacket | QuestList | UI | EV_QuestListEnd, EV_QuestListStart | falta |
+| game | 0x80 | QuestListPacket | QuestList | UI | EV_QuestListEnd, EV_QuestListStart | tratado |
 | game | 0x81 | EnchantResultPacket | EnchantResult | UI | EV_EnchantResult | falta |
-| game | 0x82 | PledgeShowMemberListDeleteAllPacket | PledgeShowMemberListDeleteAll | UI | EV_ClanDeleteAllMember | falta |
+| game | 0x82 | PledgeShowMemberListDeleteAllPacket | PledgeShowMemberListDeleteAll | UI | EV_ClanDeleteAllMember | tratado |
 | game | 0x83 | PledgeInfoPacket | PledgeInfo | dados |  | falta |
 | game | 0x84 | PledgeExtendedInfoPacket |  | UI nativa (C++, sem EV_) |  | falta |
 | game | 0x85 | SurrenderPersonallyPacket |  | ignorado |  | ignorado (igual) |
 | game | 0x86 | RidePacket | Ride | mundo/engine |  | falta |
 | game | 0x87 | DummyPacket |  | log |  | falta |
-| game | 0x88 | PledgeShowInfoUpdatePacket | PledgeShowInfoUpdate | UI | EV_ClanInfoUpdate | falta |
+| game | 0x88 | PledgeShowInfoUpdatePacket | PledgeShowInfoUpdate | UI | EV_ClanInfoUpdate | tratado |
 | game | 0x89 | ClientActionPacket |  | UI nativa (C++, sem EV_) |  | falta |
 | game | 0x8a | AcquireSkillListPacket | AcquireSkillList | UI | EV_SkillTrainListWndAddSkill, EV_SkillTrainListWndShow | falta |
 | game | 0x8b | AcquireSkillInfoPacket | AcquireSkillInfo | UI | EV_SkillTrainInfoWndAddExtendInfo, EV_SkillTrainInfoWndShow | falta |

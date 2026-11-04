@@ -86,6 +86,27 @@ namespace L2Web.Tests
                 Name = "m", Description = "d", Acronym = "a", Commands = { new MacroCmd { Entry = 1, Type = 3, D1 = 2, Command = "/sit" } },
             }));
             yield return C("MacroPackets.RequestDeleteMacro", "RequestDeleteMacro", MacroPackets.RequestDeleteMacro(1));
+            // quests e cla (#0046, T13/T14)
+            yield return C("ClanPackets.RequestQuestList", "RequestQuestList", ClanPackets.RequestQuestList());
+            yield return C("ClanPackets.RequestQuestAbort", "RequestDestroyQuest", ClanPackets.RequestQuestAbort(1));
+            yield return C("ClanPackets.RequestPledgeMemberList", "RequestPledgeMemberList", ClanPackets.RequestPledgeMemberList());
+            yield return C("ClanPackets.RequestPledgeInfo", "RequestPledgeInfo", ClanPackets.RequestPledgeInfo(1));
+            yield return C("ClanPackets.RequestJoinPledge", "RequestJoinPledge", ClanPackets.RequestJoinPledge(1, 0));
+            yield return C("ClanPackets.RequestAnswerJoinPledge", "RequestAnswerJoinPledge", ClanPackets.RequestAnswerJoinPledge(true));
+            yield return C("ClanPackets.RequestWithdrawPledge", "RequestWithDrawalPledge", ClanPackets.RequestWithdrawPledge());
+            yield return C("ClanPackets.RequestOustPledgeMember", "RequestOustPledgeMember", ClanPackets.RequestOustPledgeMember("a"));
+            yield return C("ClanPackets.RequestGiveNickName", "RequestGiveNickName", ClanPackets.RequestGiveNickName("a", "b"));
+            yield return C("ClanPackets.RequestStartPledgeWar", "RequestStartPledgeWar", ClanPackets.RequestStartPledgeWar("a"));
+            yield return C("ClanPackets.RequestStopPledgeWar", "RequestStopPledgeWar", ClanPackets.RequestStopPledgeWar("a"));
+            yield return C("ClanPackets.RequestPledgePower", "RequestPledgePower", ClanPackets.RequestPledgePower(6, 1));
+            yield return C("ClanPackets.RequestPledgePower", "RequestPledgePower", ClanPackets.RequestPledgePower(6, 2, 1));
+            yield return C("ClanPackets.RequestPledgeSetAcademyMaster", "RequestPledgeSetAcademyMasterPupil", ClanPackets.RequestPledgeSetAcademyMaster(true, "a", "b"));
+            yield return C("ClanPackets.RequestPledgePowerGradeList", "RequestPledgePowerGradeList", ClanPackets.RequestPledgePowerGradeList());
+            yield return C("ClanPackets.RequestPledgeMemberPowerInfo", "RequestPledgeMemberPowerInfo", ClanPackets.RequestPledgeMemberPowerInfo(0, "a"));
+            yield return C("ClanPackets.RequestPledgeSetMemberPowerGrade", "RequestPledgeSetMemberPowerGrade", ClanPackets.RequestPledgeSetMemberPowerGrade("a", 6));
+            yield return C("ClanPackets.RequestPledgeMemberInfo", "RequestPledgeMemberInfo", ClanPackets.RequestPledgeMemberInfo(0, "a"));
+            yield return C("ClanPackets.RequestPledgeWarList", "RequestPledgeWarList", ClanPackets.RequestPledgeWarList(0, 0));
+            yield return C("ClanPackets.RequestPledgeReorganizeMember", "RequestPledgeReorganizeMember", ClanPackets.RequestPledgeReorganizeMember(true, "a", 100, "b"));
             // pet (#0046, T7)
             yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
             yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));

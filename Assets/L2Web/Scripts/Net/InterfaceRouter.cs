@@ -1,7 +1,8 @@
 // Tratadores dos pacotes das janelas da interface (#0046) que o App.cs ainda nao trata: le cada pacote (Net/*Packets),
 // guarda o ultimo lido (para a janela consultar, como os natives GetXxx do original) e entrega os EV_* do InterfaceEvents
 // ao barramento. O App cria um por GameClient; a UI so consome (L2Events.Register e os OnXxx abaixo).
-// Os opcodes daqui nao se repetem no App.cs (ReceivedPacketTests junta os dois para a cobertura).
+// Os opcodes daqui nao se repetem no App.cs, salvo o 0x53 (o App so atualiza a janela de cla antiga, sem EV_);
+// ReceivedPacketTests junta os dois para a cobertura.
 using System;
 using System.Collections.Generic;
 using L2Web.UI;
@@ -29,6 +30,11 @@ namespace L2Web.Net
         public Action<PetInfo> OnPetInfo;
         public Action<PetStatusUpdateInfo> OnPetStatus;
         public Action<PetDeleteInfo> OnPetDelete;
+
+        /// <summary>Quests em andamento (QuestList) e o ultimo PledgeShowMemberListAll.</summary>
+        public List<QuestInfo> Quests = new List<QuestInfo>();
+        public PledgeShowMemberListAllInfo Clan;
+        public Action<AskJoinPledgeInfo> OnAskJoinPledge;
 
         /// <summary>Ultimo pacote de cada janela (a janela le os itens daqui ou do param do evento).</summary>
         public WarehouseListInfo Warehouse;
@@ -105,6 +111,34 @@ namespace L2Web.Net
                 Emit(InterfaceEvents.SummonRemainTime(SummonRemain));
             });
             On(0xee, r => Emit(InterfaceEvents.PartySpelled(PetPackets.ParsePartySpelled(r))));
+
+            // ---------------------------------------------------------------- quests e cla (T13/T14)
+            On(0x80, r =>
+            {
+                Quests = ClanPackets.ParseQuestList(r);
+                Emit(InterfaceEvents.QuestList(Quests));
+            });
+            // o App tambem le o 0x53 (janela de cla antiga, sem EV_): aqui so os eventos do ClanWnd
+            On(0x53, r =>
+            {
+                Clan = ClanPackets.ParsePledgeShowMemberListAll(r);
+                Emit(InterfaceEvents.PledgeShowMemberListAll(Clan));
+            });
+            On(0x54, r => Emit(InterfaceEvents.PledgeMemberUpdate(ClanPackets.ParsePledgeShowMemberListUpdate(r))));
+            On(0x55, r => Emit(InterfaceEvents.PledgeMemberAdd(ClanPackets.ParsePledgeShowMemberListAdd(r))));
+            On(0x56, r => Emit(InterfaceEvents.PledgeMemberDelete(ClanPackets.ParsePledgeShowMemberListDelete(r))));
+            On(0x82, _ => Emit(InterfaceEvents.PledgeMemberDeleteAll()));
+            On(0x88, r => Emit(InterfaceEvents.PledgeInfoUpdate(ClanPackets.ParsePledgeShowInfoUpdate(r))));
+            On(0x30, r => Emit(InterfaceEvents.ManagePledgePower(ClanPackets.ParseManagePledgePower(r))));
+            // sem EV_: o engine abre o pedido de entrada no cla direto
+            On(0x32, r => OnAskJoinPledge?.Invoke(ClanPackets.ParseAskJoinPledge(r)));
+            Ex(0x39, r => Emit(InterfaceEvents.PledgeSkillList(ClanPackets.ParsePledgeSkillList(r))));
+            Ex(0x3a, r => Emit(InterfaceEvents.PledgeSkillAdd(ClanPackets.ParsePledgeSkillListAdd(r))));
+            Ex(0x3b, r => Emit(InterfaceEvents.PledgePowerGradeList(ClanPackets.ParsePledgePowerGradeList(r))));
+            Ex(0x3c, r => Emit(InterfaceEvents.PledgePowerMember(ClanPackets.ParsePledgeReceivePowerInfo(r))));
+            Ex(0x3d, r => Emit(InterfaceEvents.PledgeMemberInfo(ClanPackets.ParsePledgeReceiveMemberInfo(r))));
+            Ex(0x3e, r => Emit(InterfaceEvents.PledgeWarList(ClanPackets.ParsePledgeReceiveWarList(r))));
+            Ex(0x3f, r => Emit(InterfaceEvents.SubPledgeCreated(ClanPackets.ParsePledgeReceiveSubPledgeCreated(r))));
 
             // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
             On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));

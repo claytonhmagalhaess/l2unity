@@ -179,6 +179,136 @@ namespace L2Web.Net
             return new() { E(ev, p) };
         }
 
+        // ---------------------------------------------------------------- quests e cla (T13/T14)
+
+        /// <summary>QuestList (0x80): EV_QuestListStart, um EV_QuestList (QuestID, Level = cond, Completed) por quest e EV_QuestListEnd.</summary>
+        public static List<PacketEvents.Event> QuestList(List<QuestInfo> l)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_QuestListStart) };
+            foreach (var q in l)
+            {
+                var p = P(P("", "QuestID", q.QuestId), "Level", q.Cond);
+                o.Add(E(Ev.EV_QuestList, P(p, "Completed", 0)));
+            }
+            o.Add(E(Ev.EV_QuestListEnd));
+            return o;
+        }
+
+        static string ClanHeader(string p, PledgeInfoHeader h)
+        {
+            p = P(p, "ClanID", h.ClanId);
+            p = P(p, "CrestID", h.CrestId);
+            p = P(p, "SkillLevel", h.Level);
+            p = P(p, "CastleID", h.CastleId);
+            p = P(p, "AgitID", h.AgitId);
+            p = P(p, "ClanRank", h.Rank);
+            p = P(p, "ClanNameValue", h.Reputation);
+            p = P(p, "Status", h.Status);
+            p = P(p, "Guilty", h.Guilty);
+            p = P(p, "AllianceID", h.AllyId);
+            p = P(p, "AllianceName", h.AllyName);
+            p = P(p, "AllianceCrestID", h.AllyCrestId);
+            return P(p, "InWar", h.AtWar ? 1 : 0);
+        }
+
+        static string Member(string p, PledgeMember m)
+        {
+            p = P(p, "Name", m.Name);
+            p = P(p, "Level", m.Level);
+            p = P(p, "Class", m.ClassId);
+            p = P(p, "Gender", m.Sex);
+            p = P(p, "Race", m.Race);
+            return P(p, "ID", m.ObjectId);
+        }
+
+        /// <summary>
+        /// PledgeShowMemberListAll (0x53): EV_ClanInfo (ClanType = tipo da unidade, nome, lider e o cabecalho) e um
+        /// EV_ClanAddMemberMultiple (ClanType, Name, Level, Class, Gender, Race, ID, HaveMaster) por membro.
+        /// </summary>
+        public static List<PacketEvents.Event> PledgeShowMemberListAll(PledgeShowMemberListAllInfo a)
+        {
+            var p = P("", "ClanType", a.PledgeType);
+            p = P(p, "ClanName", a.ClanName);
+            p = P(p, "ClanMasterName", a.LeaderName);
+            var o = new List<PacketEvents.Event> { E(Ev.EV_ClanInfo, ClanHeader(p, a.Info)) };
+            foreach (var m in a.Members) o.Add(E(Ev.EV_ClanAddMemberMultiple, P(Member(P("", "ClanType", a.PledgeType), m), "HaveMaster", m.HaveMaster ? 1 : 0)));
+            return o;
+        }
+
+        /// <summary>PledgeShowMemberListUpdate (0x54): EV_ClanMemberInfoUpdate (membro, PledgeType, HaveMaster).</summary>
+        public static List<PacketEvents.Event> PledgeMemberUpdate(PledgeMember m) =>
+            new() { E(Ev.EV_ClanMemberInfoUpdate, P(P(Member("", m), "PledgeType", m.PledgeType), "HaveMaster", m.HaveMaster ? 1 : 0)) };
+
+        /// <summary>PledgeShowMemberListAdd (0x55): EV_ClanAddMember (membro, ClanType).</summary>
+        public static List<PacketEvents.Event> PledgeMemberAdd(PledgeMember m) => new() { E(Ev.EV_ClanAddMember, P(Member("", m), "ClanType", m.PledgeType)) };
+
+        /// <summary>PledgeShowMemberListDelete (0x56): EV_ClanDeleteMember (Name).</summary>
+        public static List<PacketEvents.Event> PledgeMemberDelete(string name) => new() { E(Ev.EV_ClanDeleteMember, P("", "Name", name)) };
+
+        /// <summary>PledgeShowMemberListDeleteAll (0x82): EV_ClanDeleteAllMember.</summary>
+        public static List<PacketEvents.Event> PledgeMemberDeleteAll() => new() { E(Ev.EV_ClanDeleteAllMember) };
+
+        /// <summary>PledgeShowInfoUpdate (0x88): EV_ClanInfoUpdate com o cabecalho.</summary>
+        public static List<PacketEvents.Event> PledgeInfoUpdate(PledgeInfoHeader h) => new() { E(Ev.EV_ClanInfoUpdate, ClanHeader("", h)) };
+
+        /// <summary>Privilegios do grau em PowerValue0..31 (um bit cada; ClanDrawerWnd le os 32).</summary>
+        static string Powers(string p, int privileges)
+        {
+            for (var i = 0; i < 32; i++) p = P(p, "PowerValue" + i, (privileges >> i) & 1);
+            return p;
+        }
+
+        /// <summary>ManagePledgePower (0x30): EV_ClanAuth (GradeID, Command, PowerValue0..31).</summary>
+        public static List<PacketEvents.Event> ManagePledgePower(PledgePowerInfo m) =>
+            new() { E(Ev.EV_ClanAuth, Powers(P(P("", "GradeID", m.Grade), "Command", m.Action), m.Privileges)) };
+
+        /// <summary>PledgeReceivePowerInfo (FE:3c): EV_ClanAuthMember (Grade, Name, PowerValue0..31).</summary>
+        public static List<PacketEvents.Event> PledgePowerMember(PledgePowerInfo m) =>
+            new() { E(Ev.EV_ClanAuthMember, Powers(P(P("", "Grade", m.Grade), "Name", m.Name), m.Privileges)) };
+
+        /// <summary>PledgePowerGradeList (FE:3b): EV_ClanAuthGradeList (Count, GradeID{i}, GradeMemberCount{i}).</summary>
+        public static List<PacketEvents.Event> PledgePowerGradeList(List<(int Grade, int Members)> l)
+        {
+            var p = P("", "Count", l.Count);
+            for (var i = 0; i < l.Count; i++) p = P(P(p, "GradeID" + i, l[i].Grade), "GradeMemberCount" + i, l[i].Members);
+            return new() { E(Ev.EV_ClanAuthGradeList, p) };
+        }
+
+        /// <summary>PledgeReceiveMemberInfo (FE:3d): EV_ClanMemberInfo (ClanType, Name, NickName, GradeID, OrderName, MasterName).</summary>
+        public static List<PacketEvents.Event> PledgeMemberInfo(PledgeMemberDetail d)
+        {
+            var p = P("", "ClanType", d.PledgeType);
+            p = P(p, "Name", d.Name);
+            p = P(p, "NickName", d.Title);
+            p = P(p, "GradeID", d.Grade);
+            p = P(p, "OrderName", d.OrderName);
+            return new() { E(Ev.EV_ClanMemberInfo, P(p, "MasterName", d.MasterName)) };
+        }
+
+        /// <summary>PledgeReceiveWarList (FE:3e): um EV_ClanWarList (Page, ClanName, Type, Period) por cla.</summary>
+        public static List<PacketEvents.Event> PledgeWarList(PledgeWarListInfo w)
+        {
+            var o = new List<PacketEvents.Event>();
+            foreach (var c in w.Wars) o.Add(E(Ev.EV_ClanWarList, P(P(P(P("", "Page", w.Page), "ClanName", c.ClanName), "Type", c.Type), "Period", c.Period)));
+            return o;
+        }
+
+        /// <summary>PledgeReceiveSubPledgeCreated (FE:3f): EV_ClanSubClanUpdated (ClanID, ClanType, ClanName, MasterName).</summary>
+        public static List<PacketEvents.Event> SubPledgeCreated(SubPledgeInfo s) =>
+            new() { E(Ev.EV_ClanSubClanUpdated, P(P(P(P("", "ClanID", s.ClanId), "ClanType", s.PledgeType), "ClanName", s.Name), "MasterName", s.LeaderName)) };
+
+        /// <summary>PledgeSkillList (FE:39): EV_ClanSkillList (Count, SkillID{i}, SkillLevel{i}).</summary>
+        public static List<PacketEvents.Event> PledgeSkillList(List<(int Id, int Level)> l)
+        {
+            var p = P("", "Count", l.Count);
+            for (var i = 0; i < l.Count; i++) p = P(P(p, "SkillID" + i, l[i].Id), "SkillLevel" + i, l[i].Level);
+            return new() { E(Ev.EV_ClanSkillList, p) };
+        }
+
+        /// <summary>PledgeSkillListAdd (FE:3a): EV_ClanSkillListAdd (SkillID, SkillLevel).</summary>
+        public static List<PacketEvents.Event> PledgeSkillAdd((int Id, int Level) s) =>
+            new() { E(Ev.EV_ClanSkillListAdd, P(P("", "SkillID", s.Id), "SkillLevel", s.Level)) };
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>
