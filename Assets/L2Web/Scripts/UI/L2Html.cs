@@ -98,6 +98,9 @@ namespace L2Web.UI
             return L2WndUtil.Tex(reference.Trim())?.Url;
         }
 
+        /// <summary>A referencia e um icone do Icon.utx ("icon.xxx").</summary>
+        public static bool IsIcon(string reference) => !string.IsNullOrEmpty(reference) && IconRe.IsMatch(reference.Trim());
+
         /// <summary>
         /// Texturas do botao do HTML (NCHtmlButton): `fore` normal e `back` pressionado, esticadas ao width x height. Sem
         /// `fore` conhecido pelo cliente (ex.: sek.cbui94 dos servidores privados) fica o btn1 generico [I].
@@ -294,15 +297,18 @@ namespace L2Web.UI
             var btn = rt.gameObject.AddComponent<UiTexButton>();
             btn.Image = L2WndUtil.Bg(rt);
             UiRoot.Fill(btn.Image.rectTransform);
-            var normal = TexUrl(b.Fore, act);
-            var pushed = TexUrl(b.Back, act);
-            if (normal == null)
+            if (IsIcon(b.Fore) && TexUrl(b.Fore, act) is string icon)
             {
-                // textura que o cliente nao tem (servidor privado): o botao generico do cliente
-                var (n, p, o) = ButtonSkin(null, null);
+                // icone do Icon.utx (buffer: fore=icon.skill1040, back=icon.skill0000): a imagem inteira esticada
+                var pushed = TexUrl(b.Back, act);
+                L2WndUtil.SetButtonTextures(btn, icon, pushed ?? icon, icon);
+            }
+            else
+            {
+                // textura da interface (L2UI_CH3.BigButton3...): a area da arte esticada; sem ela, o botao generico [I]
+                var (n, p, o) = ButtonSkin(b.Fore, b.Back);
                 L2WndUtil.SkinButton(btn, n, p, o, b.W, b.H, true);
             }
-            else L2WndUtil.SetButtonTextures(btn, normal, pushed ?? normal, normal);
             if (!string.IsNullOrEmpty(b.Text))
             {
                 var t = UiRoot.Label(rt, Escape(b.Text), 0, 0, b.W, b.H, FontSize, UiKit.ButtonText, TextAnchor.MiddleCenter);
