@@ -1,0 +1,22 @@
+36d8e0a #0050: testes EditMode do tooltip da multisell e do conjunto
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+== #0050 depois 36d8e0a
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=65 self=L2webTest 82424,148712,-3464"
+"ok"
+"268477696"
+-- b) painel:
+"idx=0 itemType=1 slot=32768 produtos=4 ingredientes= stats=249/4950 || painel=|Draconic Leather Armor|x1||Draconic Leather Boots|x1||Draconic Leather Gloves|x1||Draconic Leather Helmet|x1"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_depois_painel.png (1024, 768)
+-- 0050_depois_tip_lista: "Draconic Leather Armor => Draconic Leather Armor |   | `grades` | Upper and Lower Body / Light | P. Def. |  :  | 249 | Weight |  :  | 4950 | Full body armor. | Draconic Leather Helmet | Draconic Leather Gloves | Draconic Leather Boots | DEX+1, STR+1, CON-2, Attack speed/P. Atk, +4%, Maximum MP 289, and weight limit +5759. | When all set items are enchanted by 6 or higher, M. Def. and Evasion will increase."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_depois_tip_lista.png (1024, 768)
+-- 0050_depois_tip_produto: "Draconic Leather Armor => Draconic Leather Armor |   | `grades` | P. Def. |  :  | 0 | Weight |  :  | 0 | Draconic Leather Helmet | Draconic Leather Gloves | Draconic Leather Boots | DEX+1, STR+1, CON-2, Attack speed/P. Atk, +4%, Maximum MP 289, and weight limit +5759. | When all set items are enchanted by 6 or higher, M. Def. and Evasion will increase."
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_depois_tip_produto.png (1024, 768)
+-- 0050_depois_tip_ingrediente: "nao achou"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_depois_tip_ingrediente.png (1024, 768)
+0 entradas
