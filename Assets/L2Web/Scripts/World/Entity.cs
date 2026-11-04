@@ -198,12 +198,13 @@ namespace L2Web.World
         /// <summary>
         /// Posicao inicial/teleporte (sem movimento em curso). O Z do servidor pode estar acima do chao (o aCis manda o Z
         /// do destino + 10, sem geodata: em Giran o unstuck chega 110-124 acima): como no OnTeleportToLocation, o pawn
-        /// pousa no chao no proximo Step em que ele for conhecido (busca do L2_Teleport para o proprio, queda para os outros).
+        /// pousa no chao no proximo Step em que ele for conhecido (busca do L2_Teleport para o proprio, queda para os outros;
+        /// NPCs e itens caem no maximo NpcMaxFall e ninguem sobe mais que MaxRise: ver Movement.Land).
         /// </summary>
         public void Place(float x, float y, float z, int? heading = null)
         {
             Motion.Place(x, y, z);
-            Motion.Drop(IsSelf);
+            Motion.Drop(IsSelf, Kind == "self" || Kind == "player" ? Movement.TeleportMaxFall : Movement.NpcMaxFall);
             Motion.Dest = null;
             if (heading.HasValue) Motion.Yaw = Motion.DesiredYaw = heading.Value & 0xffff;
             Sync();

@@ -110,32 +110,59 @@ namespace L2Web.World
         }
 
         /// <summary>
-        /// Novo Z do pawn que pousa em (x, y) com o pe em `feet` (`keepZ` = Z atual, mantido quando nao da para confiar no
-        /// chao); null enquanto o chao do lugar nao for conhecido (geodata ainda nao carregado). `search` = busca do
-        /// L2_Teleport (o proprio jogador); senao queda.
-        /// Com `layers` (todas as camadas da celula) a regra e a do original. Sem elas, so com `ground` (a camada mais
-        /// proxima de zRef, entre a mais alta e a mais baixa): celula de uma camada pousa igual; multicamada so ate
-        /// MultiLayerTrust do pe.
+        /// Quanto o pouso pode subir acima do pe. O original pousa na colisao real (BSP/StaticMesh); o porte so tem o
+        /// geodata, que dentro dos predios as vezes so tem o telhado (lojas de Giran: NPC em -3506, geodata so em -3080).
+        /// Os NPCs do spawnlist com o chao do geodata ate 30 acima do pe sao 1452; acima disso (358) e telhado.
+        /// </summary>
+        public const float MaxRise = 30;
+        /// <summary>Queda maxima de NPCs e itens (z do spawnlist): mais que isso e estrutura que o geodata nao tem.</summary>
+        public const float NpcMaxFall = 100;
+        /// <summary>Queda maxima do proprio jogador e de outros jogadores (teleporte: alcance do L2_Teleport).</summary>
+        public const float TeleportMaxFall = LandingStep * LandingTries;
+
+        /// <summary>
+        /// Novo Z do pawn que pousa em (x, y) com o pe em `feet` (`keepZ` = Z atual, mantido quando nenhum chao confiavel
+        /// esta na faixa [feet - queda maxima, feet + MaxRise]); null enquanto o chao do lugar nao for conhecido (geodata
+        /// ainda nao carregado). `search` = busca do L2_Teleport (o proprio jogador: janela mais proxima, a mais alta nela);
+        /// senao queda (o chao mais alto da faixa).
+        /// Com `layers` (todas as camadas da celula) todas valem. So com `ground` (a mais proxima de zRef, entre a mais alta
+        /// e a mais baixa): celula de uma camada e exata; multicamada so ate MultiLayerTrust para baixo.
         /// </summary>
         public static float? Land(Func<float, float, float, float?> ground, Func<float, float, IReadOnlyList<float>> layers,
-            float x, float y, float feet, float keepZ, bool search)
+            float x, float y, float feet, float keepZ, bool search, float maxFall = TeleportMaxFall)
         {
+            float?[] hs;
+            var exact = true;
             var all = layers?.Invoke(x, y);
             if (all != null && all.Count > 0)
             {
-                var hs = new float?[all.Count];
+                hs = new float?[all.Count];
                 for (var i = 0; i < hs.Length; i++) hs[i] = all[i];
-                return (search ? LandingZ(feet, hs) : null) ?? FallZ(feet, hs);
             }
-            if (ground == null) return null;
-            var near = ground(x, y, feet);
-            if (!near.HasValue) return null;
-            var top = ground(x, y, FarRef);
-            var low = ground(x, y, -FarRef);
-            var multi = top.HasValue && low.HasValue && top.Value != low.Value;
-            var z = search ? LandingZ(feet, near, top, low) : FallZ(feet, near, top, low);
-            if (!multi) return z ?? FallZ(feet, near, top, low);
-            return z.HasValue && Math.Abs(z.Value - feet) <= MultiLayerTrust ? z.Value : keepZ;
+            else
+            {
+                if (ground == null) return null;
+                var near = ground(x, y, feet);
+                if (!near.HasValue) return null;
+                var top = ground(x, y, FarRef);
+                var low = ground(x, y, -FarRef);
+                exact = !(top.HasValue && low.HasValue && top.Value != low.Value);
+                hs = new[] { near, top, low };
+            }
+            var reach = exact ? maxFall : Math.Min(maxFall, MultiLayerTrust);
+            for (var i = 0; i < hs.Length; i++)
+                if (hs[i].HasValue && (hs[i].Value < feet - reach || hs[i].Value > feet + MaxRise))
+                    hs[i] = null;
+            float? z;
+            if (search) z = LandingZ(feet, hs);
+            else
+            {
+                z = null;
+                foreach (var h in hs)
+                    if (h.HasValue && (!z.HasValue || h.Value > z.Value))
+                        z = h;
+            }
+            return z ?? keepZ;
         }
 
         public static float Dist3(float ax, float ay, float az, float bx, float by, float bz)

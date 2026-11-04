@@ -36,6 +36,8 @@ namespace L2Web.World
         public bool LandingSearch;
         /// <summary>Pe (Z) de onde o pouso parte: Z do pacote + TeleportLift.</summary>
         public float LandingFeet;
+        /// <summary>Queda maxima do pouso pendente (Movement.TeleportMaxFall ou NpcMaxFall).</summary>
+        public float LandingMaxFall = Movement.TeleportMaxFall;
         /// <summary>Todas as camadas do geodata em (x, y), se a cena as expuser (World.GroundLayers); null usa so o ground.</summary>
         public Func<float, float, IReadOnlyList<float>> Layers;
 
@@ -131,10 +133,11 @@ namespace L2Web.World
         /// Arma o pouso a partir do Z atual (OnTeleportToLocation / L2_Teleport): `search` para o proprio jogador (busca do
         /// lugar de pouso), senao queda ate o chao abaixo.
         /// </summary>
-        public void Drop(bool search)
+        public void Drop(bool search, float maxFall = Movement.TeleportMaxFall)
         {
             Landing = true;
             LandingSearch = search;
+            LandingMaxFall = maxFall;
             LandingFeet = Z + Movement.TeleportLift;
         }
 
@@ -142,7 +145,7 @@ namespace L2Web.World
         public bool TryLand(Func<float, float, float, float?> ground)
         {
             if (!Landing) return false;
-            var z = Movement.Land(ground, Layers, X, Y, LandingFeet, Z, LandingSearch);
+            var z = Movement.Land(ground, Layers, X, Y, LandingFeet, Z, LandingSearch, LandingMaxFall);
             if (!z.HasValue) return false;
             Z = z.Value;
             Landing = false;

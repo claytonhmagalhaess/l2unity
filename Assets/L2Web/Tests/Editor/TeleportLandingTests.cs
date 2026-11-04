@@ -69,9 +69,11 @@ namespace L2Web.Tests
         }
 
         [Test]
-        public void Land_SemChaoAte900_ProprioCai()
+        public void Land_ChaoAlemDe900_FicaNoZ()
         {
-            Assert.AreEqual(-1500f, Movement.Land(Floor(-1500), null, 0, 0, 0, -10, true));
+            // chao a 1500 abaixo: fora do alcance do L2_Teleport (900); fica no Z
+            Assert.AreEqual(-10f, Movement.Land(Floor(-1500), null, 0, 0, 0, -10, true));
+            Assert.AreEqual(-890f, Movement.Land(Floor(-890), null, 0, 0, 0, -10, true));
             Assert.IsNull(Movement.Land(NoGround, null, 0, 0, 0, -10, true));
             Assert.IsNull(Movement.Land(null, null, 0, 0, 0, -10, true));
         }
@@ -125,6 +127,41 @@ namespace L2Web.Tests
             p.Step(0.016f, Layers(-5104, 10080), null);
             Assert.AreEqual(8992f, p.Z);
             Assert.IsFalse(p.Landing);
+        }
+
+        [Test]
+        public void NpcDeLoja_GeodataSoComTelhado_FicaNoZ()
+        {
+            // Grocer Helvetia (30081) em Giran: NpcInfo z -3506; o geodata ali so tem o telhado, -3080 (teste ao vivo 0057-1)
+            var p = new PawnMotion();
+            p.Place(80518, 147922, -3506);
+            p.Drop(false, Movement.NpcMaxFall);
+            p.Step(0.016f, Floor(-3080), null);
+            Assert.AreEqual(-3506f, p.Z);
+            Assert.IsFalse(p.Landing);
+            // o proprio jogador tambem nao sobe para o telhado
+            Assert.AreEqual(-3506f, Movement.Land(Floor(-3080), null, 0, 0, -3496, -3506, true));
+        }
+
+        [Test]
+        public void Pouso_SobeAte30()
+        {
+            // Global Gatekeeper towns 12000 (Giran): pacote -3421, geodata -3400 (pe -3411: 11 abaixo do chao)
+            Assert.AreEqual(-3400f, Movement.Land(Floor(-3400), null, 0, 0, -3411, -3421, true));
+            Assert.AreEqual(-3400f, Movement.Land(Floor(-3400), null, 0, 0, -3411, -3421, false));
+            // 31 acima do pe ja e telhado: fica no Z
+            Assert.AreEqual(-3421f, Movement.Land(Floor(-3380), null, 0, 0, -3411, -3421, true));
+        }
+
+        [Test]
+        public void Npc_CaiNoMaximo100()
+        {
+            // NPC posto sobre uma estrutura que o geodata nao tem (spawnlist 21102: z -2320, geodata -3280): fica
+            Assert.AreEqual(-2320f, Movement.Land(Floor(-3280), null, 0, 0, -2310, -2320, false, Movement.NpcMaxFall));
+            // monstro 16 acima do geodata (teste ao vivo: -3392 -> -3408): pousa
+            Assert.AreEqual(-3408f, Movement.Land(Floor(-3408), null, 0, 0, -3382, -3392, false, Movement.NpcMaxFall));
+            // jogador que acabou de fazer unstuck (CharInfo -3340, chao -3464): pousa
+            Assert.AreEqual(-3464f, Movement.Land(Floor(-3464), null, 0, 0, -3330, -3340, false));
         }
 
         [Test]

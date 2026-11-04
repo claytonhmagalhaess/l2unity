@@ -49,10 +49,13 @@ Na coluna "acima", diff = Z do pacote − chão do original. Positivo é o pacot
 | teleportLocations 213 (Tower of Insolence) | 9017 | 8992 | 25 | 14 camadas |
 | teleportLocations 211 (Tower of Insolence) | 7038 | 5984 | 1054 | 16 camadas; o original também não acha pouso a 900 e cai |
 
-### Regra do porte (`Movement.Land`)
+### Regra do porte (`Movement.Land`, versão do commit seguinte a `6080d43`)
 
-- **Célula de uma camada** (a mais alta igual à mais baixa): regra do original. O próprio jogador procura com janelas de ±30 até 900 e, sem chão nesse alcance, cai. Os outros pawns caem até o chão mais alto abaixo do pé.
-- **Célula multicamada sem `GroundLayers`:** a mesma regra, mas o pouso só vale até `MultiLayerTrust` = 150 do pé. Mais longe, o pawn fica no Z do servidor. Medido nas 18 972 amostras:
+O pouso escolhe o chão do geodata só dentro da faixa [pé − queda máxima, pé + `MaxRise`]. Fora dela, o pawn fica no Z do servidor.
+
+- **Não sobe mais de 30** (`MaxRise`). O original pousa na colisão real (BSP e StaticMesh); o porte só tem o geodata, que dentro dos prédios às vezes guarda só o telhado. Teste ao vivo 0057-1, lojas de Giran: Grocer Helvetia em −3506 com o geodata só em −3080. A versão `303b026` subia esses NPCs 350 a 460 unidades, até o telhado.
+- **Queda máxima:** 900 para o próprio jogador e para os outros jogadores, que é o alcance do `L2_Teleport`. Para NPCs e itens é 100 (`NpcMaxFall`): o Z deles vem do `spawnlist`, e mais que isso é uma estrutura que o geodata não tem.
+- **Célula multicamada sem `GroundLayers`:** a queda vai no máximo até 150 (`MultiLayerTrust`), porque as camadas do meio são desconhecidas. Medido nas 18 972 amostras:
 
   | Limite | Certo | Fica acima > 24 | Camada errada | Pior erro |
   |---:|---:|---:|---:|---:|
@@ -61,9 +64,23 @@ Na coluna "acima", diff = Z do pacote − chão do original. Positivo é o pacot
   | 200 | 18 817 | 47 | 108 | 144 |
   | 900 (sem limite) | 18 553 | 27 | 392 | 872 |
 
-  A primeira versão da #0057 (`5fb74d9`) não tinha esse limite. Em Baium e nas catacumbas, a queda iria para a camada mais baixa, até 14 mil unidades abaixo.
-- **Com `GroundLayers`** (todas as camadas, pedido 0051): regra exata do original em qualquer célula.
-- **Limite de 900:** só o teleporte 211 tem o chão a mais de 900 do pé. Ali o original loga "Couldn't find landing place" e cai. O porte, sem as camadas, fica no Z; com elas, cai em 5984, como o original.
+  A primeira versão (`5fb74d9`) não tinha esse limite. Em Baium e nas catacumbas, a queda iria para a camada mais baixa, até 14 mil unidades abaixo.
+- **Próprio jogador:** a busca do `L2_Teleport` dentro da faixa: a janela de ±30·i mais próxima e, nela, o chão mais alto. **Outros:** o chão mais alto da faixa.
+- **Com `GroundLayers`** (todas as camadas, pedido 0051), toda célula é tratada como exata.
+
+Resultado com esta regra, nas amostras de ±20 dos 2108 destinos:
+- 18 843 pousam a até 24 do pouso do original no geodata, e nenhum em camada errada;
+- 83 ficam acima, todos em multicamada: Dark Elven Village, Elven Village, Baium 1, 213 e 211;
+- 46 ficam abaixo do geodata, no Z do servidor (Oren Castle, Devastated Castle, Town of Oren): o geodata ali fica mais de 30 acima do pé, o que provavelmente é telhado.
+
+**Limite de 900:** só o teleporte 211 tem o chão mais longe que isso. O original loga "Couldn't find landing place" e cai; o porte fica no Z.
+
+**NPCs do `spawnlist.sql` (40 814 spawns), com a regra de NPC:**
+- 34 882 com ajuste de até 16;
+- 4300 descem de 16 a 100;
+- 641 sobem de 16 a 40;
+- 983 ficam no Z, sem chão na faixa (telhado acima ou estrutura): as lojas de Giran estão aqui;
+- 8 sem geodata.
 
 ## Global Gatekeeper (NPC 10003): destinos de farm e de cidade
 
