@@ -129,7 +129,7 @@ namespace L2Web
             ui = new GameUi(gameRoot, world, new UiDeps
             {
                 Send = b => gc?.Send(b),
-                ActionUse = id => gc?.Send(GamePackets.ActionUse(id)),
+                ActionUse = DoAction,
                 Chat = (cls, text, color) => Chat(cls, text, color),
                 CancelTarget = () => gc?.Send(GamePackets.CancelTarget()),
                 Restart = () => gc?.Send(GamePackets.RequestRestart()),
@@ -151,6 +151,12 @@ namespace L2Web
                 },
             });
             ui.OnChatSubmit = OnChatSubmit;
+            // GetClickLocation (InventoryWnd.uc:354): ponto do mundo (L2) sob o cursor, para o RequestDropItem (pedido 0027)
+            ui.GroundAt = screen =>
+            {
+                var hit = scene?.Pick(screen.x, screen.y);
+                return hit == null ? (Vector3?)null : new Vector3(hit.X, hit.Y, hit.Z);
+            };
             // PartyWnd: RequestAction/RequestAttack (FUN_1014c9b0, Shift = 0x10), RequestTargetUser (FUN_1014c6a0) e RequestAssist
             // (FUN_1014c870), sempre com a posicao do proprio pawn
             ui.Party.Action = (id, force) =>
@@ -953,13 +959,15 @@ namespace L2Web
             scrLogin.OnExit = () =>
             {
                 scrLogin.Pass.text = "";
-                scrLogin.Msg("Saindo...");
                 Application.Quit();
             };
             scrLogin.OnOptionsChanged = SaveLoginOptions;
+            // NCLoginFunctionWnd: Options abre o OptionWnd do xdat (o mesmo do GamingState) (pedido 0037)
+            scrLogin.OptionWindow = OptionWindow;
             // servidores
             scrServers.OnChoose = id => serverChoice?.TrySetResult(id);
-            scrServers.OnCancel = () => serverChoice?.TrySetException(new LoginError("selecao de servidor cancelada"));
+            // NCServerSelectWnd::OnCancelBtnClick: desconecta e volta ao LoginState, sem mensagem
+            scrServers.OnCancel = () => serverChoice?.TrySetException(new LoginError(""));
             // personagens
             scrChars.Info.Name.OnChange = i =>
             {
@@ -1070,32 +1078,36 @@ namespace L2Web
         async Task SubmitLogin()
         {
             if (loggingIn || !ready) return;
-            var user = scrLogin.User.text.Trim();
+            // o original nao apara o ID
+            var user = scrLogin.User.text;
             var password = scrLogin.Pass.text;
-            if (user.Length == 0 || password.Length == 0)
+            var empty = LoginAuth.CheckFields(user, password);
+            if (empty != 0)
             {
-                scrLogin.Msg("Informe a conta e a senha.", "err");
+                scrLogin.Msg(LoginMessages.Text(new[] { empty }));
                 return;
             }
             SaveLoginOptions();
             Config.Set("user", user);
             loggingIn = true;
             LobbySkin.SetEnabled(scrLogin.LoginBtn, false);
-            scrLogin.Msg("Conectando ao login server…");
+            // o original nao escreve nada na faixa enquanto conecta (pedido 0037)
             try
             {
                 session = await LoginClient.Login(new LoginOptions
                 {
                     Host = Config.LoginHost, Port = Config.LoginPort, User = user, Password = password, ChooseServer = ChooseServer, Log = m => Debug.Log("[login] " + m),
                 });
-                scrLogin.Msg("Entrando no servidor de jogo…");
                 await ConnectGame(Config.Protocol);
             }
             catch (Exception e)
             {
                 Show("scrLogin");
                 Debug.Log("[login] recusado: " + e.Message);
-                scrLogin.Msg(e is LoginError ? e.Message : $"Falha: {e.Message}", "err");
+                // RefuseLogOn: o texto do motivo na faixa; sem texto (PlayFail, Cancel da lista) nada; falha de conexao:
+                // a systemmsg 90 do OnLoginBtnClick [I]
+                if (e is LoginError le) { if (le.Message.Length > 0) scrLogin.Msg(le.Message); }
+                else scrLogin.Msg(LoginMessages.Text(new[] { 90 }));
             }
             finally
             {
@@ -1132,8 +1144,10 @@ namespace L2Web
                 if (gc != mine) return;
                 if (inWorld) LeaveWorld();
                 Show("scrLogin");
-                if (leaving) scrLogin.Msg("Você saiu do jogo.", "ok");
-                else scrLogin.Msg($"Conexão com o jogo encerrada ({reason}).", "err");
+                // Re-Login (leaving) volta ao login sem texto; queda da conexao: a caixa do ServerClose (systemmsg 127) e o OK
+                // fica no login (NConsoleWnd::ServerClose 0x1016ee60) (pedido 0037)
+                Debug.Log("[game] conexao encerrada: " + reason);
+                if (!leaving) LobbyUi.ShowServerClose(() => Show("scrLogin"));
             };
             chars = await gc.Connect();
             gc.On(0x13, r =>
@@ -1705,8 +1719,7 @@ namespace L2Web
                     var requestor = r.S();
                     var duelType = r.D();
                     L2Events.Dispatch(new PacketEvents.Event(Ev.EV_DuelAskStart, L2Param.Add(L2Param.Add("", "userName", requestor), "type", duelType)));
-                    if (L2Options.GetBool("Game", "IsRejectingDuel")) gc.Send(SocialPackets.DuelAnswerStart(duelType, false));
-                    else Chat("sys", GameData.SystemMessage(duelType == 1 ? 1939 : 1938, new List<string> { requestor }).Text);
+                    // a resposta (recusa automatica ou o DialogBox de 10 s) e da PartyMatchView/DuelManager (pedido 0035)
                 }
                 if (sub == 0x01)
                 {
@@ -1845,9 +1858,18 @@ namespace L2Web
                 L2Events.Dispatch(PacketEvents.ShowBoard(b));
                 ui.ShowBoard(b);
             });
+            // TutorialShowHtml 0xa0 "S" / TutorialCloseHtml 0xa3 (sem corpo): TutorialViewerWnd (#0055, pedido 0042)
+            On(0xa0, r =>
+            {
+                var html = r.S();
+                LogHtmlLinks("tutorial", html);
+                L2Events.Dispatch(PacketEvents.TutorialShowHtml(html));
+            });
+            On(0xa3, _ => L2Events.Dispatch(PacketEvents.TutorialCloseHtml()));
             // social (Fase 11)
             On(0x39, r => social.AskParty(SocialPackets.ParseAskJoinParty(r).Requestor));
-            On(0x3a, r => Chat("sys", SocialPackets.ParseJoinParty(r).Accepted ? "O convite de party foi aceito." : "O convite de party foi recusado."));
+            // JoinParty: o original so emite EV_SystemMessage, e o aCis ja manda as systemmsg de entrada e de recusa (pedido 0045 item 3)
+            On(0x3a, r => SocialPackets.ParseJoinParty(r));
             On(0x4e, r =>
             {
                 var pa = SocialPackets.ParsePartyAll(r);
@@ -1889,15 +1911,18 @@ namespace L2Web
                 L2Events.Dispatch(PacketEvents.TradeStart(t));
                 social.TradeStart(t);
             });
+            // TradeOwnAdd/TradeOtherAdd: o EV_TradeAddItem leva o item (pedido 0028)
             On(0x20, r =>
             {
-                L2Events.Dispatch(PacketEvents.TradeAdd(true));
-                social.OwnAdd(SocialPackets.ParseTradeAdd(r));
+                var own = SocialPackets.ParseTradeAdd(r);
+                L2Events.Dispatch(PacketEvents.TradeAdd(true, own));
+                social.OwnAdd(own);
             });
             On(0x21, r =>
             {
-                L2Events.Dispatch(PacketEvents.TradeAdd(false));
-                social.OtherAdd(SocialPackets.ParseTradeAdd(r));
+                var other = SocialPackets.ParseTradeAdd(r);
+                L2Events.Dispatch(PacketEvents.TradeAdd(false, other));
+                social.OtherAdd(other);
             });
             // 0xd3 NetPingPacket: o original responde na hora com NetPing (efeito "rede", 97)
             On(0xd3, r => gc?.Send(GamePackets.NetPing(r.D())));
@@ -1976,13 +2001,13 @@ namespace L2Web
             On(0x11, r =>
             {
                 var b = UiPackets.ParseBuyList(r);
-                L2Events.Dispatch(PacketEvents.Shop("buy", b.ListId, b.Money, 0, b.Items.Count));
+                L2Events.Dispatch(PacketEvents.Shop("buy", b.ListId, b.Money, 0, b.Items));
                 ui.BuyList(b);
             });
             On(0x10, r =>
             {
                 var sl = UiPackets.ParseSellList(r);
-                L2Events.Dispatch(PacketEvents.Shop("sell", 0, sl.Money, 0, sl.Items.Count));
+                L2Events.Dispatch(PacketEvents.Shop("sell", 0, sl.Money, 0, sl.Items));
                 ui.SellList(sl);
             });
             On(0xd0, r =>
@@ -2223,9 +2248,18 @@ namespace L2Web
         /// </summary>
         void RunSlashCommand(string text)
         {
+            var ctx = SlashCtx();
+            var steps = L2Commands.PlanLine(text, ctx, out var id);
+            Debug.Log($"[cmd] {text} -> id {id}: {string.Join(" ", steps)}");
+            RunSteps(steps, ctx);
+        }
+
+        /// <summary>Estado que o switch dos comandos e o DoAction consultam (alvo, proprio pawn, party, buscas).</summary>
+        CommandCtx SlashCtx()
+        {
             var self = world.Self;
             var t = world.Get(targetId);
-            var ctx = new CommandCtx
+            return new CommandCtx
             {
                 TargetId = t != null ? targetId : 0,
                 TargetName = t?.Name,
@@ -2240,8 +2274,12 @@ namespace L2Web
                 SkillByName = n => ui.SkillByName(n),
                 HasObscene = s => L2Chat.FilterObscene(s, GameData.ObsceneWords, "\u0001") != s,
             };
-            var steps = L2Commands.PlanLine(text, ctx, out var id);
-            Debug.Log($"[cmd] {text} -> id {id}: {string.Join(" ", steps)}");
+        }
+
+        /// <summary>Executa os passos de um comando ou de uma acao (pacote, DoAction, sysmsg, evento, rotina local).</summary>
+        void RunSteps(List<CommandStep> steps, CommandCtx ctx)
+        {
+            var self = world.Self;
             foreach (var st in steps)
             {
                 switch (st.Kind)
@@ -2288,7 +2326,7 @@ namespace L2Web
                         break;
                     }
                     default:
-                        if (missingSlash.Add(st.Token)) Debug.Log($"[cmd] passo sem implementacao no Unity: {st.Token} ({text})");
+                        if (missingSlash.Add(st.Token)) Debug.Log($"[cmd] passo sem implementacao no Unity: {st.Token}");
                         break;
                 }
             }
@@ -2308,19 +2346,18 @@ namespace L2Web
             gc.Send(GamePackets.Action(t.ObjectId, Mathf.RoundToInt(s.X), Mathf.RoundToInt(s.Y), Mathf.RoundToInt(s.Z), Keyboard.current?.shiftKey.isPressed ?? false));
         }
 
-        /// <summary>FUN_10170860 (DoAction) nos ids que os comandos usam: 0x28 avalia o alvo, 0x37 e o replay, o resto e RequestActionUse.</summary>
+        /// <summary>
+        /// DoAction (FUN_10170860): ActionWnd, barra de atalhos, PetWnd e os comandos de barra. L2Commands.PlanAction monta os
+        /// passos (ataque, troca, grupo, sociais, duelo, lojas; o resto e RequestActionUse) com o Ctrl e o Shift do momento.
+        /// </summary>
         void DoAction(int n)
         {
-            if (n == 0x37) return;
-            if (n == 0x28)
-            {
-                var t = world.Get(targetId);
-                if (t == null) chatFlood.SystemMessage(0xf2);
-                else if (t.Kind == "player") gc.Send(new PacketWriter().C(0xb9).D(targetId).Bytes()); // VoteSociality
-                else chatFlood.SystemMessage(0x90);
-                return;
-            }
-            gc.Send(GamePackets.ActionUse(n));
+            if (gc == null) return;
+            var kb = Keyboard.current;
+            var ctx = SlashCtx();
+            var steps = L2Commands.PlanAction(n, ctx, kb?.ctrlKey.isPressed ?? false, kb?.shiftKey.isPressed ?? false);
+            Debug.Log($"[act] {n}: {string.Join(" ", steps)}");
+            RunSteps(steps, ctx);
         }
 
         /// <summary>Anda ate (x, y, z) como um clique no chao (diagnostico).</summary>
