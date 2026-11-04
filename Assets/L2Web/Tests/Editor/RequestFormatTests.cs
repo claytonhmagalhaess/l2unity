@@ -80,6 +80,12 @@ namespace L2Web.Tests
             yield return C("UiPackets.RequestDropItem", "RequestDropItem", UiPackets.RequestDropItem(1, 1, 2, 3, 4));
             yield return C("UiPackets.RequestDestroyItem", "RequestDestroyItem", UiPackets.RequestDestroyItem(1, 1));
             yield return C("UiPackets.RequestCrystallizeItem", "RequestCrystallizeItem", UiPackets.RequestCrystallizeItem(1, 1));
+            // macro (#0046, T8)
+            yield return C("MacroPackets.RequestMakeMacro", "RequestMakeMacro", MacroPackets.RequestMakeMacro(new MacroInfo
+            {
+                Name = "m", Description = "d", Acronym = "a", Commands = { new MacroCmd { Entry = 1, Type = 3, D1 = 2, Command = "/sit" } },
+            }));
+            yield return C("MacroPackets.RequestDeleteMacro", "RequestDeleteMacro", MacroPackets.RequestDeleteMacro(1));
             // social
             yield return C("SocialPackets.RequestJoinParty", "RequestJoinParty", SocialPackets.RequestJoinParty("nome"));
             yield return C("SocialPackets.AnswerJoinParty", "RequestAnswerJoinParty", SocialPackets.AnswerJoinParty(true));

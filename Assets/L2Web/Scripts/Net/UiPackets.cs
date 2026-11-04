@@ -23,6 +23,10 @@ namespace L2Web.Net
         public int Enchant;
         public int Augmentation;
         public int Mana;
+        /// <summary>customType1/2 do aCis (damaged e reserved do ItemInfo).</summary>
+        public int CustomType1, CustomType2;
+        /// <summary>Preco do item nas listas que o trazem (armazem, loja privada...); null nas demais.</summary>
+        public int? Price, DefaultPrice;
         /// <summary>InventoryUpdate: 0 sem mudanca, 1 adicionado, 2 modificado, 3 removido. null no ItemList.</summary>
         public int? Change;
     }
@@ -181,11 +185,11 @@ namespace L2Web.Net
             it.ItemId = r.D();
             it.Count = r.D();
             it.Type2 = r.H();
-            r.H(); // customType1
+            it.CustomType1 = r.H();
             it.Equipped = r.H() != 0;
             it.BodyPart = r.D();
             it.Enchant = r.H();
-            r.H(); // customType2
+            it.CustomType2 = r.H();
             // o engine le "hh" (as duas opcoes do aumento em shorts separados, FUN_10411870); o valor e o mesmo do d do aCis
             it.Augmentation = (r.H() & 0xffff) | (r.H() << 16);
             it.Mana = r.D();

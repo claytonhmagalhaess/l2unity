@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **60**; não enviados pelo Unity: **185**.
+Envios do original: **245**; com builder no Unity: **62**; não enviados pelo Unity: **183**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -60,6 +60,8 @@ Envios do original: **245**; com builder no Unity: **60**; não enviados pelo Un
 | SendPrivateStoreBuyList | jogo | 0x79 |  | `cddb` | SocialPackets.PrivateStoreBuy |
 | RequestMultiSellChoose | jogo | 0xa7 |  | `cddddd` | UiPackets.MultiSellChoose |
 | NetPing | jogo | 0xa8 |  | `cddd` | GamePackets.NetPing |
+| RequestMakeMacro | jogo | 0xc1 |  | `cdSSSccb` | MacroPackets.RequestMakeMacro |
+| RequestDeleteMacro | jogo | 0xc2 |  | `cd` | MacroPackets.RequestDeleteMacro |
 | ConfirmDlg | jogo | 0xc5 |  | `cddd` | UiPackets.DlgAnswer |
 | RequestManorList | jogo | 0xd0 | 0x08 | `ch` | GamePackets.RequestManorList |
 | RequestAutoSoulShot | jogo | 0xd0 | 0x05 | `chdd` | UiPackets.RequestAutoSoulShot |
@@ -193,8 +195,6 @@ Envios do original: **245**; com builder no Unity: **60**; não enviados pelo Un
 | RequestHennaUnequip | jogo | 0xbf |  | `cd` | não enviado |
 | RequestPledgePower | jogo | 0xc0 |  | `cdd` | não enviado |
 | RequestPledgePower | jogo | 0xc0 |  | `cddd` | não enviado |
-| RequestMakeMacro | jogo | 0xc1 |  | `cdSSSccb` | não enviado |
-| RequestDeleteMacro | jogo | 0xc2 |  | `cd` | não enviado |
 | RequestProcureCrop | jogo | 0xc3 |  | `cddb` | não enviado |
 | RequestBuySeed | jogo | 0xc4 |  | `cddb` | não enviado |
 | RequestPreviewItem | jogo | 0xc6 |  | `cdddb` | não enviado |

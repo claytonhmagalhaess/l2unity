@@ -20,13 +20,23 @@ namespace L2Web.Tests
         /// <summary>Opcode -> "Classe.Metodo" do 1o Parse*(r) de cada On(0x.., r =>) do App.cs (o que le o pacote).</summary>
         static Dictionary<string, string> UnityParsers(out List<string> inline)
         {
-            var src = File.ReadAllText(Path.Combine(Application.dataPath, "L2Web", "Scripts", "App.cs"));
+            var scripts = Path.Combine(Application.dataPath, "L2Web", "Scripts");
             var res = new Dictionary<string, string>();
             inline = new List<string>();
-            var ms = Regex.Matches(src, @"\bOn\((0x[0-9a-f]+), (r|_) =>");
+            Scan(File.ReadAllText(Path.Combine(scripts, "App.cs")), @"\bOn\((0x[0-9a-f]+), (r|_) =>", "", res, inline);
+            // InterfaceRouter (#0046): On(0x.., r =>) e Ex(0x.., r =>) dos pacotes Ex (chave "ex:0x..")
+            var router = File.ReadAllText(Path.Combine(scripts, "Net", "InterfaceRouter.cs"));
+            Scan(router, @"\bOn\((0x[0-9a-f]+), (r|_) =>", "", res, inline);
+            Scan(router, @"\bEx\((0x[0-9a-f]+), (r|_) =>", "ex:", res, inline);
+            return res;
+        }
+
+        static void Scan(string src, string pattern, string prefix, Dictionary<string, string> res, List<string> inline)
+        {
+            var ms = Regex.Matches(src, pattern);
             for (var i = 0; i < ms.Count; i++)
             {
-                var op = ms[i].Groups[1].Value;
+                var op = prefix == "" ? ms[i].Groups[1].Value : prefix + "0x" + System.Convert.ToInt32(ms[i].Groups[1].Value, 16).ToString("x");
                 if (ms[i].Groups[2].Value == "_") continue; // nao le nada
                 var end = i + 1 < ms.Count ? ms[i + 1].Index : src.Length;
                 var block = src.Substring(ms[i].Index, end - ms[i].Index);
@@ -35,7 +45,6 @@ namespace L2Web.Tests
                 if (p.Success && (!raw.Success || raw.Index > p.Index)) res[op] = p.Groups[1].Value + "." + p.Groups[2].Value;
                 else inline.Add(op);
             }
-            return res;
         }
 
         static int Width(string t) => t[0] switch { 'c' => 1, 'h' => 2, 'd' => 4, 'Q' => 8, 'f' => 8, 'S' => 4, 'b' => int.Parse(t.Substring(1)), _ => 0 };

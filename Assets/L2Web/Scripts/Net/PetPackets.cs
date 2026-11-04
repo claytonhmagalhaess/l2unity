@@ -174,11 +174,11 @@ namespace L2Web.Net
         static InvItem ReadPetItem(PacketReader r, int? change)
         {
             var it = new InvItem { Change = change, Type1 = r.H(), ObjectId = r.D(), ItemId = r.D(), Count = r.D(), Type2 = r.H() };
-            r.H(); // customType1
+            it.CustomType1 = r.H();
             it.Equipped = r.H() != 0;
             it.BodyPart = r.D();
             it.Enchant = r.H();
-            r.H(); // customType2
+            it.CustomType2 = r.H();
             return it;
         }
 
