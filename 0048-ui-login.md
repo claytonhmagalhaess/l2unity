@@ -49,6 +49,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — tela de login como o NCAuthWnd (Tab/Shift+Tab, Enter só na senha, foco no ID, campos sem limite e 0x20..0x81, sysmsg 86/87, som 0), Options abre o OptionWnd, menu só com Options, `LobbyDialogBox` (NCGaraDialogBox do ServerClose) e `LoginScreenTests` (a3adac7, 2dc4e52).
 - 2026-11-04 — pedidos 0037 (coordenadora, App.cs), 0038 (net, contrato e queda da conexão) e 0039 (render, música LS01_F) (tarefas 8463d73).
 - 2026-11-04 — **parado para compilar e testar**: o Editor da vaga está em Play dentro do jogo (personagem ADMIN, antes dsadasdasd), com "Recompile After Finished Playing"; perguntei à coordenadora se posso parar o Play. O código ainda não foi compilado.
+- 2026-11-04 — novo fluxo de testes (só a sessão de testes abre o Unity): pedido de teste enviado com f1fead1 (compilar, EditMode inteira + `LoginScreenTests`, roteiro ao vivo com capturas antes em b88e07c e depois em f1fead1). Aguardando a resposta em `testes8-<n>\`.
 
 ## Decisões e REA
 
