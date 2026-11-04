@@ -186,6 +186,8 @@ namespace L2Web.UI
         public OnScreenMessageView ScreenMessages { get; private set; }
         /// <summary>Recipe* (livro, fabricar, loja de fabricacao, arvore), #0043.</summary>
         public RecipeView Recipes { get; private set; }
+        /// <summary>ItemEnchantWnd, RefineryWnd e UnrefineryWnd, #0044.</summary>
+        public ItemUpgradeView Upgrade { get; private set; }
         /// <summary>GetRecipeShopMsg: o titulo atual da propria loja de fabricacao.</summary>
         public string RecipeShopMsg = "";
 
@@ -392,6 +394,8 @@ namespace L2Web.UI
             ScreenMessages = new OnScreenMessageView(Layer);
             // fabricacao (#0043)
             Recipes = new RecipeView(Layer, this, b => this.deps.Send(b));
+            // melhoria de item (#0044)
+            Upgrade = new ItemUpgradeView(Layer, this, b => this.deps.Send(b));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {

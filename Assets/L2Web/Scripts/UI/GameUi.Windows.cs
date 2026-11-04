@@ -348,6 +348,9 @@ namespace L2Web.UI
             }
             // PetWnd.OnDropItem("PetInvenWnd") vindo do InventoryItem: RequestGiveItemToPet
             if (Pets != null && Pets.DropFromInventory(e, info)) return;
+            // as outras janelas que aceitam item do inventario (RefineryWnd, UnrefineryWnd)
+            foreach (var d in InventoryDropTargets)
+                if (d(e, info)) return;
             string target = null;
             Transform slotT = null;
             for (var t = hit.transform; t && t != Inv.El.transform; t = t.parent)
@@ -387,6 +390,15 @@ namespace L2Web.UI
                     return;
                 }
         }
+
+        /// <summary>Janelas que recebem um item solto do inventario (true = tratou).</summary>
+        public readonly List<Func<PointerEventData, InventoryScript.Item, bool>> InventoryDropTargets = new();
+
+        /// <summary>Os itens do inventario (ItemList + InventoryUpdate).</summary>
+        public IEnumerable<InvItem> InventoryItems() => items.Values;
+
+        /// <summary>GetAdena.</summary>
+        public long AdenaCount() => InventoryCount(Adena);
 
         /// <summary>GetInventoryItemCount(classID): a soma das pilhas com o classID.</summary>
         public long InventoryCount(int classId) => items.Values.Where(i => i.ItemId == classId).Sum(i => (long)i.Count);
