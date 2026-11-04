@@ -35,6 +35,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — branch `feat/render-pawns-chao` a partir de `main` (`eb1f39d`).
 - 2026-11-04 — causa medida (geodata × terreno do Unreal em Giran, Turek, Gludio, Dion, Dragon Valley) e achada no `GeoTerrain.VisualFloor`; correção + `PawnFloorTests` (`df7ea56`).
 - 2026-11-04 — conta `l2webtest7` em `Docs/contas_teste.md`; pedido 0050 (som de passo no `App.cs`); pedido de teste 0056-1 à sessão de testes.
+- 2026-11-04 — escopo ampliado pela coordenadora: mapa inteiro. Varredura offline dos 139 tiles com geodata e de 41 803 pontos do servidor (`Docs/pawns_chao_varredura.md`, scripts em `Docs/tools/pawns_chao/`). Trace até z − 900 e camada certa do geodata em lugares de vários andares (`791b1c3`); pedido 0052 (`GeoTerrain.AllLayers` no `App.cs`, depende do 0051 da #0057).
 
 ## Decisões e REA
 
@@ -64,6 +65,25 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - `UeTerrain.fields` passou a usar a chave `(tx, ty)` em vez de string (o `SurfaceAt` roda por pawn a cada quadro). `UeTerrain.SetField` registra um heightmap sem montar a malha (testes).
 - Nada muda em `World/` nem no `App.cs`: o movimento, os pacotes e o clique continuam com o z do geodata, como o servidor manda.
 
+### Varredura do mapa inteiro (`791b1c3`)
+
+Pedida pela coordenadora depois do novo relato: "numa área de farm o personagem voa ao andar e ao teleportar". Detalhes e tabela por tile em `Docs/pawns_chao_varredura.md`.
+
+- **Observado:** a mediana de geodata − terreno nos 137 tiles com terreno UE fica entre 18 e 33. Nenhum tile tem deslocamento próprio: `Location`, escala e heightmap estão certos no mapa todo. As áreas grandes "fora" (20_18, 20_19, 21_18, 21_19) são blocos planos do geodata em montanhas fora do alcance (de 81 a 96% das células "fora" desses tiles), sem spawns.
+- **Observado:** nos 41 803 pontos do servidor (spawns de monstros e NPCs e destinos de teleporte do aCis), com a camada do geodata mais perto do z do servidor:
+  - pés no chão desenhado no `main`: 35,0%;
+  - com a regra do `df7ea56` (janelas 48/84): 99,83%;
+  - com o trace até z − 900: 99,998%. Sobra 1 ponto, com o geodata abaixo do terreno.
+- **Observado — segunda causa ("voa ao andar"):** o `LocalAssets.Chunk` guarda só a camada mais baixa e a mais alta de cada célula. O `GeoTerrain.GroundHeight`, chamado pelo `PawnMotion.Step` a cada passo, escolhia entre as duas. Em 5 154 pontos o lugar tem 3 ou mais andares (Cruma Tower 20_21, Tower of Insolence 23_18, 25_12, 25_19...). Em 2 317 deles (6%), as duas camadas ficam a mais de 64 do z: parado o pawn fica certo, mas andando pula para o andar de cima ou de baixo. Com a camada certa, todos os 5 154 ficam sobre piso desenhado ou terreno, exceto 2.
+- **Correção:**
+  - `GroundHeight` passa por `NearestLayer`: numa célula multicamada sem as camadas do meio, não aceita uma camada a mais de 128 (`MaxLayerJump`) e devolve null, e o `PawnMotion` fica com o z interpolado do servidor.
+  - Com o gancho `GeoTerrain.AllLayers` (pedido 0052, que usa o `LocalAssets.GeoLayers` do pedido 0051 da #0057), a escolha passa a ser entre todas as camadas.
+  - A sessão world foi avisada: o truque do `Ground(x, y, ±1e6)` dela passa a dar null nas células multicamada; para a baixa e a alta, ela deve usar `GeoTerrain.CellAt`.
+- **Correção (trace longo):** o `PickFloor` agora escolhe o chão desenhado mais alto abaixo de `z + 8` (Statics) ou `z + 20` (terreno), até `z − 900`, como o alargamento do trace do original. Pega o geodata sobre coisas que o porte não desenha: lojas de Giran ~150 acima do BSP, o pântano dos Stakato, os Ol Mahum de 21_21. Isso cobre 69 dos 70 pontos que a janela curta deixava. O piso de Statics usa dois raios (`z + 8` a `z − 48`, e só sem acerto até `z − 900`).
+- **Divergência de propósito:** o trace do original também alarga para cima; aqui não. Assim, um pawn cujo piso não foi desenhado não sobe para o telhado. O geodata fica abaixo do chão em só 0,02% dos casos.
+- **Consistência:** onde o próprio geodata ainda é desenhado (tile sem BSP nem StaticMeshes, células ≥ 48 acima do terreno, como no `BuildChunk`), o terreno não puxa o pawn para baixo.
+- **Inferido / risco:** enquanto os StaticMeshes de um tile carregam, um pawn sobre uma ponte pode aparecer no terreno embaixo por um instante. O cache é limpo quando eles chegam (`Statics.cs:495`).
+
 ### A validar / fora
 
 - **A validar ao vivo:** pés no chão nos campos (pedido de teste 0056-1).
@@ -79,3 +99,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Pedidos
 
 - `pedidos\0050-render-passos-terreno.md` (coordenadora, `App.cs`): som de passo compara o terreno com a altura desenhada.
+- `pedidos\0052-render-geoterrain-camadas.md` (coordenadora, `App.cs` e `Dev/OfflineView.cs`): `GeoTerrain.AllLayers = LocalAssets.GeoLayers`, depois do 0051.
