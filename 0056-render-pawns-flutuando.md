@@ -78,4 +78,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-- `pedidos0-render-passos-terreno.md` (coordenadora, `App.cs`): som de passo compara o terreno com a altura desenhada.
+- `pedidos\0050-render-passos-terreno.md` (coordenadora, `App.cs`): som de passo compara o terreno com a altura desenhada.
