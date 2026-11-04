@@ -63,6 +63,8 @@ namespace L2Web
         public GameScene Scene => scene;
         public LobbyScene Lobby => lobby;
         public GameUi Ui => ui;
+        /// <summary>Pacotes das janelas da interface (#0046): eventos EV_* e o ultimo pacote lido de cada janela.</summary>
+        public InterfaceRouter Interface;
         public bool InWorld => inWorld;
         public string CurrentScreen => current;
         public IReadOnlyList<CharSlot> Chars => chars;
@@ -1121,6 +1123,8 @@ namespace L2Web
             gc?.Close();
             var (host, port) = GameClient.ResolveEndpoint(session);
             gc = new GameClient(new GameClientOptions { Host = host, Port = port, Session = session, Protocol = proto, Hwid = Hwid(), Log = m => Debug.Log("[game] " + m) });
+            Interface?.Dispose();
+            Interface = new InterfaceRouter(gc);
             leaving = false;
             var mine = gc;
             gc.OnClose = reason =>
