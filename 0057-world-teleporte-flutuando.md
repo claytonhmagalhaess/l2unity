@@ -75,6 +75,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
     - na `worktrees\teste`, fora de `Library`, `Temp`, `Logs`, `.git` e da junction, os únicos arquivos com mtime depois de 19:40 são o checkout da prévia (19:43:55) e o `UserSettings`, às 20:29:15, já depois da saída (o Editor foi fechado);
     - no `shared\StreamingAssets-L2Web`, até 3 níveis, nada entre 19:56 e 20:03 nem entre 20:28 e 20:29:30.
     - Ou seja, nem a preferência nem uma mudança de arquivo explicam a saída.
+  - **Complemento da sessão de testes, depois do 0057-3:** o `Library/Pipeline/eval-usage.jsonl` não registra nenhum eval entre o último comando e a saída, nas duas quedas. As duas foram só no `954a22b`, 30 s a 1 min depois do 2º pouso em Giran. Hipótese a mais: o usuário estava com o Editor dele aberto junto com o da teste, e um Play ou Ctrl+P na janela errada daria essa saída limpa sem comando registrado. A próxima rodada vai ter o `playModeStateChanged` com a pilha e o `focusedWindow`, mais o `pipeline.log`.
   - **Continua a validar**, fora do escopo da #0057, que já está no main (`f8627bb`): o que chama o Refresh e a saída. Ideias: o Unity Hub (as linhas "IPCStream (hubIPCService): IPC stream failed to write" aparecem junto) ou o próprio `unity` CLI do Pipeline. Um `Process Monitor` ou o `-logFile` com `-stackTraceLogType Full` no Editor da teste mostraria quem chama.
 
 ## Entrega
