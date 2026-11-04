@@ -569,6 +569,9 @@ namespace L2Web.UI
                 bar.Warn = c.Has("warnTexture") ? Overlay(c.S("warnTexture"), "warn", 1) : null;
                 // NCStatusBarCtrl: titulo e numeros pela fonte de digitos (L2Digits.StatusBarText)
                 bar.Digits = true;
+                // OnPaint (nw:0x1004c7c0) abre com SetClip no retangulo do controle (FUN_10021df0) e fecha com ReleaseClip
+                // (FUN_100212e0): texto que passa da barra e cortado, nao sai por cima da janela
+                el.gameObject.AddComponent<RectMask2D>();
                 bar.TitleText = c.Has("title") ? c.S("title") : null;
                 if (!string.IsNullOrEmpty(bar.TitleText)) L2Digits.Draw(el, "digTitle", bar.TitleText, 9, 2);
             }
@@ -1225,11 +1228,7 @@ namespace L2Web.UI
                     for (var i = 0; i < 3; i++)
                     {
                         if (i < parts.Count) L2Digits.Draw(b.El, "dig" + i, parts[i].text, parts[i].x, 2);
-                        else
-                        {
-                            var old = b.El.Find("dig" + i);
-                            if (old) UnityEngine.Object.Destroy(old.gameObject);
-                        }
+                        else L2Digits.Hide(b.El, "dig" + i);
                     }
                 }
             }
