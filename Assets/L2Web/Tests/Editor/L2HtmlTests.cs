@@ -260,6 +260,22 @@ namespace L2Web.Tests
             Assert.AreEqual(btn.Y + Math.Floor(40 / 2f - 13 / 2f), m.Y);
         }
 
+        // medida que arredonda cada pedaco para cima (como a fonte na escala 1,25): a frase inteira mede menos que a soma
+        sealed class Rounding : IHtmlMeasure
+        {
+            public float Width(string s) => (float)Math.Ceiling(s.Length * 5.3);
+            public float GlyphHeight => 13;
+        }
+
+        [Test]
+        public void Tabela_ColunaPeloConteudoNaoQuebraOTexto()
+        {
+            // feb17cf ao vivo: "Increases P. / Def" quebrava na celula do buffer
+            var r = HtmlLayout.Run("<html><table><tr><td>Shield</td></tr><tr><td>Increases P. Def</td></tr></table></html>", 296, new Rounding());
+            var lines = r.Boxes.Where(b => b.Kind == HtmlBoxKind.Text).Select(b => b.Text).ToList();
+            CollectionAssert.AreEqual(new[] { "Shield", "Increases P. Def" }, lines);
+        }
+
         [Test]
         public void Buffer_IconeNoBotaoNomeEDescricaoAoLado()
         {

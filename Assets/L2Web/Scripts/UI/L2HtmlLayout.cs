@@ -108,6 +108,8 @@ namespace L2Web.UI
         public const float BrHeight = 9, Br1Height = 0;
         /// <summary>Espaco abaixo de cada unidade de texto, botao e edit (GetTextSize + 6).</summary>
         public const float Gap = 6;
+        /// <summary>Folga da quebra de linha (as medidas sao fracionarias).</summary>
+        const float Slack = 0.5f;
         /// <summary>Padroes: button 10 x 10, edit 50 x 15, multiedit 50 x 40, combobox 30 x 21 (altura fixa).</summary>
         public const float ButtonW = 10, ButtonH = 10, EditW = 50, EditH = 15, MultiEditW = 50, MultiEditH = 40, ComboW = 30, ComboH = 21;
         /// <summary>Padroes da tabela: cellpadding 1, cellspacing 2, border 0.</summary>
@@ -435,7 +437,7 @@ namespace L2Web.UI
                     x += t.W;
                     continue;
                 }
-                if (x > 0 && x + t.W > W) NewLine();
+                if (x > 0 && x + t.W > W + Slack) NewLine();
                 if (t.W > W && W > 0)
                 {
                     // palavra maior que a linha: quebra por caractere (a Engine testa x + glifo > largura)
@@ -443,7 +445,7 @@ namespace L2Web.UI
                     foreach (var ch in t.Text)
                     {
                         var cw = c.M.Width(sb.ToString() + ch);
-                        if (sb.Length > 0 && x + cw > W)
+                        if (sb.Length > 0 && x + cw > W + Slack)
                         {
                             var piece = sb.ToString();
                             line.Add(new Tok { Text = piece, W = c.M.Width(piece), Span = t.Span });
@@ -509,7 +511,11 @@ namespace L2Web.UI
                 {
                     float w = 0;
                     var j = i;
-                    while (j < units.Count && units[j].IsText && units[j].Align == u.Align) w += c.M.Width(units[j++].Span.Text.Replace('\t', ' '));
+                    var run = new List<Span>();
+                    while (j < units.Count && units[j].IsText && units[j].Align == u.Align) run.Add(units[j++].Span);
+                    // a mesma soma de pedacos que a quebra faz (cada pedaco arredonda: medir a frase inteira dava menos, e a
+                    // celula do buffer quebrava "Increases P. / Def" na escala 1,25)
+                    foreach (var t in Tokens(run, c.M)) w += t.W;
                     nat = Math.Max(nat, w);
                     i = j;
                     continue;
