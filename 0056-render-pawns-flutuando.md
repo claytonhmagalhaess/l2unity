@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-pawns-chao` (nasce de `main`) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (posição do pawn, terreno, geodata/colisão, `PawnMotion`/`PHYS_Walking`); `Render/GeoTerrain.cs`, `Render/UeTerrain.cs`, `Render/Actor.cs`, `World/PawnMotion.cs`, `World/Movement.cs`, `World/Coords.cs` |
 | Sessão | render: pawns flutuando (#0056) |
 | Criada | 2026-11-04 |
@@ -23,11 +23,11 @@ No original, todo pawn fica com os pés no chão do terreno ou da malha onde est
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Causa registrada em Decisões e REA com a evidência: pseudocódigo do engine no Tryskell ou na REA (como o cliente põe o pawn no chão: `PHYS_Walking`, `FindFloor`/trace para baixo, `CollisionHeight`, `PrePivot` do mesh do pawn), dados do terreno (`TerrainInfo`: escala, `Location`, heightmap) e o Z do servidor (aCis/geodata), comparando Giran, onde está certo, com o Turek, onde está errado.
-- [ ] Jogador, outros jogadores, NPCs e monstros ficam com os pés no chão fora das cidades: Turek, campos de Gludio e Dion e mais uma zona com relevo. Também ficam no chão parados, andando, correndo, em combate e depois de teleporte. Giran continua certo.
-- [ ] Se a causa for de outra área (por exemplo a posição em `World/` ou um pacote em `Net/`), o pedido vai para a vaga correspondente em `tarefas\pedidos\`, com o trecho exato. O que precisar de reexportação para o `shared` vira pedido para a coordenadora com o comando.
-- [ ] Testes EditMode para a regra de altura (pawn sobre o terreno e sobre a malha, com e sem colisão). Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
-- [ ] Capturas antes e depois em `Docs/evidencias/pawns-chao/`, tiradas pela sessão de testes no aCis local nas zonas acima, e uma linha em `Docs/validacao.md`.
+- [x] Causa registrada em Decisões e REA com a evidência: pseudocódigo do engine no Tryskell ou na REA (como o cliente põe o pawn no chão: `PHYS_Walking`, `FindFloor`/trace para baixo, `CollisionHeight`, `PrePivot` do mesh do pawn), dados do terreno (`TerrainInfo`: escala, `Location`, heightmap) e o Z do servidor (aCis/geodata), comparando Giran, onde está certo, com o Turek, onde está errado.
+- [x] Jogador, outros jogadores, NPCs e monstros ficam com os pés no chão fora das cidades: Turek, campos de Gludio e Dion e mais uma zona com relevo. Também ficam no chão parados, andando, correndo, em combate e depois de teleporte. Giran continua certo.
+- [x] Se a causa for de outra área (por exemplo a posição em `World/` ou um pacote em `Net/`), o pedido vai para a vaga correspondente em `tarefas\pedidos\`, com o trecho exato. O que precisar de reexportação para o `shared` vira pedido para a coordenadora com o comando.
+- [x] Testes EditMode para a regra de altura (pawn sobre o terreno e sobre a malha, com e sem colisão). Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
+- [x] Capturas antes e depois em `Docs/evidencias/pawns-chao/`, tiradas pela sessão de testes no aCis local nas zonas acima, e uma linha em `Docs/validacao.md`.
 
 ## Andamento
 
@@ -93,9 +93,26 @@ Pedida pela coordenadora depois do novo relato: "numa área de farm o personagem
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/render-pawns-chao`):
+  - `df7ea56`: `VisualFloor` com o terreno UE (`UeTerrain.SurfaceAt`, `GeoTerrain.PickFloor`) e `PawnFloorTests`;
+  - `6187e0a`: conta `l2webtest7`;
+  - `791b1c3`: varredura do mapa inteiro, trace até z − 900 e `GroundHeight`/`NearestLayer` em lugares de vários andares;
+  - `ae08e57` e `e68c8b3`: evidências e a linha M7 do `Docs/validacao.md`.
+- **Testes** (sessão de testes):
+  - 0056-1 (`6187e0a`): 891/891.
+  - 0056-2 (`791b1c3`): 895/895, `PawnFloorTests` 16/16, sem falhas (o `main` dá 879/879).
+  - Offline: o desenho coincide com o terreno (±0,001) no Turek, nos campos de Gludio e Dion, em Dragon Valley e fora de Giran; na praça de Giran fica igual ao `main`.
+  - Andando: no 1º andar da Cruma e na Tower of Insolence o pawn fica no andar; antes voava 5300 e 4100.
+  - Ao vivo (aCis local, `l2webtest7`, Plains of Dion): pés na grama parado, andando, correndo, em combate e depois do teleporte.
+  - Evidências em `Docs/evidencias/pawns-chao/`.
+- **Falta / fora do escopo:**
+  - Pedido 0052 (`GeoTerrain.AllLayers = LocalAssets.GeoLayers`), que a coordenadora aplica no branch de prévia junto do 0051. Sem ele, num andar do meio o pawn fica no z do servidor em vez da camada exata.
+  - Pedido 0050 (som de passo).
+  - O 0056-2 ao vivo não fez Giran, o pós-teleporte nem a Cruma, porque o autofarm do servidor assumiu a conta `l2webtest7` (ver o README das evidências). O pós-teleporte ficou coberto pelo 0056-1 e a Cruma pelo offline.
+  - O teleporte em si é da #0057.
+  - Não há captura do cliente original.
+  - Nado e voo não existem no porte (o original não faz o ajuste para eles).
+  - 31 tiles com o `map/<tile>.json` vazio (exportação), ver `Docs/pawns_chao_varredura.md`.
 
 ## Pedidos
 
