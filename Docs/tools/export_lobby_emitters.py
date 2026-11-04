@@ -18,6 +18,8 @@ sys.path.insert(0, os.path.join(L2ANIM, 'scripts'))
 import ukx_parse  # noqa: E402
 import unr_inventory as ui  # noqa: E402
 
+ui.NOISE.discard('PrePivot')  # o inventario descarta; aqui ele posiciona a malha (prePivot)
+
 CLIENT = sys.argv[1] if len(sys.argv) > 1 else r'C:\Program Files (x86)\Lineage II Interlude'
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Assets', 'StreamingAssets', 'L2Web', 'cache')
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(CACHE, 'map', 'Lobby_emitters.json')
@@ -81,7 +83,9 @@ def main():
                                'rot': pr.get('Rotation', [0, 0, 0]), 'scale': pr.get('DrawScale', 1.0), 'scale3d': pr.get('DrawScale3D', [1, 1, 1]),
                                'physics': pr.get('Physics', 0), 'rotationRate': pr.get('RotationRate'),
                                'l2RotatorRate': pr.get('L2RotatorRate'), 'l2RotatorMax': pr.get('L2RotatorMax'),
-                               'l2AccelRatio': pr.get('L2AccelRatio'), 'groups': pr.get('Group', '')})
+                               'l2AccelRatio': pr.get('L2AccelRatio'), 'groups': pr.get('Group', ''),
+                               # Actor.PrePivot (AActor::LocalToWorld: Location - PrePivot*S*R): as vinhas do login tem (0, 0, 3000)
+                               'prePivot': pr.get('PrePivot')})
     json.dump({'movers': movers}, open(os.path.join(os.path.dirname(OUT), 'Lobby_movers.json'), 'w'), indent=1, default=str)
     print('movers', [(m['name'], m['mesh'], m['rotationRate'], m['l2RotatorRate']) for m in movers])
     out = []

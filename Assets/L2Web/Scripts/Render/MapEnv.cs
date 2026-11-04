@@ -191,6 +191,7 @@ namespace L2Web.Render
                 {
                     Name = d.Name, Mesh = mesh, Url = "/statics/" + mesh + ".glb", Loc = d.BasePos, Rot = d.BaseRot,
                     Scale = (float?)o["scale"] ?? 1, Scale3d = (o["scale3d"] as JArray)?.ToObject<float[]>(),
+                    PrePivot = (o["prePivot"] as JArray)?.ToObject<float[]>(),
                 };
                 d.Inst = await Statics.Spawn(a, Root);
                 if (d.Inst == null || !Root) continue;
