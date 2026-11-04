@@ -211,6 +211,9 @@ namespace L2Web.World
 
         bool IsSelf => Kind == "self";
 
+        /// <summary>Pouso de outro pawn so vai para o log ([pouso]) se mudar o Z ao menos isto; o proprio sempre.</summary>
+        const float LogLandDelta = 16;
+
         public void ServerMove(float tx, float ty, float tz, float ox, float oy, float oz)
         {
             Follow = null;
@@ -246,7 +249,11 @@ namespace L2Web.World
                 var d = Turning * TurnSpeed * dt;
                 Motion.Yaw = Motion.DesiredYaw = (Motion.Yaw + d + 65536) % 65536;
             }
+            var landing = Motion.Landing;
+            var z0 = Motion.Z;
             var moved = Motion.Step(dt, ground, target);
+            if (landing && !Motion.Landing && (IsSelf || Math.Abs(Motion.Z - z0) >= LogLandDelta))
+                Debug.Log($"[pouso] {Kind} {ObjectId} ({Motion.X:0},{Motion.Y:0}) z do pacote {z0:0} -> chao {Motion.Z:0} ({Motion.Z - z0:+0;-0;0})");
             Sync();
             return moved;
         }
