@@ -20,7 +20,7 @@ Ordem: única tarefa da vaga `world` nesta rodada; o branch nasce de `main`. Dep
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
 - [x] Comportamento igual ao Interlude: Espaço/Ctrl sobem e descem voando ou nadando; NumLock corre sem parar; NumPad 7/9/4/6/1/3 zoom e 8/2 altura; PrintScrn captura a tela. — lógica em `Scripts\World` com a REA do engine; **divergência**: Espaço/Ctrl só sobem/descem no modo câmera do 0xf1 `CameraMode` (Decisões). As teclas só agem no jogo depois do pedido 0024 (`App.cs`).
-- [x] Cada handler segue a linha correspondente de `analises\interface-p166_interacoes.md` e `03_teclado.md` (passar o mouse, cliques, Shift/Ctrl/Alt, arrastar, roda, teclas); divergências ficam em Decisões e REA com a evidência.
+- [x] Cada handler segue a linha correspondente de `analises\interface-p166\02_interacoes.md` e `03_teclado.md` (passar o mouse, cliques, Shift/Ctrl/Alt, arrastar, roda, teclas); divergências ficam em Decisões e REA com a evidência.
 - [x] Pacotes: C→S `MoveBackwardToLocation`, `ValidatePosition` (já usados). — o teclado manda `MoveBackwardToLocation` (`GamePackets.MoveTo`); o `ValidatePosition` não mudou.
 - [x] Testes EditMode novos para a lógica (estado da janela, regras de clique e arrasto, montagem dos dados) e `sh Docs/tools/run_tests.sh` sem falhas novas em relação ao `main`. — `UserIniKeysTests` (14); 427/427.
 - [x] Capturas em `Docs/evidencias/teclas-movimento/` (offline, ou no aCis local quando estiver no ar) mostrando cada interação do critério. — offline (aCis fora do ar); ver o `README.md` da pasta.
@@ -89,4 +89,4 @@ Fontes: `analises\l2-interlude\re\decomp_all\engine\` (`00004.c` ResetKeyboardMo
 
 ## Pedidos
 
-- `pedidos4-world-teclas-app.md`: ligar as teclas no `App.cs` (coordenadora). Aberto.
+- `pedidos\0024-world-teclas-app.md`: ligar as teclas no `App.cs` (coordenadora). Aberto.
