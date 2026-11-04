@@ -71,6 +71,11 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - Nenhum código do porte sai do Play: os `Application.Quit` de `App.cs`, `GameUi` e `Dev` não valem no Editor.
   - **Reprodução 0057-3** (`testes\0057-3\`, sem NPC e sem Navigator): o Play caiu de novo entre 20:28:26 e 20:28:56, logo depois do pouso do 2º teleporte (−3340 → −3464). Nessa janela a sessão de testes estava parada no sleep, sem mandar comando. No trecho do Editor.log, a linha 1391 tem um `Asset Pipeline Refresh … RefreshV2(NoUpdateAssetOptions)`, e a 1392 já é a saída limpa (`OnApplicationQuit` e a cena de backup). Também ali não há nenhuma exceção do porte.
   - **Inferido:** a saída foi pedida de fora do jogo, por um `unity command` (`editor.playmode stop`, ou um runner de testes) que chegou ao Editor da `worktrees	este`. Era o único aberto depois que o Editor do usuário caiu às 20:21. Isso fica com a coordenadora: identificar quem rodou comandos do Unity às 19:57–20:02 e às 20:28:26–20:28:56. **Não é do #0057.**
+  - **Hipótese da coordenadora, "Script Changes While Playing" (descartada, 2026-11-04):** no registro, `HKCU\Software\Unity Technologies\Unity Editor 5.x`, a chave `ScriptCompilationDuringPlay_h2464946468` vale 1. No enum `ScriptChangesDuringPlayOptions` do Unity, 1 é "Recompile After Finished Playing" (0 continua no Play e 2 é "Stop Playing And Recompile"); `kAutoRefreshMode` vale 1. As EditorPrefs valem para todos os projetos do usuário. Além disso, nenhum arquivo do projeto mudou nas duas janelas:
+    - na `worktrees\teste`, fora de `Library`, `Temp`, `Logs`, `.git` e da junction, os únicos arquivos com mtime depois de 19:40 são o checkout da prévia (19:43:55) e o `UserSettings`, às 20:29:15, já depois da saída (o Editor foi fechado);
+    - no `shared\StreamingAssets-L2Web`, até 3 níveis, nada entre 19:56 e 20:03 nem entre 20:28 e 20:29:30.
+    - Ou seja, nem a preferência nem uma mudança de arquivo explicam a saída.
+  - **Continua a validar**, fora do escopo da #0057, que já está no main (`f8627bb`): o que chama o Refresh e a saída. Ideias: o Unity Hub (as linhas "IPCStream (hubIPCService): IPC stream failed to write" aparecem junto) ou o próprio `unity` CLI do Pipeline. Um `Process Monitor` ou o `-logFile` com `-stackTraceLogType Full` no Editor da teste mostraria quem chama.
 
 ## Entrega
 
