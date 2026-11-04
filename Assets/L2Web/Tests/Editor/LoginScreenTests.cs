@@ -68,9 +68,14 @@ namespace L2Web.Tests
         public void CorteDe14E16_ComoORequestAuthLogin()
         {
             var b = Rsa.CredentialBlock("abcdefghijklmnopqrst", "0123456789abcdefghij");
+            // o ID ocupa 0x5e..0x6b (14) e a senha comeca logo depois, em 0x6c: o 15o caractere do ID ('o') nao entra
             Assert.AreEqual('n', (char)b[0x5e + 13]);
-            Assert.AreEqual(0, b[0x5e + 14]);
+            Assert.AreEqual(0x6c, 0x5e + LoginAuth.IdChars);
+            Assert.AreEqual('0', (char)b[0x6c]);
+            CollectionAssert.DoesNotContain(b, (byte)'o');
+            // a senha ocupa 0x6c..0x7b (16): o 17o caractere ('g') nao entra
             Assert.AreEqual('f', (char)b[0x6c + 15]);
+            Assert.AreEqual(0, b[0x6c + 16]);
             Assert.AreEqual(LoginAuth.IdChars, 14);
             Assert.AreEqual(LoginAuth.PasswordChars, 16);
         }
