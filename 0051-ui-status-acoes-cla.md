@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui, na pasta `worktrees\net` (emprestada: a `worktrees\ui` está com a #0048 e a `worktrees\world` com a #0050) |
 | Branch | `feat/ui-status-acoes-cla` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\interface-p166\01_janelas.md`, `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` (DetailStatusWnd, ActionWnd, ClanWnd, 89, 90, 91, 96); `Docs/revisao_ui.md` (#0047) |
 | Sessão | ui: status, ações e clã (#0051) |
 | Criada | 2026-11-04 |
@@ -22,20 +22,20 @@ Esta tarefa compara as três janelas com o original, item por item, e corrige tu
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] **Character Status:** cada campo do original (nome, classe, nível, HP/MP/CP/EXP com barra e valor, STR/DEX/CON/INT/WIT/MEN, P. Atk., M. Atk., defesas, precisão, evasão, crítico, velocidades, peso, karma, PvP/PK, Sociality/Votes, clã, título etc.) aparece:
+- [x] **Character Status:** cada campo do original (nome, classe, nível, HP/MP/CP/EXP com barra e valor, STR/DEX/CON/INT/WIT/MEN, P. Atk., M. Atk., defesas, precisão, evasão, crítico, velocidades, peso, karma, PvP/PK, Sociality/Votes, clã, título etc.) aparece:
   - na posição, no alinhamento e no formato do original (xdat, `DetailStatusWnd.uc`);
-  - com o valor certo do personagem, conferido contra o aCis.
-- [ ] **Actions:** cada ação da `actionname-e.dat` (básicas, de grupo, sociais e de pet/servo) faz o que faz no original, conferido no aCis. Exemplos: sentar e levantar, andar e correr, atacar, pegar, convidar para o grupo, loja privada, fabricação, as 13+ sociais com a animação do personagem e o duelo. O resultado de cada uma fica numa tabela em `Docs/acoes.md`, com a ação, o pacote enviado (RequestActionUse id, RequestSocialAction id ou outro) e o estado: ok, corrigido ou pedido.
-- [ ] **Atalhos de ação:** o clique simples, o duplo clique, o arrasto para a barra de atalhos e o uso pela barra seguem o original.
-- [ ] **Clã:** nenhum texto fora do inglês. Cada rótulo, botão, coluna e mensagem vem da sysstring/systemmsg/`.int` em inglês do original, com o id certo, nunca de texto fixo no código. O mesmo vale para as outras janelas: os textos em português ou em outro idioma achados pelo caminho também são corrigidos ou listados.
-- [ ] Todas as divergências são corrigidas ou registradas:
+  - com o valor certo do personagem, conferido contra o aCis. Justificativa: campos, posições e formatos iguais ao `DetailStatusWnd.uc` e ao xdat; os 29 valores conferidos contra o UserInfo do aCis (`depois_status*.png`). O rank, o herói/nobre e Sociality/Votes dependem do pedido 0044 (net), e o brasão do clã não existe no porte (registrado).
+- [x] **Actions:** cada ação da `actionname-e.dat` (básicas, de grupo, sociais e de pet/servo) faz o que faz no original, conferido no aCis. Exemplos: sentar e levantar, andar e correr, atacar, pegar, convidar para o grupo, loja privada, fabricação, as 13+ sociais com a animação do personagem e o duelo. O resultado de cada uma fica numa tabela em `Docs/acoes.md`, com a ação, o pacote enviado (RequestActionUse id, RequestSocialAction id ou outro) e o estado: ok, corrigido ou pedido. Justificativa: `Docs/acoes.md`, 36 ações (as de pet/servo seguem pelo default `RequestActionUse`, como o original). Tudo conferido no aCis, menos Assist, o duelo fora de zona de paz e a resposta do canal de comando. Funcionar no jogo depende do pedido 0045 (`App.cs`); a animação social, do 0046 (world).
+- [x] **Atalhos de ação:** o clique simples, o duplo clique, o arrasto para a barra de atalhos e o uso pela barra seguem o original. Justificativa: o clique simples, o arrasto (RequestShortCutReg) e o uso pela barra (Dance no slot 9 → 0x1b(12)) foram conferidos. O duplo clique dispara a ação duas vezes, e no nativo isso está a validar (registrado em Decisões).
+- [x] **Clã:** nenhum texto fora do inglês. Cada rótulo, botão, coluna e mensagem vem da sysstring/systemmsg/`.int` em inglês do original, com o id certo, nunca de texto fixo no código. O mesmo vale para as outras janelas: os textos em português ou em outro idioma achados pelo caminho também são corrigidos ou listados. Justificativa: os rótulos passam a vir da sysstring/systemmsg (ordem do `SetProperText`), `depois_cla*.png`. Os textos em português das outras janelas foram corrigidos (`SocialUi`) ou listados (Decisões), e o do `App.cs:1850` virou o item 3 do pedido 0045.
+- [x] Todas as divergências são corrigidas ou registradas:
   - o que for de `Scripts\Net\` vira pedido para a net;
   - o que for do `App.cs` (por exemplo, o despacho de `RunCommand`/`DoAction`) vira pedido para a coordenadora, com o trecho exato;
-  - a animação social que depender do personagem e não da UI vira pedido para a vaga correspondente.
+  - a animação social que depender do personagem e não da UI vira pedido para a vaga correspondente. Justificativa: pedidos 0044 (net), 0045 (coordenadora, `App.cs`) e 0046 (world, animação social).
 
   Os pedidos vão em `tarefas\pedidos\`.
-- [ ] Testes EditMode para a lógica corrigida (montagem dos campos do status, mapa ação → pacote, textos por id). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
-- [ ] Capturas antes e depois em `Docs/evidencias/status-acoes-cla/`, tiradas no aCis local, e uma linha em `Docs/validacao.md`.
+- [x] Testes EditMode para a lógica corrigida (montagem dos campos do status, mapa ação → pacote, textos por id). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`. Justificativa: `StatusAcoesClaTests` (36 casos) e o `XdatLayoutTests` ajustado. A suíte deu 786/786, contra 746 na `feat/ui-revisao`, sem falhas novas.
+- [x] Capturas antes e depois em `Docs/evidencias/status-acoes-cla/`, tiradas no aCis local, e uma linha em `Docs/validacao.md`. Justificativa: `Docs/evidencias/status-acoes-cla/` (antes/depois do status, das ações e do clã, a barra e as capturas da sessão de testes) e a linha #0051 no `Docs/validacao.md`.
 
 ## Andamento
 
@@ -91,10 +91,29 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/ui-status-acoes-cla`, de `b88e07c` a `0779ee4`, 12 commits):
+  - `6ef6317` TextBox do xdat (offsetY só na fonte de dígitos; sysstring antes do text);
+  - `2dd4261` autosize pelo `textAlign`;
+  - `d84a833` DetailStatusWnd (`DetailStatusScript`);
+  - `5451d2f` `L2Commands.PlanAction`;
+  - `804492f` perguntas de grupo, troca e amigo pela systemmsg;
+  - `da7bddb` Figurante com duelo;
+  - testes e documentação (`9c7b195`, `b9fd8ed`, `e4c64b0`, `0dc1c1b`, `0779ee4`, `bb2202b`).
+  O branch `test/0051-app-doaction` (`1cd199f`) é só para teste: ele leva o diff do pedido 0045 no `App.cs`. **Não fazer merge dele.**
+- **Testes:**
+  - EditMode: 786/786 no Editor da pasta net e 786/786 pela sessão de testes (`testes\0051-1`, `1cd199f`).
+  - Ao vivo no aCis local: status, sociais, sentar, andar, lojas, Party Matching e barra (`l2webtest2`); grupo, troca, recomendar, duelo e os casos sem alvo, com o Figurante (`l2webtest`).
+- **Falta / fora do escopo:**
+  - **Pedido 0045 (coordenadora):** sem ele as ações continuam mandando `RequestActionUse`.
+  - **Pedido 0044 (net):** rank, recomendações, herói e nobre no status.
+  - **Pedido 0046 (world):** a animação do SocialAction.
+  - Não conferidos ao vivo: duelo fora da cidade, a resposta do canal de comando, Assist, Find Store e Replay (estes dois sem executor; pedido 0045, item 2).
+  - O duplo clique na ActionWnd faz a ação duas vezes (a validar).
+  - Sem brasão do clã na DetailStatusWnd.
+  - O `GamePackets.OpName` não dá nome a 0x4e, 0x50, 0x1e e 0x22 (só no diagnóstico; net).
 
 ## Pedidos
 
-Nenhum por enquanto.
+- `pedidos\0044-ui-userinfo-status.md`: net, UserInfo com pledgeClass, recomLeft/recomHave, noble e hero.
+- `pedidos\0045-ui-app-doaction.md`: coordenadora, `App.cs` (DoAction pelo `PlanAction`, executores opcionais `dlg`/`replay` e o texto em português do JoinParty).
+- `pedidos\0046-ui-socialaction-animacao.md`: world e uma linha no `App.cs`, animação do SocialAction 0x2d.
