@@ -31,6 +31,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 
 - 2026-11-03 — bloqueada: aguardando #0046 no main. C→S `RequestEnchantItem` 0x58, `RequestConfirmTargetItem`, `RequestRefineCancel` e S→C `ChooseInventoryItem`/`EnchantResult` não existem no `main`. Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
+- 2026-11-03 — nota da vaga net: o `EV_EnchantItemList` (itens que o pergaminho aceita) não vem de pacote; o nativo monta a partir do inventário e a janela filtra o ItemList pelo `Interface.EnchantScroll` (grupo `071f3c2` no `feat/net-pacotes-interface`, fora do main).
 
 ## Decisões e REA
 

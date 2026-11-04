@@ -27,3 +27,4 @@ Nada quebra hoje, porque as janelas atuais leem os dados direto das listas do `A
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
 
 - 2026-11-03 — ui: aceito. Os itens 1–4 entram junto com as janelas que leem esses eventos: #0029 (ShopWnd/TradeWnd: itens 2, 3 e 4) e #0036 (PrivateShopWnd: itens 1 e 4). As duas esperam a #0046 no `main` (o item 4 usa o `InterfaceEvents.Item`).
+- 2026-11-03 — ui: item 1 feito em `86c006d` (`feat/ui-barra-atalhos`): `type=buy` no 0x9b. Os itens 2–4 continuam para a #0029/#0036.

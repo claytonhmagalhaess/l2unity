@@ -31,6 +31,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 
 - 2026-11-03 — bloqueada: aguardando #0046 no main. S→C `PrivateStoreManageListSell` 0x9a / `PrivateStoreManageListBuy` 0xb7 e os C→S `SetPrivateStore*`/`RequestPrivateStoreManage*` não existem no `main` (e o item 1 do pedido 0025). Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
+- 2026-11-03 — adiantado o item 1 do pedido 0025: `PacketEvents.PrivateStore` (0x9b) passa a mandar `type=buy` (PT_Buy), no branch `feat/ui-barra-atalhos` (`86c006d`, `PrivateStoreEventTests`; suíte 523/523). Continua bloqueada pelos pacotes de montar a loja.
 
 ## Decisões e REA
 
