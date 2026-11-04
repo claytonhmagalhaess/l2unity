@@ -1,12 +1,44 @@
 // #0047: itens do SystemMenuWnd que abriam nada. BoardWnd.uc ShowBBSTab (:140-185), HelpHtmlWnd.uc (LoadHtml do FilePath) e
 // UserPetitionWnd.uc (OnClickOKButton e os PetitionCategoryLink).
+using System.IO;
 using L2Web.UI;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using UnityEngine;
 
 namespace L2Web.Tests
 {
     public class SystemMenuTests
     {
+        /// <summary>As 7 abas da BoardWnd tem o mesmo alvo (HtmlViewer): qualquer aba escolhida o deixa visivel.</summary>
+        [Test]
+        public void Board_AbasComOMesmoAlvo_ViewerVisivel()
+        {
+            var ui = Path.Combine(Application.streamingAssetsPath, "L2Web", "cache", "ui");
+            if (!File.Exists(Path.Combine(ui, "layout.json"))) Assert.Ignore("sem a copia local de /ui");
+            L2WndUtil.Use(JObject.Parse(File.ReadAllText(Path.Combine(ui, "layout.json"))), JObject.Parse(File.ReadAllText(Path.Combine(ui, "textures.json"))));
+            var root = new GameObject("teste board", typeof(RectTransform));
+            try
+            {
+                var w = new L2Wnd("BoardWnd", new L2Layer(root.transform));
+                for (var i = 0; i < 7; i++)
+                {
+                    w.SelectTab("TabCtrl", i);
+                    Assert.IsTrue(w.CtrlVisible("HtmlViewer"), "aba " + i);
+                }
+            }
+            finally
+            {
+                Object.DestroyImmediate(root);
+            }
+        }
+
+        [TestCase(TextAnchor.UpperLeft, 0f)]
+        [TestCase(TextAnchor.MiddleCenter, 0.5f)]
+        [TestCase(TextAnchor.UpperCenter, 0.5f)]
+        [TestCase(TextAnchor.MiddleRight, 1f)]
+        public void Html_SublinhadoSegueOAlinhamento(TextAnchor align, float x) => Assert.AreEqual(x, L2Html.UnderlineAnchor(align));
+
         [Test]
         public void Board_BypassDasAbas()
         {

@@ -670,12 +670,22 @@ namespace L2Web.UI
             img.raycastTarget = false;
             var line = img.rectTransform;
             line.name = "sublinhado";
-            line.anchorMin = new Vector2(0, 0);
-            line.anchorMax = new Vector2(0, 0);
-            line.pivot = new Vector2(0, 0);
+            // embaixo do texto: com o Text mais largo que a frase (<center>, align=right) o traco segue o alinhamento
+            var ax = UnderlineAnchor(align);
+            line.anchorMin = new Vector2(ax, 0);
+            line.anchorMax = new Vector2(ax, 0);
+            line.pivot = new Vector2(ax, 0);
             line.anchoredPosition = new Vector2(0, 1);
             line.sizeDelta = new Vector2(Mathf.Ceil(t.preferredWidth), 1);
         }
+
+        /// <summary>Ancora horizontal do sublinhado do link: 0 a esquerda, 0,5 centralizado, 1 a direita.</summary>
+        public static float UnderlineAnchor(TextAnchor align) => align switch
+        {
+            TextAnchor.UpperCenter or TextAnchor.MiddleCenter or TextAnchor.LowerCenter => 0.5f,
+            TextAnchor.UpperRight or TextAnchor.MiddleRight or TextAnchor.LowerRight => 1f,
+            _ => 0f,
+        };
 
         static void ImgItem(Transform parent, Item it)
         {

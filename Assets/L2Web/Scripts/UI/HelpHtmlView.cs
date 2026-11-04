@@ -62,9 +62,26 @@ namespace L2Web.UI
             var body = Wnd.Content("HtmlViewer");
             if (!body) return;
             UiKit.Clear(body);
-            L2Html.Render(html, new HtmlActions { Link = Load }, body);
+            FitWidth(L2Html.Render(html, new HtmlActions { Link = Load }, body).Body, Wnd.Ctrl("HtmlViewer"));
             var sr = body.GetComponentInParent<ScrollRect>();
             if (sr) sr.verticalNormalizedPosition = 1;
+        }
+
+        /// <summary>
+        /// A coluna do HTML fica na largura do HtmlCtrl do xdat. O help.htm tem duas &lt;img width=270&gt; seguidas: o viewer do
+        /// cliente quebra a linha, o L2Html as poe lado a lado, e sem o limite a coluna ia a 540 px e o texto centralizado saia
+        /// da janela (o mesmo ajuste do LobbyServerScreen para o server_help.htm).
+        /// </summary>
+        public static void FitWidth(RectTransform column, L2Ctrl viewer)
+        {
+            if (!column || viewer == null) return;
+            var w = L2Ctrl.ToNum(viewer.J["size"]?[0], 0);
+            if (w <= 0) return;
+            var le = column.gameObject.GetComponent<LayoutElement>();
+            if (!le) le = column.gameObject.AddComponent<LayoutElement>();
+            le.minWidth = le.preferredWidth = w;
+            le.flexibleWidth = 0;
+            le.layoutPriority = 10;
         }
     }
 }

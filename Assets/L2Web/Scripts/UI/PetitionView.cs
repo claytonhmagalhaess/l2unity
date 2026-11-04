@@ -110,7 +110,8 @@ namespace L2Web.UI
             var body = Wnd.Content("HelpHtmlCtrl");
             if (!body) return;
             UiKit.Clear(body);
-            L2Html.Render(html, new HtmlActions { Link = l => Html(LobbyServerScreen.ReadL2Text(HelpHtmlView.FileName(l)) ?? "") }, body);
+            var r = L2Html.Render(html, new HtmlActions { Link = l => Html(LobbyServerScreen.ReadL2Text(HelpHtmlView.FileName(l)) ?? "") }, body);
+            HelpHtmlView.FitWidth(r.Body, Wnd.Ctrl("HelpHtmlCtrl"));
         }
 
         void Ok()
