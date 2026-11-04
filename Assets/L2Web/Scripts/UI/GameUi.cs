@@ -180,6 +180,8 @@ namespace L2Web.UI
         public QuestView Quests { get; private set; }
         /// <summary>ClanWnd (aba do MainWnd), ClanDrawerWnd e InviteClanPopWnd, #0038.</summary>
         public ClanView Clan { get; private set; }
+        /// <summary>SkillTrainListWnd/InfoWnd e HennaListWnd/InfoWnd, #0039.</summary>
+        public SkillHennaView SkillHenna { get; private set; }
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
         public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd, PrivateShopWnd?.Wnd };
@@ -375,6 +377,8 @@ namespace L2Web.UI
             Quests = new QuestView(Layer, this, b => this.deps.Send(b));
             // ClanWnd (aba), ClanDrawerWnd e InviteClanPopWnd do xdat (#0038)
             Clan = new ClanView(Layer, this, b => this.deps.Send(b));
+            // aprender skill e tatuagem (#0039)
+            SkillHenna = new SkillHennaView(Layer, this, b => this.deps.Send(b));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {
