@@ -33,6 +33,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+- 2026-11-04 — branch `feat/ui-barras-hp` criado de `feat/ui-revisao` (`b88e07c`); linha de base `run_tests.sh` em batchmode: 750/750.
+- 2026-11-04 — causa achada e corrigida: `L2Digits.Draw` reaproveita container e glifos; recorte da barra; `StatusBarTextTests` (11). `run_tests.sh` 761/761 (`851bc82`).
 
 ## Decisões e REA
 
