@@ -368,7 +368,8 @@ namespace L2Web.UI
             for (var k = 0; k < bs.Count; k++)
             {
                 var id = active[k].Id;
-                bs[k].OnDoubleClick = () => deps.Send(UiPackets.MagicSkillUse(id, CtrlHeld, ShiftHeld));
+                // MagicSkillWnd.uc:45-54: OnClickItem -> UseSkill (clique simples)
+                bs[k].OnClick = () => deps.Send(UiPackets.MagicSkillUse(id, CtrlHeld, ShiftHeld));
                 Draggable(bs[k], "skill", id);
             }
             L2WndUtil.FillItemWindow(w, "PItemWnd", passive.Select(Data).ToList(), IconUrl);

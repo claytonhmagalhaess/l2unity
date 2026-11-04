@@ -211,8 +211,19 @@ namespace L2Web.UI
             TargetWnd = new L2Wnd("TargetStatusWnd", Layer, new WndOpts { AriaLabel = "Alvo" });
             foreach (var n in new[] { "BackExpTex", "NpcInfo", "txtPledge", "texPledgeCrest", "txtPledgeName", "txtAlliance", "texPledgeAllianceCrest", "txtPledgeAllianceName" })
                 TargetWnd.ShowCtrl(n, false);
+            // os botoes Party/Trocar/Amigo do porte nao existem no TargetStatusWnd do original (02 §3.1 da #0024)
             TargetWnd.OnClick("btnClose", () => this.deps.CancelTarget());
-            BuildTargetButtons();
+            // OnFrameExpandClick -> SetExpandMode (TargetStatusWnd.uc:464-487)
+            TargetWnd.OnFrameExpand = SetTargetExpand;
+            // StatusWnd.uc:47-56: clique com x em (13, largura - 10) = RequestSelfTarget
+            var sev = UiEvents.Of(StatusWnd.El);
+            var front = sev.OnDown;
+            sev.OnDown = e =>
+            {
+                front?.Invoke(e);
+                var x = e.position.x / UiRoot.PixelScale - StatusWnd.ScreenRect().X;
+                if (StatusHit(x, StatusWnd.Size[0])) SelfTarget();
+            };
 
             // ---- buffs
             AbnormalWnd = new L2Wnd("AbnormalStatusWnd", Layer, new WndOpts { AriaLabel = "Efeitos ativos" });
@@ -241,11 +252,6 @@ namespace L2Web.UI
             // ChatWnd.uc:120-127: as 5 abas com SetScrollBarPosition(5, 10, -25) (acima do botao de filtro); a SystemMsgList
             // fica com o (5, 10, 0) do NCChatListBox::OnCreate
             foreach (var n in TabNames) ChatWnd.Log(n)?.SetScrollBarPosition(5, 10, -25);
-            foreach (var (n, t) in new[] { ("ChatFilterBtn", "Filtro do chat"), ("MessengerBtn", GameData.SysString(996, "MSN Messenger")), ("PartyMatchingBtn", "Party matching (indisponível)") })
-            {
-                var el = ChatWnd.Get(n);
-                if (el) UiTooltip.Set(el.gameObject, t);
-            }
             // filtro do chat (martelinho): ChatFilterWnd do xdat, em cima da janela de mensagens do sistema
             var fdef = L2WndUtil.WindowDef("ChatFilterWnd");
             var fj = (JObject)fdef.J.DeepClone();
@@ -356,13 +362,10 @@ namespace L2Web.UI
         {
             MenuWnd.OnClick("BtnCharInfo", () => OpenMain(0));
             MenuWnd.OnClick("BtnInventory", () => Inv.Toggle());
-            MenuWnd.OnClick("BtnMap", () => RadarWnd.Toggle());
+            // MenuWnd.uc:17-19, 55-58: Map = RequestOpenMinimap (o servidor responde com o ShowMiniMap); as dicas sao as
+            // sysstrings do popupValue do xdat (434, 195, 925, 193)
+            MenuWnd.OnClick("BtnMap", () => deps.Send(UiPackets.RequestShowMiniMap()));
             MenuWnd.OnClick("BtnSystemMenu", () => SysMenuWnd.Toggle());
-            foreach (var (n, title) in new[] { ("BtnCharInfo", "Status (Alt+T)"), ("BtnInventory", "Inventário (Alt+V)"), ("BtnMap", "Radar"), ("BtnSystemMenu", "Menu do sistema (Alt+X)") })
-            {
-                var el = MenuWnd.Get(n);
-                if (el) UiTooltip.Set(el.gameObject, title);
-            }
             var s = SysMenuWnd;
             s.OnClick("btnBBS", () =>
             {
@@ -393,26 +396,46 @@ namespace L2Web.UI
         }
 
         // ------------------------------------------------------------ alvo
-        RectTransform tgButtons;
+        /// <summary>Modo expandido do alvo (m_bExpand).</summary>
+        bool targetExpand;
 
-        void BuildTargetButtons()
+        /// <summary>Nome do cla pelo id (UIDATA_CLAN.GetName); "" quando nao se conhece.</summary>
+        public Func<int, string> ClanName = _ => "";
+
+        /// <summary>SetExpandMode: alterna BackTex/BackExpTex e refaz o alvo (as linhas de cla so no modo expandido).</summary>
+        void SetTargetExpand(bool on)
         {
-            tgButtons = UiRoot.Box("tgButtons", TargetWnd.El, 12, 48, 3 * 54 + 6, 19);
-            var x = 0f;
-            void Add(string label, string cmd)
-            {
-                var rt = UiRoot.Box("tg" + cmd, tgButtons, x, 0, 54, 19);
-                x += 57;
-                var b = L2WndUtil.Button(rt, "L2UI_ch3.button.btn1_normal", "L2UI_ch3.button.btn1_normalon", "L2UI_ch3.button.btn1_normal_over", 54, 19);
-                var t = UiRoot.Label(rt, label, 0, 0, 54, 19, 10, UiKit.ButtonText, TextAnchor.MiddleCenter);
-                UiKit.AddShadow(t);
-                b.Label = t;
-                b.OnClick = () => deps.TargetCommand(cmd);
-            }
-            Add("Party", "party");
-            Add("Trocar", "trade");
-            Add("Amigo", "friend");
-            tgButtons.gameObject.SetActive(false);
+            targetExpand = on;
+            TargetWnd.ShowCtrl("BackTex", !on);
+            TargetWnd.ShowCtrl("BackExpTex", on);
+            if (target != null) UpdateTarget();
+            else TargetExpandLines(null);
+        }
+
+        /// <summary>
+        /// Linhas do modo expandido (TargetStatusWnd.uc:300-379): jogador = "Pledge" e "Alliance" com os nomes; NPC = a arvore
+        /// de propriedades (GetNpcProperty), que o porte nao tem.
+        /// </summary>
+        void TargetExpandLines(Entity e)
+        {
+            var pledge = targetExpand && e != null && e.Kind == "player";
+            foreach (var n in new[] { "txtPledge", "txtPledgeName", "txtAlliance", "txtPledgeAllianceName" }) TargetWnd.ShowCtrl(n, pledge);
+            foreach (var n in new[] { "texPledgeCrest", "texPledgeAllianceCrest", "NpcInfo" }) TargetWnd.ShowCtrl(n, false);
+            if (!pledge) return;
+            var clan = e.ClanId > 0 ? ClanName(e.ClanId) ?? "" : "";
+            TargetWnd.Text("txtPledgeName", clan);
+            var t = TargetWnd.TextEl("txtPledgeName");
+            // cor do nome do cla: 176/152/121 (academia e guerra pelo GetClanType/GetNameValue, sem os dados no porte)
+            if (t) t.color = new Color32(176, 152, 121, 255);
+        }
+
+        /// <summary>StatusWnd.OnLButtonDown: so entre x = 13 e largura - 10 (fora disso e a moldura).</summary>
+        public static bool StatusHit(float x, float width) => x > 13 && x < width - 10;
+
+        /// <summary>RequestSelfTarget: o Action sobre o proprio objectId [V] (o pacote do nativo nao foi lido).</summary>
+        void SelfTarget()
+        {
+            if (lastUser != null && lastUser.ObjectId != 0) Party.Action(lastUser.ObjectId, false);
         }
 
         /// <summary>Alvo selecionado (ou null): nome, nivel e HP do alvo.</summary>
@@ -456,8 +479,7 @@ namespace L2Web.UI
             if (v.Hp) TargetWnd.Bar("barHP", e.MaxHp > 0 ? e.Hp : 1, e.MaxHp > 0 ? e.MaxHp : 1);
             TargetWnd.ShowCtrl("barMP", v.Mp);
             if (v.Mp && self) TargetWnd.Bar("barMP", selfMp, selfMaxMp > 0 ? selfMaxMp : 1);
-            var player = e.Kind == "player";
-            if (tgButtons.gameObject.activeSelf != player) tgButtons.gameObject.SetActive(player);
+            TargetExpandLines(e);
         }
 
         // ------------------------------------------------------------ status
