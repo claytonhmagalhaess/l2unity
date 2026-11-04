@@ -1,0 +1,9 @@
+L2Shortcuts.Handle(GamingState) + GameUi.Command, offline (UiPreview); eventos pelo L2Events.Recorder
+R EnterChatting=True -> Command ShowMacroListWindow ev=[EV_MacroShowListWnd ]
+R EnterChatting=False -> ChatFocus  ev=[EV_ChatWndSetFocus ]
+P EnterChatting=True -> Command ApplyMinFrame ev=[EV_MinFrameRateChanged MinFrameRate="0"]
+P EnterChatting=False -> ChatFocus  ev=[EV_ChatWndSetFocus ]
+O EnterChatting=True -> Command ShowGMPetitionWindow ev=[EV_ShowUserPetitionWnd ]
+O EnterChatting=False -> ChatFocus  ev=[EV_ChatWndSetFocus ]
+V EnterChatting=True -> Command ShowInventoryWindow ev=[]
+V EnterChatting=False -> ChatFocus  ev=[EV_ChatWndSetFocus ]
