@@ -244,8 +244,8 @@ namespace L2Web.UI
                     if (it.Type == TreeItem.Kind.Texture)
                     {
                         var t = UiRoot.Box("tex", row, px, py, it.TexW, it.TexH);
-                        // texturas dos pacotes de UI (L2UI*, L2Font*) pelo Paint; o resto e icone (skill, item, tatuagem)
-                        var ui = it.Tex.StartsWith("L2UI", StringComparison.OrdinalIgnoreCase) || it.Tex.StartsWith("L2Font", StringComparison.OrdinalIgnoreCase);
+                        // "pacote.grupo.nome" (L2UI*, L2Font*, Default...) pelo Paint; sem ponto e icone (skill, item, tatuagem)
+                        var ui = it.Tex.IndexOf('.') >= 0;
                         var url = ui ? null : GameUi.IconUrl(it.Tex);
                         if (url != null)
                         {

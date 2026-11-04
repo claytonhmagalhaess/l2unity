@@ -184,6 +184,13 @@ namespace L2Web.UI
         public SkillHennaView SkillHenna { get; private set; }
         /// <summary>OnScreenMessageWnd1..8, #0040.</summary>
         public OnScreenMessageView ScreenMessages { get; private set; }
+        /// <summary>Recipe* (livro, fabricar, loja de fabricacao, arvore), #0043.</summary>
+        public RecipeView Recipes { get; private set; }
+        /// <summary>GetRecipeShopMsg: o titulo atual da propria loja de fabricacao.</summary>
+        public string RecipeShopMsg = "";
+
+        /// <summary>GetUserName(objectId) pelo mundo.</summary>
+        public string EntityName(int objectId) => world?.Get(objectId)?.Name ?? "";
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
         public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd, PrivateShopWnd?.Wnd };
@@ -383,6 +390,8 @@ namespace L2Web.UI
             SkillHenna = new SkillHennaView(Layer, this, b => this.deps.Send(b));
             // mensagens na tela (#0040)
             ScreenMessages = new OnScreenMessageView(Layer);
+            // fabricacao (#0043)
+            Recipes = new RecipeView(Layer, this, b => this.deps.Send(b));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {
