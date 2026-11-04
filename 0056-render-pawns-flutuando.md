@@ -43,7 +43,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ### Causa
 
 - **Observado (código do porte):** o pawn é desenhado em `Entities.DrawHeight(x, y, z)` (`World/Entity.cs:255`), que o `App.cs:110` liga a `GeoTerrain.VisualFloor`. O `VisualFloor` só procurava piso nos `Statics` (BSP e StaticMesh), por raio de `z + 8` até `z - 48`, e saía logo com `z` se a cena não tinha Statics. **O terreno do Unreal nunca entrava.** O movimento e os pacotes usam o z do servidor/geodata (`PawnMotion.Step` com `GeoTerrain.GroundHeight`).
-- **Observado (dados):** o z do geodata fica ~30 unidades acima do chão desenhado, no BSP das cidades e no terreno dos campos. Medido com `geodata\*.l2d` × `cache	errain_ue\<tile>\height.bin` (bilinear e pelos triângulos da malha), amostra a cada 48 unidades num quadrado de 6000 × 6000:
+- **Observado (dados):** o z do geodata fica ~30 unidades acima do chão desenhado, no BSP das cidades e no terreno dos campos. Medido com `geodata\*.l2d` × `cache\terrain_ue\<tile>\height.bin` (bilinear e pelos triângulos da malha), amostra a cada 48 unidades num quadrado de 6000 × 6000:
 
   | Zona | ponto | geodata | terreno UE | geodata − terreno (p5 / mediana / p95 / p99) |
   |---|---|---|---|---|
