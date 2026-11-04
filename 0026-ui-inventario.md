@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-inventario` |
-| Estado | bloqueada |
+| Estado | fazendo |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T2; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -31,6 +31,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 
 - 2026-11-03 — bloqueada: aguardando #0046 no main. C→S `RequestUnEquipItem` 0x11, `RequestDestroyItem` 0x59 e `RequestCrystallizeItem` 0x72 não existem no `main` (o `RequestDropItem` já existe). Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
+- 2026-11-03 — desbloqueada (#0046 no `main`); branch `feat/ui-inventario` criado de `feat/ui-barra-atalhos` (ef46695); estado `fazendo`.
 
 ## Decisões e REA
 
