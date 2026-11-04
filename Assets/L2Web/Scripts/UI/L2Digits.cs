@@ -32,31 +32,56 @@ namespace L2Web.UI
         }
 
         /// <summary>
-        /// Desenha `s` em (x, y) dentro de `parent` (canto superior esquerdo) com a cor ARGB; devolve o container (refeito a cada
-        /// chamada com o mesmo nome).
+        /// Desenha `s` em (x, y) dentro de `parent` (canto superior esquerdo) com a cor ARGB; devolve o container. Chamadas com o
+        /// mesmo nome reaproveitam o container e os glifos (os que sobram ficam inativos): nada e destruido, entao varias chamadas
+        /// no mesmo quadro (UserInfo e StatusUpdate juntos, #0054) deixam so o ultimo texto. Antes o container antigo ia para o
+        /// Object.Destroy, que so age no fim do quadro: a 2a chamada achava de novo o antigo pelo nome e o texto da 1a ficava
+        /// por baixo, sobreposto.
         /// </summary>
         public static RectTransform Draw(RectTransform parent, string name, string s, float x, float y, uint argb = 0xffdcdcdc, int type = 1)
         {
-            var old = parent.Find(name);
-            if (old) Object.Destroy(old.gameObject);
             var (texName, w, h) = Types[type];
-            var root = UiRoot.Box(name, parent, x, y, Width(s, type), h);
-            var t = L2WndUtil.Tex(texName);
-            if (t == null) return root;
-            var color = new Color32((byte)(argb >> 16), (byte)(argb >> 8), (byte)argb, (byte)(argb >> 24));
-            var cx = 0;
-            foreach (var c in s ?? "")
+            var root = parent.Find(name) as RectTransform;
+            if (root)
             {
-                var cell = Cell(c);
-                if (cell < 0) continue;
-                var img = UiRoot.Box("g", root, cx, 0, w, h).gameObject.AddComponent<RawImage>();
-                img.raycastTarget = false;
-                img.color = color;
-                img.uvRect = new Rect(cell * w / (float)t.W, 1 - h / (float)t.H, w / (float)t.W, h / (float)t.H);
-                L2WndUtil.SetTexture(img, t.Url);
-                cx += w;
+                UiRoot.Place(root, x, y, Width(s, type), h);
+                root.gameObject.SetActive(true);
             }
+            else root = UiRoot.Box(name, parent, x, y, Width(s, type), h);
+            var t = L2WndUtil.Tex(texName);
+            var color = new Color32((byte)(argb >> 16), (byte)(argb >> 8), (byte)argb, (byte)(argb >> 24));
+            var n = 0;
+            if (t != null)
+                foreach (var c in s ?? "")
+                {
+                    var cell = Cell(c);
+                    if (cell < 0) continue;
+                    RawImage img;
+                    if (n < root.childCount)
+                    {
+                        img = root.GetChild(n).GetComponent<RawImage>();
+                        img.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        img = UiRoot.Box("g", root, 0, 0, w, h).gameObject.AddComponent<RawImage>();
+                        img.raycastTarget = false;
+                        L2WndUtil.SetTexture(img, t.Url);
+                    }
+                    UiRoot.Place(img.rectTransform, n * w, 0, w, h);
+                    img.color = color;
+                    img.uvRect = new Rect(cell * w / (float)t.W, 1 - h / (float)t.H, w / (float)t.W, h / (float)t.H);
+                    n++;
+                }
+            for (var i = n; i < root.childCount; i++) root.GetChild(i).gameObject.SetActive(false);
             return root;
+        }
+
+        /// <summary>Esconde o texto desenhado com `name` (o container fica para a proxima chamada de Draw).</summary>
+        public static void Hide(Transform parent, string name)
+        {
+            var old = parent.Find(name);
+            if (old) old.gameObject.SetActive(false);
         }
 
         /// <summary>

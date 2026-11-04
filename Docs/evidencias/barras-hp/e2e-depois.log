@@ -1,0 +1,32 @@
+1eeba74 Docs: conta de teste l2webtest5 da #0054
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+== #0054 depois 1eeba74
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=66 self=BarrasHp54 81976,148376,-3464"
+"self hp=676/697 at 81976,148376"
+"ok"
+"268477412"
+== c/d buff natural
+"cleanup"
+"apos cleanup hp=516/516"
+"link"
+"getbuff"
+"apos buff hp=516/697"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_buff_depois.png (1024, 768)
+"regen hp=535/697"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_regen_depois.png (1024, 768)
+"CPBar=4 [digTitle dig0 dig1 dig2 ] HPBar=4 [digTitle dig0 dig1 dig2 ] MPBar=4 [digTitle dig0 dig1 dig2 ] "
+== e) mesmo quadro
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_mesmo_quadro_depois.png (1024, 768)
+== f) contagem
+"CPBar=4 [digTitle dig0 dig1 dig2 ] HPBar=4 [digTitle dig0 dig1 dig2 ] MPBar=4 [digTitle dig0 dig1 dig2 ] "
+== f2) ~8 s depois
+"CPBar=4 [digTitle dig0 dig1 dig2 ] HPBar=4 [digTitle dig0 dig1 dig2 ] MPBar=4 [digTitle dig0 dig1 dig2 ] "
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_mesmo_quadro_8s_depois.png (1024, 768)
+0 entradas

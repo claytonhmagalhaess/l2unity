@@ -1,0 +1,4 @@
+commit 1eeba74 Docs: conta de teste l2webtest5 da #0054
+exit 0  tempo 59s  filtro: (suite inteira)
+--- erros de compilacao (log):
+total 761 passou 761 falhou 0 ignorado 0
