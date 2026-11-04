@@ -3,7 +3,7 @@
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
 - UI: 198 no original, 114 tratados no Unity
-- UI nativa (C++, sem EV_): 61 no original, 36 tratados no Unity
+- UI nativa (C++, sem EV_): 61 no original, 37 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
 - dados: 7 no original, 4 tratados no Unity
@@ -348,7 +348,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xee | PartySpelledPacket | PartySpelled | UI | EV_SummonedStatusSpelledList | tratado |
 | game | 0xef | ShopPreviewListPacket | ShopPreviewList | UI | EV_ShopAddItem, EV_ShopOpenWindow | falta |
 | game | 0xf0 | ShopPreviewInfoPacket | ShopPreviewInfo | mundo/engine |  | falta |
-| game | 0xf1 | CameraModePacket | CameraMode | UI nativa (C++, sem EV_) |  | falta |
+| game | 0xf1 | CameraModePacket | CameraMode | UI nativa (C++, sem EV_) |  | tratado |
 | game | 0xf2 | ShowXMasSealPacket | ShowXMasSeal | UI nativa (C++, sem EV_) |  | falta |
 | game | 0xf3 | EtcStatusUpdatePacket | EtcStatusUpdate | UI | EV_AbnormalStatusEtcItem | tratado |
 | game | 0xf4 | ShortBuffStatusUpdatePacket | ShortBuffStatusUpdate | UI | EV_AbnormalStatusShortItem | tratado |
