@@ -75,7 +75,7 @@ namespace L2Web.UI
         public void ShowHtml(string html, int npcObjectId = 0)
         {
             Npc.Clear();
-            var r = L2Html.Render(html, HtmlAct(), Npc.Body);
+            var r = L2Html.Render(html, HtmlAct(), Npc.Body, NpcHtmlWnd.ViewerWidth);
             var npcName = npcObjectId != 0 ? world?.Get(npcObjectId)?.Name : null;
             Npc.SetTitle(NpcHtmlWnd.TitleFor(r.Title, npcName, GameData.SysString(NpcHtmlWnd.TitleSysString, "")));
             Npc.Show();

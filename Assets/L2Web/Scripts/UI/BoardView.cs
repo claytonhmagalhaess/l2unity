@@ -134,8 +134,12 @@ namespace L2Web.UI
         {
             var body = Clear();
             if (!body) return;
-            L2Html.Render(string.Join("", parts), htmlActions(), body);
+            // HtmlViewer do xdat (633 x 474, NCBBSHtmlViewer)
+            L2Html.Render(string.Join("", parts), htmlActions(), body, HtmlViewerWidth);
         }
+
+        /// <summary>Largura do HtmlViewer do xdat (0 = a do viewport).</summary>
+        float HtmlViewerWidth => HelpHtmlView.ViewerWidth(Wnd.Ctrl("HtmlViewer"));
 
         UnityEngine.RectTransform Clear()
         {
