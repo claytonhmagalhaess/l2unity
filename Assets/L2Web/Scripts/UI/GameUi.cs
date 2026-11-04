@@ -140,7 +140,12 @@ namespace L2Web.UI
         public readonly L2Layer Layer;
         // janelas genericas (moldura original)
         public readonly NpcHtmlWnd Npc;
-        public readonly UiWindow Board;
+        /// <summary>BoardWnd do xdat (Community Board).</summary>
+        public readonly BoardView Board;
+        /// <summary>HelpHtmlWnd do xdat (EV_ShowHelp).</summary>
+        public readonly HelpHtmlView Help;
+        /// <summary>UserPetitionWnd do xdat (EV_ShowUserPetitionWnd, SystemMenuWnd btnPetition).</summary>
+        public readonly PetitionView Petition;
         public readonly UiWindow Shop;
         // janelas do Interface.xdat
         public readonly L2Wnd StatusWnd;
@@ -222,8 +227,6 @@ namespace L2Web.UI
         /// <summary>Aba de cima da MainWnd (GetTopIndex do MainTabCtrl).</summary>
         int mainTopTab;
         (int listId, List<MultisellEntry> entries)? multisell;
-        List<string> boardParts = new();
-        int boardTimer;
         Dictionary<int, InvItem> items = new();
         List<SkillInfo> skills = new();
         Dictionary<int, Shortcut> shortcuts = new();
@@ -249,7 +252,7 @@ namespace L2Web.UI
             Layer = new L2Layer(root);
             Shop = new UiWindow("shop", "Loja", root, 380, 380, 100);
             Npc = new NpcHtmlWnd(Layer);
-            Board = new UiWindow("board", "Community Board", root, Mathf.Min(780, UiRoot.Size.x - 24), 40, 60);
+            Board = new BoardView(Layer, b => this.deps.Send(b), HtmlAct);
 
             // ---- status e alvo
             StatusWnd = new L2Wnd("StatusWnd", Layer, new WndOpts { AriaLabel = "Status" });
@@ -400,6 +403,9 @@ namespace L2Web.UI
             Upgrade = new ItemUpgradeView(Layer, this, b => this.deps.Send(b));
             // busca de grupo, canal de comando e duelo (#0045)
             PartyMatch = new PartyMatchView(Layer, this, b => this.deps.Send(b));
+            // ajuda e peticao do SystemMenuWnd (#0047)
+            Help = new HelpHtmlView(Layer);
+            Petition = new PetitionView(Layer, Dialog, b => this.deps.Send(b), t => this.deps.Chat("sys", t, null));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {
@@ -463,32 +469,42 @@ namespace L2Web.UI
             MenuWnd.OnClick("BtnMap", () => deps.Send(UiPackets.RequestShowMiniMap()));
             MenuWnd.OnClick("BtnSystemMenu", () => SysMenuWnd.Toggle());
             var s = SysMenuWnd;
-            s.OnClick("btnBBS", () =>
+            // SystemMenuWnd.uc:14-46 (OnClickButton): o menu continua aberto depois de cada item, menos no Restart confirmado
+            // HandleShowBoardWnd (:70-75): EV_ShowBBS Init=1 (a BoardWnd alterna e pede o RequestBBSBoard)
+            s.OnClick("btnBBS", () => L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ShowBBS, L2Param.Add("", "Init", 1))));
+            // HandleShowMacroListWnd (:83-86): EV_MacroShowListWnd (a MacroListWnd alterna)
+            s.OnClick("btnMacro", () => L2Events.Dispatch(new PacketEvents.Event(Ev.EV_MacroShowListWnd, "")));
+            // HandleShowHelpHtmlWnd (:77-81): EV_ShowHelp FilePath=..\L2text\help.htm (a HelpHtmlWnd alterna)
+            s.OnClick("btnHelpHtml", () => L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ShowHelp, L2Param.Add("", "FilePath", "..\\L2text\\help.htm"))));
+            // HandleShowPetitionBegin (:88-102) e HandleShowOptionWnd (:104-118): alternam a UserPetitionWnd e a OptionWnd
+            s.OnClick("btnPetition", () => Petition.Toggle());
+            s.OnClick("btnOption", () => deps.Options());
+            // :31-63: DialogHide + DialogShow(DIALOG_Warning, sm126/sm125); ID 0 -> esconde o menu e ExecRestart, ID 1 -> ExecQuit
+            s.OnClick("btnRestart", () =>
             {
-                deps.Send(UiPackets.RequestShowBoard());
-                s.Hide();
+                Dialog.Hide();
+                Ask(126, ok =>
+                {
+                    if (!ok) return;
+                    s.Hide();
+                    deps.Restart();
+                });
             });
-            s.OnClick("btnOption", () =>
+            s.OnClick("btnQuit", () =>
             {
-                deps.Options();
-                s.Hide();
+                Dialog.Hide();
+                Ask(125, ok =>
+                {
+                    if (!ok) return;
+                    // ExecQuit: sai do jogo. O Logout avisa o servidor; fora do Editor o processo fecha (no Editor fica a tela
+                    // de login, que e para onde o LeaveWorld leva)
+                    deps.Logout();
+                    Application.Quit();
+                });
             });
-            // SystemMenuWnd.uc:31-63: DialogShow(DIALOG_Warning, sm126/sm125), ID 0 -> esconde o menu e ExecRestart, ID 1 -> ExecQuit
-            s.OnClick("btnRestart", () => Ask(126, ok =>
-            {
-                if (!ok) return;
-                s.Hide();
-                deps.Restart();
-            }));
-            s.OnClick("btnQuit", () => Ask(125, ok =>
-            {
-                if (ok) deps.Logout();
-            }));
-            foreach (var n in new[] { "btnMacro", "btnHelpHtml", "btnPetition" })
-            {
-                var b = s.Button(n);
-                if (b) b.Interactable = false;
-            }
+            // SetMenuString (:120-125): o atalho no texto de Community e Macro
+            s.Text("txtBBS", GameData.SysString(387, "Community") + "(Alt+B)");
+            s.Text("txtMacro", GameData.SysString(711, "Macro") + "(Alt+R)");
         }
 
         // ------------------------------------------------------------ alvo
@@ -1003,7 +1019,8 @@ namespace L2Web.UI
             shortcuts.Clear();
             skills = new List<SkillInfo>();
             target = null;
-            foreach (var w in new[] { Board, Shop }) w.Hide();
+            Shop.Hide();
+            Board.Hide();
             Npc.Hide();
             Dialog.Hide();
             HideHud();

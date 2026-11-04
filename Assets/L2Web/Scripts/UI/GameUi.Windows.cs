@@ -77,49 +77,8 @@ namespace L2Web.UI
         }
 
         // ------------------------------------------------------------ community board (ShowBoard 101/102/103)
-        /// <summary>ShowBoard: junta as partes (101/102/103) e mostra o board.</summary>
-        public void ShowBoard(ShowBoardInfo p)
-        {
-            if (!p.Show)
-            {
-                Board.Hide();
-                return;
-            }
-            if (p.Id == "101") boardParts = new List<string> { p.Html };
-            else if (p.Id == "102" || p.Id == "103") boardParts.Add(p.Html);
-            else boardParts = new List<string> { p.Html };
-            var token = ++boardTimer;
-            var buttons = p.Buttons;
-            if (p.Id == "103" || (p.Id != "101" && p.Id != "102")) RenderBoard(buttons);
-            else Later(150, () =>
-            {
-                if (token == boardTimer) RenderBoard(buttons);
-            });
-        }
-
-        static async void Later(int ms, Action fn)
-        {
-            await Task.Delay(ms);
-            fn();
-        }
-
-        void RenderBoard(List<string> buttons)
-        {
-            Board.Clear();
-            var nav = UiKit.Row(Board.Body, 4, TextAnchor.MiddleLeft, "boardnav");
-            var labels = new[] { "Início", "Favoritos", "Região", "Clã", "Memo", "Correio", "Amigos", "+ Favorito" };
-            for (var i = 0; i < buttons.Count; i++)
-            {
-                var m = Regex.Match(buttons[i], @"^bypass\s+(.*)$", RegexOptions.IgnoreCase);
-                if (!m.Success) continue;
-                var cmd = m.Groups[1].Value;
-                UiKit.Button(nav, i < labels.Length ? labels[i] : cmd, () => deps.Send(UiPackets.BypassToServer(cmd)));
-            }
-            UiKit.Separator(Board.Body);
-            var r = L2Html.Render(string.Join("", boardParts), HtmlAct(), Board.Body);
-            Board.SetTitle(string.IsNullOrEmpty(r.Title) ? "Community Board" : r.Title);
-            Board.Show();
-        }
+        /// <summary>ShowBoard: o HTML (partes 101/102/103) vai para a BoardWnd; o OK e os comandos chegam pelo EV_ShowBoardPacket.</summary>
+        public void ShowBoard(ShowBoardInfo p) => Board.Html(p);
 
         // ------------------------------------------------------------ lojas (BuyList / SellList / MultiSellList)
         /// <summary>BuyList: janela de compra.</summary>

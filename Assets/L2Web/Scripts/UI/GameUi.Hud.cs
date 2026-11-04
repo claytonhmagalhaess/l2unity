@@ -50,6 +50,10 @@ namespace L2Web.UI
                     // HandleKeyboardInput com o Enter Chat desligado: EV_ChatWndSetFocus (o ChatWnd.uc foca o campo)
                     L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetFocus, ""));
                     return true;
+                case "ShowBoardWindow":
+                    // [I] B/Alt+B (_shortcuts.txt:52) -> EV_ShowBBS Init=1, como o btnBBS do SystemMenuWnd (spec 07: BoardWnd)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ShowBBS, L2Param.Add("", "Init", 1)));
+                    return true;
                 case "ShowMacroListWindow":
                     // NCConsole::ShowMacroListWnd -> EV_MacroShowListWnd (MacroListWnd.uc)
                     L2Events.Dispatch(new PacketEvents.Event(Ev.EV_MacroShowListWnd, ""));
