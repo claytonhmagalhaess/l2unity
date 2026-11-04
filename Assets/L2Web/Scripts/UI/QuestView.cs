@@ -211,15 +211,18 @@ namespace L2Web.UI
                         continue;
                     }
                     var room = width - px - 4;
-                    var w = Measure(it.Text, 0, false);
-                    var wrap = w > room;
-                    var th = wrap ? Measure(it.Text, room, true) : 14;
+                    // o "\n" escrito do questname-e.dat e a quebra de linha
+                    var text = it.Text.Replace("\\n", "\n");
+                    var w = Measure(text, 0, false);
+                    var wrap = w > room || text.Contains("\n");
                     var c = it.Color.a > 0 ? (Color)it.Color : TextColor;
-                    var label = UiRoot.Label(row, it.Text, px, py, wrap ? room : w + 2, th, 11, c, TextAnchor.UpperLeft);
+                    var label = UiRoot.Label(row, text, px, py, wrap ? room : w + 2, 14, 11, c, TextAnchor.UpperLeft);
                     label.supportRichText = false;
                     label.horizontalOverflow = wrap ? HorizontalWrapMode.Wrap : HorizontalWrapMode.Overflow;
                     label.verticalOverflow = VerticalWrapMode.Overflow;
                     label.raycastTarget = false;
+                    var th = wrap ? Mathf.Ceil(label.preferredHeight) : 14;
+                    label.rectTransform.sizeDelta = new Vector2(label.rectTransform.sizeDelta.x, th);
                     cx = px + (wrap ? room : w);
                     lineH = Mathf.Max(lineH, py - ly + th);
                 }
