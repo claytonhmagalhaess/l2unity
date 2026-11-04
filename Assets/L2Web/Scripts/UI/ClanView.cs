@@ -264,7 +264,7 @@ namespace L2Web.UI
         {
             var btn = w.Button(b);
             if (!btn) return;
-            var cg = btn.GetComponent<CanvasGroup>() ?? btn.gameObject.AddComponent<CanvasGroup>();
+            var cg = btn.TryGetComponent<CanvasGroup>(out var g) ? g : btn.gameObject.AddComponent<CanvasGroup>();
             var on = S.IsEnabled(b);
             cg.alpha = on ? 1 : 0.45f;
             cg.interactable = on;

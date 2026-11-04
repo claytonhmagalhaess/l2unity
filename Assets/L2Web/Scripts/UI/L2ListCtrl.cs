@@ -39,7 +39,7 @@ namespace L2Web.UI
                     Widths.Add((float)c["width"]);
                     Headers.Add((int)c["textStringId"]);
                 }
-            var hit = el.gameObject.GetComponent<Image>() ?? el.gameObject.AddComponent<Image>();
+            var hit = el.TryGetComponent<Image>(out var img) ? img : el.gameObject.AddComponent<Image>();
             hit.color = new Color(0, 0, 0, 0.001f);
             el.gameObject.AddComponent<RectMask2D>();
             content = UiRoot.Box("content", el, 0, 0, el.sizeDelta.x, el.sizeDelta.y);

@@ -89,7 +89,7 @@ namespace L2Web.UI
             treeEl = Tree.Get("MainTree");
             if (!treeEl) return;
             treeH = treeEl.sizeDelta.y;
-            var hit = treeEl.gameObject.GetComponent<Image>() ?? treeEl.gameObject.AddComponent<Image>();
+            var hit = treeEl.TryGetComponent<Image>(out var img) ? img : treeEl.gameObject.AddComponent<Image>();
             hit.color = new Color(0, 0, 0, 0.001f);
             treeEl.gameObject.AddComponent<RectMask2D>();
             content = UiRoot.Box("content", treeEl, 0, 0, treeEl.sizeDelta.x, treeH);
