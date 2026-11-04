@@ -150,8 +150,9 @@ namespace L2Web.UI
             {
                 if (count >= MacroScript.MaxCount)
                 {
+                    // HandleMacroShowEditWnd (MacroEditWnd.uc:278-286): DialogShow(DIALOG_Notice, sm797)
                     var sm = GameData.SystemMessage(797, new List<string>());
-                    ui.ChatLine("sys", sm.Text);
+                    ui.Dialog.Ask(EDialogType.Notice, sm.Text, "MacroEditWnd", (_, _) => { });
                     return;
                 }
                 if (Edit.Visible)

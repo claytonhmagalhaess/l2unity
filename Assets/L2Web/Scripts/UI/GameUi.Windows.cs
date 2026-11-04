@@ -464,7 +464,8 @@ namespace L2Web.UI
             var list = items.Values.ToList();
             var adena = list.FirstOrDefault(i => i.ItemId == Adena)?.Count ?? 0;
             var equipped = list.Where(i => i.Equipped).ToList();
-            var bag = list.Where(i => !i.Equipped && i.ItemId != Adena).OrderBy(i => i.Type2).ThenBy(i => i.ItemId).ToList();
+            // HandleAddItem (InventoryWnd.uc:745-758): o que nao e equipado nem de quest vai para o InventoryItem, a adena inclusive
+            var bag = list.Where(i => !i.Equipped).OrderBy(i => i.Type2).ThenBy(i => i.ItemId).ToList();
             var quest = bag.Where(i => i.Type2 == 3).ToList();
             var normal = bag.Where(i => i.Type2 != 3).ToList();
             var w = Inv;
@@ -486,9 +487,12 @@ namespace L2Web.UI
             var qb = L2WndUtil.FillItemWindow(w, "QuestItem", quest.Select(ItemData).ToList(), IconUrl);
             for (var k = 0; k < qb.Count; k++) BindItem(qb[k], quest[k], "QuestItem");
             w.Text("AdenaText", Fmt(adena));
-            w.Text("ItemCount", $"({list.Count})");
-            w.SetTitle($"Inventário ({list.Count})");
+            // SetItemCount (:1076-1087): "(inventario + quest + equipados / GetMyInventoryLimit)"; o titulo fica o do xdat (ss138)
+            w.Text("ItemCount", invLimit > 0 ? $"({list.Count}/{invLimit})" : $"({list.Count})");
         }
+
+        /// <summary>Limite do inventario (EV_SetMaxCount "inventory", ExStorageMaxCount).</summary>
+        int invLimit;
 
         // ------------------------------------------------------------ skills (MagicSkillWnd) e acoes (ActionWnd)
         /// <summary>SkillList: skills ativas e passivas na MagicSkillWnd.</summary>

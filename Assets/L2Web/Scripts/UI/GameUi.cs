@@ -385,8 +385,15 @@ namespace L2Web.UI
             Inv = new L2Wnd("InventoryWnd", Layer, new WndOpts { AriaLabel = "Inventário" });
             Inv.OnShow += () =>
             {
+                // InventoryWnd.OnShow (:134-148): o CrystallizeButton so com a skill de cristalizar (248)
+                Inv.ShowCtrl("CrystallizeButton", InvScript.HasCrystallize());
                 if (invDirty) RenderInv();
             };
+            L2Events.Register(Ev.EV_SetMaxCount, p =>
+            {
+                if (!L2Param.ParseInt(p, "inventory", ref invLimit)) return;
+                if (Inv.Visible) RenderInv();
+            });
             // TrashButton/CrystallizeButton so recebem item arrastado (InventoryWnd.uc OnDropItem); o clique nao faz nada
             InvScript.HasCrystallize = () => skills.Exists(k => k.Id == 248);
             InvScript.IsCrystallizable = id => ItemStats.Of(id) is { } st && st.CrystalType > 0 && (st.Weapon || st.Armor);
@@ -626,7 +633,34 @@ namespace L2Web.UI
             StatusWnd.Bar("CPBar", cp, maxCp);
             selfMp = mp;
             selfMaxMp = maxMp;
+            // DetailStatusWnd registra EV_UpdateHP/MaxHP/MP/MaxMP/CP/MaxCP (DetailStatusWnd.uc:15-24): as barras seguem o StatusUpdate
+            if (Main.Embedded.TryGetValue("DetailStatusWnd", out var w))
+            {
+                DetailBar(w, "texHP", "txtHP", hp, maxHp);
+                DetailBar(w, "texMP", "txtMP", mp, maxMp);
+                DetailBar(w, "texCP", "txtCP", cp, maxCp);
+            }
         }
+
+        static void DetailBar(L2Wnd w, string tex, string txt, double cur, double max, string label = null)
+        {
+            w.TexWidth(tex, (float)Math.Round(85 * (max > 0 ? Math.Min(1, cur / max) : 0)));
+            w.Text(txt, label ?? $"{Math.Round(cur)}/{Math.Round(max)}");
+        }
+
+        /// <summary>
+        /// Cor do nome na DetailStatusWnd (DetailStatusWnd.uc:296-309): CrimRate = min(karma, 255) e, se &gt; 0,
+        /// Clamp(CrimRate, 100 + CrimRate / 16, 255); nome = (255, 255 - CrimRate, 255 - CrimRate).
+        /// </summary>
+        public static Color32 KarmaNameColor(int karma)
+        {
+            var c = Math.Min(Math.Max(karma, 0), 255);
+            if (c > 0) c = Mathf.Clamp(c, 100 + c / 16, 255);
+            return new Color32(255, (byte)(255 - c), (byte)(255 - c), 255);
+        }
+
+        /// <summary>Cor do titulo (NickNameColor 162,249,236) e do cla (PledgeNameColor 176,155,121).</summary>
+        public static readonly Color32 DetailTitleColor = new(162, 249, 236, 255), DetailPledgeColor = new(176, 155, 121, 255);
 
         int selfMp, selfMaxMp;
 
@@ -655,15 +689,42 @@ namespace L2Web.UI
         void RenderStatus(UserInfo u, double pct)
         {
             if (!Main.Embedded.TryGetValue("DetailStatusWnd", out var w)) return;
-            w.ShowCtrl("txtName2", false);
-            w.Text("txtName1", u.Name + (string.IsNullOrEmpty(u.Title) ? "" : " · " + u.Title));
-            w.Text("txtLvName", $"{u.Level} {GameData.ClassName(u.ClassId)}");
-            w.Text("txtPledge", "");
-            void Bar(string tex, string txt, double cur, double max, string label = null)
+            // :296-343: com titulo, txtName1 = titulo (162,249,236) e txtName2 = nome (cor do karma) logo depois dele, cada um
+            // cortado em 8 letras se os dois passam de 220 px e ele de 109; sem titulo, txtName1 = nome
+            var nameColor = KarmaNameColor(u.Karma);
+            var t1 = w.TextEl("txtName1");
+            var t2 = w.TextEl("txtName2");
+            if (!string.IsNullOrEmpty(u.Title) && t1 && t2)
             {
-                w.TexWidth(tex, (float)Math.Round(85 * (max > 0 ? Math.Min(1, cur / max) : 0)));
-                w.Text(txt, label ?? $"{Math.Round(cur)}/{Math.Round(max)}");
+                string name = u.Name ?? "", title = u.Title;
+                t1.text = title;
+                t2.text = name;
+                if (t2.preferredWidth + t1.preferredWidth > 220)
+                {
+                    if (t2.preferredWidth > 109) t2.text = name.Length > 8 ? name.Substring(0, 8) : name;
+                    if (t1.preferredWidth > 109) t1.text = title.Length > 8 ? title.Substring(0, 8) : title;
+                }
+                t1.color = DetailTitleColor;
+                t2.color = nameColor;
+                w.ShowCtrl("txtName2", true);
+                var el2 = w.Get("txtName2");
+                if (el2) el2.anchoredPosition = new Vector2(15 + Mathf.Round(t1.preferredWidth) + 6, el2.anchoredPosition.y);
             }
+            else
+            {
+                w.Text("txtName1", u.Name);
+                if (t1) t1.color = nameColor;
+                w.Text("txtName2", "");
+            }
+            w.Text("txtLvName", $"{u.Level} {GameData.ClassName(u.ClassId)}");
+            // :356-385: o nome do cla em 176,155,121 ou ss431 "No Clan" em branco; sem brasao o texto vai para x = 68
+            var clan = u.ClanId > 0 ? ClanName(u.ClanId) ?? "" : "";
+            w.Text("txtPledge", u.ClanId > 0 ? clan : GameData.SysString(431, ""));
+            var tp = w.TextEl("txtPledge");
+            if (tp) tp.color = u.ClanId > 0 ? DetailPledgeColor : (Color32)Color.white;
+            var elp = w.Get("txtPledge");
+            if (elp) elp.anchoredPosition = new Vector2(68, elp.anchoredPosition.y);
+            void Bar(string tex, string txt, double cur, double max, string label = null) => DetailBar(w, tex, txt, cur, max, label);
             Bar("texHP", "txtHP", u.Hp, u.MaxHp);
             Bar("texMP", "txtMP", u.Mp, u.MaxMp);
             Bar("texCP", "txtCP", u.Cp, u.MaxCp);
