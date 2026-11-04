@@ -89,8 +89,17 @@ namespace L2Web.UI
                     SysMenuWnd.Toggle();
                     return true;
                 case "ShowChatWindow":
-                    if (ChatWnd.Visible) ChatWnd.Hide();
-                    else ChatWnd.Show();
+                    // Shortcut.uc:71-89: a SystemMsgWnd some e volta junto (ChatWnd.OnShow segue [Game] SystemMsgWnd)
+                    if (ChatWnd.Visible)
+                    {
+                        ChatWnd.Hide();
+                        SysMsgWnd.Hide();
+                    }
+                    else
+                    {
+                        ChatWnd.Show();
+                        SyncSystemMsgWnd();
+                    }
                     return true;
                 case "SetPrevChatType":
                 case "SetNextChatType":

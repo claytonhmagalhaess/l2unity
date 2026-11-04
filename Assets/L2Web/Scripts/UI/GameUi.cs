@@ -294,6 +294,8 @@ namespace L2Web.UI
                     ChatInput.text = L2Chat.TabPrefix[Math.Max(0, Array.IndexOf(TabNames, tgt))] + t;
                 }
                 ChatWnd.Log(tgt)?.ScrollToEnd();
+                // HandleTabClick (ChatWnd.uc:312): o filtro aberto passa a mostrar e gravar a aba nova
+                SetChatFilterButton();
                 // a aba destacada continua na tela (o TabCtrl so esconde as que estao na janela)
                 foreach (var k in splitChats.Keys) ChatWnd.Get(TabNames[k])?.gameObject.SetActive(true);
             };
@@ -350,11 +352,12 @@ namespace L2Web.UI
             };
             BuildRadar();
             // MacroListWnd / MacroEditWnd / MacroInfoWnd (#0032): as linhas da macro rodam pelo chat
-            Macros = new MacroView(Layer, this, b => this.deps.Send(b)) { Run = t => OnChatSubmit?.Invoke(t, 0) };
+            // as linhas vao pela aba atual do chat (ChatWnd.uc:386)
+            Macros = new MacroView(Layer, this, b => this.deps.Send(b)) { Run = t => OnChatSubmit?.Invoke(t, Math.Max(0, Array.IndexOf(TabNames, chatTab))) };
 
             // ---- reinicio e dialogo
+            // o fundo e o unk101 do xdat (SystemMenuWnd.system2_back), que o L2Wnd ja pinta
             RestartWnd = new L2Wnd("RestartMenuWnd", Layer, new WndOpts { AriaLabel = "Você morreu", Movable = false });
-            L2WndUtil.Paint(RestartWnd.El, "L2UI_CH3.Calculate.Calculate12_back", 128, 128);
             Dialog = new DialogBoxView(Layer);
             DialogWnd = Dialog.Wnd;
             // ShopWnd e TradeWnd do xdat (#0029)
@@ -402,6 +405,13 @@ namespace L2Web.UI
             Upgrade = new ItemUpgradeView(Layer, this, b => this.deps.Send(b));
             // busca de grupo, canal de comando e duelo (#0045)
             PartyMatch = new PartyMatchView(Layer, this, b => this.deps.Send(b));
+            // ChatWnd PartyMatchingBtn (ChatWnd.uc:213-223): aberta = esconde (o OnClose manda o pedido de saida); fechada =
+            // RequestOpenPartyMatch [I: o mesmo RequestPartyMatchConfig(1, -1, 1) do /partymatching]
+            ChatWnd.OnClick("PartyMatchingBtn", () =>
+            {
+                if (PartyMatch.Match.Visible) PartyMatch.Match.Hide();
+                else deps.Send(PartyMatchPackets.RequestPartyMatchConfig(1, -1, 1));
+            });
             // ajuda e peticao do SystemMenuWnd (#0047)
             Help = new HelpHtmlView(Layer);
             Petition = new PetitionView(Layer, Dialog, b => this.deps.Send(b), t => this.deps.Chat("sys", t, null));
@@ -583,7 +593,9 @@ namespace L2Web.UI
             var e = target;
             if (e == null) return;
             var self = e.Kind == "self";
-            var v = TargetStatus.Compute(e.Kind == "npc", false, e.Attackable, self, false, e.NpcId, e.Name, e.PledgeClass, TargetLevelDiff,
+            // o proprio pet/servo (PetStatusWnd/SummonedStatusWnd): barras de HP e MP como no ramo isOwnPet do HandleTargetUpdate
+            var ownPet = e.Kind == "npc" && Pets.S.Data != null && e.ObjectId == Pets.S.Data.Id;
+            var v = TargetStatus.Compute(e.Kind == "npc", ownPet, e.Attackable, self, ownPet, e.NpcId, e.Name, e.PledgeClass, TargetLevelDiff,
                 id => GameData.SysString(id, ""));
             var name = TargetWnd.TextEl("UserName");
             if (name)
@@ -1033,6 +1045,11 @@ namespace L2Web.UI
             Shop.Hide();
             Board.Hide();
             Npc.Hide();
+            // EV_Restart -> ClearAll do AbnormalStatusWnd: os buffs nao passam para o proximo personagem
+            buffs.Clear();
+            shortBuffs.Clear();
+            etcBuffs.Clear();
+            RenderBuffs();
             Dialog.Hide();
             HideHud();
             ClearChat();

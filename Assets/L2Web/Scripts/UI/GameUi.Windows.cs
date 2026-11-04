@@ -45,7 +45,12 @@ namespace L2Web.UI
                 for (var i = 0; i < names.Length; i++)
                 {
                     var k = i;
-                    w.OnClick(names[i], () => deps.RestartPoint(k));
+                    // OnVillageClick etc. (RestartMenuWnd.uc:103-129): RequestRestartPoint e HideMe
+                    w.OnClick(names[i], () =>
+                    {
+                        deps.RestartPoint(k);
+                        RestartWnd.Hide();
+                    });
                 }
             }
             if (any) w.Show();
