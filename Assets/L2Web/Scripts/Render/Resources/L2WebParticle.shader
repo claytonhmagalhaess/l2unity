@@ -2,7 +2,10 @@
 // por DrawStyle (Src/Dst por propriedade), AlphaTest/AlphaRef, ZTest/ZWrite, dois lados e a cor de neblina forcada por
 // estilo (preto nos aditivos, cinza 127 no Modulated). _Blend2 = BlendBetweenSubdivisions: lerp(tex(UV0), tex(UV1), alfa
 // do vertice) e o alfa final vem da textura (o alfa da particula nao chega ao blending) [O].
-// [I] o D3D do cliente mistura em espaco de gama; aqui o projeto e linear: a cor de vertice e convertida para linear.
+// O D3D do cliente mistura em espaco de gama (bytes sem sRGB). O projeto e linear, entao este passe (LightMode L2WebFxGamma)
+// nao e desenhado pelo URP: o FxGammaPass o desenha num alvo com a cor da camera em gama. Aqui tudo fica em gama: a textura
+// (importada como sRGB) volta para os bytes originais, a cor de vertice e o _Color (TFactor) chegam crus (bytes / 255) e a
+// neblina usa a cor em gama. Assim o blending One/One, DstColor/SrcColor etc. opera nos mesmos valores do cliente.
 Shader "L2Web/Particle"
 {
     Properties
@@ -25,7 +28,7 @@ Shader "L2Web/Particle"
         Pass
         {
             Name "Unlit"
-            Tags { "LightMode" = "UniversalForward" }
+            Tags { "LightMode" = "L2WebFxGamma" }
             Blend [_SrcBlend] [_DstBlend]
             ZWrite [_ZWrite]
             Cull [_Cull]
@@ -35,8 +38,11 @@ Shader "L2Web/Particle"
             #pragma fragment frag
             #pragma multi_compile_fog
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 
             TEXTURE2D(_MainTex); SAMPLER(sampler_MainTex);
+            // diagnostico (FxGammaPass.LinearDebug): 1 = mistura linear antiga, desenhada direto na cor da camera
+            float _L2FxLinear;
             CBUFFER_START(UnityPerMaterial)
                 float4 _MainTex_ST;
                 half4 _Color;
@@ -75,25 +81,32 @@ Shader "L2Web/Particle"
                 return o;
             }
 
-            half4 frag(Varyings i) : SV_Target
+            // textura sRGB -> bytes do arquivo (o sampler devolve linear)
+            float4 TexGamma(float2 uv)
             {
-                half4 t0 = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv0);
-                half4 t;
-                half4 vc = i.color;
+                float4 t = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv);
+                return _L2FxLinear > 0.5 ? t : float4(LinearToSRGB(t.rgb), t.a);
+            }
+
+            float4 frag(Varyings i) : SV_Target
+            {
+                float4 t0 = TexGamma(i.uv0);
+                float4 t;
+                float4 vc = i.color;
                 if (_Blend2 > 0.5)
                 {
-                    half4 t1 = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv1);
+                    float4 t1 = TexGamma(i.uv1);
                     t = lerp(t0, t1, vc.a);
                     vc.a = 1;
                 }
                 else t = t0;
-                // cor de vertice em bytes sRGB -> linear (o projeto e linear)
-                half3 lin = pow(max(vc.rgb, 0.0), 2.2);
-                half4 c = half4(t.rgb * lin * _Color.rgb, t.a * vc.a * _Color.a);
+                // cor de vertice e TFactor (_Color) em bytes / 255, sem conversao: tudo em gama
+                float4 c = float4(t.rgb * vc.rgb * _Color.rgb, t.a * vc.a * _Color.a);
+                if (_L2FxLinear > 0.5) c.rgb = t.rgb * pow(max(vc.rgb * _Color.rgb, 0.0), 2.2);
                 if (_AlphaTest > 0.5 && c.a * 255 <= _AlphaRef) discard;
-                if (_FogMode > 2.5) c.rgb = MixFogColor(c.rgb, half3(0.212, 0.212, 0.212), i.fog); // 127/255 em linear
-                else if (_FogMode > 1.5) c.rgb = MixFogColor(c.rgb, half3(0, 0, 0), i.fog);
-                else if (_FogMode > 0.5) c.rgb = MixFog(c.rgb, i.fog);
+                if (_FogMode > 2.5) c.rgb = MixFogColor(c.rgb, float3(127.0 / 255.0, 127.0 / 255.0, 127.0 / 255.0), i.fog);
+                else if (_FogMode > 1.5) c.rgb = MixFogColor(c.rgb, float3(0, 0, 0), i.fog);
+                else if (_FogMode > 0.5) c.rgb = MixFogColor(c.rgb, _L2FxLinear > 0.5 ? unity_FogColor.rgb : LinearToSRGB(unity_FogColor.rgb), i.fog);
                 return c;
             }
             ENDHLSL
