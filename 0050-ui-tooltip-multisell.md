@@ -41,7 +41,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — código (`55350f5`): bloco de set no `L2Tooltip.Item`, parsers do `ItemName-e` e do `etcitemgrp` no `L2TooltipData`, tooltips da `ItemList` e dos nomes da multisell, `GetItemDataType` dos ingredientes e lista de equipados no `GameUi`. Compilou sem erros no Editor da pasta world.
 - 2026-11-04 — testes (`36d8e0a`): `MultiSellTooltipTests` (9 testes).
 - 2026-11-04 — o Editor da pasta world foi fechado no meio do teste ao vivo. Pelo novo fluxo, a suíte e o roteiro ao vivo (antes `b88e07c` e depois `36d8e0a`) foram pedidos à sessão de testes. Roteiro em `side-session-notes\local_4e5f59ae-…\0050-roteiro-testes.md`.
-- 2026-11-04 — sessão de testes: `36d8e0a` compila sem erros e passa 759/759 na EditMode (a base `b88e07c` dá 750/750), sem falhas novas. Arquivos em `testes0050-1suite-36d8e0a`.
+- 2026-11-04 — sessão de testes: `36d8e0a` compila sem erros e passa 759/759 na EditMode (a base `b88e07c` dá 750/750), sem falhas novas. Arquivos em `testes\0050-1\suite-36d8e0a\`.
 - 2026-11-04 — pedido 0041 (coordenadora): regerar o `itemdata.json` com o `mp_consume` das armas.
 
 ## Decisões e REA
