@@ -1,4 +1,4 @@
-# Pedido 0044 — UiPackets: RequestTutorialLinkHtml (0x7b) e RequestTutorialPassCmdToServer (0x7c)
+# Pedido 0047 — UiPackets: RequestTutorialLinkHtml (0x7b) e RequestTutorialPassCmdToServer (0x7c)
 
 | Campo | Valor |
 |---|---|
