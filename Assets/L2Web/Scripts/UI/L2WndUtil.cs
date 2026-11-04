@@ -31,6 +31,10 @@ namespace L2Web.UI
         public long Count;
         public string Badge;
         public string Cls;
+        /// <summary>Dica de dados do slot (tooltip do ItemWindow); null = so o Title como texto.</summary>
+        public Func<CustomTooltip> Tip;
+        /// <summary>A dica e remontada a cada segundo (tempo restante).</summary>
+        public bool LiveTip;
     }
 
     public static partial class L2WndUtil

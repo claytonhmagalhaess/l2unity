@@ -165,6 +165,8 @@ namespace L2Web.UI
         /// <summary>MessengerWnd nativo (lista de amigos).</summary>
         public readonly MessengerView Messenger;
         public readonly L2Wnd RestartWnd;
+        /// <summary>DialogBox (UICommonAPI: DialogShow, DialogIsMine...).</summary>
+        public readonly DialogBoxView Dialog;
         public readonly L2Wnd DialogWnd;
         public readonly L2Wnd Inv;
         public readonly L2Wnd Main;
@@ -178,6 +180,8 @@ namespace L2Web.UI
         L2Log chatLog;
         string chatTab = "NormalChat";
         int mainTab = -1;
+        /// <summary>Aba de cima da MainWnd (GetTopIndex do MainTabCtrl).</summary>
+        int mainTopTab;
         (int listId, List<MultisellEntry> entries)? multisell;
         List<string> boardParts = new();
         int boardTimer;
@@ -188,7 +192,6 @@ namespace L2Web.UI
         readonly Dictionary<int, (double until, double total)> reuse = new();
         readonly HashSet<int> autoShots = new();
         readonly List<(int skillId, int level, double until)> buffs = new();
-        Action<bool> dialogAnswer;
         Entity target;
 
         /// <summary>
@@ -210,8 +213,19 @@ namespace L2Web.UI
             TargetWnd = new L2Wnd("TargetStatusWnd", Layer, new WndOpts { AriaLabel = "Alvo" });
             foreach (var n in new[] { "BackExpTex", "NpcInfo", "txtPledge", "texPledgeCrest", "txtPledgeName", "txtAlliance", "texPledgeAllianceCrest", "txtPledgeAllianceName" })
                 TargetWnd.ShowCtrl(n, false);
+            // os botoes Party/Trocar/Amigo do porte nao existem no TargetStatusWnd do original (02 §3.1 da #0024)
             TargetWnd.OnClick("btnClose", () => this.deps.CancelTarget());
-            BuildTargetButtons();
+            // OnFrameExpandClick -> SetExpandMode (TargetStatusWnd.uc:464-487)
+            TargetWnd.OnFrameExpand = SetTargetExpand;
+            // StatusWnd.uc:47-56: clique com x em (13, largura - 10) = RequestSelfTarget
+            var sev = UiEvents.Of(StatusWnd.El);
+            var front = sev.OnDown;
+            sev.OnDown = e =>
+            {
+                front?.Invoke(e);
+                var x = e.position.x / UiRoot.PixelScale - StatusWnd.ScreenRect().X;
+                if (StatusHit(x, StatusWnd.Size[0])) SelfTarget();
+            };
 
             // ---- buffs
             AbnormalWnd = new L2Wnd("AbnormalStatusWnd", Layer, new WndOpts { AriaLabel = "Efeitos ativos" });
@@ -235,16 +249,14 @@ namespace L2Web.UI
                     ChatInput.text = L2Chat.TabPrefix[Math.Max(0, Array.IndexOf(TabNames, tgt))] + t;
                 }
                 ChatWnd.Log(tgt)?.ScrollToEnd();
+                // a aba destacada continua na tela (o TabCtrl so esconde as que estao na janela)
+                foreach (var k in splitChats.Keys) ChatWnd.Get(TabNames[k])?.gameObject.SetActive(true);
             };
+            BindChatSplit();
             ChatWnd.ShowCtrl("LanguageTexture", false);
             // ChatWnd.uc:120-127: as 5 abas com SetScrollBarPosition(5, 10, -25) (acima do botao de filtro); a SystemMsgList
             // fica com o (5, 10, 0) do NCChatListBox::OnCreate
             foreach (var n in TabNames) ChatWnd.Log(n)?.SetScrollBarPosition(5, 10, -25);
-            foreach (var (n, t) in new[] { ("ChatFilterBtn", "Filtro do chat"), ("MessengerBtn", GameData.SysString(996, "MSN Messenger")), ("PartyMatchingBtn", "Party matching (indisponível)") })
-            {
-                var el = ChatWnd.Get(n);
-                if (el) UiTooltip.Set(el.gameObject, t);
-            }
             // filtro do chat (martelinho): ChatFilterWnd do xdat, em cima da janela de mensagens do sistema
             var fdef = L2WndUtil.WindowDef("ChatFilterWnd");
             var fj = (JObject)fdef.J.DeepClone();
@@ -289,23 +301,15 @@ namespace L2Web.UI
             ChatWnd.OnClick("MessengerBtn", Messenger.Toggle);
             MultiSellWnd = new MultiSellView(Layer)
             {
-                Send = b => this.deps.Send(b), Ask = (id, cb) => Ask(id, cb), HideDialog = () => Answer(false), HideInventory = () => Inv.Hide(),
+                Send = b => this.deps.Send(b), Ask = (id, cb) => Ask(id, cb), HideDialog = () => Dialog.Hide(), HideInventory = () => Inv.Hide(),
             };
             BuildRadar();
 
             // ---- reinicio e dialogo
             RestartWnd = new L2Wnd("RestartMenuWnd", Layer, new WndOpts { AriaLabel = "Você morreu", Movable = false });
             L2WndUtil.Paint(RestartWnd.El, "L2UI_CH3.Calculate.Calculate12_back", 128, 128);
-            DialogWnd = new L2Wnd("DialogBox", Layer, new WndOpts { AriaLabel = "Confirmação" });
-            DialogWnd.ShowCtrl("NumberPad", false);
-            DialogWnd.El.sizeDelta = new Vector2(306, DialogWnd.El.sizeDelta.y);
-            var dback = DialogWnd.Get("BackTexture");
-            if (dback) L2WndUtil.Paint(dback, "L2UI_ch3.Calculate.Calculate12_back", 306, 128);
-            foreach (var n in new[] { "DialogReadingText", "DialogBoxEdit", "DialogProgress", "CenterOKButton" }) DialogWnd.ShowCtrl(n, false);
-            DialogWnd.LabelButton("OKButton", GameData.SysString(140, "OK"));
-            DialogWnd.LabelButton("CancelButton", GameData.SysString(141, "Cancel"));
-            DialogWnd.OnClick("OKButton", () => Answer(true));
-            DialogWnd.OnClick("CancelButton", () => Answer(false));
+            Dialog = new DialogBoxView(Layer);
+            DialogWnd = Dialog.Wnd;
 
             // ---- inventario e janela principal
             Inv = new L2Wnd("InventoryWnd", Layer, new WndOpts { AriaLabel = "Inventário" });
@@ -315,8 +319,16 @@ namespace L2Web.UI
             };
             Inv.OnClick("TrashButton", () => this.deps.Chat("sys", "Arraste um item para a lixeira para destruí-lo (ainda não disponível).", null));
             Main = new L2Wnd("MainWnd", Layer, new WndOpts { Embed = new[] { "DetailStatusWnd", "MagicSkillWnd", "ActionWnd", "ClanWnd", "QuestTreeWnd" }, AriaLabel = "Personagem" });
+            // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
+            Main.OnMinimize = () =>
+            {
+                int[] tips = { 194, 196, 197, 895, 198 };
+                var i = Mathf.Clamp(mainTopTab, 0, 4);
+                Main.Iconize("L2UI_CH3.TABBUTTON.MainWndTabIcon" + (i + 1), tips[i]);
+            };
             Main.OnTab = (_, i, _) =>
             {
+                mainTopTab = i;
                 var tabs = Main.Ctrl("MainTabCtrl")?.J["tabs"] as JArray;
                 var tip = tabs != null && i >= 0 && i < tabs.Count ? (int)L2Ctrl.ToNum(tabs[i]["tooltip"], -1) : -1;
                 var t = GameData.SysString(tip, "");
@@ -363,13 +375,10 @@ namespace L2Web.UI
         {
             MenuWnd.OnClick("BtnCharInfo", () => OpenMain(0));
             MenuWnd.OnClick("BtnInventory", () => Inv.Toggle());
-            MenuWnd.OnClick("BtnMap", () => RadarWnd.Toggle());
+            // MenuWnd.uc:17-19, 55-58: Map = RequestOpenMinimap (o servidor responde com o ShowMiniMap); as dicas sao as
+            // sysstrings do popupValue do xdat (434, 195, 925, 193)
+            MenuWnd.OnClick("BtnMap", () => deps.Send(UiPackets.RequestShowMiniMap()));
             MenuWnd.OnClick("BtnSystemMenu", () => SysMenuWnd.Toggle());
-            foreach (var (n, title) in new[] { ("BtnCharInfo", "Status (Alt+T)"), ("BtnInventory", "Inventário (Alt+V)"), ("BtnMap", "Radar"), ("BtnSystemMenu", "Menu do sistema (Alt+X)") })
-            {
-                var el = MenuWnd.Get(n);
-                if (el) UiTooltip.Set(el.gameObject, title);
-            }
             var s = SysMenuWnd;
             s.OnClick("btnBBS", () =>
             {
@@ -400,26 +409,46 @@ namespace L2Web.UI
         }
 
         // ------------------------------------------------------------ alvo
-        RectTransform tgButtons;
+        /// <summary>Modo expandido do alvo (m_bExpand).</summary>
+        bool targetExpand;
 
-        void BuildTargetButtons()
+        /// <summary>Nome do cla pelo id (UIDATA_CLAN.GetName); "" quando nao se conhece.</summary>
+        public Func<int, string> ClanName = _ => "";
+
+        /// <summary>SetExpandMode: alterna BackTex/BackExpTex e refaz o alvo (as linhas de cla so no modo expandido).</summary>
+        void SetTargetExpand(bool on)
         {
-            tgButtons = UiRoot.Box("tgButtons", TargetWnd.El, 12, 48, 3 * 54 + 6, 19);
-            var x = 0f;
-            void Add(string label, string cmd)
-            {
-                var rt = UiRoot.Box("tg" + cmd, tgButtons, x, 0, 54, 19);
-                x += 57;
-                var b = L2WndUtil.Button(rt, "L2UI_ch3.button.btn1_normal", "L2UI_ch3.button.btn1_normalon", "L2UI_ch3.button.btn1_normal_over", 54, 19);
-                var t = UiRoot.Label(rt, label, 0, 0, 54, 19, 10, UiKit.ButtonText, TextAnchor.MiddleCenter);
-                UiKit.AddShadow(t);
-                b.Label = t;
-                b.OnClick = () => deps.TargetCommand(cmd);
-            }
-            Add("Party", "party");
-            Add("Trocar", "trade");
-            Add("Amigo", "friend");
-            tgButtons.gameObject.SetActive(false);
+            targetExpand = on;
+            TargetWnd.ShowCtrl("BackTex", !on);
+            TargetWnd.ShowCtrl("BackExpTex", on);
+            if (target != null) UpdateTarget();
+            else TargetExpandLines(null);
+        }
+
+        /// <summary>
+        /// Linhas do modo expandido (TargetStatusWnd.uc:300-379): jogador = "Pledge" e "Alliance" com os nomes; NPC = a arvore
+        /// de propriedades (GetNpcProperty), que o porte nao tem.
+        /// </summary>
+        void TargetExpandLines(Entity e)
+        {
+            var pledge = targetExpand && e != null && e.Kind == "player";
+            foreach (var n in new[] { "txtPledge", "txtPledgeName", "txtAlliance", "txtPledgeAllianceName" }) TargetWnd.ShowCtrl(n, pledge);
+            foreach (var n in new[] { "texPledgeCrest", "texPledgeAllianceCrest", "NpcInfo" }) TargetWnd.ShowCtrl(n, false);
+            if (!pledge) return;
+            var clan = e.ClanId > 0 ? ClanName(e.ClanId) ?? "" : "";
+            TargetWnd.Text("txtPledgeName", clan);
+            var t = TargetWnd.TextEl("txtPledgeName");
+            // cor do nome do cla: 176/152/121 (academia e guerra pelo GetClanType/GetNameValue, sem os dados no porte)
+            if (t) t.color = new Color32(176, 152, 121, 255);
+        }
+
+        /// <summary>StatusWnd.OnLButtonDown: so entre x = 13 e largura - 10 (fora disso e a moldura).</summary>
+        public static bool StatusHit(float x, float width) => x > 13 && x < width - 10;
+
+        /// <summary>RequestSelfTarget: o Action sobre o proprio objectId [V] (o pacote do nativo nao foi lido).</summary>
+        void SelfTarget()
+        {
+            if (lastUser != null && lastUser.ObjectId != 0) Party.Action(lastUser.ObjectId, false);
         }
 
         /// <summary>Alvo selecionado (ou null): nome, nivel e HP do alvo.</summary>
@@ -463,8 +492,7 @@ namespace L2Web.UI
             if (v.Hp) TargetWnd.Bar("barHP", e.MaxHp > 0 ? e.Hp : 1, e.MaxHp > 0 ? e.MaxHp : 1);
             TargetWnd.ShowCtrl("barMP", v.Mp);
             if (v.Mp && self) TargetWnd.Bar("barMP", selfMp, selfMaxMp > 0 ? selfMaxMp : 1);
-            var player = e.Kind == "player";
-            if (tgButtons.gameObject.activeSelf != player) tgButtons.gameObject.SetActive(player);
+            TargetExpandLines(e);
         }
 
         // ------------------------------------------------------------ status
@@ -552,6 +580,43 @@ namespace L2Web.UI
             ChatInput.lineType = InputField.LineType.SingleLine;
             ChatInput.characterLimit = L2Chat.MaxInput;
             ChatInput.onEndEdit.AddListener(OnChatEndEdit);
+            // ChatWnd.uc:361-366: EV_ChatWndSetFocus foca o campo; EV_ChatWndSetString troca o texto (nomes de sussurro)
+            L2Events.Register(Ev.EV_ChatWndSetFocus, _ => FocusChat());
+            L2Events.Register(Ev.EV_ChatWndSetString, p =>
+            {
+                string s = null;
+                if (!L2Param.ParseString(p, "String", ref s) || !ChatInput) return;
+                ChatInput.text = s;
+                ChatInput.caretPosition = s.Length;
+            });
+            // nomes de sussurro: quem sussurrou ou para quem se sussurrou (CreatureSay tipo 2)
+            L2Events.Register(Ev.EV_ChatMessage, p =>
+            {
+                var t = 0;
+                string m = null;
+                if (L2Param.ParseInt(p, "Type", ref t) && t == 2 && L2Param.ParseString(p, "Msg", ref m)) Whisper.Add(ChatWhisper.Sender(m));
+            });
+            // NCEditBox::OnKeyDown (nw:0x10019880) no campo de chat: setas para cima e para baixo mandam ao NCChatWnd os codigos
+            // 4 e 5 (ChangeWhisperName 1 e 0) [I]; o codigo 3 (AttachWhisperName) [V] nao tem tecla achada
+            ChatInput.gameObject.AddComponent<UiTicker>().OnTick = _ =>
+            {
+                var kb = UnityEngine.InputSystem.Keyboard.current;
+                if (kb == null || !ChatInput.isFocused) return;
+                string s = null;
+                if (kb.upArrowKey.wasPressedThisFrame) s = Whisper.Change(1);
+                else if (kb.downArrowKey.wasPressedThisFrame) s = Whisper.Change(0);
+                if (s != null) L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetString, L2Param.Add("", "String", s)));
+            };
+        }
+
+        /// <summary>Nomes de sussurro do campo do chat (NCChatWnd).</summary>
+        public readonly ChatWhisper Whisper = new();
+
+        /// <summary>AttachWhisperName: poe "\"nome " no campo (sem nome, o ultimo que sussurrou).</summary>
+        public void AttachWhisperName(string name = null)
+        {
+            var s = Whisper.Attach(name);
+            if (s != null) L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetString, L2Param.Add("", "String", s)));
         }
 
         void OnChatEndEdit(string _)
@@ -585,6 +650,90 @@ namespace L2Web.UI
                     UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
             }
             if (text.Length > 0) OnChatSubmit?.Invoke(text, tab);
+        }
+
+        // ------------------------------------------------------------ abas destacadas do chat (OnTabSplit / OnTabMerge)
+        /// <summary>Abas fora da janela: indice -> (pai, posicao e tamanho dentro do ChatWnd).</summary>
+        readonly Dictionary<int, (Transform parent, Vector2 pos, Vector2 size)> splitChats = new();
+
+        /// <summary>
+        /// Arrastar uma aba do ChatTabCtrl para fora da janela destaca a lista (OnTabSplit); arrastar a aba de volta para dentro
+        /// junta (OnTabMerge). [I] o gesto do NCTabCtrl (o nativo que chama os dois eventos) nao foi lido.
+        /// </summary>
+        void BindChatSplit()
+        {
+            for (var i = 0; i < TabNames.Length; i++)
+            {
+                var k = i;
+                var b = ChatWnd.TabButton("ChatTabCtrl", i);
+                if (!b) continue;
+                var ev = UiEvents.Of(b);
+                ev.OnBeginDrag = _ => { };
+                ev.OnDrag = _ => { };
+                ev.OnEndDrag = e =>
+                {
+                    var px = UiRoot.PixelScale;
+                    var p = new Vector2(e.position.x / px, UiRoot.Size.y - e.position.y / px);
+                    var r = ChatWnd.ScreenRect();
+                    var inside = p.x >= r.X && p.y >= r.Y && p.x < r.X + r.W && p.y < r.Y + r.H;
+                    if (!inside) TabSplit(k, p);
+                    else TabMerge(k);
+                };
+            }
+        }
+
+        /// <summary>Abas destacadas (indices de TabNames).</summary>
+        public IReadOnlyCollection<int> SplitTabs => splitChats.Keys;
+
+        /// <summary>
+        /// ChatWnd.uc:229-264 OnTabSplit: seleciona a aba, tira o tamanho relativo (SetWindowSizeRel -1), a lista vira janela
+        /// solta (SetSettledWnd) e ganha o fundo (EnableTexture). Fica onde a aba foi solta, com o tamanho de antes.
+        /// </summary>
+        public void TabSplit(int k, Vector2 at)
+        {
+            if (k < 0 || k >= TabNames.Length || splitChats.ContainsKey(k)) return;
+            var el = ChatWnd.Get(TabNames[k]);
+            if (!el) return;
+            ChatWnd.SelectTab("ChatTabCtrl", k);
+            splitChats[k] = (el.parent, el.anchoredPosition, el.sizeDelta);
+            el.SetParent(Layer.El, false);
+            el.anchoredPosition = new Vector2(Mathf.Round(at.x), -Mathf.Round(at.y));
+            el.gameObject.SetActive(true);
+            el.SetAsLastSibling();
+            // EnableTexture(true): o fundo das listas do chat [I] Chatting_Back3 (o corpo do ChatWnd)
+            var back = el.Find("splitback");
+            if (!back) L2WndUtil.Paint(UiRoot.Box("splitback", el, 0, 0, el.sizeDelta.x, el.sizeDelta.y), "L2UI_CH3.ChatWnd.Chatting_Back3", el.sizeDelta.x, el.sizeDelta.y, PaintMode.Tile).transform.parent.SetAsFirstSibling();
+            else back.gameObject.SetActive(true);
+            var ev = UiEvents.Of(el);
+            ev.OnBeginDrag = _ => { };
+            ev.OnDrag = e =>
+            {
+                if (!splitChats.ContainsKey(k)) return;
+                el.anchoredPosition += e.delta / UiRoot.PixelScale;
+            };
+            ev.OnEndDrag = _ => { };
+            ChatWnd.Log(TabNames[k])?.Invalidate();
+        }
+
+        /// <summary>
+        /// ChatWnd.uc:266-300 OnTabMerge: volta para dentro do ChatWnd na posicao e no tamanho da NormalChat (relativo, -46 de
+        /// altura) e sem o fundo.
+        /// </summary>
+        public void TabMerge(int k)
+        {
+            if (!splitChats.TryGetValue(k, out var o)) return;
+            splitChats.Remove(k);
+            var el = ChatWnd.Get(TabNames[k]);
+            if (!el) return;
+            el.SetParent(o.parent, false);
+            var normal = ChatWnd.Get(TabNames[0]);
+            el.anchoredPosition = normal && k != 0 ? normal.anchoredPosition : o.pos;
+            el.sizeDelta = normal && k != 0 ? normal.sizeDelta : o.size;
+            el.Find("splitback")?.gameObject.SetActive(false);
+            var ev = UiEvents.Of(el);
+            ev.OnDrag = null;
+            ChatWnd.SelectTab("ChatTabCtrl", k);
+            ChatWnd.Log(TabNames[k])?.Invalidate();
         }
 
         /// <summary>Foco no campo do chat (Enter no jogo).</summary>
@@ -770,7 +919,7 @@ namespace L2Web.UI
             target = null;
             foreach (var w in new[] { Board, Shop }) w.Hide();
             Npc.Hide();
-            DialogWnd.OnClose = () => { };
+            Dialog.Hide();
             HideHud();
             ClearChat();
             RenderBars();

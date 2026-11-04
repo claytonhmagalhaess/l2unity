@@ -1,0 +1,115 @@
+// Dados dos tooltips que vem dos .dat do cliente (copia local, Ver413): skillname-e.dat (nome, descricao e os dois nomes
+// de encantamento: UIDATA_SKILL.GetName/GetDescription/GetEnchantName) e actionname-e.dat (nome e descricao da acao).
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace L2Web.UI
+{
+    public static class L2TooltipData
+    {
+        public sealed class SkillName
+        {
+            public string Name = "", Desc = "", Add1 = "", Add2 = "";
+        }
+
+        public sealed class ActionName
+        {
+            public int Id;
+            public string Name = "", Icon = "", Desc = "", Cmd = "";
+        }
+
+        /// <summary>skillname-e.dat: d id, d nivel, FString nome, descricao, desc_add1, desc_add2 ("none" = vazio).</summary>
+        public static Dictionary<(int, int), SkillName> ParseSkillNames(byte[] b)
+        {
+            var n = BitConverter.ToInt32(b, 0);
+            var p = 4;
+            var o = new Dictionary<(int, int), SkillName>(n);
+            for (var i = 0; i < n; i++)
+            {
+                var id = BitConverter.ToInt32(b, p);
+                var lv = BitConverter.ToInt32(b, p + 4);
+                p += 8;
+                o[(id, lv)] = new SkillName { Name = L2Texts.FString(b, ref p), Desc = None(L2Texts.FString(b, ref p)), Add1 = None(L2Texts.FString(b, ref p)), Add2 = None(L2Texts.FString(b, ref p)) };
+            }
+            return o;
+        }
+
+        /// <summary>
+        /// actionname-e.dat: d tag, d id, d type, d category, d n, n x d (categorias), e as FString nome, icone, descricao e
+        /// comando (a ordem das colunas do txt do l2disasm).
+        /// </summary>
+        public static Dictionary<int, ActionName> ParseActionNames(byte[] b)
+        {
+            var n = BitConverter.ToInt32(b, 0);
+            var p = 4;
+            var o = new Dictionary<int, ActionName>(n);
+            for (var i = 0; i < n; i++)
+            {
+                p += 4; // tag
+                var id = BitConverter.ToInt32(b, p);
+                p += 12; // id, type, category
+                var cnt = BitConverter.ToInt32(b, p);
+                p += 4 + 4 * Math.Max(0, cnt);
+                var a = new ActionName { Id = id, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p), Cmd = L2Texts.FString(b, ref p) };
+                o[id] = a;
+            }
+            return o;
+        }
+
+        static string None(string s) => s == "none" ? "" : s ?? "";
+
+        static Dictionary<(int, int), SkillName> skills;
+        static Dictionary<int, ActionName> actions;
+
+        static T Load<T>(string file, Func<byte[], T> parse, T empty)
+        {
+            try
+            {
+                var f = GameData.ClientFile(file);
+                if (File.Exists(f)) return parse(L2Files.Decrypt(File.ReadAllBytes(f)));
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogWarning(file + ": " + e.Message);
+            }
+            return empty;
+        }
+
+        public static SkillName Skill(int id, int level)
+        {
+            skills ??= Load("skillname-e.dat", ParseSkillNames, new Dictionary<(int, int), SkillName>());
+            return skills.TryGetValue((id, level), out var s) ? s : null;
+        }
+
+        public static ActionName Action(int id)
+        {
+            actions ??= Load("actionname-e.dat", ParseActionNames, new Dictionary<int, ActionName>());
+            return actions.TryGetValue(id, out var a) ? a : null;
+        }
+
+        /// <summary>
+        /// GetEnchantName: o nome do encantamento da skill (desc_add1 do nivel; os niveis 101+ e 141+ sao os dois ramos do
+        /// encantamento do Interlude) [I].
+        /// </summary>
+        public static string EnchantName(int id, int level)
+        {
+            var s = Skill(id, level);
+            if (s == null || level < 100) return "";
+            return s.Add1.Length > 0 ? s.Add1 : s.Add2;
+        }
+
+        /// <summary>
+        /// GetOperateType (NMagicSkillDataManager::GetMSOperateType, nw:0x101b5880): registro+0x3c 0 = fisica (+0x20 == 2
+        /// passiva, sysstring 312; senao ativa, 311); 3 = cancao/danca (1500); outro = magia (313). [I] +0x3c = is_magic e
+        /// +0x20 = oper_type do skillgrp.
+        /// </summary>
+        public static string OperateType(int id, int level, Func<int, string> ss)
+        {
+            var r = L2SkillData.Get(id, level);
+            if (r == null) return "";
+            if (r.IsMagic == 0) return ss(r.OperateType == 2 ? 312 : 311);
+            return ss(r.IsMagic == 3 ? 1500 : 313);
+        }
+    }
+}

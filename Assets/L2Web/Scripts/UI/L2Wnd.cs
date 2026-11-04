@@ -376,6 +376,7 @@ namespace L2Web.UI
                         if (!string.IsNullOrEmpty(t) && label != -9999) b.Label = AddText(el, t, 11, UiKit.ButtonText, TextAnchor.MiddleCenter);
                     }
                     b.Sound = c.N("defaultSoundOn") != 0;
+                    TextTooltip(c, el);
                     return 2;
                 }
                 case "TextBox":
@@ -553,6 +554,19 @@ namespace L2Web.UI
             if (c.Name != null && !bars.ContainsKey(c.Name)) bars[c.Name] = bar;
         }
 
+        /// <summary>
+        /// Tooltip "Text" do xdat (NCWnd::OnPostPaint, nw:0x1005da50): popupValue &gt;= 0 e a sysstring; senao o texto de
+        /// SetTooltipText (aqui, UiTooltip.Set de quem monta a janela).
+        /// </summary>
+        static void TextTooltip(L2Ctrl c, RectTransform el)
+        {
+            if (c.S("popupType") != "Text") return;
+            var id = c.N("popupValue");
+            if (float.IsNaN(id) || id < 0) return;
+            var t = GameData.SysString((int)id, "");
+            if (!string.IsNullOrEmpty(t)) UiTooltip.Set(el.gameObject, t);
+        }
+
         /// <summary>Botao com as 3 texturas (normal, pressionado, realce) em tamanho natural.</summary>
         public UiTexButton SkinButton(RectTransform b, string normal, string pushed, string over, float w, float h) =>
             L2WndUtil.Button(b, normal, pushed, over, w, h);
@@ -611,6 +625,10 @@ namespace L2Web.UI
             tabs[c.Name] = (buttons, targets, Select);
         }
 
+        /// <summary>Botao da aba `i` do controle Tab `tab` (null se nao ha).</summary>
+        public UiTexButton TabButton(string tab, int i) =>
+            tab != null && tabs.TryGetValue(tab, out var t) && i >= 0 && i < t.buttons.Count ? t.buttons[i] : null;
+
         /// <summary>Seleciona a aba `i` do controle Tab `tab`.</summary>
         public void SelectTab(string tab, int i)
         {
@@ -618,6 +636,13 @@ namespace L2Web.UI
         }
 
         RectTransform sideFrame;
+        UiTexButton expandBtn;
+
+        /// <summary>Estado do botao de expandir da moldura (Frame.expandbutton).</summary>
+        public bool Expanded { get; private set; }
+
+        /// <summary>OnFrameExpandClick(bIsExpand): o botao de expandir da moldura foi clicado.</summary>
+        public Action<bool> OnFrameExpand;
 
         /// <summary>
         /// NCFrameCtrl vertical (FUN_1001ba20, ramo 0x328 = 0x32c = 1): smallbar1 12x8 em (0,0), smallbar2 esticada (UV 12x8) em
@@ -625,13 +650,54 @@ namespace L2Web.UI
         /// </summary>
         public void SideFrame(float h)
         {
-            if (sideFrame) UnityEngine.Object.Destroy(sideFrame.gameObject);
+            if (sideFrame)
+            {
+                sideFrame.gameObject.SetActive(false);
+                if (Application.isPlaying) UnityEngine.Object.Destroy(sideFrame.gameObject);
+                else UnityEngine.Object.DestroyImmediate(sideFrame.gameObject);
+            }
             sideFrame = UiRoot.Box("l2sideframe", El, 0, 0, 12, h);
             sideFrame.SetAsFirstSibling();
             L2WndUtil.Paint(UiRoot.Box("top", sideFrame, 0, 0, 12, 8), "L2UI_CH3.FrameCtrl.smallbar1", 12, 8, PaintMode.Stretch, 0, 0, 12, 8);
             if (h > 16)
                 L2WndUtil.Paint(UiRoot.Box("mid", sideFrame, 0, 8, 12, h - 16), "L2UI_CH3.FrameCtrl.smallbar2", 12, h - 16, PaintMode.Stretch, 0, 0, 12, 8);
             L2WndUtil.Paint(UiRoot.Box("bottom", sideFrame, 0, h - 8, 12, 8), "L2UI_CH3.FrameCtrl.smallbar3", 12, 8, PaintMode.Stretch, 0, 0, 12, 8);
+            if (Def.WndN("Frame.expandbutton") == 1) ExpandButton();
+        }
+
+        /// <summary>
+        /// NCFrameCtrl::CreateExpandBtn (nw:0x1001b5c0 ...): botao L2UI_CH3.TargetWnd.Target_InfoButton em (1, 6) 11 x 13 na
+        /// moldura. OnExpandBtnClick (nw:0x1001b7c0): troca para a textura _Down quando expande, muda a altura para
+        /// Frame.expandExpHeight / expandOrgHeight e chama OnFrameExpandClick do script.
+        /// </summary>
+        void ExpandButton()
+        {
+            var rt = UiRoot.Box("nodrag expand", sideFrame, 1, 6, 11, 13);
+            expandBtn = L2WndUtil.Button(rt, ExpandTex(Expanded), ExpandTex(Expanded), ExpandTex(Expanded), 11, 13);
+            expandBtn.OnClick = () => SetExpanded(!Expanded, true);
+        }
+
+        static string ExpandTex(bool expanded) => expanded ? "L2UI_CH3.TargetWnd.Target_InfoButton_Down" : "L2UI_CH3.TargetWnd.Target_InfoButton";
+
+        /// <summary>Expande ou recolhe (altura do xdat) e, se `notify`, avisa o script (OnFrameExpandClick).</summary>
+        public void SetExpanded(bool on, bool notify)
+        {
+            Expanded = on;
+            var hk = on ? "Frame.expandExpHeight" : "Frame.expandOrgHeight";
+            var h = Def.WndN(hk);
+            if (!float.IsNaN(h) && h > 0 && h != Size[1])
+            {
+                SetWindowSize(Size[0], h);
+                RelayoutChildren();
+            }
+            if (expandBtn)
+            {
+                var t = ExpandTex(on);
+                expandBtn.Normal = expandBtn.Pushed = expandBtn.Over = null;
+                expandBtn.Refresh();
+                L2WndUtil.SetButtonTextures(expandBtn, L2WndUtil.Tex(t)?.Url, L2WndUtil.Tex(t)?.Url, L2WndUtil.Tex(t)?.Url);
+            }
+            if (notify) OnFrameExpand?.Invoke(on);
         }
 
         void BuildFrame(string title, string icon)
@@ -654,6 +720,63 @@ namespace L2Web.UI
             var close = UiRoot.Box("l2close", frameEl, w - 7 - 16, 2, 16, 16);
             var b = L2WndUtil.Button(close, "L2UI_CH3.FrameCtrl.FrameCloseBtn", "L2UI_CH3.FrameCtrl.FrameCloseOnBtn", "L2UI_CH3.FrameCtrl.FrameCloseBtn_Over", 16, 16);
             b.OnClick = Hide;
+            // NCFrameCtrl (nw:0x1001b580): com iconable, o FrameMiniBtn fica 25 px a esquerda da borda direita (o fechar fica a 8)
+            if (Def.WndN("iconable") == 1)
+            {
+                var mini = UiRoot.Box("nodrag l2mini", frameEl, w - 25 - 16, 3, 16, 16);
+                var mb = L2WndUtil.Button(mini, "L2UI_CH3.FrameCtrl.FrameMiniBtn", "L2UI_CH3.FrameCtrl.FrameMiniOnBtn", "L2UI_CH3.FrameCtrl.FrameMiniBtn", 16, 16);
+                mb.OnClick = Minimize;
+            }
+        }
+
+        // ------------------------------------------------------------ minimizar para icone (Iconize)
+        /// <summary>OnMinimize do script: quem trata chama Iconize (MainWnd.uc:18-34); sem ele, o icone do xdat.</summary>
+        public Action OnMinimize;
+        RectTransform iconEl;
+
+        /// <summary>true enquanto a janela esta minimizada no icone.</summary>
+        public bool Minimized => iconEl && iconEl.gameObject.activeSelf;
+
+        /// <summary>Botao de minimizar da moldura (NCWnd::MinimizeWindow, nw:0x10059860).</summary>
+        public void Minimize()
+        {
+            if (OnMinimize != null) OnMinimize();
+            else Iconize(Def.WndS("Iconable.IconName"), (int)Def.N0(L2XdatFields.Unk("Window", "Iconable.TooltipIdx") ?? "Iconable.TooltipIdx"));
+        }
+
+        /// <summary>
+        /// UIAPI_WINDOW.Iconize(janela, textura, dica): esconde a janela (som 6 do MinimizeWindow) e mostra o icone com a
+        /// dica (sysstring). [I] o icone fica no canto superior esquerdo da janela, 32 x 32; o clique nele devolve a janela.
+        /// </summary>
+        public void Iconize(string texture, int tooltip)
+        {
+            var t = L2WndUtil.Tex(texture);
+            if (!iconEl)
+            {
+                iconEl = UiRoot.Box("L2Icon " + Name, Layer.El, 0, 0, 32, 32);
+                var ib = L2WndUtil.Button(iconEl, texture, texture, texture, 32, 32);
+                ib.OnClick = Restore;
+            }
+            var b = iconEl.GetComponent<UiTexButton>();
+            if (b && t != null)
+            {
+                b.Normal = b.Pushed = b.Over = null;
+                b.Refresh();
+                L2WndUtil.SetButtonTextures(b, t.Url, t.Url, t.Url);
+            }
+            UiTooltip.Set(iconEl.gameObject, tooltip > 0 ? GameData.SysString(tooltip, "") : "");
+            var r = ScreenRect();
+            iconEl.anchoredPosition = new Vector2(r.X, -r.Y);
+            Hide();
+            iconEl.SetAsLastSibling();
+            iconEl.gameObject.SetActive(true);
+        }
+
+        /// <summary>Clique no icone: a janela volta e o icone some.</summary>
+        public void Restore()
+        {
+            if (iconEl) iconEl.gameObject.SetActive(false);
+            Show();
         }
 
         /// <summary>SetWindowSize: novo tamanho (a moldura lateral acompanha a altura).</summary>
@@ -832,7 +955,7 @@ namespace L2Web.UI
             }
             else
             {
-                var a = Def.Anchor;
+                var a = AnchorOverride ?? Def.Anchor;
                 var rf = new L2Rect(0, 0, vp.x, vp.y);
                 var oc = a != null && !string.IsNullOrEmpty(a.Ctrl) ? a.Ctrl.Split('.')[0] : null;
                 if (oc != null && Layer.Windows.TryGetValue(oc, out var other) && other != this) rf = other.ScreenRect();
@@ -850,6 +973,20 @@ namespace L2Web.UI
         }
 
         bool dragging;
+
+        /// <summary>Ancora trocada pelo script (SetAnchor); null = a do xdat.</summary>
+        public L2Anchor AnchorOverride;
+
+        /// <summary>
+        /// UIAPI_WINDOW.SetAnchor(janela, "", pontoDaTela, pontoDaJanela, x, y): passa a valer essa ancora na tela e a posicao
+        /// arrastada se perde.
+        /// </summary>
+        public void SetAnchor(string screenPoint, string wndPoint, float x, float y)
+        {
+            AnchorOverride = new L2Anchor { This = screenPoint, Parent = wndPoint, X = x, Y = y };
+            Moved = null;
+            if (Visible) Place();
+        }
 
         /// <summary>FUN_1004fad0: algum dos cantos (x,y), (x+w,y), (x,y+h), (x+w,y+h) dentro da tela.</summary>
         public static bool AnyCornerOnScreen(float x, float y, float w, float h, Vector2 vp)

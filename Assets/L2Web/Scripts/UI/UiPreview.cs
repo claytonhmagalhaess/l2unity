@@ -98,7 +98,19 @@ namespace L2Web.UI
             if (q.ContainsKey("menu")) ui.SysMenuWnd.Show();
             if (q.ContainsKey("vert")) ui.PreviewSetVertical(true);
             if (q.ContainsKey("bars")) ui.PreviewSetBarCount(Num(q["bars"], 3));
-            if (q.ContainsKey("dlg")) ui.Confirm(-1, new List<string>(), 0);
+            if (q.ContainsKey("dlg"))
+            {
+                // dlg=<EDialogType> (OKCancel, OK, OKCancelInput, OKInput, Warning, Notice, NumberPad, Progress); dlgnum= texto do
+                // edit; sem valor, o ConfirmDlg do servidor
+                if (Enum.TryParse<EDialogType>(q["dlg"], true, out var dt))
+                {
+                    ui.Dialog.SetParamInt(dt == EDialogType.Progress ? 10000 : 1234567);
+                    var msg = dt == EDialogType.NumberPad ? GameData.SystemMessage(72, new List<string> { "Soulshot: No Grade" }).Text : GameData.SystemMessage(1383, new List<string>()).Text;
+                    ui.Dialog.Show(dt, msg, "UiPreview");
+                    if (q.TryGetValue("dlgnum", out var dn)) ui.Dialog.SetString(dn);
+                }
+                else ui.Confirm(-1, new List<string>(), 0);
+            }
             if (q.ContainsKey("npc"))
                 ui.ShowHtml("<html><title>Gatekeeper</title><body>Gatekeeper Ruby:<br>Para onde deseja ir?<br><a action=\"bypass -h x\">Giran Castle Town - 0 Adena</a><br><a action=\"bypass -h y\">Dragon Valley - 1800 Adena</a><br><button value=\"Fechar\" action=\"bypass -h z\" width=80 height=21></body></html>");
             if (q.ContainsKey("death")) ui.ShowDeath(new List<(bool, int)> { (true, 0), (false, 1), (false, 2), (false, 3), (true, 4) });

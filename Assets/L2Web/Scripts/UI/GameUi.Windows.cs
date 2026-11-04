@@ -244,9 +244,66 @@ namespace L2Web.UI
         SlotData ItemData(InvItem it)
         {
             var name = GameData.ItemName(it.ItemId);
-            var title = $"{(it.Enchant != 0 ? "+" + it.Enchant + " " : "")}{name}{(it.Count > 1 ? " (" + Fmt(it.Count) + ")" : "")}{(it.Equipped ? " · " + (Body.TryGetValue(it.BodyPart, out var b) ? b : "equipado") : "")}\nDuplo clique: usar/equipar · arraste para a barra";
-            return new SlotData { Icon = GameData.ItemIcon(it.ItemId), Title = title, Count = it.Count, Badge = it.Enchant != 0 ? "+" + it.Enchant : null, Cls = it.Equipped ? "equipped" : null };
+            var title = $"{(it.Enchant != 0 ? "+" + it.Enchant + " " : "")}{name}{(it.Count > 1 ? " (" + Fmt(it.Count) + ")" : "")}";
+            var tip = TooltipItemOf(it);
+            return new SlotData
+            {
+                Icon = GameData.ItemIcon(it.ItemId), Title = title, Count = it.Count, Badge = it.Enchant != 0 ? "+" + it.Enchant : null, Cls = it.Equipped ? "equipped" : null,
+                Tip = () => L2Tooltip.Item(tip),
+            };
         }
+
+        /// <summary>
+        /// ItemInfo do item do inventario para o tooltip "Inventory": tipo (Type2 = EItemType), slot, encantamento,
+        /// quantidade e os atributos de cliente (ItemStats: weapongrp/armorgrp/ItemName-e). [I] empilhavel = Type2 &gt;= 3 (o
+        /// pacote nao traz o ConsumeType); sem o peso dos etcitem e o maximo de mana dos itens sombra (sem o etcitemgrp).
+        /// </summary>
+        public static TooltipItem TooltipItemOf(InvItem it)
+        {
+            var s = ItemStats.Of(it.ItemId);
+            var t = new TooltipItem
+            {
+                ClassId = it.ItemId, ServerId = it.ObjectId, Name = GameData.ItemName(it.ItemId), ItemType = it.Type2, SlotBitType = it.BodyPart,
+                Enchanted = it.Enchant, ItemNum = it.Count, ConsumeType = it.Type2 >= 3 ? 2 : 0,
+                AdditionalName = s?.AddName ?? "", Description = (s?.Description ?? "").Replace("\\n", "\n"),
+            };
+            if (s == null) return t;
+            t.CrystalType = s.CrystalType;
+            t.Weight = s.Weight;
+            t.ArmorType = s.ArmorType;
+            t.AvoidModify = s.Avoid;
+            if (s.Weapon)
+            {
+                t.WeaponType = s.WeaponType;
+                t.PhysicalDamage = s.PAtk;
+                t.MagicalDamage = s.MAtk;
+                t.AttackSpeed = s.Speed;
+                t.SoulshotCount = s.SoulShot;
+                t.SpiritshotCount = s.SpiritShot;
+                t.ShieldDefense = s.ShieldPDef;
+                t.ShieldDefenseRate = s.ShieldRate;
+            }
+            else
+            {
+                t.PhysicalDefense = s.PDef;
+                t.MagicalDefense = s.MDef;
+                t.MpBonus = s.MpBonus;
+            }
+            return t;
+        }
+
+        /// <summary>Tooltip "Skill" (MagicSkillWnd): nome, encantamento, nivel, tipo, custos, alcance e descricao do skillname-e.</summary>
+        public static CustomTooltip SkillTooltip(int id, int level)
+        {
+            var r = L2SkillData.Get(id, level);
+            var add = L2TooltipData.EnchantName(id, level);
+            var lv = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : level;
+            return L2Tooltip.Skill(GameData.SkillName(id, level), add, lv, L2TooltipData.OperateType(id, level, i => GameData.SysString(i, "")),
+                r?.HpConsume ?? 0, r?.MpConsume ?? 0, r?.CastRange ?? -1, L2TooltipData.Skill(id, level)?.Desc ?? "");
+        }
+
+        /// <summary>Tooltip "Action" (ActionWnd): nome e descricao do actionname-e.</summary>
+        public static CustomTooltip ActionTooltip(int id) => L2Tooltip.Action(GameData.ActionName(id), L2TooltipData.Action(id)?.Desc ?? "");
 
         void BindItem(UiTexButton b, InvItem it)
         {
@@ -304,13 +361,15 @@ namespace L2Web.UI
             SlotData Data(SkillInfo s)
             {
                 var name = $"{GameData.SkillName(s.Id, s.Level)} Nv {s.Level}";
-                return new SlotData { Icon = GameData.SkillIcon(s.Id), Title = name + (s.Passive ? " (passiva)" : "\nDuplo clique: usar · arraste para a barra"), Cls = s.Disabled ? "disabled" : null };
+                int id = s.Id, lv = s.Level;
+                return new SlotData { Icon = GameData.SkillIcon(s.Id), Title = name, Cls = s.Disabled ? "disabled" : null, Tip = () => SkillTooltip(id, lv) };
             }
             var bs = L2WndUtil.FillItemWindow(w, "SkillItem", active.Select(Data).ToList(), IconUrl);
             for (var k = 0; k < bs.Count; k++)
             {
                 var id = active[k].Id;
-                bs[k].OnDoubleClick = () => deps.Send(UiPackets.MagicSkillUse(id, CtrlHeld, ShiftHeld));
+                // MagicSkillWnd.uc:45-54: OnClickItem -> UseSkill (clique simples)
+                bs[k].OnClick = () => deps.Send(UiPackets.MagicSkillUse(id, CtrlHeld, ShiftHeld));
                 Draggable(bs[k], "skill", id);
             }
             L2WndUtil.FillItemWindow(w, "PItemWnd", passive.Select(Data).ToList(), IconUrl);
@@ -322,7 +381,7 @@ namespace L2Web.UI
             void Fill(string ctrl, int[] ids)
             {
                 var list = ids.Where(id => GameData.ActionName(id) != $"ação {id}").ToList();
-                var bs = L2WndUtil.FillItemWindow(w, ctrl, list.Select(id => new SlotData { Icon = GameData.ActionIcon(id), Title = $"{GameData.ActionName(id)}\nClique: usar · arraste para a barra" }).ToList(), IconUrl);
+                var bs = L2WndUtil.FillItemWindow(w, ctrl, list.Select(id => new SlotData { Icon = GameData.ActionIcon(id), Title = GameData.ActionName(id), Tip = () => ActionTooltip(id) }).ToList(), IconUrl);
                 for (var k = 0; k < bs.Count; k++)
                 {
                     var id = list[k];
@@ -344,6 +403,7 @@ namespace L2Web.UI
             var ev = UiEvents.Of(b);
             ev.OnBeginDrag = _ =>
             {
+                UiTooltip.Dragging = true;
                 var icon = b.transform.Find("icon")?.GetComponent<RawImage>();
                 if (!dragGhost)
                 {
@@ -365,6 +425,7 @@ namespace L2Web.UI
             };
             ev.OnEndDrag = e =>
             {
+                UiTooltip.Dragging = false;
                 if (dragGhost) dragGhost.gameObject.SetActive(false);
                 for (var t = e.pointerCurrentRaycast.gameObject ? e.pointerCurrentRaycast.gameObject.transform : null; t; t = t.parent)
                 {
@@ -655,7 +716,13 @@ namespace L2Web.UI
                 if (key == sc.Key) continue;
                 sc.Key = key;
                 var keyName = sc.Bar == 0 ? $"F{sc.Index + 1}" : sc.Bar == 1 ? $"Alt+F{sc.Index + 1}" : $"Ctrl+Shift+F{sc.Index + 1}";
-                UiTooltip.Set(sc.Rt.gameObject, $"{keyName}: {label}{(s != null ? "\nBotão direito: remover" : "\nArraste um item, skill ou ação para cá")}");
+                // tooltip "Shortcut" (ToolTip.uc:1259-1397); slot vazio, sem dica
+                if (s != null)
+                {
+                    var sc0 = s;
+                    UiTooltip.SetCustom(sc.Rt.gameObject, () => ShortcutTooltip(sc0), false, $"{keyName}: {label}");
+                }
+                else UiTooltip.Set(sc.Rt.gameObject, "");
                 var url = s != null ? IconUrl(icon) : null;
                 sc.Letter.text = s != null && url == null ? (label.Length > 2 ? label.Substring(0, 2) : label) : "";
                 var letter = sc.Letter;
@@ -701,6 +768,29 @@ namespace L2Web.UI
         public int SkillByName(string name) =>
             skills.FirstOrDefault(k => string.Equals(GameData.SkillName(k.Id, k.Level), name, StringComparison.OrdinalIgnoreCase))?.Id ?? 0;
 
+        /// <summary>Tooltip "Shortcut": item (encantamento, nome, grau, quantidade), skill (nome, nivel, MP) ou so o nome.</summary>
+        CustomTooltip ShortcutTooltip(Shortcut s)
+        {
+            switch (s.Type)
+            {
+                case "item":
+                    return items.TryGetValue(s.Id, out var it) ? L2Tooltip.Shortcut(1, TooltipItemOf(it)) : L2Tooltip.Shortcut(1, new TooltipItem { Name = ShortcutLabel(s) });
+                case "skill":
+                {
+                    var lv = skills.FirstOrDefault(k => k.Id == s.Id)?.Level ?? s.Level;
+                    if (lv == 0) lv = 1;
+                    var r = L2SkillData.Get(s.Id, lv);
+                    var add = L2TooltipData.EnchantName(s.Id, lv);
+                    var shown = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : lv;
+                    return L2Tooltip.Shortcut(2, new TooltipItem { Name = GameData.SkillName(s.Id, lv), Level = shown, MpConsume = r?.MpConsume ?? 0 }, add);
+                }
+                case "action":
+                    return L2Tooltip.Shortcut(3, new TooltipItem { Name = GameData.ActionName(s.Id) });
+                default:
+                    return L2Tooltip.Shortcut(4, new TooltipItem { Name = ShortcutLabel(s) });
+            }
+        }
+
         string ShortcutLabel(Shortcut s)
         {
             if (s.Type == "item") return items.TryGetValue(s.Id, out var it) ? GameData.ItemName(it.ItemId) : $"item {s.Id}";
@@ -714,46 +804,21 @@ namespace L2Web.UI
         }
 
         // ------------------------------------------------------------ confirmacao (DialogBox)
-        /// <summary>ConfirmDlg: pergunta com OK/Cancelar (DlgAnswer).</summary>
+        /// <summary>
+        /// ConfirmDlg (0xed, nativo no original): pergunta com OK/Cancelar no DialogBox; a resposta vai no DlgAnswer. Um dialogo
+        /// aberto e fechado antes (o nativo nao passa pelo m_bInUse do script).
+        /// </summary>
         public void Confirm(int messageId, IList<string> prms, int requesterId)
         {
             var m = GameData.SystemMessage(messageId, prms);
-            DialogWnd.Text("DialogText", m.Text);
-            var t = DialogWnd.TextEl("DialogText");
-            if (t)
-            {
-                t.horizontalOverflow = HorizontalWrapMode.Wrap;
-                t.alignment = TextAnchor.UpperLeft;
-            }
-            dialogAnswer = ok => deps.Send(UiPackets.DlgAnswer(messageId, ok, requesterId));
-            DialogWnd.OnClose = () => Answer(false);
-            DialogWnd.Show();
+            Dialog.Ask(EDialogType.OKCancel, m.Text, "ConfirmDlg", (ok, _) => deps.Send(UiPackets.DlgAnswer(messageId, ok, requesterId)));
         }
 
-        /// <summary>DialogShow(DIALOG_Warning, sysmsg) local: OK chama `answer(true)`; Cancelar so fecha.</summary>
+        /// <summary>DialogShow(DIALOG_Warning, sysmsg) local: OK chama `answer(true)`; Cancelar `answer(false)`.</summary>
         public void Ask(int messageId, Action<bool> answer)
         {
-            Answer(false);
             var m = GameData.SystemMessage(messageId, new List<string>());
-            DialogWnd.Text("DialogText", m.Text);
-            var t = DialogWnd.TextEl("DialogText");
-            if (t)
-            {
-                t.horizontalOverflow = HorizontalWrapMode.Wrap;
-                t.alignment = TextAnchor.UpperLeft;
-            }
-            dialogAnswer = answer;
-            DialogWnd.OnClose = () => Answer(false);
-            DialogWnd.Show();
-        }
-
-        void Answer(bool ok)
-        {
-            var f = dialogAnswer;
-            dialogAnswer = null;
-            DialogWnd.OnClose = () => { };
-            DialogWnd.Hide();
-            f?.Invoke(ok);
+            Dialog.Ask(EDialogType.Warning, m.Text, "GameUi", (ok, _) => answer(ok));
         }
     }
 }

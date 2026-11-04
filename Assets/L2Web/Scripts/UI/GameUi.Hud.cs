@@ -46,7 +46,26 @@ namespace L2Web.UI
                 case "SetShortcutPage":
                     SetPage(0, num);
                     return true;
+                case "ChatWndSetFocus":
+                    // HandleKeyboardInput com o Enter Chat desligado: EV_ChatWndSetFocus (o ChatWnd.uc foca o campo)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ChatWndSetFocus, ""));
+                    return true;
+                case "ShowMacroListWindow":
+                    // NCConsole::ShowMacroListWnd -> EV_MacroShowListWnd (MacroListWnd.uc)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_MacroShowListWnd, ""));
+                    return true;
+                case "ApplyMinFrame":
+                    // [I] alterna o "manter FPS minimo" (Option.ini [Video] IsKeepMinFrameRate) e avisa com EV_MinFrameRateChanged
+                    L2Options.SetBool("Video", "IsKeepMinFrameRate", !L2Options.GetBool("Video", "IsKeepMinFrameRate"));
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_MinFrameRateChanged, L2Param.Add("", "MinFrameRate", L2Options.GetBool("Video", "IsKeepMinFrameRate") ? 1 : 0)));
+                    return true;
+                case "ShowGMPetitionWindow":
+                    // [I] a janela de peticao do usuario (UserPetitionWnd.uc registra EV_ShowUserPetitionWnd)
+                    L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ShowUserPetitionWnd, ""));
+                    return true;
                 case "FocusChatWindow":
+                    // com o DialogBox aberto o Enter e a acao padrao dele (DoDefaultAction) [I]
+                    if (Dialog.Enter()) return true;
                     FocusChat();
                     return true;
                 case "ShowPartyBuff":
@@ -157,7 +176,9 @@ namespace L2Web.UI
                 var d = UiRoot.Box("buff", box, col * 26, row * 26, 26, 26);
                 L2WndUtil.Paint(d, "L2UI.EtcWndBack.AbnormalBack", 26, 26);
                 var name = $"{GameData.SkillName(skillId, level)} Nv {level}";
-                UiTooltip.Set(d.gameObject, name);
+                int sid = skillId, slv = level;
+                var end = until;
+                UiTooltip.SetCustom(d.gameObject, () => BuffTooltip(sid, slv, end), true, name);
                 var url = IconUrl(GameData.SkillIcon(skillId));
                 if (url != null)
                 {
@@ -187,6 +208,19 @@ namespace L2Web.UI
             cg.alpha = rows == 0 ? 0 : 1;
             cg.blocksRaycasts = rows > 0;
             Tick();
+        }
+
+        /// <summary>
+        /// Tooltip "AbnormalStatus": nome, encantamento, nivel, tempo restante (MakeBuffTimeStr, so fora dos debuffs e com
+        /// tempo) e descricao.
+        /// </summary>
+        static CustomTooltip BuffTooltip(int id, int level, double until)
+        {
+            var r = L2SkillData.Get(id, level);
+            var add = L2TooltipData.EnchantName(id, level);
+            var lv = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : level;
+            var remain = double.IsInfinity(until) ? -1 : (int)Math.Max(0, Math.Floor((until - LoadTrack.Now()) / 1000));
+            return L2Tooltip.AbnormalStatus(GameData.SkillName(id, level), add, lv, L2SkillData.IsDebuff(id, level), remain, L2TooltipData.Skill(id, level)?.Desc ?? "");
         }
 
         /// <summary>Atualiza contadores (reuso nos atalhos, tempo dos buffs) e o alvo. Chamado algumas vezes por segundo.</summary>
