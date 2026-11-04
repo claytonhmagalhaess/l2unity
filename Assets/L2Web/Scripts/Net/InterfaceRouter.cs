@@ -248,6 +248,9 @@ namespace L2Web.Net
             Ex(0x4e, r => Emit(InterfaceEvents.Duel(Ev.EV_DuelEnd, PartyMatchPackets.ParseExDuelType(r))));
             Ex(0x4f, r => Emit(InterfaceEvents.DuelUserInfo(PartyMatchPackets.ParseExDuelUpdateUserInfo(r))));
 
+            // ---------------------------------------------------------------- mensagens na tela (T16)
+            Ex(0x38, r => Emit(InterfaceEvents.ScreenMessage(UiPackets.ParseExShowScreenMessage(r))));
+
             // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
             On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));
             On(0x42, r => ShowWarehouse(StorePackets.ParseWarehouseWithdrawList(r)));

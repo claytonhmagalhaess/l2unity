@@ -2,7 +2,7 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 113 tratados no Unity
+- UI: 198 no original, 114 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 36 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
@@ -70,7 +70,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x35 | ExListPartyMatchingWaitingRoom | ExListPartyMatchingWaitingRoom | UI | EV_PartyMatchWaitList, EV_PartyMatchWaitListStart | tratado |
 | ex | 0x36 | ExSetMpccRouting |  | UI | EV_CommandChannelRoutingType | tratado |
 | ex | 0x37 | ExShowAdventurerGuideBook | ExShowAdventurerGuideBook | UI | EV_ShowGuideWnd | falta |
-| ex | 0x38 | ExShowScreenMessage | ExShowScreenMessage | UI | EV_ShowScreenMessage | falta |
+| ex | 0x38 | ExShowScreenMessage | ExShowScreenMessage | UI | EV_ShowScreenMessage | tratado |
 | ex | 0x39 | PledgeSkillListPacket | PledgeSkillList | UI | EV_ClanSkillList | tratado |
 | ex | 0x3a | PledgeSkillListAddPacket | PledgeSkillListAdd | UI | EV_ClanSkillListAdd | tratado |
 | ex | 0x3b | PledgePowerGradeList | PledgePowerGradeList | UI | EV_ClanAuthGradeList | tratado |

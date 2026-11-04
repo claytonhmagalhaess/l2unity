@@ -173,6 +173,35 @@ namespace L2Web.Net
         public int PlayerId, ObjectId, X, Y, Z;
     }
 
+    /// <summary>
+    /// ExShowScreenMessage FE:38: os 10 d na ordem em que o OnScreenMessageWnd.uc le as chaves do EV_ShowScreenMessage (sem
+    /// MsgColorR/G/B, que o nativo nao manda). Nomes do aCis entre parenteses.
+    /// </summary>
+    public sealed class ScreenMessageInfo
+    {
+        /// <summary>0 mensagem de sistema (MsgNo), 1 texto (Msg) (type).</summary>
+        public int MsgType;
+        /// <summary>Id do systemmsg (sysMessageId).</summary>
+        public int MsgNo;
+        /// <summary>Janela 1..8 (position).</summary>
+        public int WindowType;
+        /// <summary>(hide) o script le e ignora.</summary>
+        public int FontSize;
+        /// <summary>0 grande com sombra, 1 pequena (size).</summary>
+        public int FontType;
+        /// <summary>(unk2) o script le e ignora.</summary>
+        public int MsgColor;
+        /// <summary>(unk3) o script le e ignora.</summary>
+        public int ShadowType;
+        /// <summary>1 = faixa de fundo na janela 2 (effect).</summary>
+        public int BackgroundType;
+        /// <summary>Tempo na tela em ms (time).</summary>
+        public int LifeTime;
+        /// <summary>Velocidade do fade (fade).</summary>
+        public int AnimationType;
+        public string Msg;
+    }
+
     public static class UiPackets
     {
         // ---------------------------------------------------------------- servidor -> cliente
@@ -537,6 +566,13 @@ namespace L2Web.Net
             o.Count = r.D();
             return o;
         }
+
+        /// <summary>ExShowScreenMessage FE:38 "ddddddddddS" (sem o sub-opcode).</summary>
+        public static ScreenMessageInfo ParseExShowScreenMessage(PacketReader r) => new ScreenMessageInfo
+        {
+            MsgType = r.D(), MsgNo = r.D(), WindowType = r.D(), FontSize = r.D(), FontType = r.D(), MsgColor = r.D(), ShadowType = r.D(),
+            BackgroundType = r.D(), LifeTime = r.D(), AnimationType = r.D(), Msg = r.S(),
+        };
 
         /// <summary>GetItem 0x0d: D quemPegou, D obj, D x, D y, D z.</summary>
         public static GetItemInfo ParseGetItem(PacketReader r) => new GetItemInfo { PlayerId = r.D(), ObjectId = r.D(), X = r.D(), Y = r.D(), Z = r.D() };

@@ -598,6 +598,24 @@ namespace L2Web.Net
             return new() { E(Ev.EV_DuelUpdateUserInfo, P(P(P(p, "maxMP", d.MaxMp), "currentCP", d.Cp), "maxCP", d.MaxCp)) };
         }
 
+        // ---------------------------------------------------------------- mensagens na tela (T16, spec 02 §3.9)
+
+        /// <summary>ExShowScreenMessage (FE:38): EV_ShowScreenMessage com as 10 chaves e Msg (MsgColorR/G/B ficam no padrao 255 do script).</summary>
+        public static List<PacketEvents.Event> ScreenMessage(ScreenMessageInfo m)
+        {
+            var p = P("", "MsgType", m.MsgType);
+            p = P(p, "MsgNo", m.MsgNo);
+            p = P(p, "WindowType", m.WindowType);
+            p = P(p, "FontSize", m.FontSize);
+            p = P(p, "FontType", m.FontType);
+            p = P(p, "MsgColor", m.MsgColor);
+            p = P(p, "ShadowType", m.ShadowType);
+            p = P(p, "BackgroundType", m.BackgroundType);
+            p = P(p, "LifeTime", m.LifeTime);
+            p = P(p, "AnimationType", m.AnimationType);
+            return new() { E(Ev.EV_ShowScreenMessage, P(p, "Msg", m.Msg)) };
+        }
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>
