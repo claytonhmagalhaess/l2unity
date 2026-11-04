@@ -16,7 +16,7 @@ namespace L2Web.UI
         public readonly QuestListScript L = new();
         readonly GameUi ui;
         readonly Action<byte[]> send;
-        RectTransform treeEl, content, listContent;
+        RectTransform treeEl, content;
         float treeOffset, treeH;
         static readonly Color TextColor = new Color32(0xdc, 0xdc, 0xdc, 0xff);
 
@@ -262,67 +262,32 @@ namespace L2Web.UI
             });
             var tip = ListWnd.Get("QuestToolTip");
             if (tip) UiTooltip.SetCustom(tip.gameObject, () => L2Tooltip.QuestLegend(2), false, "");
-            var el = ListWnd.Get("lstQuest");
-            if (!el) return;
-            var hit = el.gameObject.GetComponent<Image>() ?? el.gameObject.AddComponent<Image>();
-            hit.color = new Color(0, 0, 0, 0.001f);
-            el.gameObject.AddComponent<RectMask2D>();
-            listContent = UiRoot.Box("content", el, 0, 0, el.sizeDelta.x, el.sizeDelta.y);
+            list = new L2ListCtrl(ListWnd, "lstQuest")
+            {
+                OnClick = i => L.Selected = i,
+                // popupType QuestInfo; o nReserved1 da coluna 3 fica 0 no QuestListWnd
+                Tooltip = i =>
+                {
+                    var r = L.Records[i];
+                    return L2Tooltip.QuestInfo(r.Name, r.Requirement, r.Level, 0, r.Desc, s => (int)Measure(s, 0, false));
+                },
+            };
         }
 
-        const float HeaderH = 22, RowH = 18;
+        L2ListCtrl list;
 
-        /// <summary>ListCtrl lstQuest [I: o NCListCtrl nao foi lido]: cabecalho com as colunas do xdat, linhas de 18 px.</summary>
         void RenderList()
         {
-            if (!listContent) return;
-            UiKit.Clear(listContent);
-            var cols = ListWnd.Ctrl("lstQuest")?.J["columns"] as Newtonsoft.Json.Linq.JArray;
-            var widths = new List<float>();
-            float x = 0;
-            if (cols != null)
-                foreach (var c in cols)
+            if (list == null) return;
+            list.Selected = L.Selected;
+            var rows = new List<L2ListCtrl.Cell[]>();
+            foreach (var r in L.Records)
+                rows.Add(new[]
                 {
-                    var w = (float)c["width"];
-                    var h = UiRoot.Box("head", listContent, x, 0, w, HeaderH);
-                    L2WndUtil.Paint(h, "L2UI_CH3.ListCtrl.ListCtrlHead", w, HeaderH, PaintMode.Stretch);
-                    var t = UiRoot.Label(h, GameData.SysString((int)c["textStringId"], ""), 0, 0, w, HeaderH, 11, new Color32(0xa3, 0xa3, 0xa3, 0xff), TextAnchor.MiddleCenter);
-                    t.raycastTarget = false;
-                    widths.Add(w);
-                    x += w;
-                }
-            for (var i = 0; i < L.Records.Count; i++)
-            {
-                var r = L.Records[i];
-                var idx = i;
-                var row = UiRoot.Box("row", listContent, 0, HeaderH + i * RowH, listContent.sizeDelta.x, RowH);
-                if (i == L.Selected) L2WndUtil.Paint(row, "L2UI_CH3.ListCtrl.TextSelect", row.sizeDelta.x, RowH, PaintMode.Stretch, 0, 0, 16, 13);
-                var cells = new[] { r.Name, r.Requirement, r.Level, null, r.Npc };
-                float cx = 0;
-                for (var k = 0; k < cells.Length && k < widths.Count; k++)
-                {
-                    if (k == 3)
-                    {
-                        var ic = UiRoot.Box("icon", row, cx + (widths[k] - 16) / 2, 1, 16, 16);
-                        L2WndUtil.Paint(ic, r.Icon, 16, 16, PaintMode.Stretch);
-                    }
-                    else
-                    {
-                        var t = UiRoot.Label(row, cells[k], cx + 4, 0, widths[k] - 8, RowH, 11, TextColor, k == 2 ? TextAnchor.MiddleCenter : TextAnchor.MiddleLeft);
-                        t.raycastTarget = false;
-                    }
-                    cx += widths[k];
-                }
-                var hit = row.gameObject.AddComponent<Image>();
-                hit.color = new Color(0, 0, 0, 0.001f);
-                row.gameObject.AddComponent<UiTexButton>().OnClick = () =>
-                {
-                    L.Selected = idx;
-                    RenderList();
-                };
-                // popupType QuestInfo; o nReserved1 da coluna 3 fica 0 no QuestListWnd
-                UiTooltip.SetCustom(row.gameObject, () => L2Tooltip.QuestInfo(r.Name, r.Requirement, r.Level, 0, r.Desc, s => (int)Measure(s, 0, false)), false, r.Name);
-            }
+                    new L2ListCtrl.Cell { Text = r.Name }, new L2ListCtrl.Cell { Text = r.Requirement }, new L2ListCtrl.Cell { Text = r.Level },
+                    new L2ListCtrl.Cell { Tex = r.Icon, TexW = 16, TexH = 16 }, new L2ListCtrl.Cell { Text = r.Npc },
+                });
+            list.Render(rows);
         }
     }
 }

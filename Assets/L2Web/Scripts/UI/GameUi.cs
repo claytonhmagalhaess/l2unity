@@ -178,6 +178,8 @@ namespace L2Web.UI
         public PetView Pets { get; private set; }
         /// <summary>QuestTreeWnd (aba do MainWnd) e QuestListWnd, #0037.</summary>
         public QuestView Quests { get; private set; }
+        /// <summary>ClanWnd (aba do MainWnd), ClanDrawerWnd e InviteClanPopWnd, #0038.</summary>
+        public ClanView Clan { get; private set; }
 
         /// <summary>Janelas que o HandleStartTrade fecha (inventario, loja, multisell; armazem e loja privada quando existirem).</summary>
         public List<L2Wnd> TradeCloses() => new() { Inv, ShopWnd?.Wnd, MultiSellWnd?.Wnd, WarehouseWnd?.Wnd, PrivateShopWnd?.Wnd };
@@ -215,6 +217,9 @@ namespace L2Web.UI
         readonly HashSet<int> autoShots = new();
         readonly List<(int skillId, int level, double until)> buffs = new();
         Entity target;
+
+        /// <summary>Alvo atual (GetTargetInfo).</summary>
+        public Entity Target => target;
 
         /// <summary>
         /// Cria a interface em `root` (um RectTransform em tela cheia, ex.: filho de UiRoot.Rect). Precisa de
@@ -368,6 +373,8 @@ namespace L2Web.UI
             Main = new L2Wnd("MainWnd", Layer, new WndOpts { Embed = new[] { "DetailStatusWnd", "MagicSkillWnd", "ActionWnd", "ClanWnd", "QuestTreeWnd" }, AriaLabel = "Personagem" });
             // QuestTreeWnd (aba) e QuestListWnd do xdat (#0037)
             Quests = new QuestView(Layer, this, b => this.deps.Send(b));
+            // ClanWnd (aba), ClanDrawerWnd e InviteClanPopWnd do xdat (#0038)
+            Clan = new ClanView(Layer, this, b => this.deps.Send(b));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {
@@ -571,6 +578,9 @@ namespace L2Web.UI
             StatusWnd.Bar("EXPBar", (float)pct, 100, F2(pct) + "%");
             SetBars(u.Hp, u.MaxHp, u.Mp, u.MaxMp, u.Cp, u.MaxCp);
             RenderStatus(u, pct);
+            // OnReceivePledgeMyAuth (UserInfo): os privilegios do cla e o lider (relacao 0x40) viram EV_ClanMyAuth [I]
+            if (u.Stats != null && u.Stats.ContainsKey("clanPrivileges"))
+                L2Events.Dispatch(new PacketEvents.Event(Ev.EV_ClanMyAuth, ClanScript.MyAuthParam((int)Stat(u, "clanPrivileges"), (Stat(u, "relation") & 0x40) != 0)));
         }
 
         /// <summary>Ultimo UserInfo recebido.</summary>
