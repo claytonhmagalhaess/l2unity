@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui4 (vaga nova, `worktrees\ui4`) |
 | Branch | `feat/ui-html` (nasce de `feat/ui-revisao`, #0047) |
-| Estado | bloqueada (suíte e ao vivo esperando RAM ou a sessão de testes) |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (NCHtmlViewer, NpcHtmlMessage, ShowBoard, 89, 96); `analises\interface-p166\02_interacoes.md` (roda e cliques no `NCHtmlViewer`); `UI/L2Html.cs` |
 | Sessão | ui: HTML do servidor (#0055) |
 | Criada | 2026-11-04 |
@@ -64,6 +64,10 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — REA do NCHtmlViewer (relatório nas notas da sessão, `0055-rea-nchtmlviewer.md`) e reescrita do parser, do layout, das texturas e das ações pelo original (`98b3d0f`); pedido 0047 (net).
 - 2026-11-04 — `Docs/html_suporte.md` com a tabela de tags e atributos, evidência e estado (`d96d606`).
 - 2026-11-04 — bloqueada: `run_tests.sh` e o ao vivo precisam do Unity. Na ui4, isso é a primeira importação (~8 GB) com 2 GB livres. Pedi à coordenadora para pôr na fila da sessão de testes.
+- 2026-11-04 — 0055-1 (sessão de testes, `d96d606`): suíte 772/772 (a base `b88e07c` dá 750/750). Ao vivo, o buffer mostra os ícones e o board tem os fundos; mas o sublinhado dos links do gatekeeper ficou mais largo que o texto, e a aba Region não muda (o aCis local só trata `bbs_*`).
+- 2026-11-04 — o sublinhado e a medida passam a usar a escala do Canvas (`feb17cf`). Capturas em `Docs/evidencias/html/` e K34 no `Docs/validacao.md` (`86bc02a`).
+- 2026-11-04 — 0055-2 (`feb17cf`): o sublinhado ficou certo, mas as descrições do buffer passaram a quebrar (dpi 120, escala 1,25). A largura natural da célula passa a usar a mesma soma de pedaços da quebra, com teste de regressão (`9d9f8e6`).
+- 2026-11-04 — 0055-3 (`9d9f8e6`): suíte 773/773; buffer com uma linha por descrição e os sublinhados do tamanho do texto. Capturas finais (`c3a2cc2`). Pronta p/ merge.
 
 ## Decisões e REA
 
@@ -86,9 +90,22 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/ui-html`, de `feat/ui-revisao` `b88e07c`): `284bf86`, `48ed30a`, `4d735d9`, `dd93575`, `2c95a76`, `4ee8e04`, `98b3d0f`, `d96d606`, `d6718cf`, `feb17cf`, `86bc02a`, `9d9f8e6`, `c3a2cc2`. O merge precisa juntar a tabela do `Docs/contas_teste.md` com as das vagas ui2, ui3 e net.
+- **Testes** (sessão de testes, `testes\0055-1..3\`):
+  - suíte inteira 773/773 em `9d9f8e6`; a base `b88e07c` dá 750/750;
+  - `L2HtmlTests` 26/26, entre eles o corpus do aCis (3751 HTMLs sem tag ou atributo desconhecido); `NpcHtmlWndTests` 3/3; `SystemMenuTests` 11/11;
+  - ao vivo no aCis local (1024×768, escala 1,25, `l2webtest6`): buffer, gatekeeper, board Top/Region e quest, antes e depois, em `Docs/evidencias/html/`; 0 erros no console.
+- **Falta / fora do escopo:**
+  - [V] a altura do 'A' (13) e a fonte, sem captura do original;
+  - barra de rolagem do HtmlCtrl;
+  - `textani`;
+  - limite do edit pela largura;
+  - nomes de castelo `&%N;`;
+  - partes 1..4 e 1001/1002 do BBS e o `RequestBBSWrite` (pedido 0034);
+  - deslocamento do clip do BBS;
+  - a janela do board passa da borda direita em 1024×768: é a posição do BoardWnd, não o HTML, e já acontecia antes;
+  - quest de verdade ao vivo (nenhum NPC por perto tinha quest para um personagem novo).
+  - Pedidos abertos: 0042 (App.cs: o tutorial só abre com ele), 0043 (sek e Default no shared; até lá, os botões `sek.cbui*` do admin ficam pretos) e 0047 (net).
 
 ## Pedidos
 
