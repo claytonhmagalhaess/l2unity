@@ -45,7 +45,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-04 — layout próprio no lugar dos LayoutGroups do uGUI; botão com `icon.*` (o defeito do buffer); `bgcolor` (`284bf86`). Largura do viewer em cada janela (`48ed30a`).
 - 2026-11-04 — TutorialViewerWnd do xdat e eventos do 0xa0/0xa3 (`4d735d9`, `4ee8e04`); pedido 0042 (App.cs).
 - 2026-11-04 — `Docs/tools/copy_html_textures.py` e pedido 0043 (sek e Default no shared) (`dd93575`); conta `l2webtest6` em `Docs/contas_teste.md` (`2c95a76`).
-- 2026-11-04 — REA do NCHtmlViewer (relatório nas notas da sessão, `0055-rea-nchtmlviewer.md`) e reescrita do parser, do layout, das texturas e das ações pelo original (`98b3d0f`); pedido 0044 (net).
+- 2026-11-04 — REA do NCHtmlViewer (relatório nas notas da sessão, `0055-rea-nchtmlviewer.md`) e reescrita do parser, do layout, das texturas e das ações pelo original (`98b3d0f`); pedido 0047 (net).
 - 2026-11-04 — `Docs/html_suporte.md` com a tabela de tags e atributos, evidência e estado (`d96d606`).
 - 2026-11-04 — bloqueada: `run_tests.sh` e o ao vivo precisam do Unity. Na ui4, isso é a primeira importação (~8 GB) com 2 GB livres. Pedi à coordenadora para pôr na fila da sessão de testes.
 
@@ -65,7 +65,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - **[V]** A altura do 'A' da SmallFont-r ficou em 13 px (linha de 19). A fonte do porte continua a embutida do Unity em 11 px. Precisa de captura do original na mesma resolução.
 - **[I]** Combobox ocupa 21 + 6 na linha, como o botão.
 - **Decisão:** textura que falta no botão = `Default.BlackTexture` (como o original), ou preto sólido enquanto o pedido 0043 não põe o `Default.*` no shared. Os `sek.cbui*` ficam pretos até o 0043; o cliente de referência tem o `sek.utx`.
-- **Decisão:** os pacotes do tutorial (0x7b/0x7c) ficam na `TutorialViewerView` até a net atender o pedido 0044, como a #0047 fez com a petição.
+- **Decisão:** os pacotes do tutorial (0x7b/0x7c) ficam na `TutorialViewerView` até a net atender o pedido 0047, como a #0047 fez com a petição.
 - **Arquivos compartilhados tocados:** nenhum (`App.cs` vai pelo pedido 0042). Fora do HTML, foram tocados `UI/GameUi.cs` (cria a `TutorialViewerView`), `UI/GameUi.Windows.cs` (`HtmlAct`: confirmação do `msg`, `cmd`, systemmsg), `UI/PacketEvents.cs` (eventos do tutorial), `UI/HelpHtmlView.cs`, `UI/LobbyServerScreen.cs`, `UI/PetitionView.cs` (largura do viewer e `<a link>`), `UI/BoardView.cs`, `UI/NpcHtmlWnd.cs` e os testes `NpcHtmlWndTests`/`SystemMenuTests` (API do botão e do sublinhado).
 
 ## Entrega
@@ -78,5 +78,5 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 - 0042 (coordenadora): `App.cs` despacha o 0xa0 TutorialShowHtml e o 0xa3 TutorialCloseHtml.
 - 0043 (coordenadora): rodar `Docs/tools/copy_html_textures.py` (sek e Default para o shared).
-- 0044 (net): `UiPackets.RequestTutorialLinkHtml` 0x7b e `RequestTutorialPassCmdToServer` 0x7c.
+- 0047 (net): `UiPackets.RequestTutorialLinkHtml` 0x7b e `RequestTutorialPassCmdToServer` 0x7c.
 - Já existente: 0034 (net), `RequestBBSWrite`, de que o `write` do board depende.
