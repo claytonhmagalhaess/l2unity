@@ -1,6 +1,7 @@
 // Vista do mundo sem servidor de jogo, para testar os assets (locais ou do dev.ts): monta a cena num ponto do mapa
 // com geodata, terreno do Unreal, StaticMeshes e BSP, poe um personagem e alguns NPCs com modelo e animacao, toca a
-// musica da zona e um som de interface. No executavel: -l2offline segundos [-l2shots pasta] (captura e sai).
+// musica da zona e um som de interface. No executavel: -l2offline segundos [-l2shots pasta] (captura e sai)
+// [-l2offlinepos x,y,z] (outro ponto no lugar de Giran).
 //   L2Web.Dev.OfflineView.Begin(83400, 147950, -3400)   ->  OfflineView.Report
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,6 +46,15 @@ namespace L2Web.Dev
         async void Start()
         {
             if (App.Instance && App.Instance.Lobby != null) App.Instance.Lobby.Stop();
+            // -l2offlinepos x,y,z: outro ponto do mapa no lugar de Giran (capturas por cidade, #0023)
+            var at = App.ArgValue("-l2offlinepos")?.Split(',');
+            if (at is { Length: 3 })
+            {
+                var ic = System.Globalization.CultureInfo.InvariantCulture;
+                x = float.Parse(at[0], ic);
+                y = float.Parse(at[1], ic);
+                z = float.Parse(at[2], ic);
+            }
             foreach (Transform c in UiRoot.Rect) c.gameObject.SetActive(false);
             World = new GameWorld { Ground = GeoTerrain.GroundHeight };
             L2Web.World.Entities.SetDrawHeight(GeoTerrain.VisualFloor);

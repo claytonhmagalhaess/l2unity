@@ -63,6 +63,8 @@ namespace L2Web
         public GameScene Scene => scene;
         public LobbyScene Lobby => lobby;
         public GameUi Ui => ui;
+        /// <summary>Pacotes das janelas da interface (#0046): eventos EV_* e o ultimo pacote lido de cada janela.</summary>
+        public InterfaceRouter Interface;
         public bool InWorld => inWorld;
         public string CurrentScreen => current;
         public IReadOnlyList<CharSlot> Chars => chars;
@@ -1121,6 +1123,8 @@ namespace L2Web
             gc?.Close();
             var (host, port) = GameClient.ResolveEndpoint(session);
             gc = new GameClient(new GameClientOptions { Host = host, Port = port, Session = session, Protocol = proto, Hwid = Hwid(), Log = m => Debug.Log("[game] " + m) });
+            Interface?.Dispose();
+            Interface = new InterfaceRouter(gc);
             leaving = false;
             var mine = gc;
             gc.OnClose = reason =>
@@ -1449,6 +1453,7 @@ namespace L2Web
             holdMouse = false;
             moveKeys.Clear();
             turnKeys.Clear();
+            keyMove.Reset();
         }
 
         void UnbindWorldHandlers()
@@ -1481,6 +1486,8 @@ namespace L2Web
             On(0x09, _ => world.OnAttackinCoolTime());
             On(0x0a, _ => world.OnAttackDeadTarget());
             On(0x25, _ => world.OnActionFailed());
+            // 0xf1 CameraMode (d): OnCameraMode(1) liga o modo camera (+0xa90), em que Espaco/Ctrl sobem e descem
+            On(0xf1, r => keyMove.FreeCamera = r.D() == 1);
             On(0x62, r =>
             {
                 var s = GamePackets.ParseStartRotation(r);
@@ -2380,6 +2387,8 @@ namespace L2Web
             if (!ready) return;
             var dt = Time.deltaTime;
             if (lobby != null && lobby.Running) lobby.Tick(dt);
+            // PrintScrn=OnRelease shot (UViewport::Exec): vale em qualquer tela, menos digitando
+            if (Keyboard.current != null && Keyboard.current[UserIniKeys.Shot].wasReleasedThisFrame && !UiRoot.TypingInField()) Shot();
             if (scene != null && inWorld)
             {
                 chatFloodTimer += dt;
@@ -2458,15 +2467,15 @@ namespace L2Web
         bool holdMouse;
         double holdSince, holdSent;
 
-        /// <summary>KeyboardMoveStart Dir=1 (W/cima) e Dir=4 (S/baixo) do user.ini: frente/tras no yaw da camera.</summary>
-        static readonly Dictionary<Key, int> MoveKeys = new() { [Key.W] = 1, [Key.UpArrow] = 1, [Key.S] = -1, [Key.DownArrow] = -1 };
         /// <summary>Left/RightTurningStart (A/D, setas laterais): gira o personagem, e a camera junto.</summary>
         static readonly Dictionary<Key, int> TurnKeys = new() { [Key.A] = -1, [Key.LeftArrow] = -1, [Key.D] = 1, [Key.RightArrow] = 1 };
+        /// <summary>KeyboardMoveStart (W/S, setas, Espaco/Ctrl) seguradas: Dir em UserIniKeys.MoveDirs.</summary>
         readonly HashSet<Key> moveKeys = new();
         readonly HashSet<Key> turnKeys = new();
-        float keyTimer;
-        bool keyMoving;
-        float keyYaw;
+        /// <summary>Movimento pelo teclado do user.ini (World/KeyboardMove.cs): W/S, Espaco/Ctrl e NumLock.</summary>
+        readonly KeyboardMove keyMove = new();
+        /// <summary>Zoom e altura da camera pelo teclado numerico (World/CameraKeys.cs).</summary>
+        readonly CameraKeys camKeys = new();
         int turnSent;
 
         /// <summary>Teclas nas telas do lobby: Enter entra com o personagem escolhido.</summary>
@@ -2528,7 +2537,7 @@ namespace L2Web
                 moveKeys.Clear();
                 turnKeys.Clear();
             }
-            foreach (var k in MoveKeys.Keys)
+            foreach (var k in UserIniKeys.MoveDirs.Keys)
                 if (!kb[k].isPressed)
                     moveKeys.Remove(k);
             foreach (var k in TurnKeys.Keys)
@@ -2546,6 +2555,11 @@ namespace L2Web
                 turnKeys.Clear();
                 return;
             }
+            // NumPad8/2 = CameraViewHeightAdjust Speed=+20/-20: vale enquanto segura (DeltaTime * Speed)
+            if (world.Self != null)
+                foreach (var (k, rate) in UserIniKeys.ViewHeightKeys)
+                    if (kb[k].isPressed)
+                        scene.Cam.ViewHeight = CameraKeys.ViewHeightHold(scene.Cam.ViewHeight, rate, Time.deltaTime);
             var alt = kb.altKey.isPressed;
             var ctrl = kb.ctrlKey.isPressed;
             var shift = kb.shiftKey.isPressed;
@@ -2566,15 +2580,36 @@ namespace L2Web
         void OnKey(Key key, bool alt, bool ctrl, bool shift)
         {
             if (gc == null) return;
-            var action = L2Shortcuts.Find("GamingState", L2Shortcuts.Vk(key), ctrl, alt, shift);
-            if (action != null)
+            // NConsoleWnd::HandleKeyboardInput (03 §1 da #0024): EnterChatting, prioridade dos modificadores, tabela do estado
+            var (kind, action) = L2Shortcuts.Handle("GamingState", L2Shortcuts.Vk(key), alt, shift, ctrl,
+                L2Options.GetBool("Game", "EnterChatting", true), UiRoot.TypingInField());
+            if (kind == L2Shortcuts.KeyResult.ChatFocus)
+            {
+                ui.Command("ChatWndSetFocus", new Dictionary<string, string>(), ctrl, shift);
+                return;
+            }
+            if (kind == L2Shortcuts.KeyResult.Command)
             {
                 RunCommand(action, ctrl, shift);
                 return;
             }
-            if (MoveKeys.ContainsKey(key))
+            if (UserIniKeys.MoveDirs.ContainsKey(key))
             {
                 moveKeys.Add(key);
+                return;
+            }
+            if (key == UserIniKeys.PermanentMove)
+            {
+                if (world.Self != null) keyMove.TogglePermanent(world.Self.Heading);
+                return;
+            }
+            // NumPad7/9, 4/6, 1/3 = ZoomOutPress/ZoomInPress Speed=2.0, 0.1, 0.01 (so no aperto)
+            if (UserIniKeys.ZoomKeys.TryGetValue(key, out var zoomSpeed))
+            {
+                var c = scene.Cam;
+                if (world.Self != null)
+                    camKeys.ZoomPress(zoomSpeed, ref c.Zoom, ref c.ViewHeight, CamUtil.Cfg.ZoomMin, CamUtil.Cfg.ZoomMax,
+                        world.Self.CollisionRadius, CamUtil.Presets[c.Preset].DisableZoom);
                 return;
             }
             if (TurnKeys.ContainsKey(key))
@@ -2640,12 +2675,14 @@ namespace L2Web
                 if (ctrl) gc.Send(GamePackets.AttackRequest(hit.ObjectId.Value, ox, oy, oz, shift));
                 else gc.Send(GamePackets.Action(hit.ObjectId.Value, ox, oy, oz, shift));
                 world.Request.Lock();
+                keyMove.Cancel();
             }
             else
             {
                 gc.Send(GamePackets.MoveTo(Mathf.RoundToInt(hit.X), Mathf.RoundToInt(hit.Y), Mathf.RoundToInt(hit.Z), ox, oy, oz));
                 world.Request.Lock();
                 scene.ShowMarker(hit.X, hit.Y, hit.Vz ?? hit.Z);
+                keyMove.Cancel();
             }
         }
 
@@ -2683,30 +2720,26 @@ namespace L2Web
             self.TurnSpeed = CamUtil.Cfg.KeyTurnRate;
             if (side != 0) scene.Cam.Turn(side * CamUtil.Cfg.KeyTurnRate * dt);
             // teclado (ResetKeyboardMoving): destino = posicao + direcao(yaw da camera + 0/180 graus) * velocidade * 5;
-            // reenvia quando a camera gira o suficiente (ou a cada 1 s); ao soltar, para 0,2 s a frente
-            keyTimer += dt;
-            var f = 0;
-            foreach (var k in moveKeys) f += MoveKeys[k];
-            var speed = Mathf.Max(self.Speed, 1);
-            if (f != 0)
+            // NumLock corre no rumo do pawn; Espaco/Ctrl so sobem e descem no modo camera (World/KeyboardMove.cs).
+            // Reenvia quando o rumo gira o suficiente (ou a cada 1 s); ao soltar, para 0,2 s a frente
+            var bits = 0;
+            foreach (var k in moveKeys) bits |= UserIniKeys.MoveDirs[k];
+            keyMove.Hold(bits);
+            if (keyMove.Tick(dt, side, scene.Cam.Yaw, scene.Cam.Pitch, self.X, self.Y, self.Z, self.Heading, self.Speed) is { } o)
+                gc.Send(GamePackets.MoveTo(Mathf.RoundToInt(o.X), Mathf.RoundToInt(o.Y), Mathf.RoundToInt(o.Z), ox, oy, oz, false));
+        }
+
+        /// <summary>PrintScrn = OnRelease shot: Shot%05i.bmp/.jpg pelo Game.ScreenShotQuality e a mensagem 1204 no mundo.</summary>
+        void Shot()
+        {
+            var q = Mathf.Clamp(L2Options.GetInt("Game", "ScreenShotQuality", 1), 0, 3);
+            StartCoroutine(ScreenShot.Capture(Application.persistentDataPath, q, (name, w, h) =>
             {
-                var yaw = (scene.Cam.Yaw + (f < 0 ? 32768 : 0)) % 65536;
-                var turned = Mathf.Abs(((yaw - keyYaw + 98304) % 65536) - 32768) > 1000;
-                if (!keyMoving || turned || keyTimer >= 1)
-                {
-                    keyTimer = 0;
-                    keyMoving = true;
-                    keyYaw = yaw;
-                    var d = CamUtil.RotatorDir(0, yaw);
-                    gc.Send(GamePackets.MoveTo(Mathf.RoundToInt(self.X + d.X * speed * 5), Mathf.RoundToInt(self.Y + d.Y * speed * 5), oz, ox, oy, oz, false));
-                }
-            }
-            else if (keyMoving)
-            {
-                keyMoving = false;
-                var d = CamUtil.RotatorDir(0, self.Heading);
-                gc.Send(GamePackets.MoveTo(Mathf.RoundToInt(self.X + d.X * speed * 0.2f), Mathf.RoundToInt(self.Y + d.Y * speed * 0.2f), oz, ox, oy, oz, false));
-            }
+                Debug.Log($"[teclas] captura {name} ({w}x{h})");
+                if (!inWorld) return;
+                var t = GameData.SystemMessage(ScreenShot.SavedMessage, new List<string> { name, w.ToString(), h.ToString() });
+                L2Events.Dispatch(PacketEvents.SystemMessage(ScreenShot.SavedMessage, t.Text, t.Record?.Argb ?? 0xffdcdcdc, t.Record?.Group ?? 0));
+            }));
         }
     }
 }

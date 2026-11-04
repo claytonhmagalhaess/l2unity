@@ -1,7 +1,7 @@
 // C4/C5 da matriz (Docs/validacao.md): os 361 pacotes que o engine.dll trata (Golden/received.json, de out/re/game_map.json)
 // contra os que o Unity trata. Os 28 que o original descarta (tratador `xor al,al; ret`) nao podem ter efeito no Unity.
 // Grava Docs/cobertura_recebidos.md (efeito de cada pacote no original e se o Unity o trata). Os tratadores do Unity sao
-// lidos do codigo-fonte: On(0xNN, ...) no App, o switch do LoginClient e as esperas do GameClient.
+// lidos do codigo-fonte: On(0xNN, ...) no App e no Net/InterfaceRouter, o switch do LoginClient e as esperas do GameClient.
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,6 +32,10 @@ namespace L2Web.Tests
                 var block = app.Substring(fe, app.IndexOf("});", fe, System.StringComparison.Ordinal) - fe);
                 foreach (Match m in Regex.Matches(block, @"sub == (0x[0-9a-fA-F]+)")) set.Add(("ex", Hex(m.Groups[1].Value)));
             }
+            // InterfaceRouter (#0046): On(0xNN, ...) e Ex(0xNN, ...) para os pacotes Ex
+            var router = Src("Net/InterfaceRouter.cs");
+            foreach (Match m in Regex.Matches(router, @"\bOn\((0x[0-9a-fA-F]+)")) set.Add(("game", Hex(m.Groups[1].Value)));
+            foreach (Match m in Regex.Matches(router, @"\bEx\((0x[0-9a-fA-F]+)")) set.Add(("ex", Hex(m.Groups[1].Value)));
             var login = Src("Net/LoginClient.cs");
             var sw = login.Substring(login.IndexOf("switch (op)", System.StringComparison.Ordinal));
             foreach (Match m in Regex.Matches(sw, @"case (0x[0-9a-fA-F]+):")) set.Add(("login", Hex(m.Groups[1].Value)));

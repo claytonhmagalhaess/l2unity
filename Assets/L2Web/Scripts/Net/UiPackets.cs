@@ -23,6 +23,14 @@ namespace L2Web.Net
         public int Enchant;
         public int Augmentation;
         public int Mana;
+        /// <summary>customType1/2 do aCis (damaged e reserved do ItemInfo).</summary>
+        public int CustomType1, CustomType2;
+        /// <summary>Preco do item nas listas que o trazem (armazem, loja privada...); null nas demais.</summary>
+        public int? Price, DefaultPrice;
+        /// <summary>dbID dos itens do armazem e do frete (o d depois do customType2), que vai nos envios.</summary>
+        public int? Reserved;
+        /// <summary>Quantidade maxima negociavel (PrivateStoreListBuy).</summary>
+        public int? Limit;
         /// <summary>InventoryUpdate: 0 sem mudanca, 1 adicionado, 2 modificado, 3 removido. null no ItemList.</summary>
         public int? Change;
     }
@@ -165,6 +173,35 @@ namespace L2Web.Net
         public int PlayerId, ObjectId, X, Y, Z;
     }
 
+    /// <summary>
+    /// ExShowScreenMessage FE:38: os 10 d na ordem em que o OnScreenMessageWnd.uc le as chaves do EV_ShowScreenMessage (sem
+    /// MsgColorR/G/B, que o nativo nao manda). Nomes do aCis entre parenteses.
+    /// </summary>
+    public sealed class ScreenMessageInfo
+    {
+        /// <summary>0 mensagem de sistema (MsgNo), 1 texto (Msg) (type).</summary>
+        public int MsgType;
+        /// <summary>Id do systemmsg (sysMessageId).</summary>
+        public int MsgNo;
+        /// <summary>Janela 1..8 (position).</summary>
+        public int WindowType;
+        /// <summary>(hide) o script le e ignora.</summary>
+        public int FontSize;
+        /// <summary>0 grande com sombra, 1 pequena (size).</summary>
+        public int FontType;
+        /// <summary>(unk2) o script le e ignora.</summary>
+        public int MsgColor;
+        /// <summary>(unk3) o script le e ignora.</summary>
+        public int ShadowType;
+        /// <summary>1 = faixa de fundo na janela 2 (effect).</summary>
+        public int BackgroundType;
+        /// <summary>Tempo na tela em ms (time).</summary>
+        public int LifeTime;
+        /// <summary>Velocidade do fade (fade).</summary>
+        public int AnimationType;
+        public string Msg;
+    }
+
     public static class UiPackets
     {
         // ---------------------------------------------------------------- servidor -> cliente
@@ -181,11 +218,11 @@ namespace L2Web.Net
             it.ItemId = r.D();
             it.Count = r.D();
             it.Type2 = r.H();
-            r.H(); // customType1
+            it.CustomType1 = r.H();
             it.Equipped = r.H() != 0;
             it.BodyPart = r.D();
             it.Enchant = r.H();
-            r.H(); // customType2
+            it.CustomType2 = r.H();
             // o engine le "hh" (as duas opcoes do aumento em shorts separados, FUN_10411870); o valor e o mesmo do d do aCis
             it.Augmentation = (r.H() & 0xffff) | (r.H() << 16);
             it.Mana = r.D();
@@ -210,9 +247,10 @@ namespace L2Web.Net
             return items;
         }
 
-        static readonly Dictionary<int, string> ScTypes = new Dictionary<int, string> { [1] = "item", [2] = "skill", [3] = "action", [4] = "macro" };
-        /// <summary>Codigo do tipo de atalho ("item" 1, "skill" 2, "action" 3, "macro" 4).</summary>
-        public static readonly Dictionary<string, int> ScCode = new Dictionary<string, int> { ["item"] = 1, ["skill"] = 2, ["action"] = 3, ["macro"] = 4 };
+        // 5 = receita no Interlude (spec 05 §3); o ShortcutType do aCis vai so ate MACRO (4) e nao registra receitas
+        static readonly Dictionary<int, string> ScTypes = new Dictionary<int, string> { [1] = "item", [2] = "skill", [3] = "action", [4] = "macro", [5] = "recipe" };
+        /// <summary>Codigo do tipo de atalho ("item" 1, "skill" 2, "action" 3, "macro" 4, "recipe" 5).</summary>
+        public static readonly Dictionary<string, int> ScCode = new Dictionary<string, int> { ["item"] = 1, ["skill"] = 2, ["action"] = 3, ["macro"] = 4, ["recipe"] = 5 };
 
         static Shortcut ReadShortcut(PacketReader r, bool init)
         {
@@ -352,9 +390,28 @@ namespace L2Web.Net
         public static byte[] RequestItemList() => new PacketWriter().C(0x0f).Bytes();
         public static byte[] RequestSkillList() => new PacketWriter().C(0x3f).Bytes();
         public static byte[] MagicSkillUse(int skillId, bool ctrl = false, bool shift = false) => new PacketWriter().C(0x2f).D(skillId).D(ctrl ? 1 : 0).C(shift ? 1 : 0).Bytes();
-        /// <summary>type: "item" | "skill" | "action" | "macro".</summary>
-        public static byte[] ShortCutReg(string type, int slot, int id) => new PacketWriter().C(0x33).D(ScCode[type]).D(slot).D(id).D(0).Bytes();
+        /// <summary>
+        /// RequestShortCutReg 0x33 "dddd": tipo ("item" | "skill" | "action" | "macro" | "recipe"), slot + pagina*12, id e
+        /// UserShortCut (characterType do aCis): 1 jogador, 2 pet (acoes 15-27 e itens do inventario do pet, nw:0x100480c0).
+        /// </summary>
+        public static byte[] ShortCutReg(string type, int slot, int id, int userShortCut = 1) =>
+            new PacketWriter().C(0x33).D(ScCode[type]).D(slot).D(id).D(userShortCut).Bytes();
         public static byte[] ShortCutDel(int slot) => new PacketWriter().C(0x35).D(slot).Bytes();
+
+        // ---------------------------------------------------------------- inventario (T2, InventoryWnd.uc)
+
+        /// <summary>RequestUnEquipItem 0x11 "d": slotBitType do item (bodyPart do ItemList; o aCis desequipa pelo slot).</summary>
+        public static byte[] RequestUnEquipItem(int slotBitType) => new PacketWriter().C(0x11).D(slotBitType).Bytes();
+
+        /// <summary>RequestDropItem 0x12 "ddddd": objectId, quantidade e o ponto do mundo (coordenadas do L2) onde largar.</summary>
+        public static byte[] RequestDropItem(int objectId, int count, int x, int y, int z) =>
+            new PacketWriter().C(0x12).D(objectId).D(count).D(x).D(y).D(z).Bytes();
+
+        /// <summary>RequestDestroyItem 0x59 "dd": objectId e quantidade (lixeira do inventario).</summary>
+        public static byte[] RequestDestroyItem(int objectId, int count) => new PacketWriter().C(0x59).D(objectId).D(count).Bytes();
+
+        /// <summary>RequestCrystallizeItem 0x72 "dd": objectId e quantidade.</summary>
+        public static byte[] RequestCrystallizeItem(int objectId, int count) => new PacketWriter().C(0x72).D(objectId).D(count).Bytes();
         public static byte[] DlgAnswer(int messageId, bool answer, int requesterId) => new PacketWriter().C(0xc5).D(messageId).D(answer ? 1 : 0).D(requesterId).Bytes();
 
         /// <summary>ShowBoard 0x6e (Community Board): C mostrar, 8 x S bypass dos botoes do topo, S "id\bhtml".</summary>
@@ -509,6 +566,13 @@ namespace L2Web.Net
             o.Count = r.D();
             return o;
         }
+
+        /// <summary>ExShowScreenMessage FE:38 "ddddddddddS" (sem o sub-opcode).</summary>
+        public static ScreenMessageInfo ParseExShowScreenMessage(PacketReader r) => new ScreenMessageInfo
+        {
+            MsgType = r.D(), MsgNo = r.D(), WindowType = r.D(), FontSize = r.D(), FontType = r.D(), MsgColor = r.D(), ShadowType = r.D(),
+            BackgroundType = r.D(), LifeTime = r.D(), AnimationType = r.D(), Msg = r.S(),
+        };
 
         /// <summary>GetItem 0x0d: D quemPegou, D obj, D x, D y, D z.</summary>
         public static GetItemInfo ParseGetItem(PacketReader r) => new GetItemInfo { PlayerId = r.D(), ObjectId = r.D(), X = r.D(), Y = r.D(), Z = r.D() };

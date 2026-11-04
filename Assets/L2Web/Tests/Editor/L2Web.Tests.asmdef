@@ -3,6 +3,7 @@
   "rootNamespace": "L2Web.Tests",
   "references": [
     "L2Web",
+    "glTFast",
     "Unity.InputSystem",
     "UnityEngine.TestRunner",
     "UnityEditor.TestRunner"

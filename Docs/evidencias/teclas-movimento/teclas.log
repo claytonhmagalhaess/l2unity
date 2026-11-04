@@ -1,0 +1,29 @@
+# #0034, offline (OfflineView em Giran), 2026-11-03. Ver README.md.
+NumPad8 segurada 5 s (300 quadros de 1/60 s): ViewHeight 0 -> 100,0002
+NumPad2 segurada 5 s: ViewHeight 100,0002 -> 3,151596E-06
+aperto unico de cada tecla: "raio=8 zoom inicial=-20; Numpad4: -20 -> -19,9; Numpad6: -19,9 -> -20; Numpad1: -20 -> -19,99; Numpad3: -19,99 -> -20; Numpad7: -20 -> -18; Numpad9: -18 -> -20;
+NumPad9 (ZoomInPress 2.0) do zoom -20 ate passar do minimo: 140 apertos (o 139o para exatamente em -200; o 140o passa e e preso no minimo); passo caiu para 0,25 no aperto 84 (zoom < 2*raio+min = -184); zoom=-200 ViewHeight=6,4 (4/5 do raio 8) NearBump=True
+NumPad7 (ZoomOutPress 2.0) uma vez: zoom -200 -> -199,75 (passo 1/8), ViewHeight 6,4 -> 9,536743E-08 (desfaz)
+message": "[shot] C:/Users/Clayton/AppData/LocalLow/DefaultCompany/L2Web\\Shot00000.jpg 1920x1080
+message": "[shot] C:/Users/Clayton/AppData/LocalLow/DefaultCompany/L2Web\\Shot00000.bmp 1920x1080
+Shot00000.bmp: assinatura b'BM' tamanho 6220854 (arquivo 6220854 ) largura 1920 altura 1080 bits 24
+Shot00000.jpg: inicio ffd8ffe0 (FFD8 = JPEG) 353845 bytes
+[keys] inicio: velocidade 88, camera yaw 0
+[keys] NumLock (KeyboardPermanentMove) no heading 0
+[keys] t=0,0s: destino 83840,147950,-3400 | pawn 83400,147950,-3400 heading 0 Permanent=True Moving=True
+[keys] t=1,0s: destino 83943,147950,-3400 | pawn 83503,147950,-3400 heading 0 Permanent=True Moving=True
+[keys] t=2,0s: destino 84037,147950,-3400 | pawn 83597,147950,-3400 heading 0 Permanent=True Moving=True
+[keys] t=3,0s: destino 84131,147950,-3400 | pawn 83691,147950,-3400 heading 0 Permanent=True Moving=True
+[keys] Ctrl (Dir=32) durante a corrida: nada enviado | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=False
+[keys] Ctrl solto: nada enviado | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=False
+[keys] Espaco no modo normal: nada enviado | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=False
+[keys] modo camera (0xf1 CameraMode 1), Espaco: destino 83783,147950,-576 | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=True
+[keys] modo camera, Ctrl: destino 83783,147950,-2176 | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=True
+[keys] modo camera, W+Espaco (pitch -2700): destino 84417,147950,-888 | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=True
+[keys] modo camera, soltou: PARADA 83801,147950,-1376 | pawn 83783,147950,-1376 heading 0 Permanent=False Moving=False
+[keys] fim
+[keys2] NumLock no heading 32768 (camera yaw 32768)
+[keys2] t=0,0s: destino 82960,147950,-3400 | pawn 83400,147950,-3400 heading 32768 Permanent=True
+[keys2] t=1,0s: destino 82864,147950,-3400 | pawn 83304,147950,-3400 heading 32768 Permanent=True
+[keys2] t=2,0s: destino 82772,147950,-3408 | pawn 83212,147950,-3408 heading 32768 Permanent=True
+[keys2] NumLock de novo: PARADA 83101,147950,-3456 | pawn 83118,147950,-3456 heading 32768 Permanent=False
