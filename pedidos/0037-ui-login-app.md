@@ -57,6 +57,8 @@ Tudo em `Assets/L2Web/Scripts/App.cs`, no branch `feat/ui-login` (depende dos co
 
 5. **Música do login** (`UL2ConsoleWnd::PlayIntroMusic`: `LS01_F`), depois do pedido 0039 da render: em `Show(id)`, no ramo `if (inLobby)`, chamar `music?.PlayIntro();` (o `music.Stop()` ao entrar no jogo já existe).
 
+6. **(Opcional, decisão do usuário) ID vazio ao abrir.** O original não preenche o ID (`NCAuthWnd::OnCreate`/`ShowWindow` não põem texto). Hoje `BuildScreens()` faz `scrLogin.User.text = Config.Get("user", "");`. Para ficar igual, apagar essa linha (e o `Config.Set("user", user)` do `SubmitLogin`). Se o usuário preferir a comodidade, deixar como está.
+
 ## Por quê
 
 Sem 1, o botão Options não faz nada (a janela de conexão do porte foi para o atalho Ctrl+Alt+O). Sem 2–4, a faixa mostra textos em português que o original não tem ("Conectando ao login server…", "selecao de servidor cancelada", "Conexão com o jogo encerrada (...)", "Você saiu do jogo."). Sem 5, o login fica mudo. Nada disso quebra a compilação: o código atual só fica diferente do original.
