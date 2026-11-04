@@ -41,6 +41,13 @@ namespace L2Web.UI
         }
 
         /// <summary>
+        /// UserShortCut do RequestShortCutReg (OnDropItem nw:0x100480c0): 2 (pet) para as acoes 15-27 e os itens do inventario
+        /// do pet; 1 (jogador) para o resto.
+        /// </summary>
+        public static int UserShortCut(string type, int id, bool fromPetInventory = false) =>
+            fromPetInventory || type == "action" && id >= 15 && id <= 27 ? 2 : 1;
+
+        /// <summary>
         /// Rotulo de tecla do slot: so a barra principal tem teclas no xdat do Interlude (F1-F12 e 1-0, -, =); as barras 2 e 3
         /// nao tem.
         /// </summary>

@@ -398,7 +398,13 @@ namespace L2Web.UI
         RawImage dragGhost;
         readonly Dictionary<GameObject, int> dropSlots = new();
 
-        void Draggable(UiTexButton b, string type, int id)
+        /// <summary>
+        /// Torna o botao arrastavel para a barra de atalhos (origem do OnDropItem do NCShortcutItemWnd): item, skill, acao,
+        /// macro ou receita; `fromPet` = item do inventario do pet (UserShortCut 2).
+        /// </summary>
+        public void DragToBar(UiTexButton b, string type, int id, bool fromPet = false) => Draggable(b, type, id, fromPet);
+
+        void Draggable(UiTexButton b, string type, int id, bool fromPet = false)
         {
             var ev = UiEvents.Of(b);
             ev.OnBeginDrag = _ =>
@@ -431,7 +437,7 @@ namespace L2Web.UI
                 {
                     if (!dropSlots.TryGetValue(t.gameObject, out var host)) continue;
                     var slot = SlotOfHost(host);
-                    if (!barsLocked && slot >= 0) deps.Send(UiPackets.ShortCutReg(type, slot, id));
+                    if (!barsLocked && slot >= 0) deps.Send(UiPackets.ShortCutReg(type, slot, id, ShortcutBar.UserShortCut(type, id, fromPet)));
                     break;
                 }
             };
@@ -713,7 +719,7 @@ namespace L2Web.UI
                     var dst = SlotOfHost(host);
                     shortcuts.TryGetValue(dst, out var dstSc);
                     foreach (var st in ShortcutBar.Swap(src, srcSc, dst, dstSc))
-                        deps.Send(st.Sc != null ? UiPackets.ShortCutReg(st.Sc.Type, st.Slot, st.Sc.Id) : UiPackets.ShortCutDel(st.Slot));
+                        deps.Send(st.Sc != null ? UiPackets.ShortCutReg(st.Sc.Type, st.Slot, st.Sc.Id, ShortcutBar.UserShortCut(st.Sc.Type, st.Sc.Id)) : UiPackets.ShortCutDel(st.Slot));
                     foreach (var sc in new[] { srcSc, dstSc })
                         if (sc != null && sc.Type == "item" && items.TryGetValue(sc.Id, out var it) && ShortcutBar.IsShot(it.ItemId) && autoShots.Contains(it.ItemId))
                             deps.Send(UiPackets.RequestAutoSoulShot(it.ItemId, true));
@@ -744,6 +750,9 @@ namespace L2Web.UI
             if (s.Type == "item") deps.Send(UiPackets.UseItem(s.Id, ctrl));
             else if (s.Type == "skill") deps.Send(UiPackets.MagicSkillUse(s.Id, ctrl, shift));
             else if (s.Type == "action") deps.ActionUse(s.Id);
+            // macro: o cliente executa as linhas (UseMacro da #0032); receita: abre a fabricacao (RequestRecipeItemMakeInfo) [I]
+            else if (s.Type == "macro") UseMacro(s.Id);
+            else if (s.Type == "recipe") deps.Send(RecipePackets.RequestRecipeItemMakeInfo(s.Id));
         }
 
         void RenderBars()
@@ -769,7 +778,9 @@ namespace L2Web.UI
                     else if (s.Type == "skill") icon = GameData.SkillIcon(s.Id);
                     else if (s.Type == "action") icon = GameData.ActionIcon(s.Id);
                 }
-                var key = $"{slot}|{s?.Type}|{s?.Id}|{label}|{icon}|{count}|{auto}";
+                // macro: textura L2UI.MacroWnd.Macro_IconN do UIDATA_MACRO (nao e um icone de /icons)
+                var macroTex = s != null && s.Type == "macro" ? L2WndUtil.Tex(MacroOf(s.Id)?.TextureName)?.Url : null;
+                var key = $"{slot}|{s?.Type}|{s?.Id}|{label}|{icon}|{macroTex}|{count}|{auto}";
                 if (key == sc.Key) continue;
                 sc.Key = key;
                 var keyName = ShortcutBar.KeyLabel(sc.Bar, sc.Index);
@@ -780,7 +791,7 @@ namespace L2Web.UI
                     UiTooltip.SetCustom(sc.Rt.gameObject, () => ShortcutTooltip(sc0), false, keyName.Length > 0 ? $"{keyName}: {label}" : label);
                 }
                 else UiTooltip.Set(sc.Rt.gameObject, "");
-                var url = s != null ? IconUrl(icon) : null;
+                var url = s != null ? macroTex ?? IconUrl(icon) : null;
                 sc.Letter.text = s != null && url == null ? (label.Length > 2 ? label.Substring(0, 2) : label) : "";
                 var letter = sc.Letter;
                 var lbl = label;
@@ -848,6 +859,18 @@ namespace L2Web.UI
             }
         }
 
+        /// <summary>Roteador dos pacotes da interface (#0046) do App; null fora do jogo.</summary>
+        public Func<InterfaceRouter> Router = () => App.Instance ? App.Instance.Interface : null;
+
+        /// <summary>Macro pelo id (UIDATA_MACRO), ou null.</summary>
+        public MacroInfo MacroOf(int id) => Router()?.Macros.Macros.TryGetValue(id, out var m) == true ? m : null;
+
+        /// <summary>Usa a macro (as linhas sao executadas pelo cliente); a MacroListWnd liga o executor.</summary>
+        public Action<int> UseMacro = _ => { };
+
+        /// <summary>Nome da receita (o livro de receitas da fabricacao preenche).</summary>
+        public Func<int, string> RecipeName = id => $"recipe {id}";
+
         string ShortcutLabel(Shortcut s)
         {
             if (s.Type == "item") return items.TryGetValue(s.Id, out var it) ? GameData.ItemName(it.ItemId) : $"item {s.Id}";
@@ -857,7 +880,9 @@ namespace L2Web.UI
                 return GameData.SkillName(s.Id, lv != 0 ? lv : 1);
             }
             if (s.Type == "action") return GameData.ActionName(s.Id);
-            return $"macro {s.Id}";
+            if (s.Type == "macro") return MacroOf(s.Id)?.Name ?? $"macro {s.Id}";
+            if (s.Type == "recipe") return RecipeName(s.Id);
+            return $"{s.Type} {s.Id}";
         }
 
         // ------------------------------------------------------------ confirmacao (DialogBox)

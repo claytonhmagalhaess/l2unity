@@ -72,5 +72,17 @@ namespace L2Web.Tests
             Assert.AreEqual("", ShortcutBar.KeyLabel(1, 0), "barra 2 sem tecla no xdat do Interlude");
             Assert.AreEqual("", ShortcutBar.KeyLabel(2, 5));
         }
+        [Test]
+        public void UserShortCut_PetComDois()
+        {
+            Assert.AreEqual(1, ShortcutBar.UserShortCut("action", 14));
+            Assert.AreEqual(2, ShortcutBar.UserShortCut("action", 15));
+            Assert.AreEqual(2, ShortcutBar.UserShortCut("action", 27));
+            Assert.AreEqual(1, ShortcutBar.UserShortCut("action", 28));
+            Assert.AreEqual(1, ShortcutBar.UserShortCut("item", 20));
+            Assert.AreEqual(2, ShortcutBar.UserShortCut("item", 20, true), "item do inventario do pet");
+            Assert.AreEqual(1, ShortcutBar.UserShortCut("macro", 1001));
+            Assert.AreEqual(1, ShortcutBar.UserShortCut("recipe", 3));
+        }
     }
 }
