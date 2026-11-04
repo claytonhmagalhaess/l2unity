@@ -64,9 +64,9 @@ namespace L2Web.Tests
                     return t != n && (Auto(t) || Moved(t, d + 1));
                 }
                 var auto = Auto(p.Name);
-                // a caixa autosize encolhe em volta do ponto da propria ancora (TOP_CENTER: pelos dois lados)
-                var own = w.Ctrl(p.Name)?.Anchor?.Parent ?? "TOP_LEFT";
-                var fx = own.EndsWith("CENTER") ? 0.5f : own.EndsWith("RIGHT") ? 1f : 0f;
+                // a caixa autosize encolhe pelo textAlign (RefreshTextCoords: MoveTo(x + deslocamento do alinhamento), #0051):
+                // esquerda mantem a borda esquerda, centro o centro, direita a borda direita
+                var fx = L2Wnd.AutoSizeAnchor(w.Ctrl(p.Name)?.N("textAlign") ?? 1);
                 var ex = auto ? (float)e[0] + ((float)e[2] - r.W) * fx : (float)e[0];
                 if (!Moved(p.Name) && (Mathf.Abs(r.X - ex) > 0.01f || Mathf.Abs(r.Y - (float)e[1]) > 0.01f || !auto && Mathf.Abs(r.W - (float)e[2]) > 0.01f || Mathf.Abs(r.H - (float)e[3]) > 0.01f))
                     erros.Add($"{janela}.{p.Name}: Unity ({r.X}, {r.Y}, {r.W}, {r.H}) != xdat ({e[0]}, {e[1]}, {e[2]}, {e[3]})");

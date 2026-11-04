@@ -60,6 +60,8 @@ namespace L2Web.UI
         public Func<string, int> SkillByName = _ => 0;
         /// <summary>FUN_1014cff0: o texto tem palavrao.</summary>
         public Func<string, bool> HasObscene = _ => false;
+        /// <summary>Id social da acao (GL2GameData+0x3d2c[id]+8, o 2o int do actionname-e); -1 sem ele.</summary>
+        public Func<int, int> ActionType = id => L2TooltipData.Action(id)?.Type ?? -1;
     }
 
     public static class L2Commands
@@ -299,6 +301,85 @@ namespace L2Web.UI
                 return o;
             }
             return Plan(id, rest, c);
+        }
+
+        /// <summary>
+        /// Passos do DoAction (FUN_10170860) para a acao `id` do actionname-e: o que o cliente resolve sozinho (ataque, troca,
+        /// alvo, grupo, sociais, duelo, lojas) e, no default, RequestActionUse (0x45 d id, d ctrl, c shift). `ctrl` e `shift`
+        /// sao as teclas no momento (o nativo le o Ctrl pelo vtable+0x590 e o Shift por UInput::KeyDown(0x10)).
+        /// </summary>
+        public static List<CommandStep> PlanAction(int id, CommandCtx c, bool ctrl, bool shift)
+        {
+            var o = new List<CommandStep>();
+            var hasTarget = c.TargetId != 0;
+            var player = hasTarget && c.TargetIsPlayer;
+            switch (id)
+            {
+                case 2: // Attack: FUN_1014ca10(alvo, x, y, z): Ctrl = vtable+0xe8 (AttackRequest), senao vtable+0x100 (Action) com o Shift
+                    if (!hasTarget) break;
+                    o.Add(Pkt(ctrl ? GamePackets.AttackRequest(c.TargetId, c.SelfX, c.SelfY, c.SelfZ, shift)
+                        : GamePackets.Action(c.TargetId, c.SelfX, c.SelfY, c.SelfZ, shift), shift ? 1 : 0));
+                    break;
+                case 3: // Exchange: NConsoleWnd::RequestTrade(alvo)
+                    if (hasTarget) o.Add(Pkt(SocialPackets.TradeRequest(c.TargetId)));
+                    break;
+                case 4: o.Add(Local("targetnext", c.TargetId)); break; // FUN_1014c7c0(200, alvo)
+                case 5: o.Add(Local("pickup")); break; // FUN_1014c720(200, -1)
+                case 6: o.Add(Local("assist")); break; // FUN_1015a770
+                case 7: // Invite: alvo jogador -> FUN_10144860(nome, GL2PartyLooting) = RequestJoinParty; senao sysmsg 185
+                    if (!player) o.Add(Msg(0xb9));
+                    else o.Add(Pkt(SocialPackets.RequestJoinParty(c.TargetName, c.PartyLooting)));
+                    break;
+                case 8: o.Add(Pkt(SocialPackets.WithdrawParty())); break; // Leave Party: FUN_10144880
+                case 9: // Dismiss Party Member: alvo jogador -> FUN_10144890(nome) = RequestOustPartyMember; senao sysmsg 187
+                    if (!player) o.Add(Msg(0xbb));
+                    else o.Add(Pkt(SocialPackets.OustPartyMember(c.TargetName)));
+                    break;
+                case 10: o.Add(Pkt(W(0x73).Bytes())); break; // Private Store - Sell: FUN_10145240 = RequestPrivateStoreManage
+                case 11: // Party Matching: FUN_10149af0(1, -1, 1) = RequestListPartyWaiting e EV_PartyMatchCommand (0x65e)
+                    o.Add(Pkt(W(0x6f).D(1).D(-1).D(1).Bytes(), 1, -1, 1));
+                    o.Add(new CommandStep("ev", "ev:1630", value: Ev.EV_PartyMatchCommand, text: ""));
+                    break;
+                case 12: case 13: case 14: case 24: case 25: case 26: case 29: case 30: case 31: case 33: case 34: case 35:
+                {
+                    // sociais: FUN_10144110(tipo) = RequestSocialAction (0x1b d); so com 0 < id < total e tipo > 0
+                    var type = c.ActionType(id);
+                    if (type > 0) o.Add(Pkt(W(0x1b).D(type).Bytes(), type));
+                    break;
+                }
+                case 18: o.Add(Local("petpickup")); break; // FUN_10144c60(200, -1)
+                case 28: o.Add(Pkt(W(0x90).Bytes())); break; // Private Store - Buy: FUN_10145290 = RequestPrivateStoreBuyManage
+                case 40: // Recommend: sem alvo sysmsg 242; jogador = VoteSociality (0xb9 d alvo); outro = sysmsg 144
+                    if (!hasTarget) o.Add(Msg(0xf2));
+                    else if (c.TargetIsPlayer) o.Add(Pkt(W(0xb9).D(c.TargetId).Bytes()));
+                    else o.Add(Msg(0x90));
+                    break;
+                case 50: // Change of Party Leader: alvo jogador -> FUN_10149690(nome) = RequestChangePartyLeader; senao sysmsg 1400
+                    if (!player) o.Add(Msg(0x578));
+                    else o.Add(Pkt(Ex(0x04).S(c.TargetName).Bytes()));
+                    break;
+                case 55: o.Add(Local("replay")); break; // Start/End Recording Replay: FL2ReplayManager::OnSaveStartStop
+                case 56: // Command Channel Invitation: alvo jogador -> FUN_10143a10(nome) = RequestExAskJoinMPCC; senao sysmsg 50
+                    if (!player) o.Add(Msg(0x32));
+                    else o.Add(Pkt(Ex(0x0d).S(c.TargetName).Bytes()));
+                    break;
+                case 57: // Find Store: dialogo de texto com a sysmsg 1722 (FUN_1000dd30(0x6ba), FUN_1016e1b0) -> SetMatchedStore
+                    o.Add(Dlg(0x6ba));
+                    break;
+                case 58: // Duel / Party Duel: alvo jogador -> FUN_101445d0(nome, 0/1) = RequestDuelStart; sem alvo nada
+                case 60:
+                    if (player)
+                    {
+                        var party = id == 60 ? 1 : 0;
+                        o.Add(Pkt(Ex(0x27).S(c.TargetName).D(party).Bytes(), party));
+                    }
+                    break;
+                case 59: o.Add(Pkt(Ex(0x30).Bytes())); break; // Withdraw: FUN_10144710 = RequestDuelSurrender
+                default: // FUN_101440c0(id, ctrl, shift): RequestActionUse
+                    o.Add(Pkt(GamePackets.ActionUse(id, ctrl, shift), id, ctrl ? 1 : 0, shift ? 1 : 0));
+                    break;
+            }
+            return o;
         }
 
         /// <summary>Passos do FUN_1013a320 para o comando `id` com o resto da linha.</summary>

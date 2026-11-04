@@ -395,3 +395,9 @@ Tabelas de cobertura geradas: `Docs\cobertura_envios.md` (245 envios), `Docs\cob
   oclusão só por quem colide (`collide: false` do .unr no `export_smlight.py`; reexportação pedida no TAREFAS). Feixes do salão sem
   instância acesos como os pawns. A luz assada das malhas já batia (piso e altar). Capturas `g8_v34_*`. Falta a camada Specular
   panorâmica dos feixes (textura não exportada). Suíte: ver Notas #3 no TAREFAS.
+- **#0051 (2026-11-04):** Character Status, Actions e Clã contra o original, no aCis local (conta `l2webtest2`, ver `Docs/contas_teste.md`).
+  - Status: o HP aparece e os valores ficam no lugar. TextBox sem o `offsetY` na fonte normal, autosize pelo `textAlign` e os 29 campos conferidos contra o UserInfo do aCis.
+  - Clã: os rótulos saem da sysstring em inglês, não do rascunho coreano do xdat.
+  - Ações: tabela em `Docs/acoes.md`; as 12 sociais, Sit/Stand, Walk/Run, as lojas, Party Matching e a barra de atalhos foram conferidas no servidor com o patch do pedido 0045.
+  - Capturas antes e depois: `Docs/evidencias/status-acoes-cla/`.
+  - Suíte no Editor aberto: 786/786 (746 na `feat/ui-revisao`). O `XdatLayoutTests` passou a conferir o autosize pelo `textAlign`.

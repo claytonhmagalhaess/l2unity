@@ -19,6 +19,8 @@ namespace L2Web.UI
             public string Name = "", Icon = "", Desc = "", Cmd = "";
             /// <summary>EActionCategory (1 basica, 2 grupo, 3 social, 4 pet, 5 servo).</summary>
             public int Category;
+            /// <summary>2o int do registro: nas sociais e o id do RequestSocialAction (12 Greeting = 2 ... 35 Sorrow = 13); -1 nas outras.</summary>
+            public int Type = -1;
             /// <summary>Lista de NPCs da acao (-2 = qualquer um) [I].</summary>
             public int[] Npcs = Array.Empty<int>();
         }
@@ -53,12 +55,13 @@ namespace L2Web.UI
             {
                 p += 4; // tag
                 var id = BitConverter.ToInt32(b, p);
+                var type = BitConverter.ToInt32(b, p + 4);
                 var cat = BitConverter.ToInt32(b, p + 8);
                 p += 12; // id, type, category
                 var cnt = Compact(b, ref p);
                 var npcs = new int[Math.Max(0, cnt)];
                 for (var k = 0; k < npcs.Length; k++, p += 4) npcs[k] = BitConverter.ToInt32(b, p);
-                var a = new ActionName { Id = id, Category = cat, Npcs = npcs, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p) };
+                var a = new ActionName { Id = id, Type = type, Category = cat, Npcs = npcs, Name = L2Texts.FString(b, ref p), Icon = L2Texts.FString(b, ref p), Desc = L2Texts.FString(b, ref p) };
                 var len = BitConverter.ToInt32(b, p);
                 p += 4;
                 a.Cmd = System.Text.Encoding.Unicode.GetString(b, p, Math.Max(0, len)).TrimEnd('\0');

@@ -3,6 +3,7 @@
 // script eval do Unity CLI para testar no servidor real o que precisa de dois jogadores (e2e-social do navegador).
 //   L2Web.Dev.Figurante.Start("l2webtest2", "l2webtest2")      -> entra no mundo
 //   L2Web.Dev.Figurante.TeleportVia(30080, "Teleport", "Breka") -> fala com o NPC 30080 e segue os links do HTML
+//   L2Web.Dev.Figurante.AcceptDuel = false                     -> recusa duelo (padrao: aceita)
 //   L2Web.Dev.Figurante.Status / Log                              -> estado e o que aconteceu
 //   L2Web.Dev.Figurante.Stop()                                    -> logout
 using System;
@@ -21,6 +22,9 @@ namespace L2Web.Dev
         static float x, y, z;
         static readonly Dictionary<int, NpcInfo> npcs = new();
         static TaskCompletionSource<string> html;
+
+        /// <summary>Resposta aos convites de duelo (ExDuelAskStart); padrao: aceita.</summary>
+        public static bool AcceptDuel = true;
 
         /// <summary>O que aconteceu, em ordem (convites, troca, teleporte...).</summary>
         public static readonly List<string> Log = new();
@@ -80,6 +84,24 @@ namespace L2Web.Dev
                     gc.Send(SocialPackets.AnswerFriendInvite(true));
                 });
                 gc.On(0x4e, r => Note("party: " + string.Join(", ", SocialPackets.ParsePartyAll(r).Members.ConvertAll(m => m.Name))));
+                gc.On(0x50, _ => Note("party: saiu do grupo (PartySmallWindowDeleteAll)"));
+                // #0051: duelo (ExDuelAskStart FE:4B "Sd" -> RequestDuelAnswerStart D0:28) e o resto do duelo
+                gc.On(0xfe, r =>
+                {
+                    var sub = r.H();
+                    if (sub == 0x4b)
+                    {
+                        var from = r.S();
+                        var party = r.D();
+                        Note($"convite de duelo{(party == 1 ? " de grupo" : "")} de {from}: {(AcceptDuel ? "aceitando" : "recusando")}");
+                        gc.Send(SocialPackets.DuelAnswerStart(party, AcceptDuel));
+                    }
+                    else if (sub == 0x4c) Note("duelo: pronto (ExDuelReady)");
+                    else if (sub == 0x4d) Note("duelo: comecou (ExDuelStart)");
+                    else if (sub == 0x4e) Note("duelo: terminou (ExDuelEnd)");
+                    else if (sub == 0x1a) Note("convite para o canal de comando (ExAskJoinMPCC)");
+                });
+                gc.On(0x64, r => Note("SystemMessage " + r.D()));
                 gc.On(0x16, r =>
                 {
                     var n = GamePackets.ParseNpcInfo(r);
