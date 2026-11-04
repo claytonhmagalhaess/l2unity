@@ -21,21 +21,37 @@ No cliente original, tudo isso funciona. Esta tarefa faz o visualizador de HTML 
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Levantamento, com evidência (`NCHtmlViewer` e o parser no NWindow do Tryskell ou na REA, a spec), de cada tag e atributo que o original aceita, e de como desenha:
+- [x] Levantamento, com evidência (`NCHtmlViewer` e o parser no NWindow do Tryskell ou na REA, a spec), de cada tag e atributo que o original aceita, e de como desenha:
   - `html`, `body`, `title`, `br`, `p`, `center`, `font` (color), `a` (action bypass/link/url);
   - `button` (value, action, width, height, back, fore), `img` (src com `icon.*`/`L2UI*`, width, height), `table`/`tr`/`td` (width, height, align, valign, bgcolor, background, cellpadding, cellspacing, border);
   - `edit`, `multiedit`, `combobox` e as variáveis `$`;
   - as entidades, as cores por nome e #hex e as quebras de linha.
 
   A tabela fica em `Docs/html_suporte.md`, com o estado de cada item no porte.
+  - Feito: `Docs/html_suporte.md` §2-§7, com a linha do `nwindow.c` de cada item. O original não lê o `url` do `<a>` (`href` também não); o `<a>` tem `link`, `action`, `cmd` e `msg`.
 - [ ] O tamanho e a rolagem do texto, a roda do mouse e o clique nos links e botões são iguais ao original.
-- [ ] Todos os HTMLs do `data\html` do aCis (somente leitura em `C:\Workspace-java\aCis_gameserver`) passam pelo parser do porte sem erro. Um teste percorre a pasta e falha em tag ou atributo não suportado. O que o original ignora fica registrado como ignorado.
-- [ ] Os ícones (`img src="icon.skill0000"` e outros pacotes de textura), as texturas de fundo e os botões com `back`/`fore` aparecem. O que faltar no `shared` vira pedido de exportação para a coordenadora, com o comando exato.
-- [ ] O Community Board mostra o conteúdo de todas as abas como no original (`ShowBoard` com as várias partes do HTML).
-- [ ] A janela do buffer da captura do usuário (lista de buffs com ícone, nome e descrição) fica igual ao original.
-- [ ] O que for de `Scripts\Net\` vira pedido para a net, e o que for do `App.cs` vira pedido para a coordenadora, em `tarefas\pedidos\`.
-- [ ] Testes EditMode (parser e layout de amostras: tabela com ícone, botão com textura, fontes e cores, board). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
-- [ ] Capturas antes e depois em `Docs/evidencias/html/`, tiradas no aCis local (buffer, gatekeeper, board, uma quest), e uma linha em `Docs/validacao.md`.
+  - Justificativa (parcial):
+    - Roda (3 unidades: 39 px, ou 45 no BBS), clique e ações (bypass em tokens, `$var` com o GetData, `link`, `cmd`, `msg`) seguem o original e têm teste.
+    - A altura da linha segue a fórmula do original ('A' + 6), mas o 'A' = 13 é [V]: falta uma captura do cliente oficial na mesma resolução.
+    - A fonte é a embutida do Unity em 11 px, como no resto do porte.
+    - Falta a barra de rolagem do HtmlCtrl (▲▼).
+- [x] Todos os HTMLs do `data\html` do aCis (somente leitura em `C:\Workspace-java\aCis_gameserver`) passam pelo parser do porte sem erro. Um teste percorre a pasta e falha em tag ou atributo não suportado. O que o original ignora fica registrado como ignorado.
+  - Feito: `L2HtmlTests.Corpus_aCis_TodasAsTagsEAtributosConhecidos`. Os 3751 arquivos passam; o que o cliente ignora está em `HtmlDoc.Ignored`.
+- [x] Os ícones (`img src="icon.skill0000"` e outros pacotes de textura), as texturas de fundo e os botões com `back`/`fore` aparecem. O que faltar no `shared` vira pedido de exportação para a coordenadora, com o comando exato.
+  - Feito: o buffer mostra os ícones ao vivo (`depois_buffer_buff.png`). `L2UI.SquareGray` e os botões `L2UI_CH3` aparecem 1:1. Pedido 0043 para `sek.*` e `Default.*`.
+- [x] O Community Board mostra o conteúdo de todas as abas como no original (`ShowBoard` com as várias partes do HTML).
+  - A aba Top está ao vivo, com as partes 101/102/103 e os fundos das tabelas (`depois_board_top.png`).
+  - As outras abas mandam `_bbsloc` e os demais `Command1..8`, mas o aCis local só trata `bbs_*` (`RequestBypassToServer.java:858`). O servidor não responde, e o cliente original ficaria igual com esse servidor.
+  - Falta: as partes 1..4 e 1001/1002 do BBS (leitura e escrita), que dependem do `RequestBBSWrite` (pedido 0034).
+- [x] A janela do buffer da captura do usuário (lista de buffs com ícone, nome e descrição) fica igual ao original.
+  - Ícone, nome e descrição em cinza sobre as faixas pretas alternadas, pelo layout da tabela do original. Captura ao vivo em `depois_buffer_buff.png`; não há captura do cliente oficial para comparar pixel a pixel.
+- [x] O que for de `Scripts\Net\` vira pedido para a net, e o que for do `App.cs` vira pedido para a coordenadora, em `tarefas\pedidos\`.
+  - Pedidos 0042 e 0043 (coordenadora) e 0047 (net).
+- [x] Testes EditMode (parser e layout de amostras: tabela com ícone, botão com textura, fontes e cores, board). `sh Docs/tools/run_tests.sh` sem falhas novas em relação a `feat/ui-revisao`.
+  - Sessão de testes, `testes\0055-1\`: 772/772 em `d96d606`; a base `b88e07c` dá 750/750. Os testes estão em `L2HtmlTests`, `NpcHtmlWndTests` e `SystemMenuTests`.
+- [x] Capturas antes e depois em `Docs/evidencias/html/`, tiradas no aCis local (buffer, gatekeeper, board, uma quest), e uma linha em `Docs/validacao.md`.
+  - `Docs/evidencias/html/antes_*`/`depois_*` e `Docs/validacao.md` K34.
+  - Quest: o link "Quest" da gatekeeper responde a página padrão do servidor ("not on a quest"); nenhum NPC perto tinha quest para um personagem novo. As páginas de quest usam as mesmas tags (texto, `<br>` e `<a action>`), e as amostras de quest passam nos testes.
 
 ## Andamento
 
