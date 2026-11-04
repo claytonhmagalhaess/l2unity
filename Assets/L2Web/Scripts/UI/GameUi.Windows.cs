@@ -947,7 +947,7 @@ namespace L2Web.UI
                 }
                 // macro: textura L2UI.MacroWnd.Macro_IconN do UIDATA_MACRO (nao e um icone de /icons)
                 var macroTex = s != null && s.Type == "macro" ? L2WndUtil.Tex(MacroOf(s.Id)?.TextureName)?.Url : null;
-                var toggleOn = s != null && s.Type == "skill" && buffs.Exists(b => b.skillId == s.Id);
+                var toggleOn = s != null && s.Type == "skill" && buffs.Exists(b => b.SkillId == s.Id);
                 var key = $"{slot}|{s?.Type}|{s?.Id}|{label}|{icon}|{macroTex}|{count}|{auto}|{toggleOn}";
                 if (key == sc.Key) continue;
                 sc.Key = key;

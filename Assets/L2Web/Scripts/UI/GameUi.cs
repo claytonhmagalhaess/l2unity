@@ -232,7 +232,7 @@ namespace L2Web.UI
         UserInfo lastUser;
         readonly Dictionary<int, (double until, double total)> reuse = new();
         readonly HashSet<int> autoShots = new();
-        readonly List<(int skillId, int level, double until)> buffs = new();
+        readonly List<BuffEntry> buffs = new();
         Entity target;
 
         /// <summary>Alvo atual (GetTargetInfo).</summary>
@@ -274,6 +274,14 @@ namespace L2Web.UI
 
             // ---- buffs
             AbnormalWnd = new L2Wnd("AbnormalStatusWnd", Layer, new WndOpts { AriaLabel = "Efeitos ativos" });
+            // HandleDie (AbnormalStatusWnd.uc:96-100): ao morrer limpa as Normal e as Short; as Etc ficam
+            L2Events.Register(Ev.EV_Die, _ =>
+            {
+                buffs.Clear();
+                shortBuffs.Clear();
+                RenderBuffs();
+                RenderBars();
+            });
 
             // ---- chat e mensagens do sistema
             ChatWnd = new L2Wnd("ChatWnd", Layer, new WndOpts { AriaLabel = "Chat" });
@@ -451,7 +459,11 @@ namespace L2Web.UI
             BindMenus();
             RenderBars();
             // OnPaint das barras a cada quadro: ToggleEffect e a varredura da recarga
-            Layer.El.gameObject.AddComponent<UiTicker>().OnTick = _ => AnimateBars();
+            Layer.El.gameObject.AddComponent<UiTicker>().OnTick = _ =>
+            {
+                AnimateBars();
+                AnimateBuffs();
+            };
             BuildHudExtras();
             // HUD fixa aparece ao entrar no mundo (ShowHud), janelas de uso sob demanda
         }

@@ -142,26 +142,54 @@ namespace L2Web.UI
             RenderBars();
         }
 
-        readonly List<(Text text, double until)> buffTimers = new();
+        /// <summary>
+        /// Um item do StatusIconCtrl da AbnormalStatusWnd: o StatusIconInfo do script (ClassID, Level, RemainTime, bShortItem,
+        /// bEtcItem) e o estado do nativo (o RemainTime conta a partir de `At`; o alfa do piscar).
+        /// </summary>
+        sealed class BuffEntry
+        {
+            public int SkillId, Level, RemainTime;
+            public double At;
+            public bool Short, Etc;
+            public readonly StatusIcon.Blink Blink = new();
+            public int Remain(double now) => StatusIcon.Remain(RemainTime, now - At);
+        }
+
+        /// <summary>O que cada celula desenhada precisa a cada quadro (numero e alfa do piscar).</summary>
+        sealed class BuffCell
+        {
+            public BuffEntry E;
+            public bool Debuff;
+            public RectTransform Root;
+            public RawImage Icon, Frame;
+            public string Digit;
+        }
+
+        readonly List<BuffCell> buffCells = new();
+        double blinkClock;
 
         /// <summary>AbnormalStatusUpdate (EV_AbnormalStatusNormalItem): a categoria Normal (seconds &lt; 0 = sem tempo).</summary>
-        public void SetBuffs(IList<AbnormalInfo> list) => SetBuffCategory(buffs, list);
+        public void SetBuffs(IList<AbnormalInfo> list) => SetBuffCategory(buffs, list, false, false);
 
         /// <summary>ShortBuffStatusUpdate (EV_AbnormalStatusShortItem): id 0 limpa.</summary>
-        public void SetShortBuffs(IList<AbnormalInfo> list) => SetBuffCategory(shortBuffs, list);
+        public void SetShortBuffs(IList<AbnormalInfo> list) => SetBuffCategory(shortBuffs, list, true, false);
 
         /// <summary>EtcStatusUpdate (EV_AbnormalStatusEtcItem): estados, sempre sem tempo.</summary>
-        public void SetEtcBuffs(IList<AbnormalInfo> list) => SetBuffCategory(etcBuffs, list);
+        public void SetEtcBuffs(IList<AbnormalInfo> list) => SetBuffCategory(etcBuffs, list, false, true);
 
-        readonly List<(int skillId, int level, double until)> shortBuffs = new(), etcBuffs = new();
+        readonly List<BuffEntry> shortBuffs = new(), etcBuffs = new();
 
-        /// <summary>Cada evento apaga so a sua categoria (ClearStatus(bEtc, bShort)) e so entram itens com SkillID &gt; 0.</summary>
-        void SetBuffCategory(List<(int skillId, int level, double until)> cat, IList<AbnormalInfo> list)
+        /// <summary>
+        /// Cada evento apaga so a sua categoria (ClearStatus(bEtc, bShort)) e so entram itens com SkillID &gt; 0; os itens novos
+        /// comecam com o RemainTime do pacote e o alfa 0xff (os das outras categorias continuam como estavam).
+        /// </summary>
+        void SetBuffCategory(List<BuffEntry> cat, IList<AbnormalInfo> list, bool isShort, bool isEtc)
         {
             var now = LoadTrack.Now();
             cat.Clear();
             foreach (var b in list)
-                if (b.SkillId > 0) cat.Add((b.SkillId, b.Level, b.Seconds < 0 ? double.PositiveInfinity : now + b.Seconds * 1000.0));
+                if (b.SkillId > 0)
+                    cat.Add(new BuffEntry { SkillId = b.SkillId, Level = b.Level, RemainTime = b.Seconds, At = now, Short = isShort, Etc = isEtc });
             RenderBuffs();
             // IsToggleOn (nw:0x10146830) le a lista de buffs: a moldura das skills de liga/desliga segue a categoria Normal
             if (cat == buffs) RenderBars();
@@ -244,73 +272,122 @@ namespace L2Web.UI
 
         /// <summary>
         /// AbnormalStatusWnd: linhas de 12 das Normal; depois uma linha com as Short (InsertCol: no inicio) e as Etc (AddCol).
+        /// Cada item como o NCStatusIconCtrl::OnPaint (nw:0x1004db50): fundo BackTex de 26, icone de 24 em +1, moldura do
+        /// debuff ou o numero do tempo (StatusIcon.DigitFor), sem espaco entre os itens.
         /// </summary>
         void RenderBuffs()
         {
             var box = AbnormalWnd.Get("StatusIcon");
-            buffTimers.Clear();
+            buffCells.Clear();
             if (!box) return;
             UiKit.Clear(box);
-            var cells = new List<(int skillId, int level, double until, int col, int row)>();
-            for (var i = 0; i < buffs.Count; i++) cells.Add((buffs[i].skillId, buffs[i].level, buffs[i].until, i % 12, i / 12));
-            var normalRows = (buffs.Count + 11) / 12;
-            var last = new List<(int skillId, int level, double until)>();
-            for (var i = shortBuffs.Count - 1; i >= 0; i--) last.Insert(0, shortBuffs[i]);
-            last.AddRange(etcBuffs);
-            for (var i = 0; i < last.Count; i++) cells.Add((last[i].skillId, last[i].level, last[i].until, i, normalRows));
+            var layout = StatusIcon.AbnormalLayout(buffs.Count, shortBuffs.Count, etcBuffs.Count);
             var cols = 0;
-            foreach (var (skillId, level, until, col, row) in cells)
+            var rows = 0;
+            foreach (var (cat, index, col, row) in layout)
             {
+                var e = (cat == 0 ? buffs : cat == 1 ? shortBuffs : etcBuffs)[index];
                 cols = Math.Max(cols, col + 1);
-                // NCStatusIconCtrl (FUN_1004db50): fundo BackTex em Size+2 (26), icone de Size (24) em +1, sem espaco entre os itens
+                rows = Math.Max(rows, row + 1);
                 var d = UiRoot.Box("buff", box, col * 26, row * 26, 26, 26);
                 L2WndUtil.Paint(d, "L2UI.EtcWndBack.AbnormalBack", 26, 26);
-                var name = $"{GameData.SkillName(skillId, level)} Nv {level}";
-                int sid = skillId, slv = level;
-                var end = until;
-                UiTooltip.SetCustom(d.gameObject, () => BuffTooltip(sid, slv, end), true, name);
-                var url = IconUrl(GameData.SkillIcon(skillId));
+                var cell = new BuffCell { E = e, Root = d, Debuff = L2SkillData.IsDebuff(e.SkillId, e.Level) };
+                UiTooltip.SetCustom(d.gameObject, () => BuffTooltip(e), true, GameData.SkillName(e.SkillId, e.Level));
+                var url = IconUrl(GameData.SkillIcon(e.SkillId));
                 if (url != null)
                 {
-                    var img = UiRoot.Box("icon", d, 1, 1, 24, 24).gameObject.AddComponent<RawImage>();
-                    img.raycastTarget = false;
-                    L2WndUtil.SetTexture(img, url);
+                    cell.Icon = UiRoot.Box("icon", d, 1, 1, 24, 24).gameObject.AddComponent<RawImage>();
+                    cell.Icon.raycastTarget = false;
+                    L2WndUtil.SetTexture(cell.Icon, url);
                 }
-                if (L2SkillData.IsDebuff(skillId, level))
+                if (cell.Debuff)
                 {
-                    // +0x1f7c = IsDebuff: moldura L2UI_CH3.PlayerStatusWnd.debuff (UV 26x26) sobre o icone, e sem numero
+                    // +0x1f7c = IsDebuff: moldura L2UI_CH3.PlayerStatusWnd.debuff (UV 26x26) sobre o icone, com o alfa do icone
                     var fr = UiRoot.Box("debuff", d, 1, 1, 24, 24);
                     L2WndUtil.Paint(fr, "L2UI_CH3.PlayerStatusWnd.debuff", 24, 24, PaintMode.Stretch, 0, 0, 26, 26);
-                    continue;
+                    cell.Frame = L2WndUtil.Bg(fr);
+                    if (cell.Frame) cell.Frame.raycastTarget = false;
                 }
-                // tempo restante: so abaixo de 60 s, "%d" em 0xffdcdcdc com alfa 0xCC, (x+7, y+10) com 1 digito e (x+2, y+10) com 2
-                // ([?] DrawSpecialDigit usa a fonte de digitos do engine; aqui um texto pequeno)
-                var t = UiRoot.Label(d, "", 0, 10, 26, 12, 10, new Color32(0xdc, 0xdc, 0xdc, 0xcc), TextAnchor.UpperLeft);
-                t.raycastTarget = false;
-                buffTimers.Add((t, until));
+                buffCells.Add(cell);
             }
             // UpdateWindowSize: largura da grade + 12 (alca), altura da grade; sem linhas, oculta
-            var rows = normalRows + (last.Count > 0 ? 1 : 0);
             box.sizeDelta = new Vector2(Math.Max(1, cols) * 26, Math.Max(1, rows) * 26);
             AbnormalWnd.El.sizeDelta = new Vector2(12 + Math.Max(1, cols) * 26, Math.Max(1, rows) * 26);
             AbnormalWnd.SideFrame(Math.Max(1, rows) * 26); // SetFrameSize(12, altura da grade)
             var cg = (AbnormalWnd.El.TryGetComponent<CanvasGroup>(out var __c) ? __c : AbnormalWnd.El.gameObject.AddComponent<CanvasGroup>());
             cg.alpha = rows == 0 ? 0 : 1;
             cg.blocksRaycasts = rows > 0;
-            Tick();
+            UpdateBuffDigits(LoadTrack.Now());
+            ApplyBlink();
         }
 
         /// <summary>
-        /// Tooltip "AbnormalStatus": nome, encantamento, nivel, tempo restante (MakeBuffTimeStr, so fora dos debuffs e com
-        /// tempo) e descricao.
+        /// Tooltip "AbnormalStatus" (ToolTip.uc:1001-1134): nome, encantamento, nivel, tempo restante (o Reserved do item, que o
+        /// timer de 1 s atualiza; -1 no debuff e nos itens sem tempo) e descricao.
         /// </summary>
-        static CustomTooltip BuffTooltip(int id, int level, double until)
+        static CustomTooltip BuffTooltip(BuffEntry e)
         {
-            var r = L2SkillData.Get(id, level);
-            var add = L2TooltipData.EnchantName(id, level);
-            var lv = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : level;
-            var remain = double.IsInfinity(until) ? -1 : (int)Math.Max(0, Math.Floor((until - LoadTrack.Now()) / 1000));
-            return L2Tooltip.AbnormalStatus(GameData.SkillName(id, level), add, lv, L2SkillData.IsDebuff(id, level), remain, L2TooltipData.Skill(id, level)?.Desc ?? "");
+            var r = L2SkillData.Get(e.SkillId, e.Level);
+            var add = L2TooltipData.EnchantName(e.SkillId, e.Level);
+            var lv = add.Length > 0 && r != null && r.EnchantSkillLevel > 0 ? r.EnchantSkillLevel : e.Level;
+            var debuff = L2SkillData.IsDebuff(e.SkillId, e.Level);
+            var reserved = StatusIcon.Reserved(e.Remain(LoadTrack.Now()), debuff);
+            return L2Tooltip.AbnormalStatus(GameData.SkillName(e.SkillId, e.Level), add, lv, debuff, reserved, L2TooltipData.Skill(e.SkillId, e.Level)?.Desc ?? "");
+        }
+
+        /// <summary>O numero sobre cada icone (timer de 1 s): refeito so quando muda.</summary>
+        void UpdateBuffDigits(double now)
+        {
+            foreach (var c in buffCells)
+            {
+                if (!c.Root) continue;
+                var dg = StatusIcon.DigitFor(c.E.Remain(now), c.Debuff, c.E.Short);
+                var key = dg is { } k ? k.Text : null;
+                if (key == c.Digit) continue;
+                c.Digit = key;
+                var old = c.Root.Find("num");
+                if (old) UnityEngine.Object.Destroy(old.gameObject);
+                if (dg is { } g) L2Digits.Draw(c.Root, "num", g.Text, g.X, g.Y, (uint)g.Alpha << 24 | 0xdcdcdc, g.Type);
+            }
+        }
+
+        /// <summary>Timer de 100 ms (0x1e9): o alfa dos itens com RemainTime em [0, 30] vai e volta.</summary>
+        void AnimateBuffs()
+        {
+            var now = LoadTrack.Now();
+            if (blinkClock <= 0 || now - blinkClock > 1000) blinkClock = now;
+            var steps = 0;
+            while (now - blinkClock >= StatusIcon.BlinkMs)
+            {
+                blinkClock += StatusIcon.BlinkMs;
+                steps++;
+            }
+            if (steps == 0) return;
+            var changed = false;
+            foreach (var e in AllBuffs())
+            {
+                if (!StatusIcon.Blinks(e.Remain(now))) continue;
+                for (var i = 0; i < steps; i++) e.Blink.Step(e.Short);
+                changed = true;
+            }
+            if (changed) ApplyBlink();
+        }
+
+        IEnumerable<BuffEntry> AllBuffs()
+        {
+            foreach (var e in buffs) yield return e;
+            foreach (var e in shortBuffs) yield return e;
+            foreach (var e in etcBuffs) yield return e;
+        }
+
+        void ApplyBlink()
+        {
+            foreach (var c in buffCells)
+            {
+                var a = c.E.Blink.Alpha / 255f;
+                if (c.Icon && !Mathf.Approximately(c.Icon.color.a, a)) c.Icon.color = new Color(1, 1, 1, a);
+                if (c.Frame && !Mathf.Approximately(c.Frame.color.a, a)) c.Frame.color = new Color(c.Frame.color.r, c.Frame.color.g, c.Frame.color.b, a);
+            }
         }
 
         /// <summary>Atualiza contadores (reuso nos atalhos, tempo dos buffs) e o alvo. Chamado algumas vezes por segundo.</summary>
@@ -319,19 +396,7 @@ namespace L2Web.UI
             var now = LoadTrack.Now();
             StatusWnd.TickRegen();
             PartyMatch?.Hook(Router());
-            foreach (var (t, until) in buffTimers)
-            {
-                if (!t) continue;
-                var s = "";
-                if (!double.IsInfinity(until))
-                {
-                    var sec = (int)Math.Max(0, Math.Floor((until - now) / 1000));
-                    if (sec < 60) s = sec.ToString();
-                }
-                if (t.text == s) continue;
-                t.text = s;
-                t.rectTransform.anchoredPosition = new Vector2(s.Length < 2 ? 7 : 2, -10);
-            }
+            UpdateBuffDigits(now);
             if (target != null) UpdateTarget();
         }
 
