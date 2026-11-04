@@ -188,6 +188,8 @@ namespace L2Web.UI
         public RecipeView Recipes { get; private set; }
         /// <summary>ItemEnchantWnd, RefineryWnd e UnrefineryWnd, #0044.</summary>
         public ItemUpgradeView Upgrade { get; private set; }
+        /// <summary>PartyMatch*, UnionWnd/UnionDetailWnd e DuelManager, #0045.</summary>
+        public PartyMatchView PartyMatch { get; private set; }
         /// <summary>GetRecipeShopMsg: o titulo atual da propria loja de fabricacao.</summary>
         public string RecipeShopMsg = "";
 
@@ -396,6 +398,8 @@ namespace L2Web.UI
             Recipes = new RecipeView(Layer, this, b => this.deps.Send(b));
             // melhoria de item (#0044)
             Upgrade = new ItemUpgradeView(Layer, this, b => this.deps.Send(b));
+            // busca de grupo, canal de comando e duelo (#0045)
+            PartyMatch = new PartyMatchView(Layer, this, b => this.deps.Send(b));
             // MainWnd.uc:18-34: OnMinimize -> Iconize com o icone e a dica da aba de cima
             Main.OnMinimize = () =>
             {
