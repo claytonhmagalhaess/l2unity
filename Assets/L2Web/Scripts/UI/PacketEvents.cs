@@ -331,6 +331,12 @@ namespace L2Web.UI
         /// <summary>PartySmallWindowUpdate (0x52).</summary>
         public static List<Event> PartyUpdate(PartyMember m) => new() { new Event(Ev.EV_PartyUpdateParty, Member("", m)) };
 
+        /// <summary>TutorialShowHtml (0xa0, S html): EV_TutorialViewerWndShow com HtmlString (TutorialViewerWnd.uc).</summary>
+        public static List<Event> TutorialShowHtml(string html) => new() { new Event(Ev.EV_TutorialViewerWndShow, L2Param.Add("", "HtmlString", html ?? "")) };
+
+        /// <summary>TutorialCloseHtml (0xa3): EV_TutorialViewerWndHide.</summary>
+        public static List<Event> TutorialCloseHtml() => new() { new Event(Ev.EV_TutorialViewerWndHide, "") };
+
         /// <summary>ShowBoardPacket (0x6e): OK, os 8 comandos e o endereco (BoardWnd.uc).</summary>
         public static List<Event> ShowBoard(ShowBoardInfo b)
         {
