@@ -45,7 +45,14 @@ namespace L2Web.Render
             public ushort[] H;
         }
 
-        static readonly Dictionary<string, HeightField> fields = new();
+        static readonly Dictionary<(int, int), HeightField> fields = new();
+
+        /// <summary>"tx_ty" -> (tx, ty), a chave de fields (sem montar string a cada consulta de altura).</summary>
+        static (int, int) TileKey(string tile)
+        {
+            var k = tile.IndexOf('_');
+            return (int.Parse(tile.Substring(0, k)), int.Parse(tile.Substring(k + 1)));
+        }
 
         /// <summary>Malha de um tile para costurar a coluna/linha extra com a primeira linha do vizinho.</summary>
         sealed class Seam
@@ -140,7 +147,7 @@ namespace L2Web.Render
         public static float? UeHeightAt(float x, float y)
         {
             var t = Coords.MapTile(x, y);
-            if (!fields.TryGetValue($"{t.tx}_{t.ty}", out var f)) return null;
+            if (!fields.TryGetValue((t.tx, t.ty), out var f)) return null;
             var fi = (x - f.Lx) / f.Sx + f.W / 2f;
             var fj = (y - f.Ly) / f.Sy + f.V / 2f;
             var i = Math.Max(0, Math.Min(f.W - 2, Mathf.FloorToInt(fi)));
@@ -151,6 +158,66 @@ namespace L2Web.Render
             var top = H(i, j) * (1 - u) + H(i + 1, j) * u;
             var bot = H(i, j + 1) * (1 - u) + H(i + 1, j + 1) * u;
             return f.Lz + (top * (1 - v) + bot * v - 32768) * f.Sz / 256;
+        }
+
+        /// <summary>
+        /// Altura da superficie desenhada do terreno em (x, y): os mesmos triangulos da malha do BuildUeTerrain (diagonal
+        /// de (i+1, j) a (i, j+1)), com a coluna/linha extra da divisa tirada do vizinho quando ele esta registrado (como
+        /// o StitchAll) ou repetindo a borda (como a malha sem vizinho). E onde os pes do pawn ficam sobre o terreno.
+        /// null se o tile nao esta registrado.
+        /// </summary>
+        public static float? SurfaceAt(float x, float y)
+        {
+            var t = Coords.MapTile(x, y);
+            if (!fields.TryGetValue((t.tx, t.ty), out var f)) return null;
+            var fi = (x - f.Lx) / f.Sx + f.W / 2f;
+            var fj = (y - f.Ly) / f.Sy + f.V / 2f;
+            var i = Math.Max(0, Math.Min(f.W - 1, Mathf.FloorToInt(fi)));
+            var j = Math.Max(0, Math.Min(f.V - 1, Mathf.FloorToInt(fj)));
+            var u = Mathf.Clamp01(fi - i);
+            var v = Mathf.Clamp01(fj - j);
+            return TriHeight(VertexZ(f, i, j), VertexZ(f, i + 1, j), VertexZ(f, i, j + 1), VertexZ(f, i + 1, j + 1), u, v);
+        }
+
+        /// <summary>
+        /// Altura num quadrado da grade com os dois triangulos da malha: (00, 10, 01) quando u + v &lt;= 1 e (10, 11, 01)
+        /// no resto. u, v em [0, 1] a partir do vertice (i, j).
+        /// </summary>
+        public static float TriHeight(float h00, float h10, float h01, float h11, float u, float v) =>
+            u + v <= 1 ? h00 + u * (h10 - h00) + v * (h01 - h00) : h11 + (1 - u) * (h01 - h11) + (1 - v) * (h10 - h11);
+
+        /// <summary>Z (unidades L2) do vertice (i, j) da malha do tile; i = W ou j = V e a coluna/linha extra da divisa.</summary>
+        static float VertexZ(HeightField f, int i, int j)
+        {
+            if (i >= f.W || j >= f.V)
+            {
+                var x = f.Lx + (i - f.W / 2f) * f.Sx;
+                var y = f.Ly + (j - f.V / 2f) * f.Sy;
+                var t = Coords.MapTile(x, y);
+                if (fields.TryGetValue((t.tx, t.ty), out var n) && n != f)
+                {
+                    var ni = Mathf.RoundToInt((x - n.Lx) / n.Sx + n.W / 2f);
+                    var nj = Mathf.RoundToInt((y - n.Ly) / n.Sy + n.V / 2f);
+                    if (ni >= 0 && nj >= 0 && ni < n.W && nj < n.V) return n.Lz + (n.H[nj * n.W + ni] - 32768) * n.Sz / 256;
+                }
+            }
+            i = Math.Min(i, f.W - 1);
+            j = Math.Min(j, f.V - 1);
+            return f.Lz + (f.H[j * f.W + i] - 32768) * f.Sz / 256;
+        }
+
+        /// <summary>
+        /// Registra o heightmap de um tile para UeHeightAt/SurfaceAt sem montar a malha (testes e ferramentas); h = null
+        /// tira o tile.
+        /// </summary>
+        public static void SetField(string tile, float[] location, float[] scale, int w, int v, ushort[] h)
+        {
+            if (h == null)
+            {
+                fields.Remove(TileKey(tile));
+                return;
+            }
+            fields[TileKey(tile)] = new HeightField { Lx = location[0], Ly = location[1], Lz = location[2], Sx = scale[0], Sy = scale[1], Sz = scale[2], W = w, V = v, H = h };
         }
 
         static async Task<Texture2D> LoadTex(string url, bool linear, bool repeat)
@@ -217,7 +284,7 @@ namespace L2Web.Render
             Buffer.BlockCopy(hb, 0, H, 0, W * V * 2);
             float lx = info.Location[0], ly = info.Location[1], lz = info.Location[2];
             float sx = info.Scale[0], sy = info.Scale[1], sz = info.Scale[2];
-            if (register) fields[tile] = new HeightField { Lx = lx, Ly = ly, Lz = lz, Sx = sx, Sy = sy, Sz = sz, W = W, V = V, H = H };
+            if (register) fields[TileKey(tile)] = new HeightField { Lx = lx, Ly = ly, Lz = lz, Sx = sx, Sy = sy, Sz = sz, W = W, V = V, H = H };
 
             // o heightmap tem 256 vertices = 255 celulas: sem mais uma coluna/linha (com a altura da borda) sobrava uma
             // fresta de uma celula (128 unidades) na divisa com o tile vizinho

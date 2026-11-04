@@ -83,37 +83,72 @@ namespace L2Web.Render
         }
 
         /// <summary>
-        /// Piso visivel (BSP ou StaticMesh) logo abaixo do z do geodata, para desenhar os personagens apoiados nele: o geodata
-        /// das cidades fica ~30 unidades acima do piso BSP. Raio para baixo de z + 8 ate z - 48, em cache por celula de 16.
+        /// Altura em que o pawn e desenhado (Entities.DrawHeight): o chao visivel logo abaixo do z do servidor/geodata.
+        /// O z do geodata fica ~30 unidades acima do chao desenhado, tanto do piso BSP das cidades quanto do terreno do
+        /// Unreal nos campos (Turek, Gludio, Dion: mediana 26-32, p95 34-41; tarefa #0056). O cliente original nao desenha
+        /// o pawn no z do servidor: UGameEngine::AdjustPawnLocation (engine.c, Tryskell) faz um trace do cilindro de
+        /// colisao para baixo, de z + CollisionHeight + 20 ate z - 30 (alargando 30 para cada lado se nao achar), e poe o
+        /// pawn no chao que o trace achou; depois o physWalking o mantem sobre a superficie. Aqui: o piso de Statics por
+        /// raio (de z + 8 ate z - 48, em cache por celula de 16) e o terreno do Unreal pela propria malha (SurfaceAt),
+        /// ficando o mais alto dos que estao na janela (PickFloor). Sem nenhum, o z do geodata.
         /// </summary>
         static readonly Dictionary<(int, int, int), float> floorCache = new();
         static readonly RaycastHit[] floorHits = new RaycastHit[32];
 
+        /// <summary>Janela do piso de Statics (BSP/StaticMesh) em volta do z do geodata (unidades L2).</summary>
+        public const float StaticsUp = 8, StaticsDown = 48;
+
+        /// <summary>
+        /// Janela do terreno do Unreal: de z + 20 (o fundo do cilindro no inicio do trace do AdjustPawnLocation) ate
+        /// z - 84 (as duas primeiras voltas do trace: 30 + CollisionHeight ~24 + 30), que cobre o p99 das zonas medidas.
+        /// </summary>
+        public const float TerrainUp = 20, TerrainDown = 84;
+
+        /// <summary>
+        /// Regra do chao do desenho: entre o piso de Statics e o terreno que estiverem nas suas janelas em volta de z, o mais
+        /// alto (o primeiro que um trace de cima para baixo acha). Nenhum: o proprio z.
+        /// </summary>
+        public static float PickFloor(float z, float? statics, float? terrain)
+        {
+            float? best = null;
+            if (statics.HasValue && statics.Value <= z + StaticsUp && statics.Value >= z - StaticsDown) best = statics;
+            if (terrain.HasValue && terrain.Value <= z + TerrainUp && terrain.Value >= z - TerrainDown && (!best.HasValue || terrain.Value > best.Value))
+                best = terrain;
+            return best ?? z;
+        }
+
         public static float VisualFloor(float x, float y, float z)
         {
             var s = lastScene;
-            if (s == null || !s.Statics || s.Statics.childCount == 0) return z;
-            var cx = (int)x >> 4;
-            var cy = (int)y >> 4;
-            var key = (cx, cy, Mathf.RoundToInt(z));
-            if (!floorCache.TryGetValue(key, out var off))
+            if (s == null) return z;
+            float? statics = null;
+            if (s.Statics && s.Statics.childCount > 0)
             {
-                var from = Coords.ToUnity(cx * 16 + 8, cy * 16 + 8, z + 8);
-                var n = Physics.RaycastNonAlloc(new Ray(from, Vector3.down), floorHits, 56 * S, Physics.AllLayers, QueryTriggerInteraction.Ignore);
-                var best = float.MaxValue;
-                var bestY = 0f;
-                for (var i = 0; i < n; i++)
+                var cx = (int)x >> 4;
+                var cy = (int)y >> 4;
+                var key = (cx, cy, Mathf.RoundToInt(z));
+                if (!floorCache.TryGetValue(key, out var off))
                 {
-                    var h = floorHits[i];
-                    if (h.distance >= best || !h.collider.transform.IsChildOf(s.Statics)) continue;
-                    best = h.distance;
-                    bestY = h.point.y;
+                    var from = Coords.ToUnity(cx * 16 + 8, cy * 16 + 8, z + StaticsUp);
+                    var n = Physics.RaycastNonAlloc(new Ray(from, Vector3.down), floorHits, (StaticsUp + StaticsDown) * S, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                    var best = float.MaxValue;
+                    var bestY = 0f;
+                    for (var i = 0; i < n; i++)
+                    {
+                        var h = floorHits[i];
+                        if (h.distance >= best || !h.collider.transform.IsChildOf(s.Statics)) continue;
+                        best = h.distance;
+                        bestY = h.point.y;
+                    }
+                    off = best < float.MaxValue ? bestY / S - z : float.NaN;
+                    if (floorCache.Count > 20000) floorCache.Clear();
+                    floorCache[key] = off;
                 }
-                off = best < float.MaxValue ? bestY / S - z : 0;
-                if (floorCache.Count > 20000) floorCache.Clear();
-                floorCache[key] = off;
+                if (!float.IsNaN(off)) statics = z + off;
             }
-            return z + off;
+            // terreno do Unreal so quando e ele que esta desenhado (sem ele o chao visivel e o proprio geodata)
+            var terrain = ueMode ? UeTerrain.SurfaceAt(x, y) : null;
+            return PickFloor(z, statics, terrain);
         }
 
         /// <summary>Cenario novo carregado: as alturas de piso em cache podem ter mudado.</summary>
