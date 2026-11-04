@@ -2,8 +2,8 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 97 tratados no Unity
-- UI nativa (C++, sem EV_): 61 no original, 34 tratados no Unity
+- UI: 198 no original, 113 tratados no Unity
+- UI nativa (C++, sem EV_): 61 no original, 36 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
 - dados: 7 no original, 4 tratados no Unity
@@ -28,9 +28,9 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x0b | ExEventMatchFirecrackerPacket |  | mundo/engine |  | falta |
 | ex | 0x0c | ExEventMatchTeamUnlockedPacket |  | UI nativa (C++, sem EV_) |  | falta |
 | ex | 0x0d | ExEventMatchGMTestPacket |  | UI | EV_ShowEventMatchGMWnd | falta |
-| ex | 0x0e | ExPartyRoomMemberPacket | ExPartyRoomMember | UI | EV_PartyMatchRoomMember | falta |
-| ex | 0x0f | ExClosePartyRoomPacket | ExClosePartyRoom | UI | EV_PartyMatchRoomClose | falta |
-| ex | 0x10 | ExManagePartyRoomMemberPacket | ExManagePartyRoomMember | UI | EV_PartyMatchRoomMemberUpdate | falta |
+| ex | 0x0e | ExPartyRoomMemberPacket | ExPartyRoomMember | UI | EV_PartyMatchRoomMember | tratado |
+| ex | 0x0f | ExClosePartyRoomPacket | ExClosePartyRoom | UI | EV_PartyMatchRoomClose | tratado |
+| ex | 0x10 | ExManagePartyRoomMemberPacket | ExManagePartyRoomMember | UI | EV_PartyMatchRoomMemberUpdate | tratado |
 | ex | 0x11 | ExEventMatchLockResult |  | ignorado |  | ignorado (igual) |
 | ex | 0x12 | ExAutoSoulShot | ExAutoSoulShot | UI nativa (C++, sem EV_) |  | tratado |
 | ex | 0x13 | ExFishingStartPacket | ExFishingStart | UI | EV_FishRankEventButtonHide, EV_FishViewportWndShow | falta |
@@ -51,9 +51,9 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x22 | ExShowProcureCropDetailPacket | ExShowProcureCropDetail | UI | EV_ManorCropSellChangeWndAddItem, EV_ManorCropSellChangeWndShow | falta |
 | ex | 0x23 | ExHeroListPacket | ExHeroList | UI | EV_HeroShowList | falta |
 | ex | 0x24 | ExServerPrimitivePacket | ExServerPrimitive | debug |  | falta |
-| ex | 0x25 | ExOpenMPCCPacket | ExOpenMPCC | UI | EV_CommandChannelStart | falta |
-| ex | 0x26 | ExCloseMPCCPacket | ExCloseMPCC | UI | EV_CommandChannelEnd | falta |
-| ex | 0x27 | ExAskJoinMPCCPacket | ExAskJoinMPCC | UI nativa (C++, sem EV_) |  | falta |
+| ex | 0x25 | ExOpenMPCCPacket | ExOpenMPCC | UI | EV_CommandChannelStart | tratado |
+| ex | 0x26 | ExCloseMPCCPacket | ExCloseMPCC | UI | EV_CommandChannelEnd | tratado |
+| ex | 0x27 | ExAskJoinMPCCPacket | ExAskJoinMPCC | UI nativa (C++, sem EV_) |  | tratado |
 | ex | 0x28 | ExPledgeCrestLargePacket | ExPledgeCrestLarge | mundo/engine |  | falta |
 | ex | 0x29 | ExOlympiadUserInfoPacket | ExOlympiadUserInfo | UI | EV_OlympiadUserInfo | falta |
 | ex | 0x2a | ExOlympiadSpelledInfoPacket | ExOlympiadSpelledInfo | UI | EV_OlympiadBuffInfo | falta |
@@ -62,13 +62,13 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x2d | ExMailArrivedPacket | ExMailArrived | UI | EV_ArriveNewMail | falta |
 | ex | 0x2e | ExStorageMaxCountPacket | ExStorageMaxCount | UI | EV_SetMaxCount | tratado |
 | ex | 0x2f | ExEventMatchManagePacket |  | UI | EV_EventMatchManage | falta |
-| ex | 0x30 | ExMultiPartyCommandChannelInfoPacket | ExMultiPartyCommandChannelInfo | UI | EV_CommandChannelInfo, EV_CommandChannelPartyList | falta |
+| ex | 0x30 | ExMultiPartyCommandChannelInfoPacket | ExMultiPartyCommandChannelInfo | UI | EV_CommandChannelInfo, EV_CommandChannelPartyList | tratado |
 | ex | 0x31 | ExPCCafePointInfoPacket | ExPCCafePointInfo | UI | EV_PCCafePointInfo | falta |
 | ex | 0x32 | ExSetCompassZoneCode | ExSetCompassZoneCode | UI | EV_SetRadarZoneCode | falta |
 | ex | 0x33 | ExGetBossRecord | ExGetBossRecord | UI | EV_RaidRecord | falta |
-| ex | 0x34 | ExAskJoinPartyRoom | ExAskJoinPartyRoom | UI nativa (C++, sem EV_) |  | falta |
-| ex | 0x35 | ExListPartyMatchingWaitingRoom | ExListPartyMatchingWaitingRoom | UI | EV_PartyMatchWaitList, EV_PartyMatchWaitListStart | falta |
-| ex | 0x36 | ExSetMpccRouting |  | UI | EV_CommandChannelRoutingType | falta |
+| ex | 0x34 | ExAskJoinPartyRoom | ExAskJoinPartyRoom | UI nativa (C++, sem EV_) |  | tratado |
+| ex | 0x35 | ExListPartyMatchingWaitingRoom | ExListPartyMatchingWaitingRoom | UI | EV_PartyMatchWaitList, EV_PartyMatchWaitListStart | tratado |
+| ex | 0x36 | ExSetMpccRouting |  | UI | EV_CommandChannelRoutingType | tratado |
 | ex | 0x37 | ExShowAdventurerGuideBook | ExShowAdventurerGuideBook | UI | EV_ShowGuideWnd | falta |
 | ex | 0x38 | ExShowScreenMessage | ExShowScreenMessage | UI | EV_ShowScreenMessage | falta |
 | ex | 0x39 | PledgeSkillListPacket | PledgeSkillList | UI | EV_ClanSkillList | tratado |
@@ -88,12 +88,12 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x47 | ExRestartClient | ExRestartClient | UI nativa (C++, sem EV_) |  | falta |
 | ex | 0x48 | ExRequestHackShield | ExRequestHackShield | log |  | falta |
 | ex | 0x49 | ExUseSharedGroupItem | ExUseSharedGroupItem | UI nativa (C++, sem EV_) |  | falta |
-| ex | 0x4a | ExMPCCShowPartyMemberInfo | ExMPCCShowPartyMemberInfo | UI | EV_CommandChannelPartyMember | falta |
+| ex | 0x4a | ExMPCCShowPartyMemberInfo | ExMPCCShowPartyMemberInfo | UI | EV_CommandChannelPartyMember | tratado |
 | ex | 0x4b | ExDuelAskStart | ExDuelAskStart | UI | EV_DuelAskStart | tratado |
-| ex | 0x4c | ExDuelReady | ExDuelReady | UI | EV_DuelReady | falta |
-| ex | 0x4d | ExDuelStart | ExDuelStart | UI | EV_DuelStart | falta |
-| ex | 0x4e |  | ExDuelEnd | UI | EV_DuelEnd | falta |
-| ex | 0x4f | ExDuelUpdateUserInfo | ExDuelUpdateUserInfo | UI | EV_DuelUpdateUserInfo | falta |
+| ex | 0x4c | ExDuelReady | ExDuelReady | UI | EV_DuelReady | tratado |
+| ex | 0x4d | ExDuelStart | ExDuelStart | UI | EV_DuelStart | tratado |
+| ex | 0x4e |  | ExDuelEnd | UI | EV_DuelEnd | tratado |
+| ex | 0x4f | ExDuelUpdateUserInfo | ExDuelUpdateUserInfo | UI | EV_DuelUpdateUserInfo | tratado |
 | ex | 0x50 | ExShowVariationMakeWindow | ExShowVariationMakeWindow | UI | EV_ShowRefineryInteface | tratado |
 | ex | 0x51 | ExShowVariationCancelWindow | ExShowVariationCancelWindow | UI | EV_ShowRefineryCancelInteface | tratado |
 | ex | 0x52 | ExPutItemResultForVariationMake | ExConfirmVariationItem | UI | EV_RefineryConfirmTargetItemResult | tratado |
@@ -104,7 +104,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | ex | 0x57 | ExVariationCancelResult | ExVariationCancelResult | UI | EV_RefineryRefineCancelResult | tratado |
 | ex | 0x58 | ExDuelEnemyRelation | ExDuelEnemyRelation | ignorado |  | ignorado (igual) |
 | ex | 0x59 | ExPlayAnimation |  | mundo/engine |  | falta |
-| ex | 0x5a | ExMPCCPartyInfoUpdate | ExMPCCPartyInfoUpdate | UI | EV_CommandChannelPartyUpdate | falta |
+| ex | 0x5a | ExMPCCPartyInfoUpdate | ExMPCCPartyInfoUpdate | UI | EV_CommandChannelPartyUpdate | tratado |
 | ex | 0x5b | ExPlayScene | ExPlayScene | UI | EV_ShowPlaySceneInterface | falta |
 | ex | 0x5c | ExNeedToChangeName |  | UI nativa (C++, sem EV_) |  | falta |
 | game | 0x00 | VersionCheckPacket | KeyPacket | UI nativa (C++, sem EV_) |  | tratado |
@@ -257,8 +257,8 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0x93 | GMViewQuestInfoPacket | GMViewQuestList | UI | EV_GMObservingQuestItem, EV_GMObservingQuestList, EV_GMObservingQuestListEnd, EV_GMObservingQuestListStart | falta |
 | game | 0x94 | GMViewItemListPacket | GMViewItemList | UI | EV_GMObservingInventoryAddItem, EV_GMObservingInventoryClear | falta |
 | game | 0x95 | GMViewWarehouseWithdrawListPacket | GMViewWarehouseWithdrawList | UI | EV_GMObservingWarehouseItemList, EV_GMObservingWarehouseItemListStart | falta |
-| game | 0x96 | ListPartyWatingPacket | PartyMatchList | UI | EV_PartyMatchList, EV_PartyMatchStart | falta |
-| game | 0x97 | PartyRoomInfoPacket | PartyMatchDetail | UI | EV_PartyMatchRoomStart | falta |
+| game | 0x96 | ListPartyWatingPacket | PartyMatchList | UI | EV_PartyMatchList, EV_PartyMatchStart | tratado |
+| game | 0x97 | PartyRoomInfoPacket | PartyMatchDetail | UI | EV_PartyMatchRoomStart | tratado |
 | game | 0x98 | PlaySoundPacket | PlaySound | mundo/engine |  | falta |
 | game | 0x99 | StaticObjectPacket | StaticObjectInfo | mundo/engine |  | tratado |
 | game | 0x9a | PrivateStoreManageList | PrivateStoreManageListSell | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |

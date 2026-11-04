@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **127**; não enviados pelo Unity: **118**.
+Envios do original: **245**; com builder no Unity: **145**; não enviados pelo Unity: **100**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -72,6 +72,9 @@ Envios do original: **245**; com builder no Unity: **127**; não enviados pelo U
 | RequestAcquireSkillInfo | jogo | 0x6b |  | `cddd` | SkillTrainPackets.RequestAcquireSkillInfo |
 | RequestAcquireSkill | jogo | 0x6c |  | `cddd` | SkillTrainPackets.RequestAcquireSkill |
 | RequestRestartPoint | jogo | 0x6d |  | `cd` | GamePackets.RequestRestartPoint |
+| RequestListPartyWating | jogo | 0x6f |  | `cddd` | PartyMatchPackets.RequestPartyMatchConfig |
+| RequestManagePartyRoom | jogo | 0x70 |  | `cdddddS` | PartyMatchPackets.RequestPartyMatchList |
+| RequestJoinPartyRoom | jogo | 0x71 |  | `cdddd` | PartyMatchPackets.RequestPartyMatchDetail |
 | RequestCrystallizeItem | jogo | 0x72 |  | `cdd` | UiPackets.RequestCrystallizeItem |
 | RequestPrivateStoreManage | jogo | 0x73 |  | `c` | StorePackets.RequestPrivateStoreManageSell |
 | SetPrivateStoreList | jogo | 0x74 |  | `cddb` | StorePackets.SetPrivateStoreListSell |
@@ -115,20 +118,35 @@ Envios do original: **245**; com builder no Unity: **127**; não enviados pelo U
 | RequestMakeMacro | jogo | 0xc1 |  | `cdSSSccb` | MacroPackets.RequestMakeMacro |
 | RequestDeleteMacro | jogo | 0xc2 |  | `cd` | MacroPackets.RequestDeleteMacro |
 | ConfirmDlg | jogo | 0xc5 |  | `cddd` | UiPackets.DlgAnswer |
+| RequestDuelStart | jogo | 0xd0 | 0x27 | `chSd` | PartyMatchPackets.RequestDuelStart |
 | RequestRefineCancel | jogo | 0xd0 | 0x2e | `chd` | EnchantPackets.RequestRefineCancel |
 | RequestConfirmTargetItem | jogo | 0xd0 | 0x29 | `chd` | EnchantPackets.RequestConfirmTargetItem |
+| RequestWithdrawPartyRoom | jogo | 0xd0 | 0x03 | `chdd` | PartyMatchPackets.RequestWithdrawPartyRoom |
+| RequestDismissPartyRoom | jogo | 0xd0 | 0x02 | `chdd` | PartyMatchPackets.RequestDismissPartyRoom |
+| RequestExMPCCShowPartyMembersInfo | jogo | 0xd0 | 0x26 | `chd` | PartyMatchPackets.RequestExMPCCShowPartyMembersInfo |
+| RequestDuelAnswerStart | jogo | 0xd0 | 0x28 | `chddd` | SocialPackets.DuelAnswerStart |
+| RequestExOustFromMPCC | jogo | 0xd0 | 0x0f | `chS` | PartyMatchPackets.RequestExOustFromMPCC |
 | RequestConfirmRefinerItem | jogo | 0xd0 | 0x2a | `chdd` | EnchantPackets.RequestConfirmRefinerItem |
 | RequestManorList | jogo | 0xd0 | 0x08 | `ch` | GamePackets.RequestManorList |
 | RequestRefine | jogo | 0xd0 | 0x2c | `chdddd` | EnchantPackets.RequestRefine |
+| RequestListPartyMatchingWaitingRoom | jogo | 0xd0 | 0x16 | `chdddd` | PartyMatchPackets.RequestListPartyMatchingWaitingRoom |
+| RequestOustFromPartyRoom | jogo | 0xd0 | 0x01 | `chd` | PartyMatchPackets.RequestOustFromPartyRoom |
+| RequestDuelSurrender | jogo | 0xd0 | 0x30 | `ch` | PartyMatchPackets.RequestDuelSurrender |
+| RequestHandOverPartyMaster | jogo | 0xd0 | 0x04 | `chS` | PartyMatchPackets.RequestChangePartyLeader |
 | RequestPledgePowerGradeList | jogo | 0xd0 | 0x1a | `ch` | ClanPackets.RequestPledgePowerGradeList |
+| AnswerJoinPartyRoom | jogo | 0xd0 | 0x15 | `chd` | PartyMatchPackets.AnswerJoinPartyRoom |
+| RequestExAcceptJoinMPCC | jogo | 0xd0 | 0x0e | `chdd` | PartyMatchPackets.RequestExAcceptJoinMPCC |
 | RequestPledgeSetAcademyMasterPupil | jogo | 0xd0 | 0x19 | `chdSS` | ClanPackets.RequestPledgeSetAcademyMaster |
 | RequestConfirmGemStone | jogo | 0xd0 | 0x2b | `chdddd` | EnchantPackets.RequestConfirmGemStone |
 | RequestAutoSoulShot | jogo | 0xd0 | 0x05 | `chdd` | UiPackets.RequestAutoSoulShot |
 | RequestPledgeMemberInfo | jogo | 0xd0 | 0x1d | `chdS` | ClanPackets.RequestPledgeMemberInfo |
 | RequestConfirmCancelItem | jogo | 0xd0 | 0x2d | `chd` | EnchantPackets.RequestConfirmCancelItem |
+| RequestAskJoinPartyRoom | jogo | 0xd0 | 0x14 | `chS` | PartyMatchPackets.RequestAskJoinPartyRoom |
 | RequestPledgeReorganizeMember | jogo | 0xd0 | 0x24 | `chdSdS` | ClanPackets.RequestPledgeReorganizeMember |
+| RequestExitPartyMatchingWaitingRoom | jogo | 0xd0 | 0x17 | `ch` | PartyMatchPackets.RequestExitPartyMatchingWaitingRoom |
 | RequestPledgeWarList | jogo | 0xd0 | 0x1e | `chdd` | ClanPackets.RequestPledgeWarList |
 | RequestPledgeMemberPowerInfo | jogo | 0xd0 | 0x1b | `chdS` | ClanPackets.RequestPledgeMemberPowerInfo |
+| RequestExAskJoinMPCC | jogo | 0xd0 | 0x0d | `chS` | PartyMatchPackets.RequestExAskJoinMPCC |
 | RequestPledgeSetMemberPowerGrade | jogo | 0xd0 | 0x1c | `chSd` | ClanPackets.RequestPledgeSetMemberPowerGrade |
 | RL | login | 0x00 |  | `cxddddddhc` | LoginPackets.RequestAuthLogin |
 | RequestServerLogin | login | 0x02 |  | `cddc` | LoginPackets.RequestServerLogin |
@@ -170,9 +188,6 @@ Envios do original: **245**; com builder no Unity: **127**; não enviados pelo U
 | RequestPledgeExtendedInfo | jogo | 0x67 |  | `cS` | não enviado |
 | RequestPledgeCrest | jogo | 0x68 |  | `cd` | não enviado |
 | RequestGMCommand | jogo | 0x6e |  | `cSdd` | não enviado |
-| RequestListPartyWating | jogo | 0x6f |  | `cddd` | não enviado |
-| RequestManagePartyRoom | jogo | 0x70 |  | `cdddddS` | não enviado |
-| RequestJoinPartyRoom | jogo | 0x71 |  | `cdddd` | não enviado |
 | RequestPrivateStoreManageCancel | jogo | 0x75 |  | `c` | não enviado |
 | RequestPrivateStoreList | jogo | 0x78 |  | `cd` | não enviado |
 | ReviveReply | jogo | 0x7a |  | `cd` | não enviado |
@@ -218,37 +233,22 @@ Envios do original: **245**; com builder no Unity: **127**; não enviados pelo U
 | RequestOpenMinimap | jogo | 0xcd |  | `c` | não enviado |
 | RequestSendMsnChatLog | jogo | 0xce |  | `cSSd` | não enviado |
 | RequestReload | jogo | 0xcf |  | `c` | não enviado |
-| RequestDuelStart | jogo | 0xd0 | 0x27 | `chSd` | não enviado |
 | RequestGetBossRecord | jogo | 0xd0 | 0x18 | `chd` | não enviado |
 | RequestSetCrop | jogo | 0xd0 | 0x0b | `chddb` | não enviado |
-| RequestWithdrawPartyRoom | jogo | 0xd0 | 0x03 | `chdd` | não enviado |
-| RequestDismissPartyRoom | jogo | 0xd0 | 0x02 | `chdd` | não enviado |
-| RequestExMPCCShowPartyMembersInfo | jogo | 0xd0 | 0x26 | `chd` | não enviado |
-| RequestDuelAnswerStart | jogo | 0xd0 | 0x28 | `chddd` | não enviado |
-| RequestExOustFromMPCC | jogo | 0xd0 | 0x0f | `chS` | não enviado |
 | RequestCursedWeaponLocation | jogo | 0xd0 | 0x23 | `ch` | não enviado |
 | RequestExEnchantSkillInfo | jogo | 0xd0 | 0x06 | `chdd` | não enviado |
 | RequestExSetPledgeCrestLarge | jogo | 0xd0 | 0x11 | `chd` | não enviado |
 | RequestExSetPledgeCrestLarge | jogo | 0xd0 | 0x11 | `chdb` | não enviado |
 | RequestWriteHeroWords | jogo | 0xd0 | 0x0c | `chS` | não enviado |
 | RequestExEnchantSkill | jogo | 0xd0 | 0x07 | `chdd` | não enviado |
-| RequestListPartyMatchingWaitingRoom | jogo | 0xd0 | 0x16 | `chdddd` | não enviado |
-| RequestOustFromPartyRoom | jogo | 0xd0 | 0x01 | `chd` | não enviado |
 | RequestCursedWeaponList | jogo | 0xd0 | 0x22 | `ch` | não enviado |
-| RequestDuelSurrender | jogo | 0xd0 | 0x30 | `ch` | não enviado |
 | RequestExFishRanking | jogo | 0xd0 | 0x1f | `ch` | não enviado |
-| RequestHandOverPartyMaster | jogo | 0xd0 | 0x04 | `chS` | não enviado |
 | RequestExChangeName | jogo | 0xd0 | 0x31 | `chdSd` | não enviado |
 | RequestExPledgeCrestLarge | jogo | 0xd0 | 0x10 | `chd` | não enviado |
-| AnswerJoinPartyRoom | jogo | 0xd0 | 0x15 | `chd` | não enviado |
-| RequestExAcceptJoinMPCC | jogo | 0xd0 | 0x0e | `chdd` | não enviado |
 | RequestSetSeed | jogo | 0xd0 | 0x0a | `chddb` | não enviado |
 | RequestExMagicSkillUseGround | jogo | 0xd0 | 0x2f | `chdddddc` | não enviado |
 | RequestPCCafeCouponUse | jogo | 0xd0 | 0x20 | `chS` | não enviado |
-| RequestAskJoinPartyRoom | jogo | 0xd0 | 0x14 | `chS` | não enviado |
 | RequestOlympiadMatchList | jogo | 0xd0 | 0x13 | `ch` | não enviado |
 | RequestProcureCropList | jogo | 0xd0 | 0x09 | `chdb` | não enviado |
-| RequestExitPartyMatchingWaitingRoom | jogo | 0xd0 | 0x17 | `ch` | não enviado |
-| RequestExAskJoinMPCC | jogo | 0xd0 | 0x0d | `chS` | não enviado |
 | RequestOlympiadObserverEnd | jogo | 0xd0 | 0x12 | `ch` | não enviado |
 | RequestSCCheck | login | 0x06 |  | `cdx` | não enviado |

@@ -484,6 +484,120 @@ namespace L2Web.Net
         /// <summary>FE:57: EV_RefineryRefineCancelResult (Result).</summary>
         public static List<PacketEvents.Event> RefineryCancelResult(int result) => new() { E(Ev.EV_RefineryRefineCancelResult, P("", "Result", result)) };
 
+        // ---------------------------------------------------------------- busca de grupo, uniao e duelo (T21)
+
+        /// <summary>
+        /// PartyMatchList (0x96): EV_PartyMatchStart e EV_PartyMatchList (PageNum, RoomCount e, por sala, RoomNum_i, Leader_i,
+        /// ZoneID_i, MinLevel_i, MaxLevel_i, CurMember_i, MaxMember_i, RoomName_i).
+        /// </summary>
+        public static List<PacketEvents.Event> PartyMatchList(PartyMatchListInfo l)
+        {
+            var p = P(P("", "PageNum", l.Page), "RoomCount", l.Rooms.Count);
+            for (var i = 0; i < l.Rooms.Count; i++)
+            {
+                var r = l.Rooms[i];
+                p = P(p, "RoomNum_" + i, r.RoomId);
+                p = P(p, "Leader_" + i, r.Leader);
+                p = P(p, "ZoneID_" + i, r.Location);
+                p = P(p, "MinLevel_" + i, r.MinLevel);
+                p = P(p, "MaxLevel_" + i, r.MaxLevel);
+                p = P(p, "CurMember_" + i, r.Members);
+                p = P(p, "MaxMember_" + i, r.MaxMembers);
+                p = P(p, "RoomName_" + i, r.Title);
+            }
+            return new() { E(Ev.EV_PartyMatchStart), E(Ev.EV_PartyMatchList, p) };
+        }
+
+        /// <summary>PartyMatchDetail (0x97): EV_PartyMatchRoomStart (RoomNum, MaxMember, MinLevel, MaxLevel, LootingMethodID, ZoneID, RoomName).</summary>
+        public static List<PacketEvents.Event> PartyMatchDetail(PartyRoomDetail d)
+        {
+            var p = P("", "RoomNum", d.RoomId);
+            p = P(p, "MaxMember", d.MaxMembers);
+            p = P(p, "MinLevel", d.MinLevel);
+            p = P(p, "MaxLevel", d.MaxLevel);
+            p = P(p, "LootingMethodID", d.LootType);
+            p = P(p, "ZoneID", d.Location);
+            return new() { E(Ev.EV_PartyMatchRoomStart, P(p, "RoomName", d.Title)) };
+        }
+
+        /// <summary>ExPartyRoomMember (FE:0e): EV_PartyMatchRoomMember (MyMembershipType, MemberCount e MemberID_i ... MembershipType_i).</summary>
+        public static List<PacketEvents.Event> PartyRoomMembers(PartyRoomMembersInfo m)
+        {
+            var p = P(P("", "MyMembershipType", m.Mode), "MemberCount", m.Members.Count);
+            for (var i = 0; i < m.Members.Count; i++)
+            {
+                var x = m.Members[i];
+                p = P(p, "MemberID_" + i, x.ObjectId);
+                p = P(p, "MemberName_" + i, x.Name);
+                p = P(p, "ClassID_" + i, x.ClassId);
+                p = P(p, "Level_" + i, x.Level);
+                p = P(p, "ZoneID_" + i, x.Location);
+                p = P(p, "MembershipType_" + i, x.MembershipType);
+            }
+            return new() { E(Ev.EV_PartyMatchRoomMember, p) };
+        }
+
+        /// <summary>ExClosePartyRoom (FE:0f): EV_PartyMatchRoomClose.</summary>
+        public static List<PacketEvents.Event> PartyRoomClose() => new() { E(Ev.EV_PartyMatchRoomClose) };
+
+        /// <summary>ExManagePartyRoomMember (FE:10): EV_PartyMatchRoomMemberUpdate (UpdateType, MemberID, MemberName, ClassID, Level, ZoneID, MembershipType).</summary>
+        public static List<PacketEvents.Event> PartyRoomMemberUpdate(PartyRoomMemberUpdate u)
+        {
+            var m = u.Member;
+            var p = P(P(P("", "UpdateType", u.Mode), "MemberID", m.ObjectId), "MemberName", m.Name);
+            p = P(P(P(p, "ClassID", m.ClassId), "Level", m.Level), "ZoneID", m.Location);
+            return new() { E(Ev.EV_PartyMatchRoomMemberUpdate, P(p, "MembershipType", m.MembershipType)) };
+        }
+
+        /// <summary>ExListPartyMatchingWaitingRoom (FE:35): EV_PartyMatchWaitListStart (AllCount, Count) e um EV_PartyMatchWaitList por jogador.</summary>
+        public static List<PacketEvents.Event> WaitingList(WaitingListInfo w)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_PartyMatchWaitListStart, P(P("", "AllCount", w.AllCount), "Count", w.Players.Count)) };
+            foreach (var (name, cls, lvl) in w.Players) o.Add(E(Ev.EV_PartyMatchWaitList, P(P(P("", "Name", name), "ClassID", cls), "Level", lvl)));
+            return o;
+        }
+
+        /// <summary>ExOpenMPCC / ExCloseMPCC (FE:25/26): EV_CommandChannelStart / End.</summary>
+        public static List<PacketEvents.Event> CommandChannel(bool open) => new() { E(open ? Ev.EV_CommandChannelStart : Ev.EV_CommandChannelEnd) };
+
+        /// <summary>
+        /// ExMultiPartyCommandChannelInfo (FE:30): EV_CommandChannelInfo (OwnerName, RoutingType, PartyNum, PartyMemberNum) e um
+        /// EV_CommandChannelPartyList (MasterName, MasterID, PartyNum = membros do grupo) por grupo.
+        /// </summary>
+        public static List<PacketEvents.Event> CommandChannelInfo(CommandChannelInfo c)
+        {
+            var p = P(P("", "OwnerName", c.Owner), "RoutingType", c.Routing);
+            var o = new List<PacketEvents.Event> { E(Ev.EV_CommandChannelInfo, P(P(p, "PartyNum", c.Parties.Count), "PartyMemberNum", c.Members)) };
+            foreach (var x in c.Parties) o.Add(E(Ev.EV_CommandChannelPartyList, P(P(P("", "MasterName", x.Leader), "MasterID", x.LeaderId), "PartyNum", x.Members)));
+            return o;
+        }
+
+        /// <summary>ExSetMpccRouting (FE:36): EV_CommandChannelRoutingType (RoutingType).</summary>
+        public static List<PacketEvents.Event> CommandChannelRouting(int routing) => new() { E(Ev.EV_CommandChannelRoutingType, P("", "RoutingType", routing)) };
+
+        /// <summary>ExMPCCShowPartyMemberInfo (FE:4a): EV_CommandChannelPartyMember (MemberCount, Name_i, ClassID_i, ServerID_i).</summary>
+        public static List<PacketEvents.Event> CommandChannelPartyMembers(List<(string Name, int ObjectId, int ClassId)> l)
+        {
+            var p = P("", "MemberCount", l.Count);
+            for (var i = 0; i < l.Count; i++) p = P(P(P(p, "Name_" + i, l[i].Name), "ClassID_" + i, l[i].ClassId), "ServerID_" + i, l[i].ObjectId);
+            return new() { E(Ev.EV_CommandChannelPartyMember, p) };
+        }
+
+        /// <summary>ExMPCCPartyInfoUpdate (FE:5a): EV_CommandChannelPartyUpdate (MasterName, MasterID, MemberCount, Type).</summary>
+        public static List<PacketEvents.Event> CommandChannelPartyUpdate(CommandChannelPartyUpdate u) =>
+            new() { E(Ev.EV_CommandChannelPartyUpdate, P(P(P(P("", "MasterName", u.Leader), "MasterID", u.LeaderId), "MemberCount", u.Members), "Type", u.Mode)) };
+
+        /// <summary>ExDuelReady / Start / End (FE:4c/4d/4e): EV_DuelReady / Start / End (type = 1 duelo de grupo, spec 06 §13).</summary>
+        public static List<PacketEvents.Event> Duel(int ev, int type) => new() { E(ev, P("", "type", type)) };
+
+        /// <summary>ExDuelUpdateUserInfo (FE:4f): EV_DuelUpdateUserInfo.</summary>
+        public static List<PacketEvents.Event> DuelUserInfo(DuelUserInfo d)
+        {
+            var p = P(P(P(P("", "userName", d.Name), "ID", d.ObjectId), "class", d.ClassId), "level", d.Level);
+            p = P(P(P(p, "currentHP", d.Hp), "maxHP", d.MaxHp), "currentMP", d.Mp);
+            return new() { E(Ev.EV_DuelUpdateUserInfo, P(P(P(p, "maxMP", d.MaxMp), "currentCP", d.Cp), "maxCP", d.MaxCp)) };
+        }
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>

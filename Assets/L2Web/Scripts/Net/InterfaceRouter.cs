@@ -52,6 +52,10 @@ namespace L2Web.Net
         /// <summary>Pergaminho do ultimo ChooseInventoryItem (o ItemEnchantWnd filtra o inventario com ele).</summary>
         public int EnchantScroll;
 
+        /// <summary>Sala de busca de grupo atual (null fora de sala) e os convites sem EV_ (o nome de quem convida).</summary>
+        public PartyRoomDetail PartyRoom;
+        public Action<string> OnAskJoinPartyRoom, OnAskJoinMPCC;
+
         /// <summary>Ultimo pacote de cada janela (a janela le os itens daqui ou do param do evento).</summary>
         public WarehouseListInfo Warehouse;
         public StorageMaxCountInfo StorageMax;
@@ -214,6 +218,35 @@ namespace L2Web.Net
             Ex(0x55, r => Emit(InterfaceEvents.RefineryResult(EnchantPackets.ParseExVariationResult(r))));
             Ex(0x56, r => Emit(InterfaceEvents.RefineryCancelItem(EnchantPackets.ParseExConfirmCancelItem(r))));
             Ex(0x57, r => Emit(InterfaceEvents.RefineryCancelResult(EnchantPackets.ParseExVariationCancelResult(r))));
+
+            // ---------------------------------------------------------------- busca de grupo, uniao e duelo (T21)
+            On(0x96, r => Emit(InterfaceEvents.PartyMatchList(PartyMatchPackets.ParsePartyMatchList(r))));
+            On(0x97, r =>
+            {
+                PartyRoom = PartyMatchPackets.ParsePartyMatchDetail(r);
+                Emit(InterfaceEvents.PartyMatchDetail(PartyRoom));
+            });
+            Ex(0x0e, r => Emit(InterfaceEvents.PartyRoomMembers(PartyMatchPackets.ParseExPartyRoomMember(r))));
+            Ex(0x0f, _ =>
+            {
+                PartyRoom = null;
+                Emit(InterfaceEvents.PartyRoomClose());
+            });
+            Ex(0x10, r => Emit(InterfaceEvents.PartyRoomMemberUpdate(PartyMatchPackets.ParseExManagePartyRoomMember(r))));
+            // sem EV_: convites que o engine pergunta direto
+            Ex(0x34, r => OnAskJoinPartyRoom?.Invoke(PartyMatchPackets.ParseExAskJoinPartyRoom(r)));
+            Ex(0x27, r => OnAskJoinMPCC?.Invoke(PartyMatchPackets.ParseExAskJoinMPCC(r)));
+            Ex(0x35, r => Emit(InterfaceEvents.WaitingList(PartyMatchPackets.ParseExListPartyMatchingWaitingRoom(r))));
+            Ex(0x25, _ => Emit(InterfaceEvents.CommandChannel(true)));
+            Ex(0x26, _ => Emit(InterfaceEvents.CommandChannel(false)));
+            Ex(0x30, r => Emit(InterfaceEvents.CommandChannelInfo(PartyMatchPackets.ParseExMultiPartyCommandChannelInfo(r))));
+            Ex(0x36, r => Emit(InterfaceEvents.CommandChannelRouting(PartyMatchPackets.ParseExSetMpccRouting(r))));
+            Ex(0x4a, r => Emit(InterfaceEvents.CommandChannelPartyMembers(PartyMatchPackets.ParseExMPCCShowPartyMemberInfo(r))));
+            Ex(0x5a, r => Emit(InterfaceEvents.CommandChannelPartyUpdate(PartyMatchPackets.ParseExMPCCPartyInfoUpdate(r))));
+            Ex(0x4c, r => Emit(InterfaceEvents.Duel(Ev.EV_DuelReady, PartyMatchPackets.ParseExDuelType(r))));
+            Ex(0x4d, r => Emit(InterfaceEvents.Duel(Ev.EV_DuelStart, PartyMatchPackets.ParseExDuelType(r))));
+            Ex(0x4e, r => Emit(InterfaceEvents.Duel(Ev.EV_DuelEnd, PartyMatchPackets.ParseExDuelType(r))));
+            Ex(0x4f, r => Emit(InterfaceEvents.DuelUserInfo(PartyMatchPackets.ParseExDuelUpdateUserInfo(r))));
 
             // ---------------------------------------------------------------- armazem, frete e loja privada (T6/T12/T18)
             On(0x41, r => ShowWarehouse(StorePackets.ParseWarehouseDepositList(r)));

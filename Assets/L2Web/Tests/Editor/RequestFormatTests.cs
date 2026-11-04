@@ -137,6 +137,25 @@ namespace L2Web.Tests
             yield return C("EnchantPackets.RequestRefine", "RequestRefine", EnchantPackets.RequestRefine(1, 2, 3, 4));
             yield return C("EnchantPackets.RequestConfirmCancelItem", "RequestConfirmCancelItem", EnchantPackets.RequestConfirmCancelItem(1));
             yield return C("EnchantPackets.RequestRefineCancel", "RequestRefineCancel", EnchantPackets.RequestRefineCancel(1));
+            // busca de grupo, uniao e duelo (#0046, T21)
+            yield return C("PartyMatchPackets.RequestPartyMatchConfig", "RequestListPartyWating", PartyMatchPackets.RequestPartyMatchConfig(1, 0, 1));
+            yield return C("PartyMatchPackets.RequestPartyMatchList", "RequestManagePartyRoom", PartyMatchPackets.RequestPartyMatchList(0, 9, 1, 80, 0, "s"));
+            yield return C("PartyMatchPackets.RequestPartyMatchDetail", "RequestJoinPartyRoom", PartyMatchPackets.RequestPartyMatchDetail(1));
+            yield return C("PartyMatchPackets.RequestOustFromPartyRoom", "RequestOustFromPartyRoom", PartyMatchPackets.RequestOustFromPartyRoom(1));
+            yield return C("PartyMatchPackets.RequestDismissPartyRoom", "RequestDismissPartyRoom", PartyMatchPackets.RequestDismissPartyRoom(1));
+            yield return C("PartyMatchPackets.RequestWithdrawPartyRoom", "RequestWithdrawPartyRoom", PartyMatchPackets.RequestWithdrawPartyRoom(1));
+            yield return C("PartyMatchPackets.RequestChangePartyLeader", "RequestHandOverPartyMaster", PartyMatchPackets.RequestChangePartyLeader("a"));
+            yield return C("PartyMatchPackets.RequestAskJoinPartyRoom", "RequestAskJoinPartyRoom", PartyMatchPackets.RequestAskJoinPartyRoom("a"));
+            yield return C("PartyMatchPackets.AnswerJoinPartyRoom", "AnswerJoinPartyRoom", PartyMatchPackets.AnswerJoinPartyRoom(true));
+            yield return C("PartyMatchPackets.RequestListPartyMatchingWaitingRoom", "RequestListPartyMatchingWaitingRoom", PartyMatchPackets.RequestListPartyMatchingWaitingRoom(1, 1, 80, 0));
+            yield return C("PartyMatchPackets.RequestExitPartyMatchingWaitingRoom", "RequestExitPartyMatchingWaitingRoom", PartyMatchPackets.RequestExitPartyMatchingWaitingRoom());
+            yield return C("PartyMatchPackets.RequestExAskJoinMPCC", "RequestExAskJoinMPCC", PartyMatchPackets.RequestExAskJoinMPCC("a"));
+            yield return C("PartyMatchPackets.RequestExAcceptJoinMPCC", "RequestExAcceptJoinMPCC", PartyMatchPackets.RequestExAcceptJoinMPCC(true));
+            yield return C("PartyMatchPackets.RequestExOustFromMPCC", "RequestExOustFromMPCC", PartyMatchPackets.RequestExOustFromMPCC("a"));
+            yield return C("PartyMatchPackets.RequestExMPCCShowPartyMembersInfo", "RequestExMPCCShowPartyMembersInfo", PartyMatchPackets.RequestExMPCCShowPartyMembersInfo(1));
+            yield return C("PartyMatchPackets.RequestDuelStart", "RequestDuelStart", PartyMatchPackets.RequestDuelStart("a", false));
+            yield return C("SocialPackets.DuelAnswerStart", "RequestDuelAnswerStart", SocialPackets.DuelAnswerStart(1, true));
+            yield return C("PartyMatchPackets.RequestDuelSurrender", "RequestDuelSurrender", PartyMatchPackets.RequestDuelSurrender());
             // pet (#0046, T7)
             yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
             yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));
