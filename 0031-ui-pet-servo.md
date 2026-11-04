@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-pet-servo` |
-| Estado | aberta |
+| Estado | bloqueada |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T7; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -29,6 +29,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+
+- 2026-11-03 — bloqueada: aguardando #0046 no main. C→S `RequestPetUseItem` 0x8a, `RequestGiveItemToPet` 0x8b e `RequestGetItemFromPet` 0x8c não existem no `main` (o `PetPackets` só lê parte do S→C). Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
 
 ## Decisões e REA
 

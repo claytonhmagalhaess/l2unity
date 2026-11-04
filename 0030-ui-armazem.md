@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | ui |
 | Branch | `feat/ui-armazem` |
-| Estado | aberta |
+| Estado | bloqueada |
 | Spec | `analises\interface-p166\05_lacunas_e_tarefas.md` T6; `02_interacoes.md`, `03_teclado.md`; `analises\l2-interlude\client_spec\` |
 | Sessão | ui: interface T1–T21 |
 | Criada | 2026-11-03 |
@@ -29,6 +29,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 ## Andamento
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
+
+- 2026-11-03 — bloqueada: aguardando #0046 no main. S→C `WarehouseDepositList` 0x41 / `WarehouseWithdrawList` 0x42 e C→S `SendWarehouseDepositList` 0x31 / `SendWarehouseWithdrawList` 0x32 não existem no `main`. Branch não criado (a vaga seguiu para a próxima tarefa da cadeia sem pacote novo).
 
 ## Decisões e REA
 
