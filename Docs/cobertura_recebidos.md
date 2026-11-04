@@ -2,7 +2,7 @@
 
 Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/received.json` (`out/re/game_map.json`).
 
-- UI: 198 no original, 52 tratados no Unity
+- UI: 198 no original, 60 tratados no Unity
 - UI nativa (C++, sem EV_): 61 no original, 33 tratados no Unity
 - mundo/engine: 57 no original, 23 tratados no Unity
 - ignorado: 28 no original, 0 tratados no Unity
@@ -283,13 +283,13 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xad | SetAllianceCrestPacket |  | ignorado |  | ignorado (igual) |
 | game | 0xae | AllianceCrestPacket | AllyCrest | mundo/engine |  | falta |
 | game | 0xaf | ServerCloseSocketPacket |  | ignorado |  | ignorado (igual) |
-| game | 0xb0 | PetStatusShowPacket | PetStatusShow | UI | EV_PetWndShow | falta |
-| game | 0xb1 | PetInfoPacket | PetInfo | UI | EV_PetStatusShow, EV_PetWndShowNameBtn, EV_UpdatePetInfo | falta |
-| game | 0xb2 | PetItemListPacket | PetItemList | UI | EV_PetInventoryItemList, EV_PetInventoryItemStart | falta |
-| game | 0xb3 | PetInventoryUpdatePacket | PetInventoryUpdate | UI | EV_PetInventoryItemUpdate, EV_ShortcutUpdate | falta |
+| game | 0xb0 | PetStatusShowPacket | PetStatusShow | UI | EV_PetWndShow | tratado |
+| game | 0xb1 | PetInfoPacket | PetInfo | UI | EV_PetStatusShow, EV_PetWndShowNameBtn, EV_UpdatePetInfo | tratado |
+| game | 0xb2 | PetItemListPacket | PetItemList | UI | EV_PetInventoryItemList, EV_PetInventoryItemStart | tratado |
+| game | 0xb3 | PetInventoryUpdatePacket | PetInventoryUpdate | UI | EV_PetInventoryItemUpdate, EV_ShortcutUpdate | tratado |
 | game | 0xb4 | AllianceInfoPacket | AllianceInfo | ignorado |  | ignorado (igual) |
-| game | 0xb5 | PetStatusUpdatePacket | PetStatusUpdate | UI | EV_UpdatePetInfo | falta |
-| game | 0xb6 | PetDeletePacket | PetDelete | UI | EV_PetSummonedStatusClose | falta |
+| game | 0xb5 | PetStatusUpdatePacket | PetStatusUpdate | UI | EV_UpdatePetInfo | tratado |
+| game | 0xb6 | PetDeletePacket | PetDelete | UI | EV_PetSummonedStatusClose | tratado |
 | game | 0xb7 | PrivateStoreBuyManageList | PrivateStoreManageListBuy | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |
 | game | 0xb8 | PrivateStoreBuyList | PrivateStoreListBuy | UI | EV_PrivateShopAddItem, EV_PrivateShopOpenWindow | tratado |
 | game | 0xb9 | PrivateStoreBuyMsg | PrivateStoreMsgBuy | dados |  | tratado |
@@ -316,7 +316,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xce | RelationChangedPacket | RelationChanged | UI | EV_ChatWndStatusChange | falta |
 | game | 0xcf | EventTriggerPacket | EventTrigger | mundo/engine |  | falta |
 | game | 0xd0 | MultiSellListPacket | MultiSellList | UI | EV_MultiSellItemList, EV_MultiSellItemListEnd, EV_MultiSellNeededItemList, EV_MultiSellShopID | tratado |
-| game | 0xd1 | SetSummonRemainTimePacket | SetSummonRemainTime | UI | EV_SummonedStatusRemainTime | falta |
+| game | 0xd1 | SetSummonRemainTimePacket | SetSummonRemainTime | UI | EV_SummonedStatusRemainTime | tratado |
 | game | 0xd2 | SkillRemainSecPacket |  | mundo/engine |  | falta |
 | game | 0xd3 | NetPingPacket |  | rede |  | tratado |
 | game | 0xd4 | DicePacket | Dice | mundo/engine |  | falta |
@@ -345,7 +345,7 @@ Gerado por `ReceivedPacketTests.CoberturaDosRecebidos` a partir de `Golden/recei
 | game | 0xeb | RadarControlPacket | RadarControl | UI | EV_MinimapAddTarget, EV_MinimapDeleteAllTarget, EV_RadarAddTarget, EV_RadarDeleteAllTarget | falta |
 | game | 0xec |  | ClientSetTime | mundo/engine |  | tratado |
 | game | 0xed | ConfirmDlgPacket | ConfirmDlg | UI nativa (C++, sem EV_) |  | tratado |
-| game | 0xee | PartySpelledPacket | PartySpelled | UI | EV_SummonedStatusSpelledList | falta |
+| game | 0xee | PartySpelledPacket | PartySpelled | UI | EV_SummonedStatusSpelledList | tratado |
 | game | 0xef | ShopPreviewListPacket | ShopPreviewList | UI | EV_ShopAddItem, EV_ShopOpenWindow | falta |
 | game | 0xf0 | ShopPreviewInfoPacket | ShopPreviewInfo | mundo/engine |  | falta |
 | game | 0xf1 | CameraModePacket | CameraMode | UI nativa (C++, sem EV_) |  | falta |

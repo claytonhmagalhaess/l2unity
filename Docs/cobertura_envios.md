@@ -3,7 +3,7 @@
 Gerado por `RequestFormatTests.CoberturaDosEnvios` a partir de `Golden/requests.json` (`out/re/request_table.json`).
 Cada linha com builder do Unity é conferida byte a byte contra o formato em `EnviosDoUnity_IguaisAoFormatoDoOriginal`.
 
-Envios do original: **245**; com builder no Unity: **75**; não enviados pelo Unity: **170**.
+Envios do original: **245**; com builder no Unity: **80**; não enviados pelo Unity: **165**.
 
 | método do engine.dll | servidor | opcode | sub | formato | Unity |
 |---|---|---|---|---|---|
@@ -44,7 +44,7 @@ Envios do original: **245**; com builder no Unity: **75**; não enviados pelo Un
 | Say2 | jogo | 0x38 |  | `cSd` | GamePackets.Say2, GamePackets.Say2Tell |
 | RequestSkillItem | jogo | 0x3f |  | `c` | UiPackets.RequestSkillList |
 | AnswerTradeRequest | jogo | 0x44 |  | `cd` | SocialPackets.AnswerTradeRequest |
-| RequestActionUse | jogo | 0x45 |  | `cddc` | GamePackets.ActionUse |
+| RequestActionUse | jogo | 0x45 |  | `cddc` | GamePackets.ActionUse, PetPackets.RequestActionUse |
 | RequestRestart | jogo | 0x46 |  | `c` | GamePackets.RequestRestart |
 | ValidatePosition | jogo | 0x48 |  | `cddddd` | GamePackets.ValidatePosition |
 | StartRotating | jogo | 0x4a |  | `cdd` | GamePackets.StartRotating |
@@ -64,6 +64,11 @@ Envios do original: **245**; com builder no Unity: **75**; não enviados pelo Un
 | RequestPrivateStoreQuit | jogo | 0x76 |  | `c` | StorePackets.RequestPrivateStoreQuitSell |
 | SetPrivateStoreMsg | jogo | 0x77 |  | `cS` | StorePackets.SetPrivateStoreMsgSell |
 | SendPrivateStoreBuyList | jogo | 0x79 |  | `cddb` | SocialPackets.PrivateStoreBuy |
+| RequestChangePetName | jogo | 0x89 |  | `cS` | PetPackets.RequestChangePetName |
+| RequestPetUseItem | jogo | 0x8a |  | `cd` | PetPackets.RequestPetUseItem |
+| RequestGiveItemToPet | jogo | 0x8b |  | `cdd` | PetPackets.RequestGiveItemToPet |
+| RequestGetItemFromPet | jogo | 0x8c |  | `cddd` | PetPackets.RequestGetItemFromPet |
+| RequestPetGetItem | jogo | 0x8f |  | `cd` | PetPackets.RequestPetGetItem |
 | RequestPrivateStoreBuyManage | jogo | 0x90 |  | `c` | StorePackets.RequestPrivateStoreManageBuy |
 | SetPrivateStoreBuyList | jogo | 0x91 |  | `cdb` | StorePackets.SetPrivateStoreListBuy |
 | RequestPrivateStoreBuyQuit | jogo | 0x93 |  | `c` | StorePackets.RequestPrivateStoreQuitBuy |
@@ -152,12 +157,7 @@ Envios do original: **245**; com builder no Unity: **75**; não enviados pelo Un
 | RequestDismissAlly | jogo | 0x86 |  | `c` | não enviado |
 | RequestSetAllyCrest | jogo | 0x87 |  | `cdb` | não enviado |
 | RequestAllyCrest | jogo | 0x88 |  | `cd` | não enviado |
-| RequestChangePetName | jogo | 0x89 |  | `cS` | não enviado |
-| RequestPetUseItem | jogo | 0x8a |  | `cd` | não enviado |
-| RequestGiveItemToPet | jogo | 0x8b |  | `cdd` | não enviado |
-| RequestGetItemFromPet | jogo | 0x8c |  | `cddd` | não enviado |
 | RequestAllyInfo | jogo | 0x8e |  | `c` | não enviado |
-| RequestPetGetItem | jogo | 0x8f |  | `cd` | não enviado |
 | RequestPrivateStoreBuyManageCancel | jogo | 0x92 |  | `c` | não enviado |
 | RequestPrivateStoreBuyList | jogo | 0x95 |  | `cd` | não enviado |
 | SendTimeCheckPacket | jogo | 0x97 |  | `cdd` | não enviado |

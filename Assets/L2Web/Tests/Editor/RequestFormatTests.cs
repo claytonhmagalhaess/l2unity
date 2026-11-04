@@ -86,6 +86,13 @@ namespace L2Web.Tests
                 Name = "m", Description = "d", Acronym = "a", Commands = { new MacroCmd { Entry = 1, Type = 3, D1 = 2, Command = "/sit" } },
             }));
             yield return C("MacroPackets.RequestDeleteMacro", "RequestDeleteMacro", MacroPackets.RequestDeleteMacro(1));
+            // pet (#0046, T7)
+            yield return C("PetPackets.RequestPetUseItem", "RequestPetUseItem", PetPackets.RequestPetUseItem(1));
+            yield return C("PetPackets.RequestGiveItemToPet", "RequestGiveItemToPet", PetPackets.RequestGiveItemToPet(1, 1));
+            yield return C("PetPackets.RequestGetItemFromPet", "RequestGetItemFromPet", PetPackets.RequestGetItemFromPet(1, 1));
+            yield return C("PetPackets.RequestChangePetName", "RequestChangePetName", PetPackets.RequestChangePetName("Rex"));
+            yield return C("PetPackets.RequestPetGetItem", "RequestPetGetItem", PetPackets.RequestPetGetItem(1));
+            yield return C("PetPackets.RequestActionUse", "RequestActionUse", PetPackets.RequestActionUse(16));
             // armazem, frete e loja privada (#0046, T6/T12/T18)
             var dbItems = new List<(int, int)> { (1, 1) };
             yield return C("StorePackets.SendWarehouseDepositList", "SendWareHouseDepositList", StorePackets.SendWarehouseDepositList(dbItems));

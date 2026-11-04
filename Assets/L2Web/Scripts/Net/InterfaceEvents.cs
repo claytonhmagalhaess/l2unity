@@ -118,6 +118,67 @@ namespace L2Web.Net
             return o;
         }
 
+        // ---------------------------------------------------------------- pet e servo (T7, spec 06 §13)
+
+        /// <summary>PetStatusShow (0xb0, OnShowPetStatusWnd): EV_PetWndShow (pet) ou EV_SummonedWndShow (servo).</summary>
+        public static List<PacketEvents.Event> PetStatusShow(PetStatusShowInfo s) =>
+            new() { E(s.SummonType == 2 ? Ev.EV_SummonedWndShow : Ev.EV_PetWndShow) };
+
+        /// <summary>
+        /// PetInfo (0xb1): EV_UpdatePetInfo (a janela le os dados por GetPetInfo); no primeiro PetInfo do invocado, mostra o
+        /// PetStatusWnd/SummonedStatusWnd (OnShowPetPartyWnd); pet sem nome: EV_PetWndShowNameBtn Show=1 (FUN_1042e430).
+        /// </summary>
+        public static List<PacketEvents.Event> PetInfo(PetInfo p, bool first)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_UpdatePetInfo) };
+            if (p.SummonType == 1 && string.IsNullOrEmpty(p.Name)) o.Add(E(Ev.EV_PetWndShowNameBtn, P("", "Show", 1)));
+            if (first) o.Add(E(p.SummonType == 2 ? Ev.EV_SummonedStatusShow : Ev.EV_PetStatusShow));
+            return o;
+        }
+
+        /// <summary>PetItemList (0xb2): EV_PetInventoryItemStart e um EV_PetInventoryItemList por item.</summary>
+        public static List<PacketEvents.Event> PetItemList(PetItemListInfo l)
+        {
+            var o = new List<PacketEvents.Event> { E(Ev.EV_PetInventoryItemStart) };
+            foreach (var it in l.Items) o.Add(E(Ev.EV_PetInventoryItemList, Item("", it)));
+            return o;
+        }
+
+        /// <summary>PetInventoryUpdate (0xb3): um EV_PetInventoryItemUpdate por item, com WorkType (1 add, 2 modificado, 3 removido).</summary>
+        public static List<PacketEvents.Event> PetInventoryUpdate(PetInventoryUpdateInfo u)
+        {
+            var o = new List<PacketEvents.Event>();
+            foreach (var it in u.Items) o.Add(E(Ev.EV_PetInventoryItemUpdate, Item(P("", "WorkType", it.Change ?? 0), it)));
+            return o;
+        }
+
+        /// <summary>PetStatusUpdate (0xb5): EV_UpdatePetInfo.</summary>
+        public static List<PacketEvents.Event> PetStatusUpdate() => new() { E(Ev.EV_UpdatePetInfo) };
+
+        /// <summary>PetDelete (0xb6, OnHidePetWnd): EV_PetSummonedStatusClose.</summary>
+        public static List<PacketEvents.Event> PetDelete() => new() { E(Ev.EV_PetSummonedStatusClose) };
+
+        /// <summary>SetSummonRemainTime (0xd1): EV_SummonedStatusRemainTime (RemainTime, MaxTime).</summary>
+        public static List<PacketEvents.Event> SummonRemainTime(SummonRemainTimeInfo t) =>
+            new() { E(Ev.EV_SummonedStatusRemainTime, P(P("", "RemainTime", t.RemainTime), "MaxTime", t.MaxTime)) };
+
+        /// <summary>
+        /// PartySpelled (0xee): servo (2) -> EV_SummonedStatusSpelledList, pet (1) -> EV_PetStatusSpelledList (Max, SkillID_i);
+        /// membro do grupo (0) -> EV_PartySpelledList (ID, Max, SkillID_i, Level_i).
+        /// </summary>
+        public static List<PacketEvents.Event> PartySpelled(PartySpelledInfo s)
+        {
+            var p = s.Type == 0 ? P("", "ID", s.ObjectId) : "";
+            p = P(p, "Max", s.Effects.Count);
+            for (var i = 0; i < s.Effects.Count; i++)
+            {
+                p = P(p, "SkillID_" + i, s.Effects[i].SkillId);
+                if (s.Type == 0) p = P(p, "Level_" + i, s.Effects[i].Level);
+            }
+            var ev = s.Type switch { 2 => Ev.EV_SummonedStatusSpelledList, 1 => Ev.EV_PetStatusSpelledList, _ => Ev.EV_PartySpelledList };
+            return new() { E(ev, p) };
+        }
+
         // ---------------------------------------------------------------- macro (T8)
 
         /// <summary>SendMacroList (0xe7) com a revisao completa: EV_MacroUpdate (o MacroListWnd pede a lista de novo).</summary>

@@ -231,5 +231,25 @@ namespace L2Web.Net
             for (var i = 0; i < n; i++) o.Effects.Add(new AbnormalInfo { SkillId = r.D(), Level = r.H(), Seconds = r.D() });
             return o;
         }
+
+        // ---------------------------------------------------------------- cliente -> servidor (PetWnd, #0046 T7)
+
+        /// <summary>RequestPetUseItem 0x8a "d": item do inventario do pet (duplo clique no PetWnd).</summary>
+        public static byte[] RequestPetUseItem(int objectId) => new PacketWriter().C(0x8a).D(objectId).Bytes();
+
+        /// <summary>RequestGiveItemToPet 0x8b "dd": item do jogador e quantidade (inventario -> pet).</summary>
+        public static byte[] RequestGiveItemToPet(int objectId, int count) => new PacketWriter().C(0x8b).D(objectId).D(count).Bytes();
+
+        /// <summary>RequestGetItemFromPet 0x8c "ddd": item do pet, quantidade e 0 (o aCis ignora o 3o campo).</summary>
+        public static byte[] RequestGetItemFromPet(int objectId, int count) => new PacketWriter().C(0x8c).D(objectId).D(count).D(0).Bytes();
+
+        /// <summary>RequestChangePetName 0x89 "S".</summary>
+        public static byte[] RequestChangePetName(string name) => new PacketWriter().C(0x89).S(name ?? "").Bytes();
+
+        /// <summary>RequestPetGetItem 0x8f "d": o pet pega o item do chao.</summary>
+        public static byte[] RequestPetGetItem(int objectId) => new PacketWriter().C(0x8f).D(objectId).Bytes();
+
+        /// <summary>RequestActionUse 0x45: as acoes do pet e do servo (DoAction) vao pelo mesmo envio das do jogador.</summary>
+        public static byte[] RequestActionUse(int actionId, bool ctrl = false, bool shift = false) => GamePackets.ActionUse(actionId, ctrl, shift);
     }
 }

@@ -1,7 +1,10 @@
 // Pacotes do pet/servo (0xb0-0xb6, 0xd1, 0xee) montados como o aCis os escreve (serverpackets/*.java do servidor do
 // usuario, C:\Workspace-java\aCis_gameserver): cada Parse* tem de consumir o pacote inteiro e devolver os valores na ordem
 // certa. Os tipos lidos sao conferidos contra o Engine.dll em ReceivedLayoutTests.
+using System.Collections.Generic;
+using System.Linq;
 using L2Web.Net;
+using L2Web.UI;
 using NUnit.Framework;
 
 namespace L2Web.Tests
@@ -176,6 +179,112 @@ namespace L2Web.Tests
             var r = Reader(new PacketWriter().D(1).D(9).D(0));
             Assert.IsEmpty(PetPackets.ParsePartySpelled(r).Effects);
             Assert.AreEqual(0, r.Remaining);
+        }
+
+        // ---------------------------------------------------------------- InterfaceRouter (#0046, T7): eventos e envios
+
+        static byte[] Op(int op, PacketWriter body)
+        {
+            var b = body.Bytes();
+            var o = new byte[b.Length + 1];
+            o[0] = (byte)op;
+            b.CopyTo(o, 1);
+            return o;
+        }
+
+        static (InterfaceRouter, GameClient, List<PacketEvents.Event>) Router()
+        {
+            var got = new List<PacketEvents.Event>();
+            var gc = new GameClient(new GameClientOptions());
+            return (new InterfaceRouter(gc, got.AddRange), gc, got);
+        }
+
+        static int[] Ids(List<PacketEvents.Event> l) => l.Select(e => e.Id).ToArray();
+
+        [Test]
+        public void Router_InvocarPetSemNome()
+        {
+            var (router, gc, got) = Router();
+            gc.Dispatch(Op(0xb0, new PacketWriter().D(1)));
+            Assert.AreEqual(new[] { Ev.EV_PetWndShow }, Ids(got));
+            got.Clear();
+            gc.Dispatch(Op(0xb1, AcisPetInfo("")));
+            Assert.AreEqual(new[] { Ev.EV_UpdatePetInfo, Ev.EV_PetWndShowNameBtn, Ev.EV_PetStatusShow }, Ids(got));
+            Assert.AreEqual(12077, router.Pet.NpcId);
+            got.Clear();
+            // PetInfo de novo (atualizacao do mesmo pet): nao mostra a janela de novo
+            gc.Dispatch(Op(0xb1, AcisPetInfo("Bixo")));
+            Assert.AreEqual(new[] { Ev.EV_UpdatePetInfo }, Ids(got));
+            got.Clear();
+            gc.Dispatch(Op(0xb6, new PacketWriter().D(1).D(0x10001234)));
+            Assert.AreEqual(new[] { Ev.EV_PetSummonedStatusClose }, Ids(got));
+            Assert.IsNull(router.Pet);
+        }
+
+        [Test]
+        public void Router_ServoMostraAsJanelasDoServo()
+        {
+            var (router, gc, got) = Router();
+            gc.Dispatch(Op(0xb0, new PacketWriter().D(2)));
+            Assert.AreEqual(new[] { Ev.EV_SummonedWndShow }, Ids(got));
+            got.Clear();
+            var w = AcisPetInfo("");
+            var b = Op(0xb1, w);
+            b[1] = 2; // SummonType 2
+            gc.Dispatch(b);
+            Assert.AreEqual(new[] { Ev.EV_UpdatePetInfo, Ev.EV_SummonedStatusShow }, Ids(got));
+            got.Clear();
+            gc.Dispatch(Op(0xd1, new PacketWriter().D(1200).D(845)));
+            int remain = 0, max = 0;
+            L2Param.ParseInt(got[0].Param, "RemainTime", ref remain);
+            L2Param.ParseInt(got[0].Param, "MaxTime", ref max);
+            Assert.AreEqual((Ev.EV_SummonedStatusRemainTime, 845, 1200), (got[0].Id, remain, max));
+            got.Clear();
+            gc.Dispatch(Op(0xee, new PacketWriter().D(2).D(0x10005678).D(1).D(1040).H(3).D(1180)));
+            int n = 0, skill = 0;
+            L2Param.ParseInt(got[0].Param, "Max", ref n);
+            L2Param.ParseInt(got[0].Param, "SkillID_0", ref skill);
+            Assert.AreEqual((Ev.EV_SummonedStatusSpelledList, 1, 1040), (got[0].Id, n, skill));
+        }
+
+        [Test]
+        public void Router_InventarioDoPet()
+        {
+            var (router, gc, got) = Router();
+            // PetItemList.writeImpl: H n, por item H type1, D obj, D id, D qtd, H type2, H custom1, H equipado, D bodyPart, H enchant, H custom2
+            var l = new PacketWriter().H(2);
+            l.H(0).D(0x10000020).D(2515).D(10).H(5).H(0).H(0).D(0).H(0).H(0);
+            l.H(1).D(0x10000021).D(3035).D(1).H(1).H(0).H(1).D(0x400).H(0).H(0);
+            gc.Dispatch(Op(0xb2, l));
+            Assert.AreEqual(new[] { Ev.EV_PetInventoryItemStart, Ev.EV_PetInventoryItemList, Ev.EV_PetInventoryItemList }, Ids(got));
+            string equipped = null;
+            L2Param.ParseString(got[2].Param, "equipped", ref equipped);
+            Assert.AreEqual("1", equipped);
+            got.Clear();
+            // PetInventoryUpdate: remove a comida (3) e muda a quantidade de outro
+            var u = new PacketWriter().H(1).H(3).H(0).D(0x10000020).D(2515).D(0).H(5).H(0).H(0).D(0).H(0).H(0);
+            gc.Dispatch(Op(0xb3, u));
+            int work = 0;
+            L2Param.ParseInt(got.Single().Param, "WorkType", ref work);
+            Assert.AreEqual((Ev.EV_PetInventoryItemUpdate, 3), (got[0].Id, work));
+            Assert.AreEqual(new[] { 0x10000021 }, router.PetItems.Select(i => i.ObjectId).ToArray());
+            got.Clear();
+            gc.Dispatch(Op(0xb5, new PacketWriter().D(1).D(0x10001234).D(1).D(2).D(3).S("").D(900).D(1000).D(321).D(400).D(150).D(200).D(55)
+                .Q(123456789L).Q(100000000L).Q(150000000L)));
+            Assert.AreEqual(new[] { Ev.EV_UpdatePetInfo }, Ids(got));
+            Assert.AreEqual(55, router.PetStatus.Level);
+        }
+
+        [Test]
+        public void EnviosDoPet_ComoOAcisLe()
+        {
+            CollectionAssert.AreEqual(new PacketWriter().C(0x8a).D(0x10000020).Bytes(), PetPackets.RequestPetUseItem(0x10000020));
+            CollectionAssert.AreEqual(new PacketWriter().C(0x8b).D(0x10000001).D(5).Bytes(), PetPackets.RequestGiveItemToPet(0x10000001, 5));
+            CollectionAssert.AreEqual(new PacketWriter().C(0x8c).D(0x10000020).D(5).D(0).Bytes(), PetPackets.RequestGetItemFromPet(0x10000020, 5));
+            CollectionAssert.AreEqual(new PacketWriter().C(0x89).S("Rex").Bytes(), PetPackets.RequestChangePetName("Rex"));
+            CollectionAssert.AreEqual(new PacketWriter().C(0x8f).D(0x10000030).Bytes(), PetPackets.RequestPetGetItem(0x10000030));
+            // RequestActionUse: actionId, ctrl, shift
+            CollectionAssert.AreEqual(new PacketWriter().C(0x45).D(16).D(1).C(0).Bytes(), PetPackets.RequestActionUse(16, true));
         }
     }
 }
