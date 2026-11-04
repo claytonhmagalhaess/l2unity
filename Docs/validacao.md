@@ -409,3 +409,11 @@ Tabelas de cobertura geradas: `Docs\cobertura_envios.md` (245 envios), `Docs\cob
   `LobbyMovers.ActorOf` e `MapEnv`, exportado pelos dois `export_*_emitters.py` (reexportação: pedido 0036). As vinhas visíveis no
   topo do quadro antes eram só as `INDeco000` estáticas (sem `bSwayObject`, paradas também no original). `VinhasLoginTests` (6).
   Evidência em `Docs/evidencias/cipos-login/`. Suíte: 594/594.
+- **#0057 (2026-11-04):** personagem flutuando depois do `/unstuck` e do teleporte. O aCis manda no TeleportToLocation o Z do XML + 10, sem
+  geodata; em Giran isso dá 110 a 124 acima do chão. No original, `OnTeleportToLocation` + `L2_Teleport` (busca do pouso, ±30·i até 900)
+  põem o pawn no chão. Porte: pouso pendente em `PawnMotion`/`Movement.Land`, armado no `Entity.Place` e no ValidateLocation do
+  próprio. A faixa vai de pé − queda máxima (900 para jogadores, 100 para NPCs e itens, 150 em multicamada) até pé + 30; fora dela, fica
+  no Z do servidor. Medição em todos os 2119 destinos e nos 40 814 spawns do aCis: `Docs/teleporte_z.md`. `TeleportLandingTests` (15).
+  Ao vivo no aCis local (0057-1 antes/depois, 0057-2): unstuck, gatekeeper, Global Gatekeeper (farm e solo-zone) e as lojas de Giran.
+  Evidência em `Docs/evidencias/teleporte-chao/`. Suíte: 894/894. Ficam acima 10 destinos multicamada (Dark/Elven Village, Baium,
+  ToI), que dependem do pedido 0051 (todas as camadas).

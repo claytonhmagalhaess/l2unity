@@ -10,4 +10,17 @@ Teste ao vivo 0057-1 da sessão de testes, no aCis local, conta `l2webtest3`, pe
 | `npc-grocer-B.png`, `cancel-B.png` | Bug da versão B: os NPCs das lojas de Giran (z −3506) subiam até o telhado do geodata (+348 a +458). Corrigido em `ea03f2f` (o pouso não sobe mais de 30 e o NPC não cai mais de 100). |
 | `console-pouso.txt` | As linhas `[pouso]` e `[raw28]` das duas rodadas. |
 
-Suíte em `303b026`: 888/888. O reteste de `ea03f2f` foi pedido à sessão de testes (0057-2).
+Suíte em `303b026`: 888/888.
+
+## Reteste 0057-2 (B = `7736c54`, conta `l2webtest5`, personagem `BarrasHp54`)
+
+| Arquivo | O que mostra |
+|---|---|
+| `lojas-B.png` | Lojas de Giran: nenhuma linha `[pouso] npc`. Helvetia, Denkus, Sandra e Ellie ficam em −3506/−3508, com o nome na altura normal. |
+| `unstuck-B2.png` | `/unstuck` em Giran: `-3340 -> chao -3464 (-124)`; pés no chão. |
+| `farm-B.png` | Global Gatekeeper → levelup → 12035: `-2770 -> chao -2848 (-78)`; pés no chão, mobs ao fundo. |
+| `solo-B.png` | Global Gatekeeper → solo-zone (randomTeleport, Field of Whispers): `-3614 -> -3624 (-10)`; o personagem e os mobs na grama. |
+| `unstuck-farm-B.png` | `/unstuck` saindo do farm (o servidor leva sempre a Giran): `-3340 -> -3464 (-124)`. |
+| `console-pouso-2.txt`, `suite-7736c54.txt` | Linhas `[pouso]`/`[raw28]` e suíte 894/894 (TeleportLandingTests 15/15). |
+
+Os teleportes que ninguém pediu no 0057-1 e no 0057-2 são o evento "PvP Zone" do servidor L2Ketra (Orc Barracks, id 12023, e a volta a Giran), e não vêm do porte. O personagem andando sozinho depois do teleporte é o `Dev.Navigator` voltando ao último NPC.
