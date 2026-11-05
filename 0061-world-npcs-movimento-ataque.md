@@ -64,10 +64,36 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — ValidateLocation não anda o NPC durante golpe ou cast; o arqueiro só vira até soltar a flecha (`9c610a7`).
 - 2026-11-05 — NPC corre desde o primeiro tick, sem a fase de caminhada do chargrp (`1de4edf`).
 - 2026-11-05 — Pedido de teste EditMode à sessão de testes (compilar, suíte, `NpcMotionTests`, `PawnApproachTests`), sobre `1de4edf`. Queda de energia às 20:03; trabalho retomado sem perda.
+- 2026-11-05 — Suíte EditMode em `1de4edf`, rodada pela sessão de testes: compila, 933/933, `NpcMotionTests` 8/8, `PawnApproachTests` 13/13; +8 contra o `d9a7f7d` da #0059 (925). Evidências em `Docs/evidencias/npcs-movimento/` (`19cb9cd`).
+- 2026-11-05 — Estudo completo no `engine.dll` e no aCis. As notas estão em `0061-engine-npcs.md` e `0061-acis-npcs.md`, na pasta de notas da coordenadora.
+- 2026-11-05 — Taxa de Walk/Run do NPC com o `npc_speed` do Npcgrp (`b968f71`).
+- 2026-11-05 — Índice de arma do NPC pelo handness, o B16 que a #0060 deixou para esta tarefa (`05e2b56`).
+- 2026-11-05 — `Entity.Social` para o SocialAction de NPC (`747da34`).
+- 2026-11-05 — Pedidos 0064 (`App.cs` e `anim_tables.json`) e 0065 (render), no commit `0a4cb95` deste repo.
+- 2026-11-05 — `Docs/npcs_movimento.md` e a linha M9 da `validacao.md` (`623b62b`); conta `l2webtest9` (`cfa73ce`).
+- 2026-11-05 — Segundo pedido de teste à sessão de testes, sobre `cfa73ce`: (A) EditMode; (B) roteiro ao vivo antes (`e40d43c`) e depois (`cfa73ce`) na Breka's Stronghold, com arqueiro, corpo a corpo, volta ao spawn, andar aleatório e boss se houver. O (B) espera o aCis, que está fora do ar.
 
 ## Decisões e REA
 
 <!-- o que foi descoberto ou decidido, marcado como Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
+
+A tabela completa, com uma linha por comportamento, está em `Docs/npcs_movimento.md` (branch). O que muda o porte:
+
+- **Merge da #0059 (decisão).** O branch contém o `feat/world-aproximacao-alvo` até `bbd9529`. A #0059 já faz o `StopMove` no `Attack`, o Focus no `MoveToPawn` e o `Attack(x, y, z)`. Sem isso, o NPC que ataca sem `StopMove` (o aCis faz isso com o alvo andando dentro da tolerância, `AttackableAI.java:719`) atacava andando, e o golpe era cancelado. Combinado com a sessão da #0059.
+- **"Bate virado" (Observado).** O original vira para o alvo em todo tick do golpe: o `SwordAttackProcess` (`00001.c:8845`) antes do `switch`, e o `BowAttackProcess` (`00004.c:1576`) até soltar a flecha. O servidor nunca manda rotação em combate (aCis). No porte, havia três causas:
+  1. o seguimento que continuava depois do `Attack` (corrigido pela #0059);
+  2. a `ValidateLocation`, que o aCis manda ao selecionar o alvo, fazia o NPC andar no meio do golpe, cancelar o ataque e virar para o ponto da correção. O `OnValidateLocation` (`00006.c:14322`) só anda com `pawn+0x62c == 0`. Corrigido em `9c610a7`;
+  3. o arqueiro continuava virando depois de soltar a flecha (menor). Corrigido em `9c610a7`.
+- **Movimento "meio bugado" (Observado).** O `APawn::GetCurSpeed` (`00011.c:12472`) só faz a fase de caminhada com o `pawn+0x6cc`, que só o `OnUserInfo` e o `OnCharInfo` gravam. No porte, o NPC andava 0,4 s a 40 (Archer of Greed: run 174) no começo de cada perseguição, com a animação Walk. Corrigido em `1de4edf`. O valor padrão do `0x6cc` para NPC é 0 (Inferido: nenhum caminho do NpcInfo o grava).
+- **Pernas lentas (Observado).** `GetWalkAnimRate`/`GetRunAnimRate` multiplicam pelo `FL2NpcData+0x58`, que o `FL2GameData::NpcDataLoad` (`00004.c:1206`) lê do `npc_speed` do Npcgrp. Corrigido em `b968f71`.
+- **Animação da arma (Observado).** `CurWeaponType` = `User::GetAnimType` (`00001.c:15851`), gravado pelo `User::SetPawnResource` para todo pawn. Corrigido em `05e2b56`.
+- **SocialAction (Observado).** `OnSocialAction` (`00006.c:29124`): NPC com id 1..5 toca `NpcSocialAnimName[id-1]`, que é `localized` (no `.int`). Corrigido em `747da34`, mais o pedido 0064.
+- **A validar / proposta:**
+  - `RotationRate` e `bSpineRotation` por classe estão no `.u`, não exportado. O porte usa 65000 para todos.
+  - A volta do yaw para o `FocalPoint` do `OnAttack` depende da ordem de tick.
+  - O giro de cast a 0x50000/s.
+  - O tween 0.1 do `AttackStop`.
+  - Os flags do `OnDeleteUser`.
 
 ## Entrega
 
@@ -77,4 +103,12 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-Nenhum por enquanto.
+- [0064](pedidos/0064-world-app-socialaction-npc.md): coordenadora. Handler 0x2d no `App.cs`, e `NpcSocialAnimName`/`NpcSocialHide*Weapon` no `anim_tables.json`, que vem do `anim_tables.py` do l2web.
+- [0065](pedidos/0065-world-render-npc-corpo-cabeca.md): render.
+  - O corpo do NPC some com fade de 2 s e afunda; o vivo some só com o fade.
+  - A cabeça olha para o alvo.
+  - As armas ficam escondidas na social.
+  - O efeito de spoil no corpo.
+
+  A troca no `World.Remove` fica comigo quando houver o `Actor.FadeOut`.
+- Já pedido pela #0060: [0063](pedidos/0063-world-render-reacao-golpe.md). É o tronco dobrando no golpe recebido, e vale também para NPC.
