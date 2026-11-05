@@ -79,6 +79,20 @@ namespace L2Web.World
             return new ServerHitsResult { TimeAtk = t, Hits = new[] { t / 2 } };
         }
 
+        /// <summary>
+        /// Por quanto tempo (s, desde o pacote Attack) o atacante vira para o alvo. APawn::SwordAttackProcess grava
+        /// DesiredRotation.Yaw = direcao do alvo em todo tick ate o fim do clipe; APawn::BowAttackProcess so nos estados 1, 4
+        /// e 5 (ate o quadro de soltar a flecha, AttackShot) e no estado 6 (flecha solta, resto do clipe) nao gira mais.
+        /// `end` = fim do clipe (tween + duracao); `shots` = instantes dos notifies AttackShot.
+        /// </summary>
+        public static float TrackTime(bool ranged, float end, IReadOnlyList<float> shots)
+        {
+            if (!ranged || shots == null || shots.Count == 0) return end;
+            var last = 0f;
+            foreach (var s in shots) last = Math.Max(last, s);
+            return Math.Min(end, last);
+        }
+
         /// <summary>Flags do golpe no pacote Attack.</summary>
         public static class Hit
         {

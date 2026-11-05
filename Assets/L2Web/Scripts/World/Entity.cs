@@ -73,6 +73,8 @@ namespace L2Web.World
         sealed class Attacking
         {
             public float Until;
+            /// <summary>Ate quando o pawn vira para o alvo (DesiredRotation do Sword/BowAttackProcess).</summary>
+            public float TrackUntil;
             public int TargetId;
         }
 
@@ -146,10 +148,17 @@ namespace L2Web.World
             if (a.Name == null) return none;
             Actor.Play(a.Name, spec.Rate, false, spec.Tween);
             var play = Actor.ClipDuration(a.Name) / spec.Rate;
-            attacking = new Attacking { Until = clock + spec.Tween + play, TargetId = target?.ObjectId ?? 0 };
             var notes = GameData.ClipNotifies(Set, a.Name);
             List<float> At(string cls) => notes.Where(n => n.Cls == cls).Select(n => spec.Tween + n.Frac * play).ToList();
-            return new AttackTimes { Items = At("AttackItem"), Shots = At("AttackShot"), Ranged = spec.Ranged };
+            var res = new AttackTimes { Items = At("AttackItem"), Shots = At("AttackShot"), Ranged = spec.Ranged };
+            var until = spec.Tween + play;
+            attacking = new Attacking
+            {
+                Until = clock + until,
+                TrackUntil = clock + Combat.TrackTime(spec.Ranged, until, res.Shots),
+                TargetId = target?.ObjectId ?? 0,
+            };
+            return res;
         }
 
         /// <summary>
@@ -287,7 +296,15 @@ namespace L2Web.World
             if (dx * dx + dy * dy > 0.25f) Motion.DesiredYaw = Movement.HeadingOf(dx, dy);
         }
 
-        public void ServerValidate(float x, float y, float z, int heading) => Motion.ServerValidate(new Vec3(x, y, z), heading, IsSelf);
+        public void ServerValidate(float x, float y, float z, int heading) =>
+            Motion.ServerValidate(new Vec3(x, y, z), heading, IsSelf, InAction);
+
+        /// <summary>
+        /// Golpe ou cast em curso (pawn+0x62c != 0 no engine: o OnAttack grava o tipo da acao e o NActionStop zera). O
+        /// OnValidateLocation nao anda um pawn parado ate a posicao do servidor durante a acao: no porte, o AddMoveTo cancelava
+        /// o golpe (andando) e virava o NPC para o ponto da correcao, de costas ou de lado para o alvo.
+        /// </summary>
+        public bool InAction => (attacking != null && clock < attacking.Until) || casting != null;
 
         /// <summary>Chegada ao alvo do MoveToPawn ja foi para o log ([aproximacao]).</summary>
         bool reachLogged;
@@ -459,8 +476,9 @@ namespace L2Web.World
                 if (moving || clock >= attacking.Until) attacking = null;
                 else
                 {
+                    // Sword/BowAttackProcess: DesiredRotation.Yaw = direcao do alvo a cada tick (o arco so ate soltar a flecha)
                     var t = World?.Get(attacking.TargetId);
-                    if (t != null) Motion.DesiredYaw = Movement.HeadingOf(t.X - X, t.Y - Y);
+                    if (t != null && t != this && clock <= attacking.TrackUntil) Motion.DesiredYaw = Movement.HeadingOf(t.X - X, t.Y - Y);
                     Actor.Update(dt);
                     return;
                 }

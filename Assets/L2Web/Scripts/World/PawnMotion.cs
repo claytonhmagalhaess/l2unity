@@ -131,8 +131,12 @@ namespace L2Web.World
             CorrTimer = 0;
         }
 
-        /// <summary>ValidateLocation: o proprio jogador e teleportado (L2_Teleport); outros sao corrigidos aos poucos.</summary>
-        public void ServerValidate(Vec3 pos, int heading, bool isSelf)
+        /// <summary>
+        /// ValidateLocation: o proprio jogador e teleportado (L2_Teleport); outros sao corrigidos aos poucos.
+        /// `inAction` = o pawn esta num golpe ou cast (pawn+0x62c != 0 no engine): parado, o OnValidateLocation so anda ate a
+        /// posicao do servidor (AddMoveTo) com pawn+0x62c == 0; o reposicionamento acima de SnapDistance vale sempre.
+        /// </summary>
+        public void ServerValidate(Vec3 pos, int heading, bool isSelf, bool inAction = false)
         {
             if (isSelf)
             {
@@ -153,7 +157,7 @@ namespace L2Web.World
                 CorrTimer = Movement.ValidateCatchupTime;
                 Corr = (Movement.Dist3(Dest, new Vec3(X, Y, Z)) - Movement.Dist3(Dest, pos)) / Movement.ValidateCatchupTime;
             }
-            else if (d > Movement.IdleMinDistance)
+            else if (d > Movement.IdleMinDistance && !inAction)
             {
                 Corr = 0;
                 CorrTimer = 0;
