@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world, na pasta `worktrees\net` (emprestada: a `worktrees\world` está com a #0059) |
 | Branch | `feat/world-sistema-ataque` (nasce de `main`) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (combate, animação do pawn, 94/96 Attack 0x05, MagicSkillUse, StopMove, AutoAttackStart/Stop, Die); `Docs/validacao.md` M3, M4 e M5; `World/Combat.cs`, `World/ActionLatch.cs`, `World/Skills.cs`, `World/L2Calc.cs` |
 | Sessão | world: sistema de ataque (#0060) |
 | Criada | 2026-11-05 |
@@ -23,7 +23,7 @@ Fora do escopo, porque já tem tarefa própria em andamento:
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] `Docs/combate_lacunas.md`: uma linha por comportamento do combate no original, com a evidência (pseudocódigo do Engine.dll e do NWindow em `analises\` e no Tryskell, a spec, os dados de animação e pacotes do aCis, somente leitura) e o estado no porte: igual, corrigido, pedido ou proposta. A tabela cobre pelo menos:
+- [x] `Docs/combate_lacunas.md`: uma linha por comportamento do combate no original, com a evidência (pseudocódigo do Engine.dll e do NWindow em `analises\` e no Tryskell, a spec, os dados de animação e pacotes do aCis, somente leitura) e o estado no porte: igual, corrigido, pedido ou proposta. A tabela cobre pelo menos:
   - **Ataque automático:** início (clique, Ctrl+clique para forçar, Shift+clique para não andar, atalho), repetição pelo AutoAttackStart/Stop, parada (alvo morto, alvo fora do alcance, troca de alvo, mover, sentar, Esc), e o que acontece com o alvo morto (desselecionar ou manter).
   - **Animações:**
     - de ataque por tipo de arma e por raça e sexo, incluindo dual, pole, arco (puxar e soltar), punho e fist;
@@ -39,13 +39,13 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
     - os pacotes de recusa (AttackOutofRange, AttackinCoolTime, ActionFail) e o que o cliente faz com eles.
   - **Retorno visual e textual:** miss e evade, crítico, golpe com escudo, as mensagens de dano no chat (systemmsg) e quem as gera (servidor ou cliente).
   - **Alvo e PK:** atacar jogador (flag e karma), Ctrl obrigatório para jogador não flagado, atacar NPC não agressivo.
-- [ ] As lacunas da área world são corrigidas em ordem de impacto no jogo, com um commit por correção e a evidência na mensagem. As de outras áreas viram pedido em `tarefas\pedidos\`:
+- [x] As lacunas da área world são corrigidas em ordem de impacto no jogo, com um commit por correção e a evidência na mensagem. As de outras áreas viram pedido em `tarefas\pedidos\`:
   - `App.cs` para a coordenadora, com o trecho exato;
   - pacotes para a net;
   - efeitos para a render;
   - interface para a ui.
-- [ ] Não mexa na lógica de aproximação e parada em `Movement.cs`/`PawnMotion.cs`, que é da #0059. Se precisar, combine com a sessão dela antes. O efeito do soulshot no acerto é da #0058.
-- [ ] Testes EditMode para cada regra corrigida. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
+- [x] Não mexa na lógica de aproximação e parada em `Movement.cs`/`PawnMotion.cs`, que é da #0059. Se precisar, combine com a sessão dela antes. O efeito do soulshot no acerto é da #0058.
+- [x] Testes EditMode para cada regra corrigida. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
 - [ ] Capturas e logs ao vivo antes e depois, tirados pela sessão de testes no aCis local, em `Docs/evidencias/sistema-ataque/`:
   - ataque automático corpo a corpo, com arco e com dual;
   - crítico e miss;
@@ -53,6 +53,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - Ctrl em jogador.
 
   Some uma linha na `Docs/validacao.md`.
+
+  **Justificativa:** a linha M8 da `Docs/validacao.md` está feita. As capturas ao vivo não estão: o aCis local está fora do ar desde a queda de energia, e o ao vivo está na fila da sessão de testes em 3º lugar (antes `e40d43c`, depois `efd8fb5`). Além disso, parte do efeito só aparece depois que a coordenadora aplicar o pedido 0062 (`App.cs`).
 
 ## Andamento
 
@@ -68,6 +70,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — Pedidos 0062 (App.cs) e 0063 (render). A #0061 foi avisada do que mudou em `Entity.cs`.
 - 2026-11-05 — Conta `l2webtest8` (`a7b11b1`). Pedido de teste à sessão de testes: compilar, suíte EditMode em `a7b11b1` contra o `main` `e40d43c`, e o roteiro ao vivo antes e depois (corpo a corpo, arco, dual, crítico e miss, alvo morrendo, Ctrl em jogador, alvo automático).
 - 2026-11-05 — Queda de energia às 20:03. O pedido de teste foi reenviado para o `efd8fb5`: compilar e suíte EditMode contra o `main` `e40d43c`. O ao vivo fica na fila até o aCis voltar.
+- 2026-11-05 — Suíte EditMode em `efd8fb5`: 925/925, 0 falhas (`main` 912/912). Evidências no branch (`e16e9b4`, `3c4a597`). Estado `pronta p/ merge`; o ao vivo fica na fila.
 
 ## Decisões e REA
 
@@ -97,9 +100,34 @@ A tabela completa está em `Docs/combate_lacunas.md` do branch. O principal:
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (branch `feat/world-sistema-ataque`, base `main` `e40d43c`):
+  - `c729c42`: tempo do arco do aCis (1500·333/P, timeAtk − 50) e `Combat.MeleeHitSchedule` (golpes nos `AttackShot`), mais `Combat.Shielded`;
+  - `810e9dd`:
+    - `World/AutoTarget.cs` e os métodos do `World` (`AutoTargetOnAttack`, `OnMyTargetSelected`, `OnTargetSelected`, `OnTargetUnselected`, `OnDie`, `OnRevive`);
+    - `Entity.SetDead` como o OnDie e `Entity.Revive` (Rebirth);
+    - `Entity.Attack` liga a postura e corta o cast;
+    - `CombatSystemTests` (13);
+  - `d624cdd`, `efd8fb5`: `Docs/combate_lacunas.md` e a linha M8 da `Docs/validacao.md`;
+  - `a7b11b1`: conta `l2webtest8`;
+  - `e16e9b4`, `3c4a597`: evidências da suíte em `Docs/evidencias/sistema-ataque/`.
+- **Testes:** sessão de testes, `testes0-1\suite-efd8fb5`:
+  - compila sem erros;
+  - EditMode 925/925, 0 falhas, contra 912/912 no `main` `e40d43c`. Os +13 são os `CombatSystemTests`;
+  - `CombatTests` 9/9, `CombatParityTests` 2/2, `ActionFailTests` 6/6.
+- **Falta / fora do escopo:**
+  - **Pedido 0062** (coordenadora, `App.cs`): sem ele o código novo não é chamado. Ficam esperando os golpes nos `AttackShot`, o alvo automático, a seleção pelo `World`, o Die e o Revive.
+  - **Pedido 0063** (render): a reação do tronco ao golpe (`SpineRotation`) e as regras do escudo no `OnHit`.
+  - **Ao vivo:** na fila da sessão de testes, esperando o aCis voltar.
+  - **Propostas** (`combate_lacunas.md`):
+    - exportar a `DeathStandAnimName` no `anim_tables.json` (tools);
+    - SitDeath e SwimDeath;
+    - ataque montado;
+    - conferir a cor do `SetupGauge` do arco (ui);
+    - o `EV_ReceiveAttack` só para o golpe principal.
+  - **De outras tarefas:**
+    - virar para o alvo no golpe e o `Widx` dos NPCs (#0061, combinado);
+    - StopMove e AdjustPawnLocation no Attack (#0059);
+    - efeito do soulshot (#0058).
 
 ## Pedidos
 
