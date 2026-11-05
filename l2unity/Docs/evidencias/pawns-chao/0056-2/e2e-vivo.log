@@ -1,0 +1,69 @@
+== ao vivo 791b1c3, l2webtest7/Chao56
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=44 self=Chao56 646,179805,-3720"
+"self=646,179805,-3720 hp=1070/1183 desenho_y=-3753,349"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-2/campo_parado.png (1024, 768)
+"268439425:Monster Eye Destroyer:837 268480949:Monster Eye Destroyer:69 268439463:Monster Eye Destroyer:61 268441977:Kadif Werewolf:334 268439466:Monster Eye Destroyer:804 "
+== andando (DoAction 1 = andar/correr)
+"toggle"
+"anda"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-2/campo_andando.png (1024, 768)
+"self=952,179912,-3720 hp=976/1183 desenho_y=-3753,349"
+"toggle"
+== correndo
+"corre"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-2/campo_correndo.png (1024, 768)
+"self=360,180120,-3720 hp=905/1183 desenho_y=-3753,349"
+"268480949:Monster Eye Destroyer:352 268439463:Monster Eye Destroyer:339 268441977:Kadif Werewolf:743 268439466:Monster Eye Destroyer:795 "
+== combate 268439463
+"action"
+"action"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-2/campo_combate.png (1024, 768)
+"self=550,4727,179929,5,-3720 hp=1263/1281 desenho_y=-3753,349"
+"monstro Monster Eye Destroyer 600,179880,-3720 hp=0 desenho_y=-3753,349"
+0 entradas
+"afasta dos monstros"
+== /unstuck -> Giran
+"unstuck"
+"self=-91608,66,107014,2,-3856 desenho_y=-3878,598 @19:38:06"
+"self=-91856,56,107421,5,-3816 desenho_y=-3839,772 @19:38:09"
+"self=-92205,9,107565,4,-3856 desenho_y=-3874,557 @19:38:13"
+"self=-92415,24,107625,-3864 desenho_y=-3891,367 @19:38:16"
+"self=-92403,63,108019,8,-3872 desenho_y=-3903,864 @19:38:20"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-2/giran_vivo.png (1024, 768)
+   log [html] npc (2094): npc_268477393_goto 12000 | npc_268477393_goto 12003 | npc_268477393_goto 12001 | npc_268477393_goto 12002 | npc_268477393_goto 12004 | npc_268477393_goto 12005 | npc_268477393_goto 12006 | npc_268477393_goto 12010 | npc_268477393_goto 5 | npc_268477393_goto 12057 | npc_268477393_goto 12015 | npc_268477393_goto 12011 | npc_268477393_goto 12012 | npc_268477393_goto 12013 | npc_268
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (3108): npc_268477393_goto 12020 | npc_268477393_goto 12021 | npc_268477393_goto 12022 | npc_268477393_goto 12023 | npc_268477393_goto 12024 | npc_268477393_goto 12025 | npc_268477393_goto 12026 | npc_268477393_goto 12027 | npc_268477393_goto 12028 | npc_268477393_goto 12029 | npc_268477393_goto 12030 | npc_268477393_goto 12031 | npc_268477393_goto 12032 | npc_268477393_goto 12033 | npc
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (2364): npc_268477393_gotoPvpZone | npc_268477393_randomTeleport 70300;70301;70302;70303;70304;70305;70306;70307;70308;70309;70310;70311;70312;70313;70314;70315;70316;70317;70318;70319;70320;70321;70322;70323;70324;70325;70326;70327 | npc_268477393_randomTeleport 70701;70702;70703;70704;70705;70706;70707;70708;70709;70710;70711;70712;70713;70714;70715;70716;70717;70718;70719;70720;70721
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (1377): npc_268477393_Link teleporter/custom/towns.htm | npc_268477393_Link teleporter/custom/levelup.htm | npc_268477393_Link teleporter/custom/solo-zone.htm | npc_268477393_Link teleporter/custom/bossed.htm | npc_268477393_Link teleporter/custom/epic.htm | npc_268477393_goto 12050 | cmd_gotoPvpZone
+   log [html] npc (3108): npc_268477393_goto 12020 | npc_268477393_goto 12021 | npc_268477393_goto 12022 | npc_268477393_goto 12023 | npc_268477393_goto 12024 | npc_268477393_goto 12025 | npc_268477393_goto 12026 | npc_268477393_goto 12027 | npc_268477393_goto 12028 | npc_268477393_goto 12029 | npc_268477393_goto 12030 | npc_268477393_goto 12031 | npc_268477393_goto 12032 | npc_268477393_goto 12033 | npc
+  "success": true,
+== relogin (checar se o autofarm parou)
+  "success": true,
+"scrLogin"
+"ok"
+"scrGame chars=1"
+"ok"
+"scrGame inWorld=True ents=56 self=Chao56 -93038,8,109282,-3840"
+"self=-93074,83,109273,2,-3856 lvl? hp=2652/2652 desenho_y=-3867,075 @19:40:18"
+"self=-93048,109176,-3856 lvl? hp=2652/2652 desenho_y=-3874,492 @19:40:23"
+"self=-93672,109320,-3856 lvl? hp=2652/2652 desenho_y=-3888,241 @19:40:27"
+"self=-93208,108984,-3872 lvl? hp=2652/2652 desenho_y=-3900,283 @19:40:32"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-2/relogin_estado.png (1024, 768)
+   error TimeoutException: tempo esgotado esperando CharSelected

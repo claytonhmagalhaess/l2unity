@@ -1,0 +1,46 @@
+{
+ "traceBase": 250.0,
+ "beforeHit": 30.0,
+ "zoomInitial": -20.0,
+ "pitchMin": -15000,
+ "pitchMax": 16384,
+ "zoomMin": -200.0,
+ "zoomMax": 25000.0,
+ "wheelStep": 20.0,
+ "mouseSpeed": 3600.0,
+ "fov": 60.0,
+ "autoTracking": 0.4,
+ "presets": [
+  {
+   "Yaw": 0.0,
+   "Pitch": -2700.0,
+   "Dist": 230.0,
+   "ViewHeight": 0.0,
+   "HidePlayer": 0.0,
+   "DisableZoom": 0.0
+  },
+  {
+   "Yaw": 0.0,
+   "Pitch": 560.0,
+   "Dist": 80.0,
+   "ViewHeight": 14.0,
+   "HidePlayer": 1.0,
+   "DisableZoom": 1.0
+  },
+  {
+   "Yaw": 0.0,
+   "Pitch": -3320.0,
+   "Dist": 450.0,
+   "ViewHeight": 0.0,
+   "HidePlayer": 0.0,
+   "DisableZoom": 0.0
+  }
+ ],
+ "keys": {
+  "Home": "FixedDefaultCamera",
+  "PageUp": "FixedDefaultCamera Down",
+  "PageDown": "FixedDefaultCamera Up",
+  "End": "TurnBack",
+  "MiddleMouse": "TurnBack"
+ }
+}

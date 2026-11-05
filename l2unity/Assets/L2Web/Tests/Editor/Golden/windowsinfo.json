@@ -1,0 +1,399 @@
+[
+ {
+  "section": "6",
+  "keys": [
+   "width",
+   "height"
+  ]
+ },
+ {
+  "section": "DuelManager",
+  "keys": [
+   "width",
+   "height",
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "PartyWnd",
+  "keys": [
+   "width",
+   "height",
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "PetStatusWnd",
+  "keys": [
+   "width",
+   "height",
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "StatusWnd",
+  "keys": [
+   "width",
+   "height",
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "SummonedStatusWnd",
+  "keys": [
+   "width",
+   "height",
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "TargetStatusWnd",
+  "keys": [
+   "width",
+   "height",
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "1",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "2",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "3",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "4",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "5",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "7",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "8",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "AbnormalStatusWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "BoardWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "CalculatorWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "FishViewportWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "GMInventoryWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "HennaInfoWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "HennaListWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "HeroTowerWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "InventoryWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "MacroEditWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "MacroInfoWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "MacroListWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "MainWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ManorInfoWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "MinimapWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "MultiSellWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "OlympiadBuff1Wnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "OlympiadBuff2Wnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "OlympiadPlayer1Wnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "OlympiadTargetWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "OptionWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "PartyWndCompact",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "PetWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "QuestListWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "RefineryWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ShortcutWndVertical",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ShortcutWndVertical_1",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ShortcutWndVertical_2",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ShortcutWndHorizontal",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ShortcutWndJoypad",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "ShortcutWndJoypadExpand",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "SiegeInfoWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "SSQMainBoard",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "SummonedWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "TeaserSlideWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "SkillTrainInfoWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "SkillTrainListWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "TutorialViewerWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "UnionDetailWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "UnionWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ },
+ {
+  "section": "UnrefineryWnd",
+  "keys": [
+   "posX",
+   "posY"
+  ]
+ }
+]

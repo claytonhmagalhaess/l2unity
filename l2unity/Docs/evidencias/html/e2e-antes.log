@@ -1,0 +1,33 @@
+b88e07c Docs: capturas de depois no aCis local e achados ao vivo da #0047
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+== #0055 antes b88e07c
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=0"
+"criando"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=65 self=Html55 83522,148664,-3408"
+"10005:Armor Shop:1153 10003:Global Gatekeeper:764 10003:Global Gatekeeper:1097 10007:Donate Shop:694 10007:Donate Shop:607 10009:Grand Master:251 10002:Buffer:488 10002:Buffer:445 10001:Class Manager:773 10000:Andromeda:1092 10001:Class Manager:852 10014:Warehouse Keeper:1010 10006:Weapon Shop:1179 10016:Epic Shop:322 10009:Grand Master:808 10009:Grand Master:720 31124:Daily PvP:415 31124:Daily PK:359 30080:Clarissa:770 10003:Global Gatekeeper:1005 31419:Lorel:1062 "
+== buffer
+"npc=268477412"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_buffer_menu.png (1024, 768)
+"npc_268477412_Link buffer/Sub/buff.htm"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_buffer_buff.png (1024, 768)
+== gatekeeper
+"npc=268479868"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_gatekeeper.png (1024, 768)
+== quest (link Quest da Clarissa)
+"npc_268479868_Quest"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_quest.png (1024, 768)
+"ok"
+== board
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_board.png (1024, 768)
+"top"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_board_top.png (1024, 768)
+"region"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0055-1/antes_board_region.png (1024, 768)
+0 entradas

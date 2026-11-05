@@ -1,0 +1,21 @@
+== #0050 antes b88e07c
+  "success": true,
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=66 self=L2webTest 82424,148712,-3464"
+"ok"
+"268477696"
+-- b) painel:
+"idx=0 itemType=1 slot=32768 produtos=4 ingredientes= stats=249/4950 || painel=|Draconic Leather Armor|x1||Draconic Leather Boots|x1||Draconic Leather Gloves|x1||Draconic Leather Helmet|x1"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_antes_painel.png (1024, 768)
+0 entradas
+-- 0050_antes_tip_lista: "Draconic Leather Armor => Draconic Leather Armor"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_antes_tip_lista.png (1024, 768)
+-- 0050_antes_tip_produto: "Draconic Leather Armor => Draconic Leather Armor"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_antes_tip_produto.png (1024, 768)
+-- 0050_antes_tip_ingrediente: "nao achou"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0050-1/0050_antes_tip_ingrediente.png (1024, 768)
+0 entradas

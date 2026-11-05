@@ -1,0 +1,5 @@
+Inventario (offline, UiPreview; InventoryScript + InvExec, UiDeps.Send interceptado)
+- clique direito Soulshot (13) -> 14 0d 00 00 00 00 00 00 00 (UseItem 13)
+- arma equipada (11, slot 0x80) solta no InventoryItem -> 11 80 00 00 00 (RequestUnEquipItem 0x80)
+- Soulshot com Alt -> TrashButton -> DialogBox Warning sm74 (destruir tudo); Enter sem DefaultOK = Cancel, nenhum pacote
+- Soulshot sem Alt -> TrashButton -> DialogBox NumberPad sm73; OK com 100 -> 59 0d 00 00 00 64 00 00 00 (RequestDestroyItem 13, 100)

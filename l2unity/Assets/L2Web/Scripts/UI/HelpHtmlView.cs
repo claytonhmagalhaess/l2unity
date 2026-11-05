@@ -1,0 +1,76 @@
+// HelpHtmlWnd do Interface.xdat (310x311, Npc2_back, HtmlViewer em (7,30) 296x274) com o HelpHtmlWnd.uc:
+//   EV_ShowHelp (FilePath): aberta = fecha; fechada = LoadHtml(FilePath), mostra e foca (:38-56). Quem manda: SystemMenuWnd
+//   btnHelpHtml ("..\L2text\help.htm", SystemMenuWnd.uc:76-80) e os botoes Help da MacroListWnd/MacroEditWnd (help_macro.htm).
+//   EV_LoadHelpHtml (HtmlString): LoadHtmlFromString no viewer (:58-66).
+// Os links <a link="..\L2text\help_x.htm"> do proprio help trocam a pagina no mesmo viewer (o NCHtmlViewer do cliente).
+// Os .htm vem da copia de ..\l2text (Lineage2Ver111, LobbyServerScreen.ReadL2Text).
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace L2Web.UI
+{
+    public sealed class HelpHtmlView
+    {
+        public readonly L2Wnd Wnd;
+        /// <summary>Arquivo mostrado por ultimo (diagnostico e testes).</summary>
+        public string File { get; private set; } = "";
+
+        public HelpHtmlView(L2Layer layer)
+        {
+            Wnd = new L2Wnd("HelpHtmlWnd", layer, new WndOpts { AriaLabel = "Help" });
+            L2Events.Register(Ev.EV_ShowHelp, OnShowHelp);
+            L2Events.Register(Ev.EV_LoadHelpHtml, p =>
+            {
+                string html = null;
+                if (L2Param.ParseString(p, "HtmlString", ref html) && !string.IsNullOrEmpty(html)) Render(html);
+            });
+        }
+
+        /// <summary>HandleShowHelp: alterna; ao abrir carrega o FilePath (sem FilePath nao abre).</summary>
+        void OnShowHelp(string p)
+        {
+            if (Wnd.Visible)
+            {
+                Wnd.Hide();
+                return;
+            }
+            string path = null;
+            L2Param.ParseString(p, "FilePath", ref path);
+            if (string.IsNullOrEmpty(path)) return;
+            Load(path);
+            Wnd.Show();
+        }
+
+        /// <summary>LoadHtml: le o arquivo de ..\l2text pelo nome (o caminho do cliente e sempre ..\L2text\x.htm).</summary>
+        public void Load(string path)
+        {
+            File = FileName(path);
+            Render(LobbyServerScreen.ReadL2Text(File) ?? "");
+        }
+
+        /// <summary>Nome do arquivo de um caminho do cliente ("..\L2text\help.htm" -> "help.htm").</summary>
+        public static string FileName(string path)
+        {
+            if (string.IsNullOrEmpty(path)) return "";
+            var p = path.Replace('\\', '/');
+            var i = p.LastIndexOf('/');
+            return i >= 0 ? p.Substring(i + 1) : p;
+        }
+
+        void Render(string html)
+        {
+            var body = Wnd.Content("HtmlViewer");
+            if (!body) return;
+            UiKit.Clear(body);
+            L2Html.Render(html, new HtmlActions { Link = Load, File = Load }, body, ViewerWidth(Wnd.Ctrl("HtmlViewer")));
+            var sr = body.GetComponentInParent<ScrollRect>();
+            if (sr) sr.verticalNormalizedPosition = 1;
+        }
+
+        /// <summary>
+        /// Largura do HtmlCtrl do xdat, onde o HTML e posto (0 = a do viewport). O help.htm tem duas &lt;img width=270&gt;
+        /// seguidas: na largura do viewer a segunda quebra a linha, como no cliente.
+        /// </summary>
+        public static float ViewerWidth(L2Ctrl viewer) => viewer == null ? 0 : Mathf.Max(0, L2Ctrl.ToNum(viewer.J["size"]?[0], 0));
+    }
+}

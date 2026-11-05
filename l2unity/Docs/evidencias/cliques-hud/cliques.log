@@ -1,0 +1,4 @@
+Cliques do HUD (offline, UiPreview; pacotes interceptados no UiDeps.Send e no Party.Action):
+- MenuWnd BtnMap -> cd (RequestShowMiniMap 0xcd)
+- StatusWnd clique em x=5: nada | x=20: Action(1,False) | x=160: Action(1,False) | x=170: nada (largura 176: faixa 13..166)
+- MagicSkillWnd clique simples na 1a skill -> 2f 03 00 00 00 00 00 00 00 00 (RequestMagicSkillUse id 3, sem Ctrl/Shift)

@@ -1,0 +1,674 @@
+{
+ "defPos": [
+  {
+   "wnd": "MainWnd",
+   "alignment": "CENTER_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "OptionWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "StatusWnd",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": 176,
+   "height": -9999
+  },
+  {
+   "wnd": "MenuWnd",
+   "alignment": "BOTTOM_RIGHT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "PartyWnd",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 84,
+   "width": 176,
+   "height": -9999
+  },
+  {
+   "wnd": "PartyWndCompact",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 84,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "SkillTrainListWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "SkillTrainInfoWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "ShopWnd",
+   "alignment": "TOP_LEFT",
+   "x": 200,
+   "y": 150,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MacroListWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RecipeBookWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RecipeBuyListWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RecipeBuyManufactureWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RecipeManufactureWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RecipeShopWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RecipeTreeWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MultiSellWnd",
+   "alignment": "TOP_LEFT",
+   "x": 220,
+   "y": 170,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "PartyMatchingWnd",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 100,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MiniMapWnd",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 200,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MiniMapWnd_Expand",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "UnrefineryWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "UnionWnd",
+   "alignment": "TOP_LEFT",
+   "x": 200,
+   "y": 100,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RefineryWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "HeroTowerWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MiniMapWnd_Expand",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "AbnormalStatusWnd",
+   "alignment": "TOP_LEFT",
+   "x": 176,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "TargetStatusWnd",
+   "alignment": "TOP_CENTER",
+   "x": 0,
+   "y": 0,
+   "width": 176,
+   "height": -9999
+  },
+  {
+   "wnd": "ShortcutWnd.ShortcutWndVertical",
+   "alignment": "CENTER_RIGHT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "ShortcutWnd.ShortcutWndJoypad",
+   "alignment": "BOTTOM_CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "ShortcutWnd.ShortcutWndJoypadExpand",
+   "alignment": "BOTTOM_CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "InventoryWnd",
+   "alignment": "CENTER_RIGHT",
+   "x": -46,
+   "y": -50,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "SystemMenuWnd",
+   "alignment": "BOTTOM_RIGHT",
+   "x": 0,
+   "y": -46,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "TutorialViewerWnd",
+   "alignment": "TOP_RIGHT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "PartyChat",
+   "alignment": "BOTTOM_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "ManorInfoWnd",
+   "alignment": "TOP_LEFT",
+   "x": 100,
+   "y": 100,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "ChatWnd",
+   "alignment": "BOTTOM_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "ManorInfoWnd",
+   "alignment": "TOP_LEFT",
+   "x": 100,
+   "y": 100,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "OlympiadControlWnd",
+   "alignment": "TOP_CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "OlympiadPlayer1Wnd",
+   "alignment": "TOP_LEFT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "OlympiadPlayer2Wnd",
+   "alignment": "TOP_RIGHT",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "HennaListWnd",
+   "alignment": "CENTER_RIGHT",
+   "x": -100,
+   "y": -50,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "HennaInfoWnd",
+   "alignment": "CENTER_RIGHT",
+   "x": -100,
+   "y": -50,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "CalculatorWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "InviteClanPopWnd",
+   "alignment": "BOTTOM_CENTER",
+   "x": 0,
+   "y": -45,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "BoardWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MacroEditWnd",
+   "alignment": "CENTER",
+   "x": 100,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MacroInfoWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "MacroListWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "FishViewportWnd",
+   "alignment": "CENTER",
+   "x": -100,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "HelpHtmlWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "PetitionWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "UserPetitionWnd",
+   "alignment": "CENTER",
+   "x": 100,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "WareHouseWnd",
+   "alignment": "CENTER",
+   "x": -100,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "RestartMenuWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "TradeWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  },
+  {
+   "wnd": "PrivateShopWnd",
+   "alignment": "CENTER",
+   "x": 0,
+   "y": 0,
+   "width": -9999,
+   "height": -9999
+  }
+ ],
+ "screen": [
+  1374,
+  1071
+ ],
+ "saved": {
+  "DuelManager": [
+   924,
+   1424
+  ],
+  "PartyWnd": [
+   0,
+   89
+  ],
+  "PetStatusWnd": [
+   0,
+   257
+  ],
+  "StatusWnd": [
+   0,
+   0
+  ],
+  "SummonedStatusWnd": [
+   0,
+   257
+  ],
+  "TargetStatusWnd": [
+   599,
+   0
+  ],
+  "1": [
+   0,
+   263
+  ],
+  "2": [
+   0,
+   263
+  ],
+  "3": [
+   0,
+   263
+  ],
+  "4": [
+   559,
+   482
+  ],
+  "5": [
+   347,
+   1072
+  ],
+  "7": [
+   384,
+   180
+  ],
+  "8": [
+   692,
+   358
+  ],
+  "AbnormalStatusWnd": [
+   221,
+   26
+  ],
+  "BoardWnd": [
+   364,
+   270
+  ],
+  "CalculatorWnd": [
+   559,
+   430
+  ],
+  "FishViewportWnd": [
+   483,
+   397
+  ],
+  "GMInventoryWnd": [
+   0,
+   786
+  ],
+  "HennaInfoWnd": [
+   1042,
+   282
+  ],
+  "HennaListWnd": [
+   1042,
+   282
+  ],
+  "HeroTowerWnd": [
+   387,
+   372
+  ],
+  "InventoryWnd": [
+   1040,
+   279
+  ],
+  "MacroEditWnd": [
+   636,
+   335
+  ],
+  "MacroInfoWnd": [
+   559,
+   455
+  ],
+  "MacroListWnd": [
+   559,
+   335
+  ],
+  "MainWnd": [
+   397,
+   334
+  ],
+  "ManorInfoWnd": [
+   70,
+   105
+  ],
+  "MinimapWnd": [
+   0,
+   213
+  ],
+  "MultiSellWnd": [
+   158,
+   181
+  ],
+  "OlympiadBuff1Wnd": [
+   0,
+   128
+  ],
+  "OlympiadBuff2Wnd": [
+   735,
+   128
+  ],
+  "OlympiadPlayer1Wnd": [
+   0,
+   0
+  ],
+  "OlympiadTargetWnd": [
+   0,
+   492
+  ],
+  "OptionWnd": [
+   559,
+   298
+  ],
+  "PartyWndCompact": [
+   0,
+   87
+  ],
+  "PetWnd": [
+   178,
+   322
+  ],
+  "QuestListWnd": [
+   207,
+   1348
+  ],
+  "RefineryWnd": [
+   554,
+   413
+  ],
+  "ShortcutWndVertical": [
+   977,
+   470
+  ],
+  "ShortcutWndVertical_1": [
+   931,
+   470
+  ],
+  "ShortcutWndVertical_2": [
+   885,
+   470
+  ],
+  "ShortcutWndHorizontal": [
+   554,
+   932
+  ],
+  "ShortcutWndJoypad": [
+   601,
+   990
+  ],
+  "ShortcutWndJoypadExpand": [
+   471,
+   990
+  ],
+  "SiegeInfoWnd": [
+   0,
+   1495
+  ],
+  "SSQMainBoard": [
+   407,
+   1495
+  ],
+  "SummonedWnd": [
+   178,
+   304
+  ],
+  "TeaserSlideWnd": [
+   0,
+   0
+  ],
+  "SkillTrainInfoWnd": [
+   559,
+   335
+  ],
+  "SkillTrainListWnd": [
+   559,
+   335
+  ],
+  "TutorialViewerWnd": [
+   1064,
+   0
+  ],
+  "UnionDetailWnd": [
+   17052,
+   12518
+  ],
+  "UnionWnd": [
+   154,
+   105
+  ],
+  "UnrefineryWnd": [
+   554,
+   413
+  ]
+ }
+}

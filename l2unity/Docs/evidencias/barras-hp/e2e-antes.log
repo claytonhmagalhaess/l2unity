@@ -1,0 +1,50 @@
+== #0054 antes b88e07c
+  "success": true,
+"scrLogin"
+"scrLogin 1024x768"
+"ok"
+"scrChars chars=0"
+"ok"
+"scrChars chars=1 BarrasHp54"
+"ok"
+"scrGame inWorld=True ents=66 self=BarrasHp54 83566,148668,-3408"
+0 entradas
+"self hp=1088/1088 | buffer obj=268477399 name=Buffer at 83114,148395 buffer obj=268477400 name=Buffer at 83113,148841 buffer obj=268477411 name=Buffer at 81922,148917 buffer obj=268477412 name=Buffer at 81920,148302"
+"ok"
+"lastHtmlNpc=268477412 self=81976,148376 hp=1088/1088"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/antes_buffer_chat.png (1024, 768)
+== c/d buff natural
+"cleanup"
+"apos cleanup hp=516/516"
+"getbuff"
+"apos buff hp=516/516"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_buff.png (1024, 768)
+"regen hp=516/516"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_regen.png (1024, 768)
+0 entradas
+== c/d buff natural (bypass com 3 tokens, como o Sub/buff.htm)
+"getbuff"
+"apos buff hp=516/516"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_buff.png (1024, 768)
+"regen hp=516/516"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_regen.png (1024, 768)
+0 entradas
+== c/d buff natural (abre Sub/buff.htm antes: o aCis valida o bypass contra o ultimo HTML)
+"link"
+"getbuff"
+"apos buff hp=516/697"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_buff.png (1024, 768)
+"regen hp=535/697"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_regen.png (1024, 768)
+0 entradas
+== e) mesmo quadro
+"CPBar: 4 [digTitle dig0 dig1 dig2 ] HPBar: 4 [digTitle dig0 dig1 dig2 ] MPBar: 4 [digTitle dig0 dig1 dig2 ] "
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_mesmo_quadro.png (1024, 768)
+== f) contagem
+"CPBar: 4 [digTitle dig0 dig1 dig2 ] HPBar: 10 [digTitle dig0 dig1 dig2 dig0 dig1 dig2 dig0 dig1 dig2 ] MPBar: 7 [digTitle dig0 dig1 dig2 dig0 dig1 dig2 ] "
+0 entradas
+== f2) contagem ~8 s depois
+"self hp=619/697 CPBar=4 HPBar=10 MPBar=7 "
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0054-1/barras_mesmo_quadro_8s.png (1024, 768)
+  "success": true,

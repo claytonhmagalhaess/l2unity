@@ -1,0 +1,41 @@
+== ao vivo 6187e0a
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=0"
+"criando"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=64 self=Chao56 83561,148713,-3408"
+"self=83561,148713,-3408 screen=scrGame"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/giran_vivo.png (1024, 768)
+== teleporte (Clarissa Chat 1 -> goto 25, que neste servidor leva a -89894,105455)
+"npc=268479868"
+"npc_268479868_Chat 1"
+"npc_268479868_goto 25"
+"self=15668,142981,-2695 screen=scrGame"
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/campo_pos_teleporte.png (1024, 768)
+"self=15668,142981,-2695 screen=scrGame"
+0 entradas
+== Dion GK (30059) -> Plains of Dion (1053)
+"npc=268475587"
+"npc_268475587_Chat 1"
+"npc_268475587_goto 1053"
+"self=634,179199,-3710 screen=scrGame"
+"ok"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/campo_pos_teleporte.png (1024, 768)
+"npc:30666:Sla:1313:268476025 npc:20206:Kadif Werewolf:1287:268441937 npc:20068:Monster Eye Destroyer:1040:268439425 npc:20068:Monster Eye Destroyer:652:268439427 npc:20205:Dire Wolf:1319:268441843 npc:20205:Dire Wolf:1282:268441844 npc:20068:Monster Eye Destroyer:1356:268439429 npc:20206:Kadif Werewolf:1296:268441974 npc:20068:Monster Eye Destroyer:689:268439463 npc:20206:Kadif Werewolf:761:268441977 npc:20068:Monster Eye Destroyer:1352:268439466 "
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/campo_parado.png (1024, 768)
+== correndo
+"corre"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/campo_correndo.png (1024, 768)
+"self=1234,178999,-3704 hp=1088/1088"
+== combate com 268439427
+"alvo Monster Eye Destroyer 616,179864,-3720"
+"ataca"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/campo_combate.png (1024, 768)
+"self=644,9477,179800,3,-3720 hp=1175/1183"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0056-1/campo_combate_2.png (1024, 768)
+"self=644,9477,179800,3,-3720 hp=1158/1183"
+0 entradas

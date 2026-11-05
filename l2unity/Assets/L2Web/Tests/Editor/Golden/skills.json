@@ -1,0 +1,17 @@
+{
+ "projectile": [
+  2,
+  10,
+  5,
+  8
+ ],
+ "physical": [
+  3,
+  12
+ ],
+ "special": 14,
+ "specialLead": 2.0,
+ "defaultLead": 0.15,
+ "projectileLead": 0.4,
+ "flyMin": 0.15
+}

@@ -1,0 +1,2531 @@
+{
+ "1024x768": {
+  "LoginWnd": [
+   {
+    "class": "(a própria janela, criada por MsnWnd)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     1024,
+     768
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": null,
+    "rect": [
+     92,
+     131,
+     151,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xa56",
+    "rect": [
+     92,
+     151,
+     151,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xa09",
+    "rect": [
+     72,
+     176,
+     66,
+     21
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[140] = OK"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.SmallButton2_down",
+     "L2UI_CH3.Button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xa0a",
+    "rect": [
+     142,
+     176,
+     66,
+     21
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[141] = Cancel"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.SmallButton2_down",
+     "L2UI_CH3.Button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xa0b",
+    "rect": [
+     72,
+     204,
+     134,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[995] = MSN Messenger Info"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.bigbutton3_down",
+     "L2UI_CH3.Button.bigbutton3"
+    ]
+   }
+  ],
+  "MessengerWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": [
+     384,
+     180,
+     256,
+     401
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "(a própria janela)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     256,
+     401
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCFrameCtrl",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     256,
+     20
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCTabControl",
+    "id": "0xa02",
+    "rect": [
+     12,
+     25,
+     224,
+     41
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCLobbyFunctionWnd": [
+   {
+    "class": "(a própria janela, criada por NCLobbyWnd)",
+    "id": null,
+    "rect": [
+     870,
+     568,
+     120,
+     138
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100b",
+    "rect": [
+     13,
+     20,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[158] = Create"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100c",
+    "rect": [
+     13,
+     45,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[159] = Delete"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100a",
+    "rect": [
+     13,
+     95,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[884] = Re-Login"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   }
+  ],
+  "NCLobbyStartWnd": [
+   {
+    "class": "(a própria janela, criada por NCLobbyWnd)",
+    "id": null,
+    "rect": [
+     441,
+     657,
+     140,
+     49
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1009",
+    "rect": [
+     13,
+     10,
+     116,
+     31
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[160] = Start"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton2_down",
+     "L2UI_CH3.Button.BigButton2"
+    ]
+   }
+  ],
+  "NCPawnSelectWnd": [
+   {
+    "class": "(a própria janela, criada por NCLobbyWnd)",
+    "id": null,
+    "rect": [
+     24,
+     27,
+     256,
+     108
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCComboBox",
+    "id": "0x1f04",
+    "rect": [
+     46,
+     13,
+     138,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCLoginFunctionWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": [
+     870,
+     568,
+     120,
+     138
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12012",
+    "rect": [
+     13,
+     8,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[154] = New Account"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12015",
+    "rect": [
+     13,
+     33,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[155] = Lost Account"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12011",
+    "rect": [
+     13,
+     58,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[156] = Options"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12014",
+    "rect": [
+     13,
+     83,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[805] = Production Team"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12016",
+    "rect": [
+     13,
+     107,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[1251] = Replay"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   }
+  ],
+  "NCKeyCryptWarningDialogBox": [
+   {
+    "class": "(a própria janela, criada por NCAuthWnd)",
+    "id": null,
+    "rect": [
+     411,
+     341,
+     205,
+     87
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1004",
+    "rect": [
+     null,
+     60,
+     74,
+     21
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[140] = OK"
+    ],
+    "textures": [
+     "L2UI_ch3.button.btn1_normalon",
+     "L2UI_ch3.button.btn1_normal"
+    ]
+   }
+  ],
+  "NCAuthWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": [
+     384,
+     330,
+     256,
+     108
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1502",
+    "rect": [
+     84,
+     20,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1503",
+    "rect": [
+     84,
+     42,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x112211f1",
+    "rect": [
+     84,
+     64,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x112211f0",
+    "rect": null,
+    "size": [
+     16,
+     16
+    ],
+    "labels": [],
+    "textures": [
+     "L2UI_CH3.LoginWnd.aboutotpicon_down",
+     "L2UI_CH3.LoginWnd.aboutotpicon"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1006",
+    "rect": [
+     31,
+     72,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[152] = Log In"
+    ],
+    "textures": [
+     "L2UI_CH3.BUTTON.bigbutton_down",
+     "L2UI_CH3.BUTTON.bigbutton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1007",
+    "rect": [
+     131,
+     72,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[153] = Exit"
+    ],
+    "textures": [
+     "L2UI_CH3.BUTTON.bigbutton_down",
+     "L2UI_CH3.BUTTON.bigbutton"
+    ]
+   }
+  ],
+  "NCNpcView_CharacterSelectWnd": [
+   {
+    "class": "(a própria janela, criada por NCNpcViewerWnd)",
+    "id": null,
+    "rect": [
+     10,
+     40,
+     350,
+     630
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "(a própria janela)",
+    "id": null,
+    "rect": null,
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCFrameCtrl",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     350,
+     25
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCComboBox",
+    "id": "0x1f05",
+    "rect": [
+     25,
+     30,
+     125,
+     18
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xf4",
+    "rect": [
+     10,
+     380,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf5",
+    "rect": [
+     95,
+     380,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[420] = Search"
+    ],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf6",
+    "rect": [
+     135,
+     380,
+     50,
+     16
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[422] = View List"
+    ],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xfa",
+    "rect": [
+     195,
+     380,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCCheckBox",
+    "id": "0xfb",
+    "rect": [
+     180,
+     32,
+     100,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCCheckBox",
+    "id": null,
+    "rect": [
+     10,
+     400,
+     100,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCCheckBox",
+    "id": null,
+    "rect": [
+     110,
+     400,
+     100,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xfe",
+    "rect": [
+     60,
+     418,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xff",
+    "rect": [
+     60,
+     438,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x100",
+    "rect": [
+     60,
+     458,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x101",
+    "rect": [
+     60,
+     478,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x102",
+    "rect": [
+     60,
+     498,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x103",
+    "rect": [
+     60,
+     518,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x104",
+    "rect": [
+     160,
+     518,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1100",
+    "rect": [
+     200,
+     518,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xf8",
+    "rect": [
+     60,
+     550,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xf7",
+    "rect": [
+     210,
+     550,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xfe",
+    "rect": [
+     60,
+     570,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xff",
+    "rect": [
+     210,
+     570,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1101",
+    "rect": [
+     60,
+     590,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf9",
+    "rect": [
+     210,
+     590,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[218] = Apply"
+    ],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   }
+  ],
+  "NCPawnCreateFunctionWnd": [
+   {
+    "class": "(a própria janela, criada por NCPawnCreateWnd)",
+    "id": null,
+    "rect": [
+     870,
+     568,
+     120,
+     138
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1009",
+    "rect": [
+     13,
+     20,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[162] = Create Character"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100a",
+    "rect": [
+     13,
+     45,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[161] = Previous"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   }
+  ],
+  "NCPawnSetupWnd": [
+   {
+    "class": "(a própria janela, criada por NCPawnCreateWnd)",
+    "id": null,
+    "rect": [
+     24,
+     27,
+     256,
+     205
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1503",
+    "rect": [
+     66,
+     17,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a3b2",
+    "rect": [
+     86,
+     52,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a4b3",
+    "rect": [
+     86,
+     76,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a5b4",
+    "rect": [
+     86,
+     100,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a7b6",
+    "rect": [
+     86,
+     124,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a6b5",
+    "rect": [
+     86,
+     148,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a8b7",
+    "rect": [
+     86,
+     172,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCPawnCreateWnd": [
+   {
+    "class": "NCExButton",
+    "id": "0x100d",
+    "rect": [
+     424,
+     668,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.left_click",
+     "l2ui.LobbyWnd.left"
+    ]
+   },
+   {
+    "class": "NCExButton",
+    "id": "0x100e",
+    "rect": [
+     556,
+     668,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.right_click",
+     "l2ui.LobbyWnd.right"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1010",
+    "rect": [
+     490,
+     668,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.zoomin_click",
+     "l2ui.LobbyWnd.zoomin"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1010",
+    "rect": [
+     490,
+     668,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.zoomout_click",
+     "l2ui.LobbyWnd.zoomout"
+    ]
+   }
+  ],
+  "NCServerInfoWnd": [
+   {
+    "class": "(a própria janela, criada por NCLoginServerWnd)",
+    "id": null,
+    "rect": [
+     0,
+     337,
+     316,
+     205
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCHtmlViewer",
+    "id": null,
+    "rect": [
+     7,
+     7,
+     302,
+     191
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCServerSelectWnd": [
+   {
+    "class": "(a própria janela, criada por NCLoginServerWnd)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     316,
+     330
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf007",
+    "rect": [
+     121,
+     297,
+     76,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[140] = OK"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.Btn1_normalOn",
+     "L2UI_CH3.Button.Btn1_normal"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf017",
+    "rect": [
+     201,
+     297,
+     76,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[141] = Cancel"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.Btn1_normalOn",
+     "L2UI_CH3.Button.Btn1_normal"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf020",
+    "rect": [
+     41,
+     297,
+     76,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[603] = Quality"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.Btn1_normalOn",
+     "L2UI_CH3.Button.Btn1_normal"
+    ]
+   }
+  ],
+  "LoadingWnd": [
+   {
+    "class": "(a própria janela, criada por MsnWnd)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     1024,
+     768
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCLoginServerWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": null,
+    "size": [
+     316,
+     542
+    ],
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCNpcView_CharacterSelect_List": [
+   {
+    "class": "(a própria janela, criada por NCNpcView_CharacterSelectWnd)",
+    "id": null,
+    "rect": [
+     10,
+     50,
+     285,
+     250
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCPawnInfoWnd": [
+   {
+    "class": "(a própria janela, criada por NCPawnCreateWnd)",
+    "id": null,
+    "rect": [
+     24,
+     249,
+     256,
+     205
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCServerSelectListCtrl": [
+   {
+    "class": "(a própria janela, criada por NCServerSelectWnd)",
+    "id": "0xf018",
+    "rect": [
+     8,
+     10,
+     300,
+     274
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ]
+ },
+ "1920x1080": {
+  "LoginWnd": [
+   {
+    "class": "(a própria janela, criada por MsnWnd)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": null,
+    "rect": [
+     92,
+     131,
+     151,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xa56",
+    "rect": [
+     92,
+     151,
+     151,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xa09",
+    "rect": [
+     72,
+     176,
+     66,
+     21
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[140] = OK"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.SmallButton2_down",
+     "L2UI_CH3.Button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xa0a",
+    "rect": [
+     142,
+     176,
+     66,
+     21
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[141] = Cancel"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.SmallButton2_down",
+     "L2UI_CH3.Button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xa0b",
+    "rect": [
+     72,
+     204,
+     134,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[995] = MSN Messenger Info"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.bigbutton3_down",
+     "L2UI_CH3.Button.bigbutton3"
+    ]
+   }
+  ],
+  "MessengerWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": [
+     384,
+     180,
+     256,
+     401
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "(a própria janela)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     256,
+     401
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCFrameCtrl",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     256,
+     20
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCTabControl",
+    "id": "0xa02",
+    "rect": [
+     12,
+     25,
+     224,
+     41
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCLobbyFunctionWnd": [
+   {
+    "class": "(a própria janela, criada por NCLobbyWnd)",
+    "id": null,
+    "rect": [
+     1766,
+     880,
+     120,
+     138
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100b",
+    "rect": [
+     13,
+     20,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[158] = Create"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100c",
+    "rect": [
+     13,
+     45,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[159] = Delete"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100a",
+    "rect": [
+     13,
+     95,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[884] = Re-Login"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   }
+  ],
+  "NCLobbyStartWnd": [
+   {
+    "class": "(a própria janela, criada por NCLobbyWnd)",
+    "id": null,
+    "rect": [
+     889,
+     969,
+     140,
+     49
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1009",
+    "rect": [
+     13,
+     10,
+     116,
+     31
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[160] = Start"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton2_down",
+     "L2UI_CH3.Button.BigButton2"
+    ]
+   }
+  ],
+  "NCPawnSelectWnd": [
+   {
+    "class": "(a própria janela, criada por NCLobbyWnd)",
+    "id": null,
+    "rect": [
+     24,
+     27,
+     256,
+     108
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCComboBox",
+    "id": "0x1f04",
+    "rect": [
+     46,
+     13,
+     138,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCLoginFunctionWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": [
+     1766,
+     880,
+     120,
+     138
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12012",
+    "rect": [
+     13,
+     8,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[154] = New Account"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12015",
+    "rect": [
+     13,
+     33,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[155] = Lost Account"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12011",
+    "rect": [
+     13,
+     58,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[156] = Options"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12014",
+    "rect": [
+     13,
+     83,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[805] = Production Team"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xaff12016",
+    "rect": [
+     13,
+     107,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[1251] = Replay"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   }
+  ],
+  "NCKeyCryptWarningDialogBox": [
+   {
+    "class": "(a própria janela, criada por NCAuthWnd)",
+    "id": null,
+    "rect": [
+     859,
+     497,
+     205,
+     87
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1004",
+    "rect": [
+     null,
+     60,
+     74,
+     21
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[140] = OK"
+    ],
+    "textures": [
+     "L2UI_ch3.button.btn1_normalon",
+     "L2UI_ch3.button.btn1_normal"
+    ]
+   }
+  ],
+  "NCAuthWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": [
+     832,
+     486,
+     256,
+     108
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1502",
+    "rect": [
+     84,
+     20,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1503",
+    "rect": [
+     84,
+     42,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x112211f1",
+    "rect": [
+     84,
+     64,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x112211f0",
+    "rect": null,
+    "size": [
+     16,
+     16
+    ],
+    "labels": [],
+    "textures": [
+     "L2UI_CH3.LoginWnd.aboutotpicon_down",
+     "L2UI_CH3.LoginWnd.aboutotpicon"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1006",
+    "rect": [
+     31,
+     72,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[152] = Log In"
+    ],
+    "textures": [
+     "L2UI_CH3.BUTTON.bigbutton_down",
+     "L2UI_CH3.BUTTON.bigbutton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1007",
+    "rect": [
+     131,
+     72,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[153] = Exit"
+    ],
+    "textures": [
+     "L2UI_CH3.BUTTON.bigbutton_down",
+     "L2UI_CH3.BUTTON.bigbutton"
+    ]
+   }
+  ],
+  "NCNpcView_CharacterSelectWnd": [
+   {
+    "class": "(a própria janela, criada por NCNpcViewerWnd)",
+    "id": null,
+    "rect": [
+     10,
+     40,
+     350,
+     630
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "(a própria janela)",
+    "id": null,
+    "rect": null,
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCFrameCtrl",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     350,
+     25
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCComboBox",
+    "id": "0x1f05",
+    "rect": [
+     25,
+     30,
+     125,
+     18
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xf4",
+    "rect": [
+     10,
+     380,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf5",
+    "rect": [
+     95,
+     380,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[420] = Search"
+    ],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf6",
+    "rect": [
+     135,
+     380,
+     50,
+     16
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[422] = View List"
+    ],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xfa",
+    "rect": [
+     195,
+     380,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCCheckBox",
+    "id": "0xfb",
+    "rect": [
+     180,
+     32,
+     100,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCCheckBox",
+    "id": null,
+    "rect": [
+     10,
+     400,
+     100,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCCheckBox",
+    "id": null,
+    "rect": [
+     110,
+     400,
+     100,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xfe",
+    "rect": [
+     60,
+     418,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xff",
+    "rect": [
+     60,
+     438,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x100",
+    "rect": [
+     60,
+     458,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x101",
+    "rect": [
+     60,
+     478,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x102",
+    "rect": [
+     60,
+     498,
+     230,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x103",
+    "rect": [
+     60,
+     518,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x104",
+    "rect": [
+     160,
+     518,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1100",
+    "rect": [
+     200,
+     518,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xf8",
+    "rect": [
+     60,
+     550,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xf7",
+    "rect": [
+     210,
+     550,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xfe",
+    "rect": [
+     60,
+     570,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0xff",
+    "rect": [
+     210,
+     570,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1101",
+    "rect": [
+     60,
+     590,
+     80,
+     16
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf9",
+    "rect": [
+     210,
+     590,
+     32,
+     16
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[218] = Apply"
+    ],
+    "textures": [
+     "L2UI_ch3.button.SmallButton2_Down",
+     "L2UI_ch3.button.SmallButton2"
+    ]
+   }
+  ],
+  "NCPawnCreateFunctionWnd": [
+   {
+    "class": "(a própria janela, criada por NCPawnCreateWnd)",
+    "id": null,
+    "rect": [
+     1766,
+     880,
+     120,
+     138
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1009",
+    "rect": [
+     13,
+     20,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[162] = Create Character"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x100a",
+    "rect": [
+     13,
+     45,
+     96,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[161] = Previous"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.BigButton_down",
+     "L2UI_CH3.Button.BigButton"
+    ]
+   }
+  ],
+  "NCPawnSetupWnd": [
+   {
+    "class": "(a própria janela, criada por NCPawnCreateWnd)",
+    "id": null,
+    "rect": [
+     24,
+     27,
+     256,
+     205
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCEditBox",
+    "id": "0x1503",
+    "rect": [
+     66,
+     17,
+     128,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a3b2",
+    "rect": [
+     86,
+     52,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a4b3",
+    "rect": [
+     86,
+     76,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a5b4",
+    "rect": [
+     86,
+     100,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a7b6",
+    "rect": [
+     86,
+     124,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a6b5",
+    "rect": [
+     86,
+     148,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCSelectCtrl",
+    "id": "0xf0a8b7",
+    "rect": [
+     86,
+     172,
+     136,
+     17
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCPawnCreateWnd": [
+   {
+    "class": "NCExButton",
+    "id": "0x100d",
+    "rect": [
+     872,
+     980,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.left_click",
+     "l2ui.LobbyWnd.left"
+    ]
+   },
+   {
+    "class": "NCExButton",
+    "id": "0x100e",
+    "rect": [
+     1004,
+     980,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.right_click",
+     "l2ui.LobbyWnd.right"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1010",
+    "rect": [
+     938,
+     980,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.zoomin_click",
+     "l2ui.LobbyWnd.zoomin"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0x1010",
+    "rect": [
+     938,
+     980,
+     44,
+     44
+    ],
+    "size": null,
+    "labels": [],
+    "textures": [
+     "l2ui.LobbyWnd.zoomout_click",
+     "l2ui.LobbyWnd.zoomout"
+    ]
+   }
+  ],
+  "NCServerInfoWnd": [
+   {
+    "class": "(a própria janela, criada por NCLoginServerWnd)",
+    "id": null,
+    "rect": [
+     0,
+     337,
+     316,
+     205
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCHtmlViewer",
+    "id": null,
+    "rect": [
+     7,
+     7,
+     302,
+     191
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCServerSelectWnd": [
+   {
+    "class": "(a própria janela, criada por NCLoginServerWnd)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     316,
+     330
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf007",
+    "rect": [
+     121,
+     297,
+     76,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[140] = OK"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.Btn1_normalOn",
+     "L2UI_CH3.Button.Btn1_normal"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf017",
+    "rect": [
+     201,
+     297,
+     76,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[141] = Cancel"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.Btn1_normalOn",
+     "L2UI_CH3.Button.Btn1_normal"
+    ]
+   },
+   {
+    "class": "NCButton",
+    "id": "0xf020",
+    "rect": [
+     41,
+     297,
+     76,
+     23
+    ],
+    "size": null,
+    "labels": [
+     "rótulo sysstring[603] = Quality"
+    ],
+    "textures": [
+     "L2UI_CH3.Button.Btn1_normalOn",
+     "L2UI_CH3.Button.Btn1_normal"
+    ]
+   }
+  ],
+  "LoadingWnd": [
+   {
+    "class": "(a própria janela, criada por MsnWnd)",
+    "id": null,
+    "rect": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCLoginServerWnd": [
+   {
+    "class": "(a própria janela, criada por NCConsole)",
+    "id": null,
+    "rect": null,
+    "size": [
+     316,
+     542
+    ],
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCNpcView_CharacterSelect_List": [
+   {
+    "class": "(a própria janela, criada por NCNpcView_CharacterSelectWnd)",
+    "id": null,
+    "rect": [
+     10,
+     50,
+     285,
+     250
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCPawnInfoWnd": [
+   {
+    "class": "(a própria janela, criada por NCPawnCreateWnd)",
+    "id": null,
+    "rect": [
+     24,
+     249,
+     256,
+     205
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ],
+  "NCServerSelectListCtrl": [
+   {
+    "class": "(a própria janela, criada por NCServerSelectWnd)",
+    "id": "0xf018",
+    "rect": [
+     8,
+     10,
+     300,
+     274
+    ],
+    "size": null,
+    "labels": [],
+    "textures": []
+   }
+  ]
+ },
+ "logos": {
+  "startLogo": [
+   256.0,
+   256.0
+  ],
+  "startLogoAnchorY": 50,
+  "miniLogo": [
+   232.0,
+   120.0
+  ]
+ }
+}

@@ -1,0 +1,322 @@
+[
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk100",
+  "xml": "parent"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk101",
+  "xml": "backTex"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk102",
+  "xml": "script"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk103",
+  "xml": "state"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk104",
+  "xml": "frame"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk105",
+  "xml": "iconable"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk106",
+  "xml": "stuckable"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk107",
+  "xml": "hidden"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk108",
+  "xml": "alwaysFullAlpha"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk109",
+  "xml": "savePosition"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk110",
+  "xml": "saveSize"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk111",
+  "xml": "title"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk112",
+  "xml": "resizeframe"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk113",
+  "xml": "Frame.size"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk114",
+  "xml": "Frame.direction"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk115",
+  "xml": "Frame.exitbutton"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk116",
+  "xml": "draggable"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk117",
+  "xml": "ResizeFrame.direction"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk118",
+  "xml": "ResizeFrame.x"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk119",
+  "xml": "ResizeFrame.y"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk120",
+  "xml": "ResizeFrame.width"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk121",
+  "xml": "ResizeFrame.height"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk122",
+  "xml": "ResizeFrame.maxIncrease"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk123",
+  "xml": "Frame.expandbutton"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk124",
+  "xml": "Frame.expandOrgHeight"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk125",
+  "xml": "Frame.expandExpHeight"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk126",
+  "xml": "Drawer.direction"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk127",
+  "xml": "Drawer.offset"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk128",
+  "xml": "Drawer.directionFixed"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk129",
+  "xml": "Drawer.ownerWindow"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk130",
+  "xml": "ShowHideAnim.ShowAnim.type"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk131",
+  "xml": "ShowHideAnim.HideAnim.type"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk132",
+  "xml": "ShowHideAnim.ShowAnim.direction"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk133",
+  "xml": "ShowHideAnim.ShowAnim.seconds"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk134",
+  "xml": "ShowHideAnim.HideAnim.direction"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk135",
+  "xml": "ShowHideAnim.HideAnim.seconds"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk136",
+  "xml": "Iconable.IconName"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk137",
+  "xml": "Iconable.TooltipIdx"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk138",
+  "xml": "hookKeyInput"
+ },
+ {
+  "class": "Window (XMLWindowData)",
+  "unk": "unk139",
+  "xml": "WorkingConfiguration"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk2",
+  "xml": "alwaysOnTop"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk3",
+  "xml": "alwaysOnBack"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk4",
+  "xml": "(nome da janela-mãe, passado pelo carregador)"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk5",
+  "xml": "TabOrder.preOrder"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk6",
+  "xml": "TabOrder.postOrder"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk7",
+  "xml": "Position.anchored"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk22",
+  "xml": "virtual"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk23",
+  "xml": "passThrough"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "unk24",
+  "xml": "(sem atributo XML)"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "popupType",
+  "xml": "Tooltip.type"
+ },
+ {
+  "class": "DefaultProperty (XMLUIData)",
+  "unk": "popupValue",
+  "xml": "Tooltip.text"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "unk100",
+  "xml": "maxRow"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "unk101",
+  "xml": "showRow"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "unk102",
+  "xml": "useScroll"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "unk103",
+  "xml": "contentsHeight"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "unk104",
+  "xml": "headerHeight"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "ListElement.unk108",
+  "xml": "ListColumn.bNumber"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "ListElement.unk109",
+  "xml": "ListColumn.bAscend"
+ },
+ {
+  "class": "ListCtrl (XMLListData)",
+  "unk": "ListElement.unk110",
+  "xml": "ListColumn.bClickEnable"
+ },
+ {
+  "class": "MultiEdit (XMLMultiEditData)",
+  "unk": "unk100",
+  "xml": "maxRow"
+ },
+ {
+  "class": "MultiEdit (XMLMultiEditData)",
+  "unk": "unk101",
+  "xml": "showRow"
+ },
+ {
+  "class": "SliderCtrl (XMLSliderCtrlData)",
+  "unk": "unk111",
+  "xml": "strDecreaseBtnNormalTexture, strDecreaseBtnDownTexture, strIncreaseBtnNormalTexture, strIncreaseBtnDownTexture"
+ },
+ {
+  "class": "Shortcut (XMLShortcutData)",
+  "unk": "unk0",
+  "xml": "name"
+ },
+ {
+  "class": "Shortcut (XMLShortcutData)",
+  "unk": "unk1",
+  "xml": "state"
+ }
+]

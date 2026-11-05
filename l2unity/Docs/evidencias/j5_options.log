@@ -1,0 +1,68 @@
+Mono path[0] = 'C:/Users/Clayton/My project/Build/L2Web_Data/Managed'
+Mono config path = 'C:/Users/Clayton/My project/Build/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.6.7f1 (b22767f04f04)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=262144, entitiesPerBlock=1024, blocksPerSlotPage=0, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Users/Clayton/My project/Build/L2Web_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce GTX 1080 Ti
+[D3D12 Device Filter] Driver Version: 32.0.15.8278
+[D3D12 Device Filter] Feature Level: 12.1
+[D3D12 Device Filter] Graphics Memory: 11107 MB
+[D3D12 Device Filter] Processor Count: 28
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeSplitJobs
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Vendor:          NVIDIA
+    VRAM:            11107 MB
+    App VRAM Budget: 10339 MB
+    Driver:          32.0.15.8278
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.006 seconds
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+Using Windows.Gaming.Input
+UnloadTime: 0.437700 ms
+Shader 'Hidden/Universal Render Pipeline/GaussianDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldGaussianPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/GaussianDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldGaussianPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/BokehDepthOfField' is not supported or has been stripped from the build (in 'DepthOfFieldBokehPostProcessPass'). PostProcessing render passes will not execute.
+Shader 'Hidden/Universal Render Pipeline/PaniniProjection' is not supported or has been stripped from the build (in 'PaniniProjectionPostProcessPass'). PostProcessing render passes will not execute.
+[auto] captura 1_login (scrLogin)
+[login] Init sessao=c8eab9f revisao=c621
+[login] GGAuth ok, enviando RequestAuthLogin
+[login] ServerList: #1 127.0.0.1:7777 0/3000 no ar
+[login] RequestServerLogin servidor 1
+[login] PlayOk
+[game] conectando em 127.0.0.1:7777
+[game] KeyPacket recebido, criptografia ligada
+[auto] captura 2_personagens (scrChars)
+[game] CharSelected: L2webTest (268480740) em 82600,148680,-3464
+[l2web] no mundo: L2webTest em 82600, 148680, -3464
+[l2web] terreno: 9 pedaços do geodata em volta de 82600, 148680
+[l2web] cenário: 1936 objetos de 287 malhas em 22_22 (426 mil triângulos) · BSP: 5 mil triângulos em 22_22
+[l2web] terreno do Unreal: 22_22
+[auto] no mundo: L2webTest em 82600,148680,-3464; 64 objetos
+[auto] captura 3_mundo (scrGame)
+[auto] andando: Run_1HS_MFighter 169 u/s | assets locais=True pedidos de rede ao servidor de assets=0
+[auto] captura 4_andando (scrGame)
+[auto] captura options0 (scrGame)
+[auto] captura options1 (scrGame)
+[auto] captura options2 (scrGame)
+[auto] OptionWnd OK; Option.ini = C:/Users/Clayton/AppData/LocalLow/DefaultCompany/L2Web\Option.ini
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

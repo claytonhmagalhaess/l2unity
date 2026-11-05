@@ -1,0 +1,4 @@
+commit 7736c54 World: celula so e de uma camada se a mais alta e a mais baixa coincidem (#0057)
+exit 0  tempo 22s  filtro: (suite inteira)
+--- erros de compilacao (log):
+total 894 passou 894 falhou 0 ignorado 0

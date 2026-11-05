@@ -1,0 +1,5 @@
+Barra de atalhos (offline, UiPreview; UiDeps.Send interceptado). Slot 0 = acao Attack (vai por deps.ActionUse, sem pacote aqui); slot 1 = Soulshot: No Grade (1835 = 0x72b), objeto 13.
+- clique direito no slot 0 (acao): nada
+- clique direito no slot 1 (shot): d0 05 00 2b 07 00 00 01 00 00 00 = RequestAutoSoulShot(1835, ligar)
+- clique no slot 1: 14 0d 00 00 00 00 00 00 00 = UseItem(13)
+(cada linha aparece duas vezes na saida bruta: a barra horizontal e a vertical tem os mesmos slots)

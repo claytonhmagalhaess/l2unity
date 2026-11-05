@@ -1,0 +1,7 @@
+# Arquivos ficam como estao no disco (sem conversao de fim de linha)
+* -text
+*.png binary
+*.bin binary
+*.unity merge=unityyamlmerge
+*.prefab merge=unityyamlmerge
+*.asset merge=unityyamlmerge

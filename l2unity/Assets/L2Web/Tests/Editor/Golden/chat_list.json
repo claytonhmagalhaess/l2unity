@@ -1,0 +1,16 @@
+{
+ "firstMinus": 22.0,
+ "nextMinus": 22.0,
+ "rowsMinus": 10.0,
+ "rowsDiv": 15.0,
+ "pitchAdd": 11,
+ "maxLines": 200,
+ "originX": 23,
+ "originY": 14,
+ "scrollBar": [
+  5,
+  10,
+  0
+ ],
+ "indent": 12
+}

@@ -1,0 +1,173 @@
+{
+ "prefixes": [
+  {
+   "text": "!",
+   "type": 1,
+   "addr": "0x10350e20"
+  },
+  {
+   "text": "！",
+   "type": 1,
+   "addr": "0x10350e24"
+  },
+  {
+   "text": "@",
+   "type": 4,
+   "addr": "0x10350e38"
+  },
+  {
+   "text": "＠",
+   "type": 4,
+   "addr": "0x10350e3c"
+  },
+  {
+   "text": "#",
+   "type": 3,
+   "addr": "0x10350e30"
+  },
+  {
+   "text": "＃",
+   "type": 3,
+   "addr": "0x10350e34"
+  },
+  {
+   "text": "＂",
+   "type": 2,
+   "addr": "＂"
+  },
+  {
+   "text": "\"",
+   "type": 2,
+   "addr": "0x10350e28"
+  },
+  {
+   "text": "”",
+   "type": 2,
+   "addr": "0x10350e2c"
+  },
+  {
+   "text": "&",
+   "type": 6,
+   "addr": "0x10350e48"
+  },
+  {
+   "text": "＆",
+   "type": 6,
+   "addr": "0x10350e4c"
+  },
+  {
+   "text": "*",
+   "type": 7,
+   "addr": "0x10350e50"
+  },
+  {
+   "text": "＊",
+   "type": 7,
+   "addr": "0x10350e54"
+  },
+  {
+   "text": "+",
+   "type": 8,
+   "addr": "0x10350e58"
+  },
+  {
+   "text": "＋",
+   "type": 8,
+   "addr": "0x10350e5c"
+  },
+  {
+   "text": "$",
+   "type": 9,
+   "addr": "0x10350e60"
+  },
+  {
+   "text": "＄",
+   "type": 9,
+   "addr": "0x10350e64"
+  },
+  {
+   "text": "%",
+   "type": 17,
+   "addr": "0x10350ea0"
+  },
+  {
+   "text": "％",
+   "type": 17,
+   "addr": "0x10350ea4"
+  },
+  {
+   "text": "``",
+   "type": 15,
+   "addr": "0x10350e90"
+  },
+  {
+   "text": "‘‘",
+   "type": 15,
+   "addr": "0x10350e94"
+  },
+  {
+   "text": "`",
+   "type": 16,
+   "addr": "0x10350e98"
+  },
+  {
+   "text": "‘",
+   "type": 16,
+   "addr": "0x10350e9c"
+  },
+  {
+   "text": "~",
+   "type": 0,
+   "addr": "0x10350e18"
+  },
+  {
+   "text": "～",
+   "type": 0,
+   "addr": "0x10350e1c"
+  }
+ ],
+ "command": [
+  "/",
+  "／"
+ ],
+ "tabType": {
+  "0": 0,
+  "1": 8,
+  "2": 3,
+  "3": 4,
+  "4": 9
+ },
+ "fonte": "NWindow.dll FUN_10139c50 / 0x10350e18",
+ "antiflood": {
+  "constructor": [
+   20000,
+   10000,
+   100000,
+   200,
+   60,
+   100,
+   2000,
+   1036831949
+  ],
+  "blockMsgColor": 4289764217,
+  "fonte": "NWindow.dll FUN_10136b70, FUN_10138860"
+ },
+ "obscene": {
+  "words": [
+   "923",
+   "bitch",
+   "chink",
+   "chutney",
+   "cock",
+   "cunt",
+   "fag",
+   "fuck",
+   "gay",
+   "gook",
+   "nickelback",
+   "nigger",
+   "shit"
+  ],
+  "mask": "-_-ㆀ"
+ }
+}
