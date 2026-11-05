@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-soulshot-acerto` (nasce de `main`) |
-| Estado | fazendo |
+| Estado | bloqueada |
 | Spec | `analises\l2-interlude\client_spec\09_efeitos_skill.md`; `Docs/efeitos.md` linhas W3 (AssociateAttackedNotify, "soulshot (Atk/AtkCr/AtkDarkCr por grade) [N]"), L6 e L8 |
 | Sessão | render: soulshot no acerto (#0058) |
 | Criada | 2026-11-05 |
@@ -19,17 +19,17 @@ Esta tarefa levanta no material de análise como o original dispara e desenha es
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Levantamento com evidência no pseudocódigo (Engine.dll em `analises\l2-interlude\re\` e no Tryskell; `AssociateAttackedNotify` 0x10310ba9, `UGameEngine::OnAttack`, o flag de soulshot no pacote Attack 0x05) e nos dados (`soulshot.int` com as seções `Atk`/`AtkCr`/`AtkDarkCr` por grade, `Npcgrp.effect`). Registre em Decisões e REA:
+- [x] Levantamento com evidência no pseudocódigo (Engine.dll em `analises\l2-interlude\re\` e no Tryskell; `AssociateAttackedNotify` 0x10310ba9, `UGameEngine::OnAttack`, o flag de soulshot no pacote Attack 0x05) e nos dados (`soulshot.int` com as seções `Atk`/`AtkCr`/`AtkDarkCr` por grade, `Npcgrp.effect`). Registre em Decisões e REA:
   - quando o efeito sai (golpe com SS, crítico, miss, shield);
   - qual classe por grade (D, C, B, A, S e sem grade);
   - onde aparece (posição e osso no alvo, rotação do golpe);
   - a escala;
   - a relação com o DamageEffect normal (substitui ou soma);
   - o caso de arco e o de golpe duplo (dual/pole com vários alvos).
-- [ ] O porte mostra o efeito do soulshot no alvo ao acertar, como no original, para todas as grades e para o crítico, e não mostra sem soulshot. A linha W3 do `Docs/efeitos.md` sai de `[N]`.
-- [ ] Se o flag do soulshot no pacote Attack não chegar à camada de efeitos, ou se a mudança for no `App.cs` (`OnAttack`), abra o pedido com o trecho exato em `tarefas\pedidos\`.
-- [ ] Testes EditMode para a escolha da classe por grade e crítico e para a posição. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
-- [ ] Capturas ao vivo antes e depois, tiradas pela sessão de testes no aCis local: golpe normal com soulshot D ou C e um crítico, quadros em sequência, em `Docs/evidencias/soulshot-acerto/`.
+- [ ] O porte mostra o efeito do soulshot no alvo ao acertar, como no original, para todas as grades e para o crítico, e não mostra sem soulshot. A linha W3 do `Docs/efeitos.md` sai de `[N]`. **Parcial:** código, testes e W3 prontos; a confirmação ao vivo depende do item abaixo.
+- [x] Se o flag do soulshot no pacote Attack não chegar à camada de efeitos, ou se a mudança for no `App.cs` (`OnAttack`), abra o pedido com o trecho exato em `tarefas\pedidos\`. **Feito:** pedido 0053, aplicado pela coordenadora em 3cf9dc0.
+- [x] Testes EditMode para a escolha da classe por grade e crítico e para a posição. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes. **Feito:** `FxSoulshotHitTests` (10). 922/922 no 118b832 e no 3cf9dc0 contra 912/912 na base e40d43c; nenhuma falha nova (testes 0058-1 e 0058-2).
+- [ ] Capturas ao vivo antes e depois, tiradas pela sessão de testes no aCis local: golpe normal com soulshot D ou C e um crítico, quadros em sequência, em `Docs/evidencias/soulshot-acerto/`. **Bloqueado:** o aCis local está fora do ar (2106/7777). O roteiro já está com a sessão de testes (0058-1 antes, 0058-2 depois); a #0058 é a 2ª da fila do ao vivo.
 
 ## Andamento
 
@@ -40,6 +40,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — pedido `pedidos\0053-render-soulshot-acerto-app.md` (App.cs: `OnAttack` passa `h.Flags`; `PawnFx.PartyMemberCount`).
 - 2026-11-05 — pedido de teste 0058-1 à sessão de testes: compilação, suíte EditMode e `FxSoulshotHitTests` no 118b832, e as capturas de antes (`l2webtest4`/`FxGuerreiro`, Soulshot D). Pedi à coordenadora o trecho do pedido 0053 no branch, para as capturas de depois.
 - 2026-11-05 — a coordenadora aplicou o pedido 0053 no branch (3cf9dc0). Pedido de teste 0058-2: compilação, EditMode e capturas de depois sobre o 3cf9dc0.
+- 2026-11-05 — resultado das suítes. 118b832: compila, 922/922, `FxSoulshotHitTests` 10/10. 3cf9dc0: compila, 922/922. Base e40d43c: 912/912; a diferença são só os 10 testes novos. Saídas em `testes8-1\` e `testes8-2\`. **Bloqueada:** o ao vivo (antes e depois) espera o aCis local voltar; só o usuário liga o servidor.
 
 ## Decisões e REA
 
@@ -101,9 +102,14 @@ Fontes: `analises\l2-interlude\re\decomp_all\engine\` (índice em `index.tsv`) e
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits:** `feat/render-soulshot-acerto`:
+  - 118b832: `FxPawnEffects` (`HitEffects`, `SoulshotHitClass`, `SoulshotOpacity`, `HitLocation`, `OnHit(flags, arrow)`), `FxSoulshotHitTests` e a W3 do `Docs/efeitos.md`;
+  - 3cf9dc0: `App.cs` (pedido 0053, pela coordenadora).
+- **Testes:** EditMode 922/922 no 118b832 e no 3cf9dc0 (base 912/912), `FxSoulshotHitTests` 10/10, sem erros de compilação.
+- **Falta / fora do escopo:**
+  - Falta: as capturas ao vivo de antes e depois em `Docs/evidencias/soulshot-acerto/`, que esperam o aCis.
+  - Fora do escopo [I]: o teste de alvo visível (`bRendered`), o ponto exato onde a flecha crava e o `it_zariche_ta` da arma amaldiçoada.
+  - Observado de passagem: no original, a flecha crítica sem escudo e sem soulshot não mostra o p_u004_a. O porte agora segue o original, porque o 3cf9dc0 marca a flecha.
 
 ## Pedidos
 
