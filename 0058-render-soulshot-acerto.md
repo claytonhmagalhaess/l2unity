@@ -38,6 +38,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — branch `feat/render-soulshot-acerto` a partir de `main` (e40d43c); levantamento no pseudocódigo e na montagem do Engine.dll (abaixo).
 - 2026-11-05 — `FxPawnEffects`: `HitEffects`, `SoulshotHitClass`, `SoulshotOpacity`, `HitLocation`, `OnHit(flags, arrow)`; `FxSoulshotHitTests` (10 testes); W3 do `Docs/efeitos.md` (118b832).
 - 2026-11-05 — pedido `pedidos\0053-render-soulshot-acerto-app.md` (App.cs: `OnAttack` passa `h.Flags`; `PawnFx.PartyMemberCount`).
+- 2026-11-05 — pedido de teste 0058-1 à sessão de testes: compilação, suíte EditMode e `FxSoulshotHitTests` no 118b832, e as capturas de antes (`l2webtest4`/`FxGuerreiro`, Soulshot D). Pedi à coordenadora o trecho do pedido 0053 no branch, para as capturas de depois.
 
 ## Decisões e REA
 
