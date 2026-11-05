@@ -39,6 +39,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — `FxPawnEffects`: `HitEffects`, `SoulshotHitClass`, `SoulshotOpacity`, `HitLocation`, `OnHit(flags, arrow)`; `FxSoulshotHitTests` (10 testes); W3 do `Docs/efeitos.md` (118b832).
 - 2026-11-05 — pedido `pedidos\0053-render-soulshot-acerto-app.md` (App.cs: `OnAttack` passa `h.Flags`; `PawnFx.PartyMemberCount`).
 - 2026-11-05 — pedido de teste 0058-1 à sessão de testes: compilação, suíte EditMode e `FxSoulshotHitTests` no 118b832, e as capturas de antes (`l2webtest4`/`FxGuerreiro`, Soulshot D). Pedi à coordenadora o trecho do pedido 0053 no branch, para as capturas de depois.
+- 2026-11-05 — a coordenadora aplicou o pedido 0053 no branch (3cf9dc0). Pedido de teste 0058-2: compilação, EditMode e capturas de depois sobre o 3cf9dc0.
 
 ## Decisões e REA
 
