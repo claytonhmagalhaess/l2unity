@@ -40,6 +40,12 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — Regra de parada, rotação para o alvo, fim do seguimento no Attack, `ServerMoveToPawn`/`PickUp`/`Attack(x,y,z)`, log `[aproximacao]` e `PawnApproachTests` (13) (`7fccefe`).
 - 2026-11-05 — Pedido 0054 (App.cs) para a coordenadora. Pedido de teste para a sessão de testes: compilar, suíte EditMode e roteiro ao vivo antes e depois.
 - 2026-11-05 — A coordenadora aplicou o pedido 0054 no branch (`d9a7f7d`). O "depois" ao vivo foi repedido sobre esse commit.
+- 2026-11-05 — Suíte EditMode, rodada pela sessão de testes:
+  - `d9a7f7d`: compila, 925/925, `PawnApproachTests` 13/13;
+  - `7fccefe`: 925/925;
+  - base `f8627bb`: 912/912 (a diferença são só os 13 novos).
+
+  Evidências em `Docs/evidencias/aproximacao-alvo/` (`bbd9529`). O ao vivo está **bloqueado**: o aCis local está fora do ar, e só o usuário liga o servidor.
 
 ## Decisões e REA
 
