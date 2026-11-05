@@ -19,6 +19,12 @@ namespace L2Web.World
         public bool Running = true;
         /// <summary>Se o modelo tem animacao de caminhada (o engine so faz a fase de caminhada se existir).</summary>
         public bool HasWalkAnim = true;
+        /// <summary>
+        /// Fase inicial de caminhada (s) antes de correr: pawn+0x6cc / 30 no APawn::GetCurSpeed (0x103138bd). O 0x6cc
+        /// (walkanimframe do chargrp, 12) so e gravado pelo OnUserInfo e pelo OnCharInfo; o NpcInfo nao o toca, entao o NPC
+        /// fica com 0 e corre desde o primeiro tick (Entity poe 0 para "npc").
+        /// </summary>
+        public float WalkPhase = Movement.WalkBeforeRun;
         /// <summary>0x6c0: tempo andando desde a ultima parada.</summary>
         public float MoveTime;
         /// <summary>0x6d0 / 0x6d4: tempo restante e velocidade extra da correcao de sincronia.</summary>
@@ -44,7 +50,7 @@ namespace L2Web.World
         /// <summary>APawn::GetCurSpeed(-1): velocidade base (sem moveMul) do modo atual, com a fase inicial de caminhada.</summary>
         public float BaseSpeed()
         {
-            if (Running && HasWalkAnim && MoveTime <= Movement.WalkBeforeRun) return WalkSpd;
+            if (Running && HasWalkAnim && MoveTime <= WalkPhase) return WalkSpd;
             return Running ? RunSpd : WalkSpd;
         }
 
@@ -52,7 +58,7 @@ namespace L2Web.World
         public float Speed() => Math.Max(1, BaseSpeed() * MoveMul + Corr);
 
         /// <summary>Esta na fase de corrida (para a animacao).</summary>
-        public bool RunPhase => Running && (!HasWalkAnim || MoveTime > Movement.WalkBeforeRun);
+        public bool RunPhase => Running && (!HasWalkAnim || MoveTime > WalkPhase);
 
         /// <summary>
         /// MoveToLocation do servidor. Outro pawn longe demais da origem e reposicionado (AdjustPawnLocation);

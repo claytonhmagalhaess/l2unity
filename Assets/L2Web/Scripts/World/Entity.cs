@@ -105,6 +105,8 @@ namespace L2Web.World
             Kind = kind;
             Actor.ObjectId = objectId;
             Actor.Root.name = kind + " " + objectId;
+            // pawn+0x6cc (walkanimframe) so vem do chargrp no UserInfo/CharInfo: NPC sem fase de caminhada
+            if (kind == "npc") Motion.WalkPhase = 0;
         }
 
         public float X => Motion.X;
