@@ -1558,8 +1558,8 @@ namespace L2Web
             On(0x60, r =>
             {
                 var m = GamePackets.ParseMoveToPawn(r);
-                var e = world.Get(m.ObjectId);
-                if (e != null) e.Follow = new FollowInfo { TargetId = m.TargetId, Distance = m.Distance };
+                // UGameEngine::OnMoveToPawn: sem o pawn do alvo nao faz nada; outros pawns: AdjustPawnLocation + AddMoveToward
+                world.Get(m.ObjectId)?.ServerMoveToPawn(world.Get(m.TargetId), m.Distance, m.X, m.Y, m.Z);
                 world.Answered(m.ObjectId);
             });
             On(0x2e, r =>
@@ -2000,6 +2000,8 @@ namespace L2Web
                 var g = UiPackets.ParseGetItem(r);
                 var it = world.Get(g.ObjectId);
                 var who = world.Get(g.PlayerId);
+                // UGameEngine::OnGetItem: StopMove, AdjustPawnLocation e vira para o item (pedido 0054)
+                who?.PickUp(g.X, g.Y, g.Z);
                 if (it != null && who != null && scene != null) scene.Effects.Later(0.25f, () => world.Remove(g.ObjectId));
                 else world.Remove(g.ObjectId);
             });
@@ -2066,7 +2068,8 @@ namespace L2Web
             var attacker = world.Get(a.AttackerId);
             if (attacker == null || scene == null || a.Hits.Count == 0) return;
             var target = world.Get(a.Hits[0].TargetId);
-            var res = attacker.Attack(target);
+            // UGameEngine::OnAttack: AdjustPawnLocation pela posicao do atacante no pacote, depois o StopMove (pedido 0054)
+            var res = attacker.Attack(target, a.X, a.Y, a.Z);
             var fx = scene.Effects;
             var kind = res.Ranged ? "bow" : a.Hits.Count > 1 || attacker.Widx == 3 ? "dual" : "melee";
             var srv = Combat.ServerHits(attacker.PAtkSpd, kind);
