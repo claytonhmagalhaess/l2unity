@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world, na pasta `worktrees\ui2` (emprestada: `world` está com a #0059 e `net` com a #0060) |
 | Branch | `feat/world-npcs-movimento` (nasce de `main`) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (movimento e rotação do pawn, animação de NPC, 94/96: NpcInfo, MoveToLocation, MoveToPawn, StopMove, StopRotation/BeginRotation, Attack, AutoAttackStart/Stop, Die, SocialAction); `World/PawnMotion.cs`, `World/Movement.cs`, `World/Entity.cs`, `World/Combat.cs` |
 | Sessão | world: NPCs e monstros (#0061) |
 | Criada | 2026-11-05 |
@@ -26,7 +26,7 @@ Divisão com as tarefas em andamento:
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] `Docs/npcs_movimento.md`: uma linha por comportamento do original para NPC, monstro e boss, com a evidência (pseudocódigo do Engine.dll e do LineageCreature em `analises\` e no Tryskell; `npcgrp`, as animações exportadas pelo `l2anim`; o aCis, somente leitura, para os pacotes e quando o servidor manda cada um) e o estado no porte: igual, corrigido, pedido ou proposta. A tabela cobre pelo menos:
+- [x] `Docs/npcs_movimento.md`: uma linha por comportamento do original para NPC, monstro e boss, com a evidência (pseudocódigo do Engine.dll e do LineageCreature em `analises\` e no Tryskell; `npcgrp`, as animações exportadas pelo `l2anim`; o aCis, somente leitura, para os pacotes e quando o servidor manda cada um) e o estado no porte: igual, corrigido, pedido ou proposta. A tabela cobre pelo menos:
   - **Rotação:** para onde o NPC olha ao atacar, ao ser atacado, ao andar e parado; a velocidade de giro (RotationRate); `BeginRotation`/`StopRotation`; virar para o alvo antes e durante o golpe; o arqueiro mirando.
   - **Movimento:**
     - andar e correr (velocidades do `NpcInfo` e do `ChangeMoveType`), interpolação, aceleração e parada;
@@ -43,11 +43,11 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
     - a velocidade da animação pela velocidade de ataque e de corrida;
     - o tamanho do NPC (`collisionRadius`/`Height`, escala do boss).
   - **Combate do NPC:** o ciclo de ataque com AutoAttackStart/Stop e Attack, o tempo do golpe, golpes duplos, o boss com área e skills, e o NPC que ataca outro NPC.
-- [ ] As lacunas da área world são corrigidas por ordem de impacto, com um commit por correção e a evidência na mensagem. As de outras áreas viram pedido em `tarefas\pedidos\`:
+- [x] As lacunas da área world são corrigidas por ordem de impacto, com um commit por correção e a evidência na mensagem. As de outras áreas viram pedido em `tarefas\pedidos\`:
   - `App.cs` para a coordenadora, com o trecho exato;
   - pacotes para a net;
   - animação e desenho do ator (`Render/Actor.cs`) para a render.
-- [ ] Testes EditMode para cada regra corrigida (rotação, velocidade, escolha de animação). Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
+- [x] Testes EditMode para cada regra corrigida (rotação, velocidade, escolha de animação). Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
 - [ ] Capturas e logs ao vivo antes e depois, tirados pela sessão de testes no aCis local, em `Docs/evidencias/npcs-movimento/`:
   - monstro corpo a corpo e arqueiro atacando o jogador;
   - monstro fugindo e voltando;
@@ -55,6 +55,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - um boss, se houver um acessível.
 
   Some uma linha na `Docs/validacao.md`.
+
+  **Justificativa (pendente):** a linha M9 da `validacao.md` já entrou. O ao vivo não rodou porque o aCis local está fora do ar e só o usuário o liga. O roteiro completo está na fila da sessão de testes como `0061-3`, em 4º lugar: antes no `e40d43c`, depois no `cfa73ce`, conta `l2webtest9`, na Breka's Stronghold. Quando sair, as capturas vão para `Docs/evidencias/npcs-movimento/`.
 
 ## Andamento
 
@@ -71,6 +73,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — `Entity.Social` para o SocialAction de NPC (`747da34`).
 - 2026-11-05 — Pedidos 0064 (`App.cs` e `anim_tables.json`) e 0065 (render), no commit `0a4cb95` deste repo.
 - 2026-11-05 — `Docs/npcs_movimento.md` e a linha M9 da `validacao.md` (`623b62b`); conta `l2webtest9` (`cfa73ce`).
+- 2026-11-05 — Suíte EditMode em `cfa73ce`: compila, 936/936, `NpcMotionTests` 11/11 (`4042e14`). Estado `pronta p/ merge`; o ao vivo fica na fila (`0061-3`).
 - 2026-11-05 — Segundo pedido de teste à sessão de testes, sobre `cfa73ce`: (A) EditMode; (B) roteiro ao vivo antes (`e40d43c`) e depois (`cfa73ce`) na Breka's Stronghold, com arqueiro, corpo a corpo, volta ao spawn, andar aleatório e boss se houver. O (B) espera o aCis, que está fora do ar.
 
 ## Decisões e REA
@@ -97,9 +100,37 @@ A tabela completa, com uma linha por comportamento, está em `Docs/npcs_moviment
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (branch `feat/world-npcs-movimento`, sobre `main` `e40d43c` + a #0059 até `bbd9529`):
+
+  | Commit | O quê |
+  |---|---|
+  | `9c610a7` | ValidateLocation não anda o NPC no golpe nem no cast; o arqueiro vira só até soltar a flecha |
+  | `1de4edf` | NPC corre desde o primeiro tick |
+  | `19cb9cd` | Evidências da suíte em `1de4edf` |
+  | `b968f71` | Walk/Run do NPC × `npc_speed` |
+  | `05e2b56` | Índice de arma do NPC pelo handness |
+  | `747da34` | `Entity.Social` |
+  | `623b62b` | `Docs/npcs_movimento.md` e a linha M9 |
+  | `cfa73ce` | Conta `l2webtest9` |
+  | `4042e14` | Evidências da suíte em `cfa73ce` |
+
+- **Testes:** `NpcMotionTests` (11) novos. A sessão de testes rodou a suíte EditMode duas vezes, sem falhas e sem testes removidos:
+  - `1de4edf`: 933/933;
+  - `cfa73ce`: 936/936.
+
+  Evidências em `Docs/evidencias/npcs-movimento/`. O ao vivo não rodou: aCis fora do ar, na fila como `0061-3`.
+- **Merge:**
+  - Só o branch da #0059 entrou neste (fast-forward). Se a #0059 for para o `main` antes, este merge fica limpo.
+  - Com o `feat/world-sistema-ataque` (#0060), `git merge-tree` mostra conflitos de "manter os dois lados":
+    - `Combat.cs`: `TrackTime` junto com `MeleeHitSchedule`;
+    - `Entity.cs`: `Social` junto com `Revive`, no mesmo ponto;
+    - `Docs/contas_teste.md` e `Docs/validacao.md`: linhas vizinhas (M8 e M9; `l2webtest8` e `l2webtest9`).
+- **Falta / fora do escopo:**
+  - pedido 0064: handler 0x2d e a tabela social; sem ele o `Entity.Social` não é chamado;
+  - pedido 0065 (render): fade do corpo, cabeça, armas na social e spoil. Quando a render der o `Actor.FadeOut`, a troca no `World.Remove` é da world;
+  - pedido 0063 da #0060: tronco no golpe;
+  - as propostas e os itens "a validar" da `Docs/npcs_movimento.md`: R5, R9, A7, os defaults do `.u` e os flags do `OnDeleteUser`;
+  - o ao vivo.
 
 ## Pedidos
 
