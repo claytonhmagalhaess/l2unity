@@ -71,6 +71,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — Conta `l2webtest8` (`a7b11b1`). Pedido de teste à sessão de testes: compilar, suíte EditMode em `a7b11b1` contra o `main` `e40d43c`, e o roteiro ao vivo antes e depois (corpo a corpo, arco, dual, crítico e miss, alvo morrendo, Ctrl em jogador, alvo automático).
 - 2026-11-05 — Queda de energia às 20:03. O pedido de teste foi reenviado para o `efd8fb5`: compilar e suíte EditMode contra o `main` `e40d43c`. O ao vivo fica na fila até o aCis voltar.
 - 2026-11-05 — Suíte EditMode em `efd8fb5`: 925/925, 0 falhas (`main` 912/912). Evidências no branch (`e16e9b4`, `3c4a597`). Estado `pronta p/ merge`; o ao vivo fica na fila.
+- 2026-11-05 — A #0061 resolveu a B13 (reapontar no golpe, `9c610a7`) e a B16 (`Widx` do NPC, `05e2b56`) no branch dela. O merge com o meu toca `Entity.Attack`, o fim do `Combat.cs` e a linha do `Widx` no `World.UpsertNpc`; o conflito esperado é pequeno e mecânico. O pedido 0065 da #0061 aponta para o 0063 no caso do tronco do NPC.
 
 ## Decisões e REA
 
