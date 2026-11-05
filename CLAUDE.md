@@ -14,6 +14,7 @@ Cliente Lineage II (Interlude) em Unity 6000.6.7f1 (URP, C#), com várias sessõ
 | `tools\l2anim\` | Ferramenta de exportação (modelos, animações, dados). `docs\client_spec`, `out\re`, `ghidra_proj` e `ghidra_scripts` são junctions para `analises\l2-interlude`. | não |
 | `TAREFAS.md` | Quadro de tarefas, vagas e pedidos entre vagas. Depois da migração, vira só o índice (uma linha por tarefa). | não |
 | `tarefas\` | Um arquivo por tarefa e por pedido, com andamento, decisões e entrega; `concluidas\` guarda o histórico. Regras e estados em `tarefas\README.md`. | sim, próprio |
+| `github-mono\` | Monorepo espelho no GitHub (`claytonhmagalhaess/l2unity`, privado): `l2unity/`, `analises/` e `tarefas/` por `git subtree`, mais o `CLAUDE.md` e o `TAREFAS.md`. Só a coordenadora mexe aqui, com `sh github-mono/sync.sh` depois de um merge. Ninguém desenvolve nele: a fonte da verdade são os três repos locais. | sim, próprio |
 
 Regras de cada área ficam no repo, em `l2unity\Assets\L2Web\Scripts\<Area>\CLAUDE.md`. Convenções de port em `Assets\L2Web\PORTING.md`. O `C:\Users\Clayton\projeto\l2web` (versão em TS) não é mais usado.
 
