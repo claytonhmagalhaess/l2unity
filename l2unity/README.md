@@ -35,7 +35,7 @@ assinatura "L2SD" corrigida, ícones e o resto do cache; as respostas batem byte
 importa nada de `StreamingAssets` e copia a pasta para os builds. Todos os 17.359 modelos do `model_spec.json` (player,
 npc, weapon, hair, armor) foram pré-gerados pelo `build_model.py` do l2anim e estão na cópia; só faltam 32 peças de
 acessório cujas malhas não existem nos pacotes do cliente (o l2anim também as pula). O que mais o `dev.ts` gerava sob
-demanda (tiles de mapa ainda não convertidos) só existe se já estiver na cópia. Nas Options do login, o campo de assets aceita `local`
+demanda (tiles de mapa ainda não convertidos) só existe se já estiver na cópia. Na janela de conexão do login (Ctrl+Alt+O), o campo de assets aceita `local`
 ou a URL do `dev.ts` (modo antigo, pela rede). Teste sem servidor nenhum: `Build\L2Web.exe -l2offline 30 -l2shots pasta`
 monta Giran com modelos e música e informa no log quantos pedidos de rede foram feitos (0 no modo local).
 
@@ -44,7 +44,8 @@ monta Giran com modelos e música e informa no log quantos pedidos de rede foram
 1. Os assets já estão no projeto; o `dev.ts` do l2web não é mais necessário.
 2. Servidor L2 ligado (login 2106, game 7777).
 3. Abra este projeto no Unity 6000.6.7f1, abra a cena `Assets/Scenes/L2Web.unity` e dê Play.
-4. Em **Options** na tela de login: login server (`127.0.0.1:2106`), assets (`local`) e
+4. Na tela de login, **Ctrl+Alt+O** (janela de conexão, só de desenvolvimento; o botão Options abre as opções do jogo,
+   como no original): login server (`127.0.0.1:2106`), assets (`local`) e
    protocolo ("Servidor com HWID (versão 515)" para o servidor em `C:\Workspace-java\aCis_gameserver`; "aCis original
    (746)" para um aCis sem modificações).
 
