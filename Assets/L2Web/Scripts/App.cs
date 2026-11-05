@@ -1401,6 +1401,8 @@ namespace L2Web
                 {
                     scene = new GameScene(null, world);
                     scene.WireFx(sfx);
+                    // AssociateAttackedNotify: opacidade do efeito do soulshot pelo tamanho do grupo (pedido 0053)
+                    scene.PawnFx.PartyMemberCount = () => social.PartyCount;
                     if (gameMinutes >= 0 && !scene.Env.TimeForced) scene.Env.Env.OnClientSetTime((int)gameMinutes, gameRatio);
                     if (ssqEnv >= 0) scene.Env.Env.OnSSQInfo(ssqEnv, ssqMode);
                     scene.OnFrame = OnFrame;
@@ -2082,12 +2084,12 @@ namespace L2Web
                     var shot = res.Shots.Count > 0 ? res.Shots[0] : res.Items.Count > 0 ? res.Items[0] : 0.2f;
                     var land = Mathf.Max(shot + 0.08f, srv.Hits[0] / 1000f);
                     fx.Later(shot, () => scene.PawnFx.OnBowShot(attacker, victim));
-                    if (hk != "miss") fx.Later(land, () => scene.PawnFx.OnHit(victim, attacker, hk == "crit", scene.DamageEffectOf));
+                    if (hk != "miss") fx.Later(land, () => scene.PawnFx.OnHit(victim, attacker, h.Flags, true, scene.DamageEffectOf));
                 }
                 else if (hk != "miss")
                 {
                     var hitAt = i < res.Items.Count ? res.Items[i] : res.Items.Count > 0 ? res.Items[0] : srv.Hits[Math.Min(i, srv.Hits.Length - 1)] / 1000f;
-                    fx.Later(hitAt, () => scene.PawnFx.OnHit(victim, attacker, hk == "crit", scene.DamageEffectOf));
+                    fx.Later(hitAt, () => scene.PawnFx.OnHit(victim, attacker, h.Flags, false, scene.DamageEffectOf));
                 }
             }
         }
