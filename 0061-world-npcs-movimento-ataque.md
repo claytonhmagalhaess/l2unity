@@ -60,6 +60,11 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 
+- 2026-11-05 — Branch `feat/world-npcs-movimento` criado de `main` (`e40d43c`), com merge do `feat/world-aproximacao-alvo` da #0059 até `bbd9529` (fast-forward). Motivo: a #0059 mexe no mesmo `Entity.Attack`/`Step`/`PawnMotion` (StopMove no Attack, Focus no seguimento). Combinado com a sessão da #0059 por mensagem.
+- 2026-11-05 — ValidateLocation não anda o NPC durante golpe ou cast; o arqueiro só vira até soltar a flecha (`9c610a7`).
+- 2026-11-05 — NPC corre desde o primeiro tick, sem a fase de caminhada do chargrp (`1de4edf`).
+- 2026-11-05 — Pedido de teste EditMode à sessão de testes (compilar, suíte, `NpcMotionTests`, `PawnApproachTests`), sobre `1de4edf`. Queda de energia às 20:03; trabalho retomado sem perda.
+
 ## Decisões e REA
 
 <!-- o que foi descoberto ou decidido, marcado como Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
