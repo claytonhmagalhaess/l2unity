@@ -85,7 +85,14 @@ A tabela completa está em `Docs/combate_lacunas.md` do branch. O principal:
 - **Arco no aCis local (O).** `1500*333/PAtkSpd` e `timeAtk - 50`. O 345 é só do reuso. O porte vinha com o 345 e o -100 do calc.js (L2J).
 - **Recusas (O).** O aCis não tem 0x08/0x09/0x0a: toda recusa é ActionFailed. O cliente não trava andar, item nem skill durante o golpe (`engine.c:89823`, `129943`, `158420`).
 - **Postura de combate (O).** Não há timer no cliente; o AutoAttackStop chega 15 s depois do último golpe (aCis). O alvo morto continua selecionado até o corpo sumir.
-- **Divisão com as outras tarefas.** StopMove e AdjustPawnLocation no Attack são da #0059 (pedido 0054). O Widx dos NPCs e a rotação deles são da #0061.
+- **Divisão com as outras tarefas** (decidida pela coordenadora em 2026-11-05):
+  - **#0060:** o lado do jogador: ataque automático, Ctrl/Shift, travas, animações do personagem, recusas, retorno visual e atacar jogador.
+  - **#0061:** o lado dos NPCs, monstros e bosses: rotação ao atacar, movimento, animações e ciclo de combate deles.
+  - **#0059:** StopMove e AdjustPawnLocation no Attack (pedido 0054).
+  - **O que é comum a todos os pawns:** uma sessão só implementa. Combinado com a #0061 por mensagem:
+    - a #0060 já fez `Entity.Attack` (postura e corte do cast), `SetDead`/`Revive`, `Combat.MeleeHitSchedule` e o tempo do arco;
+    - a regra de virar para o alvo no `OnAttack`/`SwordAttackProcess`/`BowAttackProcess` (linha B13 do `combate_lacunas.md`) fica com a #0061, que trata a rotação;
+    - o `Widx` dos NPCs (B16) também.
 
 ## Entrega
 
