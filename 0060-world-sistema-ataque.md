@@ -67,6 +67,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — `Docs/combate_lacunas.md` e a linha M8 da `Docs/validacao.md` (`d624cdd`).
 - 2026-11-05 — Pedidos 0062 (App.cs) e 0063 (render). A #0061 foi avisada do que mudou em `Entity.cs`.
 - 2026-11-05 — Conta `l2webtest8` (`a7b11b1`). Pedido de teste à sessão de testes: compilar, suíte EditMode em `a7b11b1` contra o `main` `e40d43c`, e o roteiro ao vivo antes e depois (corpo a corpo, arco, dual, crítico e miss, alvo morrendo, Ctrl em jogador, alvo automático).
+- 2026-11-05 — Queda de energia às 20:03. O pedido de teste foi reenviado para o `efd8fb5`: compilar e suíte EditMode contra o `main` `e40d43c`. O ao vivo fica na fila até o aCis voltar.
 
 ## Decisões e REA
 
