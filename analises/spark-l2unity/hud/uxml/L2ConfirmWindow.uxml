@@ -1,0 +1,14 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2ConfirmWindow" uss="L2Button" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="L2ConfirmWindow" class="confirm-window drag-area">
+    <ui:VisualElement name="InfoBox" picking-mode="Ignore" class="confirm-window-content-container">
+      <ui:VisualElement name="IconContainer" picking-mode="Ignore" class="confirm-window-icon-container">
+        <ui:VisualElement name="VisualElement" picking-mode="Ignore" class="confirm-window-icon" />
+      </ui:VisualElement>
+      <ui:Label text="Warning message! Warning message! Warning message! Warning message!" name="Content" picking-mode="Ignore" class="l2-color-4 confirm-window-content" />
+    </ui:VisualElement>
+    <ui:VisualElement name="ButtonBox" picking-mode="Ignore" class="confirm-window-button-box">
+      <ui:Instance template="L2Button" template="L2Button" name="OkButton" class="confirm-window-button" />
+      <ui:Instance template="L2Button" template="L2Button" name="CancelButton" class="confirm-window-button" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

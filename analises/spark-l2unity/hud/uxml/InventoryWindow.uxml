@@ -1,0 +1,93 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="InventoryWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="WindowTemplate" template="WindowTemplate" class="inventory-window">
+    <ui:VisualElement name="ExtraHeader" class="inventory-extra-buttons">
+      <ui:Label tabindex="-1" text="(0/80)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="InventoryCount" class="l2-color-2 inventory-count" />
+      <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="SortBtn" class="inventory-sort-btn" />
+      <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Expand-Window-Button" class="btn-exp-frame expand-btn">
+        <ui:VisualElement name="ButtonBg" class="expand-btn-bg" />
+      </ui:Button>
+      <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Minimize-Window-Button" class="btn-coll-frame minimize-btn" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Content" class="inventory-content">
+      <ui:VisualElement name="Container" class="inventory-content-container">
+        <ui:GroupBox name="BoxContent" class="inventory-content-container-inner">
+          <ui:VisualElement name="Gear" class="inventory-gear-container">
+            <ui:VisualElement name="GearContent" class="inventory-gear">
+              <ui:VisualElement name="GearRow1" class="inventory-gear-row-1">
+                <ui:VisualElement name="Hat1" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Helmet" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Hat2" />
+              </ui:VisualElement>
+              <ui:VisualElement name="GearRow2" class="inventory-gear-row-2">
+                <ui:VisualElement name="Gloves" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Torso" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Boots" />
+              </ui:VisualElement>
+              <ui:VisualElement name="GearRow3" class="inventory-gear-row-3">
+                <ui:VisualElement name="Underwear" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Legs" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Belt" />
+              </ui:VisualElement>
+              <ui:VisualElement name="GearRow4" class="inventory-gear-row-4">
+                <ui:VisualElement name="Rhand" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Lhand" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Agathion" />
+              </ui:VisualElement>
+              <ui:VisualElement name="GearRow5" class="inventory-gear-row-5">
+                <ui:VisualElement name="Neck" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Rear" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Lear" />
+              </ui:VisualElement>
+              <ui:VisualElement name="GearRow6" class="inventory-gear-row-6">
+                <ui:VisualElement name="Pendant" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Rring" />
+                <ui:VisualElement name="Spacer" />
+                <ui:VisualElement name="Lring" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+          <ui:VisualElement name="InventoryContent" class="inventory-item-container">
+            <ui:Instance template="L2TabView" template="L2TabView" name="InventoryTabView" />
+            <ui:GroupBox name="Footer" class="inventory-item-footer">
+              <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AdenaDistribBtn" class="l2-button inventory-button">
+                <ui:VisualElement name="ButtonBg" class="l2-button-bg inventory-button-bg" />
+              </ui:Button>
+              <ui:VisualElement />
+              <ui:GroupBox name="StatisticBox" class="item-statistics-container">
+                <ui:GroupBox name="Image" class="item-statistic-icons">
+                  <ui:VisualElement class="item-statistic-icon icon-adena" />
+                  <ui:VisualElement class="item-statistic-icon icon-bag" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Gauge" class="item-statistic-gauges">
+                  <ui:GroupBox name="TextBox" class="inventory-adena-box">
+                    <ui:GroupBox class="inventory-adena-box-inner">
+                      <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AdenaCount" class="inventory-adena-count" />
+                    </ui:GroupBox>
+                  </ui:GroupBox>
+                  <ui:Instance template="L2Bar" template="L2Bar" name="WeightBar" class="l2-bar weight-3" />
+                </ui:GroupBox>
+              </ui:GroupBox>
+              <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CrystallizeBtn" class="l2-button inventory-button">
+                <ui:VisualElement name="ButtonBg" class="l2-button-bg inventory-button-bg" />
+              </ui:Button>
+              <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TrashBtn" class="l2-button inventory-button">
+                <ui:VisualElement name="ButtonBg" class="l2-button-bg inventory-button-bg" />
+              </ui:Button>
+            </ui:GroupBox>
+          </ui:VisualElement>
+        </ui:GroupBox>
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:Instance>
+</ui:UXML>

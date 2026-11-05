@@ -1,0 +1,5 @@
+Window PetitionWnd 310x412 @TOP_CENTER->pai.TOP_CENTER(106,0) unk101=L2UI_ch3.PetitionWnd.petition2_back unk102=PetitionWnd unk103=GamingState unk104=1 unk107=1 unk111=470 unk114=0 unk117=0 unk122=1993343127 unk126=0 unk127=621806595 unk128=60061750 unk130=0 unk131=0 unk132=60061750 unk133=621806595 unk134=110039094 unk135=36442116 unk139=Game size=[2]
+  TextListBox PetitionChatWindow 294x312 @TOP_LEFT->pai.TOP_LEFT(8,37) maxRow=17 showRow=200 lineGap=17 isShowScroll=1 size=[2]
+  EditBox PetitionChatEditBox 296x17 @TOP_LEFT->pai.TOP_LEFT(7,357) type=CHAT chatMarkOn=false size=[2]
+  Button CancelButton 76x23 @TOP_LEFT->pai.TOP_LEFT(80,383) normalTex=L2ui_ch3.button.btn1_normal pushedTex=L2ui_ch3.button.btn1_normalon buttonName=473 size=[2]
+  Button FeedBackButton 76x23 @TOP_LEFT->pai.TOP_LEFT(160,383) normalTex=L2ui_ch3.button.btn1_normal pushedTex=L2ui_ch3.button.btn1_normalon buttonName=849 size=[2]

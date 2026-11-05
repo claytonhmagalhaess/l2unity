@@ -1,0 +1,19 @@
+Window PartyMatchOutWaitListWnd 246x466 @TOP_LEFT->pai.TOP_LEFT(0,0) unk101=L2UI_CH3.PartyMatchWnd.PartyMatch4_Back unk102=PartyMatchOutWaitListWnd unk103=GamingState unk104=0 unk107=1 unk114=0 unk117=0 unk122=7209047 unk126=1 unk127=20 unk128=0 unk129=PartyMatchWnd unk130=0 unk131=0 unk132=6488147 unk133=2097196 unk134=7209061 unk135=6619250 unk139=Game size=[2]
+  TextBox Instruction 250x15 @TOP_LEFT->pai.TOP_LEFT(10,23) text=파티매칭 대기자 목록 textAlign=Left offsetY=0 sysstring=1440 textColor=#ffaf9779 emoticon=1 autosize=1 size=[2]
+  TextBox Instruction 250x15 @TOP_LEFT->pai.TOP_LEFT(13,50) text=레벨조건 textAlign=Left offsetY=0 sysstring=1035 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox Instruction 250x15 @TOP_LEFT->pai.TOP_LEFT(70,50) text=최저 textAlign=Left offsetY=0 sysstring=1043 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox Instruction 250x15 @TOP_LEFT->pai.TOP_LEFT(130,50) text=최고 textAlign=Left offsetY=0 sysstring=1044 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  EditBox MinLevel 26x17 @TOP_LEFT->pai.TOP_LEFT(95,48) type=COUNT maxLength=2 chatMarkOn=false size=[2]
+  EditBox MaxLevel 26x17 @TOP_LEFT->pai.TOP_LEFT(155,48) type=COUNT maxLength=2 chatMarkOn=false size=[2]
+  Button btn_Search 47x21 @TOP_LEFT->pai.TOP_LEFT(188,45) normalTex=L2UI_CH3.Button.SmallButton1 pushedTex=L2UI_CH3.Button.SmallButton1_down buttonName=1310 size=[2]
+  TextBox MemberCount 10x15 @TOP_CENTER->pai.TOP_CENTER(0,363) text=00/00 textAlign=Center offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ListCtrl WaitListCtrl 232x272 @TOP_LEFT->pai.TOP_LEFT(7,78) popupType=PartyMatch unk100=500 unk101=15 unk102=1 unk103=17 unk104=19 size=[2] values=[3]
+    - values: textStringId=393 width=136 unk108=true unk109=true unk110=false
+    - values: textStringId=391 width=41 unk108=true unk109=true unk110=false
+    - values: textStringId=392 width=55 unk108=true unk109=true unk110=true
+  Button prev_btn 66x21 @TOP_RIGHT->PartyMatchOutWaitListWnd.PartyInviteButton.TOP_LEFT(-1,-24) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=1037 size=[2]
+  Button next_btn 66x21 @TOP_LEFT->PartyMatchOutWaitListWnd.PartyInviteButton.TOP_RIGHT(1,-24) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=1038 size=[2]
+  Button WhisperButton 66x21 @TOP_RIGHT->PartyMatchOutWaitListWnd.PartyInviteButton.TOP_LEFT(-1,0) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=1379 size=[2]
+  Button PartyInviteButton @NONE->pai.TOP_CENTER(0,382) buttonName=1381
+  Button RefreshButton @TOP_LEFT->PartyMatchOutWaitListWnd.PartyInviteButton.TOP_RIGHT(1,0) buttonName=1380 disableTime=5000
+  Button CloseButton @NONE->pai.TOP_CENTER(0,437) buttonName=1364

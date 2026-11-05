@@ -1,0 +1,48 @@
+/* SparkFindWindow  (9 regras) */
+.find-banner {
+    position: absolute;
+    background-image: resource("Data/UI/Assets/SparkFind/PrivateShopFindWnd_IMG01");
+    unity-background-scale-mode: stretch-to-fill;
+}
+.find-cabeca {
+    position: absolute;
+    height: 19px;
+    flex-direction: row;
+    align-items: center;
+    background-image: resource("Data/UI/Assets/Party/ListCTRL_DF_Decoration");
+    unity-slice-left: 4;
+    unity-slice-right: 4;
+    unity-slice-top: 4;
+    unity-slice-bottom: 4;
+}
+.find-coluna {
+    unity-font: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 11px;
+    margin: 0;
+    padding: 0 0 0 4px;
+    color: rgba(220, 220, 220, 1.00);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.find-lista {
+    position: absolute;
+}
+.find-linha {
+    flex-direction: row;
+    align-items: center;
+}
+.find-linha:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.find-linha.escolhida {
+    background-color: rgba(200, 170, 90, 0.25);
+}
+.find-icone {
+    width: 32px;
+    height: 32px;
+    margin: 0 4px 0 4px;
+}
+.find-campo {
+    position: absolute;
+}

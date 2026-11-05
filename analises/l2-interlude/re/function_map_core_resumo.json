@@ -1,0 +1,190 @@
+{
+ "dll": "Core.dll",
+ "functions": 8504,
+ "by_evidence": {
+  "nome": 4521,
+  "thunk": 555,
+  "inferido": 723,
+  "rtti": 137,
+  "vtable": 33,
+  "vizinhanca": 325,
+  "eh": 2206,
+  "guard": 4
+ },
+ "by_subsystem": {
+  "nucleo Unreal (objetos, script VM, IO)": 7407,
+  "natives de UnrealScript (exec*)": 278,
+  "ferramentas (commandlets)": 68,
+  "bibliotecas (CRT/MFC/zlib)": 736,
+  "renderizacao": 10,
+  "sistema (chamadas Win32 importadas)": 2,
+  "rede": 3
+ },
+ "classes": 161,
+ "top_classes_by_subsystem": {
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "UObject",
+    1464
+   ],
+   [
+    "FString",
+    350
+   ],
+   [
+    "UClass",
+    297
+   ],
+   [
+    "FArray",
+    293
+   ],
+   [
+    "ULinkerLoad",
+    262
+   ],
+   [
+    "(funcao livre nomeada)",
+    250
+   ],
+   [
+    "UPackageMap",
+    208
+   ],
+   [
+    "UStruct",
+    176
+   ],
+   [
+    "FArchive",
+    159
+   ],
+   [
+    "FMallocError",
+    134
+   ],
+   [
+    "ULinker",
+    127
+   ],
+   [
+    "FVector",
+    113
+   ],
+   [
+    "FName",
+    104
+   ],
+   [
+    "UFactory",
+    91
+   ],
+   [
+    "L2ThreadUtil",
+    86
+   ]
+  ],
+  "natives de UnrealScript (exec*)": [
+   [
+    "UObject",
+    272
+   ],
+   [
+    "UParamStack",
+    5
+   ],
+   [
+    "UCommandlet",
+    1
+   ]
+  ],
+  "ferramentas (commandlets)": [
+   [
+    "UCommandlet",
+    68
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    572
+   ],
+   [
+    "type_info",
+    51
+   ],
+   [
+    "UnDecorator",
+    43
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "_LocaleUpdate",
+    12
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "std::bad_exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "CRect",
+    1
+   ],
+   [
+    "exception",
+    1
+   ]
+  ],
+  "renderizacao": [
+   [
+    "FVertexHit",
+    10
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    2
+   ]
+  ],
+  "rede": [
+   [
+    "Replicator",
+    3
+   ]
+  ]
+ },
+ "funclets_linked": 2334,
+ "eh_handlers": 951
+}

@@ -1,0 +1,177 @@
+{
+ "dll": "ALAudio.dll",
+ "functions": 1121,
+ "by_evidence": {
+  "thunk": 57,
+  "nome": 657,
+  "vizinhanca": 78,
+  "inferido": 114,
+  "rtti": 18,
+  "eh": 193,
+  "guard": 4
+ },
+ "by_subsystem": {
+  "audio (OpenAL)": 502,
+  "bibliotecas (CRT/MFC/zlib)": 502,
+  "audio": 33,
+  "nucleo Unreal (objetos, script VM, IO)": 73,
+  "engine (chamada importada)": 6,
+  "rede": 3,
+  "sistema (chamadas Win32 importadas)": 2
+ },
+ "classes": 36,
+ "top_classes_by_subsystem": {
+  "audio (OpenAL)": [
+   [
+    "UALAudioSubsystem",
+    453
+   ],
+   [
+    "(funcao livre nomeada)",
+    46
+   ],
+   [
+    "VORBISFILE.DLL",
+    3
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    362
+   ],
+   [
+    "UnDecorator",
+    43
+   ],
+   [
+    "type_info",
+    39
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "std::bad_exception",
+    2
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ],
+   [
+    "_LocaleUpdate",
+    1
+   ],
+   [
+    "exception",
+    1
+   ],
+   [
+    "std::bad_cast",
+    1
+   ]
+  ],
+  "audio": [
+   [
+    "FALAudioStats",
+    31
+   ],
+   [
+    "USound",
+    2
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "CORE.DLL::UObject",
+    24
+   ],
+   [
+    "CORE.DLL::UBoolProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UIntProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UFloatProperty",
+    9
+   ],
+   [
+    "CORE.DLL::UProperty",
+    8
+   ],
+   [
+    "CORE.DLL::UField",
+    7
+   ],
+   [
+    "UFloatProperty",
+    2
+   ],
+   [
+    "UBoolProperty",
+    2
+   ],
+   [
+    "UIntProperty",
+    2
+   ],
+   [
+    "CORE.DLL::USubsystem",
+    1
+   ]
+  ],
+  "engine (chamada importada)": [
+   [
+    "ENGINE.DLL::USound",
+    5
+   ],
+   [
+    "ENGINE.DLL::UAudioSubsystem",
+    1
+   ]
+  ],
+  "rede": [
+   [
+    "Replicator",
+    3
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    2
+   ]
+  ]
+ },
+ "funclets_linked": 209,
+ "eh_handlers": 75
+}

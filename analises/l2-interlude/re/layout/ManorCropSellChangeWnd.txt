@@ -1,0 +1,19 @@
+Window ManorCropSellChangeWnd 336x306 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.Manor.manor3_back unk102=ManorCropSellChangeWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=1152 unk113=0 unk114=3 unk115=1 unk117=0 unk122=655373 unk123=0 unk124=0 unk125=0 unk126=0 unk127=6488165 unk128=4325483 unk130=0 unk131=0 unk132=6619236 unk133=7209033 unk134=2818103 unk135=2752632 unk139=Game size=[2]
+  TextBox txtCropName 240x12 @TOP_LEFT->pai.TOP_LEFT(15,38) textAlign=Left offsetY=0 sysstring=1124 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtVarCropName 240x12 @TOP_LEFT->pai.TOP_LEFT(76,38) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox txtRewardType1 240x12 @TOP_LEFT->pai.TOP_LEFT(15,54) textAlign=Left offsetY=0 sysstring=1134 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtVarRewardType1 240x12 @TOP_LEFT->pai.TOP_LEFT(76,54) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox txtRewardType2 240x12 @TOP_LEFT->pai.TOP_LEFT(15,70) textAlign=Left offsetY=0 sysstring=1135 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtVarRewardType2 240x12 @TOP_LEFT->pai.TOP_LEFT(76,70) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  ListCtrl ManorCropSellChangeListCtrl 322x109 @TOP_LEFT->pai.TOP_LEFT(7,95) unk100=100 unk101=5 unk102=1 unk103=19 unk104=19 size=[2] values=[4]
+    - values: textStringId=1153 width=115 unk108=true unk109=true unk110=false
+    - values: textStringId=1154 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1126 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1127 width=67 unk108=true unk109=true unk110=false
+  TextBox txtPurchasePlace 40x12 @TOP_LEFT->pai.TOP_LEFT(75,219) textAlign=Left offsetY=0 sysstring=1153 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ComboBox cbPurchasePlace 138x17 @TOP_LEFT->pai.TOP_LEFT(123,216) size=[2] values=[0]
+  TextBox txtSalesVolume 40x12 @TOP_LEFT->pai.TOP_LEFT(75,244) textAlign=Left offsetY=0 sysstring=1156 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  EditBox ebSalesVolume 68x17 @TOP_LEFT->pai.TOP_LEFT(123,241) type=COUNT chatMarkOn=false size=[2]
+  Button btnMax 76x23 @TOP_LEFT->pai.TOP_LEFT(196,240) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1158 size=[2]
+  Button btnOk 76x23 @TOP_LEFT->pai.TOP_LEFT(91,277) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=140 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(171,277) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=141 size=[2]

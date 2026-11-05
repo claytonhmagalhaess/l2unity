@@ -1,0 +1,52 @@
+INFO  Using log config file: jar:file:/C:/Users/Clayton/tools-re/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Clayton\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Clayton\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (407 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1490 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/C:/Users/Clayton/tools-re/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    C:\Users\Clayton\projeto\l2anim\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: C:\Users\Clayton\projeto\l2anim\ghidra_proj\l2engine (HeadlessAnalyzer)  
+INFO  Opening project: C:\Users\Clayton\projeto\l2anim\ghidra_proj\l2engine (HeadlessProject)  
+INFO  REPORT: Processing read-only project file: /engine.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ExportCallGraph.java 'C:\Users\Clayton\projeto\l2anim\out\re\engine_callgraph.tsv'  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\Users\Clayton\projeto\l2anim\ghidra_scripts\ExportCallGraph.java (HeadlessAnalyzer)  
+INFO  ExportCallGraph.java> funcoes exportadas: 45694 (GhidraScript)  
+INFO  REPORT: Execute script: ExtractRefFuncs.java 'C:\Users\Clayton\projeto\l2anim\out\re\engine_console_calls.c' '0x10C5104C'  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\Users\Clayton\projeto\l2anim\ghidra_scripts\ExtractRefFuncs.java (HeadlessAnalyzer)  
+INFO  ExtractRefFuncs.java> alvo 10c5104c: 25 funcoes (GhidraScript)  
+INFO  REPORT: Execute script: ExtractCallTree.java 'C:\Users\Clayton\projeto\l2anim\out\re\packet_handlers.c' '1' '0x10400730' '0x104007f0' '0x104008a0' '0x10400940' '0x104009e0' '0x10400a70' '0x10400b30' '0x10400b50' '0x10400b60' '0x10400b70' '0x10400c30' '0x10400c50' '0x10400c70' '0x10400c90' '0x10400cf0' '0x10400d00' '0x10400d20' '0x10400d30' '0x10400d70' '0x10400db0' '0x10400e00' '0x10400ea0' '0x10400f40' '0x10400f50' '0x10400f60' '0x10400f70' '0x10400f80' '0x10400f90' '0x10400fa0' '0x10400fb0' '0x10400fc0' '0x10401060' '0x10401100' '0x10401140' '0x10401150' '0x10401170' '0x10401190' '0x104011a0' '0x104011b0' '0x104011c0' '0x104011d0' '0x104011e0' '0x104011f0' '0x10401200' '0x10401210' '0x10401220' '0x104012c0' '0x104012d0' '0x10401310' '0x10401350' '0x104013e0' '0x10401480' '0x10401570' '0x10401580' '0x10401720' '0x104017a0' '0x10401820' '0x104018c0' '0x10401960' '0x1040be50' '0x1040c310' '0x1040c450' '0x1040c5e0' '0x1040c710' '0x1040c8d0' '0x1040c930' '0x1040cbd0' '0x1040ccd0' '0x1040cdc0' '0x1040ceb0' '0x1040d000' '0x1040d250' '0x1040d3a0' '0x1040d4a0' '0x1040d690' '0x1040d7f0' '0x1040d8c0' '0x1040da10' '0x1040db40' '0x1040dc60' '0x1040dd80' '0x1040dea0' '0x1040e050' '0x1040e130' '0x1040e220' '0x1040e310' '0x1040e3f0' '0x1040e4f0' '0x1040e690' '0x1040e710' '0x1040e780' '0x1040e7f0' '0x1040e890' '0x1040e930' '0x1040e9b0' '0x1040ea00' '0x1040eb90' '0x1040ed50' '0x1040f070' '0x1040f100' '0x1040f2c0' '0x1040f480' '0x1040f680' '0x1040f880' '0x1040fde0' '0x10410430' '0x10410520' '0x10410750' '0x104108e0' '0x10410a70' '0x10410d50' '0x10410ee0' '0x10411040' '0x10411260' '0x10411470' '0x10411690' '0x10411800' '0x10411870' '0x10411a70' '0x10411c30' '0x10411db0' '0x10411f30' '0x104120c0' '0x10412260' '0x104122e0' '0x10412350' '0x104123c0' '0x10412590' '0x104126e0' '0x104127d0' '0x10412920' '0x10412a70' '0x10412be0' '0x10412dc0' '0x10412ea0' '0x10412fd0' '0x10413090' '0x104131f0' '0x104132d0' '0x104133b0' '0x10413490' '0x10413570' '0x10413730' '0x10413840' '0x10413920' '0x10413a00' '0x10413ae0' '0x10413bc0' '0x10413e50' '0x10414000' '0x104141b0' '0x10414290' '0x10414600' '0x104149c0' '0x10414a30' '0x10414ab0' '0x10414cb0' '0x10414dc0' '0x10414f40' '0x104150a0' '0x10415110' '0x104151c0' '0x104152b0' '0x10415450' '0x104155f0' '0x104156d0' '0x10415a70' '0x10415b80' '0x10415dd0' '0x10415e40' '0x10415f30' '0x10416160' '0x104163d0' '0x10416440' '0x104164b0' '0x10416880' '0x10416a90' '0x10416e10' '0x10417010' '0x10417150' '0x10417230' '0x10417310' '0x104173f0' '0x104174d0' '0x10417620' '0x10417700' '0x104177e0' '0x104178c0' '0x104179a0' '0x10417b40' '0x10417c20' '0x10417d00' '0x10417e50' '0x10417fe0' '0x104180e0' '0x10418320' '0x104183a0' '0x10418630' '0x104186a0' '0x10418700' '0x10418870' '0x10418960' '0x10418a90' '0x10418c10' '0x10418d30' '0x10418de0' '0x10418f20' '0x10419050' '0x10419160' '0x10419250' '0x104193d0' '0x10419530' '0x104196f0' '0x104198b0' '0x10419a30' '0x10419ce0' '0x10419e40' '0x10419f90' '0x1041a090' '0x1041a410' '0x1041a570' '0x1041a700' '0x1041a7c0' '0x1041a810' '0x1041a880' '0x1041aaf0' '0x1041ac20' '0x1041b350' '0x1041b3c0' '0x1041b440' '0x1041b4d0' '0x1041b5d0' '0x1041b670' '0x1041b700' '0x1041b7b0' '0x1041b850' '0x1041b9b0' '0x1041bab0' '0x1041bb90' '0x1041bde0' '0x1041bed0' '0x1041c010' '0x1041c190' '0x1041c260' '0x1041c440' '0x1041c5d0' '0x1041c700' '0x1041c900' '0x1041cb90' '0x1041cc90' '0x1041ce10' '0x1041d0c0' '0x1041d380' '0x1041d600' '0x1041d8f0' '0x1041dc00' '0x1041dee0' '0x1041e080' '0x1041e380' '0x1041eab0' '0x1041ebb0' '0x1041ed90' '0x1041ef20' '0x1041f0a0' '0x1041f170' '0x1041f2d0' '0x1041f570' '0x1041f780' '0x1041f8c0' '0x1041f9c0' '0x1041fb60' '0x1041fd10' '0x1041fe20' '0x10420000' '0x10420100' '0x104201d0' '0x10424500' '0x104245f0' '0x104248f0' '0x10424b60' '0x10424c70' '0x10424d80' '0x10424e80' '0x10425770' '0x10425930' '0x10425ab0' '0x10425b80' '0x10425c30' '0x10425ce0' '0x10425d90' '0x104261f0' '0x104266f0' '0x10426810' '0x10426930' '0x10427110' '0x104271b0' '0x104271c0' '0x10427310' '0x10427590' '0x10427750' '0x10427890' '0x10427960' '0x10427a30' '0x10427b20' '0x10427c20' '0x10427d60' '0x104287a0' '0x10428a30' '0x10428c00' '0x10428dd0' '0x10428fd0' '0x10429170' '0x10429240' '0x10429420' '0x104295c0' '0x10429790' '0x10429a60' '0x10429bd0' '0x10429d40' '0x10429ef0' '0x1042a000' '0x1042a0c0' '0x1042a1f0' '0x1042a450' '0x1042a630' '0x1042a7a0' '0x1042a8e0' '0x1042aa20' '0x1042ac00' '0x1042ad50' '0x1042af40' '0x1042b150' '0x1042b280' '0x1042ddd0' '0x1042e0f0' '0x1042e430' '0x1042f8d0' '0x1042fea0' '0x10430160' '0x104304f0' '0x10430780' '0x10431240' '0x10431500' '0x104342f0' '0x104366f0' '0x104381b0' '0x10438c20' '0x10438df0' '0x10439280' '0x10439400' '0x104397b0' '0x10439a10' '0x10439ac0' '0x10439c20' '0x10439db0' '0x1043a030' '0x1043a2d0' '0x1043a470' '0x108f7268' '0x10b20a00' '0x10b39100' '0x1141e8ce' '0x300074' '0x3ff00000' '0x4db26158' '0x4e048354' '0x4f004d' '0x68fb6faf' '0x6c0061' '0x6f0073' '0x713e38d8' '0x770070' '0x8d080df5' '0xa1d1937e' '0xf7960e44'  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\Users\Clayton\projeto\l2anim\ghidra_scripts\ExtractCallTree.java (HeadlessAnalyzer)  
+INFO  ExtractCallTree.java> funcoes decompiladas: 317 (GhidraScript)  

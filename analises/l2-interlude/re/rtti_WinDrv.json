@@ -1,0 +1,731 @@
+[
+ {
+  "vtable": "0x1114cd30",
+  "class": "UWindowsClient",
+  "raw": ".?AVUWindowsClient@@",
+  "subobject_offset": 184,
+  "entries": [
+   "0x11102020",
+   "0x1110b59a",
+   "0x1110b5a0",
+   "0x1110b5a6"
+  ],
+  "raw_entries": [
+   "0x1110117c",
+   "0x1110b59a",
+   "0x1110b5a0",
+   "0x1110b5a6"
+  ],
+  "bases": [
+   "UWindowsClient",
+   "UClient",
+   "UObject",
+   "FUnknown",
+   "FNotifyHook"
+  ]
+ },
+ {
+  "vtable": "0x1114cd4c",
+  "class": "UWindowsClient",
+  "raw": ".?AVUWindowsClient@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1110b51c",
+   "0x1110b522",
+   "0x1110b528",
+   "0x11101c50",
+   "0x1110b52e",
+   "0x1110b534",
+   "0x1110b53a",
+   "0x1110b540",
+   "0x1110b546",
+   "0x1110b54c",
+   "0x11101760",
+   "0x1110b7b6",
+   "0x1110b552",
+   "0x1110b558",
+   "0x1110b55e",
+   "0x1110b564",
+   "0x11101f80",
+   "0x11101950",
+   "0x1110b56a",
+   "0x1110b570",
+   "0x1110b576",
+   "0x1110b57c",
+   "0x1110b582",
+   "0x1110b588",
+   "0x1110b58e",
+   "0x1110b594",
+   "0x11101d30",
+   "0x1110b7bc",
+   "0x1110b7c2",
+   "0x1110b7c8",
+   "0x111022b0",
+   "0x111021d0",
+   "0x11102500",
+   "0x11101890",
+   "0x11102100",
+   "0x11102390",
+   "0x111019f0"
+  ],
+  "raw_entries": [
+   "0x1110b51c",
+   "0x1110b522",
+   "0x1110b528",
+   "0x11101172",
+   "0x1110b52e",
+   "0x1110b534",
+   "0x1110b53a",
+   "0x1110b540",
+   "0x1110b546",
+   "0x1110b54c",
+   "0x111011c2",
+   "0x1110b7b6",
+   "0x1110b552",
+   "0x1110b558",
+   "0x1110b55e",
+   "0x1110b564",
+   "0x1110107d",
+   "0x11101005",
+   "0x1110b56a",
+   "0x1110b570",
+   "0x1110b576",
+   "0x1110b57c",
+   "0x1110b582",
+   "0x1110b588",
+   "0x1110b58e",
+   "0x1110b594",
+   "0x11101154",
+   "0x1110b7bc",
+   "0x1110b7c2",
+   "0x1110b7c8",
+   "0x111010d2",
+   "0x111011ef",
+   "0x11101032",
+   "0x111010a5",
+   "0x11101109",
+   "0x1110114a",
+   "0x111010e6"
+  ],
+  "bases": [
+   "UWindowsClient",
+   "UClient",
+   "UObject",
+   "FUnknown",
+   "FNotifyHook"
+  ]
+ },
+ {
+  "vtable": "0x1114cf0c",
+  "class": "UBoolProperty",
+  "raw": ".?AVUBoolProperty@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1110b51c",
+   "0x1110b522",
+   "0x1110b528",
+   "0x11101aa0",
+   "0x1110b52e",
+   "0x1110b534",
+   "0x1110b53a",
+   "0x1110b540",
+   "0x1110b546",
+   "0x1110b5c4",
+   "0x1110b5ca",
+   "0x1110b5d0",
+   "0x1110b552",
+   "0x1110b558",
+   "0x1110b55e",
+   "0x1110b564",
+   "0x1110b5d6",
+   "0x1110b5dc",
+   "0x1110b56a",
+   "0x1110b570",
+   "0x1110b5e2",
+   "0x1110b57c",
+   "0x1110b582",
+   "0x1110b588",
+   "0x1110b58e",
+   "0x1110b594",
+   "0x1110b5e8",
+   "0x1110b5ee",
+   "0x1110b5f4",
+   "0x1110b5fa",
+   "0x1110b600",
+   "0x1110b606",
+   "0x1110b60c",
+   "0x1110b612",
+   "0x1110b618",
+   "0x1110b61e",
+   "0x1110b624",
+   "0x1110b62a",
+   "0x1110b630",
+   "0x1110b636",
+   "0x1110b63c",
+   "0x1110b642",
+   "0x1110b648",
+   "0x1110b64e",
+   "0x1110b654",
+   "0x1110b65a"
+  ],
+  "raw_entries": [
+   "0x1110b51c",
+   "0x1110b522",
+   "0x1110b528",
+   "0x11101118",
+   "0x1110b52e",
+   "0x1110b534",
+   "0x1110b53a",
+   "0x1110b540",
+   "0x1110b546",
+   "0x1110b5c4",
+   "0x1110b5ca",
+   "0x1110b5d0",
+   "0x1110b552",
+   "0x1110b558",
+   "0x1110b55e",
+   "0x1110b564",
+   "0x1110b5d6",
+   "0x1110b5dc",
+   "0x1110b56a",
+   "0x1110b570",
+   "0x1110b5e2",
+   "0x1110b57c",
+   "0x1110b582",
+   "0x1110b588",
+   "0x1110b58e",
+   "0x1110b594",
+   "0x1110b5e8",
+   "0x1110b5ee",
+   "0x1110b5f4",
+   "0x1110b5fa",
+   "0x1110b600",
+   "0x1110b606",
+   "0x1110b60c",
+   "0x1110b612",
+   "0x1110b618",
+   "0x1110b61e",
+   "0x1110b624",
+   "0x1110b62a",
+   "0x1110b630",
+   "0x1110b636",
+   "0x1110b63c",
+   "0x1110b642",
+   "0x1110b648",
+   "0x1110b64e",
+   "0x1110b654",
+   "0x1110b65a"
+  ],
+  "bases": [
+   "UBoolProperty",
+   "UProperty",
+   "UField",
+   "UObject",
+   "FUnknown"
+  ]
+ },
+ {
+  "vtable": "0x1114d694",
+  "class": "UWindowsViewport",
+  "raw": ".?AVUWindowsViewport@@",
+  "subobject_offset": 56,
+  "entries": [
+   "0x11108180"
+  ],
+  "raw_entries": [
+   "0x111010e1"
+  ],
+  "bases": [
+   "UWindowsViewport",
+   "UViewport",
+   "UPlayer",
+   "UObject",
+   "FUnknown",
+   "FOutputDevice",
+   "FExec"
+  ]
+ },
+ {
+  "vtable": "0x1114d6a0",
+  "class": "UWindowsViewport",
+  "raw": ".?AVUWindowsViewport@@",
+  "subobject_offset": 52,
+  "entries": [
+   "0x1110b822",
+   "0x1110b6f6",
+   "0x1110b6fc"
+  ],
+  "raw_entries": [
+   "0x1110b822",
+   "0x1110b6f6",
+   "0x1110b6fc"
+  ],
+  "bases": [
+   "UWindowsViewport",
+   "UViewport",
+   "UPlayer",
+   "UObject",
+   "FUnknown",
+   "FOutputDevice",
+   "FExec"
+  ]
+ },
+ {
+  "vtable": "0x1114d6b4",
+  "class": "UWindowsViewport",
+  "raw": ".?AVUWindowsViewport@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1110b51c",
+   "0x1110b522",
+   "0x1110b528",
+   "0x11103010",
+   "0x1110b52e",
+   "0x1110b534",
+   "0x1110b53a",
+   "0x1110b540",
+   "0x1110b546",
+   "0x1110b54c",
+   "0x111041c0",
+   "0x1110b804",
+   "0x1110b552",
+   "0x1110b558",
+   "0x1110b55e",
+   "0x1110b564",
+   "0x111033a0",
+   "0x1110b5dc",
+   "0x1110b56a",
+   "0x1110b570",
+   "0x1110b576",
+   "0x1110b57c",
+   "0x1110b582",
+   "0x1110b588",
+   "0x1110b58e",
+   "0x1110b594",
+   "0x1110b80a",
+   "0x11103ba0",
+   "0x11103cb0",
+   "0x1110b810",
+   "0x1110b816",
+   "0x111035e0",
+   "0x11106bb0",
+   "0x11104ac0",
+   "0x11103670",
+   "0x111042f0",
+   "0x111033d0",
+   "0x11105330",
+   "0x111039a0",
+   "0x1110b81c",
+   "0x11105000",
+   "0x111049f0",
+   "0x11106020",
+   "0x11103a30",
+   "0x11107ac0",
+   "0x11107aa0",
+   "0x11103b00",
+   "0x11102c00",
+   "0x11102c20"
+  ],
+  "raw_entries": [
+   "0x1110b51c",
+   "0x1110b522",
+   "0x1110b528",
+   "0x111011a9",
+   "0x1110b52e",
+   "0x1110b534",
+   "0x1110b53a",
+   "0x1110b540",
+   "0x1110b546",
+   "0x1110b54c",
+   "0x11101082",
+   "0x1110b804",
+   "0x1110b552",
+   "0x1110b558",
+   "0x1110b55e",
+   "0x1110b564",
+   "0x11101050",
+   "0x1110b5dc",
+   "0x1110b56a",
+   "0x1110b570",
+   "0x1110b576",
+   "0x1110b57c",
+   "0x1110b582",
+   "0x1110b588",
+   "0x1110b58e",
+   "0x1110b594",
+   "0x1110b80a",
+   "0x1110110e",
+   "0x11101087",
+   "0x1110b810",
+   "0x1110b816",
+   "0x1110105f",
+   "0x1110100a",
+   "0x1110113b",
+   "0x11101069",
+   "0x111010cd",
+   "0x11101019",
+   "0x11101055",
+   "0x11101073",
+   "0x1110b81c",
+   "0x111011b3",
+   "0x11101078",
+   "0x111011cc",
+   "0x111011e5",
+   "0x11101122",
+   "0x111011b8",
+   "0x11101028",
+   "0x111010c8",
+   "0x111010dc"
+  ],
+  "bases": [
+   "UWindowsViewport",
+   "UViewport",
+   "UPlayer",
+   "UObject",
+   "FUnknown",
+   "FOutputDevice",
+   "FExec"
+  ]
+ },
+ {
+  "vtable": "0x1114d7a4",
+  "class": "WWindowsViewportWindow",
+  "raw": ".?AVWWindowsViewportWindow@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1110b3a8",
+   "0x11103320",
+   "0x1110b3ae",
+   "0x1110b3b4",
+   "0x11103120",
+   "0x1110b3ba",
+   "0x11103090",
+   "0x11103240",
+   "0x1110b3c0",
+   "0x1110b3c6",
+   "0x1110b3cc",
+   "0x1110b3d2",
+   "0x1110b3d8",
+   "0x1110b3de",
+   "0x1110b3e4",
+   "0x1110b3ea",
+   "0x1110b3f0",
+   "0x1110b3f6",
+   "0x1110b3fc",
+   "0x1110b402",
+   "0x1110b408",
+   "0x1110b40e",
+   "0x1110b414",
+   "0x1110b41a",
+   "0x1110b420",
+   "0x1110b426",
+   "0x1110b42c",
+   "0x1110b432",
+   "0x1110b438",
+   "0x1110b43e",
+   "0x1110b444",
+   "0x1110b44a",
+   "0x1110b450",
+   "0x1110b456",
+   "0x1110b45c",
+   "0x1110b462",
+   "0x1110b468",
+   "0x1110b46e",
+   "0x1110b474",
+   "0x1110b47a",
+   "0x1110b480",
+   "0x1110b486",
+   "0x1110b48c",
+   "0x1110b492",
+   "0x1110b498",
+   "0x1110b49e",
+   "0x1110b4a4",
+   "0x1110b4aa",
+   "0x1110b4b0",
+   "0x1110b4b6",
+   "0x1110b4bc",
+   "0x1110b4c2",
+   "0x1110b4c8",
+   "0x1110b4ce",
+   "0x1110b4d4",
+   "0x1110b4da",
+   "0x1110b4e0",
+   "0x1110b4e6"
+  ],
+  "raw_entries": [
+   "0x1110b3a8",
+   "0x111010a0",
+   "0x1110b3ae",
+   "0x1110b3b4",
+   "0x11101163",
+   "0x1110b3ba",
+   "0x111010eb",
+   "0x1110120d",
+   "0x1110b3c0",
+   "0x1110b3c6",
+   "0x1110b3cc",
+   "0x1110b3d2",
+   "0x1110b3d8",
+   "0x1110b3de",
+   "0x1110b3e4",
+   "0x1110b3ea",
+   "0x1110b3f0",
+   "0x1110b3f6",
+   "0x1110b3fc",
+   "0x1110b402",
+   "0x1110b408",
+   "0x1110b40e",
+   "0x1110b414",
+   "0x1110b41a",
+   "0x1110b420",
+   "0x1110b426",
+   "0x1110b42c",
+   "0x1110b432",
+   "0x1110b438",
+   "0x1110b43e",
+   "0x1110b444",
+   "0x1110b44a",
+   "0x1110b450",
+   "0x1110b456",
+   "0x1110b45c",
+   "0x1110b462",
+   "0x1110b468",
+   "0x1110b46e",
+   "0x1110b474",
+   "0x1110b47a",
+   "0x1110b480",
+   "0x1110b486",
+   "0x1110b48c",
+   "0x1110b492",
+   "0x1110b498",
+   "0x1110b49e",
+   "0x1110b4a4",
+   "0x1110b4aa",
+   "0x1110b4b0",
+   "0x1110b4b6",
+   "0x1110b4bc",
+   "0x1110b4c2",
+   "0x1110b4c8",
+   "0x1110b4ce",
+   "0x1110b4d4",
+   "0x1110b4da",
+   "0x1110b4e0",
+   "0x1110b4e6"
+  ],
+  "bases": [
+   "WWindowsViewportWindow",
+   "WWindow",
+   "FCommandTarget"
+  ]
+ },
+ {
+  "vtable": "0x111764ec",
+  "class": "type_info",
+  "raw": ".?AVtype_info@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x11117222",
+   "0x11117539",
+   "0x111174c8",
+   "0x111174c8"
+  ],
+  "raw_entries": [
+   "0x11117222",
+   "0x11117539",
+   "0x111174c8",
+   "0x111174c8"
+  ],
+  "bases": [
+   "type_info"
+  ]
+ },
+ {
+  "vtable": "0x11176508",
+  "class": "std::bad_exception",
+  "raw": ".?AVbad_exception@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x11117a73",
+   "0x1111cd03"
+  ],
+  "raw_entries": [
+   "0x11117a73",
+   "0x1111cd03"
+  ],
+  "bases": [
+   "std::bad_exception",
+   "std::exception"
+  ]
+ },
+ {
+  "vtable": "0x11176660",
+  "class": "std::exception",
+  "raw": ".?AVexception@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111cdc3",
+   "0x1111cd03"
+  ],
+  "raw_entries": [
+   "0x1111cdc3",
+   "0x1111cd03"
+  ],
+  "bases": [
+   "std::exception"
+  ]
+ },
+ {
+  "vtable": "0x11176680",
+  "class": "std::bad_cast",
+  "raw": ".?AVbad_cast@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111cddf",
+   "0x1111cd03"
+  ],
+  "raw_entries": [
+   "0x1111cddf",
+   "0x1111cd03"
+  ],
+  "bases": [
+   "std::bad_cast",
+   "std::exception"
+  ]
+ },
+ {
+  "vtable": "0x1117668c",
+  "class": "std::bad_typeid",
+  "raw": ".?AVbad_typeid@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111ce01",
+   "0x1111cd03"
+  ],
+  "raw_entries": [
+   "0x1111ce01",
+   "0x1111cd03"
+  ],
+  "bases": [
+   "std::bad_typeid",
+   "std::exception"
+  ]
+ },
+ {
+  "vtable": "0x11176698",
+  "class": "std::__non_rtti_object",
+  "raw": ".?AV__non_rtti_object@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111ce23",
+   "0x1111cd03"
+  ],
+  "raw_entries": [
+   "0x1111ce23",
+   "0x1111cd03"
+  ],
+  "bases": [
+   "std::__non_rtti_object",
+   "std::bad_typeid",
+   "std::exception"
+  ]
+ },
+ {
+  "vtable": "0x11176eec",
+  "class": "DNameNode",
+  "raw": ".?AVDNameNode@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x111314ef",
+   "0x111314ef",
+   "0x111314ef"
+  ],
+  "raw_entries": [
+   "0x111314ef",
+   "0x111314ef",
+   "0x111314ef"
+  ],
+  "bases": [
+   "DNameNode"
+  ]
+ },
+ {
+  "vtable": "0x11176efc",
+  "class": "charNode",
+  "raw": ".?AVcharNode@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111f9f8",
+   "0x1111f9fc",
+   "0x1111fa00"
+  ],
+  "raw_entries": [
+   "0x1111f9f8",
+   "0x1111f9fc",
+   "0x1111fa00"
+  ],
+  "bases": [
+   "charNode",
+   "DNameNode"
+  ]
+ },
+ {
+  "vtable": "0x11176f0c",
+  "class": "pDNameNode",
+  "raw": ".?AVpDNameNode@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111ff62",
+   "0x1111ff71",
+   "0x1111ff80"
+  ],
+  "raw_entries": [
+   "0x1111ff62",
+   "0x1111ff71",
+   "0x1111ff80"
+  ],
+  "bases": [
+   "pDNameNode",
+   "DNameNode"
+  ]
+ },
+ {
+  "vtable": "0x11176f1c",
+  "class": "DNameStatusNode",
+  "raw": ".?AVDNameStatusNode@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111fa73",
+   "0x1111fa77",
+   "0x1111ff9d"
+  ],
+  "raw_entries": [
+   "0x1111fa73",
+   "0x1111fa77",
+   "0x1111ff9d"
+  ],
+  "bases": [
+   "DNameStatusNode",
+   "DNameNode"
+  ]
+ },
+ {
+  "vtable": "0x11176f2c",
+  "class": "pcharNode",
+  "raw": ".?AVpcharNode@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1111fa1b",
+   "0x1111ff1f",
+   "0x1111ff31"
+  ],
+  "raw_entries": [
+   "0x1111fa1b",
+   "0x1111ff1f",
+   "0x1111ff31"
+  ],
+  "bases": [
+   "pcharNode",
+   "DNameNode"
+  ]
+ }
+]

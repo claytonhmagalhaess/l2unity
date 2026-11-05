@@ -1,0 +1,39 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Scrollview" uss="L2Button" uss="LicenseWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="LicenseWindow" class="license-window">
+    <ui:VisualElement name="Window" tabindex="-1" class="license-window-inner">
+      <ui:ScrollView name="L2Scrollview" class="l2-scroll-view">
+        <ui:Label text="INFINITY
+Project SPARK
+
+TERMS OF USE - ALPHA
+
+Welcome to Infinity. Please read these terms before you play.
+
+1. This client is provided free of charge, only for playing on the official Infinity server. You may not copy, redistribute, sell, modify, decompile or extract its files or contents.
+
+2. Cheats, bots, macros, packet editors, memory tools and any third-party program that interferes with the game are forbidden and may lead to a permanent ban.
+
+3. Your account is personal. Do not share your login. The staff will never ask for your password.
+
+4. This is an alpha version. Characters, items and progress may be wiped at any time, and the game is provided &quot;as is&quot;, without any warranty.
+
+5. By clicking Agree you accept these terms. If you do not agree, click Disagree and close the game.
+
+
+ACKNOWLEDGEMENTS
+
+Special thanks to shnok, creator of the l2-unity project - the open Unity client this game was built upon.
+
+Special thanks to the L2jFrozen Team, whose server emulator is the foundation of our game server.
+
+
+Lineage II is a trademark of NCSOFT Corporation. Infinity is an independent fan project and is not affiliated with or endorsed by NCSOFT.
+" name="Content" class="chat-content" />
+      </ui:ScrollView>
+      <ui:VisualElement name="BottomBar" class="license-window-button-container">
+        <ui:Instance template="L2Button" template="L2Button" name="AgreeButton" class="l2-button-template" />
+        <ui:Instance template="L2Button" template="L2Button" name="DisagreeButton" class="l2-button-template" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

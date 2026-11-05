@@ -1,0 +1,3 @@
+Window SystemMsgWnd 348x125 @BOTTOM_LEFT->ChatWnd.TOP_LEFT(0,-5) unk100=ChatWnd unk102=SystemMsgWnd unk103=GamingState unk107=1 unk108=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=56426501 unk128=84541832 unk130=0 unk131=0 unk132=3342435 unk133=7536741 unk134=56754269 unk135=0 unk139=Game size=[2]
+  Texture BackTexture 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) file=L2UI_CH3.ChatWnd.chatting_system type=Normal layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size_percent=[2] size=[2]
+  ChatWindow SystemMsgList 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) lineGap=4 size_percent=[2] size=[2]

@@ -1,0 +1,2 @@
+Window GMDetailStatusWnd 256x355 @TOP_LEFT->pai.TOP_LEFT(0,100) unk102=GMDetailStatusWnd unk103=GamingState unk104=1 unk107=1 unk114=0 unk117=0 unk122=83994288 unk126=0 unk127=12485 unk128=458770 unk130=0 unk131=0 unk132=6619245 unk133=6357070 unk134=22806544 unk135=0 unk139=Game size=[2]
+  Window InnerWnd @NONE->pai.TOP_LEFT(0,20) unk107=0 unk114=0 unk117=0 unk122=0 unk126=0 unk127=83537712 unk128=-1064894378 unk130=0 unk131=0 unk132=83538992 unk133=0 unk134=1 unk135=0 unk139=Game

@@ -1,0 +1,3 @@
+<ui:UXML noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2Dropdown" xmlns:ui="UnityEngine.UIElements">
+  <ui:DropdownField name="L2Dropdown" choices="test,test2" class="l2-dropdown" />
+</ui:UXML>

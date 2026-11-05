@@ -1,0 +1,5 @@
+Window TownMapWnd 334x354 @CENTER_LEFT->pai.CENTER_LEFT(0,0) unk102=TownMapWnd unk103=GamingState unk104=1 unk107=1 unk111=447 unk114=0 unk117=0 unk122=83815336 unk126=0 unk127=1507344 unk128=84410838 unk130=0 unk131=0 unk132=83815152 unk133=16864 unk134=10626 unk135=-1064894378 unk139=Game size=[2]
+  Texture BackTex 334x333 @TOP_LEFT->pai.TOP_LEFT(0,21) file=L2UI.MinimapWnd.MinimapBack type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Window ContainerWnd 328x328 @TOP_LEFT->pai.TOP_LEFT(3,21) unk114=0 unk117=0 unk122=0 unk126=0 unk127=0 unk128=16874 unk130=0 unk131=0 unk132=-31 unk133=0 unk134=83817512 unk135=0 unk139=Game size=[2]
+    Texture TownMapTex 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) file=Default.BlackTexture type=Draggable layer=None u=0.0 v=0.0 uSize=512.0 vSize=512.0 size_percent=[2] size=[2]
+    Texture UserTex 32x32 @TOP_LEFT->pai.TOP_LEFT(0,0) file=town_map.icon_i00 type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]

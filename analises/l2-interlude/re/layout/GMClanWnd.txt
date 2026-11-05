@@ -1,0 +1,2 @@
+Window GMClanWnd 256x355 @TOP_LEFT->pai.TOP_LEFT(0,100) unk102=GMClanWnd unk103=GamingState unk104=1 unk107=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=66855560 unk128=6226029 unk130=0 unk131=0 unk132=101 unk133=7667820 unk134=3801107 unk135=0 unk139=Game size=[2]
+  Window InnerWnd @NONE->pai.TOP_LEFT(0,20) unk107=0 unk114=0 unk117=0 unk122=6881388 unk126=0 unk127=18058 unk128=0 unk130=0 unk131=0 unk132=0 unk133=4 unk134=65535 unk135=0 unk139=Game

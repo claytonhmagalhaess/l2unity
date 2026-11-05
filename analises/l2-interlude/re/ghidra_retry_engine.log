@@ -1,0 +1,62 @@
+INFO  Using log config file: jar:file:/C:/Users/Clayton/tools-re/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Clayton\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Clayton\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (529 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1597 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/C:/Users/Clayton/tools-re/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    C:\Users\Clayton\projeto\l2anim\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    C:\Users\Clayton\tools-re\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: C:\Users\Clayton\projeto\l2anim\ghidra_proj\l2engine (HeadlessAnalyzer)  
+INFO  Opening project: C:\Users\Clayton\projeto\l2anim\ghidra_proj\l2engine (HeadlessProject)  
+INFO  REPORT: Processing read-only project file: /engine.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecompileRetry.java 'C:\Users\Clayton\projeto\l2anim\out\re\decomp_all\engine\retry.c' '600' '0x10307cf7' '0x10311f31' '0x10314f60' '0x10315442' '0x104fe660' '0x105a9600' '0x10708060' '0x10746f00' '0x10b20a00' '0x1141e8ce'  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\Users\Clayton\projeto\l2anim\ghidra_scripts\DecompileRetry.java (HeadlessAnalyzer)  
+WARN  Decompiling 10307cf7: Unable to read bytes at ram:00010000 (DecompileCallback)  
+WARN  Decompiling 10307cf7: Unable to read bytes at ram:00010000 (DecompileCallback)  
+INFO  DecompileRetry.java> 0x10307cf7 ok (GhidraScript)  
+INFO  DecompileRetry.java> 0x10311f31 ok (GhidraScript)  
+INFO  DecompileRetry.java> 0x10314f60 ok (GhidraScript)  
+INFO  DecompileRetry.java> 0x10315442 ok (GhidraScript)  
+WARN  Decompiling 104fe660: Unable to read bytes at ram:00010000 (DecompileCallback)  
+WARN  Decompiling 104fe660: Unable to read bytes at ram:00010000 (DecompileCallback)  
+INFO  DecompileRetry.java> 0x104fe660 ok (GhidraScript)  
+INFO  DecompileRetry.java> 0x105a9600 ok (GhidraScript)  
+INFO  DecompileRetry.java> 0x10708060 ok (GhidraScript)  
+INFO  DecompileRetry.java> 0x10746f00 falhou: Exception while decompiling 10746f00: Decompiler process died
+ (GhidraScript)  
+INFO  DecompileRetry.java> 0x10b20a00 falhou: 
+Low-level Error: Flow exceeded maximum allowable instructions (GhidraScript)  
+INFO  DecompileRetry.java> 0x1141e8ce falhou: 
+Low-level Error: Flow exceeded maximum allowable instructions (GhidraScript)  

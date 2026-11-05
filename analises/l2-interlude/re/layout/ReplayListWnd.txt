@@ -1,0 +1,9 @@
+Window ReplayListWnd 316x350 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.ReplayListWnd.replay_back unk102=ReplayListWnd unk103=ReplaySelectState unk107=0 unk108=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=738197540 unk128=-1675946286 unk130=0 unk131=0 unk132=837032726 unk133=300 unk134=-2147406572 unk135=371720192 unk139=Game size=[2]
+  ListCtrl ReplayListCtrl 300x273 @TOP_LEFT->pai.TOP_LEFT(8,11) unk100=100 unk101=15 unk102=1 unk103=17 unk104=19 size=[2] values=[2]
+    - values: textStringId=416 width=32 unk108=true unk109=true unk110=false
+    - values: textStringId=1250 width=268 unk108=true unk109=true unk110=false
+  CheckBox chkLoadCamInst 140x16 @TOP_LEFT->pai.TOP_LEFT(11,295) titleIndex=1249 checked=false size=[2]
+  CheckBox chkLoadChatData 140x16 @TOP_LEFT->pai.TOP_LEFT(161,295) titleIndex=1253 checked=false size=[2]
+  Button btnOK 76x23 @TOP_LEFT->pai.TOP_LEFT(41,317) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=140 size=[2]
+  Button btnDel 76x23 @TOP_LEFT->pai.TOP_LEFT(121,317) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1272 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(201,317) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=141 size=[2]

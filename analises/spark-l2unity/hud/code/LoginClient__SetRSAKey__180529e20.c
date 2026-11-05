@@ -1,0 +1,51 @@
+// LoginClient__SetRSAKey__180529e20 @ 0x180529e20
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void LoginClient__SetRSAKey__180529e20(longlong param_1,undefined8 param_2)
+
+{
+  longlong lVar1;
+  code *pcVar2;
+  undefined8 uVar3;
+  
+  if (cRam00000001834b3790 == '\0') {
+    FUN_180315380(TI_UnityEngine.Debug);
+    FUN_180315380(TI_RSACrypt);
+    FUN_180315380(LIT_"'RSA Key set.'");
+    cRam00000001834b3790 = '\x01';
+  }
+  uVar3 = func_0x000180315580(TI_RSACrypt);
+  RSACrypt___ctor(uVar3,param_2,1,0);
+  *(undefined8 *)(param_1 + 0x68) = uVar3;
+  func_0x000180314690(param_1 + 0x68,uVar3);
+  if (*(int *)(TI_UnityEngine.Debug + 0xe4) == 0) {
+    func_0x000180315660();
+  }
+  uVar3 = LIT_"'RSA Key set.'";
+  if (DAT_1834bfa14 == '\0') {
+    FUN_180315380(TI_UnityEngine.Debug,0);
+    FUN_180315380(TI_UnityEngine.ILogger);
+    DAT_1834bfa14 = '\x01';
+  }
+  if (*(int *)(TI_UnityEngine.Debug + 0xe4) == 0) {
+    func_0x000180315660();
+  }
+  if (DAT_1834b3803 == '\0') {
+    FUN_180315380(TI_UnityEngine.Debug);
+    DAT_1834b3803 = '\x01';
+  }
+  if (*(int *)(TI_UnityEngine.Debug + 0xe4) == 0) {
+    func_0x000180315660();
+  }
+  lVar1 = *(longlong *)(*(longlong *)(TI_UnityEngine.Debug + 0xb8) + 8);
+  if (lVar1 != 0) {
+    FUN_180036090(5,TI_UnityEngine.ILogger,lVar1,3,uVar3);
+    return;
+  }
+  FUN_1803155d0();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+

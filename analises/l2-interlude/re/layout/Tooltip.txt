@@ -1,0 +1,1 @@
+Window Tooltip 0x0 @TOP_LEFT->pai.TOP_LEFT(0,0) unk102=Tooltip unk114=0 unk117=0 unk122=9542 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=83814696 unk133=84672604 unk134=83812496 unk135=83815064 unk139=Game size=[2]

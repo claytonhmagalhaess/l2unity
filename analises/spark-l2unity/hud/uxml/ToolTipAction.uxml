@@ -1,0 +1,25 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="BoxContent" class="content">
+    <ui:VisualElement name="Background" />
+    <ui:GroupBox name="Box">
+      <ui:GroupBox name="Top">
+        <ui:GroupBox name="Box">
+          <ui:GroupBox name="Grow">
+            <ui:GroupBox name="icon" class="Icon" />
+          </ui:GroupBox>
+          <ui:GroupBox name="Header">
+            <ui:GroupBox name="Name">
+              <ui:Label tabindex="-1" text="Attack" parse-escape-sequences="true" display-tooltip-when-elided="true" name="nameAction" class="NameSkill" />
+            </ui:GroupBox>
+            <ui:GroupBox name="SettingType" class="TypeText" />
+          </ui:GroupBox>
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="Footer">
+        <ui:GroupBox name="descriptedText" class="DescriptedText">
+          <ui:Label tabindex="-1" text="Attacks selected target(s), or takes a general action if the target cannot be attacked. Hold down the Cntrl key and click to attack by force" parse-escape-sequences="true" display-tooltip-when-elided="true" name="descriptedLabel" class="DescriptedLabel" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

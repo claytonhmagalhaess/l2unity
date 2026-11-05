@@ -1,0 +1,19 @@
+{
+  "_fonte": "Anotacao manual a partir de out/re/packet_handlers_rest.c (decompilacao Ghidra dos tratadores que nao chegam a UGameEngine nem ao console). FUN_104026b0 = leitor de pacote (formato estilo printf); FUN_104226e0(id) = busca objeto/usuario pelo id; DAT_10b1f538 = gerenciador de rede.",
+  "0x10401150": {"effect": "log", "note": "Tratador \"Dummy\": so registra \"(Receive)Dummy\" no log de rede e descarta. Usado nos DummyPacket e como padrao do estado de login para opcodes >= 0x0C."},
+  "0x10424500": {"effect": "rede", "note": "PlayOk do servidor de login: le a sessao (formato \"dd\"), fecha o socket de login, zera o estado de rede e conecta ao servidor de jogo (inet_ntoa + FUN_10420c60); estado de rede -> 2 (jogo)."},
+  "0x10414a30": {"effect": "log", "note": "VehicleCheckLocation: so le id/x/y/z/yaw e registra no log de rede; sem efeito no mundo."},
+  "0x10415110": {"effect": "dados", "note": "PledgeInfo: le id do cla, nome do cla e nome da alianca e grava no cache de clas (NET->vtbl[0xac] = GetPledgeInfo; nomes em +0x04 e +0x9c), lido depois por nameplates, alvo e janelas."},
+  "0x10429a60": {"effect": "dados", "note": "PrivateStoreMsg (venda): grava a mensagem da loja no objeto do jogador (+0x204 -> +0x17ac), exibida acima do personagem."},
+  "0x10400a70": {"effect": "ignorado", "note": "ReviveRequest: tratador vazio (retorna 0); o pedido de ressurreicao chega por ConfirmDlg/SystemMessage."},
+  "0x10426810": {"effect": "dados", "note": "PartyMemberPosition: para cada membro (id, x, y, z) atualiza a tabela de posicoes da party (FUN_10422800), lida pelo minimapa/radar."},
+  "0x10429bd0": {"effect": "dados", "note": "PrivateStoreBuyMsg (compra): grava a mensagem da loja de compra no objeto do jogador (+0x204 -> +0x17b8)."},
+  "0x1042a000": {"effect": "dados", "note": "NickNameChanged (titulo): grava o titulo no objeto do jogador (+0x254)."},
+  "0x1043a2d0": {"effect": "dados", "note": "PledgeStatusChanged: le 7 ints (\"ddddddd\": objeto, cla, brasao, alianca, brasao da alianca, ...) e atualiza +0x284..+0x310 do objeto, recalcula a relacao (FUN_104317d0) e avisa o gerenciador (NET->vtbl[0xc4])."},
+  "0x104186a0": {"effect": "rede", "note": "NetPing: le o id do ping e responde ao servidor (NET->vtbl[0x448])."},
+  "0x1042a630": {"effect": "dados", "note": "RecipeShopMsg: grava a mensagem da loja de receitas no objeto do jogador."},
+  "0x10401350": {"effect": "ignorado", "note": "ExEventMatchList: tratador vazio (retorna 0)."},
+  "0x1041e380": {"effect": "debug", "note": "ExServerPrimitive: desenha primitivas de depuracao (pontos/linhas com cor) enviadas pelo servidor (FUN_1036f7b0)."},
+  "0x104007f0": {"effect": "log", "note": "ExRequestHackShield: so registra no log; anti-cheat nao implementado aqui."},
+  "0x104009e0": {"effect": "ignorado", "note": "ExDuelEnemyRelation: tratador vazio (retorna 0)."}
+}

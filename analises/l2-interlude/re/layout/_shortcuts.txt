@@ -1,0 +1,164 @@
+[EulaMsgStateShortcut] estado=EulaMsgState
+  Enter                    EulaWndOKButton
+[ChinaWarnMsgStateShortcut] estado=ChinaWarnMsgState
+  Enter                    ChinaWarnMsgOKButton
+[ServerListStateShortcut] estado=ServerListState
+  Enter                    ServerSelectOKButton
+[GamingStateShortcut] estado=GamingState
+  F1                       UseShortcutItem Num=0
+  F2                       UseShortcutItem Num=1
+  F3                       UseShortcutItem Num=2
+  F4                       UseShortcutItem Num=3
+  F5                       UseShortcutItem Num=4
+  F6                       UseShortcutItem Num=5
+  F7                       UseShortcutItem Num=6
+  F8                       UseShortcutItem Num=7
+  F9                       UseShortcutItem Num=8
+  F10                      UseShortcutItem Num=9
+  F11                      UseShortcutItem Num=10
+  F12                      UseShortcutItem Num=11
+  1                        UseShortcutItem Num=0
+  2                        UseShortcutItem Num=1
+  3                        UseShortcutItem Num=2
+  4                        UseShortcutItem Num=3
+  5                        UseShortcutItem Num=4
+  6                        UseShortcutItem Num=5
+  7                        UseShortcutItem Num=6
+  8                        UseShortcutItem Num=7
+  9                        UseShortcutItem Num=8
+  0                        UseShortcutItem Num=9
+  Ctrl+1                   UseShortcutItem Num=0
+  Ctrl+2                   UseShortcutItem Num=1
+  Ctrl+3                   UseShortcutItem Num=2
+  Ctrl+4                   UseShortcutItem Num=3
+  Ctrl+5                   UseShortcutItem Num=4
+  Ctrl+6                   UseShortcutItem Num=5
+  Ctrl+7                   UseShortcutItem Num=6
+  Ctrl+8                   UseShortcutItem Num=7
+  Ctrl+9                   UseShortcutItem Num=8
+  Ctrl+0                   UseShortcutItem Num=9
+  Minus                    UseShortcutItem Num=10
+  Equals                   UseShortcutItem Num=11
+  Escape                   TargetCancel
+  Enter                    FocusChatWindow
+  Tab                      TabShowInventoryWindow
+  V                        ShowInventoryWindow
+  T                        ShowMainWindow Tab=Status
+  K                        ShowMainWindow Tab=Skill
+  C                        ShowMainWindow Tab=Action
+  U                        ShowMainWindow Tab=Quest
+  N                        ShowMainWindow Tab=Pledge
+  X                        ShowSystemMenuWindow
+  B                        ShowBoardWindow
+  G                        ShowGMWindow
+  O                        ShowGMPetitionWindow
+  I                        ShowMainWindow
+  M                        RequestOpenMinimap
+  F                        ShowPartyBuff
+  P                        ApplyMinFrame
+  Y                        ShowMessengerWindow
+  R                        ShowMacroListWindow
+  Alt+V                    ShowInventoryWindow
+  Alt+T                    ShowMainWindow Tab=Status
+  Alt+K                    ShowMainWindow Tab=Skill
+  Alt+C                    ShowMainWindow Tab=Action
+  Alt+U                    ShowMainWindow Tab=Quest
+  Alt+N                    ShowMainWindow Tab=Pledge
+  Alt+X                    ShowSystemMenuWindow
+  Alt+J                    ShowChatWindow
+  Alt+B                    ShowBoardWindow
+  Alt+H                    HideAllWindow
+  Alt+W                    CloseAllWindow
+  Alt+G                    ShowGMWindow
+  Alt+O                    ShowGMPetitionWindow
+  Alt+I                    ShowMainWindow
+  Alt+M                    RequestOpenMinimap
+  Alt+F                    ShowPartyBuff
+  Alt+P                    ApplyMinFrame
+  Alt+Y                    ShowMessengerWindow
+  Alt+R                    ShowMacroListWindow
+  Alt+1                    SetShortcutPage Num=0
+  Alt+2                    SetShortcutPage Num=1
+  Alt+3                    SetShortcutPage Num=2
+  Alt+4                    SetShortcutPage Num=3
+  Alt+5                    SetShortcutPage Num=4
+  Alt+6                    SetShortcutPage Num=5
+  Alt+7                    SetShortcutPage Num=6
+  Alt+8                    SetShortcutPage Num=7
+  Alt+9                    SetShortcutPage Num=8
+  Alt+0                    SetShortcutPage Num=9
+  Alt+F1                   SetShortcutPage Num=0
+  Alt+F2                   SetShortcutPage Num=1
+  Alt+F3                   SetShortcutPage Num=2
+  Alt+F4                   SetShortcutPage Num=3
+  Alt+F5                   SetShortcutPage Num=4
+  Alt+F6                   SetShortcutPage Num=5
+  Alt+F7                   SetShortcutPage Num=6
+  Alt+F8                   SetShortcutPage Num=7
+  Alt+F9                   SetShortcutPage Num=8
+  Alt+F10                  SetShortcutPage Num=9
+  Alt+PageUp               SetPrevChatType
+  Alt+PageDown             SetNextChatType
+  Ctrl+F1                  UseShortcutItem Num=0
+  Ctrl+F2                  UseShortcutItem Num=1
+  Ctrl+F3                  UseShortcutItem Num=2
+  Ctrl+F4                  UseShortcutItem Num=3
+  Ctrl+F5                  UseShortcutItem Num=4
+  Ctrl+F6                  UseShortcutItem Num=5
+  Ctrl+F7                  UseShortcutItem Num=6
+  Ctrl+F8                  UseShortcutItem Num=7
+  Ctrl+F9                  UseShortcutItem Num=8
+  Ctrl+F10                 UseShortcutItem Num=9
+  Ctrl+F11                 UseShortcutItem Num=10
+  Ctrl+F12                 UseShortcutItem Num=11
+  Shift+F1                 UseShortcutItem Num=0
+  Shift+F2                 UseShortcutItem Num=1
+  Shift+F3                 UseShortcutItem Num=2
+  Shift+F4                 UseShortcutItem Num=3
+  Shift+F5                 UseShortcutItem Num=4
+  Shift+F6                 UseShortcutItem Num=5
+  Shift+F7                 UseShortcutItem Num=6
+  Shift+F8                 UseShortcutItem Num=7
+  Shift+F9                 UseShortcutItem Num=8
+  Shift+F10                UseShortcutItem Num=9
+  Shift+F11                UseShortcutItem Num=10
+  Shift+F12                UseShortcutItem Num=11
+[BroadcastObserverStateShortcut] estado=BroadcastObserverState
+  P                        BroadcastShowPartyWindow
+  L                        BroadcastLockPosition
+  I                        BroadcastInitPosition
+  N                        BroadcastToggleShowClassOrName
+  M                        BroadcastToggleTargetName
+  G                        BroadcastSwitchMessageMode
+  Alt+P                    BroadcastShowPartyWindow
+  Alt+L                    BroadcastLockPosition
+  Alt+I                    BroadcastInitPosition
+  Alt+N                    BroadcastToggleShowClassOrName
+  Alt+M                    BroadcastToggleTargetName
+  Alt+G                    BroadcastSwitchMessageMode
+  Alt+J                    ShowChatWindow
+[EventMatchObserverStateShortcut] estado=EventMatchObserverState
+  P                        EventMatchShowPartyWindow
+  L                        EventMatchLockPosition
+  I                        EventMatchInitPosition
+  N                        EventMatchToggleShowClassOrName
+  M                        EventMatchToggleTargetName
+  G                        EventMatchSwitchMessageMode
+  Alt+P                    EventMatchShowPartyWindow
+  Alt+L                    EventMatchLockPosition
+  Alt+I                    EventMatchInitPosition
+  Alt+N                    EventMatchToggleShowClassOrName
+  Alt+M                    EventMatchToggleTargetName
+  Alt+G                    EventMatchSwitchMessageMode
+  Alt+J                    ShowChatWindow
+[DebugStateShortcut] estado=DebugState
+  Alt+J                    ShowChatWindow
+[GMCameraStateShortcut] estado=GMCameraState
+  Alt+J                    ShowChatWindow
+  RightBracket             Perspective speed=1.0
+  LeftBracket              Perspective speed=-1.0
+  Shift+RightBracket       CameraSpeed speed=0.04
+  Shift+LeftBracket        CameraSpeed speed=-0.04
+  Shift+E                  Cameraviewheightadjust speed=1.0
+  Shift+C                  Cameraviewheightadjust speed=-1.0
+  Alt+H                    SetGamingState

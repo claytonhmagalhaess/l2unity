@@ -1,0 +1,8 @@
+Window MacroListWnd 256x401 @CENTER_LEFT->pai.CENTER_LEFT(0,-56) unk101=l2ui_ch3.macrownd.macro2_back unk102=MacroListWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk111=711 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=0 unk133=0 unk134=0 unk135=0 unk136=L2UI_CH3.MacroWnd.MacroListIcon unk137=1190 unk139=Game size=[2]
+  TextBox txtHead 0x0 @TOP_LEFT->pai.TOP_LEFT(11,32) textAlign=Left offsetY=0 sysstring=655 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtCount 100x12 @TOP_LEFT->pai.TOP_LEFT(200,32) text=(00/00) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]
+  ItemWindow MacroItem 244x285 @TOP_LEFT->pai.TOP_LEFT(6,45) popupType=Action col=6 row=8 maxItemNum=80 iconWidth=32 iconHeight=32 gapX=5 gapY=3 offsetX=3 offsetY=3 noSelectItem=1 buttonClick=1 size=[2]
+  Button btnAdd 76x23 @TOP_LEFT->pai.TOP_LEFT(11,347) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=654 size=[2]
+  Button btnHelp 76x23 @TOP_LEFT->pai.TOP_LEFT(11,372) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=145 size=[2]
+  Button btnEdit 34x34 @TOP_LEFT->pai.TOP_LEFT(169,347) popupType=Text popupValue=656 normalTex=L2UI_CH3.macrownd.macro_edit pushedTex=L2UI_CH3.macrownd.macro_edit highlightTex=L2UI_CH3.macrownd.macro_edit dropTex=L2UI_CH3.macrownd.macro_edit_Drag size=[2]
+  Button btnTrash 34x34 @TOP_LEFT->pai.TOP_LEFT(208,347) popupType=Text popupValue=892 normalTex=L2UI_CH3.InventoryWnd.Inventory_trash pushedTex=L2UI_CH3.InventoryWnd.Inventory_trash highlightTex=L2UI_CH3.InventoryWnd.Inventory_trash dropTex=L2UI_CH3.InventoryWnd.Inventory_trash_Drag size=[2]

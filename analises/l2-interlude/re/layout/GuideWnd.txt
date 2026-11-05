@@ -1,0 +1,41 @@
+Window GuideWnd 466x400 @TOP_LEFT->pai.TOP_LEFT(0,0) unk101=L2UI_CH3.Minimap.mapinfo_back unk102=GuideWnd unk103=GamingState unk104=0 unk107=1 unk108=1 unk111=1426 unk114=0 unk117=0 unk122=13173112 unk126=1 unk127=20 unk128=0 unk129=MinimapWnd unk130=0 unk131=0 unk132=437590784 unk133=1896289796 unk134=520421585 unk135=402653184 unk139=Game size=[2]
+  Window QuestTab 250x300 @TOP_LEFT->pai.TOP_LEFT(5,45) unk114=0 unk117=0 unk122=7209065 unk126=0 unk127=7602273 unk128=5374049 unk130=0 unk131=0 unk132=852027 unk133=6553714 unk134=589834 unk135=851978 unk139=Game size=[2]
+    TextBox text_search 70x90 @TOP_LEFT->pai.TOP_LEFT(15,5) textAlign=Left offsetY=0 sysstring=1309 textColor=#ffdcdcdc emoticon=1 size=[2]
+    ComboBox QuestComboBox 128x17 @TOP_LEFT->pai.TOP_LEFT(80,2) size=[2] values=[0]
+    ListCtrl QuestListCtrl 445x266 @TOP_LEFT->pai.TOP_LEFT(5,37) popupType=QuestList unk100=3000 unk101=13 unk102=1 unk103=19 unk104=19 size=[2] values=[4]
+      - values: textStringId=1200 width=164 unk108=true unk109=true unk110=false
+      - values: textStringId=1202 width=99 unk108=true unk109=true unk110=false
+      - values: textStringId=1203 width=119 unk108=true unk109=true unk110=false
+      - values: textStringId=922 width=62 unk108=true unk109=true unk110=true
+  Window HuntTab 250x300 @TOP_LEFT->pai.TOP_LEFT(5,45) unk114=0 unk117=0 unk122=262147 unk126=0 unk127=6619251 unk128=7733362 unk130=0 unk131=0 unk132=5439602 unk133=6619234 unk134=7602290 unk135=6357108 unk139=Game size=[2]
+    TextBox text_search 70x90 @TOP_LEFT->pai.TOP_LEFT(15,5) textAlign=Left offsetY=0 sysstring=1309 textColor=#ffdcdcdc emoticon=1 size=[2]
+    ComboBox HuntingZoneComboBox 128x17 @TOP_LEFT->pai.TOP_LEFT(80,2) size=[2] values=[0]
+    ListCtrl HuntingZoneListCtrl 445x266 @TOP_LEFT->pai.TOP_LEFT(5,37) unk100=3000 unk101=13 unk102=1 unk103=19 unk104=19 size=[2] values=[4]
+      - values: textStringId=1299 width=166 unk108=true unk109=true unk110=false
+      - values: textStringId=1300 width=100 unk108=true unk109=true unk110=false
+      - values: textStringId=1304 width=109 unk108=true unk109=true unk110=false
+      - values: textStringId=922 width=69 unk108=true unk109=true unk110=true
+  Window RaidTab 500x300 @TOP_LEFT->pai.TOP_LEFT(5,45) unk114=0 unk117=0 unk122=1467114871 unk126=0 unk127=1684952946 unk128=1634485038 unk130=0 unk131=0 unk132=7892834 unk133=1953064005 unk134=-284749267 unk135=102105119 unk139=Game size=[2]
+    ListCtrl RaidListCtrl 445x266 @TOP_LEFT->pai.TOP_LEFT(5,37) popupType=RaidList unk100=3000 unk101=13 unk102=1 unk103=19 unk104=19 size=[2] values=[4]
+      - values: textStringId=1301 width=194 unk108=true unk109=true unk110=false
+      - values: textStringId=537 width=84 unk108=true unk109=true unk110=false
+      - values: textStringId=1304 width=114 unk108=true unk109=true unk110=false
+      - values: textStringId=1302 width=52 unk108=true unk109=true unk110=true
+    Window RaidRankingWnd 350x15 @TOP_LEFT->pai.TOP_LEFT(15,5) unk114=0 unk117=0 unk122=0 unk126=0 unk127=8663 unk128=271047840 unk130=0 unk131=0 unk132=0 unk133=67605352 unk134=83677984 unk135=0 unk139=Game size=[2]
+      TextBox RankingText 60x19 @TOP_LEFT->pai.TOP_LEFT(0,0) textAlign=Left offsetY=0 sysstring=1320 textColor=#ffdcdcdc emoticon=1 size=[2]
+      TextBox Ranking 60x19 @TOP_LEFT->pai.TOP_LEFT(45,0) textAlign=Left offsetY=0 textColor=#ffad9978 emoticon=1 size=[2]
+      TextBox SeasonTotalPointText 60x19 @TOP_LEFT->pai.TOP_LEFT(120,0) textAlign=Left offsetY=0 sysstring=1307 textColor=#ffdcdcdc emoticon=1 size=[2]
+      TextBox SeasonTotalPoint 60x19 @TOP_LEFT->pai.TOP_LEFT(185,0) textAlign=Left offsetY=0 textColor=#ffad9978 emoticon=1 size=[2]
+  Window AreaTab 465x300 @TOP_LEFT->pai.TOP_LEFT(5,50) unk114=0 unk117=0 unk122=65535 unk126=0 unk127=11232 unk128=271047840 unk130=0 unk131=0 unk132=0 unk133=67601864 unk134=74644264 unk135=0 unk139=Game size=[2]
+    TextBox text_search 70x90 @TOP_LEFT->pai.TOP_LEFT(15,0) textAlign=Left offsetY=0 sysstring=1309 textColor=#ffdcdcdc emoticon=1 size=[2]
+    ComboBox AreaInfoComboBox 128x17 @TOP_LEFT->pai.TOP_LEFT(80,-3) size=[2] values=[0]
+    ListCtrl AreaInfoListCtrl 447x266 @TOP_LEFT->pai.TOP_LEFT(5,32) unk100=3000 unk101=13 unk102=1 unk103=19 unk104=19 size=[2] values=[3]
+      - values: textStringId=1303 width=174 unk108=true unk109=true unk110=false
+      - values: textStringId=412 width=154 unk108=true unk109=true unk110=false
+      - values: textStringId=1304 width=119 unk108=true unk109=true unk110=false
+  Tab TabCtrl 380x23 @TOP_LEFT->pai.TOP_LEFT(12,8) size=[2] tabs=[4]
+    - tabs: buttonName=118 target=QuestTab width=95 height=23 normalTex=L2UI_CH3.GuideWnd.guide_tab2 pushedTex=L2UI_CH3.GuideWnd.guide_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=1296 target=HuntTab width=95 height=23 normalTex=L2UI_CH3.GuideWnd.guide_tab2 pushedTex=L2UI_CH3.GuideWnd.guide_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=1297 target=RaidTab width=95 height=23 normalTex=L2UI_CH3.GuideWnd.guide_tab2 pushedTex=L2UI_CH3.GuideWnd.guide_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=1298 target=AreaTab width=95 height=23 normalTex=L2UI_CH3.GuideWnd.guide_tab2 pushedTex=L2UI_CH3.GuideWnd.guide_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1
+  Button CloseButton 76x23 @TOP_LEFT->pai.TOP_LEFT(190,365) normalTex=L2UI_CH3.Button.Btn1_Normal pushedTex=L2UI_CH3.Button.Btn1_NormalOn buttonName=1364 size=[2]

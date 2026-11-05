@@ -1,0 +1,1 @@
+Window Shortcut 0%+0 x 0%+0 @TOP_LEFT->pai.TOP_LEFT(0,0) unk102=Shortcut unk114=0 unk117=0 unk122=0 unk126=0 unk127=0 unk128=4 unk130=0 unk131=0 unk132=0 unk133=0 unk134=7012375 unk135=0 unk139=Game size_percent=[2] size=[2]

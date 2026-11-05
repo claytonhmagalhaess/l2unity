@@ -1,0 +1,7 @@
+Window UnionDetailWnd 226x251 @TOP_LEFT->pai.TOP_LEFT(400,400) unk101=L2UI_ch3.PartyCommandWnd.Herochat2_back unk102=UnionDetailWnd unk103=GamingState unk104=0 unk106=1 unk107=1 unk108=0 unk109=1 unk111=1494 unk114=0 unk117=0 unk122=7471202 unk126=1 unk127=20 unk128=0 unk129=UnionWnd unk130=0 unk131=0 unk132=5374027 unk133=4390977 unk134=6225989 unk135=5505089 unk139=Game size=[2]
+  TextBox txtMasterNameHead 0x0 @TOP_LEFT->pai.TOP_LEFT(15,17) textAlign=Left offsetY=0 sysstring=408 textColor=#ffbbbbbb emoticon=1 autosize=1 size=[2]
+  TextBox txtMasterName 0x0 @TOP_LEFT->pai.TOP_LEFT(69,17) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 autosize=1 size=[2]
+  ListCtrl lstPartyMember 212x183 @TOP_LEFT->pai.TOP_LEFT(7,36) popupType=PartyMatch unk100=9 unk101=9 unk102=0 unk103=18 unk104=19 size=[2] values=[2]
+    - values: textStringId=409 width=165 unk108=true unk109=true unk110=false
+    - values: textStringId=391 width=47 unk108=true unk109=true unk110=true
+  Button btnClose 65x20 @TOP_LEFT->pai.TOP_LEFT(81,225) normalTex=L2UI_CH3.Button.smallbutton2 pushedTex=L2UI_CH3.Button.smallbutton2_down buttonName=1364 size=[2]

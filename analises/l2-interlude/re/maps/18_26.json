@@ -1,0 +1,1149 @@
+{
+"mapa": "18_26",
+"pacote": {
+"versao": 123,
+"licenca": 23,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"AmbientSoundObject": 291,
+"TerrainSector": 256,
+"Camera": 12,
+"Model": 9,
+"Polys": 9,
+"Brush": 7,
+"LevelInfo": 1,
+"TerrainInfo": 1,
+"PhysicsVolume": 1,
+"ZoneInfo": 1,
+"NMovableSunLight": 1,
+"SkyZoneInfo": 1,
+"Level": 1,
+"WaterVolume": 1,
+"PlayerStart": 1,
+"NMoon": 1,
+"NSun": 1,
+"LevelSummary": 1
+},
+"atores_ambiente": [
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 18.12302,
+"Summary": "LevelSummary",
+"bPathsRebuilt": true,
+"CameraLocationDynamic": [
+-46573.0625,
+287120.9688,
+-3666.3362
+],
+"CameraLocationTop": [
+-62743.6055,
+290315.0312,
+313207.9375
+],
+"CameraLocationFront": [
+-62470.0,
+-4767.0,
+250.0
+],
+"CameraLocationSide": [
+245760.0,
+-3780.0,
+56988.9922
+],
+"CameraRotationDynamic": [
+63864,
+45532,
+0
+],
+"NavigationPointList": "PlayerStart0",
+"AmbientVector": [
+0.0457,
+0.0457,
+0.0457
+],
+"AmbientBrightness": 1
+}
+},
+{
+"classe": "TerrainInfo",
+"nome": "TerrainInfo0",
+"props": {
+"TerrainMap": "T_18_26.Height.18_26",
+"TerrainScale": [
+128.0,
+128.0,
+76.0
+],
+"Layers": {
+"Texture": "T_texture.Texture.Base",
+"AlphaMap": "T_texture.Texture.layer0",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.03125,
+"Y": -0.125,
+"Z": 377922.84375
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+512.0,
+-2048.0,
+33308.1406
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-65536.0,
+262144.0,
+-9888.3545
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[1]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[2]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[3]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[4]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[5]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[6]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00521,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00521,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.04167,
+"Y": -0.0625,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[7]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[8]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00521,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00521,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.04167,
+"Y": -0.0625,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[9]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 32.0,
+"X": 32.0,
+"Y": 76.0,
+"Z": 4096.0
+},
+"YPlane": {
+"W": -6144.0,
+"X": 32225.85938,
+"Y": 32.0,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 32.0,
+"Z": 0.0
+},
+"WPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.29688,
+"Z": -131072.0
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld[1]": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap[1]": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+0.0
+],
+"bUseAlpha": false
+},
+"QuadVisibilityBitmap": "<8194>",
+"EdgeTurnBitmap": "<8194>",
+"MapX": 18,
+"MapY": 26,
+"QuadVisibilityBitmapOrig": "<8194>",
+"EdgeTurnBitmapOrig": "<8194>",
+"NumIntMap": 8,
+"bAutoTimeGeneration": true,
+"TIntMap": "<528537>",
+"TickTime": 15.0,
+"bSunAffect": true,
+"Location": [
+-49152.0,
+278528.0,
+-160.6513
+],
+"Rotation": [
+0,
+-6144,
+0
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"Terrains": "<2 bytes>",
+"DistanceFogEnd": 15000.0,
+"Location": [
+-48894.1523,
+278041.9062,
+-126.7227
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "NMovableSunLight",
+"nome": "NMovableSunLight0",
+"props": {
+"LightBrightness": 70.0,
+"bSunAffect": true,
+"Location": [
+-35341.1211,
+264787.0312,
+15240.1318
+],
+"Rotation": [
+-10923,
+16383,
+0
+],
+"DrawScale": 100.0
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+228.2028,
+264339.1562,
+24439.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "WaterVolume",
+"nome": "WaterVolume0",
+"props": {
+"NextPhysicsVolume": "PhysicsVolume2",
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Location": [
+-65536.0,
+262144.0,
+-3780.0
+]
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bMoonLight": false,
+"bSunAffect": true,
+"Location": [
+194.1241,
+264295.9062,
+24474.8398
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+210.322,
+264311.75,
+24478.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+}
+]
+}

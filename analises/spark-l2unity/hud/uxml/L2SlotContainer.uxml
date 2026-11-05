@@ -1,0 +1,8 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2SlotContainer" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement label="General" name="L2SlotContainer" class="l2-slot-container">
+    <ui:Label text="Inventory" name="TabLabel" class="l2-color-4 l2-slot-container-label" />
+    <ui:ScrollView vertical-scroller-visibility="AlwaysVisible" horizontal-page-size="1" name="ScrollView" horizontal-scroller-visibility="Hidden" mouse-wheel-scroll-size="2" touch-scroll-type="Clamped" class="l2-scroll-view l2-slot-container-scrollview">
+      <ui:VisualElement name="Content" />
+    </ui:ScrollView>
+  </ui:VisualElement>
+</ui:UXML>

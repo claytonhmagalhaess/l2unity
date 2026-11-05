@@ -1,0 +1,7 @@
+Window QuestTreeWnd 256x335 @TOP_LEFT->pai.TOP_LEFT(0,65) unk100=MainWnd unk101=L2UI_CH3.QUESTWND.QuestWndBack unk102=QuestTreeWnd unk114=0 unk117=0 unk122=0 unk126=0 unk127=83775976 unk128=83689480 unk130=0 unk131=0 unk132=31446608 unk133=458770 unk134=7602274 unk135=6226029 unk139=Game size=[2]
+  TreeCtrl MainTree 242x274 @TOP_LEFT->pai.TOP_LEFT(7,27) saveExpandedNode=true multiExpand=0 size=[2]
+  Button btnClose 77x23 @TOP_LEFT->pai.TOP_LEFT(91,306) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=385 size=[2]
+  CheckBox chkNpcPosBox 80x12 @TOP_LEFT->pai.TOP_LEFT(10,310) titleIndex=860 checked=true size=[2]
+  TextBox txt324 90x23 @TOP_LEFT->pai.TOP_LEFT(11,12) textAlign=Left offsetY=0 sysstring=324 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox txtQuestNum 40x23 @TOP_LEFT->pai.TOP_LEFT(190,12) textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  Texture QuestToolTip 15x15 @TOP_LEFT->pai.TOP_LEFT(232,10) popupType=Text file=L2UI_CH3.QUESTWND.QuestWndToolTipBtn type=Control layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]

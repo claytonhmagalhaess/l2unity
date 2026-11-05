@@ -1,0 +1,9 @@
+<ui:UXML editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="PartyWindow" class="party-window">
+    <ui:VisualElement name="Aba" class="party-aba drag-area">
+      <ui:VisualElement name="BtnBuffs" class="party-botao" />
+      <ui:VisualElement name="BtnOpcoes" class="party-botao" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Lista" class="party-lista" />
+  </ui:VisualElement>
+</ui:UXML>

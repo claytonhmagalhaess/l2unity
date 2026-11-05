@@ -1,0 +1,38 @@
+Window SiegeInfoWnd 256x401 @CENTER_LEFT->pai.CENTER_LEFT(0,0) unk102=SiegeInfoWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk111=593 unk113=0 unk114=3 unk115=1 unk117=0 unk122=7274610 unk123=0 unk124=0 unk125=0 unk126=0 unk127=11436 unk128=271808480 unk130=0 unk131=0 unk132=1 unk133=0 unk134=0 unk135=4 unk139=Game size=[2]
+  Texture TabBackTex1 100%+0 x 0%+105 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_ch3.SiegeWnd.Siege_Back1 type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size_percent=[2] size=[2]
+  Texture TabBackTex2 100%+0 x 0%+23 @TOP_LEFT->pai.TOP_LEFT(0,125) file=L2UI_CH3.SiegeWnd.Siege_Back2 type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size_percent=[2] size=[2]
+  TextBox txtCastleName 0x0 @TOP_CENTER->pai.TOP_CENTER(0,41) textAlign=Center offsetY=0 textColor=#ffb09b79 emoticon=1 autosize=1 size=[2]
+  TextBox txtOwnerNameHead 0x0 @TOP_LEFT->pai.TOP_LEFT(20,70) textAlign=Left offsetY=0 sysstring=588 textColor=#ffa3a3a3 emoticon=1 autosize=1 size=[2]
+  TextBox txtOwnerName 0x0 @TOP_LEFT->pai.TOP_LEFT(80,70) textAlign=Left offsetY=0 sysstring=595 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtClanNameHead 0x0 @TOP_LEFT->pai.TOP_LEFT(20,86) textAlign=Left offsetY=0 sysstring=589 textColor=#ffa3a3a3 emoticon=1 autosize=1 size=[2]
+  Texture texClan 16x12 @TOP_LEFT->pai.TOP_LEFT(80,86) type=Normal layer=None u=0.0 v=0.0 uSize=16.0 vSize=12.0 size=[2]
+  TextBox txtClanName 0x0 @TOP_LEFT->pai.TOP_LEFT(80,86) textAlign=Left offsetY=0 sysstring=595 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtAllianceNameHead 0x0 @TOP_LEFT->pai.TOP_LEFT(20,102) textAlign=Left offsetY=0 sysstring=590 textColor=#ffa3a3a3 emoticon=1 autosize=1 size=[2]
+  Texture texAlliance 8x12 @TOP_LEFT->pai.TOP_LEFT(88,102) type=Normal layer=None u=0.0 v=0.0 uSize=16.0 vSize=12.0 size=[2]
+  TextBox txtAllianceName 0x0 @TOP_LEFT->pai.TOP_LEFT(80,102) textAlign=Left offsetY=0 sysstring=591 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  Window SiegeInfoWnd_Date 100%+0 x 0%+253 @TOP_LEFT->pai.TOP_LEFT(0,148) unk101=L2UI_ch3.SiegeWnd.siege_back31 unk114=0 unk117=0 unk122=6553714 unk126=0 unk127=3014755 unk128=6619207 unk130=0 unk131=0 unk132=7471215 unk133=6488165 unk134=2228256 unk135=2621540 unk139=Game size_percent=[2] size=[2]
+    ComboBox cboTime 126x15 @TOP_LEFT->pai.TOP_LEFT(80,50) size=[2] values=[0]
+    TextBox txtCurTimeHead 0x0 @TOP_LEFT->pai.TOP_LEFT(10,30) textAlign=Left offsetY=0 sysstring=582 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+    TextBox txtCurTime 0x0 @TOP_LEFT->pai.TOP_LEFT(80,30) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+    TextBox txtSiegeTimeHead 0x0 @TOP_LEFT->pai.TOP_LEFT(10,50) textAlign=Left offsetY=0 sysstring=583 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+    TextBox txtSiegeTime 0x0 @TOP_LEFT->pai.TOP_LEFT(80,50) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  Window SiegeInfoWnd_Party1 100%+0 x 0%+253 @TOP_LEFT->pai.TOP_LEFT(0,148) unk101=L2UI_ch3.SiegeWnd.siege_back32 unk114=0 unk117=0 unk122=72220272 unk126=0 unk127=74607056 unk128=74608032 unk130=0 unk131=0 unk132=84503072 unk133=74265560 unk134=74265520 unk135=74292384 unk139=Game size_percent=[2] size=[2]
+    TextBox txtCount 0x0 @TOP_LEFT->pai.TOP_LEFT(14,2) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+    ListCtrl lstClan 242x200 @TOP_LEFT->pai.TOP_LEFT(7,18) unk100=256 unk101=12 unk102=1 unk103=19 unk104=19 size=[2] values=[2]
+      - values: textStringId=580 width=130 unk108=true unk109=true unk110=false
+      - values: textStringId=571 width=112 unk108=true unk109=true unk110=false
+    Button btnAttackApply 76x23 @TOP_LEFT->pai.TOP_LEFT(158,224) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=572 size=[2]
+    Button btnAttackCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(158,224) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=573 size=[2]
+  Window SiegeInfoWnd_Party2 100%+0 x 0%+253 @TOP_LEFT->pai.TOP_LEFT(0,148) unk101=L2UI_ch3.SiegeWnd.siege_back32 unk114=0 unk117=0 unk122=83436880 unk126=0 unk127=73501296 unk128=73502168 unk130=0 unk131=0 unk132=72782072 unk133=72782304 unk134=72782512 unk135=72782960 unk139=Game size_percent=[2] size=[2]
+    TextBox txtCount 0x0 @TOP_LEFT->pai.TOP_LEFT(14,2) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+    ListCtrl lstClan 242x190 @TOP_LEFT->pai.TOP_LEFT(7,20) unk100=256 unk101=9 unk102=1 unk103=19 unk104=19 size=[2] values=[2]
+      - values: textStringId=580 width=130 unk108=true unk109=true unk110=false
+      - values: textStringId=581 width=112 unk108=true unk109=true unk110=false
+    Button btnDefenseApply 76x23 @TOP_LEFT->pai.TOP_LEFT(158,224) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=572 size=[2]
+    Button btnDefenseCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(158,224) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=573 size=[2]
+    Button btnDefenseReject 76x23 @TOP_LEFT->pai.TOP_LEFT(158,224) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=575 size=[2]
+    Button btnDefenseConfirm 76x23 @TOP_LEFT->pai.TOP_LEFT(80,224) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=574 size=[2]
+  Tab TabCtrl 224x23 @TOP_LEFT->pai.TOP_LEFT(12,125) size=[2] tabs=[3]
+    - tabs: buttonName=583 target=SiegeInfoWnd_Date width=74 height=23 normalTex=L2UI_ch3.SiegeWnd.siege_Tab3 pushedTex=L2UI_ch3.SiegeWnd.siege_Tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=586 target=SiegeInfoWnd_Party1 width=74 height=23 normalTex=L2UI_ch3.SiegeWnd.siege_Tab3 pushedTex=L2UI_ch3.SiegeWnd.siege_Tab2 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=587 target=SiegeInfoWnd_Party2 width=74 height=23 normalTex=L2UI_ch3.SiegeWnd.siege_Tab3 pushedTex=L2UI_ch3.SiegeWnd.siege_Tab2 movable=false gap=0 tooltip=-1 noHighlight=-1

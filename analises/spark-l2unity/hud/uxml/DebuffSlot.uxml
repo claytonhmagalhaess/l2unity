@@ -1,0 +1,6 @@
+<ui:UXML editor-extension-mode="False" uss="L2Slot" uss="BuffWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="BgContainer" class="debuff-slot">
+    <ui:VisualElement name="SlotBg" picking-mode="Ignore" class="slot-bg" />
+    <ui:Label name="Duration" text="20" picking-mode="Ignore" class="buff-duration" />
+  </ui:VisualElement>
+</ui:UXML>

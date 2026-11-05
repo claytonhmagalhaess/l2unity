@@ -1,0 +1,236 @@
+{
+ "windowsinfo": {
+  "6": {
+   "width": "348",
+   "height": "187"
+  },
+  "DuelManager": {
+   "width": "176",
+   "height": "368",
+   "posX": "924",
+   "posY": "1424"
+  },
+  "PartyWnd": {
+   "width": "176",
+   "height": "368",
+   "posX": "0",
+   "posY": "89"
+  },
+  "PetStatusWnd": {
+   "width": "176",
+   "height": "46",
+   "posX": "0",
+   "posY": "257"
+  },
+  "StatusWnd": {
+   "width": "176",
+   "height": "84",
+   "posX": "0",
+   "posY": "0"
+  },
+  "SummonedStatusWnd": {
+   "width": "176",
+   "height": "46",
+   "posX": "0",
+   "posY": "257"
+  },
+  "TargetStatusWnd": {
+   "width": "176",
+   "height": "46",
+   "posX": "599",
+   "posY": "0"
+  },
+  "1": {
+   "posX": "0",
+   "posY": "263"
+  },
+  "2": {
+   "posX": "0",
+   "posY": "263"
+  },
+  "3": {
+   "posX": "0",
+   "posY": "263"
+  },
+  "4": {
+   "posX": "559",
+   "posY": "482"
+  },
+  "5": {
+   "posX": "347",
+   "posY": "1072"
+  },
+  "7": {
+   "posX": "384",
+   "posY": "180"
+  },
+  "8": {
+   "posX": "692",
+   "posY": "358"
+  },
+  "AbnormalStatusWnd": {
+   "posX": "221",
+   "posY": "26"
+  },
+  "BoardWnd": {
+   "posX": "364",
+   "posY": "270"
+  },
+  "CalculatorWnd": {
+   "posX": "559",
+   "posY": "430"
+  },
+  "FishViewportWnd": {
+   "posX": "483",
+   "posY": "397"
+  },
+  "GMInventoryWnd": {
+   "posX": "0",
+   "posY": "786"
+  },
+  "HennaInfoWnd": {
+   "posX": "1042",
+   "posY": "282"
+  },
+  "HennaListWnd": {
+   "posX": "1042",
+   "posY": "282"
+  },
+  "HeroTowerWnd": {
+   "posX": "387",
+   "posY": "372"
+  },
+  "InventoryWnd": {
+   "posX": "1040",
+   "posY": "279"
+  },
+  "MacroEditWnd": {
+   "posX": "636",
+   "posY": "335"
+  },
+  "MacroInfoWnd": {
+   "posX": "559",
+   "posY": "455"
+  },
+  "MacroListWnd": {
+   "posX": "559",
+   "posY": "335"
+  },
+  "MainWnd": {
+   "posX": "397",
+   "posY": "334"
+  },
+  "ManorInfoWnd": {
+   "posX": "70",
+   "posY": "105"
+  },
+  "MinimapWnd": {
+   "posX": "0",
+   "posY": "213"
+  },
+  "MultiSellWnd": {
+   "posX": "158",
+   "posY": "181"
+  },
+  "OlympiadBuff1Wnd": {
+   "posX": "0",
+   "posY": "128"
+  },
+  "OlympiadBuff2Wnd": {
+   "posX": "735",
+   "posY": "128"
+  },
+  "OlympiadPlayer1Wnd": {
+   "posX": "0",
+   "posY": "0"
+  },
+  "OlympiadTargetWnd": {
+   "posX": "0",
+   "posY": "492"
+  },
+  "OptionWnd": {
+   "posX": "559",
+   "posY": "298"
+  },
+  "PartyWndCompact": {
+   "posX": "0",
+   "posY": "87"
+  },
+  "PetWnd": {
+   "posX": "178",
+   "posY": "322"
+  },
+  "QuestListWnd": {
+   "posX": "207",
+   "posY": "1348"
+  },
+  "RefineryWnd": {
+   "posX": "554",
+   "posY": "413"
+  },
+  "ShortcutWndVertical": {
+   "posX": "977",
+   "posY": "470"
+  },
+  "ShortcutWndVertical_1": {
+   "posX": "931",
+   "posY": "470"
+  },
+  "ShortcutWndVertical_2": {
+   "posX": "885",
+   "posY": "470"
+  },
+  "ShortcutWndHorizontal": {
+   "posX": "554",
+   "posY": "932"
+  },
+  "ShortcutWndJoypad": {
+   "posX": "601",
+   "posY": "990"
+  },
+  "ShortcutWndJoypadExpand": {
+   "posX": "471",
+   "posY": "990"
+  },
+  "SiegeInfoWnd": {
+   "posX": "0",
+   "posY": "1495"
+  },
+  "SSQMainBoard": {
+   "posX": "407",
+   "posY": "1495"
+  },
+  "SummonedWnd": {
+   "posX": "178",
+   "posY": "304"
+  },
+  "TeaserSlideWnd": {
+   "posX": "0",
+   "posY": "0"
+  },
+  "SkillTrainInfoWnd": {
+   "posX": "559",
+   "posY": "335"
+  },
+  "SkillTrainListWnd": {
+   "posX": "559",
+   "posY": "335"
+  },
+  "TutorialViewerWnd": {
+   "posX": "1064",
+   "posY": "0"
+  },
+  "UnionDetailWnd": {
+   "posX": "17052",
+   "posY": "12518"
+  },
+  "UnionWnd": {
+   "posX": "154",
+   "posY": "105"
+  },
+  "UnrefineryWnd": {
+   "posX": "554",
+   "posY": "413"
+  }
+ }
+}

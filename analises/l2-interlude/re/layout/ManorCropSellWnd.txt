@@ -1,0 +1,12 @@
+Window ManorCropSellWnd 600x326 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.Manor.manor2_back unk102=ManorCropSellWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=1152 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=0 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+  ListCtrl ManorCropSellListCtrl 586x199 @TOP_LEFT->pai.TOP_LEFT(7,73) popupType=ManorCropSell unk100=100 unk101=10 unk102=1 unk103=18 unk104=19 size=[2] values=[7]
+    - values: textStringId=1124 width=149 unk108=true unk109=true unk110=false
+    - values: textStringId=1153 width=70 unk108=true unk109=true unk110=false
+    - values: textStringId=1154 width=70 unk108=true unk109=true unk110=false
+    - values: textStringId=1126 width=70 unk108=true unk109=true unk110=false
+    - values: textStringId=1127 width=70 unk108=true unk109=true unk110=false
+    - values: textStringId=1155 width=70 unk108=true unk109=true unk110=false
+    - values: textStringId=1156 width=87 unk108=true unk109=true unk110=false
+  Button btnChangeSell 76x23 @TOP_LEFT->pai.TOP_LEFT(8,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1142 size=[2]
+  Button btnSell 76x23 @TOP_LEFT->pai.TOP_LEFT(438,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1157 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(518,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=141 size=[2]

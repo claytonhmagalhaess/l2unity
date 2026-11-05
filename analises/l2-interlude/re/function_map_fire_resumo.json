@@ -1,0 +1,179 @@
+{
+ "dll": "Fire.dll",
+ "functions": 1046,
+ "by_evidence": {
+  "nome": 720,
+  "thunk": 28,
+  "inferido": 74,
+  "rtti": 21,
+  "vizinhanca": 46,
+  "eh": 157
+ },
+ "by_subsystem": {
+  "renderizacao (texturas procedurais)": 525,
+  "bibliotecas (CRT/MFC/zlib)": 457,
+  "renderizacao": 2,
+  "efeitos e particulas": 2,
+  "nucleo Unreal (objetos, script VM, IO)": 24,
+  "engine (chamada importada)": 32,
+  "rede": 3,
+  "sistema (chamadas Win32 importadas)": 1
+ },
+ "classes": 36,
+ "top_classes_by_subsystem": {
+  "renderizacao (texturas procedurais)": [
+   [
+    "UFireTexture",
+    139
+   ],
+   [
+    "UWaterTexture",
+    77
+   ],
+   [
+    "UIceTexture",
+    75
+   ],
+   [
+    "UWetTexture",
+    54
+   ],
+   [
+    "UWaveTexture",
+    46
+   ],
+   [
+    "(funcao livre nomeada)",
+    46
+   ],
+   [
+    "UFluidTexture",
+    44
+   ],
+   [
+    "UFractalTexture",
+    40
+   ],
+   [
+    "FDrop",
+    2
+   ],
+   [
+    "KeyPoint",
+    2
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    317
+   ],
+   [
+    "UnDecorator",
+    43
+   ],
+   [
+    "type_info",
+    39
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "std::bad_exception",
+    2
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ],
+   [
+    "_LocaleUpdate",
+    1
+   ],
+   [
+    "exception",
+    1
+   ],
+   [
+    "std::bad_cast",
+    1
+   ]
+  ],
+  "renderizacao": [
+   [
+    "UPalette",
+    2
+   ]
+  ],
+  "efeitos e particulas": [
+   [
+    "FSpark",
+    2
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "CORE.DLL::UObject",
+    24
+   ]
+  ],
+  "engine (chamada importada)": [
+   [
+    "ENGINE.DLL::UTexture",
+    17
+   ],
+   [
+    "ENGINE.DLL::UMaterial",
+    10
+   ],
+   [
+    "ENGINE.DLL::UBitmapMaterial",
+    4
+   ],
+   [
+    "ENGINE.DLL::UPalette",
+    1
+   ]
+  ],
+  "rede": [
+   [
+    "Replicator",
+    3
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    1
+   ]
+  ]
+ },
+ "funclets_linked": 160,
+ "eh_handlers": 86
+}

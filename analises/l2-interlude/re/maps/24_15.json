@@ -1,0 +1,11166 @@
+{
+"mapa": "24_15",
+"pacote": {
+"versao": 123,
+"licenca": 28,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"StaticMeshActor": 2607,
+"StaticMeshInstance": 2401,
+"AmbientSoundObject": 701,
+"TerrainSector": 256,
+"Light": 75,
+"Polys": 67,
+"Model": 67,
+"Brush": 64,
+"SpriteEmitter": 51,
+"Emitter": 17,
+"Camera": 12,
+"Mover": 12,
+"PlayerStart": 5,
+"ZoneInfo": 2,
+"MusicVolume": 2,
+"NMovableSunLight": 1,
+"LevelInfo": 1,
+"TerrainInfo": 1,
+"Level": 1,
+"SkyZoneInfo": 1,
+"LevelSummary": 1,
+"NMoon": 1,
+"NSun": 1,
+"PhysicsVolume": 1
+},
+"atores_ambiente": [
+{
+"classe": "NMovableSunLight",
+"nome": "NMovableSunLight0",
+"props": {
+"LightBrightness": 70.0,
+"bSunAffect": true,
+"Location": [
+164378.5938,
+-99341.9688,
+15304.1318
+],
+"Rotation": [
+-8846,
+25324,
+0
+],
+"DrawScale": 100.0
+}
+},
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 81.9376,
+"Summary": "LevelSummary",
+"VisibleGroups": "emitter,None,t",
+"CameraLocationDynamic": [
+155163.125,
+-70315.5078,
+23.3876
+],
+"CameraLocationTop": [
+165848.5156,
+-68452.4141,
+894219.3125
+],
+"CameraLocationFront": [
+159749.5625,
+-2428.1428,
+327901.875
+],
+"CameraLocationSide": [
+-88550.1328,
+-5056.0083,
+326733.75
+],
+"CameraRotationDynamic": [
+60384,
+-572,
+0
+],
+"NavigationPointList": "PlayerStart37",
+"AmbientVector": [
+0.0457,
+0.0457,
+0.0457
+],
+"AmbientBrightness": 1
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"Terrains": "<2 bytes>",
+"DistanceFogEnd": 15000.0,
+"Location": [
+146814.5938,
+-81616.4062,
+-126.7227
+],
+"DrawScale": 10.0,
+"bIgnoredRange": true
+}
+},
+{
+"classe": "TerrainInfo",
+"nome": "TerrainInfo0",
+"props": {
+"TerrainMap": "T_24_15.Height.24_15",
+"TerrainScale": [
+128.0,
+128.0,
+76.0
+],
+"Layers": {
+"Texture": "T_Godard.GOS_05",
+"AlphaMap": "T_texture.Texture.layer0",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": 0.04688,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-1024.0,
+768.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[1]": {
+"Texture": "T_Godard.GOG_01",
+"AlphaMap": "T_24_15.Height.24_15_G",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": 0.04688,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[2]": {
+"Texture": "T_Godard.GOS_02",
+"AlphaMap": "T_24_15.Height.24_15_S",
+"UScale": 0.5,
+"VScale": 0.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.01562,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.01562,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.125,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[3]": {
+"Texture": "T_Godard.GOS_06",
+"AlphaMap": "T_24_15.Height.24_15_S1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": 0.04688,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+64.0,
+64.0,
+76.0
+],
+"ToWorld": [
+-2048.0,
+1536.0,
+32225.8594
+],
+"ToWorld[1]": [
+64.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+64.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0156,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0156,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[4]": {
+"Texture": "T_Godard.GOG_03",
+"AlphaMap": "T_24_15.Height.24_15_G1",
+"UScale": 0.5,
+"VScale": 0.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.01562,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.01562,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.125,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[5]": {
+"Texture": "T_Godard.GOG_06",
+"AlphaMap": "T_24_15.Height.24_15_G2",
+"UScale": 0.5,
+"VScale": 0.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.01562,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.01562,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.125,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[6]": {
+"Texture": "T_Godard.GOST_06",
+"AlphaMap": "T_24_15.Height.24_15_ST",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": 0.04688,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[7]": {
+"Texture": "T_Godard.GOS_03",
+"AlphaMap": "T_24_15.Height.24_15_R",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.0625,
+"Y": 0.04688,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-4096.0,
+3072.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[8]": {
+"Texture": "T_Godard.GOS_08",
+"AlphaMap": "T_24_15.Height.24_15_B",
+"UScale": 0.5,
+"VScale": 0.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.01562,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.01562,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.125,
+"Y": 0.09375,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+64.0,
+64.0,
+76.0
+],
+"ToWorld": [
+-2048.0,
+1536.0,
+32225.8594
+],
+"ToWorld[1]": [
+64.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+64.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+131072.0,
+-98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0156,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0156,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": true
+},
+"DecoLayers": [
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.24_15_deco01",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.korc_grass01",
+"ScaleMultiplier": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"FadeoutRadius": {
+"Min": 300.0,
+"Max": 1500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 50.0
+},
+"MaxPerQuad": 10,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.24_15_deco02",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.korc_grass02",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.6,
+"Max": 1.2
+},
+"Y": {
+"Min": 0.6,
+"Max": 1.2
+},
+"Z": {
+"Min": 0.6,
+"Max": 1.2
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 4,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.24_15_deco03",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.korc_decostone01",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.5,
+"Max": 1.7
+},
+"Y": {
+"Min": 0.5,
+"Max": 1.7
+},
+"Z": {
+"Min": 0.5,
+"Max": 1.7
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 4,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.24_15_deco04",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.korc_burngrass01",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.4,
+"Max": 0.9
+},
+"Y": {
+"Min": 0.4,
+"Max": 0.9
+},
+"Z": {
+"Min": 0.4,
+"Max": 0.9
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 2,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.24_15_deco05",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.korc_burngrass02",
+"ScaleMultiplier": {
+"X": {
+"Min": 0.6,
+"Max": 1.2
+},
+"Y": {
+"Min": 0.6,
+"Max": 1.2
+},
+"Z": {
+"Min": 0.6,
+"Max": 1.2
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 35.0
+},
+"MaxPerQuad": 2,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+}
+],
+"QuadVisibilityBitmap": "<8194>",
+"EdgeTurnBitmap": "<8194>",
+"MapX": 24,
+"MapY": 15,
+"QuadVisibilityBitmapOrig": "<8194>",
+"EdgeTurnBitmapOrig": "<8194>",
+"GeneratedSectorCounter": 256,
+"NumIntMap": 8,
+"bAutoTimeGeneration": true,
+"TIntMap": "<528537>",
+"TickTime": 12.0,
+"bSunAffect": true,
+"Location": [
+147456.0,
+-81920.0,
+160.6513
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light231",
+"props": {
+"bSunAffect": true,
+"Location": [
+159663.9062,
+-71888.7812,
+-2812.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light235",
+"props": {
+"bSunAffect": true,
+"Location": [
+159550.7812,
+-72142.6953,
+-2622.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light230",
+"props": {
+"bSunAffect": true,
+"Location": [
+159953.5625,
+-72076.3047,
+-2812.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light233",
+"props": {
+"bSunAffect": true,
+"Location": [
+159305.6094,
+-72396.2422,
+-2812.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light234",
+"props": {
+"bSunAffect": true,
+"Location": [
+159806.0469,
+-72306.1016,
+-2622.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light232",
+"props": {
+"bSunAffect": true,
+"Location": [
+159595.2656,
+-72583.7656,
+-2812.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light999",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+159305.6719,
+-70710.6797,
+-2683.0117
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light997",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+159119.4062,
+-70586.2422,
+-2683.0117
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light993",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+158931.7969,
+-70462.0703,
+-2683.0117
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light998",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+159587.6406,
+-70290.5156,
+-2683.0117
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light996",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+159401.3906,
+-70166.0859,
+-2683.0117
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light992",
+"props": {
+"LightBrightness": 0.0,
+"bCorona": true,
+"Location": [
+159213.7656,
+-70041.9062,
+-2683.0117
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo40",
+"props": {
+"ZoneTag": "hall",
+"AmbientVector": [
+0.3212,
+0.3212,
+0.3212
+],
+"AmbientBrightness": 40,
+"bSunAffect": false,
+"Location": [
+159259.4844,
+-70229.0703,
+-2855.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light994",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159367.8906,
+-70157.8203,
+-2771.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1006",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159108.875,
+-70557.2891,
+-2771.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light274",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160844.2812,
+-70316.8984,
+-2621.9805
+],
+"Rotation": [
+-716,
+33840,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume7",
+"props": {
+"nMusicID": 241501,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,241501",
+"Location": [
+148112.0,
+-81760.0,
+-4352.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1007",
+"props": {
+"LightBrightness": 90.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159233.5469,
+-70344.0859,
+-2745.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light278",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160811.7031,
+-70096.3984,
+-2589.9805
+],
+"Rotation": [
+-716,
+33840,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light271",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161161.5,
+-69860.9141,
+-2647.2319
+],
+"Rotation": [
+0,
+18896,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light277",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160926.875,
+-69911.7031,
+-2615.2319
+],
+"Rotation": [
+0,
+18896,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light268",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161052.5625,
+-70422.625,
+-2721.9805
+],
+"Rotation": [
+-716,
+50160,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1019",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159590.2812,
+-70296.5938,
+-2809.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light275",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161272.875,
+-70381.0625,
+-2689.9805
+],
+"Rotation": [
+-716,
+50160,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light276",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161371.8281,
+-70229.4219,
+-2658.2319
+],
+"Rotation": [
+0,
+2544,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1020",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159318.0312,
+-70700.2109,
+-2809.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1005",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159736.0625,
+-70336.3906,
+-2791.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1004",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159397.6875,
+-70840.8594,
+-2791.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light269",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161340.8125,
+-69970.8438,
+-2690.2319
+],
+"Rotation": [
+0,
+2544,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light270",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161289.0469,
+-70117.9297,
+-2689.9805
+],
+"Rotation": [
+-716,
+34024,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light273",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160914.2188,
+-70190.9688,
+-2622.2319
+],
+"Rotation": [
+0,
+2360,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light258",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161137.7656,
+-70340.9844,
+-2722.2319
+],
+"Rotation": [
+0,
+18680,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1018",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159438.9844,
+-70497.1875,
+-2809.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light272",
+"props": {
+"LightBrightness": 100.0,
+"LightRadius": 10.0,
+"LightHue": 145,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161046.9688,
+-69973.875,
+-2646.9805
+],
+"Rotation": [
+-716,
+50376,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light267",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160879.9688,
+-70005.5078,
+-2625.5249
+],
+"Rotation": [
+0,
+-5492,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1026",
+"props": {
+"LightBrightness": 40.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159579.3281,
+-70579.1797,
+-2811.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light260",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161309.9219,
+-70288.1797,
+-2665.5249
+],
+"Rotation": [
+0,
+-38620,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light262",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161361.1406,
+-69847.7578,
+-2657.1997
+],
+"Rotation": [
+0,
+-9912,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light261",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161279.6562,
+-69796.0625,
+-2659.877
+],
+"Rotation": [
+0,
+29016,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light254",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 5.0,
+"LightHue": 31,
+"LightSaturation": 85,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160923.1875,
+-70423.75,
+-2812.4546
+],
+"Rotation": [
+-16512,
+28984,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1000",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159708.1875,
+-70072.8906,
+-2791.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1002",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159145.1719,
+-70917.4062,
+-2791.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1012",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159833.7031,
+-70155.3125,
+-2670.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light255",
+"props": {
+"LightBrightness": 250.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161449.4844,
+-70335.875,
+-2634.877
+],
+"Rotation": [
+0,
+12272,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1011",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159268.875,
+-71002.0703,
+-2670.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light259",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161383.6562,
+-70401.1641,
+-2684.1997
+],
+"Rotation": [
+0,
+-26656,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light263",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161252.0156,
+-69923.4219,
+-2638.5249
+],
+"Rotation": [
+0,
+-21876,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1023",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158730.5469,
+-70469.7031,
+-2710.877
+],
+"Rotation": [
+0,
+95572,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light279",
+"props": {
+"LightBrightness": 250.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161081.8125,
+-70161.9766,
+-2541.5229
+],
+"Rotation": [
+24,
+1524,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light266",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160795.0781,
+-69892.75,
+-2627.1997
+],
+"Rotation": [
+0,
+6472,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light265",
+"props": {
+"LightBrightness": 210.0,
+"LightRadius": 6.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160739.3125,
+-69975.4922,
+-2629.877
+],
+"Rotation": [
+0,
+45400,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light287",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 5.0,
+"LightHue": 31,
+"LightSaturation": 85,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160891.0,
+-70190.6797,
+-2703.4546
+],
+"Rotation": [
+-16512,
+28984,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1013",
+"props": {
+"LightBrightness": 40.0,
+"LightRadius": 10.0,
+"LightHue": 50,
+"LightSaturation": 20,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159540.7188,
+-70552.2188,
+-2654.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1017",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159140.2344,
+-69858.7734,
+-2710.877
+],
+"Rotation": [
+0,
+88416,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light284",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 5.0,
+"LightHue": 31,
+"LightSaturation": 85,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161285.3125,
+-70337.375,
+-2792.4546
+],
+"Rotation": [
+-16512,
+28984,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1021",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 15.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158673.4531,
+-70313.2031,
+-2769.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1025",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158449.0312,
+-70496.0703,
+-2643.877
+],
+"Rotation": [
+0,
+95312,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1001",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159527.0938,
+-69949.5078,
+-2791.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1015",
+"props": {
+"LightBrightness": 30.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158623.2969,
+-70206.5078,
+-2636.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1003",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158964.0781,
+-70794.0547,
+-2791.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1022",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 15.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158962.4844,
+-69883.9766,
+-2769.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1024",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 20.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159049.8906,
+-69602.4844,
+-2643.877
+],
+"Rotation": [
+0,
+88416,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1016",
+"props": {
+"LightBrightness": 40.0,
+"LightRadius": 10.0,
+"LightHue": 50,
+"LightSaturation": 20,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158783.125,
+-70051.9141,
+-2660.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light285",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 5.0,
+"LightHue": 31,
+"LightSaturation": 85,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161296.3281,
+-69964.0391,
+-2764.4546
+],
+"Rotation": [
+-16512,
+28984,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1008",
+"props": {
+"LightBrightness": 20.0,
+"LightRadius": 10.0,
+"LightHue": 50,
+"LightSaturation": 37,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158541.7344,
+-70494.0859,
+-2809.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light991",
+"props": {
+"LightBrightness": 70.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159042.8438,
+-70235.9688,
+-2767.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light995",
+"props": {
+"LightBrightness": 30.0,
+"LightRadius": 10.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159040.5312,
+-70469.1562,
+-2771.877
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1014",
+"props": {
+"LightBrightness": 30.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158866.375,
+-69822.3203,
+-2636.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light1010",
+"props": {
+"LightBrightness": 50.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+158873.2031,
+-70119.0781,
+-2806.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light286",
+"props": {
+"LightBrightness": 120.0,
+"LightRadius": 5.0,
+"LightHue": 31,
+"LightSaturation": 85,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+160917.0312,
+-69965.8359,
+-2733.4546
+],
+"Rotation": [
+-16512,
+28984,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light1009",
+"props": {
+"LightBrightness": 25.0,
+"LightRadius": 10.0,
+"LightHue": 140,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"Location": [
+159081.2656,
+-69678.9062,
+-2809.8965
+],
+"Rotation": [
+0,
+61744,
+0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light257",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 3.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"bCorona": true,
+"bSunAffect": true,
+"Location": [
+161306.5781,
+-69836.0703,
+-2674.0117
+],
+"Rotation": [
+0,
+-22520,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Light",
+"nome": "Light256",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 3.0,
+"LightHue": 26,
+"LightSaturation": 150,
+"MaxCoronaSize": 500.0,
+"bCorona": true,
+"bSunAffect": true,
+"Location": [
+161404.0156,
+-70357.6719,
+-2690.0117
+],
+"Rotation": [
+0,
+-22520,
+0
+],
+"DrawScale": 0.25,
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+260.2028,
+264371.1562,
+24471.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "Light",
+"nome": "Light280",
+"props": {
+"LightBrightness": 250.0,
+"LightRadius": 2.5,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161013.4688,
+-70188.1875,
+-2688.4155
+],
+"Rotation": [
+928,
+17348,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light281",
+"props": {
+"LightBrightness": 200.0,
+"LightRadius": 2.5,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161068.6719,
+-70163.8516,
+-2626.5229
+],
+"Rotation": [
+24,
+1524,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light283",
+"props": {
+"LightBrightness": 200.0,
+"LightRadius": 2.5,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161112.4062,
+-70064.6094,
+-2588.5229
+],
+"Rotation": [
+24,
+1524,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light282",
+"props": {
+"LightBrightness": 200.0,
+"LightRadius": 2.5,
+"LightHue": 26,
+"LightSaturation": 150,
+"LightOnTime": 19.0,
+"LightOffTime": 8.0,
+"bSunAffect": true,
+"Location": [
+161143.5,
+-70238.6641,
+-2594.5229
+],
+"Rotation": [
+24,
+1524,
+0
+],
+"bDirectional": true
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter36",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 149,
+"G": 149,
+"B": 149,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 128,
+"G": 128,
+"B": 128,
+"A": 255
+}
+}
+],
+"Opacity": 0.62,
+"FadeOutStartTime": 1.48,
+"FadeOut": true,
+"FadeInEndTime": 0.5,
+"FadeIn": true,
+"MaxParticles": 3,
+"Name": "SpriteEmitter18",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Y": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.41,
+"RelativeSize": 1.2
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani5",
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Y": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 5.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter22",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+135785.9688,
+-77283.9453,
+-3988.1082
+],
+"Rotation": [
+0,
+128,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter28",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 149,
+"G": 149,
+"B": 149,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 128,
+"G": 128,
+"B": 128,
+"A": 255
+}
+}
+],
+"Opacity": 0.62,
+"FadeOutStartTime": 1.48,
+"FadeOut": true,
+"FadeInEndTime": 0.5,
+"FadeIn": true,
+"Name": "SpriteEmitter18",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Y": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.41,
+"RelativeSize": 1.2
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani5",
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Y": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 5.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter16",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter15",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter15",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+145710.0156,
+-70954.8281,
+-4106.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter7",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter18",
+"props": {
+"Emitters": "<9 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+159198.0156,
+-84120.8281,
+-3499.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter55",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.125,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter51",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.125,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter50",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter29",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter41",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter27",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter20",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 149,
+"G": 149,
+"B": 149,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 128,
+"G": 128,
+"B": 128,
+"A": 255
+}
+}
+],
+"Opacity": 0.62,
+"FadeOutStartTime": 1.48,
+"FadeOut": true,
+"FadeInEndTime": 0.5,
+"FadeIn": true,
+"MaxParticles": 3,
+"Name": "SpriteEmitter18",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Y": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.41,
+"RelativeSize": 1.2
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani5",
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Y": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 5.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter21",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter54",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter52",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 149,
+"G": 149,
+"B": 149,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 128,
+"G": 128,
+"B": 128,
+"A": 255
+}
+}
+],
+"Opacity": 0.62,
+"FadeOutStartTime": 1.48,
+"FadeOut": true,
+"FadeInEndTime": 0.5,
+"FadeIn": true,
+"Disabled": true,
+"Name": "SpriteEmitter18",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Y": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.41,
+"RelativeSize": 1.2
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani5",
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Y": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 5.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter6",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter10",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 112,
+"G": 112,
+"B": 112,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 130,
+"G": 130,
+"B": 130,
+"A": 255
+}
+}
+],
+"Opacity": 0.48,
+"FadeOutStartTime": 2.31,
+"FadeOut": true,
+"FadeInEndTime": 0.49,
+"FadeIn": true,
+"MaxParticles": 20,
+"Name": "SpriteEmitter15",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Y": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 15.0,
+"Max": 15.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter38",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter31",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter39",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter57",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter17",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter18",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter9",
+"props": {
+"Emitters": "<5 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+136699.7188,
+-70321.8125,
+-3274.1082
+],
+"Rotation": [
+0,
+96,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter8",
+"props": {
+"Emitters": "<9 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+135067.4531,
+-70563.625,
+-3058.1082
+],
+"Rotation": [
+0,
+128,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bSunAffect": true,
+"Location": [
+226.1241,
+264327.9062,
+24506.8398
+],
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+242.322,
+264343.75,
+24510.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter33",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter62",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter72",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter65",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter53",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter10",
+"props": {
+"Emitters": "<9 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+139472.2812,
+-74892.7656,
+-4126.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter23",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter11",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+141156.0156,
+-88866.8281,
+-4244.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter12",
+"props": {
+"Emitters": "<9 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+141329.1875,
+-74722.2578,
+-4429.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter13",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+140892.4688,
+-73645.2812,
+-4036.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter43",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter47",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter42",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter45",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter19",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter19",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+143557.0156,
+-86307.8281,
+-4756.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter34",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter49",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter63",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter66",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter0",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 112,
+"G": 112,
+"B": 112,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 130,
+"G": 130,
+"B": 130,
+"A": 255
+}
+}
+],
+"Opacity": 0.48,
+"FadeOutStartTime": 2.31,
+"FadeOut": true,
+"FadeInEndTime": 0.49,
+"FadeIn": true,
+"MaxParticles": 20,
+"Name": "SpriteEmitter15",
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Y": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 15.0,
+"Max": 15.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter4",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+136901.5938,
+-70943.0781,
+-3554.1082
+],
+"Rotation": [
+0,
+128,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter0",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+134969.0312,
+-70915.5156,
+-3030.1082
+],
+"Rotation": [
+0,
+128,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter2",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+135406.1719,
+-74509.3438,
+-3693.1082
+],
+"Rotation": [
+0,
+128,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter26",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter14",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+143354.0156,
+-73829.8281,
+-4220.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter67",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter5",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter60",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 149,
+"G": 149,
+"B": 149,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 128,
+"G": 128,
+"B": 128,
+"A": 255
+}
+}
+],
+"Opacity": 0.62,
+"FadeOutStartTime": 1.48,
+"FadeOut": true,
+"FadeInEndTime": 0.5,
+"FadeIn": true,
+"MaxParticles": 3,
+"Name": "SpriteEmitter18",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Y": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.41,
+"RelativeSize": 1.2
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.8
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 50.0,
+"Max": 50.0
+}
+},
+"UniformSize": true,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani5",
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Y": {
+"Min": -5.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 5.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter59",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover40",
+"props": {
+"MeshGrade": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[1]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[2]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[3]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[4]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[5]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[6]": "L2fortress_02_s.fort02_wall_doorZ",
+"RangeDelta": [
+-4.5078,
+-110.0454,
+-0.1555
+],
+"RangeDelta[1]": [
+107.0312,
+45.1128,
+-0.1555
+],
+"RangeDelta[2]": [
+2.0312,
+112.1108,
+-0.1555
+],
+"RangeDelta[3]": [
+-104.1094,
+-45.2212,
+-0.1555
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+136.0
+],
+"BasePos": [
+161354.0156,
+-71813.8281,
+-2916.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+10240,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.fort02_wall_door",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150008,
+"L2ServerObjectID": 8,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+161354.0156,
+-71813.8281,
+-2916.0
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"bIgnoredRange": true
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover41",
+"props": {
+"MeshGrade": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[1]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[2]": "L2fortress_02_s.fort02_wall_door",
+"MeshGrade[3]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[4]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[5]": "L2fortress_02_s.fort02_wall_doorB",
+"MeshGrade[6]": "L2fortress_02_s.fort02_wall_doorZ",
+"RangeDelta": [
+-17.5234,
+-101.6392,
+-0.1555
+],
+"RangeDelta[1]": [
+92.2656,
+54.5581,
+-0.1555
+],
+"RangeDelta[2]": [
+10.3594,
+104.0483,
+-0.1555
+],
+"RangeDelta[3]": [
+-93.1094,
+-51.8149,
+-0.1555
+],
+"KeyPos[1]": [
+0.0,
+0.0,
+136.0
+],
+"BasePos": [
+157297.2969,
+-69092.3828,
+-2916.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+10240,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.fort02_wall_door",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150003,
+"L2ServerObjectID": 3,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+157297.2969,
+-69092.3828,
+-2916.0
+],
+"Rotation": [
+0,
+10240,
+0
+],
+"bIgnoredRange": true
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover39",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+57.3281,
+62.8271,
+0.0
+],
+"RangeDelta[1]": [
+9.2344,
+-12.7075,
+0.0
+],
+"RangeDelta[2]": [
+-13.3906,
+3.9561,
+0.0
+],
+"RangeDelta[3]": [
+34.4297,
+77.5903,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+158497.5625,
+-72103.7188,
+-2865.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-22528,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150001,
+"L2ServerObjectID": 1,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+158497.5625,
+-72103.7188,
+-2865.0
+],
+"Rotation": [
+0,
+-22528,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover38",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-35.2266,
+-78.2651,
+0.0
+],
+"RangeDelta[1]": [
+15.0703,
+-5.6782,
+0.0
+],
+"RangeDelta[2]": [
+-13.2422,
+13.5869,
+0.0
+],
+"RangeDelta[3]": [
+-59.6953,
+-62.2554,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+158584.7812,
+-71973.1797,
+-2865.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+10240,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150002,
+"L2ServerObjectID": 2,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+158584.7812,
+-71973.1797,
+-2865.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover204",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-36.6641,
+-75.6011,
+0.0
+],
+"RangeDelta[1]": [
+12.0859,
+-4.0532,
+0.0
+],
+"RangeDelta[2]": [
+-8.6016,
+9.0635,
+0.0
+],
+"RangeDelta[3]": [
+-54.2578,
+-62.4351,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+158693.4531,
+-69909.8047,
+-2892.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+10240,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150005,
+"L2ServerObjectID": 5,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+158693.4531,
+-69909.8047,
+-2892.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover205",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+55.7188,
+63.2725,
+0.0
+],
+"RangeDelta[1]": [
+8.0781,
+-8.0981,
+0.0
+],
+"RangeDelta[2]": [
+-10.6875,
+4.1904,
+0.0
+],
+"RangeDelta[3]": [
+37.4922,
+74.9653,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+158606.7969,
+-70039.5078,
+-2892.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-22528,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150004,
+"L2ServerObjectID": 4,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+158606.7969,
+-70039.5078,
+-2892.0
+],
+"Rotation": [
+0,
+-22528,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover206",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-34.3828,
+-77.187,
+0.0
+],
+"RangeDelta[1]": [
+13.7578,
+-6.1782,
+0.0
+],
+"RangeDelta[2]": [
+-8.6328,
+9.9775,
+0.0
+],
+"RangeDelta[3]": [
+-59.9297,
+-61.4507,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+159692.0625,
+-70577.0234,
+-2892.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+10240,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150007,
+"L2ServerObjectID": 7,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+159692.0625,
+-70577.0234,
+-2892.0
+],
+"Rotation": [
+0,
+10240,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover207",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+56.6094,
+61.9678,
+0.0
+],
+"RangeDelta[1]": [
+8.0781,
+-8.8247,
+0.0
+],
+"RangeDelta[2]": [
+-12.6094,
+4.4482,
+0.0
+],
+"RangeDelta[3]": [
+32.7422,
+78.1763,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+159605.3906,
+-70706.7422,
+-2892.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-22528,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150006,
+"L2ServerObjectID": 6,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+159605.3906,
+-70706.7422,
+-2892.0
+],
+"Rotation": [
+0,
+-22528,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover21",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-64.9141,
+55.9082,
+0.0
+],
+"RangeDelta[1]": [
+-5.1016,
+-11.5073,
+0.0
+],
+"RangeDelta[2]": [
+8.5938,
+10.6611,
+0.0
+],
+"RangeDelta[3]": [
+-77.6875,
+34.6411,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+160872.125,
+-70639.6797,
+-2899.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-6136,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150010,
+"L2ServerObjectID": 10,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+160872.125,
+-70639.6797,
+-2899.0
+],
+"Rotation": [
+0,
+-6136,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover20",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+62.3359,
+-59.1206,
+0.0
+],
+"RangeDelta[1]": [
+-11.2734,
+-8.6313,
+0.0
+],
+"RangeDelta[2]": [
+3.1484,
+14.4473,
+0.0
+],
+"RangeDelta[3]": [
+77.9688,
+-38.3921,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+160742.3281,
+-70553.1094,
+-2899.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+26632,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150009,
+"L2ServerObjectID": 9,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+160742.3281,
+-70553.1094,
+-2899.0
+],
+"Rotation": [
+0,
+26632,
+0
+]
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter20",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+135849.0156,
+-86567.8281,
+-3986.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.1
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover1",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+-65.4297,
+58.2832,
+0.0
+],
+"RangeDelta[1]": [
+-1.8984,
+-12.2886,
+0.0
+],
+"RangeDelta[2]": [
+11.75,
+9.1533,
+0.0
+],
+"RangeDelta[3]": [
+-76.5625,
+38.6411,
+0.0
+],
+"KeyRot[1]": [
+0,
+16384,
+0
+],
+"BasePos": [
+159984.2812,
+-69074.1172,
+-2853.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+-6144,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150012,
+"L2ServerObjectID": 12,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+159984.2812,
+-69074.1172,
+-2853.0
+],
+"Rotation": [
+0,
+-6144,
+0
+]
+}
+},
+{
+"classe": "Mover",
+"nome": "Mover0",
+"props": {
+"MeshGrade": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[1]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[2]": "L2fortress_02_s.Fort02_indoor",
+"MeshGrade[3]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[4]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[5]": "L2fortress_02_s.Fort02_indoorB",
+"MeshGrade[6]": "L2fortress_02_s.Fort02_indoorZ",
+"RangeDelta": [
+64.7734,
+-55.0972,
+0.0
+],
+"RangeDelta[1]": [
+-11.3359,
+-7.9673,
+0.0
+],
+"RangeDelta[2]": [
+1.4141,
+12.9863,
+0.0
+],
+"RangeDelta[3]": [
+77.4844,
+-36.2905,
+0.0
+],
+"KeyRot[1]": [
+0,
+-16384,
+0
+],
+"BasePos": [
+159854.5781,
+-68987.4453,
+-2853.0
+],
+"SavedPos": [
+-12345.0,
+-12345.0,
+-12345.0
+],
+"BaseRot": [
+0,
+26624,
+0
+],
+"SavedRot": [
+123,
+456,
+789
+],
+"DrawType": 8,
+"StaticMesh": "L2fortress_02_s.Fort02_indoor",
+"bLightChanged": true,
+"bUpdateShadow": false,
+"L2ServerObjectRealID": 24150011,
+"L2ServerObjectID": 11,
+"L2ServerObjectType": 1,
+"bSunAffect": true,
+"Location": [
+159854.5781,
+-68987.4453,
+-2853.0
+],
+"Rotation": [
+0,
+26624,
+0
+]
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter25",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter30",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter16",
+"props": {
+"Emitters": "<9 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+149436.0156,
+-76518.8281,
+-4337.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter35",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-15.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.12857,
+"Color": {
+"R": 68,
+"G": 68,
+"B": 68,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.33214,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.47143,
+"Color": {
+"R": 88,
+"G": 88,
+"B": 88,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.64643,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.82143,
+"Color": {
+"R": 82,
+"G": 82,
+"B": 82,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"ColorScaleRepeats": 2.0,
+"Opacity": 0.68,
+"FadeOutStartTime": 1.56,
+"FadeOut": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter17",
+"StartLocationOffset": [
+0.0,
+0.0,
+25.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Y": {
+"Min": -20.0,
+"Max": 20.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.2,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.29,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 0.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Y": {
+"Min": 5.0,
+"Max": 10.0
+},
+"Z": {
+"Min": 5.0,
+"Max": 10.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani7",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 2,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 70.0,
+"Max": 120.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume10",
+"props": {
+"nMusicID": 241502,
+"bForcePlayMusic": true,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bLightChanged": true,
+"bSunAffect": true,
+"Group": "None,241502_yose",
+"Location": [
+158688.0,
+-72992.0,
+-1568.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter61",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter46",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter37",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.45,
+"FadeOutStartTime": 4.9,
+"FadeOut": true,
+"FadeInEndTime": 1.96,
+"FadeIn": true,
+"MaxParticles": 15,
+"Name": "SpriteEmitter15",
+"StartLocationOffset": [
+0.0,
+0.0,
+30.0
+],
+"SpinParticles": true,
+"SpinCCWorCW": [
+1.0,
+0.5,
+0.5
+],
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.02,
+"Max": 0.03
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.5
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 2.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 330.0,
+"Max": 330.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 5.0,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.fly_smoke",
+"LifetimeRange": {
+"Min": 7.0,
+"Max": 7.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 50.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 7.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter58",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+15.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.43,
+"FadeOutStartTime": 1.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"Name": "SpriteEmitter16",
+"StartLocationOffset": [
+0.0,
+0.0,
+10.0
+],
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.05,
+"Max": 0.1
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 90.0
+},
+"Z": {
+"Min": 90.0,
+"Max": 90.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 2.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Flameset_a.FX_E_fire_ani8",
+"LifetimeRange": {
+"Min": 5.0,
+"Max": 5.0
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 2.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter17",
+"props": {
+"Emitters": "<7 bytes>",
+"bSunAffect": true,
+"Group": "None,emitter",
+"Location": [
+155542.0156,
+-80095.8281,
+-4424.1084
+],
+"Rotation": [
+0,
+80,
+0
+],
+"DrawScale": 0.2
+}
+}
+]
+}

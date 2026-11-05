@@ -1,0 +1,9 @@
+Window QuestListWnd 600x326 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.QUESTWND.questinfo_back unk102=QuestListWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk111=1204 unk113=0 unk114=3 unk115=1 unk117=0 unk122=18153475 unk123=0 unk124=0 unk125=0 unk126=0 unk127=11206 unk128=271817776 unk130=0 unk131=0 unk132=1 unk133=0 unk134=4194304 unk135=12 unk139=Game size=[2]
+  Texture QuestToolTip 15x15 @TOP_LEFT->pai.TOP_LEFT(578,30) popupType=Text file=L2UI_CH3.QUESTWND.QuestWndToolTipBtn type=Control layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  ListCtrl lstQuest 586x237 @TOP_LEFT->pai.TOP_LEFT(7,49) popupType=QuestInfo unk100=2000 unk101=13 unk102=1 unk103=17 unk104=19 size=[2] values=[5]
+    - values: textStringId=1200 width=212 unk108=true unk109=true unk110=false
+    - values: textStringId=1201 width=130 unk108=true unk109=true unk110=false
+    - values: textStringId=922 width=52 unk108=true unk109=true unk110=true
+    - values: textStringId=1202 width=40 unk108=true unk109=true unk110=false
+    - values: textStringId=1203 width=152 unk108=true unk109=true unk110=false
+  Button btnLoc 76x23 @TOP_LEFT->pai.TOP_LEFT(518,297) normalTex=L2UI_CH3.Button.btn1_normal pushedTex=L2UI_CH3.Button.btn1_normalon buttonName=860 size=[2]

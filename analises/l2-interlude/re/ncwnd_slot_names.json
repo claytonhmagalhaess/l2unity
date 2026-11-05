@@ -1,0 +1,281 @@
+{
+ "0x108": [
+  "AddCol",
+  "AddItem",
+  "AddRow",
+  "AddString",
+  "AddStringWithReserved",
+  "Clear",
+  "ClearAnchor",
+  "ClearSelect",
+  "ControllerExecution",
+  "DelItem",
+  "DeleteAllItem",
+  "DeleteItem",
+  "DeleteRecord",
+  "DisableWindow",
+  "EnableTexture",
+  "EnableWindow",
+  "FindItemWithClassID",
+  "FindItemWithServerID",
+  "GetAlpha",
+  "GetButtonName",
+  "GetColCount",
+  "GetFrameMaxHeight",
+  "GetIndexAt",
+  "GetItem",
+  "GetItemNum",
+  "GetMaxLength",
+  "GetName",
+  "GetParentWindowHandle",
+  "GetParentWindowName",
+  "GetRecord",
+  "GetRecordCount",
+  "GetRect",
+  "GetReserved",
+  "GetRowCount",
+  "GetScript",
+  "GetSelectedIndex",
+  "GetSelectedItem",
+  "GetSelectedItemID",
+  "GetSelectedNum",
+  "GetSelectedRecord",
+  "GetString",
+  "GetText",
+  "GetTextColor",
+  "GetTextureName",
+  "GetTooltipCustomType",
+  "GetTooltipText",
+  "GetTopIndex",
+  "GetValue",
+  "GetWindowName",
+  "GetWindowSize",
+  "HideWindow",
+  "InitTabCtrl",
+  "InsertCol",
+  "InsertDrawItem",
+  "InsertRecord",
+  "InsertRow",
+  "IsAnchored",
+  "IsChecked",
+  "IsChildOf",
+  "IsDisable",
+  "IsDraggable",
+  "IsEnableWindow",
+  "IsFocused",
+  "IsMinimizedWindow",
+  "IsPageLock",
+  "IsShowWindow",
+  "KillTimer",
+  "LoadHtml",
+  "LoadHtmlFromString",
+  "MergeTab",
+  "ModifyRecord",
+  "Move",
+  "MoveEx",
+  "MoveShake",
+  "MoveTo",
+  "NotifyAlarm",
+  "Pause",
+  "Play",
+  "PreCheckPanelSize",
+  "ReleaseFocus",
+  "SYS_AddString",
+  "SYS_AddStringWithReserved",
+  "SetAlign",
+  "SetAlpha",
+  "SetAnchor",
+  "SetButtonName",
+  "SetCheck",
+  "SetCol",
+  "SetDisable",
+  "SetDisableTex",
+  "SetDraggable",
+  "SetEditType",
+  "SetFaded",
+  "SetFocus",
+  "SetFrameSize",
+  "SetHighLight",
+  "SetHtmlBuffData",
+  "SetIconSize",
+  "SetInt",
+  "SetItem",
+  "SetLoopCount",
+  "SetMaxLength",
+  "SetName",
+  "SetNameWithColor",
+  "SetPageLock",
+  "SetResizeFrameSize",
+  "SetRow",
+  "SetScrollBarPosition",
+  "SetScrollPosition",
+  "SetSelectedIndex",
+  "SetSelectedNum",
+  "SetSettledWnd",
+  "SetString",
+  "SetText",
+  "SetTextColor",
+  "SetTexture",
+  "SetTextureCtrlType",
+  "SetTextureSize",
+  "SetTextureWithClanCrest",
+  "SetTextureWithObject",
+  "SetTimer",
+  "SetTitle",
+  "SetTooltipCustomType",
+  "SetTooltipString",
+  "SetTooltipText",
+  "SetTooltipType",
+  "SetTopOrder",
+  "SetUV",
+  "SetValue",
+  "SetWindowSize",
+  "SetWindowSizeRel",
+  "SetWindowSizeRel43",
+  "SetWindowTitle",
+  "ShowScrollBar",
+  "ShowWindow",
+  "SimulateBackspace",
+  "Stop",
+  "SwapItems",
+  "ToggleDisable"
+ ],
+ "0x60": [
+  "GetItem",
+  "GetSelectedItem",
+  "GetTooltipCustomType",
+  "GetValue",
+  "GetWindowSize",
+  "PreCheckPanelSize"
+ ],
+ "0x174": [
+  "Clear",
+  "SetString"
+ ],
+ "0x20c": [
+  "SetItem",
+  "SetScrollBarPosition"
+ ],
+ "0x1f8": [
+  "GetString",
+  "GetTextureName"
+ ],
+ "0x68": [
+  "SimulateBackspace"
+ ],
+ "0x7f0": [
+  "ControllerExecution"
+ ],
+ "0x234": [
+  "ClearSelect"
+ ],
+ "0x204": [
+  "AddItem"
+ ],
+ "0x208": [
+  "DeleteItem"
+ ],
+ "0x210": [
+  "AddString",
+  "GetSelectedItem",
+  "GetSelectedItemID"
+ ],
+ "0x21c": [
+  "GetItem"
+ ],
+ "0x214": [
+  "FindItemWithClassID",
+  "FindItemWithServerID"
+ ],
+ "0x138": [
+  "ShowScrollBar",
+  "ShowWindow"
+ ],
+ "0x13c": [
+  "HideWindow",
+  "ShowScrollBar"
+ ],
+ "0x168": [
+  "SetWindowTitle"
+ ],
+ "0xfc": [
+  "IsShowWindow"
+ ],
+ "0xec": [
+  "GetAlpha"
+ ],
+ "0xe8": [
+  "SetAlpha"
+ ],
+ "0x134": [
+  "SetWindowSizeRel43"
+ ],
+ "0x128": [
+  "SetWindowSize"
+ ],
+ "0x130": [
+  "SetWindowSizeRel"
+ ],
+ "0xe4": [
+  "ClearAnchor"
+ ],
+ "0x84": [
+  "IsDraggable",
+  "SetDraggable"
+ ],
+ "0x80": [
+  "SetDraggable"
+ ],
+ "0x118": [
+  "DisableWindow",
+  "EnableWindow"
+ ],
+ "0x6c": [
+  "IsEnableWindow"
+ ],
+ "0x78": [
+  "SetFocus"
+ ],
+ "0x7c": [
+  "ReleaseFocus"
+ ],
+ "0x74": [
+  "IsFocused"
+ ],
+ "0xc4": [
+  "GetScript"
+ ],
+ "0xb0": [
+  "SetTooltipText"
+ ],
+ "0xb8": [
+  "GetTooltipText"
+ ],
+ "0xac": [
+  "SetTooltipType"
+ ],
+ "0xa8": [
+  "SetFrameSize"
+ ],
+ "0x144": [
+  "MoveTo"
+ ],
+ "0x14c": [
+  "MoveEx"
+ ],
+ "0x17c": [
+  "NotifyAlarm"
+ ],
+ "0x124": [
+  "SetSettledWnd"
+ ],
+ "0xd4": [
+  "SetAnchor"
+ ],
+ "0x150": [
+  "MoveShake"
+ ],
+ "0x148": [
+  "Move"
+ ]
+}

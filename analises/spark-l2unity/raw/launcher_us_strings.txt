@@ -1,0 +1,375 @@
+  (default)
+  (padrão)
+  falta: 
+  {0}: {1} / {2}, {3}/{4} arquivos, media {5}/s  [{6}]
+  ·  
+ "')-./068:;BDFHNOPQXZ\acghjkqsv
+ "*,-./05678:ÌÓ;CDFHMNOPVWXYZ\dfghjkpqrsvÄ·°±µ²¶ÅÊÑÆ¦¼¥ÉÔÇÁÍáÈÏ§
+ $07?GOT
+ $07?GOU
+ (HTTP 
+ (Windows error 
+ (Windows)
+ (conexão caiu, tentando de novo)
+ (connection lost, retrying)
+ (esperado 
+ (resuming)
+ (retomando)
+ (tentativa 
+ -- tenta de novo, mantendo o .part
+ a partir de 
+ arquivos
+ arquivos, 
+ bytes (
+ bytes)
+ could not start the game on this PC, so the graphics API is back on DirectX 11.
+ files
+ for 
+ free.
+ left
+ livres.
+ min 
+ nao abriu, voltou para DirectX 11
+ necessários, 
+ needed, 
+ não conseguiu abrir o jogo neste PC, então a API gráfica voltou para DirectX 11.
+ restantes
+ s: baixar 
+!&#$(%¾'41239+i?<=A>@BELIJKURSTG[`]^b_¸aolmnteu)cÞ×ãà£¢«¬ª
+"&+5@
+"?7<;54,9*6
+#'1;EO
+#)3=G
+#_èAÛÞØÜCÚÝ
+$*/7AKPTYbm
+&*.26>FNV[
+&*.26>FNV\
+'/4>H
+'/5?I
+(2<@DH
+(LfnÂÉÙ
+), apagar 
+), do zero
+), usando o endereco de reserva
+). Check your internet connection and click Retry.
+). Click Retry; if it keeps failing, the update may still be uploading.
+). Clique em Tentar de novo; se continuar, a atualização ainda pode estar subindo.
+). Close Infinity and try again.
+). Feche o Infinity e tente de novo.
+). Mova o InfinityLauncher.exe para uma pasta como C:\Jogos\Infinity e abra de novo.
+). Move InfinityLauncher.exe to a folder like C:\Games\Infinity and open it again.
+). Tente mais tarde.
+). Try again later.
+). Verifique sua internet e clique em Tentar de novo.
+)3=GQ[
+*.old
+,/&5C*Fc9fvW{{h}~ikmopqªªr¯¯sßßtááu
+--apos
+--atualizado
+--atualizar
+--auto
+--jogar
+--lang
+--manifest
+--reparar
+--screenshot
+--verificar
+-force-d3d11
+-force-d3d12
+-force-vulkan
+.part
+000004b0
+1.0.3+c40b2ffc345c88d44900b020cfe5d3bbbf8d51f2
+1.0.3.0
+5(6(7
+5(6.7$8
+9-æFæ
+; apagar: 
+; instalada 
+;2ª#¹
+@&A-B-C:
+A downloaded file is corrupted (
+A game file is in use (
+A game file is missing on the update server (
+ADENA RATE
+API grafica: 
+API grafica: nao gravou (
+API gráfica (vale no próximo Jogar):
+ATUALIZAR
+Abrir pasta do jogo
+Assembly Version
+Atualizando arquivos
+Atualizando o launcher para 
+Atualização disponível
+BE THE FIRST
+B^`>@
+Checking for updates
+Checking game files
+Client 
+Cliente 
+Close the launcher when the game starts
+CompanyName
+Conferindo arquivos
+Could not delete an old file (
+Could not download the new launcher (HTTP 
+Could not reach the update server. Check your internet connection.
+Could not rename the game folder. Close Infinity and try again.
+Could not replace 
+DROP RATE
+DirectX 11
+DirectX 12
+Discord
+Download failed (
+ERRO inesperado: 
+ERRO: 
+EXP RATE
+English
+Erro inesperado: 
+Espaço insuficiente no disco 
+Esta pasta já tem outros arquivos. O ideal é uma pasta vazia só para o jogo (ex.: C:\Jogos\Infinity): feche o launcher, mova-o para lá e abra de novo.
+Esta pasta é protegida (
+Facebook
+Falta um arquivo no servidor de atualização (
+Fechar o launcher ao abrir o jogo
+FileDescription
+FileVersion
+Georgia
+Graphics API (used on the next Play):
+HTTP 
+INSTALAR
+INSTALL
+Infinity Launcher
+Infinity Launcher 
+Infinity will be installed in this folder:
+Infinity.exe
+InfinityLauncher.exe
+Instalar aqui mesmo assim?
+Install here anyway?
+InternalName
+JOGAR
+L2.exe
+LEVEL
+Launcher
+Launcher 
+Launcher/
+LegalCopyright
+Local\SparkInfinityLauncher_
+M-Á*Á-Á-ú
+MMM d, yyyy
+NOTÍCIAS
+No clan
+No news yet.
+Not enough disk space on 
+NÍVEL
+Não foi possível apagar um arquivo antigo (
+Não foi possível baixar o launcher novo (HTTP 
+Não foi possível falar com o servidor de atualização. Verifique sua internet.
+Não foi possível renomear a pasta do jogo. Feche o Infinity e tente de novo.
+O Infinity vai ser instalado nesta pasta:
+O Windows bloqueou a escrita na pasta do jogo. Mova o launcher para uma pasta como C:\Jogos\Infinity.
+O disco está cheio. Libere espaço e clique em Tentar de novo.
+O download falhou (
+O jogo ainda não está instalado.
+O launcher está rodando numa pasta temporária (dentro de um zip?). Extraia para uma pasta como C:\Jogos\Infinity primeiro.
+O ranking abre com os primeiros heróis.
+O servidor de atualização mandou um caminho inválido: 
+O servidor de atualização mandou uma lista inválida. Tente mais tarde.
+OD³-¹
+OK: pasta igual ao manifest 
+Open game folder
+OriginalFilename
+PLAYERS ONLINE
+Palatino Linotype
+Português
+Procurando atualizações
+ProductName
+ProductVersion
+Project SPARK
+Project SPARK - Infinity
+ProjectSPARK-Launcher/
+Pronto
+Pronto para instalar
+Pronto para jogar
+RETRY
+Ranking indisponível agora.
+Ranking unavailable right now.
+Ready to install
+Ready to play
+Repair game files
+Reparar arquivos do jogo
+SEJA O PRIMEIRO
+SERVER OFFLINE
+SERVER ONLINE
+SERVIDOR OFFLINE
+SERVIDOR ONLINE
+SP RATE
+STATUS
+Segoe UI
+Sem clã
+Sem notícias ainda.
+Site oficial
+Size: 
+StringFileInfo
+TENTAR
+TENTAR DE NOVO
+TOP PLAYERS
+Tamanho: 
+The game is not installed yet.
+The launcher is running from a temporary folder (inside a zip?). Extract it to a folder like C:\Games\Infinity first.
+The ranking opens with the first heroes.
+The update server sent an invalid file list. Try again later.
+The update server sent an invalid path: 
+This folder already has other files. We recommend an empty folder just for the game (e.g. C:\Games\Infinity): close the launcher, move it there and open it again.
+This folder is protected (
+Translation
+UPDATE
+Um arquivo baixado veio corrompido (
+Um arquivo do jogo está em uso (
+Unexpected error: 
+Unity Interlude
+Update available
+Updating files
+Updating the launcher to 
+VER TODAS
+VERSION
+VERSÃO
+VIEW ALL
+VS_VERSION_INFO
+VV%WX
+VarFileInfo
+Verificando todos os arquivos
+Verifying all game files
+Version 
+Versão 
+Você pode tentar de novo na engrenagem > API gráfica.
+Vulkan
+Website
+Windows blocked writing to the game folder. Move the launcher to a folder like C:\Games\Infinity.
+X/3=G
+X9=GQ[
+YZ[\ìº]
+You can try again in the gear menu > Graphics API.
+YouTube
+Your disk is full. Free some space and click Retry.
+\AppData\Local\Temp\
+_Data
+`lx
+ainda falta 
+apagado: 
+baixado {0} em {1:0.0} s ({2}/s)
+baixar: 
+cabecalho.jpg
+cache ilegivel, ignorado: 
+cache.tsv
+calculando o tempo...
+calculating time...
+cinzel-400.ttf
+cinzel-700.ttf
+click INSTALL
+clique em INSTALAR
+close
+close=
+completa
+conferencia 
+connection closed early (
+dd/MM/yyyy
+delete
+diferente: 
+download stalled
+erro fatal: 
+erro na tela: 
+erro: 
+escrita.tmp
+estado: 
+falha em 
+falha final em 
+files
+grafico.txt
+grafico_teste.txt
+hash errado em 
+https://discord.gg/v7xnsd9dXW
+https://l2spark.vercel.app
+https://l2spark.vercel.app/api/rankings?server=infinity
+https://l2spark.vercel.app/api/status?server=infinity
+https://l2spark.vercel.app/launcher.json
+https://l2spark.vercel.app/news.html#
+https://l2spark.vercel.app/news.html?f=infinity
+https://l2spark.vercel.app/news.html?f=infinity#
+https://l2spark.vercel.app/news.json
+https://pub-b1817e859aff494da9f49d01ee0d9e35.r2.dev/manifest.json
+https://www.facebook.com/l2jspark/
+https://www.youtube.com/@projectsparkl2
+infinity
+jogo aberto: pid 
+k&È ç
+lang=
+launcher
+launcher 
+launcher trocado, reabrindo
+launcher.json falhou (
+launcher.log
+level
+login
+manifest
+manifest falhou: 
+manifest: 
+nao abriu 
+nao salvou o cache: 
+nenhuma
+news.json
+no answer from server
+noticia
+noticias ilegiveis: 
+noticias: 
+online
+outro launcher ja esta aberto nesta pasta
+p7Þ'ç
+pasta do jogo renomeada: 
+pp+qq
+print salvo em 
+project
+pt-BR
+range not satisfiable, restarting 
+ranking: 
+rapida
+retomando 
+rr,su
+servidor nao retomou 
+settings.txt
+sha256
+status: 
+summary
+tentar
+title
+todas
+tudo em dia
+versao do cliente no servidor 
+version
+version.txt
+vulkan
+ww-xx'yy*zz){{$||#}} ~~(
+x3 (VIP x4.5)
+x7 (VIP x10)
+yyyy-MM-dd
+yyyy-MM-dd HH:mm:ss.fff
+z'ã
+{{ I = {0}, R = {1}, V = {2} }}
+&
+a¸ !
+¢¯¸¸½½ÀÀßßáá
+©ª¾¿Å´µ¶·Ä
+°³¿Â ¡À¤»¹ºÃ
+´Weighthttps://scripts.sil.org/OFLCinzel-BoldVersion 2.000Cinzel Bold2.000;NONE;Cinzel-BoldBoldCinzelCopyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel)
+µ µ!µ(µ2µ3µ4µ5µ6µ7µ;µ<µ=µ>µ?µAµBµCµ
+·*õ#õ*õ*ú
+¼.2<F
+¼9=KO
+¼:>HR\
+½9=KO
+ÆWeighthttps://scripts.sil.org/OFLCinzel-RegularVersion 2.000Cinzel Regular2.000;NONE;Cinzel-RegularRegularCinzelCopyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel)
+Çb­c®%&d'é(eÈÊË)*+,ÌÍÎÏ-./01f2ÐÑgÓ¯°3í45678ÔÕhÖ9:;<ë=Dikljnm EFoGêHprsqIJKL×tvwuMNOPQxRy{|z¡}±SîTUVWX~
+Ñ8õdõ
+×ÛÞàã
+ì;&<&=&>&?&@&A&B&Y
+úôîèâÜÖÐÊÄ¾¸²¬¦ |vpjd^X
+úôîèâÜÖôÐÊÄ¾¸²¬¦ |vpjd^X

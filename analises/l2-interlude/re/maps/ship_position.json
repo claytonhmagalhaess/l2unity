@@ -1,0 +1,79 @@
+{
+"mapa": "ship_position",
+"pacote": {
+"versao": 118,
+"licenca": 6,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"Camera": 15,
+"Polys": 3,
+"Model": 3,
+"Brush": 2,
+"StaticMeshActor": 2,
+"StaticMeshInstance": 2,
+"LevelInfo": 1,
+"DefaultPhysicsVolume": 1,
+"Light": 1,
+"Level": 1,
+"PlayerStart": 1,
+"LevelSummary": 1
+},
+"atores_ambiente": [
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 58.37971,
+"Summary": "LevelSummary",
+"bPathsRebuilt": true,
+"CameraLocationDynamic": [
+819.5774,
+-1531.2559,
+348.0004
+],
+"CameraLocationTop": [
+-77.8635,
+765.7224,
+68048.5625
+],
+"CameraLocationFront": [
+-92.1048,
+50.8168,
+31703.3262
+],
+"CameraLocationSide": [
+-300.0,
+300.0,
+10542.4717
+],
+"CameraRotationDynamic": [
+64844,
+21672,
+0
+],
+"NavigationPointList": "PlayerStart0",
+"PhysicsVolumeList": "DefaultPhysicsVolume15",
+"bNetDirty": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light0",
+"props": {
+"bNetDirty": true,
+"LastRenderTime": 58.37971,
+"Location": [
+-70.9008,
+-27.8731,
+818.0
+],
+"LightBrightness": 255.0,
+"LightHue": 42,
+"LightSaturation": 191,
+"LightRadius": 200.0,
+"bSelected": true
+}
+}
+]
+}

@@ -1,0 +1,22 @@
+Window ManorCropInfoSettingWnd 600x326 @CENTER->pai.CENTER(0,0) popupType=ManorCropSetting unk102=ManorCropInfoSettingWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=1145 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=-1476394940 unk128=369424921 unk130=0 unk131=0 unk132=-1625614844 unk133=-98942976 unk134=83499144 unk135=36 unk139=Game size=[2]
+  Texture texBack 600x326 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_CH3.Manor.manor2_back type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  TextBox txtManorName 10x12 @TOP_LEFT->pai.TOP_LEFT(16,47) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ListCtrl ManorCropInfoSettingListCtrl 586x199 @TOP_LEFT->pai.TOP_LEFT(7,73) popupType=ManorCropSetting unk100=100 unk101=10 unk102=1 unk103=18 unk104=19 size=[2] values=[7]
+    - values: textStringId=1124 width=149 unk108=true unk109=true unk110=false
+    - values: textStringId=1146 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1147 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1148 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1225 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1149 width=70 unk108=true unk109=true unk110=true
+    - values: textStringId=1150 width=87 unk108=true unk109=true unk110=false
+  TextBox txtNextTotalExpense 98x19 @TOP_LEFT->pai.TOP_LEFT(16,279) textAlign=Left offsetY=0 sysstring=1141 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  Texture texAdena 16x12 @TOP_LEFT->pai.TOP_LEFT(107,278) file=L2UI.WindowIcon.WindowIconAdena type=Normal layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture texExpenseBoxLeft 8x17 @TOP_LEFT->pai.TOP_LEFT(126,276) file=L2UI_CH3.Etc.textbox1 type=Normal layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture texExpenseBoxMiddle 70x17 @TOP_LEFT->pai.TOP_LEFT(134,276) file=L2UI_CH3.Etc.textbox2 type=Tile layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture texExpenseBoxRight 8x17 @TOP_LEFT->pai.TOP_LEFT(204,276) file=L2UI_CH3.Etc.textbox3 type=Normal layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  TextBox txtVarNextTotalExpense 98x19 @TOP_LEFT->pai.TOP_LEFT(130,279) text=0 textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  Button btnChangeSell 76x23 @TOP_LEFT->pai.TOP_LEFT(8,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1142 size=[2]
+  Button btnSetToday 76x23 @TOP_LEFT->pai.TOP_LEFT(88,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1143 size=[2]
+  Button btnStop 76x23 @TOP_LEFT->pai.TOP_LEFT(168,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=1151 size=[2]
+  Button btnOk 76x23 @TOP_LEFT->pai.TOP_LEFT(438,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=140 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(518,297) normalTex=L2UI_CH3.BUTTON.Btn1_normal pushedTex=L2UI_CH3.BUTTON.Btn1_normalOn buttonName=141 size=[2]

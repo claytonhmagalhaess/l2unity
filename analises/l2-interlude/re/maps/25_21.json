@@ -1,0 +1,14530 @@
+{
+"mapa": "25_21",
+"pacote": {
+"versao": 123,
+"licenca": 28,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"TerrainSector": 256,
+"AmbientSoundObject": 147,
+"SpriteEmitter": 92,
+"Model": 61,
+"Polys": 61,
+"BlockingVolume": 46,
+"StaticMeshActor": 45,
+"StaticMeshInstance": 45,
+"Light": 37,
+"Emitter": 21,
+"Camera": 14,
+"Brush": 13,
+"ZoneInfo": 2,
+"PlayerStart": 2,
+"LevelInfo": 1,
+"TerrainInfo": 1,
+"PhysicsVolume": 1,
+"MusicVolume": 1,
+"Level": 1,
+"NMovableSunLight": 1,
+"SkyZoneInfo": 1,
+"LevelSummary": 1,
+"NSun": 1,
+"NMoon": 1
+},
+"atores_ambiente": [
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 3771.06543,
+"Summary": "LevelSummary",
+"VisibleGroups": "emitter_cave_smoke,None",
+"CameraLocationDynamic": [
+179680.75,
+114493.7344,
+-6331.2246
+],
+"CameraLocationTop": [
+179680.75,
+114493.7344,
+401505.3438
+],
+"CameraLocationFront": [
+179680.75,
+-6331.2246,
+51852.2812
+],
+"CameraLocationSide": [
+117755.0547,
+-6331.2246,
+30195.752
+],
+"NavigationPointList": "PlayerStart0",
+"AmbientVector": [
+0.0457,
+0.0457,
+0.0457
+],
+"AmbientBrightness": 1
+}
+},
+{
+"classe": "TerrainInfo",
+"nome": "TerrainInfo0",
+"props": {
+"TerrainMap": "T_25_21.Height.25_21",
+"TerrainScale": [
+128.0,
+128.0,
+76.0
+],
+"Layers": {
+"Texture": "T_texture.Texture.Base",
+"AlphaMap": "T_texture.Texture.layer0",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": -0.04688,
+"Z": 365643.0
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-1280.0,
+-768.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+98304.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[1]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[2]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[3]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[4]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[5]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[6]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00521,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00521,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.04167,
+"Y": -0.0625,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[7]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.0625,
+"Y": -0.09375,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[8]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00521,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00521,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": 0.04167,
+"Y": -0.0625,
+"Z": 365031.5
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+4096.0,
+-6144.0,
+32171.9648
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+-131072.0,
+196608.0,
+-9551.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[9]": {
+"Texture": null,
+"AlphaMap": null,
+"UScale": 0.0,
+"VScale": 0.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 32.0,
+"X": 32.0,
+"Y": 76.0,
+"Z": 4096.0
+},
+"YPlane": {
+"W": -6144.0,
+"X": 32225.85938,
+"Y": 32.0,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 32.0,
+"Z": 0.0
+},
+"WPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.29688,
+"Z": -131072.0
+}
+},
+"KFriction": 196608.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld[1]": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+0.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap[1]": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+0.0
+],
+"bUseAlpha": false
+},
+"QuadVisibilityBitmap": "<8194>",
+"EdgeTurnBitmap": "<8194>",
+"MapX": 25,
+"MapY": 21,
+"QuadVisibilityBitmapOrig": "<8194>",
+"EdgeTurnBitmapOrig": "<8194>",
+"GeneratedSectorCounter": 256,
+"NumIntMap": 8,
+"bAutoTimeGeneration": true,
+"TIntMap": "<528537>",
+"TickTime": 12.0,
+"bSunAffect": true,
+"Location": [
+180224.0,
+114688.0,
+160.6513
+],
+"Rotation": [
+0,
+-6144,
+0
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo1",
+"props": {
+"AmbientVector": [
+0.14,
+0.14,
+0.14
+],
+"AmbientBrightness": 8,
+"DistanceFogColor": {
+"R": 64,
+"G": 41,
+"B": 17,
+"A": 0
+},
+"DistanceFogStart": 200.0,
+"DistanceFogEnd": 12000.0,
+"bLightChanged": true,
+"bSunAffect": false,
+"Location": [
+178177.0,
+113920.0,
+-6706.0
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light1",
+"props": {
+"LightBrightness": 200.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+180489.6875,
+114752.2734,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light0",
+"props": {
+"LightBrightness": 200.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+179313.0625,
+116154.2656,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light63",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 45.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+181456.0,
+114281.0,
+-7559.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light42",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+178834.7344,
+113437.3281,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light14",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 45.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+181146.0,
+113975.0,
+-7559.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light9",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 45.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+181070.0,
+116061.0,
+-7559.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light13",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 45.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+181359.0,
+115738.0,
+-7559.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume5",
+"props": {
+"nMusicID": 252101,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bLightChanged": true,
+"Group": "None,252101_dragon_room",
+"Location": [
+172864.0,
+109968.0,
+-8528.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "Light",
+"nome": "Light10",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 45.0,
+"LightHue": 135,
+"LightSaturation": 80,
+"Location": [
+181341.0,
+116370.0,
+-7381.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light39",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+179114.25,
+117202.3594,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light66",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 20.0,
+"LightHue": 135,
+"LightSaturation": 80,
+"Location": [
+181010.0,
+113885.0,
+-7604.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light28",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+180641.0,
+116668.0,
+-7123.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light53",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 20.0,
+"LightHue": 135,
+"LightSaturation": 80,
+"Location": [
+181481.0,
+113218.0,
+-7489.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light35",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+179622.6875,
+111657.2734,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light62",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 20.0,
+"LightHue": 30,
+"LightSaturation": 20,
+"Location": [
+181723.0,
+113860.0,
+-7373.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light50",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+180830.0,
+112385.0,
+-7220.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light52",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 20.0,
+"LightHue": 135,
+"LightSaturation": 80,
+"Location": [
+180807.0,
+115629.0,
+-7604.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light12",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 20.0,
+"LightHue": 30,
+"LightSaturation": 20,
+"Location": [
+181739.0,
+115796.0,
+-7373.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "NMovableSunLight",
+"nome": "NMovableSunLight0",
+"props": {
+"LightBrightness": 70.0,
+"bSunAffect": true,
+"Location": [
+195042.875,
+99795.0,
+15240.1318
+],
+"Rotation": [
+-8846,
+25324,
+0
+],
+"DrawScale": 100.0
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"Terrains": "<2 bytes>",
+"DistanceFogEnd": 15000.0,
+"Location": [
+181489.8438,
+113049.875,
+-126.7227
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light38",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+176287.4531,
+116446.9375,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light55",
+"props": {
+"LightBrightness": 140.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+179672.0,
+111453.0,
+-7410.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light47",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+173925.7656,
+115188.2422,
+-7410.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light46",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+174590.1094,
+113335.9375,
+-7410.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light45",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+175342.3125,
+111827.4688,
+-7410.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light51",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 70.0,
+"LightHue": 135,
+"LightSaturation": 80,
+"Location": [
+175309.8594,
+117998.9453,
+-7410.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light36",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+176579.5156,
+113240.6797,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light49",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+179115.5156,
+118249.0547,
+-7410.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light44",
+"props": {
+"LightBrightness": 180.0,
+"LightRadius": 50.0,
+"LightHue": 35,
+"LightSaturation": 80,
+"Location": [
+177244.0,
+111312.0,
+-7091.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light48",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 70.0,
+"LightHue": 20,
+"LightSaturation": 80,
+"Location": [
+176931.8594,
+118311.9453,
+-7218.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light37",
+"props": {
+"LightBrightness": 160.0,
+"LightRadius": 100.0,
+"LightHue": 34,
+"LightSaturation": 70,
+"Location": [
+175212.4688,
+114709.0234,
+-7127.9912
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light56",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 30.0,
+"LightHue": 135,
+"LightSaturation": 60,
+"Location": [
+181523.0,
+116173.0,
+-6680.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light59",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 30.0,
+"LightHue": 135,
+"LightSaturation": 60,
+"Location": [
+181508.0,
+113423.0,
+-6552.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light65",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 15.0,
+"LightHue": 35,
+"LightSaturation": 60,
+"Location": [
+181488.0,
+115509.0,
+-6291.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+228.2028,
+264339.1562,
+24439.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "Light",
+"nome": "Light64",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 15.0,
+"LightHue": 35,
+"LightSaturation": 60,
+"Location": [
+181472.0,
+114297.0,
+-6408.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light61",
+"props": {
+"LightBrightness": 170.0,
+"LightRadius": 15.0,
+"LightHue": 35,
+"LightSaturation": 60,
+"Location": [
+182206.0,
+115418.0,
+-6475.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light57",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 30.0,
+"LightHue": 135,
+"LightSaturation": 60,
+"Location": [
+179893.0,
+117268.0,
+-5838.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light58",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 30.0,
+"LightHue": 135,
+"LightSaturation": 60,
+"Location": [
+178998.0,
+118153.0,
+-6375.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light7",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 30.0,
+"LightHue": 135,
+"LightSaturation": 60,
+"Location": [
+176716.0,
+111187.0,
+-6552.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light60",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 30.0,
+"LightHue": 135,
+"LightSaturation": 60,
+"Location": [
+179277.0,
+111134.0,
+-6552.0
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+210.322,
+264311.75,
+24478.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bSunAffect": true,
+"Location": [
+194.1241,
+264295.9062,
+24474.8398
+],
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter8",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+179300.25,
+114032.4688,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter17",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.4,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 30,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -25.0,
+"Max": 25.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Y": {
+"Min": 150.0,
+"Max": 170.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 140.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.45,
+"Max": 0.45
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -600.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter3",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+175731.8438,
+113729.6641,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter2",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+175805.8438,
+117666.6641,
+-6331.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter33",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.84,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 40,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -150.0,
+"Max": 150.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.1,
+"Max": 1.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter50",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.84,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 40,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -150.0,
+"Max": 150.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.6,
+"Max": 0.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter51",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.36,
+"FadeOutStartTime": 1.32,
+"FadeOut": true,
+"FadeInEndTime": 0.96,
+"FadeIn": true,
+"MaxParticles": 40,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 30.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 110.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 120.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.1,
+"Max": 0.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter52",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.2,
+"Max": 1.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter53",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.2,
+"Max": 1.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter42",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.2,
+"Max": 2.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter43",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.9,
+"Max": 1.9
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter54",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.4,
+"Max": 2.4
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter32",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.6,
+"Max": 0.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter22",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.6,
+"Max": 2.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter13",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-150.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.63,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Y": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Z": {
+"Min": -12.5,
+"Max": 12.5
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 30.0
+},
+"Y": {
+"Min": 75.0,
+"Max": 85.0
+},
+"Z": {
+"Min": 225.0,
+"Max": 225.0
+}
+},
+"InitialParticlesPerSecond": 40.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.5,
+"Max": 0.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -650.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter12",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Y": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Z": {
+"Min": -100.0,
+"Max": 100.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.8,
+"Max": 0.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter27",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.7,
+"Max": 2.7
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter25",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.0,
+"Max": 1.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter24",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.3,
+"Max": 1.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter28",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.1,
+"Max": 1.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter15",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.25,
+"Max": 0.25
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter23",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.0,
+"Max": 1.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter29",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -130.0,
+"Max": 130.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.6,
+"Max": 1.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter16",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -130.0,
+"Max": 130.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.75,
+"Max": 0.75
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter45",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.8,
+"Max": 2.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter46",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.2,
+"Max": 1.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter4",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.5,
+"Max": 0.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter8",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -130.0,
+"Max": 130.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.4,
+"Max": 1.4
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter30",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.4,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 30,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -25.0,
+"Max": 25.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Y": {
+"Min": 150.0,
+"Max": 170.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 140.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.3,
+"Max": 1.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -600.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter31",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.2
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.33,
+"RelativeSize": 4.0
+},
+{
+"RelativeTime": 0.45,
+"RelativeSize": 4.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.6,
+"Max": 2.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter44",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.9,
+"Max": 1.9
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter37",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.0,
+"Max": 1.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter36",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.7,
+"Max": 0.7
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter61",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.5,
+"Max": 0.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter60",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.1,
+"Max": 2.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter55",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.8,
+"Max": 0.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter6",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+175691.75,
+116442.2031,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter15",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+179196.2656,
+115990.4531,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter10",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+177280.7031,
+113787.3828,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter18",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+176362.1094,
+115454.4219,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter12",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+178985.0938,
+116650.5156,
+-6331.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter19",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+176259.4219,
+114693.1094,
+-6331.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter9",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+181219.8438,
+113965.6641,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter21",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+179786.1719,
+112522.0469,
+-6331.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter16",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+177685.6719,
+116841.4688,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter17",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+178154.7656,
+112910.625,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter20",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+179728.75,
+114493.7344,
+-6331.2246
+],
+"DrawScale": 3.0,
+"bSelected": true
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter13",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+179527.0156,
+117755.0547,
+-6331.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter36",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+175087.8438,
+114965.6641,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter5",
+"props": {
+"Emitters": "<11 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+180659.8438,
+115720.6641,
+-6072.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter10",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-900.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Y": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Z": {
+"Min": -490.0,
+"Max": -440.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Y": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Z": {
+"Min": 10.0,
+"Max": 10.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Y": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Z": {
+"Min": -25.0,
+"Max": -25.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter6",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.5,
+"Max": 2.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter26",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.0,
+"Max": 1.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter7",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.9,
+"Max": 0.9
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter14",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.85,
+"Max": 1.85
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter9",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.4,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 30,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -25.0,
+"Max": 25.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Y": {
+"Min": 150.0,
+"Max": 170.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 140.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.1,
+"Max": 1.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -600.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter11",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-250.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Y": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Z": {
+"Min": 9.0,
+"Max": 12.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.3,
+"Max": 0.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter65",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-150.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.63,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Y": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Z": {
+"Min": -12.5,
+"Max": 12.5
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 30.0
+},
+"Y": {
+"Min": 75.0,
+"Max": 85.0
+},
+"Z": {
+"Min": 225.0,
+"Max": 225.0
+}
+},
+"InitialParticlesPerSecond": 40.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.5,
+"Max": 1.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -650.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter64",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Y": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Z": {
+"Min": -100.0,
+"Max": 100.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.8,
+"Max": 1.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter59",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-250.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Y": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Z": {
+"Min": 9.0,
+"Max": 12.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.3,
+"Max": 1.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter58",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-900.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Y": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Z": {
+"Min": -490.0,
+"Max": -440.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Y": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Z": {
+"Min": 10.0,
+"Max": 10.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Y": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Z": {
+"Min": -25.0,
+"Max": -25.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter105",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-150.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.63,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Y": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Z": {
+"Min": -12.5,
+"Max": 12.5
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 30.0
+},
+"Y": {
+"Min": 75.0,
+"Max": 85.0
+},
+"Z": {
+"Min": 225.0,
+"Max": 225.0
+}
+},
+"InitialParticlesPerSecond": 40.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.6,
+"Max": 1.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -650.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter104",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Y": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Z": {
+"Min": -100.0,
+"Max": 100.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.9,
+"Max": 1.9
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter103",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-250.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Y": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Z": {
+"Min": 9.0,
+"Max": 12.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.4,
+"Max": 1.4
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter102",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-900.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Y": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Z": {
+"Min": -490.0,
+"Max": -440.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Y": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Z": {
+"Min": 10.0,
+"Max": 10.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 3.1,
+"Max": 3.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Y": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Z": {
+"Min": -25.0,
+"Max": -25.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter101",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-150.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.63,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Y": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Z": {
+"Min": -12.5,
+"Max": 12.5
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 30.0
+},
+"Y": {
+"Min": 75.0,
+"Max": 85.0
+},
+"Z": {
+"Min": 225.0,
+"Max": 225.0
+}
+},
+"InitialParticlesPerSecond": 40.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.9,
+"Max": 1.9
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -650.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter100",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Y": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Z": {
+"Min": -100.0,
+"Max": 100.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.2,
+"Max": 2.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter99",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-250.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Y": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Z": {
+"Min": 9.0,
+"Max": 12.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.7,
+"Max": 1.7
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter98",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-900.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Y": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Z": {
+"Min": -490.0,
+"Max": -440.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Y": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Z": {
+"Min": 10.0,
+"Max": 10.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 3.1,
+"Max": 3.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Y": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Z": {
+"Min": -25.0,
+"Max": -25.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter93",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.4,
+"Max": 0.4
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter92",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.4,
+"Max": 0.4
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter91",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.7,
+"Max": 0.7
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter90",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.4,
+"Max": 0.4
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter89",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter49",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.1,
+"Max": 0.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter48",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.2
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.33,
+"RelativeSize": 4.0
+},
+{
+"RelativeTime": 0.45,
+"RelativeSize": 4.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.1,
+"Max": 2.1
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter88",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter87",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter86",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.3,
+"Max": 0.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter85",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter84",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.6,
+"Max": 1.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter69",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-150.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.63,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Y": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Z": {
+"Min": -12.5,
+"Max": 12.5
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 30.0
+},
+"Y": {
+"Min": 75.0,
+"Max": 85.0
+},
+"Z": {
+"Min": 225.0,
+"Max": 225.0
+}
+},
+"InitialParticlesPerSecond": 40.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.75,
+"Max": 0.75
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -650.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter68",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Y": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Z": {
+"Min": -100.0,
+"Max": 100.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.05,
+"Max": 1.05
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter67",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-250.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Y": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Z": {
+"Min": 9.0,
+"Max": 12.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.55,
+"Max": 0.55
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter66",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-900.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Y": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Z": {
+"Min": -490.0,
+"Max": -440.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Y": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Z": {
+"Min": 10.0,
+"Max": 10.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.25,
+"Max": 2.25
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Y": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Z": {
+"Min": -25.0,
+"Max": -25.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter97",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-150.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.63,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Y": {
+"Min": -35.0,
+"Max": 35.0
+},
+"Z": {
+"Min": -12.5,
+"Max": 12.5
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 30.0
+},
+"Y": {
+"Min": 75.0,
+"Max": 85.0
+},
+"Z": {
+"Min": 225.0,
+"Max": 225.0
+}
+},
+"InitialParticlesPerSecond": 40.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.45,
+"Max": 1.45
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -650.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter96",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Y": {
+"Min": -30.0,
+"Max": 30.0
+},
+"Z": {
+"Min": -100.0,
+"Max": 100.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.15,
+"Max": 1.15
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter95",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-250.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Y": {
+"Min": 9.0,
+"Max": 12.0
+},
+"Z": {
+"Min": 9.0,
+"Max": 12.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.65,
+"Max": 0.65
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -550.0,
+"Max": -450.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter94",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+5.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-900.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Y": {
+"Min": -100.0,
+"Max": 100.0
+},
+"Z": {
+"Min": -490.0,
+"Max": -440.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Y": {
+"Min": 35.0,
+"Max": 65.0
+},
+"Z": {
+"Min": 10.0,
+"Max": 10.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.8,
+"Max": 0.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Y": {
+"Min": 500.0,
+"Max": 500.0
+},
+"Z": {
+"Min": -25.0,
+"Max": -25.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter39",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.7,
+"Max": 0.7
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter38",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.7,
+"Max": 0.7
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter35",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.3,
+"Max": 2.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter41",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.9,
+"Max": 1.9
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter40",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 3.5,
+"Max": 3.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter83",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.36,
+"FadeOutStartTime": 1.32,
+"FadeOut": true,
+"FadeInEndTime": 0.96,
+"FadeIn": true,
+"MaxParticles": 40,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 30.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 110.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 120.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.5,
+"Max": 1.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter82",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.84,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 40,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -150.0,
+"Max": 150.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter81",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.5,
+"Max": 1.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter80",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.2
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.33,
+"RelativeSize": 4.0
+},
+{
+"RelativeTime": 0.45,
+"RelativeSize": 4.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 3.5,
+"Max": 3.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter63",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.5,
+"Max": 0.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter62",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.8,
+"Max": 0.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter57",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.65714,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.4,
+"FadeOutStartTime": 1.17,
+"FadeOut": true,
+"FadeInEndTime": 0.9,
+"FadeIn": true,
+"MaxParticles": 30,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": -25.0,
+"Max": 25.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 40.0,
+"Max": 60.0
+},
+"Y": {
+"Min": 150.0,
+"Max": 170.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 140.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 1.0,
+"Max": 1.0
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -600.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter56",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.88,
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-100.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -130.0,
+"Max": 130.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.3,
+"Max": 1.3
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter79",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.83,
+"FadeOutStartTime": 0.75,
+"FadeOut": true,
+"FadeInEndTime": 0.75,
+"FadeIn": true,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "SpriteEmitter4",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 3.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 20.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 80.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"InitialParticlesPerSecond": 20.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.2,
+"Max": 0.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -450.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter78",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-400.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.7,
+"FadeOutStartTime": 1.5,
+"FadeOut": true,
+"FadeInEndTime": 1.11,
+"FadeIn": true,
+"MaxParticles": 20,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+50.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 5.0,
+"Max": 55.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 120.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 80.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.2,
+"Max": 0.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter77",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.5,
+"Max": 0.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter76",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.26,
+"FadeOut": true,
+"FadeInEndTime": 0.54,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_01",
+"StartLocationOffset": [
+0.0,
+0.0,
+-80.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Y": {
+"Min": -70.0,
+"Max": 70.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.46,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.67,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 1.5
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Y": {
+"Min": 12.0,
+"Max": 18.0
+},
+"Z": {
+"Min": 12.0,
+"Max": 18.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 44.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.Stone.25_21_stone",
+"TextureUSubdivisions": 4,
+"TextureVSubdivisions": 4,
+"SubdivisionEnd": 7,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 0.2,
+"Max": 0.2
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -650.0,
+"Max": -550.0
+}
+}
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter75",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+10.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 180,
+"G": 180,
+"B": 180,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.5,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.87,
+"FadeOutStartTime": 1.0,
+"FadeOut": true,
+"FadeInEndTime": 0.16,
+"FadeIn": true,
+"MaxParticles": 25,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_02",
+"StartLocationOffset": [
+0.0,
+0.0,
+-700.0
+],
+"StartLocationRange": {
+"X": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Y": {
+"Min": -150.0,
+"Max": 150.0
+},
+"Z": {
+"Min": -980.0,
+"Max": -880.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 1.0
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 1.5
+},
+{
+"RelativeTime": 0.24,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.34,
+"RelativeSize": 3.5
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 4.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Y": {
+"Min": 50.0,
+"Max": 80.0
+},
+"Z": {
+"Min": 20.0,
+"Max": 20.0
+}
+},
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"BlendBetweenSubdivisions": true,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.8,
+"Max": 1.8
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Y": {
+"Min": 1000.0,
+"Max": 1000.0
+},
+"Z": {
+"Min": -50.0,
+"Max": -50.0
+}
+},
+"GetVelocityDirectionFrom": 2
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter34",
+"props": {
+"UseDirectionAs": 1,
+"Acceleration": [
+0.0,
+0.0,
+-350.0
+],
+"UseColorScale": true,
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 155,
+"G": 155,
+"B": 155,
+"A": 255
+}
+},
+{
+"RelativeTime": 0.57143,
+"Color": {
+"R": 253,
+"G": 253,
+"B": 253,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 176,
+"G": 176,
+"B": 176,
+"A": 255
+}
+}
+],
+"Opacity": 0.36,
+"FadeOutStartTime": 1.32,
+"FadeOut": true,
+"FadeInEndTime": 0.96,
+"FadeIn": true,
+"MaxParticles": 40,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "smoke_01",
+"StartLocationRange": {
+"X": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Y": {
+"Min": -50.0,
+"Max": 50.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"SpinParticles": true,
+"SpinsPerSecondRange": {
+"X": {
+"Min": 0.01,
+"Max": 0.01
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"UseSizeScale": true,
+"UseRegularSizeScale": false,
+"SizeScale": [
+{
+"RelativeTime": 0.0,
+"RelativeSize": 0.5
+},
+{
+"RelativeTime": 0.11,
+"RelativeSize": 2.0
+},
+{
+"RelativeTime": 0.65,
+"RelativeSize": 3.0
+},
+{
+"RelativeTime": 0.78,
+"RelativeSize": 7.0
+},
+{
+"RelativeTime": 1.0,
+"RelativeSize": 7.0
+}
+],
+"StartSizeRange": {
+"X": {
+"Min": 30.0,
+"Max": 50.0
+},
+"Y": {
+"Min": 90.0,
+"Max": 110.0
+},
+"Z": {
+"Min": 450.0,
+"Max": 450.0
+}
+},
+"InitialParticlesPerSecond": 120.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 1,
+"Texture": "FX_E_T.smoke.25_21_smoke3",
+"LifetimeRange": {
+"Min": 3.0,
+"Max": 3.0
+},
+"InitialDelayRange": {
+"Min": 0.6,
+"Max": 0.6
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -500.0,
+"Max": -400.0
+}
+}
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter33",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+178232.3281,
+115555.4141,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter1",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+179282.2031,
+111839.4531,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter7",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+180487.8438,
+112671.6641,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter11",
+"props": {
+"Emitters": "<9 bytes>",
+"SpawnSound": "<2 bytes>",
+"SoundRadius": 800.0,
+"SoundVolume": 250.0,
+"bLightChanged": true,
+"Group": "None,emitter_cave_smoke",
+"Location": [
+176949.8438,
+112085.6641,
+-6101.2246
+],
+"DrawScale": 3.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter47",
+"props": {
+"Acceleration": [
+0.0,
+0.0,
+-300.0
+],
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"FadeOutStartTime": 1.6,
+"FadeOut": true,
+"FadeInEndTime": 0.36,
+"FadeIn": true,
+"MaxParticles": 15,
+"RespawnDeadParticles": false,
+"AutoDestroy": true,
+"Name": "stone_02",
+"StartLocationRange": {
+"X": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Y": {
+"Min": -60.0,
+"Max": 60.0
+},
+"Z": {
+"Min": -120.0,
+"Max": 120.0
+}
+},
+"SpinParticles": true,
+"StartSpinRange": {
+"X": {
+"Min": 0.0,
+"Max": 1.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"UniformSize": true,
+"InitialParticlesPerSecond": 10000.0,
+"AutomaticInitialSpawning": false,
+"DrawStyle": 6,
+"Texture": "FX_E_T.Stone.25_21_stone3",
+"TextureUSubdivisions": 2,
+"TextureVSubdivisions": 1,
+"BlendBetweenSubdivisions": true,
+"SubdivisionEnd": 1,
+"UseRandomSubdivision": true,
+"LifetimeRange": {
+"Min": 2.0,
+"Max": 2.0
+},
+"InitialDelayRange": {
+"Min": 1.5,
+"Max": 1.5
+},
+"ResetOnTrigger": true,
+"StartVelocityRange": {
+"X": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": -700.0,
+"Max": -500.0
+}
+}
+}
+}
+]
+}

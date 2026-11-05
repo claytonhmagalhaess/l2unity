@@ -1,0 +1,8 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2StyleSheet" uss="L2Slot" xmlns:ui="UnityEngine.UIElements">
+  <ui:Button name="slot" class="l2-slot empty skill-slot">
+    <ui:VisualElement name="BgContainer" picking-mode="Ignore" class="slot-bg-container">
+      <ui:VisualElement name="SlotBg" picking-mode="Ignore" class="slot-bg" />
+      <ui:VisualElement name="Effect" picking-mode="Ignore" class="toggle-effect" />
+    </ui:VisualElement>
+  </ui:Button>
+</ui:UXML>

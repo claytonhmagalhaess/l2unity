@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>InfinityLauncher</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="cabecalho.jpg" />
+    <None Remove="noticia1.jpg" />
+    <None Remove="noticia2.jpg" />
+    <None Remove="noticia3.jpg" />
+    <None Remove="cinzel-400.ttf" />
+    <None Remove="cinzel-700.ttf" />
+    <EmbeddedResource Include="cabecalho.jpg" LogicalName="cabecalho.jpg" />
+    <EmbeddedResource Include="noticia1.jpg" LogicalName="noticia1.jpg" />
+    <EmbeddedResource Include="noticia2.jpg" LogicalName="noticia2.jpg" />
+    <EmbeddedResource Include="noticia3.jpg" LogicalName="noticia3.jpg" />
+    <EmbeddedResource Include="cinzel-400.ttf" LogicalName="cinzel-400.ttf" />
+    <EmbeddedResource Include="cinzel-700.ttf" LogicalName="cinzel-700.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+</Project>

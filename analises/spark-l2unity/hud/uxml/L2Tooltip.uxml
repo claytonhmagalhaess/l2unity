@@ -1,0 +1,59 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Tooltip" uss="L2Slot" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="Tooltip" tabindex="-1" picking-mode="Ignore">
+    <ui:VisualElement name="LabelTooltip">
+      <ui:Label tabindex="-1" text="Adena (0)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Content" class="tooltip-background" />
+    </ui:VisualElement>
+    <ui:VisualElement name="SkillTooltip">
+      <ui:VisualElement name="Content" class="tooltip-background">
+        <ui:VisualElement name="SkillTooltipFirst" class="skill-tooltip-first">
+          <ui:VisualElement name="SkillTooltipIcon" class="l2-slot" />
+          <ui:VisualElement>
+            <ui:VisualElement class="toolitp-skill-label-container">
+              <ui:Label text="Triple sonic slash triple ultimate" name="SkillTooltipName" class="l2-color-4 tooltip-skill-name" />
+              <ui:Label text="Lv" name="SkillTooltipLevel" class="l2-color-3 tooltip-skill-level" />
+              <ui:Label text="1" name="SkillTooltipLevelValue" class="l2-color-2 tooltip-skill-level-value" />
+            </ui:VisualElement>
+            <ui:Label text="Passive Skill" name="SkillTooltipType" class="l2-color-2 tooltip-skill-type" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="SkillTooltipSecond" class="skill-tooltip-second">
+          <ui:VisualElement name="SkillTooltipMpCost" class="skill-tooltip-group">
+            <ui:Label text="MP Cost :" name="Label" class="l2-color-4 tooltip-group-label" />
+            <ui:Label text="1" name="SkillTooltipMpCostValue" class="l2-color-5 tooltip-group-value" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SkillTooltipRange" class="skill-tooltip-group">
+            <ui:Label text="Range :" class="l2-color-3 tooltip-group-label" />
+            <ui:Label text="300" name="SkillTooltipRangeValue" class="l2-color-2 tooltip-group-value" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SkillTooltipCastingTime" class="skill-tooltip-group">
+            <ui:Label text="Casting Time :" name="Label" class="l2-color-3 tooltip-group-label" />
+            <ui:Label text="3 Sec." name="SkillTooltipCastingTimeValue" class="l2-color-2 tooltip-group-value" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SkillTooltipReuseTime" class="skill-tooltip-group">
+            <ui:Label text="Reuse Time :" class="l2-color-3 tooltip-group-label" />
+            <ui:Label text="4 Sec." name="SkillTooltipReuseTimeValue" class="l2-color-2 tooltip-group-value" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement />
+        <ui:VisualElement name="SkillTooltipDescriptionContainer" class="skill-tooltip-description-container">
+          <ui:Label name="SkillTooltipDescription" text="Attacks the enemy with $s1 Power added to P. Atk., and inflicts Bleed causing loss of $s3 HP per second for $s2. Requires a sword, dagger, or dual sword. Over-hit." double-click-selects-word="false" triple-click-selects-line="false" enable-rich-text="false" emoji-fallback-support="false" class="skill-tooltip-group l2-color-6" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="EffectTooltip">
+      <ui:VisualElement name="Content" class="tooltip-background">
+        <ui:VisualElement class="effect-tooltip-section">
+          <ui:Label text="Sprint" name="EffectTooltipName" class="l2-color-4" />
+          <ui:Label name="EffectTooltipEnchant" class="l2-color-5" />
+          <ui:Label text="Lv" name="EffectTooltipLevel" class="l2-color-3" />
+          <ui:Label text="1" name="EffectTooltipLevelValue" class="l2-color-2" />
+        </ui:VisualElement>
+        <ui:VisualElement name="EffectTooltipDurationContainer" class="effect-tooltip-section">
+          <ui:Label text="Remaining Time :" class="l2-color-3" />
+          <ui:Label text="1h 2m 3s" name="EffectTooltipDurationValue" class="l2-color-2" />
+        </ui:VisualElement>
+        <ui:Label text="Increases Movement Speed by 33 for 20 minutes." name="EffectTooltipDescription" class="l2-color-6" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

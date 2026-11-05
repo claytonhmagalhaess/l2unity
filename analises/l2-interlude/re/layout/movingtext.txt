@@ -1,0 +1,2 @@
+Window movingtext 100x20 @TOP_RIGHT->pai.TOP_RIGHT(-12,86) unk103=GamingState unk108=1 unk114=0 unk117=0 unk122=3080202 unk126=0 unk127=12583074 unk128=2097339 unk130=0 unk131=0 unk132=7209071 unk133=6881396 unk134=6357111 unk135=5439520 unk139=Game size=[2]
+  TextBox textboxmove 300x20 @CENTER->pai.CENTER(0,0) textAlign=Center offsetY=0 textColor=#ffdcdcdc emoticon=1 size=[2]

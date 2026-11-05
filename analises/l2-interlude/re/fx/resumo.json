@@ -1,0 +1,64 @@
+{
+ "engine": {
+  "Emitter": "cabecalho",
+  "ParticleEmitter": "cabecalho",
+  "BeamEmitter": "cabecalho",
+  "MeshEmitter": "cabecalho",
+  "RibbonEmitter": "cabecalho",
+  "SparkEmitter": "cabecalho",
+  "SpriteEmitter": "cabecalho",
+  "TrailEmitter": "cabecalho",
+  "VertMeshEmitter": "cabecalho"
+ },
+ "pacotes": {
+  "lineageeffect.u": {
+   "classes": 864,
+   "com_script": 15,
+   "emissores": {
+    "SpriteEmitter": 2413,
+    "MeshEmitter": 1232,
+    "BeamEmitter": 29,
+    "VertMeshEmitter": 36,
+    "RibbonEmitter": 1
+   },
+   "falhas": [],
+   "supers": [
+    "Engine.Actor",
+    "Engine.AirEmitter",
+    "Engine.NCubics",
+    "Engine.NProjectile",
+    "Engine.NSkillProjectile",
+    "Engine.WaterHitEmitter"
+   ]
+  },
+  "LineageKetraEffect.u": {
+   "classes": 12,
+   "com_script": 0,
+   "emissores": {
+    "SpriteEmitter": 60,
+    "MeshEmitter": 24
+   },
+   "falhas": [],
+   "supers": []
+  },
+  "Rider_Effect.u": {
+   "classes": 10,
+   "com_script": 0,
+   "emissores": {
+    "SpriteEmitter": 27,
+    "MeshEmitter": 6
+   },
+   "falhas": [],
+   "supers": []
+  },
+  "AntharasHighEffect.u": {
+   "erro": "cifra desconhecida (nao e Lineage2Ver nem pacote UE2 em claro)"
+  },
+  "ValakasHighEffect.u": {
+   "erro": "cifra desconhecida (nao e Lineage2Ver nem pacote UE2 em claro)"
+  },
+  "LindviorHighEffect.u": {
+   "erro": "cifra desconhecida (nao e Lineage2Ver nem pacote UE2 em claro)"
+  }
+ }
+}

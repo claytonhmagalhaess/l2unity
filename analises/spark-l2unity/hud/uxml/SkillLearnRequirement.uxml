@@ -1,0 +1,6 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillLearnWindow" uss="L2Slot" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SkillLearnRequirement">
+    <ui:VisualElement name="SkillRequirementIcon" class="l2-slot" />
+    <ui:Label text="Spellbook: Energy Bolt X1" name="SkillRequirementName" class="skill-group l2-color-4" />
+  </ui:VisualElement>
+</ui:UXML>

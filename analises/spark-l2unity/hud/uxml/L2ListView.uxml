@@ -1,0 +1,5 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2ListView" xmlns:ui="UnityEngine.UIElements">
+  <ui:ScrollView vertical-scroller-visibility="AlwaysVisible" horizontal-page-size="1" name="ScrollView" horizontal-scroller-visibility="Hidden" mouse-wheel-scroll-size="2" touch-scroll-type="Clamped" class="l2-scroll-view">
+    <ui:GroupBox name="L2ListView" class="l2-list-view l2-scroll-view button-label" />
+  </ui:ScrollView>
+</ui:UXML>

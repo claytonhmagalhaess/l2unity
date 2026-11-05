@@ -1,0 +1,29 @@
+Window InventoryWnd 256x401 @CENTER_RIGHT->pai.CENTER_RIGHT(0,-70) unk102=InventoryWnd unk103=GamingState unk104=1 unk107=1 unk109=1 unk111=138 unk113=0 unk114=3 unk115=1 unk117=0 unk122=65535 unk123=0 unk124=0 unk125=0 unk126=0 unk127=2490384 unk128=84410863 unk130=0 unk131=0 unk132=72779384 unk133=13032 unk134=11672 unk135=-1064894378 unk136=L2UI_CH3.MenuIcon.Menuicon2 unk137=195 unk139=Game size=[2]
+  Texture BackTexture 256x381 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_CH3.InventoryWnd.Inventory_Back type=Stretch layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  TextBox ItemCount 10x0 @TOP_LEFT->pai.TOP_LEFT(241,162) textAlign=Right offsetY=0 textColor=#ffb09b79 emoticon=1 autosize=1 size=[2]
+  ItemWindow EquipItem_Underwear 34x34 @TOP_LEFT->pai.TOP_LEFT(137,36) popupType=Inventory col=1 row=1 maxItemNum=1 iconWidth=32 iconHeight=32 gapX=5 gapY=3 noScroll=1 size=[2]
+  ItemWindow EquipItem_Head @NONE->pai.TOP_LEFT(53,36) popupType=Inventory
+  ItemWindow EquipItem_Hair @NONE->pai.TOP_LEFT(14,36) popupType=Inventory
+  ItemWindow EquipItem_Hair2 @NONE->pai.TOP_LEFT(92,36) popupType=Inventory
+  ItemWindow EquipItem_Neck @NONE->pai.TOP_LEFT(176,36) popupType=Inventory
+  ItemWindow EquipItem_RHand @NONE->pai.TOP_LEFT(14,74) popupType=Inventory
+  ItemWindow EquipItem_Chest @NONE->pai.TOP_LEFT(53,74) popupType=Inventory
+  ItemWindow EquipItem_LHand @NONE->pai.TOP_LEFT(92,74) popupType=Inventory
+  ItemWindow EquipItem_REar @NONE->pai.TOP_LEFT(137,74) popupType=Inventory
+  ItemWindow EquipItem_LEar @NONE->pai.TOP_LEFT(176,74) popupType=Inventory
+  ItemWindow EquipItem_Gloves @NONE->pai.TOP_LEFT(14,112) popupType=Inventory
+  ItemWindow EquipItem_Legs @NONE->pai.TOP_LEFT(53,112) popupType=Inventory
+  ItemWindow EquipItem_Feet @NONE->pai.TOP_LEFT(92,112) popupType=Inventory
+  ItemWindow EquipItem_RFinger @NONE->pai.TOP_LEFT(137,112) popupType=Inventory
+  ItemWindow EquipItem_LFinger @NONE->pai.TOP_LEFT(176,112) popupType=Inventory
+  ItemWindow HennaItem 26x84 @TOP_LEFT->pai.TOP_LEFT(223,39) popupType=NormalItem col=1 row=1 maxItemNum=1 iconWidth=24 iconHeight=24 gapX=0 gapY=3 backgroundItemWidth=26 backgroundItemHeight=26 backgroundItemTex=L2UI_CH3.InventoryWnd.Inventory_Mark noSelectItem=1 noItemDrag=1 noScroll=1 size=[2]
+  ItemWindow InventoryItem 236x139 @TOP_LEFT->pai.TOP_LEFT(9,188) popupType=Inventory col=6 row=4 maxItemNum=250 iconWidth=32 iconHeight=32 gapX=5 gapY=3 size=[2]
+  ItemWindow QuestItem 236x139 @TOP_LEFT->pai.TOP_LEFT(9,188) popupType=Inventory col=6 row=4 maxItemNum=250 iconWidth=32 iconHeight=32 gapX=5 gapY=3 size=[2]
+  Tab InventoryTab 189x23 @TOP_LEFT->pai.TOP_LEFT(12,159) size=[2] tabs=[2]
+    - tabs: buttonName=2 target=InventoryItem width=94 height=23 normalTex=L2UI_CH3.InventoryWnd.Inventory_tab2 pushedTex=L2UI_CH3.InventoryWnd.Inventory_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=118 target=QuestItem width=94 height=23 normalTex=L2UI_CH3.InventoryWnd.Inventory_tab2 pushedTex=L2UI_CH3.InventoryWnd.Inventory_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+  Button CrystallizeButton 34x34 @TOP_LEFT->pai.TOP_LEFT(14,351) popupType=Text popupValue=891 normalTex=L2UI_CH3.InventoryWnd.Inventory_recipe pushedTex=L2UI_CH3.InventoryWnd.Inventory_recipe dropTex=L2UI_CH3.InventoryWnd.Inventory_recipe_drag size=[2]
+  Button TrashButton 34x34 @TOP_LEFT->pai.TOP_LEFT(208,351) popupType=Text popupValue=890 normalTex=L2UI_CH3.InventoryWnd.Inventory_trash pushedTex=L2UI_CH3.InventoryWnd.Inventory_trash dropTex=L2UI_CH3.InventoryWnd.Inventory_trash_drag size=[2]
+  TextBox AdenaText 90x0 @TOP_LEFT->pai.TOP_LEFT(110,356) popupType=Text textAlign=Right offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  Texture AdenaIcon 16x12 @TOP_LEFT->pai.TOP_LEFT(98,355) file=L2UI.WindowIcon.WindowIconAdena type=Normal layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  InvenWeight InvenWeight 85x12 @TOP_LEFT->pai.TOP_LEFT(117,372) size=[2]

@@ -1,0 +1,1 @@
+Window ManorShopWnd 256x401 @NONE->pai.CENTER_LEFT(0,0) unk102=ManorShopWnd unk103=GamingState unk104=1 unk107=1 unk111=738 unk114=0 unk117=0 unk122=7471220 unk126=0 unk127=15400 unk128=0 unk130=0 unk131=0 unk132=4194304 unk133=12 unk134=0 unk135=0 unk139=Game size=[2]

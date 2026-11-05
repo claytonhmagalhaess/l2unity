@@ -1,0 +1,7 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="ServerListWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="ServerElement" class="server-element">
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ServerName" class="server-name" />
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ServerStatus" class="server-status" />
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CharacterCount" class="character-count" />
+  </ui:VisualElement>
+</ui:UXML>

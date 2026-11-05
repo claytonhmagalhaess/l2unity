@@ -1,0 +1,6 @@
+Window SelectDeliverWnd 256x201 @TOP_LEFT->pai.TOP_LEFT(0,100) unk102=SelectDeliverWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk111=558 unk113=0 unk114=3 unk115=0 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=64050344 unk130=0 unk131=0 unk132=0 unk133=64054328 unk134=271046512 unk135=-1285477036 unk139=Game size=[2]
+  Texture BackgroundTexture 100%+0 x 100%+0 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_ch3.DeliverWnd.Warehouse_back type=Stretch layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size_percent=[2] size=[2]
+  TextBox Text1 100x19 @TOP_LEFT->pai.TOP_LEFT(11,32) textAlign=Left offsetY=0 systemMsg=664 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ComboBox SelectDeliverCombo 178x17 @TOP_LEFT->pai.TOP_LEFT(39,61) size=[2] values=[0]
+  Button OKButton 76x23 @TOP_LEFT->pai.TOP_LEFT(51,172) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=140 size=[2]
+  Button CancelButton 76x23 @TOP_LEFT->pai.TOP_LEFT(131,172) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=141 size=[2]

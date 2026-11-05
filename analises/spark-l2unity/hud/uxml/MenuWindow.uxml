@@ -1,0 +1,41 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="MenuWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="MenuWindow" class="drag-area menu-window">
+    <ui:GroupBox name="Container" class="ui-bg menu-window-container">
+      <ui:VisualElement name="Bg" class="menu-window-bg" />
+      <ui:GroupBox name="ButtonGroup" class="bar-container menu-btn-grp">
+        <ui:Button text="
+" parse-escape-sequences="false" display-tooltip-when-elided="false" name="CharacterButton" selectable="true" triple-click-selects-line="false" double-click-selects-word="false" emoji-fallback-support="false" enable-rich-text="false" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="InventoryButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ActionButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SkillButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuestButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClanButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MapButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+        <ui:Button text="
+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SystemMenuButton" class="menu-btn">
+          <ui:VisualElement name="ButtonBG" class="menu-button-bg" />
+        </ui:Button>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

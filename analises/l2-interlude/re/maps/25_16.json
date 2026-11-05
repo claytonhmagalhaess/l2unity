@@ -1,0 +1,7049 @@
+{
+"mapa": "25_16",
+"pacote": {
+"versao": 123,
+"licenca": 28,
+"cabecalho": "Lineage2Ver111"
+},
+"classes": {
+"StaticMeshActor": 1582,
+"StaticMeshInstance": 1576,
+"AmbientSoundObject": 744,
+"TerrainSector": 256,
+"L2FogInfo": 16,
+"Camera": 15,
+"Polys": 8,
+"Model": 8,
+"Brush": 6,
+"Light": 5,
+"MovableStaticMeshActor": 2,
+"PlayerStart": 2,
+"NMovableSunLight": 1,
+"LevelInfo": 1,
+"ZoneInfo": 1,
+"MusicVolume": 1,
+"TerrainInfo": 1,
+"SkyZoneInfo": 1,
+"NSun": 1,
+"LevelSummary": 1,
+"NMoon": 1,
+"Emitter": 1,
+"SpriteEmitter": 1,
+"Level": 1,
+"PhysicsVolume": 1
+},
+"atores_ambiente": [
+{
+"classe": "NMovableSunLight",
+"nome": "NMovableSunLight0",
+"props": {
+"LightBrightness": 70.0,
+"bSunAffect": true,
+"Location": [
+197268.0,
+-66408.6875,
+15304.1318
+],
+"Rotation": [
+-8846,
+25324,
+0
+],
+"DrawScale": 100.0
+}
+},
+{
+"classe": "LevelInfo",
+"nome": "LevelInfo0",
+"props": {
+"TimeSeconds": 2059.24756,
+"Summary": "LevelSummary",
+"bPathsRebuilt": true,
+"CameraLocationDynamic": [
+190209.7656,
+-61938.6797,
+-2710.0835
+],
+"CameraLocationTop": [
+193161.1875,
+-53074.75,
+1465649.5
+],
+"CameraLocationFront": [
+190749.0,
+-2968.0,
+80820.9219
+],
+"CameraLocationSide": [
+-85463.4141,
+-6908.6611,
+105105.6328
+],
+"CameraRotationDynamic": [
+63240,
+-11692,
+0
+],
+"NavigationPointList": "PlayerStart0",
+"AmbientVector": [
+0.0457,
+0.0457,
+0.0457
+],
+"AmbientBrightness": 1
+}
+},
+{
+"classe": "ZoneInfo",
+"nome": "ZoneInfo0",
+"props": {
+"bTerrainZone": true,
+"bDistanceFog": true,
+"Terrains": "<2 bytes>",
+"DistanceFogColor": {
+"R": 105,
+"G": 105,
+"B": 105,
+"A": 0
+},
+"DistanceFogStart": 100.0,
+"DistanceFogEnd": 7000.0,
+"Location": [
+178809.4375,
+-48821.8164,
+-126.7227
+],
+"DrawScale": 10.0,
+"bIgnoredRange": true
+}
+},
+{
+"classe": "MusicVolume",
+"nome": "MusicVolume2",
+"props": {
+"nMusicID": 251601,
+"MainScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"PostScale": {
+"Scale": [
+1.0,
+1.0,
+1.0
+],
+"SheerRate": 0.0,
+"SheerAxis": 5
+},
+"bSunAffect": true,
+"Group": "None,251601",
+"Location": [
+180400.0,
+-49184.0,
+-2144.0
+],
+"bHiddenEdGroup": true
+}
+},
+{
+"classe": "TerrainInfo",
+"nome": "TerrainInfo0",
+"props": {
+"TerrainMap": "T_25_16.Height.25_16",
+"TerrainScale": [
+128.0,
+128.0,
+76.0
+],
+"Layers": {
+"Texture": "T_Godard.GOS_01",
+"AlphaMap": "T_texture.Texture.layer0",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-1280.0,
+512.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[1]": {
+"Texture": "T_Rion.orc.ORC_G1",
+"AlphaMap": "T_25_16.Height.25_16_NG1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[2]": {
+"Texture": "T_Godard.GOS001",
+"AlphaMap": "T_25_16.Height.25_16_NS",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[3]": {
+"Texture": "T_Godard.GOS_2",
+"AlphaMap": "T_25_16.Height.25_16_S1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[4]": {
+"Texture": "T_Godard.GOST_01",
+"AlphaMap": "T_25_16.Height.25_16_NS1",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[5]": {
+"Texture": "T_Godard.GOC_T1",
+"AlphaMap": "T_25_16.Height.25_16_NC",
+"UScale": 2.0,
+"VScale": 2.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00391,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00391,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.03906,
+"Y": 0.01562,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[6]": {
+"Texture": "T_Godard.GoG_3",
+"AlphaMap": "T_25_16.Height.25_16_NG",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[7]": {
+"Texture": "T_Godard.GOST004",
+"AlphaMap": "T_25_16.Height.25_16_ST",
+"UScale": 3.5,
+"VScale": 3.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 1,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00223,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.00223,
+"Y": 0.0,
+"Z": 0.0
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.02232,
+"Y": 0.00893,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[8]": {
+"Texture": "T_Godard.GOST004",
+"AlphaMap": "T_25_16.Height.25_16_ST1",
+"UScale": 3.5,
+"VScale": 3.5,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 2,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00223,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.00223,
+"Y": 0.0,
+"Z": 0.0
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.02232,
+"Y": 0.00893,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": -9567.05176,
+"LayerWeightMap": null,
+"Scale": [
+32.0,
+32.0,
+76.0
+],
+"ToWorld": [
+-5120.0,
+2048.0,
+32225.8594
+],
+"ToWorld[1]": [
+32.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+32.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0312,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0312,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": false
+},
+"Layers[9]": {
+"Texture": "T_Godard.GOSW_01",
+"AlphaMap": "T_25_16.Height.25_16_SN",
+"UScale": 1.0,
+"VScale": 1.0,
+"UPan": 0.0,
+"VPan": 0.0,
+"TextureMapAxis": 0,
+"TextureRotation": 0.0,
+"LayerRotation": [
+0,
+0,
+0
+],
+"TerrainMatrix": {
+"XPlane": {
+"W": 0.0,
+"X": 0.00781,
+"Y": 0.0,
+"Z": 0.0
+},
+"YPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.00781,
+"Z": 0.0
+},
+"ZPlane": {
+"W": 0.0,
+"X": 0.0,
+"Y": 0.0,
+"Z": 3.36842
+},
+"WPlane": {
+"W": 1.0,
+"X": -0.07812,
+"Y": 0.03125,
+"Z": 365643.0
+}
+},
+"KFriction": 0.0,
+"KRestitution": 0.0,
+"LayerWeightMap": null,
+"Scale": [
+128.0,
+128.0,
+76.0
+],
+"ToWorld": [
+-1280.0,
+512.0,
+32225.8594
+],
+"ToWorld[1]": [
+128.0,
+0.0,
+0.0
+],
+"ToWorld[2]": [
+0.0,
+128.0,
+0.0
+],
+"ToWorld[3]": [
+0.0,
+0.0,
+0.2969
+],
+"ToMaskmap": [
+163840.0,
+-65536.0,
+-9567.0518
+],
+"ToMaskmap[1]": [
+0.0078,
+0.0,
+0.0
+],
+"ToMaskmap[2]": [
+0.0,
+0.0078,
+0.0
+],
+"ToMaskmap[3]": [
+0.0,
+0.0,
+3.3684
+],
+"bUseAlpha": true
+},
+"DecoLayers": [
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.25_16_Deco001",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.Argos_decoStone",
+"ScaleMultiplier": {
+"X": {
+"Min": 3.0,
+"Max": 6.0
+},
+"Y": {
+"Min": 2.0,
+"Max": 5.0
+},
+"Z": {
+"Min": 2.0,
+"Max": 5.0
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2400.0
+},
+"DensityMultiplier": {
+"Min": 5.0,
+"Max": 35.0
+},
+"MaxPerQuad": 5,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 2,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.25_16_Deco002",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.Argos_grass001",
+"ScaleMultiplier": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 2.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 2.0
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 50.0
+},
+"MaxPerQuad": 7,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.25_16_Deco003",
+"ColorMap": null,
+"StaticMesh": "Elmo_fielddeco_S.Grass.Argos_grass002",
+"ScaleMultiplier": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 2.0
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 50.0
+},
+"MaxPerQuad": 3,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+},
+{
+"ShowOnTerrain": 1,
+"ScaleMap": null,
+"DensityMap": "L2DecoLayer_Elmo.Godard.25_16_Deco004",
+"ColorMap": null,
+"StaticMesh": "field_deco_S.dion_giran_grass.dion_grass019",
+"ScaleMultiplier": {
+"X": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Y": {
+"Min": 1.0,
+"Max": 3.0
+},
+"Z": {
+"Min": 1.0,
+"Max": 3.0
+}
+},
+"FadeoutRadius": {
+"Min": 1500.0,
+"Max": 2500.0
+},
+"DensityMultiplier": {
+"Min": 10.0,
+"Max": 50.0
+},
+"MaxPerQuad": 4,
+"Seed": 0,
+"AlignToTerrain": 0,
+"DrawOrder": 1,
+"ShowOnInvisibleTerrain": 0,
+"LitDirectional": 0,
+"DisregardTerrainLighting": 0,
+"RandomYaw": 1,
+"bForceRender": 0
+}
+],
+"QuadVisibilityBitmap": "<8194>",
+"EdgeTurnBitmap": "<8194>",
+"MapX": 25,
+"MapY": 16,
+"QuadVisibilityBitmapOrig": "<8194>",
+"EdgeTurnBitmapOrig": "<8194>",
+"GeneratedSectorCounter": 256,
+"NumIntMap": 8,
+"bAutoTimeGeneration": true,
+"TIntMap": "<528529>",
+"TickTime": 12.0,
+"bSunAffect": true,
+"Location": [
+180224.0,
+-49152.0,
+160.6514
+],
+"DrawScale": 10.0
+}
+},
+{
+"classe": "Light",
+"nome": "Light0",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 40.0,
+"LightHue": 120,
+"LightSaturation": 170,
+"bSunAffect": true,
+"Location": [
+179587.7031,
+-62910.5,
+-3025.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light5",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 40.0,
+"LightHue": 120,
+"LightSaturation": 170,
+"bSunAffect": true,
+"Location": [
+183903.6094,
+-62758.8125,
+-2999.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light4",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 40.0,
+"LightHue": 120,
+"LightSaturation": 170,
+"bSunAffect": true,
+"Location": [
+180795.6406,
+-62725.75,
+-3133.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "Light3",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 40.0,
+"LightHue": 120,
+"LightSaturation": 170,
+"bSunAffect": true,
+"Location": [
+181756.125,
+-62869.0703,
+-3165.0
+]
+}
+},
+{
+"classe": "Light",
+"nome": "light2",
+"props": {
+"LightBrightness": 80.0,
+"LightRadius": 40.0,
+"LightHue": 120,
+"LightSaturation": 170,
+"bSunAffect": true,
+"Location": [
+182926.7969,
+-63009.1914,
+-3084.0
+]
+}
+},
+{
+"classe": "SkyZoneInfo",
+"nome": "SkyZoneInfo0",
+"props": {
+"TexUPanSpeed": 0.2,
+"TexVPanSpeed": 0.2,
+"LensFlare": "L2_Skies.FlareSet.Flare02",
+"LensFlare[1]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[2]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[3]": "L2_Skies.FlareSet.Flare02",
+"LensFlare[4]": "L2_Skies.FlareSet.Flare01",
+"LensFlare[5]": "L2_Skies.FlareSet.Flare03",
+"LensFlare[6]": "L2_Skies.FlareSet.Flare04",
+"LensFlare[7]": "L2_Skies.FlareSet.Flare06",
+"LensFlare[8]": "L2_Skies.FlareSet.Flare06",
+"LensFlareOffset": -0.12,
+"LensFlareOffset[1]": -0.1,
+"LensFlareOffset[2]": 0.1,
+"LensFlareOffset[3]": 0.12,
+"LensFlareOffset[4]": 0.17,
+"LensFlareOffset[5]": 0.2,
+"LensFlareOffset[6]": 0.4,
+"LensFlareOffset[7]": 0.5,
+"LensFlareOffset[8]": 0.6,
+"LensFlareScale": 0.5,
+"LensFlareScale[1]": 0.38,
+"LensFlareScale[2]": 0.3,
+"LensFlareScale[3]": 0.4,
+"LensFlareScale[4]": 1.0,
+"LensFlareScale[5]": 1.0,
+"LensFlareScale[6]": 1.0,
+"LensFlareScale[7]": 2.0,
+"LensFlareScale[8]": 3.0,
+"Location": [
+292.2028,
+264403.1562,
+24503.0195
+],
+"DrawScale": 0.2
+}
+},
+{
+"classe": "MovableStaticMeshActor",
+"nome": "MovableStaticMeshActor0",
+"props": {
+"StaticMesh": "Elmo_fielddeco_S.Argos_Stone.Argos_Stone001_4",
+"bSunAffect": true,
+"Location": [
+175608.7656,
+-63632.3398,
+-3115.0
+],
+"Rotation": [
+0,
+-17408,
+0
+],
+"DrawScale": 0.4
+}
+},
+{
+"classe": "MovableStaticMeshActor",
+"nome": "MovableStaticMeshActor3",
+"props": {
+"StaticMesh": "Elmo_fielddeco_S.Argos_Stone.Argos_Stone001_4",
+"bSunAffect": true,
+"Location": [
+175655.0,
+-63669.0,
+-3102.0
+],
+"Rotation": [
+0,
+-7168,
+0
+],
+"DrawScale": 0.4
+}
+},
+{
+"classe": "NSun",
+"nome": "NSun0",
+"props": {
+"Radius": 350.0,
+"LimitMaxRadius": 50.0,
+"bSunAffect": true,
+"Location": [
+274.322,
+264375.75,
+24542.6836
+],
+"Rotation": [
+-5944,
+-39696,
+0
+],
+"Skins": "<3 bytes>",
+"bDirectional": true
+}
+},
+{
+"classe": "NMoon",
+"nome": "NMoon0",
+"props": {
+"Radius": 245.0,
+"bSunAffect": true,
+"Location": [
+258.1241,
+264359.9062,
+24538.8398
+],
+"Skins": "<3 bytes>"
+}
+},
+{
+"classe": "Emitter",
+"nome": "Emitter0",
+"props": {
+"Emitters": "<3 bytes>",
+"bSunAffect": true,
+"Location": [
+177391.9219,
+-50816.0195,
+-3044.0
+],
+"DrawScale": 2.0
+}
+},
+{
+"classe": "SpriteEmitter",
+"nome": "SpriteEmitter0",
+"props": {
+"ColorScale": [
+{
+"RelativeTime": 0.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+},
+{
+"RelativeTime": 1.0,
+"Color": {
+"R": 255,
+"G": 255,
+"B": 255,
+"A": 255
+}
+}
+],
+"Opacity": 0.17,
+"FadeOutStartTime": 2.96,
+"FadeOut": true,
+"FadeInEndTime": 1.12,
+"FadeIn": true,
+"MaxParticles": 8,
+"Name": "SpriteEmitter0",
+"StartLocationRange": {
+"X": {
+"Min": -2.0,
+"Max": 2.0
+},
+"Y": {
+"Min": 0.0,
+"Max": 0.0
+},
+"Z": {
+"Min": 0.0,
+"Max": 0.0
+}
+},
+"StartSizeRange": {
+"X": {
+"Min": 30.0,
+"Max": 40.0
+},
+"Y": {
+"Min": 30.0,
+"Max": 40.0
+},
+"Z": {
+"Min": 30.0,
+"Max": 40.0
+}
+},
+"UniformSize": true,
+"Texture": "FX_E_T.LightGlowSet.LIGHT_GLOW01",
+"LifetimeRange": {
+"Min": 4.0,
+"Max": 8.0
+},
+"StartVelocityRange": {
+"X": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Y": {
+"Min": -3.0,
+"Max": 3.0
+},
+"Z": {
+"Min": -5.0,
+"Max": 5.0
+}
+},
+"WarmupTicksPerSecond": 1.0,
+"RelativeWarmupTime": 8.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo4",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+192964.1562,
+-59352.5352,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo6",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+169802.5625,
+-59597.8086,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo7",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+169875.7969,
+-51970.6562,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo8",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+169851.4375,
+-44293.1875,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo9",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+169924.6719,
+-36666.0352,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo10",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+177512.0938,
+-59581.8086,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo11",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+177585.3281,
+-51954.6562,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo12",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+177560.9688,
+-44277.1875,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo13",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+177634.2031,
+-36650.0352,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo14",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+185254.5469,
+-59598.6875,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo15",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+185327.7812,
+-51971.5352,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo16",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+185303.4219,
+-44294.0664,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo17",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+185376.6562,
+-36666.9141,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo5",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+193037.3906,
+-51725.3828,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo3",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+193013.0312,
+-44047.9141,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+},
+{
+"classe": "L2FogInfo",
+"nome": "L2FogInfo1",
+"props": {
+"AffectRange": {
+"Min": 7500.0,
+"Max": 8000.0
+},
+"FogRange1": {
+"Min": 0.0,
+"Max": 4000.0
+},
+"FogRange2": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange3": {
+"Min": 0.0,
+"Max": 5000.0
+},
+"FogRange4": {
+"Min": 0.0,
+"Max": 6000.0
+},
+"FogRange5": {
+"Min": 0.0,
+"Max": 7000.0
+},
+"Colors": [
+{
+"Time": 0.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 5.0,
+"FogColor": {
+"R": 52,
+"G": 49,
+"B": 60,
+"A": 0
+},
+"SkyColor": {
+"R": 55,
+"G": 54,
+"B": 63,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 37,
+"G": 36,
+"B": 43,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 103,
+"G": 94,
+"B": 123,
+"A": 0
+}
+]
+},
+{
+"Time": 6.0,
+"FogColor": {
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+"SkyColor": {
+"R": 82,
+"G": 73,
+"B": 71,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 66,
+"G": 62,
+"B": 77,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 159,
+"G": 143,
+"B": 142,
+"A": 0
+}
+]
+},
+{
+"Time": 7.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 0
+}
+]
+},
+{
+"Time": 19.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 255
+},
+"CloudColor": [
+{
+"R": 69,
+"G": 69,
+"B": 69,
+"A": 255
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 157,
+"G": 153,
+"B": 136,
+"A": 255
+}
+]
+},
+{
+"Time": 20.0,
+"FogColor": {
+"R": 65,
+"G": 65,
+"B": 65,
+"A": 0
+},
+"SkyColor": {
+"R": 91,
+"G": 91,
+"B": 91,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 78,
+"G": 68,
+"B": 61,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 164,
+"G": 153,
+"B": 130,
+"A": 0
+}
+]
+},
+{
+"Time": 23.0,
+"FogColor": {
+"R": 71,
+"G": 66,
+"B": 58,
+"A": 0
+},
+"SkyColor": {
+"R": 76,
+"G": 76,
+"B": 76,
+"A": 0
+},
+"CloudColor": [
+{
+"R": 77,
+"G": 62,
+"B": 53,
+"A": 0
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+},
+{
+"R": 0,
+"G": 0,
+"B": 0,
+"A": 1
+}
+],
+"HazeRingColor": [
+{
+"R": 182,
+"G": 152,
+"B": 112,
+"A": 0
+}
+]
+}
+],
+"bSunAffect": true,
+"Location": [
+193086.2656,
+-36420.7617,
+1928.1553
+],
+"Rotation": [
+0,
+16,
+0
+],
+"DrawScale": 20.0
+}
+}
+]
+}

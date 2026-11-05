@@ -1,0 +1,1 @@
+Window GMWarehouseWnd @NONE->pai.TOP_LEFT(0,100) unk102=GMWarehouseWnd unk103=GamingState unk104=1 unk107=1 unk114=0 unk117=0 unk122=0 unk126=0 unk127=83785936 unk128=83786352 unk130=0 unk131=0 unk132=31376256 unk133=458770 unk134=7536713 unk135=6226029 unk139=Game

@@ -1,0 +1,22 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2StyleSheet" uss="SystemMenuWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="SystemMenuWindow" class="system-menu-window">
+    <ui:GroupBox name="Container" class="system-menu-window-container">
+      <ui:GroupBox name="Rows" class="system-menu">
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestartRow" class="restart-btn system-menu-row">
+          <ui:VisualElement name="Bg" class="system-menu-button-bg" />
+          <ui:GroupBox name="Content" class="system-menu-button-content">
+            <ui:VisualElement name="icon" class="system-menu-row-icon" />
+            <ui:Label tabindex="-1" text="Restart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="text" class="system-menu-row-text" />
+          </ui:GroupBox>
+        </ui:Button>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitRow" class="system-menu-row exit-btn">
+          <ui:VisualElement name="Bg" class="system-menu-button-bg" />
+          <ui:GroupBox name="Content" class="system-menu-button-content">
+            <ui:VisualElement name="icon" class="system-menu-row-icon" />
+            <ui:Label tabindex="-1" text="Exit Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="text" class="system-menu-row-text" />
+          </ui:GroupBox>
+        </ui:Button>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

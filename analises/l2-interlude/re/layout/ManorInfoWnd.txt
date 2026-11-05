@@ -1,0 +1,6 @@
+Window ManorInfoWnd 600x326 @CENTER->pai.CENTER(0,0) unk102=ManorInfoWnd unk103=GamingState unk104=1 unk107=1 unk108=0 unk109=1 unk111=738 unk113=0 unk114=3 unk115=1 unk117=0 unk122=0 unk123=0 unk124=0 unk125=0 unk126=0 unk127=8692 unk128=271047840 unk130=0 unk131=0 unk132=0 unk133=67595328 unk134=0 unk135=0 unk139=Game size=[2]
+  Texture texManorInfoTop 600x28 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_CH3.Manor.manor1_back1 type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Tab ManorInfoTabCtrl 424x23 @TOP_LEFT->pai.TOP_LEFT(12,25) size=[2] tabs=[3]
+    - tabs: buttonName=1113 target=SeedInfoWnd width=94 height=23 normalTex=L2UI_CH3.Manor.manor1_tab2 pushedTex=L2UI_CH3.Manor.manor1_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=1114 target=CropInfoWnd width=94 height=23 normalTex=L2UI_CH3.Manor.manor1_tab2 pushedTex=L2UI_CH3.Manor.manor1_tab1 movable=false gap=1 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=1115 target=DefaultInfoWnd width=94 height=23 normalTex=L2UI_CH3.Manor.manor1_tab2 pushedTex=L2UI_CH3.Manor.manor1_tab1 movable=false gap=0 tooltip=-1 noHighlight=-1

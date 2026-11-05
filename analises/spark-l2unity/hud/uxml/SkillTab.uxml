@@ -1,0 +1,5 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement label="General" name="SkillTab" class="skills-tab">
+    <ui:Instance template="SkillTabSmall" template="SkillTabSmall" />
+  </ui:VisualElement>
+</ui:UXML>

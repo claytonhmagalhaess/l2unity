@@ -1,0 +1,13 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Button" uss="L2ArrowInput" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="ArrowInput" tabindex="-1" class="arrow-input">
+    <ui:Instance template="L2Input" template="L2Input" name="DataField" class="l2-input-field-template" />
+    <ui:VisualElement name="Arrows" tabindex="-1" class="arrows-container">
+      <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="LeftArrow" class="arrow-left arrow">
+        <ui:VisualElement name="BG" class="arrow-bg" />
+      </ui:Button>
+      <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="RightArrow" class="arrow arrow-right">
+        <ui:VisualElement name="BG" class="arrow-bg" />
+      </ui:Button>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

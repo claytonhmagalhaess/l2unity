@@ -1,0 +1,10 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillbarWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SkillbarWindow" class="skillbar-window">
+    <ui:VisualElement name="SkillbarContainerHorizontal" class="skillbar-container skillbar-container-horizontal">
+      <ui:Instance template="SkillBarHorizontal" template="SkillBarHorizontal" name="SkillBarHorizontal" />
+    </ui:VisualElement>
+    <ui:VisualElement name="SkillbarContainerVertical" class="skillbar-container skillbar-container-vertical">
+      <ui:Instance template="SkillBarVertical" template="SkillBarVertical" name="SkillBarVertical" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

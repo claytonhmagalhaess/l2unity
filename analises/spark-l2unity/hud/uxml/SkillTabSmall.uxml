@@ -1,0 +1,8 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement label="General" name="Tab" class="skills-tab-small">
+    <ui:Label name="TabLabel" class="l2-color-4 skills-tab-label" />
+    <ui:ScrollView vertical-scroller-visibility="AlwaysVisible" horizontal-page-size="1" name="ScrollView" horizontal-scroller-visibility="Hidden" mouse-wheel-scroll-size="2" touch-scroll-type="Clamped" class="l2-scroll-view skills-small-tab-scrollview">
+      <ui:VisualElement name="Content" />
+    </ui:ScrollView>
+  </ui:VisualElement>
+</ui:UXML>

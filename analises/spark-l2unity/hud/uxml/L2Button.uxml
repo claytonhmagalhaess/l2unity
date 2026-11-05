@@ -1,0 +1,6 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="L2Button" tabindex="-1" focusable="false" class="l2-flex-button">
+    <ui:VisualElement name="Icon" class="l2-flex-button-icon" />
+    <ui:Label tabindex="-1" text="Agree dasdsa" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ButtonLabel" class="l2-flex-button-label" />
+  </ui:Button>
+</ui:UXML>

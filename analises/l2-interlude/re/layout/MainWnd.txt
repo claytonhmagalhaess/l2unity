@@ -1,0 +1,8 @@
+Window MainWnd 256x401 @CENTER_LEFT->pai.CENTER_LEFT(0,-70) unk102=MainWnd unk103=GamingState unk104=1 unk105=1 unk107=1 unk109=1 unk113=0 unk114=3 unk115=1 unk117=0 unk122=7340153 unk123=0 unk124=0 unk125=0 unk126=0 unk127=3997728 unk128=2097213 unk130=0 unk131=0 unk132=655373 unk133=8060937 unk134=6619218 unk135=589833 unk139=Game size=[2]
+  Texture MainWndTex 256x46 @TOP_LEFT->pai.TOP_LEFT(0,20) file=L2UI_CH3.Button.MainWndTabBack type=Stretch layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Tab MainTabCtrl 224x41 @TOP_LEFT->pai.TOP_LEFT(12,25) size=[2] tabs=[5]
+    - tabs: buttonName=0 target=DetailStatusWnd width=45 height=41 normalTex=L2UI_CH3.TabButton.MainWndTabBtn1 pushedTex=L2UI_CH3.TabButton.MainWndTabBtn1On movable=false gap=0 tooltip=194 noHighlight=-1
+    - tabs: buttonName=0 target=MagicSkillWnd width=45 height=41 normalTex=L2UI_CH3.TabButton.MainWndTabBtn2 pushedTex=L2UI_CH3.TabButton.MainWndTabBtn2On movable=false gap=0 tooltip=196 noHighlight=-1
+    - tabs: buttonName=0 target=ActionWnd width=45 height=41 normalTex=L2UI_CH3.TabButton.MainWndTabBtn3 pushedTex=L2UI_CH3.TabButton.MainWndTabBtn3On movable=false gap=0 tooltip=197 noHighlight=-1
+    - tabs: buttonName=0 target=ClanWnd width=45 height=41 normalTex=L2UI_CH3.TabButton.MainWndTabBtn4 pushedTex=L2UI_CH3.TabButton.MainWndTabBtn4On movable=false gap=0 tooltip=895 noHighlight=-1
+    - tabs: buttonName=0 target=QuestTreeWnd width=45 height=41 normalTex=L2UI_CH3.TabButton.MainWndTabBtn5 pushedTex=L2UI_CH3.TabButton.MainWndTabBtn5On movable=false gap=0 tooltip=198 noHighlight=-1

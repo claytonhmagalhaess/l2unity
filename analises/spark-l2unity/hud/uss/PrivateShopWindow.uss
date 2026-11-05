@@ -1,0 +1,42 @@
+/* PrivateShopWindow  (5 regras) */
+.loja-valor-fundo {
+    position: absolute;
+    width: 128px;
+    height: 18px;
+    background-image: resource("Data/UI/Assets/Loja/GroupBox_DF_Text");
+    unity-slice-left: 3;
+    unity-slice-right: 3;
+    unity-slice-top: 3;
+    unity-slice-bottom: 3;
+}
+.loja-valor {
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    width: 104px;
+    height: 16px;
+    unity-font: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    color: rgba(220, 220, 220, 1.00);
+    unity-text-align: middle-right;
+}
+.loja-adena {
+    position: absolute;
+    width: 18px;
+    height: 13px;
+    background-image: resource("Data/UI/Assets/Inventory/icon_df_common_adena");
+}
+.loja-seta {
+    position: absolute;
+    width: 21px;
+    height: 33px;
+    background-image: resource("Data/UI/Assets/ShopWnd/ShopWnd_DF_Arrow");
+}
+.loja-divisor {
+    position: absolute;
+    width: 2px;
+    height: 38px;
+    background-image: resource("Data/UI/Assets/Party/Divider_DF_Ver");
+}

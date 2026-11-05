@@ -1,0 +1,92 @@
+{
+ "por_modulo": {
+  "alaudio": {
+   "contagem": {
+    "thunk": 139,
+    "c": 982
+   },
+   "falhas": {}
+  },
+  "core": {
+   "contagem": {
+    "c": 7924,
+    "thunk": 580
+   },
+   "falhas": {}
+  },
+  "d3ddrv": {
+   "contagem": {
+    "c": 3429,
+    "thunk": 97,
+    "p-code (estilo normalize)": 1
+   },
+   "falhas": {}
+  },
+  "engine": {
+   "contagem": {
+    "c": 41499,
+    "thunk": 4295,
+    "c (nova tentativa)": 7,
+    "p-code (estilo normalize)": 1,
+    "artefato (fora do .text, nao e codigo)": 2
+   },
+   "falhas": {}
+  },
+  "fire": {
+   "contagem": {
+    "c": 959,
+    "thunk": 87
+   },
+   "falhas": {}
+  },
+  "ipdrv": {
+   "contagem": {
+    "c": 1936,
+    "thunk": 508
+   },
+   "falhas": {}
+  },
+  "l2": {
+   "contagem": {
+    "thunk": 416,
+    "c": 1485
+   },
+   "falhas": {}
+  },
+  "lineagecreature": {
+   "contagem": {
+    "c": 345,
+    "thunk": 312
+   },
+   "falhas": {}
+  },
+  "nwindow": {
+   "contagem": {
+    "c": 24661,
+    "thunk": 122
+   },
+   "falhas": {}
+  },
+  "window": {
+   "contagem": {
+    "c": 4010,
+    "thunk": 206
+   },
+   "falhas": {}
+  },
+  "windrv": {
+   "contagem": {
+    "c": 916,
+    "thunk": 141
+   },
+   "falhas": {}
+  }
+ },
+ "total": {
+  "thunk": 6903,
+  "c": 88146,
+  "p-code (estilo normalize)": 2,
+  "c (nova tentativa)": 7,
+  "artefato (fora do .text, nao e codigo)": 2
+ }
+}

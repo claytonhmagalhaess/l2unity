@@ -1,0 +1,1812 @@
+[
+ {
+  "vtable": "0x100dd8ac",
+  "class": "FD3DRenderInterface",
+  "raw": ".?AVFD3DRenderInterface@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10022990",
+   "0x10026d60",
+   "0x10022ae0",
+   "0x10020d70",
+   "0x100234b0",
+   "0x100235e0",
+   "0x10023910",
+   "0x10023d50",
+   "0x10023e00",
+   "0x10023ea0",
+   "0x10024410",
+   "0x10024930",
+   "0x10024040",
+   "0x10024f90",
+   "0x10025070",
+   "0x10024ee0",
+   "0x10020f20",
+   "0x10028e70",
+   "0x10026950",
+   "0x100273d0",
+   "0x100257d0",
+   "0x10021c10",
+   "0x10021c90",
+   "0x10021c50",
+   "0x10021c70",
+   "0x10022460",
+   "0x10025580",
+   "0x10021cb0",
+   "0x10021d10",
+   "0x10021c30",
+   "0x10021be0",
+   "0x10021bf0",
+   "0x10021c00",
+   "0x10026b50",
+   "0x10022160",
+   "0x10022180",
+   "0x100221a0",
+   "0x100252e0",
+   "0x10021040",
+   "0x10025180",
+   "0x10025230",
+   "0x10025a40",
+   "0x10025d30",
+   "0x10025fe0",
+   "0x100261c0",
+   "0x100263a0",
+   "0x10024e00",
+   "0x10020eb0",
+   "0x10020ec0",
+   "0x10024e20",
+   "0x10024e90",
+   "0x10021030",
+   "0x10022d90",
+   "0x10021d70",
+   "0x100036d0",
+   "0x10003710",
+   "0x10003720",
+   "0x10021e10",
+   "0x10021e00",
+   "0x10021dc0",
+   "0x100221b0",
+   "0x10022270",
+   "0x10022250",
+   "0x10022290",
+   "0x100222b0",
+   "0x100222f0",
+   "0x10022350",
+   "0x100223c0",
+   "0x10022440",
+   "0x10022450",
+   "0x100103f0",
+   "0x10020cb0",
+   "0x10022040",
+   "0x100220d0",
+   "0x100036f0"
+  ],
+  "raw_entries": [
+   "0x10022990",
+   "0x10026d60",
+   "0x10022ae0",
+   "0x10020d70",
+   "0x100234b0",
+   "0x100235e0",
+   "0x10023910",
+   "0x10023d50",
+   "0x10023e00",
+   "0x10023ea0",
+   "0x10024410",
+   "0x10024930",
+   "0x10024040",
+   "0x10024f90",
+   "0x10025070",
+   "0x10024ee0",
+   "0x10020f20",
+   "0x10028e70",
+   "0x10026950",
+   "0x100273d0",
+   "0x100257d0",
+   "0x10021c10",
+   "0x10021c90",
+   "0x10021c50",
+   "0x10021c70",
+   "0x10022460",
+   "0x10025580",
+   "0x10021cb0",
+   "0x10021d10",
+   "0x10021c30",
+   "0x10021be0",
+   "0x10021bf0",
+   "0x10021c00",
+   "0x10026b50",
+   "0x10022160",
+   "0x10022180",
+   "0x100221a0",
+   "0x100252e0",
+   "0x10021040",
+   "0x10025180",
+   "0x10025230",
+   "0x10025a40",
+   "0x10025d30",
+   "0x10025fe0",
+   "0x100261c0",
+   "0x100263a0",
+   "0x10024e00",
+   "0x10020eb0",
+   "0x10020ec0",
+   "0x10024e20",
+   "0x10024e90",
+   "0x10021030",
+   "0x10022d90",
+   "0x10021d70",
+   "0x100036d0",
+   "0x10003710",
+   "0x10003720",
+   "0x10021e10",
+   "0x10021e00",
+   "0x10021dc0",
+   "0x100221b0",
+   "0x10022270",
+   "0x10022250",
+   "0x10022290",
+   "0x100222b0",
+   "0x100222f0",
+   "0x10022350",
+   "0x100223c0",
+   "0x10022440",
+   "0x10022450",
+   "0x100103f0",
+   "0x10020cb0",
+   "0x10022040",
+   "0x100220d0",
+   "0x100036f0"
+  ],
+  "bases": [
+   "FD3DRenderInterface",
+   "FRenderInterface"
+  ]
+ },
+ {
+  "vtable": "0x100dd9dc",
+  "class": "UD3DRenderDevice",
+  "raw": ".?AVUD3DRenderDevice@@",
+  "subobject_offset": 52,
+  "entries": [
+   "0x10018450"
+  ],
+  "raw_entries": [
+   "0x10018450"
+  ],
+  "bases": [
+   "UD3DRenderDevice",
+   "URenderDevice",
+   "USubsystem",
+   "UObject",
+   "FUnknown",
+   "FExec"
+  ]
+ },
+ {
+  "vtable": "0x100dd9e4",
+  "class": "UD3DRenderDevice",
+  "raw": ".?AVUD3DRenderDevice@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x100047f0",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1c56",
+   "0x100c1c5c",
+   "0x100c1c62",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1c98",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cbc",
+   "0x1001bee0",
+   "0x1001e540",
+   "0x1001d480",
+   "0x10017cf0",
+   "0x10017ee0",
+   "0x1001d390",
+   "0x10018160",
+   "0x100168c0",
+   "0x10016db0",
+   "0x100182c0",
+   "0x10016a10",
+   "0x10018820",
+   "0x10018b80",
+   "0x10018eb0",
+   "0x10018fd0",
+   "0x10019560",
+   "0x10016af0",
+   "0x10016950",
+   "0x10016960",
+   "0x10001de0",
+   "0x10019700",
+   "0x10019890",
+   "0x100172f0",
+   "0x10017210",
+   "0x10017340",
+   "0x100172c0",
+   "0x10016ba0",
+   "0x10001df0",
+   "0x100c1dbe",
+   "0x100c1dc4"
+  ],
+  "raw_entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x100047f0",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1c56",
+   "0x100c1c5c",
+   "0x100c1c62",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1c98",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cbc",
+   "0x1001bee0",
+   "0x1001e540",
+   "0x1001d480",
+   "0x10017cf0",
+   "0x10017ee0",
+   "0x1001d390",
+   "0x10018160",
+   "0x100168c0",
+   "0x10016db0",
+   "0x100182c0",
+   "0x10016a10",
+   "0x10018820",
+   "0x10018b80",
+   "0x10018eb0",
+   "0x10018fd0",
+   "0x10019560",
+   "0x10016af0",
+   "0x10016950",
+   "0x10016960",
+   "0x10001de0",
+   "0x10019700",
+   "0x10019890",
+   "0x100172f0",
+   "0x10017210",
+   "0x10017340",
+   "0x100172c0",
+   "0x10016ba0",
+   "0x10001df0",
+   "0x100c1dbe",
+   "0x100c1dc4"
+  ],
+  "bases": [
+   "UD3DRenderDevice",
+   "URenderDevice",
+   "USubsystem",
+   "UObject",
+   "FUnknown",
+   "FExec"
+  ]
+ },
+ {
+  "vtable": "0x100debfc",
+  "class": "FBaseTexture",
+  "raw": ".?AVFBaseTexture@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1000fd40",
+   "0x100c1dca",
+   "0x100c2b94",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94"
+  ],
+  "raw_entries": [
+   "0x1000fd40",
+   "0x100c1dca",
+   "0x100c2b94",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94"
+  ],
+  "bases": [
+   "FBaseTexture",
+   "FRenderResource"
+  ]
+ },
+ {
+  "vtable": "0x100dec44",
+  "class": "FTexture",
+  "raw": ".?AVFTexture@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x1000fe50",
+   "0x100c1dca",
+   "0x100c2b94",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94"
+  ],
+  "raw_entries": [
+   "0x1000fe50",
+   "0x100c1dca",
+   "0x100c2b94",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94"
+  ],
+  "bases": [
+   "FTexture",
+   "FBaseTexture",
+   "FRenderResource"
+  ]
+ },
+ {
+  "vtable": "0x100dedec",
+  "class": "FProjectorCubeMapFace",
+  "raw": ".?AVFProjectorCubeMapFace@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10015950",
+   "0x10010390",
+   "0x100103c0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103a0",
+   "0x100103a0",
+   "0x100103f0",
+   "0x100103b0",
+   "0x10015df0",
+   "0x100103c0",
+   "0x100103c0",
+   "0x100103d0",
+   "0x10010400",
+   "0x100103e0",
+   "0x100103f0"
+  ],
+  "raw_entries": [
+   "0x10015950",
+   "0x10010390",
+   "0x100103c0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103a0",
+   "0x100103a0",
+   "0x100103f0",
+   "0x100103b0",
+   "0x10015df0",
+   "0x100103c0",
+   "0x100103c0",
+   "0x100103d0",
+   "0x10010400",
+   "0x100103e0",
+   "0x100103f0"
+  ],
+  "bases": [
+   "FProjectorCubeMapFace",
+   "FTexture",
+   "FBaseTexture",
+   "FRenderResource"
+  ]
+ },
+ {
+  "vtable": "0x100deec4",
+  "class": "FCubemap",
+  "raw": ".?AVFCubemap@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100108a0",
+   "0x100c1dca",
+   "0x100c2b94",
+   "0x1000fe00",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94"
+  ],
+  "raw_entries": [
+   "0x100108a0",
+   "0x100c1dca",
+   "0x100c2b94",
+   "0x1000fe00",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94",
+   "0x100c2b94"
+  ],
+  "bases": [
+   "FCubemap",
+   "FBaseTexture",
+   "FRenderResource"
+  ]
+ },
+ {
+  "vtable": "0x100df804",
+  "class": "FProjectorCubeMap",
+  "raw": ".?AVFProjectorCubeMap@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10015e60",
+   "0x10015dc0",
+   "0x10015dd0",
+   "0x1000fe00",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x10015de0",
+   "0x10015de0",
+   "0x100103f0",
+   "0x100103b0",
+   "0x10015df0",
+   "0x100103c0",
+   "0x100103c0",
+   "0x10015e00"
+  ],
+  "raw_entries": [
+   "0x10015e60",
+   "0x10015dc0",
+   "0x10015dd0",
+   "0x1000fe00",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x10015de0",
+   "0x10015de0",
+   "0x100103f0",
+   "0x100103b0",
+   "0x10015df0",
+   "0x100103c0",
+   "0x100103c0",
+   "0x10015e00"
+  ],
+  "bases": [
+   "FProjectorCubeMap",
+   "FCubemap",
+   "FBaseTexture",
+   "FRenderResource"
+  ]
+ },
+ {
+  "vtable": "0x100e03f4",
+  "class": "UFloatProperty",
+  "raw": ".?AVUFloatProperty@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x1001fa60",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1cc2",
+   "0x100c1c5c",
+   "0x100c1d4c",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1cce",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cd4",
+   "0x100c1cda",
+   "0x100c1ce0",
+   "0x100c1ce6",
+   "0x100c1cec",
+   "0x100c1cf2",
+   "0x100c1d88",
+   "0x100c1d8e",
+   "0x100c1d04",
+   "0x100c1d94",
+   "0x100c1d9a",
+   "0x100c1da0",
+   "0x100c1da6",
+   "0x100c1dac",
+   "0x100c1d28",
+   "0x100c1db2",
+   "0x100c1db8",
+   "0x100c1d3a",
+   "0x100c1d40",
+   "0x100c1d46"
+  ],
+  "raw_entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x1001fa60",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1cc2",
+   "0x100c1c5c",
+   "0x100c1d4c",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1cce",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cd4",
+   "0x100c1cda",
+   "0x100c1ce0",
+   "0x100c1ce6",
+   "0x100c1cec",
+   "0x100c1cf2",
+   "0x100c1d88",
+   "0x100c1d8e",
+   "0x100c1d04",
+   "0x100c1d94",
+   "0x100c1d9a",
+   "0x100c1da0",
+   "0x100c1da6",
+   "0x100c1dac",
+   "0x100c1d28",
+   "0x100c1db2",
+   "0x100c1db8",
+   "0x100c1d3a",
+   "0x100c1d40",
+   "0x100c1d46"
+  ],
+  "bases": [
+   "UFloatProperty",
+   "UProperty",
+   "UField",
+   "UObject",
+   "FUnknown"
+  ]
+ },
+ {
+  "vtable": "0x100e054c",
+  "class": "UIntProperty",
+  "raw": ".?AVUIntProperty@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x1001fa00",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1cc2",
+   "0x100c1c5c",
+   "0x100c1d4c",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1cce",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cd4",
+   "0x100c1cda",
+   "0x100c1ce0",
+   "0x100c1ce6",
+   "0x100c1cec",
+   "0x100c1cf2",
+   "0x100c1d52",
+   "0x100c1d58",
+   "0x100c1d04",
+   "0x100c1d5e",
+   "0x100c1d64",
+   "0x100c1d6a",
+   "0x100c1d70",
+   "0x100c1d76",
+   "0x100c1d28",
+   "0x100c1d7c",
+   "0x100c1d82",
+   "0x100c1d3a",
+   "0x100c1d40",
+   "0x100c1d46"
+  ],
+  "raw_entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x1001fa00",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1cc2",
+   "0x100c1c5c",
+   "0x100c1d4c",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1cce",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cd4",
+   "0x100c1cda",
+   "0x100c1ce0",
+   "0x100c1ce6",
+   "0x100c1cec",
+   "0x100c1cf2",
+   "0x100c1d52",
+   "0x100c1d58",
+   "0x100c1d04",
+   "0x100c1d5e",
+   "0x100c1d64",
+   "0x100c1d6a",
+   "0x100c1d70",
+   "0x100c1d76",
+   "0x100c1d28",
+   "0x100c1d7c",
+   "0x100c1d82",
+   "0x100c1d3a",
+   "0x100c1d40",
+   "0x100c1d46"
+  ],
+  "bases": [
+   "UIntProperty",
+   "UProperty",
+   "UField",
+   "UObject",
+   "FUnknown"
+  ]
+ },
+ {
+  "vtable": "0x100e076c",
+  "class": "UBoolProperty",
+  "raw": ".?AVUBoolProperty@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x1001fa30",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1cc2",
+   "0x100c1c5c",
+   "0x100c1cc8",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1cce",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cd4",
+   "0x100c1cda",
+   "0x100c1ce0",
+   "0x100c1ce6",
+   "0x100c1cec",
+   "0x100c1cf2",
+   "0x100c1cf8",
+   "0x100c1cfe",
+   "0x100c1d04",
+   "0x100c1d0a",
+   "0x100c1d10",
+   "0x100c1d16",
+   "0x100c1d1c",
+   "0x100c1d22",
+   "0x100c1d28",
+   "0x100c1d2e",
+   "0x100c1d34",
+   "0x100c1d3a",
+   "0x100c1d40",
+   "0x100c1d46"
+  ],
+  "raw_entries": [
+   "0x100c1c26",
+   "0x100c1c2c",
+   "0x100c1c32",
+   "0x1001fa30",
+   "0x100c1c38",
+   "0x100c1c3e",
+   "0x100c1c44",
+   "0x100c1c4a",
+   "0x100c1c50",
+   "0x100c1cc2",
+   "0x100c1c5c",
+   "0x100c1cc8",
+   "0x100c1c68",
+   "0x100c1c6e",
+   "0x100c1c74",
+   "0x100c1c7a",
+   "0x100c1c80",
+   "0x100c1c86",
+   "0x100c1c8c",
+   "0x100c1c92",
+   "0x100c1cce",
+   "0x100c1c9e",
+   "0x100c1ca4",
+   "0x100c1caa",
+   "0x100c1cb0",
+   "0x100c1cb6",
+   "0x100c1cd4",
+   "0x100c1cda",
+   "0x100c1ce0",
+   "0x100c1ce6",
+   "0x100c1cec",
+   "0x100c1cf2",
+   "0x100c1cf8",
+   "0x100c1cfe",
+   "0x100c1d04",
+   "0x100c1d0a",
+   "0x100c1d10",
+   "0x100c1d16",
+   "0x100c1d1c",
+   "0x100c1d22",
+   "0x100c1d28",
+   "0x100c1d2e",
+   "0x100c1d34",
+   "0x100c1d3a",
+   "0x100c1d40",
+   "0x100c1d46"
+  ],
+  "bases": [
+   "UBoolProperty",
+   "UProperty",
+   "UField",
+   "UObject",
+   "FUnknown"
+  ]
+ },
+ {
+  "vtable": "0x100e10c4",
+  "class": "FD3DFixedVertexShader",
+  "raw": ".?AVFD3DFixedVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FD3DFixedVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e65ac",
+  "class": "FD3DResource",
+  "raw": ".?AVFD3DResource@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034340",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0"
+  ],
+  "raw_entries": [
+   "0x10034340",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x100103f0"
+  ],
+  "bases": [
+   "FD3DResource"
+  ]
+ },
+ {
+  "vtable": "0x100e662c",
+  "class": "FD3DVertexStream",
+  "raw": ".?AVFD3DVertexStream@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034400",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x10031500"
+  ],
+  "raw_entries": [
+   "0x10034400",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x10031500"
+  ],
+  "bases": [
+   "FD3DVertexStream",
+   "FD3DResource"
+  ]
+ },
+ {
+  "vtable": "0x100e6644",
+  "class": "FD3DIndexBuffer",
+  "raw": ".?AVFD3DIndexBuffer@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034490",
+   "0x100103f0",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x10031580"
+  ],
+  "raw_entries": [
+   "0x10034490",
+   "0x100103f0",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x10031580"
+  ],
+  "bases": [
+   "FD3DIndexBuffer",
+   "FD3DResource"
+  ]
+ },
+ {
+  "vtable": "0x100e6aec",
+  "class": "FD3DTexture",
+  "raw": ".?AVFD3DTexture@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034520",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x10031920"
+  ],
+  "raw_entries": [
+   "0x10034520",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x100103f0",
+   "0x10031920"
+  ],
+  "bases": [
+   "FD3DTexture",
+   "FD3DResource"
+  ]
+ },
+ {
+  "vtable": "0x100e7090",
+  "class": "FD3DDynamicVertexStream",
+  "raw": ".?AVFD3DDynamicVertexStream@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034430",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x10031500"
+  ],
+  "raw_entries": [
+   "0x10034430",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x100103f0",
+   "0x10031500"
+  ],
+  "bases": [
+   "FD3DDynamicVertexStream",
+   "FD3DVertexStream",
+   "FD3DResource"
+  ]
+ },
+ {
+  "vtable": "0x100e710c",
+  "class": "FD3DDynamicIndexBuffer",
+  "raw": ".?AVFD3DDynamicIndexBuffer@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100344c0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x10031580"
+  ],
+  "raw_entries": [
+   "0x100344c0",
+   "0x100103f0",
+   "0x100103f0",
+   "0x1000fe00",
+   "0x10031580"
+  ],
+  "bases": [
+   "FD3DDynamicIndexBuffer",
+   "FD3DIndexBuffer",
+   "FD3DResource"
+  ]
+ },
+ {
+  "vtable": "0x100e7124",
+  "class": "FD3DShaderParameter",
+  "raw": ".?AUFD3DShaderParameter@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10037770"
+  ],
+  "raw_entries": [
+   "0x10037770"
+  ],
+  "bases": [
+   "FD3DShaderParameter"
+  ]
+ },
+ {
+  "vtable": "0x100e71a8",
+  "class": "FD3DShader",
+  "raw": ".?AVFD3DShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c2b94"
+  ],
+  "raw_entries": [
+   "0x100c2b94"
+  ],
+  "bases": [
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e71b0",
+  "class": "FD3DVertexShaderParameter",
+  "raw": ".?AUFD3DVertexShaderParameter@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034cf0"
+  ],
+  "raw_entries": [
+   "0x10034cf0"
+  ],
+  "bases": [
+   "FD3DVertexShaderParameter",
+   "FD3DShaderParameter"
+  ]
+ },
+ {
+  "vtable": "0x100e71b8",
+  "class": "FD3DPixelShaderParameter",
+  "raw": ".?AUFD3DPixelShaderParameter@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034630"
+  ],
+  "raw_entries": [
+   "0x10034630"
+  ],
+  "bases": [
+   "FD3DPixelShaderParameter",
+   "FD3DShaderParameter"
+  ]
+ },
+ {
+  "vtable": "0x100e74a4",
+  "class": "FD3DPixelShader",
+  "raw": ".?AVFD3DPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e74f0",
+  "class": "FTerrain3LayerPixelShader11",
+  "raw": ".?AVFTerrain3LayerPixelShader11@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FTerrain3LayerPixelShader11",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e778c",
+  "class": "FTerrain3LayerPixelShader14",
+  "raw": ".?AVFTerrain3LayerPixelShader14@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FTerrain3LayerPixelShader14",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e78d0",
+  "class": "FTerrain4LayerPixelShader14",
+  "raw": ".?AVFTerrain4LayerPixelShader14@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FTerrain4LayerPixelShader14",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e7a40",
+  "class": "FWaterMaterialPixelShader",
+  "raw": ".?AVFWaterMaterialPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FWaterMaterialPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e7aa8",
+  "class": "FFadeBlackWhitePixelShader",
+  "raw": ".?AVFFadeBlackWhitePixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FFadeBlackWhitePixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e7c40",
+  "class": "FBlackWhitePixelShader",
+  "raw": ".?AVFBlackWhitePixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FBlackWhitePixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e7d8c",
+  "class": "FBrightPassPixelShader",
+  "raw": ".?AVFBrightPassPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FBrightPassPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e8010",
+  "class": "FBrightPass2PixelShader",
+  "raw": ".?AVFBrightPass2PixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FBrightPass2PixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e8134",
+  "class": "FGBlurXPixelShader",
+  "raw": ".?AVFGBlurXPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FGBlurXPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e84d0",
+  "class": "FGBlurYPixelShader",
+  "raw": ".?AVFGBlurYPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FGBlurYPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e8870",
+  "class": "FCombinePixelShader",
+  "raw": ".?AVFCombinePixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FCombinePixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e89b8",
+  "class": "FPowPixelShader",
+  "raw": ".?AVFPowPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FPowPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e8b10",
+  "class": "FSampleLum1PixelShader",
+  "raw": ".?AVFSampleLum1PixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FSampleLum1PixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e8d28",
+  "class": "FLightAdaptationPixelShader",
+  "raw": ".?AVFLightAdaptationPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FLightAdaptationPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e8f54",
+  "class": "FHDRFinalBlendPixelShader",
+  "raw": ".?AVFHDRFinalBlendPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FHDRFinalBlendPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e9290",
+  "class": "FDownFilterPixelShader",
+  "raw": ".?AVFDownFilterPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FDownFilterPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e9410",
+  "class": "FDownFilterPixelShaderFinal",
+  "raw": ".?AVFDownFilterPixelShaderFinal@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FDownFilterPixelShaderFinal",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e9594",
+  "class": "FRGBBiasPixelShader",
+  "raw": ".?AVFRGBBiasPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FRGBBiasPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e9670",
+  "class": "FBloomPixelShader",
+  "raw": ".?AVFBloomPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FBloomPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e99b0",
+  "class": "FBlurBlitPixelShader",
+  "raw": ".?AVFBlurBlitPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FBlurBlitPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100e9c9c",
+  "class": "FGBlur_VSPixelShader",
+  "raw": ".?AVFGBlur_VSPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FGBlur_VSPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ea1d0",
+  "class": "FRefractionPixelShader",
+  "raw": ".?AVFRefractionPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FRefractionPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ea3fc",
+  "class": "FAspectPixelShader",
+  "raw": ".?AVFAspectPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FAspectPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ea53c",
+  "class": "FViewAlphaPixelShader",
+  "raw": ".?AVFViewAlphaPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FViewAlphaPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ea610",
+  "class": "FForceAlphaPixelShader",
+  "raw": ".?AVFForceAlphaPixelShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FForceAlphaPixelShader",
+   "FD3DPixelShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ea7f4",
+  "class": "FD3DVertexShader",
+  "raw": ".?AVFD3DVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ea98c",
+  "class": "FSkinningVertexShader",
+  "raw": ".?AVFSkinningVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10034f30"
+  ],
+  "raw_entries": [
+   "0x10034f30"
+  ],
+  "bases": [
+   "FSkinningVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100eb9b4",
+  "class": "FRefractionVertexShader",
+  "raw": ".?AVFRefractionVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100353e0"
+  ],
+  "raw_entries": [
+   "0x100353e0"
+  ],
+  "bases": [
+   "FRefractionVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ebc78",
+  "class": "FFilterBlit1VertexShader",
+  "raw": ".?AVFFilterBlit1VertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100355c0"
+  ],
+  "raw_entries": [
+   "0x100355c0"
+  ],
+  "bases": [
+   "FFilterBlit1VertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ec014",
+  "class": "FFilterBlit2VertexShader",
+  "raw": ".?AVFFilterBlit2VertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10035750"
+  ],
+  "raw_entries": [
+   "0x10035750"
+  ],
+  "bases": [
+   "FFilterBlit2VertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ec01c",
+  "class": "FGBlurXVertexShader",
+  "raw": ".?AVFGBlurXVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100358e0"
+  ],
+  "raw_entries": [
+   "0x100358e0"
+  ],
+  "bases": [
+   "FGBlurXVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ec504",
+  "class": "FGBlurYVertexShader",
+  "raw": ".?AVFGBlurYVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x10035ac0"
+  ],
+  "raw_entries": [
+   "0x10035ac0"
+  ],
+  "bases": [
+   "FGBlurYVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ec50c",
+  "class": "Ftestvertexshader",
+  "raw": ".?AVFtestvertexshader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "Ftestvertexshader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ec748",
+  "class": "FHaloVertexShader",
+  "raw": ".?AVFHaloVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FHaloVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ec9f8",
+  "class": "FCubemapVertexShader",
+  "raw": ".?AVFCubemapVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FCubemapVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x100ecfa0",
+  "class": "FNormalTNLVertexShader",
+  "raw": ".?AVFNormalTNLVertexShader@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100377a0"
+  ],
+  "raw_entries": [
+   "0x100377a0"
+  ],
+  "bases": [
+   "FNormalTNLVertexShader",
+   "FD3DVertexShader",
+   "FD3DShader"
+  ]
+ },
+ {
+  "vtable": "0x1010348c",
+  "class": "type_info",
+  "raw": ".?AVtype_info@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c2623"
+  ],
+  "raw_entries": [
+   "0x100c2623"
+  ],
+  "bases": [
+   "type_info"
+  ]
+ },
+ {
+  "vtable": "0x101048a8",
+  "class": "std::bad_exception",
+  "raw": ".?AVbad_exception@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100c8123",
+   "0x100d676d"
+  ],
+  "raw_entries": [
+   "0x100c8123",
+   "0x100d676d"
+  ],
+  "bases": [
+   "std::bad_exception",
+   "std::exception"
+  ]
+ },
+ {
+  "vtable": "0x1010cfec",
+  "class": "std::exception",
+  "raw": ".?AVexception@std@@",
+  "subobject_offset": 0,
+  "entries": [
+   "0x100d677a",
+   "0x100d676d"
+  ],
+  "raw_entries": [
+   "0x100d677a",
+   "0x100d676d"
+  ],
+  "bases": [
+   "std::exception"
+  ]
+ }
+]

@@ -1,0 +1,8 @@
+<ui:UXML noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" uss="L2StyleSheet" uss="L2TabView" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="L2TabView" focusable="true" class="l2-tab-view">
+    <ui:VisualElement name="tab-header-container" class="tab-header-container">
+      <ui:VisualElement name="TabLine" class="tab-line" />
+    </ui:VisualElement>
+    <ui:VisualElement focusable="true" name="tab-content-container" class="tab-content-container" />
+  </ui:VisualElement>
+</ui:UXML>

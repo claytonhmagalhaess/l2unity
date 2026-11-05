@@ -1,0 +1,68 @@
+// LoginClient__SetBlowFishKey__180529ce0 @ 0x180529ce0
+
+void LoginClient__SetBlowFishKey__180529ce0(longlong param_1,undefined8 param_2)
+
+{
+  longlong lVar1;
+  code *pcVar2;
+  undefined8 uVar3;
+  
+  if (cRam00000001834b378f == '\0') {
+    FUN_180315380(0x1832dc828);
+    FUN_180315380(0x1832f3868);
+    FUN_180315380(0x1832db638);
+    cRam00000001834b378f = '\x01';
+  }
+  if (*(longlong *)(param_1 + 0x30) != 0) {
+    FUN_1804f1f10(*(longlong *)(param_1 + 0x30),1,0);
+    *(undefined8 *)(param_1 + 0x70) = param_2;
+    func_0x000180314690(param_1 + 0x70,param_2);
+    uVar3 = func_0x000180315580(uRam00000001832dc828);
+    FUN_1807aa7d0(uVar3,0);
+    *(undefined8 *)(param_1 + 0x78) = uVar3;
+    func_0x000180314690(param_1 + 0x78,uVar3);
+    if (*(longlong *)(param_1 + 0x78) != 0) {
+      FUN_1807ab140(*(longlong *)(param_1 + 0x78),0,param_2,0);
+      uVar3 = func_0x000180315580(uRam00000001832dc828);
+      FUN_1807aa7d0(uVar3,0);
+      *(undefined8 *)(param_1 + 0x80) = uVar3;
+      func_0x000180314690(param_1 + 0x80,uVar3);
+      if (*(longlong *)(param_1 + 0x80) != 0) {
+        FUN_1807ab140(*(longlong *)(param_1 + 0x80),1,param_2,0);
+        if (*(int *)(lRam00000001832f3868 + 0xe4) == 0) {
+          func_0x000180315660();
+        }
+        uVar3 = uRam00000001832db638;
+        if (cRam00000001834bfa14 == '\0') {
+          FUN_180315380(0x1832f3868,0);
+          FUN_180315380(0x183315868);
+          cRam00000001834bfa14 = '\x01';
+        }
+        if (*(int *)(lRam00000001832f3868 + 0xe4) == 0) {
+          func_0x000180315660();
+        }
+        if (cRam00000001834b3803 == '\0') {
+          FUN_180315380(0x1832f3868);
+          cRam00000001834b3803 = '\x01';
+        }
+        if (*(int *)(lRam00000001832f3868 + 0xe4) == 0) {
+          func_0x000180315660();
+        }
+        lVar1 = *(longlong *)(*(longlong *)(lRam00000001832f3868 + 0xb8) + 8);
+        if (lVar1 != 0) {
+          FUN_180036090(5,uRam0000000183315868,lVar1,3,uVar3);
+          return;
+        }
+        FUN_1803155d0();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+    }
+  }
+  FUN_1803155d0();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+

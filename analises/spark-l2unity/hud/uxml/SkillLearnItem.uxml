@@ -1,0 +1,20 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillLearnWindow" uss="L2Slot" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="Skill" class="skill-learn-row">
+    <ui:Button name="SkillIcon" class="l2-slot skillbar-slot">
+      <ui:VisualElement name="BgContainer" picking-mode="Ignore" class="slot-bg-container">
+        <ui:VisualElement name="SlotBg" picking-mode="Ignore" class="slot-bg" />
+        <ui:VisualElement name="Effect" picking-mode="Ignore" class="toggle-effect" />
+        <ui:VisualElement name="Key" picking-mode="Ignore" class="shortcut-key" />
+      </ui:VisualElement>
+    </ui:Button>
+    <ui:VisualElement name="SkillDetails" class="skill-learn-row-details">
+      <ui:Label text="Mortal Blow" name="SkillName" class="l2-color-4 skill-learn-label" />
+      <ui:VisualElement name="SkillLabelGroup" class="skill-learn-cost">
+        <ui:Label text="Lv" name="Level" class="skill-group l2-color-3 skill-learn-label" />
+        <ui:Label text="1" name="LevelValue" class="skill-group l2-color-2 skill-learn-label" />
+        <ui:Label text="SP Cost : " name="SPCost" class="skill-group l2-color-3 skill-learn-label" />
+        <ui:Label text="1000" name="SPCostValue" class="skill-group l2-color-2 skill-learn-label" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

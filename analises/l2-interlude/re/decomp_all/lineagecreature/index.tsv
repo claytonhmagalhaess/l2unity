@@ -1,0 +1,657 @@
+10001000	FUN_10001000	00000.c	ok
+10001020	AAmbientCreatureFlock::StaticClass	00000.c	ok
+10001030	AAmbientCreatureFlock::operator_new	00000.c	ok
+10001060	AAmbientCreature::StaticClass	00000.c	ok
+10001070	AAmbientCreature::operator_new	00000.c	ok
+100010a0	AAmbientCreature::operator_new	00000.c	ok
+100010b0	AAmbientCreature::~AAmbientCreature	00000.c	ok
+10001110	AAmbientCreature::InternalConstructor	00000.c	ok
+10001120	AAmbientCreature::AAmbientCreature	00000.c	ok
+100012f0	AAmbientCreature::operator=	00000.c	ok
+100014b0	FUN_100014b0	00000.c	ok
+10001520	FUN_10001520	00000.c	ok
+10001540	AAmbientCreature::eventAmbientCreatureMoveTo	00000.c	ok
+10001590	FUN_10001590	00000.c	ok
+10001620	FUN_10001620	00000.c	ok
+10001670	FUN_10001670	00000.c	ok
+10001710	AAmbientCreatureFlock::operator=	00000.c	ok
+100017e0	thunk_FUN_10001670	00000.c	thunk -> 10001670
+100017f0	AAmbientCreatureFlock::~AAmbientCreatureFlock	00000.c	ok
+10001860	AAmbientCreatureFlock::AAmbientCreatureFlock	00000.c	ok
+100018c0	AAmbientCreatureFlock::AAmbientCreatureFlock	00000.c	ok
+100019d0	FUN_100019d0	00000.c	ok
+10001a40	AAmbientCreatureFlock::InternalConstructor	00000.c	ok
+10001a50	_DllMain@12	00000.c	ok
+10001a70	AAmbientCreature::execStartAmbientCreature	00000.c	ok
+10001af5	Catch@10001af5	00000.c	ok
+10001b09	Catch_All@10001b09	00000.c	ok
+10001b30	AAmbientCreature::AAmbientCreature	00000.c	ok
+10001b80	AAmbientCreature::SetTargetLocation	00000.c	ok
+10001bb0	AAmbientCreature::SetFlockLocation	00000.c	ok
+10001be0	AAmbientCreature::SetState	00000.c	ok
+10001c00	AAmbientCreature::PreProcessAction	00000.c	ok
+10001c10	AAmbientCreature::SetAmbientCreatureTargetLocation	00000.c	ok
+10002f80	AAmbientCreature::CreatureStates	00000.c	ok
+100034c0	AAmbientCreature::States	00000.c	ok
+100034d0	AAmbientCreature::Process	00000.c	ok
+10003530	AAmbientCreature::ProcessAction	00000.c	ok
+10003890	AAmbientCreature::Tick	00000.c	ok
+100038e0	AAmbientCreatureFlock::ProcessActionAwayFly	00000.c	ok
+10003960	AAmbientCreatureFlock::ProcessActionHideOnFly	00000.c	ok
+10003ad0	AAmbientCreatureFlock::ProcessActionFly	00000.c	ok
+10003b10	AAmbientCreatureFlock::ProcessActionCircling	00000.c	ok
+10003c80	AAmbientCreatureFlock::Tick	00000.c	ok
+10004024	ENGINE.DLL::AActor::ProcessEvent	00000.c	thunk -> EXTERNAL:00000134
+1000402a	ENGINE.DLL::AActor::ProcessState	00000.c	thunk -> EXTERNAL:00000133
+10004030	ENGINE.DLL::AActor::ProcessRemoteFunction	00000.c	thunk -> EXTERNAL:00000132
+10004036	ENGINE.DLL::AActor::PostLoad	00000.c	thunk -> EXTERNAL:00000131
+1000403c	ENGINE.DLL::APawn::Destroy	00000.c	thunk -> EXTERNAL:00000130
+10004042	ENGINE.DLL::AActor::Serialize	00000.c	thunk -> EXTERNAL:0000012f
+10004048	ENGINE.DLL::AActor::IsPendingKill	00000.c	thunk -> EXTERNAL:0000012e
+1000404e	ENGINE.DLL::AActor::InitExecution	00000.c	thunk -> EXTERNAL:0000012d
+10004054	ENGINE.DLL::AActor::PostEditChange	00000.c	thunk -> EXTERNAL:0000012c
+1000405a	ENGINE.DLL::APawn::ClearL2Game	00000.c	thunk -> EXTERNAL:0000012b
+10004060	ENGINE.DLL::AActor::NetDirty	00000.c	thunk -> EXTERNAL:0000012a
+10004066	ENGINE.DLL::APawn::IsLoaded	00000.c	thunk -> EXTERNAL:00000129
+1000406c	ENGINE.DLL::APawn::GetOptimizedRepList	00000.c	thunk -> EXTERNAL:00000128
+10004072	ENGINE.DLL::APawn::GetPlayerPawn	00000.c	thunk -> EXTERNAL:00000127
+10004078	ENGINE.DLL::APawn::IsPlayer	00000.c	thunk -> EXTERNAL:00000126
+1000407e	ENGINE.DLL::APawn::GetPawn	00000.c	thunk -> EXTERNAL:00000125
+10004084	ENGINE.DLL::AActor::GetLight	00000.c	thunk -> EXTERNAL:00000124
+1000408a	ENGINE.DLL::AActor::GetEmitter	00000.c	thunk -> EXTERNAL:00000123
+10004090	ENGINE.DLL::APawn::GetNetPriority	00000.c	thunk -> EXTERNAL:00000122
+10004096	ENGINE.DLL::AActor::WorldLightRadius	00000.c	thunk -> EXTERNAL:00000121
+1000409c	ENGINE.DLL::AActor::PostEditMove	00000.c	thunk -> EXTERNAL:00000120
+100040a2	ENGINE.DLL::AActor::PostEditLoad	00000.c	thunk -> EXTERNAL:0000011f
+100040a8	ENGINE.DLL::AActor::PreRaytrace	00000.c	thunk -> EXTERNAL:0000011e
+100040ae	ENGINE.DLL::AActor::PostRaytrace	00000.c	thunk -> EXTERNAL:0000011d
+100040b4	ENGINE.DLL::APawn::Spawned	00000.c	thunk -> EXTERNAL:0000011c
+100040ba	ENGINE.DLL::APawn::PreNetReceive	00000.c	thunk -> EXTERNAL:0000011b
+100040c0	ENGINE.DLL::APawn::PostNetReceive	00000.c	thunk -> EXTERNAL:0000011a
+100040c6	ENGINE.DLL::APawn::PostNetReceiveLocation	00000.c	thunk -> EXTERNAL:00000119
+100040cc	ENGINE.DLL::AActor::GetSkin	00000.c	thunk -> EXTERNAL:00000118
+100040d2	ENGINE.DLL::AActor::ShouldTickInEntry	00000.c	thunk -> EXTERNAL:00000117
+100040d8	ENGINE.DLL::AActor::L2EventShow	00000.c	thunk -> EXTERNAL:00000116
+100040de	ENGINE.DLL::AActor::L2EventPlay	00000.c	thunk -> EXTERNAL:00000115
+100040e4	ENGINE.DLL::APawn::LostChild	00000.c	thunk -> EXTERNAL:00000114
+100040ea	ENGINE.DLL::AActor::GainedChild	00000.c	thunk -> EXTERNAL:00000113
+100040f0	ENGINE.DLL::APawn::CanBeAttacked	00000.c	thunk -> EXTERNAL:00000112
+100040f6	ENGINE.DLL::APawn::CanBeTold	00000.c	thunk -> EXTERNAL:00000111
+100040fc	ENGINE.DLL::APawn::PostRender	00000.c	thunk -> EXTERNAL:00000110
+10004102	ENGINE.DLL::APawn::SetMeshes	00000.c	thunk -> EXTERNAL:0000010f
+10004108	ENGINE.DLL::APawn::SetTexes	00000.c	thunk -> EXTERNAL:0000010e
+1000410e	ENGINE.DLL::APawn::GetSubSkin	00000.c	thunk -> EXTERNAL:0000010d
+10004114	ENGINE.DLL::APawn::GetRightHandSkin	00000.c	thunk -> EXTERNAL:0000010c
+1000411a	ENGINE.DLL::APawn::GetLeftHandSkin	00000.c	thunk -> EXTERNAL:0000010b
+10004120	ENGINE.DLL::APawn::GetRightArmSkin	00000.c	thunk -> EXTERNAL:00000086
+10004126	ENGINE.DLL::APawn::GetLeftArmSkin	00000.c	thunk -> EXTERNAL:00000001
+1000412c	ENGINE.DLL::APawn::GetCloakSkin	00000.c	thunk -> EXTERNAL:00000002
+10004132	ENGINE.DLL::APawn::CheckSameAnim	00000.c	thunk -> EXTERNAL:00000003
+10004138	ENGINE.DLL::APawn::IsSameAnim	00000.c	thunk -> EXTERNAL:00000004
+1000413e	ENGINE.DLL::APawn::CreateSkin	00000.c	thunk -> EXTERNAL:00000005
+10004144	ENGINE.DLL::AActor::ClearTexModifier	00000.c	thunk -> EXTERNAL:00000006
+1000414a	ENGINE.DLL::AActor::SetAlphaTexModifier	00000.c	thunk -> EXTERNAL:00000007
+10004150	ENGINE.DLL::AActor::ClearAlphaTexModifier	00000.c	thunk -> EXTERNAL:00000008
+10004156	ENGINE.DLL::AActor::SetOverlayTexModifier	00000.c	thunk -> EXTERNAL:00000009
+1000415c	ENGINE.DLL::AActor::SetOverlayDependAlphaTexModifier	00000.c	thunk -> EXTERNAL:0000000a
+10004162	ENGINE.DLL::AActor::SetSubtractTexModifier	00000.c	thunk -> EXTERNAL:0000000b
+10004168	ENGINE.DLL::AActor::SetAddTexModifier	00000.c	thunk -> EXTERNAL:0000000c
+1000416e	ENGINE.DLL::AActor::SetAddTexModifier	00000.c	thunk -> EXTERNAL:0000000d
+10004174	ENGINE.DLL::AActor::SetChangeColorTexModifier	00000.c	thunk -> EXTERNAL:0000000e
+1000417a	ENGINE.DLL::AActor::IsModifiedTexture	00000.c	thunk -> EXTERNAL:0000000f
+10004180	ENGINE.DLL::AActor::GetModifiedTextureMaterial	00000.c	thunk -> EXTERNAL:00000010
+10004186	ENGINE.DLL::AActor::SetActorViewType	00000.c	thunk -> EXTERNAL:00000011
+1000418c	ENGINE.DLL::AActor::IsNeedTick	00000.c	thunk -> EXTERNAL:00000012
+10004192	ENGINE.DLL::AActor::SetStaticMeshActorViewType	00000.c	thunk -> EXTERNAL:00000013
+10004198	ENGINE.DLL::AActor::GetStepSoundData	00000.c	thunk -> EXTERNAL:00000014
+1000419e	ENGINE.DLL::AActor::ConvertOrthMatrix	00000.c	thunk -> EXTERNAL:00000015
+100041a4	ENGINE.DLL::AActor::CollisionToWorld	00000.c	thunk -> EXTERNAL:00000016
+100041aa	ENGINE.DLL::AActor::ToLocal	00000.c	thunk -> EXTERNAL:00000017
+100041b0	ENGINE.DLL::AActor::ToWorld	00000.c	thunk -> EXTERNAL:00000018
+100041b6	ENGINE.DLL::AActor::LocalToWorld	00000.c	thunk -> EXTERNAL:00000019
+100041bc	ENGINE.DLL::AActor::BillBoardLocalToWorld	00000.c	thunk -> EXTERNAL:0000001a
+100041c2	ENGINE.DLL::AActor::WorldToLocal	00000.c	thunk -> EXTERNAL:0000001b
+100041c8	ENGINE.DLL::AActor::GetLightRenderData	00000.c	thunk -> EXTERNAL:0000001c
+100041ce	ENGINE.DLL::APawn::UpdateRenderData	00000.c	thunk -> EXTERNAL:0000001d
+100041d4	ENGINE.DLL::APawn::PostScriptDestroyed	00000.c	thunk -> EXTERNAL:0000001e
+100041da	ENGINE.DLL::APawn::ShouldTrace	00000.c	thunk -> EXTERNAL:0000001f
+100041e0	ENGINE.DLL::AActor::GetPrimitive	00000.c	thunk -> EXTERNAL:00000020
+100041e6	ENGINE.DLL::APawn::NotifyBump	00000.c	thunk -> EXTERNAL:00000021
+100041ec	ENGINE.DLL::APawn::SetBase	00000.c	thunk -> EXTERNAL:00000022
+100041f2	ENGINE.DLL::APawn::NotifyAnimEnd	00000.c	thunk -> EXTERNAL:00000023
+100041f8	ENGINE.DLL::APawn::UpdateAnimation	00000.c	thunk -> EXTERNAL:00000024
+100041fe	ENGINE.DLL::AActor::StartAnimPoll	00000.c	thunk -> EXTERNAL:00000025
+10004204	ENGINE.DLL::AActor::CheckAnimFinished	00000.c	thunk -> EXTERNAL:00000026
+1000420a	ENGINE.DLL::APawn::CheckOwnerUpdated	00000.c	thunk -> EXTERNAL:00000027
+10004210	ENGINE.DLL::AActor::TickAuthoritative	00000.c	thunk -> EXTERNAL:00000028
+10004216	ENGINE.DLL::APawn::TickSimulated	00000.c	thunk -> EXTERNAL:00000029
+1000421c	ENGINE.DLL::APawn::TickSpecial	00000.c	thunk -> EXTERNAL:0000002a
+10004222	ENGINE.DLL::APawn::PlayerControlled	00000.c	thunk -> EXTERNAL:0000002b
+10004228	ENGINE.DLL::APawn::IsNetRelevantFor	00000.c	thunk -> EXTERNAL:0000002c
+1000422e	ENGINE.DLL::APawn::Attacked	00000.c	thunk -> EXTERNAL:0000002d
+10004234	ENGINE.DLL::APawn::IsDamageAct	00000.c	thunk -> EXTERNAL:0000002e
+1000423a	ENGINE.DLL::APawn::IsSpineRotation	00000.c	thunk -> EXTERNAL:0000002f
+10004240	ENGINE.DLL::APawn::GetDamageDist	00000.c	thunk -> EXTERNAL:00000030
+10004246	ENGINE.DLL::AActor::GetTrailerPrePivot	00000.c	thunk -> EXTERNAL:00000031
+1000424c	ENGINE.DLL::AActor::SetTrailerPrePivot	00000.c	thunk -> EXTERNAL:00000032
+10004252	ENGINE.DLL::AActor::RenderEditorInfo	00000.c	thunk -> EXTERNAL:00000033
+10004258	ENGINE.DLL::APawn::RenderEditorSelected	00000.c	thunk -> EXTERNAL:00000034
+1000425e	ENGINE.DLL::AActor::GetAmbientVolume	00000.c	thunk -> EXTERNAL:00000035
+10004264	ENGINE.DLL::APawn::SetZone	00000.c	thunk -> EXTERNAL:00000036
+1000426a	ENGINE.DLL::APawn::SetVolumes	00000.c	thunk -> EXTERNAL:00000037
+10004270	ENGINE.DLL::APawn::PostBeginPlay	00000.c	thunk -> EXTERNAL:00000038
+10004276	ENGINE.DLL::AActor::setPhysics	00000.c	thunk -> EXTERNAL:00000039
+1000427c	ENGINE.DLL::APawn::performPhysics	00000.c	thunk -> EXTERNAL:0000003a
+10004282	ENGINE.DLL::AActor::BoundProjectileVelocity	00000.c	thunk -> EXTERNAL:0000003b
+10004288	ENGINE.DLL::APawn::processHitWall	00000.c	thunk -> EXTERNAL:0000003c
+1000428e	ENGINE.DLL::APawn::processLanded	00000.c	thunk -> EXTERNAL:0000003d
+10004294	ENGINE.DLL::APawn::physFalling	00000.c	thunk -> EXTERNAL:0000003e
+1000429a	ENGINE.DLL::APawn::FindSlopeRotation	00000.c	thunk -> EXTERNAL:0000003f
+100042a0	ENGINE.DLL::APawn::SmoothHitWall	00000.c	thunk -> EXTERNAL:00000040
+100042a6	ENGINE.DLL::APawn::stepUp	00000.c	thunk -> EXTERNAL:00000041
+100042ac	ENGINE.DLL::AActor::ShrinkCollision	00000.c	thunk -> EXTERNAL:00000042
+100042b2	ENGINE.DLL::AActor::L2HitWall	00000.c	thunk -> EXTERNAL:00000043
+100042b8	ENGINE.DLL::AActor::L2Touch	00000.c	thunk -> EXTERNAL:00000044
+100042be	ENGINE.DLL::AActor::L2Explode	00000.c	thunk -> EXTERNAL:00000045
+100042c4	ENGINE.DLL::APawn::GetAttackItemSound	00000.c	thunk -> EXTERNAL:00000046
+100042ca	ENGINE.DLL::APawn::GetDefenseItemSound	00000.c	thunk -> EXTERNAL:00000047
+100042d0	ENGINE.DLL::APawn::GetShieldItemSound	00000.c	thunk -> EXTERNAL:00000048
+100042d6	ENGINE.DLL::APawn::GetDamageSound	00000.c	thunk -> EXTERNAL:00000049
+100042dc	ENGINE.DLL::APawn::GetAttackVoiceSound	00000.c	thunk -> EXTERNAL:0000004a
+100042e2	ENGINE.DLL::APawn::AttackedNotify	00000.c	thunk -> EXTERNAL:0000004b
+100042e8	ENGINE.DLL::APawn::AssociateAttackedNotify	00000.c	thunk -> EXTERNAL:0000004c
+100042ee	ENGINE.DLL::APawn::IsRendered	00000.c	thunk -> EXTERNAL:0000004d
+100042f4	ENGINE.DLL::APawn::GetRHandBoneName	00000.c	thunk -> EXTERNAL:0000004e
+100042fa	ENGINE.DLL::APawn::GetLHandBoneName	00000.c	thunk -> EXTERNAL:0000004f
+10004300	ENGINE.DLL::APawn::GetRArmBoneName	00000.c	thunk -> EXTERNAL:00000050
+10004306	ENGINE.DLL::APawn::GetLArmBoneName	00000.c	thunk -> EXTERNAL:00000051
+1000430c	ENGINE.DLL::APawn::GetCapeBoneName	00000.c	thunk -> EXTERNAL:00000052
+10004312	ENGINE.DLL::APawn::GetSpineBoneName	00000.c	thunk -> EXTERNAL:00000053
+10004318	ENGINE.DLL::APawn::GetLowbodyBoneName	00000.c	thunk -> EXTERNAL:00000054
+1000431e	ENGINE.DLL::APawn::GetHeadBoneName	00000.c	thunk -> EXTERNAL:00000055
+10004324	ENGINE.DLL::APawn::SetRHandBoneName	00000.c	thunk -> EXTERNAL:00000056
+1000432a	ENGINE.DLL::APawn::SetLHandBoneName	00000.c	thunk -> EXTERNAL:00000057
+10004330	ENGINE.DLL::APawn::SetRArmBoneName	00000.c	thunk -> EXTERNAL:00000058
+10004336	ENGINE.DLL::APawn::SetLArmBoneName	00000.c	thunk -> EXTERNAL:00000059
+1000433c	ENGINE.DLL::APawn::SetCapeBoneName	00000.c	thunk -> EXTERNAL:0000005a
+10004342	ENGINE.DLL::APawn::SetSpineBoneName	00000.c	thunk -> EXTERNAL:0000005b
+10004348	ENGINE.DLL::APawn::SetLowbodyBoneName	00000.c	thunk -> EXTERNAL:0000005c
+1000434e	ENGINE.DLL::APawn::SetHeadBoneName	00000.c	thunk -> EXTERNAL:0000005d
+10004354	ENGINE.DLL::APawn::GetSubMesh	00000.c	thunk -> EXTERNAL:0000005e
+1000435a	ENGINE.DLL::APawn::GetRightHandMesh	00000.c	thunk -> EXTERNAL:0000005f
+10004360	ENGINE.DLL::APawn::GetLeftHandMesh	00000.c	thunk -> EXTERNAL:00000060
+10004366	ENGINE.DLL::APawn::GetRightArmMesh	00000.c	thunk -> EXTERNAL:00000061
+1000436c	ENGINE.DLL::APawn::GetLeftArmMesh	00000.c	thunk -> EXTERNAL:00000062
+10004372	ENGINE.DLL::APawn::GetCloakMesh	00000.c	thunk -> EXTERNAL:00000063
+10004378	ENGINE.DLL::APawn::GetCloakCoverMesh	00000.c	thunk -> EXTERNAL:00000064
+1000437e	ENGINE.DLL::APawn::SetSubMesh	00000.c	thunk -> EXTERNAL:00000065
+10004384	ENGINE.DLL::APawn::SetRightHandMesh	00000.c	thunk -> EXTERNAL:00000066
+1000438a	ENGINE.DLL::APawn::SetLeftHandMesh	00000.c	thunk -> EXTERNAL:00000067
+10004390	ENGINE.DLL::APawn::SetRightArmMesh	00000.c	thunk -> EXTERNAL:00000068
+10004396	ENGINE.DLL::APawn::SetLeftArmMesh	00000.c	thunk -> EXTERNAL:00000069
+1000439c	ENGINE.DLL::APawn::SetCloakMesh	00000.c	thunk -> EXTERNAL:0000006a
+100043a2	ENGINE.DLL::APawn::SetCloakCoverMesh	00000.c	thunk -> EXTERNAL:0000006b
+100043a8	ENGINE.DLL::APawn::GetSubMeshInstance	00000.c	thunk -> EXTERNAL:0000006c
+100043ae	ENGINE.DLL::APawn::GetRightHandMeshInstance	00000.c	thunk -> EXTERNAL:0000006d
+100043b4	ENGINE.DLL::APawn::GetLeftHandMeshInstance	00000.c	thunk -> EXTERNAL:0000006e
+100043ba	ENGINE.DLL::APawn::GetRightArmMeshInstance	00000.c	thunk -> EXTERNAL:0000006f
+100043c0	ENGINE.DLL::APawn::GetLeftArmMeshInstance	00000.c	thunk -> EXTERNAL:00000070
+100043c6	ENGINE.DLL::APawn::GetCloakMeshInstance	00000.c	thunk -> EXTERNAL:00000071
+100043cc	ENGINE.DLL::APawn::GetCloakCoverMeshInstance	00000.c	thunk -> EXTERNAL:00000072
+100043d2	ENGINE.DLL::APawn::GetMagicInfo	00000.c	thunk -> EXTERNAL:00000073
+100043d8	ENGINE.DLL::AActor::GetTargetLocation	00000.c	thunk -> EXTERNAL:00000074
+100043de	ENGINE.DLL::AActor::physL2Movement	00000.c	thunk -> EXTERNAL:00000075
+100043e4	ENGINE.DLL::AActor::AddMyMarker	00000.c	thunk -> EXTERNAL:00000076
+100043ea	ENGINE.DLL::AActor::ClearMarker	00000.c	thunk -> EXTERNAL:00000077
+100043f0	ENGINE.DLL::AActor::AssociatedLevelGeometry	00000.c	thunk -> EXTERNAL:00000078
+100043f6	ENGINE.DLL::AActor::HasAssociatedLevelGeometry	00000.c	thunk -> EXTERNAL:00000079
+100043fc	ENGINE.DLL::AActor::PlayAnim	00000.c	thunk -> EXTERNAL:0000007a
+10004402	ENGINE.DLL::APawn::CheckForErrors	00000.c	thunk -> EXTERNAL:0000007b
+10004408	ENGINE.DLL::AActor::PrePath	00000.c	thunk -> EXTERNAL:0000007c
+1000440e	ENGINE.DLL::AActor::PostPath	00000.c	thunk -> EXTERNAL:0000007d
+10004414	ENGINE.DLL::AActor::GetProjectorBase	00000.c	thunk -> EXTERNAL:0000007e
+1000441a	ENGINE.DLL::AActor::IsABrush	00000.c	thunk -> EXTERNAL:0000007f
+10004420	ENGINE.DLL::AActor::IsAMover	00000.c	thunk -> EXTERNAL:00000080
+10004426	ENGINE.DLL::AActor::IsAVolume	00000.c	thunk -> EXTERNAL:00000081
+1000442c	ENGINE.DLL::AActor::IsAPlayerController	00000.c	thunk -> EXTERNAL:00000082
+10004432	ENGINE.DLL::APawn::IsAPawn	00000.c	thunk -> EXTERNAL:00000083
+10004438	ENGINE.DLL::AActor::IsAProjectile	00000.c	thunk -> EXTERNAL:00000084
+1000443e	ENGINE.DLL::AActor::IsAAmbientSound	00000.c	thunk -> EXTERNAL:00000085
+10004444	ENGINE.DLL::AActor::IsAEmitter	00000.c	thunk -> EXTERNAL:00000135
+1000444a	ENGINE.DLL::AActor::IsALight	00000.c	thunk -> EXTERNAL:00000087
+10004450	ENGINE.DLL::APawn::IsObserverModeActor	00000.c	thunk -> EXTERNAL:00000088
+10004456	ENGINE.DLL::APawn::IsBroadcastObserverModeActor	00000.c	thunk -> EXTERNAL:00000089
+1000445c	ENGINE.DLL::AActor::GetL2MovementEventName	00000.c	thunk -> EXTERNAL:0000008a
+10004462	ENGINE.DLL::AActor::GetL2MovementTagName	00000.c	thunk -> EXTERNAL:0000008b
+10004468	ENGINE.DLL::AActor::AttachL2MovementActor	00000.c	thunk -> EXTERNAL:0000008c
+1000446e	ENGINE.DLL::APawn::PostLoadProcess	00000.c	thunk -> EXTERNAL:0000008d
+10004474	ENGINE.DLL::AActor::GetTopPlayerController	00000.c	thunk -> EXTERNAL:0000008e
+1000447a	ENGINE.DLL::APawn::HurtByVolume	00000.c	thunk -> EXTERNAL:0000008f
+10004480	ENGINE.DLL::APawn::physicsRotation	00000.c	thunk -> EXTERNAL:00000090
+10004486	ENGINE.DLL::APawn::PlayAnim	00000.c	thunk -> EXTERNAL:00000091
+1000448c	ENGINE.DLL::APawn::MoveToLocation	00000.c	thunk -> EXTERNAL:00000092
+10004492	ENGINE.DLL::APawn::TickMoveInVehicle	00000.c	thunk -> EXTERNAL:00000093
+10004498	ENGINE.DLL::AActor::Destroy	00000.c	thunk -> EXTERNAL:00000098
+1000449e	ENGINE.DLL::AActor::ClearL2Game	00000.c	thunk -> EXTERNAL:00000099
+100044a4	ENGINE.DLL::AActor::IsLoaded	00000.c	thunk -> EXTERNAL:0000009a
+100044aa	ENGINE.DLL::AActor::GetOptimizedRepList	00000.c	thunk -> EXTERNAL:0000009b
+100044b0	ENGINE.DLL::AActor::GetPlayerPawn	00000.c	thunk -> EXTERNAL:0000009c
+100044b6	ENGINE.DLL::AActor::IsPlayer	00000.c	thunk -> EXTERNAL:0000009d
+100044bc	ENGINE.DLL::AActor::GetPawn	00000.c	thunk -> EXTERNAL:0000009e
+100044c2	ENGINE.DLL::AActor::GetNetPriority	00000.c	thunk -> EXTERNAL:0000009f
+100044c8	ENGINE.DLL::AActor::Spawned	00000.c	thunk -> EXTERNAL:000000a0
+100044ce	ENGINE.DLL::AActor::PreNetReceive	00000.c	thunk -> EXTERNAL:000000a1
+100044d4	ENGINE.DLL::AActor::PostNetReceive	00000.c	thunk -> EXTERNAL:000000a2
+100044da	ENGINE.DLL::AActor::PostNetReceiveLocation	00000.c	thunk -> EXTERNAL:000000a3
+100044e0	ENGINE.DLL::AActor::LostChild	00000.c	thunk -> EXTERNAL:000000a4
+100044e6	ENGINE.DLL::AActor::CanBeAttacked	00000.c	thunk -> EXTERNAL:000000a5
+100044ec	ENGINE.DLL::AActor::CanBeTold	00000.c	thunk -> EXTERNAL:000000a6
+100044f2	ENGINE.DLL::AActor::PostRender	00000.c	thunk -> EXTERNAL:000000a7
+100044f8	ENGINE.DLL::AActor::SetMeshes	00000.c	thunk -> EXTERNAL:000000a8
+100044fe	ENGINE.DLL::AActor::SetTexes	00000.c	thunk -> EXTERNAL:000000a9
+10004504	ENGINE.DLL::AActor::GetSubSkin	00000.c	thunk -> EXTERNAL:000000aa
+1000450a	ENGINE.DLL::AActor::GetRightHandSkin	00000.c	thunk -> EXTERNAL:000000ab
+10004510	ENGINE.DLL::AActor::GetLeftHandSkin	00000.c	thunk -> EXTERNAL:000000ac
+10004516	ENGINE.DLL::AActor::GetRightArmSkin	00000.c	thunk -> EXTERNAL:000000ad
+1000451c	ENGINE.DLL::AActor::GetLeftArmSkin	00000.c	thunk -> EXTERNAL:000000ae
+10004522	ENGINE.DLL::AActor::GetCloakSkin	00000.c	thunk -> EXTERNAL:000000af
+10004528	ENGINE.DLL::AActor::CheckSameAnim	00000.c	thunk -> EXTERNAL:000000b0
+1000452e	ENGINE.DLL::AActor::IsSameAnim	00000.c	thunk -> EXTERNAL:000000b1
+10004534	ENGINE.DLL::AActor::CreateSkin	00000.c	thunk -> EXTERNAL:000000b2
+1000453a	ENGINE.DLL::AActor::UpdateRenderData	00000.c	thunk -> EXTERNAL:000000b3
+10004540	ENGINE.DLL::AEnvCreatureManagerInfo::PostScriptDestroyed	00000.c	thunk -> EXTERNAL:000000b4
+10004546	ENGINE.DLL::AActor::ShouldTrace	00000.c	thunk -> EXTERNAL:000000b5
+1000454c	ENGINE.DLL::AActor::NotifyBump	00000.c	thunk -> EXTERNAL:000000b6
+10004552	ENGINE.DLL::AActor::SetBase	00000.c	thunk -> EXTERNAL:000000b7
+10004558	ENGINE.DLL::AActor::NotifyAnimEnd	00000.c	thunk -> EXTERNAL:000000b8
+1000455e	ENGINE.DLL::AActor::UpdateAnimation	00000.c	thunk -> EXTERNAL:000000b9
+10004564	ENGINE.DLL::AActor::CheckOwnerUpdated	00000.c	thunk -> EXTERNAL:000000ba
+1000456a	ENGINE.DLL::AActor::TickSimulated	00000.c	thunk -> EXTERNAL:000000bb
+10004570	ENGINE.DLL::AActor::TickSpecial	00000.c	thunk -> EXTERNAL:000000bc
+10004576	ENGINE.DLL::AActor::PlayerControlled	00000.c	thunk -> EXTERNAL:000000bd
+1000457c	ENGINE.DLL::AActor::IsNetRelevantFor	00000.c	thunk -> EXTERNAL:000000be
+10004582	ENGINE.DLL::AActor::Attacked	00000.c	thunk -> EXTERNAL:000000bf
+10004588	ENGINE.DLL::AActor::IsDamageAct	00000.c	thunk -> EXTERNAL:000000c0
+1000458e	ENGINE.DLL::AActor::IsSpineRotation	00000.c	thunk -> EXTERNAL:000000c1
+10004594	ENGINE.DLL::AActor::GetDamageDist	00000.c	thunk -> EXTERNAL:000000c2
+1000459a	ENGINE.DLL::AActor::RenderEditorSelected	00000.c	thunk -> EXTERNAL:000000c3
+100045a0	ENGINE.DLL::AActor::SetZone	00000.c	thunk -> EXTERNAL:000000c4
+100045a6	ENGINE.DLL::AActor::SetVolumes	00000.c	thunk -> EXTERNAL:000000c5
+100045ac	ENGINE.DLL::AEnvCreatureManagerInfo::PostBeginPlay	00000.c	thunk -> EXTERNAL:000000c6
+100045b2	ENGINE.DLL::AActor::performPhysics	00000.c	thunk -> EXTERNAL:000000c7
+100045b8	ENGINE.DLL::AActor::processHitWall	00000.c	thunk -> EXTERNAL:000000c8
+100045be	ENGINE.DLL::AActor::processLanded	00000.c	thunk -> EXTERNAL:000000c9
+100045c4	ENGINE.DLL::AActor::physFalling	00000.c	thunk -> EXTERNAL:000000ca
+100045ca	ENGINE.DLL::AActor::FindSlopeRotation	00000.c	thunk -> EXTERNAL:000000cb
+100045d0	ENGINE.DLL::AActor::SmoothHitWall	00000.c	thunk -> EXTERNAL:000000cc
+100045d6	ENGINE.DLL::AActor::stepUp	00000.c	thunk -> EXTERNAL:000000cd
+100045dc	ENGINE.DLL::AActor::GetAttackItemSound	00000.c	thunk -> EXTERNAL:000000ce
+100045e2	ENGINE.DLL::AActor::GetDefenseItemSound	00000.c	thunk -> EXTERNAL:000000cf
+100045e8	ENGINE.DLL::AActor::GetShieldItemSound	00000.c	thunk -> EXTERNAL:000000d0
+100045ee	ENGINE.DLL::AActor::GetDamageSound	00000.c	thunk -> EXTERNAL:000000d1
+100045f4	ENGINE.DLL::AActor::GetAttackVoiceSound	00000.c	thunk -> EXTERNAL:000000d2
+100045fa	ENGINE.DLL::AActor::AttackedNotify	00000.c	thunk -> EXTERNAL:000000d3
+10004600	ENGINE.DLL::AActor::AssociateAttackedNotify	00000.c	thunk -> EXTERNAL:000000d4
+10004606	ENGINE.DLL::AActor::IsRendered	00000.c	thunk -> EXTERNAL:000000d5
+1000460c	ENGINE.DLL::AActor::GetRHandBoneName	00000.c	thunk -> EXTERNAL:000000d6
+10004612	ENGINE.DLL::AActor::GetLHandBoneName	00000.c	thunk -> EXTERNAL:000000d7
+10004618	ENGINE.DLL::AActor::GetRArmBoneName	00000.c	thunk -> EXTERNAL:000000d8
+1000461e	ENGINE.DLL::AActor::GetLArmBoneName	00000.c	thunk -> EXTERNAL:000000d9
+10004624	ENGINE.DLL::AActor::GetCapeBoneName	00000.c	thunk -> EXTERNAL:000000da
+1000462a	ENGINE.DLL::AActor::GetSpineBoneName	00000.c	thunk -> EXTERNAL:000000db
+10004630	ENGINE.DLL::AActor::GetLowbodyBoneName	00000.c	thunk -> EXTERNAL:000000dc
+10004636	ENGINE.DLL::AActor::GetHeadBoneName	00000.c	thunk -> EXTERNAL:000000dd
+1000463c	ENGINE.DLL::AActor::SetRHandBoneName	00000.c	thunk -> EXTERNAL:000000de
+10004642	ENGINE.DLL::AActor::SetLHandBoneName	00000.c	thunk -> EXTERNAL:000000df
+10004648	ENGINE.DLL::AActor::SetRArmBoneName	00000.c	thunk -> EXTERNAL:000000e0
+1000464e	ENGINE.DLL::AActor::SetLArmBoneName	00000.c	thunk -> EXTERNAL:000000e1
+10004654	ENGINE.DLL::AActor::SetCapeBoneName	00000.c	thunk -> EXTERNAL:000000e2
+1000465a	ENGINE.DLL::AActor::SetSpineBoneName	00000.c	thunk -> EXTERNAL:000000e3
+10004660	ENGINE.DLL::AActor::SetLowbodyBoneName	00000.c	thunk -> EXTERNAL:000000e4
+10004666	ENGINE.DLL::AActor::SetHeadBoneName	00000.c	thunk -> EXTERNAL:000000e5
+1000466c	ENGINE.DLL::AActor::GetSubMesh	00000.c	thunk -> EXTERNAL:000000e6
+10004672	ENGINE.DLL::AActor::GetRightHandMesh	00000.c	thunk -> EXTERNAL:000000e7
+10004678	ENGINE.DLL::AActor::GetLeftHandMesh	00000.c	thunk -> EXTERNAL:000000e8
+1000467e	ENGINE.DLL::AActor::GetRightArmMesh	00000.c	thunk -> EXTERNAL:000000e9
+10004684	ENGINE.DLL::AActor::GetLeftArmMesh	00000.c	thunk -> EXTERNAL:000000ea
+1000468a	ENGINE.DLL::AActor::GetCloakMesh	00000.c	thunk -> EXTERNAL:000000eb
+10004690	ENGINE.DLL::AActor::GetCloakCoverMesh	00000.c	thunk -> EXTERNAL:000000ec
+10004696	ENGINE.DLL::AActor::SetSubMesh	00000.c	thunk -> EXTERNAL:000000ed
+1000469c	ENGINE.DLL::AActor::SetRightHandMesh	00000.c	thunk -> EXTERNAL:000000ee
+100046a2	ENGINE.DLL::AActor::SetLeftHandMesh	00000.c	thunk -> EXTERNAL:000000ef
+100046a8	ENGINE.DLL::AActor::SetRightArmMesh	00000.c	thunk -> EXTERNAL:000000f0
+100046ae	ENGINE.DLL::AActor::SetLeftArmMesh	00000.c	thunk -> EXTERNAL:000000f1
+100046b4	ENGINE.DLL::AActor::SetCloakMesh	00000.c	thunk -> EXTERNAL:000000f2
+100046ba	ENGINE.DLL::AActor::SetCloakCoverMesh	00000.c	thunk -> EXTERNAL:000000f3
+100046c0	ENGINE.DLL::AActor::GetSubMeshInstance	00000.c	thunk -> EXTERNAL:000000f4
+100046c6	ENGINE.DLL::AActor::GetRightHandMeshInstance	00000.c	thunk -> EXTERNAL:000000f5
+100046cc	ENGINE.DLL::AActor::GetLeftHandMeshInstance	00000.c	thunk -> EXTERNAL:000000f6
+100046d2	ENGINE.DLL::AActor::GetRightArmMeshInstance	00000.c	thunk -> EXTERNAL:000000f7
+100046d8	ENGINE.DLL::AActor::GetLeftArmMeshInstance	00000.c	thunk -> EXTERNAL:000000f8
+100046de	ENGINE.DLL::AActor::GetCloakMeshInstance	00000.c	thunk -> EXTERNAL:000000f9
+100046e4	ENGINE.DLL::AActor::GetCloakCoverMeshInstance	00000.c	thunk -> EXTERNAL:000000fa
+100046ea	ENGINE.DLL::AActor::GetMagicInfo	00000.c	thunk -> EXTERNAL:000000fb
+100046f0	ENGINE.DLL::AActor::CheckForErrors	00000.c	thunk -> EXTERNAL:000000fc
+100046f6	ENGINE.DLL::AActor::IsAPawn	00000.c	thunk -> EXTERNAL:000000fd
+100046fc	ENGINE.DLL::AActor::IsObserverModeActor	00000.c	thunk -> EXTERNAL:000000fe
+10004702	ENGINE.DLL::AActor::IsBroadcastObserverModeActor	00000.c	thunk -> EXTERNAL:000000ff
+10004708	ENGINE.DLL::AActor::PostLoadProcess	00000.c	thunk -> EXTERNAL:00000100
+1000470e	ENGINE.DLL::AEnvCreatureManagerInfo::SetInit	00000.c	thunk -> EXTERNAL:00000101
+10004714	CORE.DLL::UObject::QueryInterface	00000.c	thunk -> EXTERNAL:0000015c
+1000471a	CORE.DLL::UObject::AddRef	00000.c	thunk -> EXTERNAL:0000015b
+10004720	CORE.DLL::UObject::Release	00000.c	thunk -> EXTERNAL:0000015a
+10004726	CORE.DLL::UObject::ProcessDelegate	00000.c	thunk -> EXTERNAL:00000159
+1000472c	CORE.DLL::UObject::Modify	00000.c	thunk -> EXTERNAL:00000158
+10004732	CORE.DLL::UObject::GotoState	00000.c	thunk -> EXTERNAL:00000157
+10004738	CORE.DLL::UObject::GotoLabel	00000.c	thunk -> EXTERNAL:00000156
+1000473e	CORE.DLL::UObject::ShutdownAfterError	00000.c	thunk -> EXTERNAL:00000155
+10004744	CORE.DLL::UObject::CallFunction	00000.c	thunk -> EXTERNAL:00000154
+1000474a	CORE.DLL::UObject::ScriptConsoleExec	00000.c	thunk -> EXTERNAL:00000153
+10004750	CORE.DLL::UObject::Register	00000.c	thunk -> EXTERNAL:00000152
+10004756	CORE.DLL::UObject::LanguageChange	00000.c	thunk -> EXTERNAL:00000151
+1000475c	CORE.DLL::UObject::Rename	00000.c	thunk -> EXTERNAL:00000150
+10004770	_memcpy	00000.c	ok
+10004ad5	_JumpToContinuation	00000.c	ok
+10004b05	FID_conflict:_CallMemberFunction1	00000.c	ok
+10004b0c	_UnwindNestedFrames	00000.c	ok
+10004b5e	FID_conflict:___CxxFrameHandler3	00000.c	ok
+10004bc4	_CallSETranslator	00000.c	ok
+10004c99	TranslatorGuardHandler	00000.c	ok
+10004d36	_GetRangeOfTrysToCheck	00000.c	ok
+10004da9	__CreateFrameInfo	00000.c	ok
+10004dd1	__IsExceptionObjectToBeDestroyed	00000.c	ok
+10004df2	__FindAndUnlinkFrame	00000.c	ok
+10004e3e	_CallCatchBlock2	00000.c	ok
+10004e9c	__security_check_cookie	00000.c	ok
+10004eab	type_info::~type_info	00000.c	ok
+10004eb9	type_info::`scalar_deleting_destructor'	00000.c	ok
+10004ed5	type_info::operator==	00000.c	ok
+10004ef0	__cfltcvt_init	00000.c	ok
+10004f50	__fpmath	00000.c	ok
+10004f6e	__ArrayUnwind	00000.c	ok
+10004fcc	`eh_vector_destructor_iterator'	00000.c	ok
+10005017	FUN_10005017	00000.c	ok
+1000502f	__CxxThrowException@8	00000.c	ok
+10005079	_rand	00000.c	ok
+1000509b	FUN_1000509b	00000.c	ok
+10005183	__onexit	00000.c	ok
+100051b9	FUN_100051b9	00000.c	ok
+100051bf	_atexit	00000.c	ok
+10005220	FUN_10005220	00000.c	ok
+1000526f	FUN_1000526f	00000.c	ok
+10005278	FUN_10005278	00000.c	ok
+10005350	FUN_10005350	00000.c	ok
+1000539f	FUN_1000539f	00000.c	ok
+100053a8	FUN_100053a8	00000.c	ok
+10005440	FUN_10005440	00000.c	ok
+100054eb	__CRT_INIT@12	00000.c	ok
+100056c4	___DllMainCRTStartup	00000.c	ok
+100057ba	entry	00000.c	ok
+100057db	FUN_100057db	00000.c	ok
+10005862	__VEC_memcpy	00000.c	ok
+10005964	FUN_10005964	00000.c	ok
+10005986	___TypeMatch	00000.c	ok
+10005a26	___FrameUnwindToState	00000.c	ok
+10005aec	FUN_10005aec	00000.c	ok
+10005b4c	___DestructExceptionObject	00000.c	ok
+10005ba0	___AdjustPointer	00000.c	ok
+10005bc5	IsInExceptionSpec	00000.c	ok
+10005c3e	CallUnexpected	00000.c	ok
+10005c6f	Catch_All@10005c6f	00000.c	ok
+10005c87	CallCatchBlock	00000.c	ok
+10005dad	FUN_10005dad	00000.c	ok
+10005e23	___BuildCatchObjectHelper	00000.c	ok
+10005fa2	___BuildCatchObject	00000.c	ok
+10006033	CatchIt	00000.c	ok
+1000609f	FindHandlerForForeignException	00000.c	ok
+10006191	FindHandler	00000.c	ok
+100064ff	___InternalCxxFrameHandler	00000.c	ok
+100065e3	FUN_100065e3	00000.c	ok
+1000664f	FUN_1000664f	00000.c	ok
+100066bd	__encoded_null	00000.c	ok
+100066c6	FUN_100066c6	00000.c	ok
+1000673d	FUN_1000673d	00000.c	ok
+1000676f	__mtterm	00000.c	ok
+100067ac	FUN_100067ac	00000.c	ok
+10006862	FUN_10006862	00000.c	ok
+1000686b	FUN_1000686b	00000.c	ok
+100068e2	__getptd	00000.c	ok
+100068fa	__freefls@4	00000.c	ok
+10006a06	FUN_10006a06	00000.c	ok
+10006a12	FUN_10006a12	00000.c	ok
+10006a1b	__freeptd	00000.c	ok
+10006a84	__mtinit	00000.c	ok
+10006c08	terminate	00000.c	ok
+10006c41	unexpected	00000.c	ok
+10006c54	_inconsistency	00000.c	ok
+10006c8b	__initp_eh_hooks	00000.c	ok
+10006ca0	__CallSettingFrame@12	00000.c	ok
+10006cec	___report_gsfailure	00000.c	ok
+10006df0	type_info::_Type_info_dtor	00000.c	ok
+10006e57	FUN_10006e57	00000.c	ok
+10006e60	_strcmp	00000.c	ok
+10006ee8	_LocaleUpdate::_LocaleUpdate	00000.c	ok
+10006f6a	__forcdecpt_l	00000.c	ok
+10006fdb	__cropzeros_l	00000.c	ok
+10007071	__fassign_l	00000.c	ok
+100070c8	__shift	00000.c	ok
+10007101	__cftoe2_l	00000.c	ok
+1000726e	__cftoe_l	00000.c	ok
+1000733c	__cftoe	00000.c	ok
+1000735a	__cftoa_l	00000.c	ok
+100076cb	__cftof2_l	00000.c	ok
+100077c0	__cftof_l	00000.c	ok
+10007879	__cftog_l	00000.c	ok
+10007971	__cfltcvt_l	00000.c	ok
+100079f7	__cfltcvt	00000.c	ok
+10007a18	__initp_misc_cfltcvt_tab	00000.c	ok
+10007a37	__setdefaultprecision	00000.c	ok
+10007a60	__ms_p5_test_fdiv	00000.c	ok
+10007a9c	__ms_p5_mp_test_fdiv	00000.c	ok
+10007ac8	__SEH_prolog4	00000.c	ok
+10007b0d	__SEH_epilog4	00000.c	ok
+10007b30	__except_handler4	00000.c	ok
+10007cc6	__malloc_crt	00000.c	ok
+10007d06	__calloc_crt	00000.c	ok
+10007d4e	__realloc_crt	00000.c	ok
+10007d99	__msize	00000.c	ok
+10007e33	FUN_10007e33	00000.c	ok
+10007e3c	__amsg_exit	00000.c	ok
+10007e60	FUN_10007e60	00000.c	ok
+10007e86	___crtExitProcess	00000.c	ok
+10007e9b	FUN_10007e9b	00000.c	ok
+10007ea4	FUN_10007ea4	00000.c	ok
+10007ead	FUN_10007ead	00000.c	ok
+10007ec5	__initterm_e	00000.c	ok
+10007ee5	__get_osplatform	00000.c	ok
+10007f1c	__get_winmajor	00000.c	ok
+10007f58	__cinit	00000.c	ok
+10007fea	FUN_10007fea	00000.c	ok
+100080b7	FUN_100080b7	00000.c	ok
+100080cc	__exit	00000.c	ok
+100080dd	__cexit	00000.c	ok
+100080ec	__init_pointers	00000.c	ok
+10008140	FUN_10008140	00000.c	ok
+1000815e	FUN_1000815e	00000.c	ok
+1000850c	FUN_1000850c	00000.c	ok
+10008525	__fload_withFB	00000.c	ok
+10008568	FUN_10008568	00000.c	ok
+1000858b	__math_exit	00000.c	ok
+10008670	FUN_10008670	00000.c	ok
+10008687	__startOneArgErrorHandling	00000.c	ok
+100086d0	FUN_100086d0	00000.c	ok
+100086ee	FUN_100086ee	00000.c	ok
+1000887c	_free	00000.c	ok
+100088d2	FUN_100088d2	00000.c	ok
+1000890a	__ioinit	00000.c	ok
+10008b4a	__ioterm	00000.c	ok
+10008b96	__setenvp	00000.c	ok
+10008c71	parse_cmdline	00000.c	ok
+10008e09	__setargv	00000.c	ok
+10008ec2	___crtGetEnvironmentStringsA	00000.c	ok
+10008ff7	__RTC_Initialize	00000.c	ok
+1000903f	___heap_select	00000.c	ok
+1000909a	__heap_init	00000.c	ok
+100090f4	__heap_term	00000.c	ok
+10009168	FUN_10009168	00000.c	ok
+10009169	FUN_10009169	00000.c	ok
+100092e2	___security_init_cookie	00000.c	ok
+10009376	FUN_10009376	00000.c	ok
+100093c6	__get_sse2_info	00000.c	ok
+10009433	std::exception::exception	00000.c	ok
+10009481	FUN_10009481	00000.c	ok
+100094d9	exception::~exception	00000.c	ok
+100094ef	FUN_100094ef	00000.c	ok
+100094fc	FUN_100094fc	00000.c	ok
+10009518	__EH_prolog3_catch	00000.c	ok
+1000954e	_ValidateRead	00000.c	ok
+10009560	_memmove	00000.c	ok
+100098c5	__mtinitlocks	00000.c	ok
+1000990e	__mtdeletelocks	00000.c	ok
+10009963	FUN_10009963	00000.c	ok
+10009978	__mtinitlocknum	00000.c	ok
+10009a32	FUN_10009a32	00000.c	ok
+10009a3b	__lock	00000.c	ok
+10009a6c	___freetlocinfo	00000.c	ok
+10009bac	___addlocaleref	00000.c	ok
+10009c32	___removelocaleref	00000.c	ok
+10009cbe	__updatetlocinfoEx_nolock	00000.c	ok
+10009cfc	___updatetlocinfo	00000.c	ok
+10009d66	FUN_10009d66	00000.c	ok
+10009d72	FUN_10009d72	00000.c	ok
+10009da1	setSBCS	00000.c	ok
+10009df6	setSBUpLow	00000.c	ok
+10009f80	___updatetmbcinfo	00000.c	ok
+1000a01b	FUN_1000a01b	00000.c	ok
+1000a024	getSystemCP	00000.c	ok
+1000a09e	FUN_1000a09e	00000.c	ok
+1000a277	__setmbcp	00000.c	ok
+1000a3d8	FUN_1000a3d8	00000.c	ok
+1000a411	___initmbctable	00000.c	ok
+1000a42f	_abort	00000.c	ok
+1000a524	__global_unwind2	00000.c	ok
+1000a589	__local_unwind2	00000.c	ok
+1000a630	__NLG_Notify1	00000.c	ok
+1000a639	__NLG_Notify	00000.c	ok
+1000a658	FUN_1000a658	00000.c	ok
+1000a65b	FUN_1000a65b	00000.c	ok
+1000a663	FUN_1000a663	00000.c	ok
+1000a66d	__invoke_watson	00000.c	ok
+1000a769	FUN_1000a769	00000.c	ok
+1000a78d	_strcpy_s	00000.c	ok
+1000a800	_strlen	00000.c	ok
+1000a88b	_V6_HeapAlloc	00000.c	ok
+1000a8d1	FUN_1000a8d1	00000.c	ok
+1000a8da	_malloc	00000.c	ok
+1000a9a0	_strrchr	00000.c	ok
+1000a9cd	__isdigit_l	00000.c	ok
+1000aa1c	_isdigit	00000.c	ok
+1000aa45	__tolower_l	00000.c	ok
+1000ab5c	_tolower	00000.c	ok
+1000ab83	FID_conflict:__atoflt_l	00000.c	ok
+1000ac29	FID_conflict:__atoflt_l	00000.c	ok
+1000accf	FUN_1000accf	00000.c	ok
+1000ad0a	FUN_1000ad0a	00000.c	ok
+1000ad1d	__fptostr	00000.c	ok
+1000adda	___dtold	00000.c	ok
+1000ae95	__fltout2	00000.c	ok
+1000af30	__alldvrm	00000.c	ok
+1000b010	_memset	00000.c	ok
+1000b090	__aullshr	00000.c	ok
+1000b0b8	__controlfp_s	00000.c	ok
+1000b124	__local_unwind4	00000.c	ok
+1000b1fa	FUN_1000b1fa	00000.c	ok
+1000b216	_EH4_CallFilterFunc	00000.c	ok
+1000b22d	_EH4_TransferToHandler	00000.c	ok
+1000b246	_EH4_GlobalUnwind	00000.c	ok
+1000b260	_EH4_LocalUnwind	00000.c	ok
+1000b280	__ValidateImageBase	00000.c	ok
+1000b2b0	__FindPESection	00000.c	ok
+1000b300	__IsNonwritableInCurrentImage	00000.c	ok
+1000b3bb	__calloc_impl	00000.c	ok
+1000b4b7	FUN_1000b4b7	00000.c	ok
+1000b4d9	_realloc	00000.c	ok
+1000b61d	FUN_1000b61d	00000.c	ok
+1000b6f4	___sbh_heap_init	00000.c	ok
+1000b73c	thunk_FUN_1000b760	00000.c	thunk -> 1000b760
+1000b760	FUN_1000b760	00000.c	ok
+1000b767	___sbh_free_block	00000.c	ok
+1000ba7b	___sbh_alloc_new_region	00000.c	ok
+1000bb2b	___sbh_alloc_new_group	00000.c	ok
+1000bc31	___sbh_resize_block	00000.c	ok
+1000bf10	___sbh_alloc_block	00000.c	ok
+1000c1f3	FUN_1000c1f3	00000.c	ok
+1000c393	__FF_MSGBANNER	00000.c	ok
+1000c3cc	__initp_misc_winsig	00000.c	ok
+1000c3e5	siglookup	00000.c	ok
+1000c419	___get_sigabrt	00000.c	ok
+1000c426	_raise	00000.c	ok
+1000c59a	FUN_1000c59a	00000.c	ok
+1000c5d6	FUN_1000c5d6	00000.c	ok
+1000c5e0	FUN_1000c5e0	00000.c	ok
+1000c5ea	FUN_1000c5ea	00000.c	ok
+1000c5f4	___crtInitCritSecNoSpinCount@8	00000.c	ok
+1000c604	___crtInitCritSecAndSpinCount	00000.c	ok
+1000c6c9	FUN_1000c6c9	00000.c	ok
+1000c6d3	__callnewh	00000.c	ok
+1000c6f5	__87except	00000.c	ok
+1000c7f1	x_ismbbtype_l	00000.c	ok
+1000c842	__ismbblead	00000.c	ok
+1000c855	___free_lc_time	00000.c	ok
+1000c9e5	___free_lconv_num	00000.c	ok
+1000ca25	___free_lconv_mon	00000.c	ok
+1000caae	__freea	00000.c	ok
+1000cac9	_strcat_s	00000.c	ok
+1000cb40	_strcspn	00000.c	ok
+1000cb86	_strncpy_s	00000.c	ok
+1000cc39	__crtGetStringTypeA_stat	00000.c	ok
+1000cdf1	___crtGetStringTypeA	00000.c	ok
+1000ce40	_strpbrk	00000.c	ok
+1000ce80	__crtLCMapStringA_stat	00000.c	ok
+1000d222	___crtLCMapStringA	00000.c	ok
+1000d344	_atol	00000.c	ok
+1000d355	__isctype_l	00000.c	ok
+1000d40b	__isleadbyte_l	00000.c	ok
+1000d441	FID_conflict:__ld12tod	00000.c	ok
+1000d983	FID_conflict:__ld12tod	00000.c	ok
+1000dec5	FUN_1000dec5	00000.c	ok
+1000e585	FUN_1000e585	00000.c	ok
+1000ee4b	fastzero_I	00000.c	ok
+1000eea2	__VEC_memzero	00000.c	ok
+1000ef31	__hw_cw	00000.c	ok
+1000efbf	___hw_cw_sse2	00000.c	ok
+1000f05f	__control87	00000.c	ok
+1000f362	FUN_1000f362	00000.c	ok
+1000f51f	__set_error_mode	00000.c	ok
+1000f565	__raise_exc_ex	00000.c	ok
+1000f83f	__raise_exc	00000.c	ok
+1000f860	__handle_exc	00000.c	ok
+1000fa41	__set_errno_from_matherr	00000.c	ok
+1000fa69	FUN_1000fa69	00000.c	ok
+1000fa6c	__statfp	00000.c	ok
+1000fa77	__clrfp	00000.c	ok
+1000fa83	__ctrlfp	00000.c	ok
+1000faaa	FUN_1000faaa	00000.c	ok
+1000fb00	___set_fpsr_sse2	00000.c	ok
+1000fb80	__alloca_probe_16	00000.c	ok
+1000fb96	__alloca_probe_8	00000.c	ok
+1000fbac	___ansicp	00000.c	ok
+1000fbf3	___convertcp	00000.c	ok
+1000fda5	strtoxl	00000.c	ok
+1000ffd0	_strtol	00000.c	ok
+1000fff9	___mtold12	00000.c	ok
+100101c5	__set_exp	00000.c	ok
+100101ef	FUN_100101ef	00000.c	ok
+100102a0	__alloca_probe	00000.c	ok
+100102d0	___ascii_strnicmp	00000.c	ok
+1001040e	KERNEL32.DLL::RtlUnwind	00000.c	thunk -> EXTERNAL:00000162
+10010420	Unwind@10010420	00000.c	ok
+10010450	Unwind@10010450	00000.c	ok
+10010480	Unwind@10010480	00000.c	ok
+100104b0	Unwind@100104b0	00000.c	ok
+100104b9	Unwind@100104b9	00000.c	ok
+100104f0	Unwind@100104f0	00000.c	ok
+10010520	Unwind@10010520	00000.c	ok
+10010590	FUN_10010590	00000.c	ok
+100105c0	FUN_100105c0	00000.c	ok
+10010650	FUN_10010650	00000.c	ok

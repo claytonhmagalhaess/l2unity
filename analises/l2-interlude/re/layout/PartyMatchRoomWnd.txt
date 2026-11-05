@@ -1,0 +1,26 @@
+Window PartyMatchRoomWnd 550x486 @TOP_LEFT->pai.TOP_LEFT(0,76) unk101=L2UI_CH3.PartyMatchWnd.PartyMatch2_Back unk102=PartyMatchRoomWnd unk103=GamingState unk104=1 unk107=1 unk111=389 unk114=0 unk117=0 unk122=6226036 unk126=0 unk127=6619253 unk128=7602291 unk130=0 unk131=0 unk132=6553710 unk133=6881367 unk134=6881367 unk135=7798895 unk136=L2UI_CH3.PartyMatchWnd.PartyMatchIcon unk137=389 unk139=Game size=[2]
+  TextBox RoomNumberTitle 59x15 @TOP_LEFT->pai.TOP_LEFT(0,41) textAlign=Right offsetY=0 sysstring=416 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox RoomNumber 100x15 @TOP_LEFT->pai.TOP_LEFT(68,41) text=0 textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox RoomTitleTitle 59x15 @TOP_LEFT->pai.TOP_LEFT(0,56) textAlign=Right offsetY=0 sysstring=413 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox RoomTitle 500x15 @TOP_LEFT->pai.TOP_LEFT(68,56) text=room title textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox LocationTitle 59x15 @TOP_LEFT->pai.TOP_LEFT(0,71) textAlign=Right offsetY=0 sysstring=1029 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox Location 100x15 @TOP_LEFT->pai.TOP_LEFT(68,71) text=location textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox PartyMemberCountTitle 254x15 @TOP_LEFT->pai.TOP_LEFT(0,71) textAlign=Right offsetY=0 sysstring=1036 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox PartyMemberCount 100x15 @TOP_LEFT->pai.TOP_LEFT(263,71) text=0/0 textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox LootingMethodTitle 59x15 @TOP_LEFT->pai.TOP_LEFT(0,86) textAlign=Right offsetY=0 sysstring=489 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox LootingMethod 100x15 @TOP_LEFT->pai.TOP_LEFT(68,86) text=looting method textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  TextBox LevelLimitTitle 254x15 @TOP_LEFT->pai.TOP_LEFT(0,86) textAlign=Right offsetY=0 sysstring=1030 textColor=#ffdcdcdc emoticon=1 size=[2]
+  TextBox LevelLimit 100x15 @TOP_LEFT->pai.TOP_LEFT(263,86) text=0-0 textAlign=Left offsetY=0 textColor=#ffb09b79 emoticon=1 size=[2]
+  ListCtrl PartyMemberListCtrl 536x172 @TOP_LEFT->pai.TOP_LEFT(7,123) popupType=PartyMatch unk100=20 unk101=8 unk102=1 unk103=19 unk104=16 size=[2] values=[5]
+    - values: textStringId=393 width=174 unk108=true unk109=true unk110=false
+    - values: textStringId=391 width=54 unk108=true unk109=true unk110=false
+    - values: textStringId=392 width=74 unk108=true unk109=true unk110=true
+    - values: textStringId=1029 width=122 unk108=true unk109=true unk110=false
+    - values: textStringId=1031 width=111 unk108=true unk109=true unk110=false
+  TextListBox PartyRoomChatWindow 536x127 @TOP_LEFT->pai.TOP_LEFT(7,302) maxRow=8 showRow=40 lineGap=15 isShowScroll=1 size=[2]
+  EditBox PartyRoomChatEditBox 436x17 @TOP_LEFT->pai.TOP_LEFT(7,432) type=CHAT chatMarkOn=true size=[2]
+  Button WaitListButton 66x21 @TOP_LEFT->pai.TOP_LEFT(173,457) normalTex=L2UI_CH3.Button.SmallButton2 pushedTex=L2UI_CH3.Button.SmallButton2_down buttonName=1378 disableTime=5000 size=[2]
+  Button RoomSettingButton @NONE->pai.TOP_LEFT(248,457) buttonName=1032
+  Button BanButton @NONE->pai.TOP_LEFT(323,457) buttonName=1033
+  Button InviteButton @NONE->pai.TOP_LEFT(398,457) buttonName=396
+  Button ExitButton @NONE->pai.TOP_LEFT(473,457) buttonName=1459

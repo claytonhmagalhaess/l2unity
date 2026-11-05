@@ -1,0 +1,70 @@
+// OptionsWindow___c__DisplayClass49_0___CoresDaParty_b__0__1806c1840 @ 0x1806c1840
+
+void OptionsWindow___c__DisplayClass49_0___CoresDaParty_b__0__1806c1840(longlong param_1)
+
+{
+  longlong lVar1;
+  code *pcVar2;
+  char cVar3;
+  undefined8 uStack_40;
+  undefined8 uStack_38;
+  longlong lStack_30;
+  undefined4 uStack_28;
+  undefined4 uStack_24;
+  undefined4 uStack_20;
+  undefined4 uStack_1c;
+  longlong lStack_18;
+  
+  if (cRam00000001834b3f4b == '\0') {
+    FUN_180315380(MR_System.Collections.Generic.List<System.Action>.Dispose);
+    FUN_180315380(MR_System.Collections.Generic.List<System.Action>.MoveNext);
+    FUN_180315380(MR_System.Collections.Generic.List<System.Action>.get_Current);
+    FUN_180315380(MR_System.Collections.Generic.List<System.Action>.GetEnumerator);
+    FUN_180315380(TI_SparkOpcoes);
+    FUN_180315380(LIT_"'click_'");
+    cRam00000001834b3f4b = '\x01';
+  }
+  if (*(int *)(TI_SparkOpcoes + 0xe4) == 0) {
+    func_0x000180315660(TI_SparkOpcoes);
+  }
+  *(undefined1 *)(*(longlong *)(TI_SparkOpcoes + 0xb8) + 0x82) = 0;
+  SparkOpcoes__SalvaJogo(0);
+  if ((*(longlong *)(param_1 + 0x10) == 0) ||
+     (lVar1 = *(longlong *)(*(longlong *)(param_1 + 0x10) + 0xb0), lVar1 == 0)) {
+    FUN_1803155d0();
+  }
+  else {
+    FUN_180bada40(&uStack_40,lVar1,MR_System.Collections.Generic.List<System.Action>.GetEnumerator);
+    uStack_28 = (undefined4)uStack_40;
+    uStack_24 = uStack_40._4_4_;
+    uStack_20 = (undefined4)uStack_38;
+    uStack_1c = uStack_38._4_4_;
+    lStack_18 = lStack_30;
+    uStack_40 = 0;
+    uStack_38 = &uStack_28;
+    while( true ) {
+      cVar3 = FUN_1812fa7e0(&uStack_28,MR_System.Collections.Generic.List<System.Action>.MoveNext);
+      if (cVar3 == '\0') {
+        func_0x0001803dadf0(&uStack_28,MR_System.Collections.Generic.List<System.Action>.Dispose);
+        if (cRam00000001834b301f == '\0') {
+          FUN_180315380(TI_AudioManager);
+          cRam00000001834b301f = '\x01';
+        }
+        if (**(longlong **)(TI_AudioManager + 0xb8) != 0) {
+          AudioManager__PlayUISound
+                    (**(longlong **)(TI_AudioManager + 0xb8),LIT_"'click_'",0);
+        }
+        return;
+      }
+      if (lStack_18 == 0) break;
+      (**(code **)(lStack_18 + 0x18))
+                (*(undefined8 *)(lStack_18 + 0x40),*(undefined8 *)(lStack_18 + 0x28));
+    }
+  }
+  FUN_1803155d0();
+  FUN_180311490();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+

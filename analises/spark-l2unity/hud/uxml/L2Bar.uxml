@@ -1,0 +1,19 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="L2Bar" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="L2Bar" template="HpBar" class="bar-container l2-bar">
+    <ui:Label text="Label" name="Label" class="l2-bar-name l2-color-3" />
+    <ui:VisualElement name="Gauge" class="l2-bar-container-wrap">
+      <ui:GroupBox name="BarBg" class="l2-bar-container l2-bar-bg">
+        <ui:VisualElement name="BGLeft" class="l2-bar-side-ele l2-bar-left" />
+        <ui:VisualElement name="BGCenter" class="l2-bar-center-ele l2-bar-center" />
+        <ui:VisualElement name="BGRight" class="l2-bar-side-ele l2-bar-right" />
+      </ui:GroupBox>
+      <ui:GroupBox name="Bar" class="l2-bar-container l2-bar-front">
+        <ui:VisualElement name="BGLeft" class="l2-bar-side-ele l2-bar-left" />
+        <ui:VisualElement name="BGCenter" class="l2-bar-center-ele l2-bar-center" />
+        <ui:VisualElement name="BGRight" class="l2-bar-side-ele l2-bar-right" />
+      </ui:GroupBox>
+      <ui:Label text="1234/1234" name="Text" double-click-selects-word="true" class="bar-label l2-bar-label" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+  <ui:Label text="HP" name="StatusLabel" class="l2-color-4 l2-bar-status-label" />
+</ui:UXML>

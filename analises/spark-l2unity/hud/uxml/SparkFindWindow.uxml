@@ -1,0 +1,3 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" xmlns:ui="UnityEngine.UIElements">
+  <ui:Instance template="WindowTemplate" template="WindowTemplate" name="WindowTemplate" class="find-window" />
+</ui:UXML>

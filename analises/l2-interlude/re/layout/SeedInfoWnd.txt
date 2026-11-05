@@ -1,0 +1,13 @@
+Window SeedInfoWnd 600x280 @TOP_LEFT->pai.TOP_LEFT(0,48) unk100=ManorInfoWnd unk101=L2UI_CH3.Manor.manor1_back2 unk107=1 unk114=0 unk117=0 unk122=1095237657 unk126=0 unk127=1342243840 unk128=419758501 unk130=0 unk131=0 unk132=369426847 unk133=1073808384 unk134=454426624 unk135=65543446 unk139=Game size=[2]
+  ListCtrl SeedInfoListCtrl 586x199 @TOP_LEFT->pai.TOP_LEFT(7,42) popupType=ManorSeedInfo unk100=1000 unk101=10 unk102=1 unk103=18 unk104=19 size=[2] values=[4]
+    - values: textStringId=1120 width=329 unk108=true unk109=true unk110=false
+    - values: textStringId=1121 width=80 unk108=true unk109=true unk110=true
+    - values: textStringId=1122 width=80 unk108=true unk109=true unk110=true
+    - values: textStringId=1123 width=97 unk108=true unk109=true unk110=true
+  TextBox txtCropInfo 98x19 @TOP_LEFT->pai.TOP_LEFT(16,15) textAlign=Left offsetY=0 sysstring=1113 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txtNotice 98x19 @TOP_LEFT->pai.TOP_LEFT(16,250) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  ComboBox cbTimeInSeedInfo 70x17 @TOP_LEFT->pai.TOP_LEFT(164,12) size=[2] values=[2]
+    - values: sysString=1116 systemMsg=-9999 text=undefined reserved=-9999
+    - values: sysString=1117 systemMsg=-9999 text=undefined reserved=-9999
+  ComboBox cbManorSelectInSeedInfo 130x17 @TOP_LEFT->pai.TOP_LEFT(354,12) size=[2] values=[0]
+  Button btnBuySeed 76x23 @TOP_LEFT->pai.TOP_LEFT(518,249) normalTex=L2UI_CH3.BUTTON.BTN1_normal pushedTex=L2UI_CH3.BUTTON.BTN1_normalon buttonName=1119 size=[2]

@@ -1,0 +1,12 @@
+Window DefaultInfoWnd 600x280 @TOP_LEFT->pai.TOP_LEFT(0,48) unk100=ManorInfoWnd unk101=L2UI_CH3.Manor.manor1_back2 unk107=1 unk114=0 unk117=0 unk122=13414 unk126=0 unk127=13430 unk128=13431 unk130=0 unk131=0 unk132=13438 unk133=13437 unk134=13440 unk135=13439 unk139=Game size=[2]
+  ListCtrl DefaultInfoListCtrl 586x199 @TOP_LEFT->pai.TOP_LEFT(7,42) popupType=ManorDefaultInfo unk100=1000 unk101=10 unk102=1 unk103=18 unk104=19 size=[2] values=[6]
+    - values: textStringId=1124 width=169 unk108=true unk109=true unk110=false
+    - values: textStringId=537 width=50 unk108=true unk109=true unk110=true
+    - values: textStringId=1132 width=80 unk108=true unk109=true unk110=true
+    - values: textStringId=1133 width=80 unk108=true unk109=true unk110=true
+    - values: textStringId=1134 width=95 unk108=true unk109=true unk110=false
+    - values: textStringId=1135 width=112 unk108=true unk109=true unk110=false
+  TextBox txt 98x19 @TOP_LEFT->pai.TOP_LEFT(16,15) textAlign=Left offsetY=0 sysstring=1131 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  TextBox txt2 98x19 @TOP_LEFT->pai.TOP_LEFT(16,250) textAlign=Left offsetY=0 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  Button btnBuySeed 76x23 @TOP_LEFT->pai.TOP_LEFT(438,249) normalTex=L2UI_CH3.BUTTON.BTN1_normal pushedTex=L2UI_CH3.BUTTON.BTN1_normalon buttonName=1119 size=[2]
+  Button btnSellCrop 76x23 @TOP_LEFT->pai.TOP_LEFT(518,249) normalTex=L2UI_CH3.BUTTON.BTN1_normal pushedTex=L2UI_CH3.BUTTON.BTN1_normalon buttonName=1130 size=[2]

@@ -1,0 +1,3602 @@
+[
+ {
+  "table": "login",
+  "opcode": "0x0",
+  "handler_thunk": "0x1030202c",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040be50",
+  "acis": "Init",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x1",
+  "handler_thunk": "0x1030105f",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040c450",
+  "acis": "LoginFail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x2",
+  "handler_thunk": "0x103104ab",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040c5e0",
+  "acis": "AccountKicked",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x3",
+  "handler_thunk": "0x103091d3",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040c710",
+  "acis": "LoginOk",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x4",
+  "handler_thunk": "0x103061c2",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040c930",
+  "acis": "ServerList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x5",
+  "handler_thunk": "0x10315302",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040cbd0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x6",
+  "handler_thunk": "0x1031434e",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040ccd0",
+  "acis": "PlayFail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x7",
+  "handler_thunk": "0x1031084d",
+  "name": null,
+  "init": "dado",
+  "handler": "0x10424500",
+  "acis": "PlayOk",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x8",
+  "handler_thunk": "0x10308e18",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040cdc0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0x9",
+  "handler_thunk": "0x10311676",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040ceb0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0xa",
+  "handler_thunk": "0x1030709f",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040c8d0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0xb",
+  "handler_thunk": "0x1031175c",
+  "name": null,
+  "init": "dado",
+  "handler": "0x1040c310",
+  "acis": "GGAuth",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "login",
+  "opcode": "0xc",
+  "handler_thunk": "0x1030785b",
+  "name": null,
+  "init": "dado",
+  "handler": "0x10401150",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x0",
+  "handler_thunk": "0x10307f59",
+  "name": "VersionCheckPacket",
+  "init": "dado",
+  "handler": "0x1040d000",
+  "acis": "KeyPacket",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1",
+  "handler_thunk": "0x10309674",
+  "init": "0x10836977",
+  "handler": "0x104245f0",
+  "acis": "MoveToLocation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2",
+  "handler_thunk": "0x10310555",
+  "init": "0x10836994",
+  "name": "NSPacket",
+  "handler": "0x1040d250",
+  "acis": "NpcSay",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3",
+  "handler_thunk": "0x103063d4",
+  "init": "0x108369b1",
+  "name": "CIPacket",
+  "handler": "0x104366f0",
+  "acis": "CharInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4",
+  "handler_thunk": "0x103024c8",
+  "init": "0x108369ce",
+  "name": "UIPacket",
+  "handler": "0x104342f0",
+  "acis": "UserInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5",
+  "handler_thunk": "0x10312553",
+  "init": "0x108369eb",
+  "name": "AttackPacket",
+  "handler": "0x10424e80",
+  "acis": "Attack",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6",
+  "handler_thunk": "0x1030837d",
+  "init": "0x10836a08",
+  "name": "DiePacket",
+  "handler": "0x10425770",
+  "acis": "Die",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7",
+  "handler_thunk": "0x103037d3",
+  "init": "0x10836a25",
+  "name": "RevivePacket",
+  "handler": "0x10425ab0",
+  "acis": "Revive",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8",
+  "handler_thunk": "0x103145e2",
+  "init": "0x10836a45",
+  "name": "AttackOutofRangePacket",
+  "handler": "0x10425b80",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9",
+  "handler_thunk": "0x103102a3",
+  "init": "0x10836a62",
+  "name": "AttackinCoolTimePacket",
+  "handler": "0x10425c30",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa",
+  "handler_thunk": "0x10306186",
+  "init": "0x10836a7f",
+  "name": "AttackDeadTargetPacket",
+  "handler": "0x10425ce0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb",
+  "handler_thunk": "0x103138ae",
+  "init": "0x10836a9c",
+  "name": "SpawnItemPacket",
+  "handler": "0x1042ddd0",
+  "acis": "SpawnItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc",
+  "handler_thunk": "0x10314975",
+  "init": "0x10836ab9",
+  "name": "DropItemPacket",
+  "handler": "0x1042e0f0",
+  "acis": "DropItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd",
+  "handler_thunk": "0x103131c9",
+  "init": "0x10836ad6",
+  "name": "GetItemPacket",
+  "handler": "0x10425d90",
+  "acis": "GetItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe",
+  "handler_thunk": "0x1030a6b4",
+  "init": "0x10836af3",
+  "name": "StatusUpdatePacket",
+  "handler": "0x104261f0",
+  "acis": "StatusUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf",
+  "handler_thunk": "0x1030b848",
+  "init": "0x10836b06",
+  "name": "NpcHtmlMessagePacket",
+  "handler": "0x104266f0",
+  "acis": "NpcHtmlMessage",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x10",
+  "handler_thunk": "0x1030e188",
+  "init": "0x10836b30",
+  "name": "SellListPacket",
+  "handler": "0x1040f100",
+  "acis": "SellList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x11",
+  "handler_thunk": "0x10310cc6",
+  "init": "0x10836b4d",
+  "name": "BuyListPacket",
+  "handler": "0x1040f2c0",
+  "acis": "BuyList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x12",
+  "handler_thunk": "0x103038d2",
+  "init": "0x10836b6a",
+  "name": "DeleteObjectPacket",
+  "handler": "0x104381b0",
+  "acis": "DeleteObject",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x13",
+  "handler_thunk": "0x1031184c",
+  "init": "0x10836b87",
+  "name": "CharacterSelectionInfoPacket",
+  "handler": "0x1040f880",
+  "acis": "CharSelectInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x14",
+  "handler_thunk": "0x1030d2a6",
+  "init": "0x10836ba4",
+  "name": "LoginFailPacket",
+  "handler": "0x10400b60",
+  "acis": "AuthLoginFail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x15",
+  "handler_thunk": "0x10309219",
+  "init": "0x10836bc1",
+  "name": "CharacterSelectedPacket",
+  "handler": "0x1040fde0",
+  "acis": "CharSelected",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x16",
+  "handler_thunk": "0x103150ff",
+  "init": "0x10836bde",
+  "name": "NpcInfoPacket",
+  "handler": "0x1043a470",
+  "acis": "AbstractNpcInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x17",
+  "handler_thunk": "0x1030e6ba",
+  "init": "0x10836bfb",
+  "name": "NewCharacterSuccessPacket",
+  "handler": "0x10411690",
+  "acis": "CharTemplates",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x18",
+  "handler_thunk": "0x10309589",
+  "init": "0x10836c1b",
+  "name": "NewCharacterFailPacket",
+  "handler": "0x10400c30",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x19",
+  "handler_thunk": "0x1030f475",
+  "init": "0x10836c38",
+  "name": "CharacterCreateSuccessPacket",
+  "handler": "0x10400c50",
+  "acis": "CharCreateOk",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1a",
+  "handler_thunk": "0x10311897",
+  "init": "0x10836c55",
+  "name": "CharacterCreateFailPacket",
+  "handler": "0x10411800",
+  "acis": "CharCreateFail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1b",
+  "handler_thunk": "0x1030982c",
+  "init": "0x10836c72",
+  "name": "ItemListPacket",
+  "handler": "0x10411870",
+  "acis": "ItemList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1c",
+  "handler_thunk": "0x1030b6b3",
+  "init": "0x10836c8f",
+  "name": "SunRisePacket",
+  "handler": "0x10400c70",
+  "acis": "SunRise",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1d",
+  "handler_thunk": "0x10310442",
+  "init": "0x10836cac",
+  "name": "SunSetPacket",
+  "handler": "0x10400c90",
+  "acis": "SunSet",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1e",
+  "handler_thunk": "0x1030354e",
+  "init": "0x10836cc9",
+  "name": "TradeStartPacket",
+  "handler": "0x10411a70",
+  "acis": "TradeStart",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x1f",
+  "handler_thunk": "0x1030eead",
+  "init": "0x10836cdc",
+  "name": "TradeStartOkPacket",
+  "handler": "0x10400d20",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x20",
+  "handler_thunk": "0x1030d319",
+  "init": "0x10836d06",
+  "name": "TradeOwnAddPacket",
+  "handler": "0x10411c30",
+  "acis": "TradeOwnAdd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x21",
+  "handler_thunk": "0x1030ef25",
+  "init": "0x10836d23",
+  "name": "TradeOtherAddPacket",
+  "handler": "0x10411db0",
+  "acis": "TradeOtherAdd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x22",
+  "handler_thunk": "0x10304aca",
+  "init": "0x10836d40",
+  "name": "TradeDonePacket",
+  "handler": "0x104122e0",
+  "acis": "SendTradeDone",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x23",
+  "handler_thunk": "0x1030f2b3",
+  "init": "0x10836d5d",
+  "name": "CharacterDeleteSuccessPacket",
+  "handler": "0x10400d30",
+  "acis": "CharDeleteOk",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x24",
+  "handler_thunk": "0x10302a45",
+  "init": "0x10836d7a",
+  "name": "CharacterDeleteFailPacket",
+  "handler": "0x10412350",
+  "acis": "CharDeleteFail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x25",
+  "handler_thunk": "0x1030b0c3",
+  "init": "0x10836d97",
+  "name": "ActionFailPacket",
+  "handler": "0x10400d70",
+  "acis": "ActionFailed",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x26",
+  "handler_thunk": "0x103106f4",
+  "init": "0x10836db4",
+  "name": "SeverClosePacket",
+  "handler": "0x10400db0",
+  "acis": "ServerClose",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x27",
+  "handler_thunk": "0x1030d1de",
+  "init": "0x10836dd1",
+  "name": "InventoryUpdatePacket",
+  "handler": "0x104123c0",
+  "acis": "InventoryUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x28",
+  "handler_thunk": "0x10312c7e",
+  "init": "0x10836df1",
+  "name": "TeleportToLocationPacket",
+  "handler": "0x104271c0",
+  "acis": "TeleportToLocation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x29",
+  "handler_thunk": "0x10301f2d",
+  "init": "0x10836e0e",
+  "name": "TargetSelectedPacket",
+  "handler": "0x10427310",
+  "acis": "TargetSelected",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2a",
+  "handler_thunk": "0x10302c43",
+  "init": "0x10836e2b",
+  "name": "TargetUnselectedPacket",
+  "handler": "0x10427750",
+  "acis": "TargetUnselected",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2b",
+  "handler_thunk": "0x1030ada8",
+  "init": "0x10836e48",
+  "name": "AutoAttackStartPacket",
+  "handler": "0x10427890",
+  "acis": "AutoAttackStart",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2c",
+  "handler_thunk": "0x10304660",
+  "init": "0x10836e65",
+  "name": "AutoAttackStopPacket",
+  "handler": "0x10427960",
+  "acis": "AutoAttackStop",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2d",
+  "handler_thunk": "0x10305ab5",
+  "init": "0x10836e82",
+  "name": "SocialActionPacket",
+  "handler": "0x10427a30",
+  "acis": "SocialAction",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2e",
+  "handler_thunk": "0x1030316b",
+  "init": "0x10836e9f",
+  "name": "ChangeMoveTypePacket",
+  "handler": "0x10427b20",
+  "acis": "ChangeMoveType",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x2f",
+  "handler_thunk": "0x10301c3f",
+  "init": "0x10836ebc",
+  "name": "ChangeWaitTypePacket",
+  "handler": "0x10427c20",
+  "acis": "ChangeWaitType",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x30",
+  "handler_thunk": "0x10314da8",
+  "init": "0x10836edc",
+  "name": "ManagePledgePowerPacket",
+  "handler": "0x10419e40",
+  "acis": "ManagePledgePower",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x31",
+  "handler_thunk": "0x1030cd1f",
+  "init": "0x10836ef9",
+  "name": "CreatePledgePacket",
+  "handler": "0x10412dc0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x32",
+  "handler_thunk": "0x1030d350",
+  "init": "0x10836f16",
+  "name": "AskJoinPledgePacket",
+  "handler": "0x10413090",
+  "acis": "AskJoinPledge",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x33",
+  "handler_thunk": "0x10303aa3",
+  "init": "0x10836f33",
+  "name": "JoinPledgePacket",
+  "handler": "0x104131f0",
+  "acis": "JoinPledge",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x34",
+  "handler_thunk": "0x10312814",
+  "init": "0x10836f50",
+  "name": "WithdrawalPledgePacket",
+  "handler": "0x104132d0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x35",
+  "handler_thunk": "0x103046dd",
+  "init": "0x10836f6d",
+  "name": "OustPledgeMemberPacket",
+  "handler": "0x104133b0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x36",
+  "handler_thunk": "0x1030a61e",
+  "init": "0x10836f8a",
+  "name": "SetOustPledgeMemberPacket",
+  "handler": "0x10400e00",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x37",
+  "handler_thunk": "0x10303e90",
+  "init": "0x10836fa7",
+  "name": "DismissPledgePacket",
+  "handler": "0x10413490",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x38",
+  "handler_thunk": "0x1030f66e",
+  "init": "0x10836fc7",
+  "name": "SetDismissPledgePacket",
+  "handler": "0x10400ea0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x39",
+  "handler_thunk": "0x103110c7",
+  "init": "0x10836fe4",
+  "name": "AskJoinPartyPacket",
+  "handler": "0x10413730",
+  "acis": "AskJoinParty",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3a",
+  "handler_thunk": "0x10305a47",
+  "init": "0x10837001",
+  "name": "JoinPartyPacket",
+  "handler": "0x10413840",
+  "acis": "JoinParty",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3b",
+  "handler_thunk": "0x10314aec",
+  "init": "0x1083701e",
+  "name": "WithdrawalPartyPacket",
+  "handler": "0x10413920",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3c",
+  "handler_thunk": "0x10305f01",
+  "init": "0x1083703b",
+  "name": "OustPartyMemberPacket",
+  "handler": "0x10413a00",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3d",
+  "handler_thunk": "0x10312981",
+  "init": "0x10837058",
+  "name": "SetOustPartyMemberPacket",
+  "handler": "0x10400fc0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3e",
+  "handler_thunk": "0x1030f966",
+  "init": "0x10837075",
+  "name": "DismissPartyPacket",
+  "handler": "0x10413ae0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x3f",
+  "handler_thunk": "0x10313764",
+  "init": "0x10837092",
+  "name": "SetDismissPartyPacket",
+  "handler": "0x10401060",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x40",
+  "handler_thunk": "0x1031069f",
+  "init": "0x108370b2",
+  "name": "MagicAndSkillList",
+  "handler": "0x10413bc0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x41",
+  "handler_thunk": "0x1030cdd8",
+  "init": "0x108370cf",
+  "name": "WareHouseDepositListPacket",
+  "handler": "0x10413e50",
+  "acis": "WarehouseDepositList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x42",
+  "handler_thunk": "0x1030252c",
+  "init": "0x108370ec",
+  "name": "WareHouseWithdrawListPacket",
+  "handler": "0x10414000",
+  "acis": "WarehouseWithdrawList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x43",
+  "handler_thunk": "0x10314d4e",
+  "init": "0x10837109",
+  "name": "WareHouseDonePacket",
+  "handler": "0x104141b0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x44",
+  "handler_thunk": "0x10306a55",
+  "init": "0x10837126",
+  "name": "ShortCutRegisterPacket",
+  "handler": "0x10414290",
+  "acis": "ShortCutRegister",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x45",
+  "handler_thunk": "0x10312ee0",
+  "init": "0x10837143",
+  "name": "ShortCutInitPacket",
+  "handler": "0x10414600",
+  "acis": "ShortCutInit",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x46",
+  "handler_thunk": "0x1030a452",
+  "init": "0x10837160",
+  "name": "ShortCutDeletePacket",
+  "handler": "0x104149c0",
+  "acis": "ShortCutDelete",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x47",
+  "handler_thunk": "0x103032f1",
+  "init": "0x1083717d",
+  "name": "StopMovePacket",
+  "handler": "0x104287a0",
+  "acis": "StopMove",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x48",
+  "handler_thunk": "0x1030dc29",
+  "init": "0x1083719d",
+  "name": "MagicSkillUse",
+  "handler": "0x10427d60",
+  "acis": "MagicSkillUse",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x49",
+  "handler_thunk": "0x1030962e",
+  "init": "0x108371ba",
+  "name": "MagicSkillCanceled",
+  "handler": "0x10429170",
+  "acis": "MagicSkillCanceled",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4a",
+  "handler_thunk": "0x10311455",
+  "init": "0x108371d7",
+  "name": "SayPacket2",
+  "handler": "0x10414ab0",
+  "acis": "CreatureSay",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4b",
+  "handler_thunk": "0x10312ff8",
+  "init": "0x108371f4",
+  "name": "EquipUpdatePacket",
+  "handler": "0x10414cb0",
+  "acis": "EquipUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4c",
+  "handler_thunk": "0x103152d5",
+  "init": "0x10837211",
+  "name": "DoorInfoPacket",
+  "handler": "0x1042fea0",
+  "acis": "DoorInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4d",
+  "handler_thunk": "0x1030499e",
+  "init": "0x1083722e",
+  "name": "DoorStatusUpdatePacket",
+  "handler": "0x10428a30",
+  "acis": "DoorStatusUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4e",
+  "handler_thunk": "0x1031287d",
+  "init": "0x10837246",
+  "handler": "0x10439400",
+  "acis": "PartySmallWindowAll",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x4f",
+  "handler_thunk": "0x1030e2f5",
+  "init": "0x10837268",
+  "name": "PartySmallWindowAddPacket",
+  "handler": "0x104397b0",
+  "acis": "PartySmallWindowAdd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x50",
+  "handler_thunk": "0x10308cb5",
+  "init": "0x10837288",
+  "name": "PartySmallWindowDeleteAllPacket",
+  "handler": "0x10439a10",
+  "acis": "PartySmallWindowDeleteAll",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x51",
+  "handler_thunk": "0x1030b8e8",
+  "init": "0x108372a5",
+  "name": "PartySmallWindowDeletePacket",
+  "handler": "0x10439ac0",
+  "acis": "PartySmallWindowDelete",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x52",
+  "handler_thunk": "0x103089b8",
+  "init": "0x108372c2",
+  "name": "PartySmallWindowUpdatePacket",
+  "handler": "0x104152b0",
+  "acis": "PartySmallWindowUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x53",
+  "handler_thunk": "0x10307423",
+  "init": "0x108372df",
+  "name": "PledgeShowMemberListAllPacket",
+  "handler": "0x10438df0",
+  "acis": "PledgeShowMemberListAll",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x54",
+  "handler_thunk": "0x103151c2",
+  "init": "0x108372fc",
+  "name": "PledgeShowMemberListUpdatePacket",
+  "handler": "0x10414dc0",
+  "acis": "PledgeShowMemberListUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x55",
+  "handler_thunk": "0x1030f5f1",
+  "init": "0x10837319",
+  "name": "PledgeShowMemberListAddPacket",
+  "handler": "0x10414f40",
+  "acis": "PledgeShowMemberListAdd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x56",
+  "handler_thunk": "0x10312404",
+  "init": "0x10837336",
+  "name": "PledgeShowMemberListDeletePacket",
+  "handler": "0x104150a0",
+  "acis": "PledgeShowMemberListDelete",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x57",
+  "handler_thunk": "0x103073ab",
+  "init": "0x10837353",
+  "name": "MagicListPacket",
+  "handler": "0x10401140",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x58",
+  "handler_thunk": "0x1030a399",
+  "init": "0x10837373",
+  "name": "SkillListPacket",
+  "handler": "0x10415450",
+  "acis": "SkillList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x59",
+  "handler_thunk": "0x1030aea7",
+  "init": "0x10837390",
+  "name": "VehicleInfoPacket",
+  "handler": "0x10430160",
+  "acis": "VehicleInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5a",
+  "handler_thunk": "0x1030d094",
+  "init": "0x108373ad",
+  "name": "VehicleDeparturePacket",
+  "handler": "0x10428c00",
+  "acis": "VehicleDeparture",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5b",
+  "handler_thunk": "0x103104e2",
+  "init": "0x108373ca",
+  "name": "VehicleCheckLocationPacket",
+  "handler": "0x10414a30",
+  "acis": "OnVehicleCheckLocation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5c",
+  "handler_thunk": "0x103102e4",
+  "init": "0x108373e7",
+  "name": "GetOnVehiclePacket",
+  "handler": "0x10428dd0",
+  "acis": "GetOnVehicle",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5d",
+  "handler_thunk": "0x10312ca6",
+  "init": "0x10837404",
+  "name": "GetOffVehiclePacket",
+  "handler": "0x10428fd0",
+  "acis": "GetOffVehicle",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5e",
+  "handler_thunk": "0x1030394a",
+  "init": "0x10837417",
+  "name": "TradeRequestPacket",
+  "handler": "0x104155f0",
+  "acis": "SendTradeRequest",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x5f",
+  "handler_thunk": "0x10309fac",
+  "init": "0x1083743e",
+  "name": "RestartResponsePacket",
+  "handler": "0x10439c20",
+  "acis": "RestartResponse",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x60",
+  "handler_thunk": "0x103140c4",
+  "init": "0x1083745e",
+  "name": "MoveToPawnPacket",
+  "handler": "0x104248f0",
+  "acis": "MoveToPawn",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x61",
+  "handler_thunk": "0x10309471",
+  "init": "0x1083747b",
+  "name": "ValidateLocationPacket",
+  "handler": "0x10424b60",
+  "acis": "ValidateLocation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x62",
+  "handler_thunk": "0x10301523",
+  "init": "0x10837498",
+  "name": "StartRotatingPacket",
+  "handler": "0x10424c70",
+  "acis": "StartRotation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x63",
+  "handler_thunk": "0x1030ba14",
+  "init": "0x108374b5",
+  "name": "FinishRotatingPacket",
+  "handler": "0x10424d80",
+  "acis": "StopRotation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x64",
+  "handler_thunk": "0x1030731f",
+  "init": "0x108374d2",
+  "name": "SystemMessagePacket",
+  "handler": "0x104156d0",
+  "acis": "SystemMessage",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x65",
+  "handler_thunk": "0x1031400b",
+  "init": "0x108374ef",
+  "name": "StartPledgeWarPacket",
+  "handler": "0x10400f40",
+  "acis": "StartPledgeWar",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x66",
+  "handler_thunk": "0x10309f9d",
+  "init": "0x1083750c",
+  "name": "ReplyStartPledgeWarPacket",
+  "handler": "0x10400f50",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x67",
+  "handler_thunk": "0x1030a943",
+  "init": "0x10837529",
+  "name": "StopPledgeWarPacket",
+  "handler": "0x10400f60",
+  "acis": "StopPledgeWar",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x68",
+  "handler_thunk": "0x10309bab",
+  "init": "0x10837549",
+  "name": "ReplyStopPledgeWarPacket",
+  "handler": "0x10400f70",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x69",
+  "handler_thunk": "0x103119be",
+  "init": "0x10837566",
+  "name": "SurrenderPledgeWarPacket",
+  "handler": "0x10400f80",
+  "acis": "SurrenderPledgeWar",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6a",
+  "handler_thunk": "0x10304be7",
+  "init": "0x10837583",
+  "name": "ReplySurrenderPledgeWarPacket",
+  "handler": "0x10400f90",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6b",
+  "handler_thunk": "0x103067a8",
+  "init": "0x108375a0",
+  "name": "SetPledgeCrestPacket",
+  "handler": "0x10400fb0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6c",
+  "handler_thunk": "0x10301fb9",
+  "init": "0x108375bd",
+  "name": "PledgeCrestPacket",
+  "handler": "0x10413570",
+  "acis": "PledgeCrest",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6d",
+  "handler_thunk": "0x10305e2a",
+  "init": "0x108375da",
+  "name": "SetupGaugePacket",
+  "handler": "0x10415a70",
+  "acis": "SetupGauge",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6e",
+  "handler_thunk": "0x1030ccbb",
+  "init": "0x108375ed",
+  "name": "ShowBoardPacket",
+  "handler": "0x10415b80",
+  "acis": "ShowBoard",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x6f",
+  "handler_thunk": "0x103142ae",
+  "init": "0x10837614",
+  "name": "ChooseInventoryItemPacket",
+  "handler": "0x10415dd0",
+  "acis": "ChooseInventoryItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x70",
+  "handler_thunk": "0x1030785b",
+  "init": "0x10837634",
+  "name": "DummyPacket",
+  "handler": "0x10401150",
+  "acis": null,
+  "shared_handler_count": 3
+ },
+ {
+  "table": "game",
+  "opcode": "0x71",
+  "handler_thunk": "0x1030284c",
+  "init": "0x10837651",
+  "name": "MoveToLocationInVehiclePacket",
+  "handler": "0x10429240",
+  "acis": "MoveToLocationInVehicle",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x72",
+  "handler_thunk": "0x1030ea07",
+  "init": "0x1083766e",
+  "name": "StopMoveInVehiclePacket",
+  "handler": "0x10429420",
+  "acis": "StopMoveInVehicle",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x73",
+  "handler_thunk": "0x103069ce",
+  "init": "0x1083768b",
+  "name": "ValidateLocationInVehiclePacket",
+  "handler": "0x104295c0",
+  "acis": "ValidateLocationInVehicle",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x74",
+  "handler_thunk": "0x10314493",
+  "init": "0x108376a8",
+  "name": "TradeUpdatePacket",
+  "handler": "0x10411f30",
+  "acis": "TradeItemUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x75",
+  "handler_thunk": "0x1030e92b",
+  "init": "0x108376c5",
+  "name": "TradePressOwnOkPacket",
+  "handler": "0x10400cf0",
+  "acis": "TradePressOwnOk",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x76",
+  "handler_thunk": "0x1030551a",
+  "init": "0x108376e2",
+  "name": "MagicSkillLaunchedPacket",
+  "handler": "0x10429790",
+  "acis": "MagicSkillLaunched",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x77",
+  "handler_thunk": "0x103058cb",
+  "init": "0x108376ff",
+  "name": "FriendAddRequestResult",
+  "handler": "0x10417620",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x78",
+  "handler_thunk": "0x1030583a",
+  "init": "0x1083771f",
+  "name": "FriendAdd",
+  "handler": "0x104011b0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x79",
+  "handler_thunk": "0x1030ecbe",
+  "init": "0x1083773c",
+  "name": "FriendRemove",
+  "handler": "0x104011c0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7a",
+  "handler_thunk": "0x103109ec",
+  "init": "0x10837759",
+  "name": "FriendList",
+  "handler": "0x104011e0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7b",
+  "handler_thunk": "0x10313778",
+  "init": "0x10837776",
+  "name": "FriendStatus",
+  "handler": "0x104011d0",
+  "acis": "FriendStatus",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7c",
+  "handler_thunk": "0x10309a1b",
+  "init": "0x10837793",
+  "name": "TradePressOtherOkPacket",
+  "handler": "0x10400d00",
+  "acis": "TradePressOtherOk",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7d",
+  "handler_thunk": "0x1030bc2b",
+  "init": "0x108377b0",
+  "name": "FriendAddRequest",
+  "handler": "0x10417700",
+  "acis": "FriendAddRequest",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7e",
+  "handler_thunk": "0x10304ae8",
+  "init": "0x108377cd",
+  "name": "LogOutOkPacket",
+  "handler": "0x10427110",
+  "acis": "LeaveWorld",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x7f",
+  "handler_thunk": "0x10304cf5",
+  "init": "0x108377ea",
+  "name": "AbnormalStatusUpdatePacket",
+  "handler": "0x104120c0",
+  "acis": "AbnormalStatusUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x80",
+  "handler_thunk": "0x10311e64",
+  "init": "0x1083780a",
+  "name": "QuestListPacket",
+  "handler": "0x10438c20",
+  "acis": "QuestList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x81",
+  "handler_thunk": "0x10314b2d",
+  "init": "0x10837827",
+  "name": "EnchantResultPacket",
+  "handler": "0x10412260",
+  "acis": "EnchantResult",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x82",
+  "handler_thunk": "0x1030cbee",
+  "init": "0x10837844",
+  "name": "PledgeShowMemberListDeleteAllPacket",
+  "handler": "0x10401100",
+  "acis": "PledgeShowMemberListDeleteAll",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x83",
+  "handler_thunk": "0x10307aef",
+  "init": "0x10837861",
+  "name": "PledgeInfoPacket",
+  "handler": "0x10415110",
+  "acis": "PledgeInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x84",
+  "handler_thunk": "0x10309a4d",
+  "init": "0x1083787e",
+  "name": "PledgeExtendedInfoPacket",
+  "handler": "0x104151c0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x85",
+  "handler_thunk": "0x1030a0f1",
+  "init": "0x1083789b",
+  "name": "SurrenderPersonallyPacket",
+  "handler": "0x10400fa0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x86",
+  "handler_thunk": "0x1030a0e7",
+  "init": "0x108378b8",
+  "name": "RidePacket",
+  "handler": "0x10425930",
+  "acis": "Ride",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x87",
+  "handler_thunk": "0x1030785b",
+  "init": "0x108378d5",
+  "name": "DummyPacket",
+  "handler": "0x10401150",
+  "acis": null,
+  "shared_handler_count": 3
+ },
+ {
+  "table": "game",
+  "opcode": "0x88",
+  "handler_thunk": "0x10310b81",
+  "init": "0x108378f5",
+  "name": "PledgeShowInfoUpdatePacket",
+  "handler": "0x10439280",
+  "acis": "PledgeShowInfoUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x89",
+  "handler_thunk": "0x10301929",
+  "init": "0x10837912",
+  "name": "ClientActionPacket",
+  "handler": "0x10415e40",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8a",
+  "handler_thunk": "0x103028f1",
+  "init": "0x1083792f",
+  "name": "AcquireSkillListPacket",
+  "handler": "0x10415f30",
+  "acis": "AcquireSkillList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8b",
+  "handler_thunk": "0x1030b357",
+  "init": "0x1083794c",
+  "name": "AcquireSkillInfoPacket",
+  "handler": "0x10416160",
+  "acis": "AcquireSkillInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8c",
+  "handler_thunk": "0x103042cd",
+  "init": "0x10837969",
+  "name": "ServerObjectInfoPacket",
+  "handler": "0x1042f8d0",
+  "acis": "ServerObjectInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8d",
+  "handler_thunk": "0x10301ab4",
+  "init": "0x10837986",
+  "name": "GMHidePacket",
+  "handler": "0x10410430",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8e",
+  "handler_thunk": "0x1030f9e3",
+  "init": "0x108379a3",
+  "name": "AcquireSkillDonePacket",
+  "handler": "0x10400b70",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x8f",
+  "handler_thunk": "0x103065af",
+  "init": "0x108379c0",
+  "name": "GMViewCharacterInfoPacket",
+  "handler": "0x10426930",
+  "acis": "GMViewCharacterInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x90",
+  "handler_thunk": "0x103108e8",
+  "init": "0x108379e0",
+  "name": "GMViewPledgeInfoPacket",
+  "handler": "0x10410a70",
+  "acis": "GMViewPledgeInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x91",
+  "handler_thunk": "0x10315389",
+  "init": "0x108379fd",
+  "name": "GMViewSkillInfoPacket",
+  "handler": "0x10410d50",
+  "acis": "GMViewSkillInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x92",
+  "handler_thunk": "0x103096b5",
+  "init": "0x10837a1a",
+  "name": "GMViewMagicInfoPacket",
+  "handler": "0x10410ee0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x93",
+  "handler_thunk": "0x10308328",
+  "init": "0x10837a37",
+  "name": "GMViewQuestInfoPacket",
+  "handler": "0x10411040",
+  "acis": "GMViewQuestList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x94",
+  "handler_thunk": "0x1031011d",
+  "init": "0x10837a54",
+  "name": "GMViewItemListPacket",
+  "handler": "0x10411260",
+  "acis": "GMViewItemList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x95",
+  "handler_thunk": "0x1030132a",
+  "init": "0x10837a71",
+  "name": "GMViewWarehouseWithdrawListPacket",
+  "handler": "0x10411470",
+  "acis": "GMViewWarehouseWithdrawList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x96",
+  "handler_thunk": "0x10313647",
+  "init": "0x10837a8e",
+  "name": "ListPartyWatingPacket",
+  "handler": "0x10410520",
+  "acis": "PartyMatchList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x97",
+  "handler_thunk": "0x103113a1",
+  "init": "0x10837aab",
+  "name": "PartyRoomInfoPacket",
+  "handler": "0x10410750",
+  "acis": "PartyMatchDetail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x98",
+  "handler_thunk": "0x10307923",
+  "init": "0x10837acb",
+  "name": "PlaySoundPacket",
+  "handler": "0x104108e0",
+  "acis": "PlaySound",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x99",
+  "handler_thunk": "0x1030ac68",
+  "init": "0x10837ae8",
+  "name": "StaticObjectPacket",
+  "handler": "0x104304f0",
+  "acis": "StaticObjectInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9a",
+  "handler_thunk": "0x1030fee8",
+  "init": "0x10837b05",
+  "name": "PrivateStoreManageList",
+  "handler": "0x104164b0",
+  "acis": "PrivateStoreManageListSell",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9b",
+  "handler_thunk": "0x103126de",
+  "init": "0x10837b22",
+  "name": "PrivateStoreList",
+  "handler": "0x10416880",
+  "acis": "PrivateStoreListSell",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9c",
+  "handler_thunk": "0x103042e6",
+  "init": "0x10837b3f",
+  "name": "PrivateStoreMsg",
+  "handler": "0x10429a60",
+  "acis": "PrivateStoreMsgSell",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9d",
+  "handler_thunk": "0x1031158b",
+  "init": "0x10837b57",
+  "handler": "0x104163d0",
+  "acis": "ShowMiniMap",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9e",
+  "handler_thunk": "0x103095f2",
+  "init": "0x10837b79",
+  "name": "ReviveRequestPacket",
+  "handler": "0x10400a70",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0x9f",
+  "handler_thunk": "0x103117ca",
+  "init": "0x10837b96",
+  "name": "AbnormalVisualEffectPacket",
+  "handler": "0x104271b0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa0",
+  "handler_thunk": "0x10301b0e",
+  "init": "0x10837bb6",
+  "name": "TutorialShowHtmlPacket",
+  "handler": "0x1040e690",
+  "acis": "TutorialShowHtml",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa1",
+  "handler_thunk": "0x10307d83",
+  "init": "0x10837bd3",
+  "name": "TutorialShowQuestionMarkPacket",
+  "handler": "0x1040e710",
+  "acis": "TutorialShowQuestionMark",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa2",
+  "handler_thunk": "0x103119e6",
+  "init": "0x10837bf0",
+  "name": "TutorialEnableClientEventPacket",
+  "handler": "0x1040e780",
+  "acis": "TutorialEnableClientEvent",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa3",
+  "handler_thunk": "0x1030bfb9",
+  "init": "0x10837c0d",
+  "name": "TutorialCloseHtmlPacket",
+  "handler": "0x10400b30",
+  "acis": "TutorialCloseHtml",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa4",
+  "handler_thunk": "0x10306e4c",
+  "init": "0x10837c2a",
+  "name": "ShowRadarPacket",
+  "handler": "0x1040e890",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa5",
+  "handler_thunk": "0x10314966",
+  "init": "0x10837c47",
+  "name": "DeleteRadarPacket",
+  "handler": "0x1040e930",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa6",
+  "handler_thunk": "0x1030951b",
+  "init": "0x10837c64",
+  "name": "MyTargetSelectedPacket",
+  "handler": "0x10427590",
+  "acis": "MyTargetSelected",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa7",
+  "handler_thunk": "0x10303369",
+  "init": "0x10837c81",
+  "name": "PartyMemberPositionPacket",
+  "handler": "0x10426810",
+  "acis": "PartyMemberPosition",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa8",
+  "handler_thunk": "0x1031036b",
+  "init": "0x10837ca1",
+  "name": "AskJoinAlliancePacket",
+  "handler": "0x10417010",
+  "acis": "AskJoinAlly",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xa9",
+  "handler_thunk": "0x1030dfee",
+  "init": "0x10837cbe",
+  "name": "JoinAlliancePacket",
+  "handler": "0x10417150",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xaa",
+  "handler_thunk": "0x10315096",
+  "init": "0x10837cdb",
+  "name": "WithdrawAlliancePacket",
+  "handler": "0x10417230",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xab",
+  "handler_thunk": "0x1030845e",
+  "init": "0x10837cf8",
+  "name": "OustAllianceMemberPledgePacket",
+  "handler": "0x10417310",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xac",
+  "handler_thunk": "0x1030d4ae",
+  "init": "0x10837d15",
+  "name": "DismissAlliancePacket",
+  "handler": "0x104173f0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xad",
+  "handler_thunk": "0x1030d07b",
+  "init": "0x10837d28",
+  "name": "SetAllianceCrestPacket",
+  "handler": "0x10401190",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xae",
+  "handler_thunk": "0x10313836",
+  "init": "0x10837d4f",
+  "name": "AllianceCrestPacket",
+  "handler": "0x104174d0",
+  "acis": "AllyCrest",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xaf",
+  "handler_thunk": "0x1030c658",
+  "init": "0x10837d6c",
+  "name": "ServerCloseSocketPacket",
+  "handler": "0x10400b50",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb0",
+  "handler_thunk": "0x1030b073",
+  "init": "0x10837d8c",
+  "name": "PetStatusShowPacket",
+  "handler": "0x1040e9b0",
+  "acis": "PetStatusShow",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb1",
+  "handler_thunk": "0x1030e025",
+  "init": "0x10837da9",
+  "name": "PetInfoPacket",
+  "handler": "0x1042e430",
+  "acis": "PetInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb2",
+  "handler_thunk": "0x1030aa29",
+  "init": "0x10837dc6",
+  "name": "PetItemListPacket",
+  "handler": "0x1040ea00",
+  "acis": "PetItemList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb3",
+  "handler_thunk": "0x10310c21",
+  "init": "0x10837de3",
+  "name": "PetInventoryUpdatePacket",
+  "handler": "0x1040eb90",
+  "acis": "PetInventoryUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb4",
+  "handler_thunk": "0x103130c0",
+  "init": "0x10837e00",
+  "name": "AllianceInfoPacket",
+  "handler": "0x104011a0",
+  "acis": "AllianceInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb5",
+  "handler_thunk": "0x103114be",
+  "init": "0x10837e1d",
+  "name": "PetStatusUpdatePacket",
+  "handler": "0x1040ed50",
+  "acis": "PetStatusUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb6",
+  "handler_thunk": "0x1030f6aa",
+  "init": "0x10837e3a",
+  "name": "PetDeletePacket",
+  "handler": "0x1040f070",
+  "acis": "PetDelete",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb7",
+  "handler_thunk": "0x10309dc2",
+  "init": "0x10837e57",
+  "name": "PrivateStoreBuyManageList",
+  "handler": "0x10416a90",
+  "acis": "PrivateStoreManageListBuy",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb8",
+  "handler_thunk": "0x10312ab7",
+  "init": "0x10837e77",
+  "name": "PrivateStoreBuyList",
+  "handler": "0x10416e10",
+  "acis": "PrivateStoreListBuy",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xb9",
+  "handler_thunk": "0x10312701",
+  "init": "0x10837e94",
+  "name": "PrivateStoreBuyMsg",
+  "handler": "0x10429bd0",
+  "acis": "PrivateStoreMsgBuy",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xba",
+  "handler_thunk": "0x1030f69b",
+  "init": "0x10837eb1",
+  "name": "VehicleStartPacket",
+  "handler": "0x104177e0",
+  "acis": "VehicleStarted",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xbb",
+  "handler_thunk": "0x103092c3",
+  "init": "0x10837ece",
+  "name": "RequestTimeCheckPacket",
+  "handler": "0x104178c0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xbc",
+  "handler_thunk": "0x103150f0",
+  "init": "0x10837eeb",
+  "name": "StartAllianceWarPacket",
+  "handler": "0x10417b40",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xbd",
+  "handler_thunk": "0x10314a88",
+  "init": "0x10837efe",
+  "name": "ReplyStartAllianceWarPacket",
+  "handler": "0x104011f0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xbe",
+  "handler_thunk": "0x1031033e",
+  "init": "0x10837f25",
+  "name": "StopAllianceWarPacket",
+  "handler": "0x10417c20",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xbf",
+  "handler_thunk": "0x10307031",
+  "init": "0x10837f42",
+  "name": "ReplyStopAllianceWarPacket",
+  "handler": "0x10401200",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc0",
+  "handler_thunk": "0x10312b3e",
+  "init": "0x10837f62",
+  "name": "SurrenderAllianceWarPacket",
+  "handler": "0x10401210",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc1",
+  "handler_thunk": "0x1030a9b6",
+  "init": "0x10837f7f",
+  "name": "SkillCoolTimePacket",
+  "handler": "0x104179a0",
+  "acis": "SkillCoolTime",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc2",
+  "handler_thunk": "0x1030b041",
+  "init": "0x10837f9c",
+  "name": "PackageToListPacket",
+  "handler": "0x10417d00",
+  "acis": "PackageToList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc3",
+  "handler_thunk": "0x103058fd",
+  "init": "0x10837fb9",
+  "name": "PackageSendableListPacket",
+  "handler": "0x10417e50",
+  "acis": "PackageSendableList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc4",
+  "handler_thunk": "0x1030c383",
+  "init": "0x10837fd6",
+  "name": "EarthQuakePacket",
+  "handler": "0x10417fe0",
+  "acis": "Earthquake",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc5",
+  "handler_thunk": "0x1030610e",
+  "init": "0x10837ff3",
+  "name": "FlyToLoactionPacket",
+  "handler": "0x10429d40",
+  "acis": "FlyToLocation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc6",
+  "handler_thunk": "0x10311f22",
+  "init": "0x10838010",
+  "name": "BlockListPacket",
+  "handler": "0x104012c0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc7",
+  "handler_thunk": "0x1030a2cc",
+  "init": "0x1083802d",
+  "name": "SpecialCameraPacket",
+  "handler": "0x1042a1f0",
+  "acis": "SpecialCamera",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc8",
+  "handler_thunk": "0x10306bb8",
+  "init": "0x1083804d",
+  "name": "NormalCameraPacket",
+  "handler": "0x104012d0",
+  "acis": "NormalCamera",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xc9",
+  "handler_thunk": "0x1031258a",
+  "init": "0x1083806a",
+  "name": "CastleSiegeInfoPacket",
+  "handler": "0x104180e0",
+  "acis": "SiegeInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xca",
+  "handler_thunk": "0x10306857",
+  "init": "0x10838087",
+  "name": "CastleSiegeAttackerListPacket",
+  "handler": "0x10439db0",
+  "acis": "SiegeAttackerList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xcb",
+  "handler_thunk": "0x10311c98",
+  "init": "0x108380a4",
+  "handler": "0x1043a030",
+  "acis": "SiegeDefenderList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xcc",
+  "handler_thunk": "0x10309809",
+  "init": "0x108380c1",
+  "name": "NickNameChangedPacket",
+  "handler": "0x1042a000",
+  "acis": "TitleUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xcd",
+  "handler_thunk": "0x1030467e",
+  "init": "0x108380de",
+  "name": "PledgeStatusChangedPacket",
+  "handler": "0x1043a2d0",
+  "acis": "PledgeStatusChanged",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xce",
+  "handler_thunk": "0x1030574a",
+  "init": "0x108380fb",
+  "name": "RelationChangedPacket",
+  "handler": "0x1042a0c0",
+  "acis": "RelationChanged",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xcf",
+  "handler_thunk": "0x10301f5f",
+  "init": "0x10838118",
+  "name": "EventTriggerPacket",
+  "handler": "0x10418320",
+  "acis": "EventTrigger",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd0",
+  "handler_thunk": "0x10303b61",
+  "init": "0x10838138",
+  "name": "MultiSellListPacket",
+  "handler": "0x104183a0",
+  "acis": "MultiSellList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd1",
+  "handler_thunk": "0x1030c216",
+  "init": "0x10838155",
+  "name": "SetSummonRemainTimePacket",
+  "handler": "0x10418630",
+  "acis": "SetSummonRemainTime",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd2",
+  "handler_thunk": "0x10306db1",
+  "init": "0x10838172",
+  "name": "SkillRemainSecPacket",
+  "handler": "0x1042a450",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd3",
+  "handler_thunk": "0x10314be6",
+  "init": "0x1083818f",
+  "name": "NetPingPacket",
+  "handler": "0x104186a0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd4",
+  "handler_thunk": "0x10313679",
+  "init": "0x108381ac",
+  "name": "DicePacket",
+  "handler": "0x1042a7a0",
+  "acis": "Dice",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd5",
+  "handler_thunk": "0x103043e0",
+  "init": "0x108381c9",
+  "name": "SnoopPacket",
+  "handler": "0x10418700",
+  "acis": "Snoop",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd6",
+  "handler_thunk": "0x10302680",
+  "init": "0x108381e6",
+  "name": "RecipeBookItemListPacket",
+  "handler": "0x10418870",
+  "acis": "RecipeBookItemList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd7",
+  "handler_thunk": "0x10307da6",
+  "init": "0x10838203",
+  "name": "RecipeItemMakeInfoPacket",
+  "handler": "0x10418960",
+  "acis": "RecipeItemMakeInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd8",
+  "handler_thunk": "0x10304cf0",
+  "init": "0x10838223",
+  "name": "RecipeShopManageListPacket",
+  "handler": "0x10418a90",
+  "acis": "RecipeShopManageList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xd9",
+  "handler_thunk": "0x10308d78",
+  "init": "0x10838240",
+  "name": "RecipeShopSellListPacket",
+  "handler": "0x10418c10",
+  "acis": "RecipeShopSellList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xda",
+  "handler_thunk": "0x1030c428",
+  "init": "0x1083825d",
+  "name": "RecipeShopItemInfoPacket",
+  "handler": "0x10418d30",
+  "acis": "RecipeShopItemInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xdb",
+  "handler_thunk": "0x1030c81f",
+  "init": "0x1083827a",
+  "name": "RecipeShopMsgPacket",
+  "handler": "0x1042a630",
+  "acis": "RecipeShopMsg",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xdc",
+  "handler_thunk": "0x10309cbe",
+  "init": "0x10838297",
+  "name": "ShowCalcPacket",
+  "handler": "0x10416440",
+  "acis": "ShowCalculator",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xdd",
+  "handler_thunk": "0x10304944",
+  "init": "0x108382b4",
+  "name": "MonRaceInfoPacket",
+  "handler": "0x10430780",
+  "acis": "MonRaceInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xde",
+  "handler_thunk": "0x1030bc53",
+  "init": "0x108382d1",
+  "name": "ShowTownMapPacket",
+  "handler": "0x10418de0",
+  "acis": "ShowTownMap",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xdf",
+  "handler_thunk": "0x103030c6",
+  "init": "0x108382ee",
+  "name": "ObserverStartPacket",
+  "handler": "0x10418f20",
+  "acis": "ObservationMode",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe0",
+  "handler_thunk": "0x10309e1c",
+  "init": "0x1083830e",
+  "name": "ObserverEndPacket",
+  "handler": "0x10419050",
+  "acis": "ObservationReturn",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe1",
+  "handler_thunk": "0x10308a85",
+  "init": "0x1083832b",
+  "name": "ChairSitPacket",
+  "handler": "0x10419160",
+  "acis": "ChairSit",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe2",
+  "handler_thunk": "0x10305e52",
+  "init": "0x10838348",
+  "name": "HennaEquipListPacket",
+  "handler": "0x10419250",
+  "acis": "HennaEquipList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe3",
+  "handler_thunk": "0x103103b1",
+  "init": "0x10838365",
+  "name": "HennaItemInfoPacket",
+  "handler": "0x104193d0",
+  "acis": "HennaItemInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe4",
+  "handler_thunk": "0x10302874",
+  "init": "0x10838382",
+  "name": "HennaInfoPacket",
+  "handler": "0x10419530",
+  "acis": "HennaInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe5",
+  "handler_thunk": "0x1030c10d",
+  "init": "0x1083839f",
+  "name": "HennaUnequipListPacket",
+  "handler": "0x104198b0",
+  "acis": "HennaRemoveList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe6",
+  "handler_thunk": "0x10309412",
+  "init": "0x108383bc",
+  "name": "HennaUnequipInfoPacket",
+  "handler": "0x10419ce0",
+  "acis": "HennaItemRemoveInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe7",
+  "handler_thunk": "0x1030f5fb",
+  "init": "0x108383d9",
+  "name": "MacroListPacket",
+  "handler": "0x10419a30",
+  "acis": "SendMacroList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe8",
+  "handler_thunk": "0x103143cb",
+  "init": "0x108383f9",
+  "name": "BuyListSeedPacket",
+  "handler": "0x1040f480",
+  "acis": "BuyListSeed",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xe9",
+  "handler_thunk": "0x10308e95",
+  "init": "0x10838416",
+  "name": "SellListProcurePacket",
+  "handler": "0x1040f680",
+  "acis": "SellListProcure",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xea",
+  "handler_thunk": "0x1030efd4",
+  "init": "0x10838433",
+  "name": "GMHennaInfoPacket",
+  "handler": "0x104196f0",
+  "acis": "GMViewHennaInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xeb",
+  "handler_thunk": "0x10301500",
+  "init": "0x10838450",
+  "name": "RadarControlPacket",
+  "handler": "0x1040e7f0",
+  "acis": "RadarControl",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xec",
+  "handler_thunk": "0x10305c63",
+  "init": "0x10838468",
+  "handler": "0x10419f90",
+  "acis": "ClientSetTime",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xed",
+  "handler_thunk": "0x10311e2d",
+  "init": "0x1083848a",
+  "name": "ConfirmDlgPacket",
+  "handler": "0x1041a090",
+  "acis": "ConfirmDlg",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xee",
+  "handler_thunk": "0x1030aa1f",
+  "init": "0x108384a7",
+  "name": "PartySpelledPacket",
+  "handler": "0x1041a410",
+  "acis": "PartySpelled",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xef",
+  "handler_thunk": "0x1030fa24",
+  "init": "0x108384c4",
+  "name": "ShopPreviewListPacket",
+  "handler": "0x1041a570",
+  "acis": "ShopPreviewList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf0",
+  "handler_thunk": "0x1030c563",
+  "init": "0x108384e4",
+  "name": "ShopPreviewInfoPacket",
+  "handler": "0x1041a700",
+  "acis": "ShopPreviewInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf1",
+  "handler_thunk": "0x1030ee35",
+  "init": "0x10838501",
+  "name": "CameraModePacket",
+  "handler": "0x1041a7c0",
+  "acis": "CameraMode",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf2",
+  "handler_thunk": "0x1030dc74",
+  "init": "0x1083851e",
+  "name": "ShowXMasSealPacket",
+  "handler": "0x1041a810",
+  "acis": "ShowXMasSeal",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf3",
+  "handler_thunk": "0x10309507",
+  "init": "0x1083853b",
+  "name": "EtcStatusUpdatePacket",
+  "handler": "0x1041a880",
+  "acis": "EtcStatusUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf4",
+  "handler_thunk": "0x1030589e",
+  "init": "0x10838558",
+  "name": "ShortBuffStatusUpdatePacket",
+  "handler": "0x1041aaf0",
+  "acis": "ShortBuffStatusUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf5",
+  "handler_thunk": "0x103141aa",
+  "init": "0x10838575",
+  "name": "SSQStatusPacket",
+  "handler": "0x1041ac20",
+  "acis": "SSQStatus",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf6",
+  "handler_thunk": "0x10311946",
+  "init": "0x10838592",
+  "name": "PetitionVotePacket",
+  "handler": "0x10401310",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf7",
+  "handler_thunk": "0x103021c6",
+  "init": "0x108385af",
+  "name": "AgitDecoInfoPacket",
+  "handler": "0x1041b350",
+  "acis": "ClanHallDecoration",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf8",
+  "handler_thunk": "0x10304e99",
+  "init": "0x108385cf",
+  "name": "SSQInfoPacket",
+  "handler": "0x1041b3c0",
+  "acis": "SSQInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xf9",
+  "handler_thunk": "0x1030781a",
+  "init": "0x108385ec",
+  "name": "GameGuardQueryPacket",
+  "handler": "0x1041b440",
+  "acis": "GameGuardQuery",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xfa",
+  "handler_thunk": "0x10302bc1",
+  "init": "0x10838609",
+  "name": "L2FriendListPacket",
+  "handler": "0x1041b4d0",
+  "acis": "FriendList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xfb",
+  "handler_thunk": "0x10305736",
+  "init": "0x10838626",
+  "name": "L2FriendPacket",
+  "handler": "0x1041b5d0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xfc",
+  "handler_thunk": "0x10309129",
+  "init": "0x10838639",
+  "name": "L2FriendStatusPacket",
+  "handler": "0x1041b670",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xfd",
+  "handler_thunk": "0x10304147",
+  "init": "0x10838660",
+  "name": "L2FriendSayPacket",
+  "handler": "0x1041b700",
+  "acis": "L2FriendSay",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "game",
+  "opcode": "0xfe",
+  "handler_thunk": "0x1030785b",
+  "init": "0x1083867d",
+  "name": "DummyPacket",
+  "handler": "0x10401150",
+  "acis": null,
+  "shared_handler_count": 3
+ },
+ {
+  "table": "ex",
+  "opcode": "0x0",
+  "name": "ExDummyPacket",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1",
+  "handler_thunk": "0x103088b4",
+  "init": "0x10838e17",
+  "handler": "0x1041b7b0",
+  "acis": "ExRegenMax",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2",
+  "handler_thunk": "0x10311cfc",
+  "init": "0x10838e34",
+  "name": "ExEventMatchListPacket",
+  "handler": "0x10401350",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3",
+  "handler_thunk": "0x1031393f",
+  "init": "0x10838e51",
+  "name": "ExEventMatchObserverPacket",
+  "handler": "0x1041b850",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4",
+  "handler_thunk": "0x103153d4",
+  "init": "0x10838e6e",
+  "name": "ExEventMatchMessagePacket",
+  "handler": "0x1041b9b0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5",
+  "handler_thunk": "0x103093f4",
+  "init": "0x10838e8b",
+  "name": "ExEventMatchScorePacket",
+  "handler": "0x1041bab0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x6",
+  "handler_thunk": "0x10314006",
+  "init": "0x10838ea8",
+  "name": "ExEventMatchTeamInfoPacket",
+  "handler": "0x1041bb90",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x7",
+  "handler_thunk": "0x1031046f",
+  "init": "0x10838ec5",
+  "name": "ExEventMatchCreatePacket",
+  "handler": "0x1041bde0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x8",
+  "handler_thunk": "0x10301ad2",
+  "init": "0x10838ee5",
+  "name": "ExEventMatchUserInfoPacket",
+  "handler": "0x1041bed0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x9",
+  "handler_thunk": "0x10312a21",
+  "init": "0x10838f02",
+  "name": "ExColosseumFenceInfoPacket",
+  "handler": "0x10431240",
+  "acis": "ExColosseumFenceInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0xa",
+  "handler_thunk": "0x10311c7f",
+  "init": "0x10838f1f",
+  "name": "ExEventMatchSpelledInfoPacket",
+  "handler": "0x1041c010",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0xb",
+  "handler_thunk": "0x1030e179",
+  "init": "0x10838f3c",
+  "name": "ExEventMatchFirecrackerPacket",
+  "handler": "0x1042a8e0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0xc",
+  "handler_thunk": "0x1030e34f",
+  "init": "0x10838f59",
+  "name": "ExEventMatchTeamUnlockedPacket",
+  "handler": "0x1041c190",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0xd",
+  "handler_thunk": "0x1030f669",
+  "init": "0x10838f76",
+  "name": "ExEventMatchGMTestPacket",
+  "handler": "0x104013e0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0xe",
+  "handler_thunk": "0x103064f1",
+  "init": "0x10838f93",
+  "name": "ExPartyRoomMemberPacket",
+  "handler": "0x1041c260",
+  "acis": "ExPartyRoomMember",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0xf",
+  "handler_thunk": "0x1030cbad",
+  "init": "0x10838fa6",
+  "name": "ExClosePartyRoomPacket",
+  "handler": "0x10401480",
+  "acis": "ExClosePartyRoom",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x10",
+  "handler_thunk": "0x1030ca9a",
+  "init": "0x10838fd0",
+  "name": "ExManagePartyRoomMemberPacket",
+  "handler": "0x1041c440",
+  "acis": "ExManagePartyRoomMember",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x11",
+  "handler_thunk": "0x10308e1d",
+  "init": "0x10838fed",
+  "name": "ExEventMatchLockResult",
+  "handler": "0x10401570",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x12",
+  "handler_thunk": "0x1030a3b2",
+  "init": "0x1083900a",
+  "name": "ExAutoSoulShot",
+  "handler": "0x1041c5d0",
+  "acis": "ExAutoSoulShot",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x13",
+  "handler_thunk": "0x103138f4",
+  "init": "0x10839027",
+  "name": "ExFishingStartPacket",
+  "handler": "0x1042aa20",
+  "acis": "ExFishingStart",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x14",
+  "handler_thunk": "0x10302ed2",
+  "init": "0x10839044",
+  "name": "ExFishingEndPacket",
+  "handler": "0x1042ac00",
+  "acis": "ExFishingEnd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x15",
+  "handler_thunk": "0x103101db",
+  "init": "0x10839061",
+  "name": "ExFishingStartCombatPacket",
+  "handler": "0x1042ad50",
+  "acis": "ExFishingStartCombat",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x16",
+  "handler_thunk": "0x1030c9dc",
+  "init": "0x1083907e",
+  "name": "ExFishingHpRegenPacket",
+  "handler": "0x1042af40",
+  "acis": "ExFishingHpRegen",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x17",
+  "handler_thunk": "0x10302284",
+  "init": "0x1083909b",
+  "name": "ExEnchantSkillListPacket",
+  "handler": "0x1041c700",
+  "acis": "ExEnchantSkillList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x18",
+  "handler_thunk": "0x1030ff5b",
+  "init": "0x108390bb",
+  "name": "ExEnchantSkillInfoPacket",
+  "handler": "0x1041c900",
+  "acis": "ExEnchantSkillInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x19",
+  "handler_thunk": "0x10309a98",
+  "init": "0x108390d8",
+  "name": "ExShowQuestInfoPacket",
+  "handler": "0x10401580",
+  "acis": "ExQuestInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1a",
+  "handler_thunk": "0x1030cde7",
+  "init": "0x108390f5",
+  "name": "ExShowQuestMarkPacket",
+  "handler": "0x1041cb90",
+  "acis": "ExShowQuestMark",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1b",
+  "handler_thunk": "0x1030b85c",
+  "init": "0x10839112",
+  "name": "ExSendManorListPacket",
+  "handler": "0x1041cc90",
+  "acis": "ExSendManorList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1c",
+  "handler_thunk": "0x1030e39a",
+  "init": "0x1083912f",
+  "name": "ExShowSeedInfoPacket",
+  "handler": "0x1041ce10",
+  "acis": "ExShowSeedInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1d",
+  "handler_thunk": "0x10313fa2",
+  "init": "0x1083914c",
+  "name": "ExShowCropInfoPacket",
+  "handler": "0x1041d0c0",
+  "acis": "ExShowCropInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1e",
+  "handler_thunk": "0x1030b947",
+  "init": "0x10839169",
+  "name": "ExShowManorDefaultInfoPacket",
+  "handler": "0x1041d380",
+  "acis": "ExShowManorDefaultInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x1f",
+  "handler_thunk": "0x1030751d",
+  "init": "0x1083917c",
+  "name": "ExShowSeedSettingPacket",
+  "handler": "0x1041d600",
+  "acis": "ExShowSeedSetting",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x20",
+  "handler_thunk": "0x1030df94",
+  "init": "0x108391a6",
+  "name": "ExShowCropSettingPacket",
+  "handler": "0x1041d8f0",
+  "acis": "ExShowCropSetting",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x21",
+  "handler_thunk": "0x10301924",
+  "init": "0x108391c3",
+  "name": "ExShowSellCropListPacket",
+  "handler": "0x1041dc00",
+  "acis": "ExShowSellCropList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x22",
+  "handler_thunk": "0x1030c8ba",
+  "init": "0x108391e0",
+  "name": "ExShowProcureCropDetailPacket",
+  "handler": "0x1041dee0",
+  "acis": "ExShowProcureCropDetail",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x23",
+  "handler_thunk": "0x1030cd56",
+  "init": "0x108391fd",
+  "name": "ExHeroListPacket",
+  "handler": "0x1041e080",
+  "acis": "ExHeroList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x24",
+  "handler_thunk": "0x10310d34",
+  "init": "0x1083921a",
+  "name": "ExServerPrimitivePacket",
+  "handler": "0x1041e380",
+  "acis": "ExServerPrimitive",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x25",
+  "handler_thunk": "0x1031197d",
+  "init": "0x10839237",
+  "name": "ExOpenMPCCPacket",
+  "handler": "0x10401720",
+  "acis": "ExOpenMPCC",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x26",
+  "handler_thunk": "0x1030bcb2",
+  "init": "0x10839254",
+  "name": "ExCloseMPCCPacket",
+  "handler": "0x104017a0",
+  "acis": "ExCloseMPCC",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x27",
+  "handler_thunk": "0x10311b8a",
+  "init": "0x10839271",
+  "name": "ExAskJoinMPCCPacket",
+  "handler": "0x1041eab0",
+  "acis": "ExAskJoinMPCC",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x28",
+  "handler_thunk": "0x10310316",
+  "init": "0x10839291",
+  "name": "ExPledgeCrestLargePacket",
+  "handler": "0x1041ebb0",
+  "acis": "ExPledgeCrestLarge",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x29",
+  "handler_thunk": "0x10304e7b",
+  "init": "0x108392ae",
+  "name": "ExOlympiadUserInfoPacket",
+  "handler": "0x1041ed90",
+  "acis": "ExOlympiadUserInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2a",
+  "handler_thunk": "0x10313b5b",
+  "init": "0x108392cb",
+  "name": "ExOlympiadSpelledInfoPacket",
+  "handler": "0x1041ef20",
+  "acis": "ExOlympiadSpelledInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2b",
+  "handler_thunk": "0x10304016",
+  "init": "0x108392e8",
+  "name": "ExOlympiadModePacket",
+  "handler": "0x1041f0a0",
+  "acis": "ExOlympiadMode",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2c",
+  "handler_thunk": "0x10304c91",
+  "init": "0x10839305",
+  "name": "ExOlympiadMatchEndPacket",
+  "handler": "0x10401820",
+  "acis": "ExOlympiadMatchEnd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2d",
+  "handler_thunk": "0x10301abe",
+  "init": "0x10839322",
+  "name": "ExMailArrivedPacket",
+  "handler": "0x104018c0",
+  "acis": "ExMailArrived",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2e",
+  "handler_thunk": "0x1030f64b",
+  "init": "0x1083933f",
+  "name": "ExStorageMaxCountPacket",
+  "handler": "0x1041f170",
+  "acis": "ExStorageMaxCount",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x2f",
+  "handler_thunk": "0x10306e92",
+  "init": "0x1083935c",
+  "name": "ExEventMatchManagePacket",
+  "handler": "0x1041f2d0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x30",
+  "handler_thunk": "0x1030ea4d",
+  "init": "0x1083937c",
+  "name": "ExMultiPartyCommandChannelInfoPacket",
+  "handler": "0x1041f570",
+  "acis": "ExMultiPartyCommandChannelInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x31",
+  "handler_thunk": "0x10301d84",
+  "init": "0x10839399",
+  "name": "ExPCCafePointInfoPacket",
+  "handler": "0x1041f780",
+  "acis": "ExPCCafePointInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x32",
+  "handler_thunk": "0x10302856",
+  "init": "0x108393b6",
+  "name": "ExSetCompassZoneCode",
+  "handler": "0x1041f8c0",
+  "acis": "ExSetCompassZoneCode",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x33",
+  "handler_thunk": "0x10314321",
+  "init": "0x108393d3",
+  "name": "ExGetBossRecord",
+  "handler": "0x1041f9c0",
+  "acis": "ExGetBossRecord",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x34",
+  "handler_thunk": "0x1030a227",
+  "init": "0x108393f0",
+  "name": "ExAskJoinPartyRoom",
+  "handler": "0x1041fd10",
+  "acis": "ExAskJoinPartyRoom",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x35",
+  "handler_thunk": "0x103106e5",
+  "init": "0x1083940d",
+  "name": "ExListPartyMatchingWaitingRoom",
+  "handler": "0x1041fe20",
+  "acis": "ExListPartyMatchingWaitingRoom",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x36",
+  "handler_thunk": "0x1030e0fc",
+  "init": "0x1083942a",
+  "name": "ExSetMpccRouting",
+  "handler": "0x10420000",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x37",
+  "handler_thunk": "0x1030f614",
+  "init": "0x10839447",
+  "name": "ExShowAdventurerGuideBook",
+  "handler": "0x10401960",
+  "acis": "ExShowAdventurerGuideBook",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x38",
+  "handler_thunk": "0x10304471",
+  "init": "0x10839467",
+  "name": "ExShowScreenMessage",
+  "handler": "0x1041fb60",
+  "acis": "ExShowScreenMessage",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x39",
+  "handler_thunk": "0x10313eb2",
+  "init": "0x10839484",
+  "name": "PledgeSkillListPacket",
+  "handler": "0x10412590",
+  "acis": "PledgeSkillList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3a",
+  "handler_thunk": "0x10315384",
+  "init": "0x108394a1",
+  "name": "PledgeSkillListAddPacket",
+  "handler": "0x104126e0",
+  "acis": "PledgeSkillListAdd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3b",
+  "handler_thunk": "0x1030d337",
+  "init": "0x108394be",
+  "name": "PledgePowerGradeList",
+  "handler": "0x104127d0",
+  "acis": "PledgePowerGradeList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3c",
+  "handler_thunk": "0x1030e1ec",
+  "init": "0x108394db",
+  "name": "PledgeReceivePowerInfo",
+  "handler": "0x10412920",
+  "acis": "PledgeReceivePowerInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3d",
+  "handler_thunk": "0x10307801",
+  "init": "0x108394f8",
+  "name": "PledgeReceiveMemberInfo",
+  "handler": "0x10412a70",
+  "acis": "PledgeReceiveMemberInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3e",
+  "handler_thunk": "0x1030b523",
+  "init": "0x10839515",
+  "name": "PledgeReceiveWarList",
+  "handler": "0x10412be0",
+  "acis": "PledgeReceiveWarList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x3f",
+  "handler_thunk": "0x1030e1b5",
+  "init": "0x10839532",
+  "name": "PledgeReceiveSubPledgeCreated",
+  "handler": "0x10412ea0",
+  "acis": "PledgeReceiveSubPledgeCreated",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x40",
+  "handler_thunk": "0x10304255",
+  "init": "0x10839552",
+  "name": "ExRedSkyPacket",
+  "handler": "0x10420100",
+  "acis": "ExRedSky",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x41",
+  "handler_thunk": "0x1030fb64",
+  "init": "0x1083956f",
+  "name": "PledgeReceiveUpdatePower",
+  "handler": "0x10412fd0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x42",
+  "handler_thunk": "0x1030aa56",
+  "init": "0x1083958c",
+  "name": "FlySelfDestinationPacket",
+  "handler": "0x10429ef0",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x43",
+  "handler_thunk": "0x10309b38",
+  "init": "0x108395a9",
+  "name": "ShowPCCafeCouponShowUI",
+  "handler": "0x10401220",
+  "acis": "ShowPCCafeCouponShowUI",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x44",
+  "handler_thunk": "0x1030c504",
+  "init": "0x108395c6",
+  "name": "ExSearchOrc",
+  "handler": "0x104201d0",
+  "acis": "ExOrcMove",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x45",
+  "handler_thunk": "0x1030634d",
+  "init": "0x108395e3",
+  "name": "ExCursedWeaponList",
+  "handler": "0x1042b150",
+  "acis": "ExCursedWeaponList",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x46",
+  "handler_thunk": "0x10311cf7",
+  "init": "0x10839600",
+  "name": "ExCursedWeaponLocation",
+  "handler": "0x10431500",
+  "acis": "ExCursedWeaponLocation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x47",
+  "handler_thunk": "0x1030a150",
+  "init": "0x1083961d",
+  "name": "ExRestartClient",
+  "handler": "0x10400730",
+  "acis": "ExRestartClient",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x48",
+  "handler_thunk": "0x1030ed54",
+  "init": "0x1083963d",
+  "name": "ExRequestHackShield",
+  "handler": "0x104007f0",
+  "acis": "ExRequestHackShield",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x49",
+  "handler_thunk": "0x10306794",
+  "init": "0x1083965a",
+  "name": "ExUseSharedGroupItem",
+  "handler": "0x1040d3a0",
+  "acis": "ExUseSharedGroupItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4a",
+  "handler_thunk": "0x10304084",
+  "init": "0x10839677",
+  "name": "ExMPCCShowPartyMemberInfo",
+  "handler": "0x1040d4a0",
+  "acis": "ExMPCCShowPartyMemberInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4b",
+  "handler_thunk": "0x1030a5f6",
+  "init": "0x10839694",
+  "name": "ExDuelAskStart",
+  "handler": "0x1040da10",
+  "acis": "ExDuelAskStart",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4c",
+  "handler_thunk": "0x10308c83",
+  "init": "0x108396b1",
+  "name": "ExDuelReady",
+  "handler": "0x1040db40",
+  "acis": "ExDuelReady",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4d",
+  "handler_thunk": "0x1030f3e9",
+  "init": "0x108396ce",
+  "name": "ExDuelStart",
+  "handler": "0x1040dc60",
+  "acis": "ExDuelStart",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4e",
+  "handler_thunk": "0x103110db",
+  "init": "0x108396e6",
+  "handler": "0x1040dd80",
+  "acis": "ExDuelEnd",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x4f",
+  "handler_thunk": "0x1030dab2",
+  "init": "0x10839708",
+  "name": "ExDuelUpdateUserInfo",
+  "handler": "0x1040dea0",
+  "acis": "ExDuelUpdateUserInfo",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x50",
+  "handler_thunk": "0x103085c6",
+  "init": "0x10839728",
+  "name": "ExShowVariationMakeWindow",
+  "handler": "0x104008a0",
+  "acis": "ExShowVariationMakeWindow",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x51",
+  "handler_thunk": "0x1030f78b",
+  "init": "0x10839745",
+  "name": "ExShowVariationCancelWindow",
+  "handler": "0x10400940",
+  "acis": "ExShowVariationCancelWindow",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x52",
+  "handler_thunk": "0x1030dc1f",
+  "init": "0x10839762",
+  "name": "ExPutItemResultForVariationMake",
+  "handler": "0x1040e050",
+  "acis": "ExConfirmVariationItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x53",
+  "handler_thunk": "0x1030b49c",
+  "init": "0x1083977f",
+  "name": "ExPutIntensiveResultForVariationMake",
+  "handler": "0x1040e130",
+  "acis": "ExConfirmVariationRefiner",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x54",
+  "handler_thunk": "0x10310f4b",
+  "init": "0x1083979c",
+  "name": "ExPutCommissionResultForVariationMake",
+  "handler": "0x1040e220",
+  "acis": "ExConfirmVariationGemstone",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x55",
+  "handler_thunk": "0x1030def4",
+  "init": "0x108397b9",
+  "name": "ExVariationResult",
+  "handler": "0x1040e310",
+  "acis": "ExVariationResult",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x56",
+  "handler_thunk": "0x1030a4bb",
+  "init": "0x108397d6",
+  "name": "ExPutItemResultForVariationCancel",
+  "handler": "0x1040e3f0",
+  "acis": "ExConfirmCancelItem",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x57",
+  "handler_thunk": "0x1030abc8",
+  "init": "0x108397f3",
+  "name": "ExVariationCancelResult",
+  "handler": "0x1040e4f0",
+  "acis": "ExVariationCancelResult",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x58",
+  "handler_thunk": "0x10312012",
+  "init": "0x10839813",
+  "name": "ExDuelEnemyRelation",
+  "handler": "0x104009e0",
+  "acis": "ExDuelEnemyRelation",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x59",
+  "handler_thunk": "0x103133ef",
+  "init": "0x10839830",
+  "name": "ExPlayAnimation",
+  "handler": "0x1042b280",
+  "acis": null,
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5a",
+  "handler_thunk": "0x10310fb4",
+  "init": "0x1083984d",
+  "name": "ExMPCCPartyInfoUpdate",
+  "handler": "0x1040d8c0",
+  "acis": "ExMPCCPartyInfoUpdate",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5b",
+  "handler_thunk": "0x10301e8d",
+  "init": "0x1083986a",
+  "name": "ExPlayScene",
+  "handler": "0x1040d7f0",
+  "acis": "ExPlayScene",
+  "shared_handler_count": 1
+ },
+ {
+  "table": "ex",
+  "opcode": "0x5c",
+  "handler_thunk": "0x10304895",
+  "init": "0x10839887",
+  "name": "ExNeedToChangeName",
+  "handler": "0x1040d690",
+  "acis": null,
+  "shared_handler_count": 1
+ }
+]

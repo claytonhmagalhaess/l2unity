@@ -1,0 +1,31 @@
+  10342580  push   ecx
+  10342581  movzx  eax, byte ptr [ecx + 0x71d]
+  10342588  fldz   
+  1034258a  fcomp  dword ptr [ecx + eax*4 + 0x1380]
+  10342591  lea    ecx, [ecx + eax*4 + 0x1380]
+  10342598  fnstsw ax
+  1034259a  test   ah, 0x44
+  1034259d  jp     0x103425a9
+  1034259f  fld1   
+  103425a1  fstp   dword ptr [esp]
+  103425a4  fld    dword ptr [esp]
+  103425a7  pop    ecx
+  103425a8  ret    
+  103425a9  fld    dword ptr [ecx]
+  103425ab  fstp   dword ptr [esp]
+  103425ae  fld    dword ptr [esp]
+  103425b1  pop    ecx
+  103425b2  ret    
+  103425b3  int3   
+  103425b4  int3   
+  103425b5  int3   
+  103425b6  int3   
+  103425b7  int3   
+  103425b8  int3   
+  103425b9  int3   
+  103425ba  int3   
+  103425bb  int3   
+  103425bc  int3   
+  103425bd  int3   
+  103425be  int3   
+  103425bf  int3   

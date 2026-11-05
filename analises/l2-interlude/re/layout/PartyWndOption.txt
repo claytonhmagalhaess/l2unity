@@ -1,0 +1,4 @@
+Window PartyWndOption 256x131 @TOP_LEFT->pai.TOP_LEFT(200,131) unk101=L2UI_CH3.PARTYWND.Partywindow_option_back unk102=PartyWndOption unk103=GamingState unk104=0 unk107=1 unk108=0 unk111=1487 unk113=1 unk114=3 unk115=0 unk117=0 unk122=84204896 unk123=0 unk124=0 unk125=0 unk126=0 unk127=0 unk128=0 unk130=0 unk131=0 unk132=3982 unk133=0 unk134=0 unk135=150 unk139=Game size=[2]
+  TextBox Title 300x20 @TOP_LEFT->pai.TOP_LEFT(26,17) textAlign=Undefined offsetY=0 sysstring=1487 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  CheckBox ShowSmallPartyWndCheck 300x25 @TOP_LEFT->pai.TOP_LEFT(28,55) titleIndex=1488 size=[2]
+  Button okbtn 76x23 @BOTTOM_CENTER->pai.BOTTOM_CENTER(0,-10) normalTex=L2UI_CH3.Button.Btn1_Normal pushedTex=L2UI_CH3.Button.Btn1_NormalOn buttonName=1337 size=[2]

@@ -1,0 +1,73 @@
+<ui:UXML editor-extension-mode="False" uss="L2StyleSheet" uss="SkillbarWindow" xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SkillBar1" class="skillbar">
+    <ui:VisualElement name="Wrapper" class="skillbar-wrapper">
+      <ui:VisualElement name="DragArea" class="skillbar-drag">
+        <ui:GroupBox name="Frame_DF_Ver" class="frame_df_ver">
+          <ui:VisualElement />
+          <ui:VisualElement name="VisualElement" />
+          <ui:VisualElement name="VisualElement" />
+          <ui:VisualElement name="VisualElement" />
+        </ui:GroupBox>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExpandBtn" class="skillbar-footer-btn button-expand" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="MinimizeBtn" class="skillbar-footer-btn button-minimize" />
+      </ui:VisualElement>
+      <ui:VisualElement name="InnerContainer" class="skillbar-inner-container">
+        <ui:VisualElement name="NumberGroupBox" class="skillbar-arrow-control">
+          <ui:VisualElement name="SkillArrowInput" class="skill-arrow-input">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="RightArrow" class="skillbar-footer-btn skillbar-arrow-input-up" />
+            <ui:TextField picking-mode="Ignore" focusable="false" readonly="true" name="L2Input" value="1" class="skill-arrow-input-label" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="LeftArrow" class="skillbar-footer-btn skillbar-arrow-input-down" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="SlotContainer" class="skillbar-slot-container">
+          <ui:VisualElement name="Darkener" class="skillbar-darkener" />
+          <ui:VisualElement name="SlotAnchor1" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor2" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor3" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor4" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="Spacer" class="skillbar-slot-spacer" />
+          <ui:VisualElement name="SlotAnchor5" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor6" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor7" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor8" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="Spacer" class="skillbar-slot-spacer" />
+          <ui:VisualElement name="SlotAnchor9" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor10" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor11" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+          <ui:VisualElement name="SlotAnchor12" class="skillbar-slot-anchor">
+            <ui:Instance template="Slot" template="Slot" name="Slot" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="FooterContainer" class="footer-container-horizontal">
+          <ui:VisualElement name="Footer" class="skillbar-footer">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TooltipBtn" class="skillbar-footer-btn button-tooltip" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="RotateBtn" class="skillbar-footer-btn button-rotate" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="LockBtn" class="skillbar-footer-btn button-lock" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,179 @@
+{
+ "dll": "Window.dll",
+ "functions": 4216,
+ "by_evidence": {
+  "nome": 2267,
+  "thunk": 173,
+  "vizinhanca": 94,
+  "eh": 1387,
+  "inferido": 218,
+  "rtti": 75,
+  "guard": 1,
+  "vtable": 1
+ },
+ "by_subsystem": {
+  "UI Win32 (Window.dll: janelas de config/ferramentas)": 3711,
+  "bibliotecas (CRT/MFC/zlib)": 464,
+  "renderizacao": 12,
+  "nucleo Unreal (objetos, script VM, IO)": 25,
+  "rede": 3,
+  "sistema (chamadas Win32 importadas)": 1
+ },
+ "classes": 91,
+ "top_classes_by_subsystem": {
+  "UI Win32 (Window.dll: janelas de config/ferramentas)": [
+   [
+    "WWindow",
+    232
+   ],
+   [
+    "FPropertyItem",
+    215
+   ],
+   [
+    "FTreeItem",
+    196
+   ],
+   [
+    "WListBox",
+    149
+   ],
+   [
+    "WProperties",
+    141
+   ],
+   [
+    "FObjectsItem",
+    127
+   ],
+   [
+    "WEdit",
+    112
+   ],
+   [
+    "WPropertyPage",
+    102
+   ],
+   [
+    "WWizardDialog",
+    91
+   ],
+   [
+    "WPropertySheet",
+    79
+   ],
+   [
+    "FNewObjectItem",
+    74
+   ],
+   [
+    "FHeaderItem",
+    72
+   ],
+   [
+    "WTerminal",
+    71
+   ],
+   [
+    "WCrashBoxDialog",
+    70
+   ],
+   [
+    "WTimeScrollBar",
+    68
+   ]
+  ],
+  "bibliotecas (CRT/MFC/zlib)": [
+   [
+    "CRT/biblioteca",
+    320
+   ],
+   [
+    "UnDecorator",
+    43
+   ],
+   [
+    "type_info",
+    39
+   ],
+   [
+    "DName",
+    30
+   ],
+   [
+    "CRect",
+    4
+   ],
+   [
+    "pcharNode",
+    4
+   ],
+   [
+    "pDNameNode",
+    4
+   ],
+   [
+    "DNameStatusNode",
+    4
+   ],
+   [
+    "charNode",
+    3
+   ],
+   [
+    "std::bad_exception",
+    2
+   ],
+   [
+    "std::exception",
+    2
+   ],
+   [
+    "HeapManager",
+    2
+   ],
+   [
+    "DNameNode",
+    2
+   ],
+   [
+    "_LocaleUpdate",
+    1
+   ],
+   [
+    "exception",
+    1
+   ]
+  ],
+  "renderizacao": [
+   [
+    "FWindowsBitmap",
+    12
+   ]
+  ],
+  "nucleo Unreal (objetos, script VM, IO)": [
+   [
+    "CORE.DLL::UObject",
+    23
+   ],
+   [
+    "CORE.DLL::FOutputDevice",
+    2
+   ]
+  ],
+  "rede": [
+   [
+    "Replicator",
+    3
+   ]
+  ],
+  "sistema (chamadas Win32 importadas)": [
+   [
+    "KERNEL32.DLL",
+    1
+   ]
+  ]
+ },
+ "funclets_linked": 1414,
+ "eh_handlers": 681
+}

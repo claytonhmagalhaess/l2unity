@@ -1,0 +1,5 @@
+Window MacroInfoWnd 256x161 @CENTER_LEFT->pai.CENTER_LEFT(20,-150) unk101=l2ui_ch3.macrownd.macro3_back unk102=MacroInfoWnd unk103=GamingState unk104=1 unk106=1 unk107=1 unk108=0 unk109=1 unk111=657 unk113=0 unk114=3 unk115=1 unk117=0 unk122=67462960 unk123=0 unk124=0 unk125=0 unk126=0 unk127=67210048 unk128=67210496 unk130=0 unk131=0 unk132=67213672 unk133=67213360 unk134=67214296 unk135=67213984 unk139=Game size=[2]
+  TextBox txtHead 0x0 @TOP_LEFT->pai.TOP_LEFT(11,32) textAlign=Left offsetY=0 sysstring=57 textColor=#ffdcdcdc emoticon=1 autosize=1 size=[2]
+  MultiEdit txtInfo 238x77 @TOP_LEFT->pai.TOP_LEFT(9,48) unk100=1 unk101=1 size=[2]
+  Button btnOk 76x23 @TOP_LEFT->pai.TOP_LEFT(51,132) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=140 size=[2]
+  Button btnCancel 76x23 @TOP_LEFT->pai.TOP_LEFT(131,132) normalTex=L2UI_ch3.button.btn1_normal pushedTex=L2UI_ch3.button.btn1_normalon buttonName=141 size=[2]

@@ -1,0 +1,6 @@
+Window RestartMenuWnd 128x128 @CENTER->pai.CENTER(0,0) unk101=L2UI_CH3.SystemMenuWnd.system2_back unk102=RestartMenuWnd unk103=GamingState unk107=1 unk108=0 unk114=0 unk117=0 unk122=1813972221 unk126=0 unk127=1345217646 unk128=1851225189 unk130=0 unk131=0 unk132=-47013888 unk133=6581847 unk134=23071233 unk135=-184150524 unk139=Game size=[2]
+  Button btnVillage 96x23 @TOP_CENTER->pai.TOP_CENTER(0,6) normalTex=L2UI_CH3.button.bigbutton pushedTex=L2UI_CH3.button.bigbutton_down buttonName=372 size=[2]
+  Button btnAgit 96x23 @TOP_CENTER->pai.TOP_CENTER(0,30) normalTex=L2UI_CH3.button.bigbutton pushedTex=L2UI_CH3.button.bigbutton_down buttonName=374 size=[2]
+  Button btnCastle 96x23 @TOP_CENTER->pai.TOP_CENTER(0,54) normalTex=L2UI_CH3.button.bigbutton pushedTex=L2UI_CH3.button.bigbutton_down buttonName=375 size=[2]
+  Button btnBattleCamp 96x23 @TOP_CENTER->pai.TOP_CENTER(0,78) normalTex=L2UI_CH3.button.bigbutton pushedTex=L2UI_CH3.button.bigbutton_down buttonName=373 size=[2]
+  Button btnOriginal 96x23 @TOP_CENTER->pai.TOP_CENTER(0,102) normalTex=L2UI_CH3.button.bigbutton pushedTex=L2UI_CH3.button.bigbutton_down buttonName=465 size=[2]

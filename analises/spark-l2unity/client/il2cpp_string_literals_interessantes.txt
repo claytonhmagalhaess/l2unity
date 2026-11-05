@@ -1,0 +1,716 @@
+    malhas montadas {0} ({1:0} ms no total) | em cache {2} | 
+ (NAO suportado)
+ (SPARK)
+ (nem no pacote nem no Resources)
+ (rodar SPARK/Portas/Montar)
+ implementing interface ITextEdition is missing the implementation for keyboardType. Assigning a value to ITextEdition.keyboardType will not update its value.
+ implementing interface ITextEdition is missing the implementation for keyboardType. Calling ITextEdition.keyboardType of this type will always return Default.
+ pacotes abertos=
+ | SparkArte ativo=
+'simpleType' or 'complexType' cannot follow 'unique', 'key' or 'keyref'.
+-Infinity
+-servidor
+.bank
+.geodata
+.spa
+.spk
+127.0.0.1
+://
+:///
+<META http-equiv="Content-Type"
+A state already exists using the specified 'key', but has a different AnimationClip:
+A type '{0}' that is defined in a partially trusted assembly cannot be type forwarded from an assembly with a different Public Key Token or without a public key token. To fix this, please either turn on unsafeTypeForwarding flag in the configuration file or remove the TypeForwardedFrom attribute.
+AES
+Access to the registry key '{0}' is denied.
+Accessed JArray values with invalid key value: {0}. Int32 array index expected.
+Accessed JConstructor values with invalid key value: {0}. Argument position index expected.
+Accessed JObject values with invalid key value: {0}. Object property name expected.
+Alt+H hides the whole interface, Alt+J hides the chat, "." mutes the sound. The keys can be changed in Shortcut.
+An address incompatible with the requested protocol was used
+An element with the same key '{0}' already exists in the ExpandoObject.
+An item with the same key has already been added.
+An item with the same key has already been added. Key: {0}
+Assigning private key failed.
+Authed to LoginServer
+BEAUTIFY_DOF_TRANSPARENT
+Blowfish key set.
+CREATE / SPAWN
+Can't convert a AngleUnit to a Dimension.Unit because it does not contain a valid keyword. Expected 'deg', 'grad', 'rad' or 'turn', but was {0}
+Can't convert a Length to a Dimension because it contains the '{0}' keyword.
+Can't convert a LengthUnit to a Dimension.Unit because it does not contain a valid keyword. Expected 'px' or '%', but was {0}
+Can't convert a Rotate to a Dimension because it contains the '{0}' keyword.
+Can't convert a TimeUnit to a Dimension.Unit because it does not contain a valid keyword. Expected 's' or 'ms', but was {0}
+Cannot access a closed registry key.
+Cannot add primary key constraint since primary key is already set for the table.
+Cannot decode public key from unknown OID '{0}'.
+Cannot delete a subkey tree because the subkey does not exist.
+Cannot export private key
+Cannot read -Infinity value.
+Cannot read Infinity value.
+Cannot remove this column, because it is part of the parent key for relationship {0}.
+Cannot remove this column, because it's part of the primary key.
+Cannot remove unique constraint '{0}'. Remove foreign key constraint '{1}' first.
+Cannot remove unique constraint since it's the primary key of a table.
+Cannot remove unique constraint since it's the primary key of table {0}.
+Cannot write to the registry key.
+Certificate does not have a private key
+Child table key is missing in relation '{0}'.
+CircleSparks
+Click a box and press the key or combination (Alt, Ctrl and Shift work). Esc cancels, Backspace clears the box.
+Conditional sections must specify the keyword 'IGNORE' or 'INCLUDE'.
+Connected to LoginServer
+Console key values must be between 0 and 255 inclusive.
+Could not connect to the login server. Please try again in a moment.
+Could not convert string '{0}' to dictionary key type '{1}'. Create a TypeConverter to convert from the string to the key type object.
+Could not create machine key store '{0}'.
+Could not create user key store '{0}'.
+Could not secure machine key store '{0}'.
+Could not secure user key store '{0}'.
+DarkSparks
+Data/Effects/enchant_retail/SparkEnchantRetail
+Data/Effects/spark_enchant/SparkAuraEnchant
+Data/Effects/spark_heroi/SparkCalor
+Data/LineageEffects/{0}.json
+Data/Meta/ActionName_Classic-eu.txt
+Data/Meta/Armorgrp_Classic.txt
+Data/Meta/Augments_Infinity.json
+Data/Meta/Chargrp_Lindvior.txt
+Data/Meta/EfeitosAcessorio_Classic.json
+Data/Meta/EtcItemgrp_Classic.txt
+Data/Meta/Existentes_Infinity.json
+Data/Meta/Henna_Infinity.json
+Data/Meta/ItemDescricao_Interlude.txt
+Data/Meta/ItemIcone_Interlude.txt
+Data/Meta/ItemName_Classic-eu.txt
+Data/Meta/ItemStatData_Classic.txt
+Data/Meta/Itens_Infinity.json
+Data/Meta/Logongrp.txt
+Data/Meta/MobSkillAnim_Interlude.txt
+Data/Meta/Npcgrp_Interlude.txt
+Data/Meta/Portas.json
+Data/Meta/QuestName_Interlude.json
+Data/Meta/Receitas_Infinity.json
+Data/Meta/Sets_Infinity.json
+Data/Meta/SkillConsumo_Servidor.txt
+Data/Meta/SkillEfeito_Interlude.txt
+Data/Meta/SkillEncanto_Interlude.txt
+Data/Meta/SkillName_Classic-eu.txt
+Data/Meta/SkillName_Interlude.txt
+Data/Meta/SkillSoundgrp_Classic.txt
+Data/Meta/Skillgrp_Classic.txt
+Data/Meta/SomArmadura_Interlude.txt
+Data/Meta/SysString_Classic-eu.txt
+Data/Meta/SystemMsg_Classic-eu.txt
+Data/Meta/Weapongrp_Classic.txt
+Data/Sounds/SparkClima/
+Data/SysTextures/Icon/etc_key_i00
+Data/UI/Assets/Login/
+Data/UI/Assets/Login/spark_logo
+Data/UI/Assets/SparkChat/
+Data/UI/Assets/SparkChat/ChatTabOver
+Data/UI/Assets/SparkChat/ChatWndBg
+Data/UI/Assets/SparkChat/Chatting_IMEen
+Data/UI/_Elements/Game/SparkChat/SparkChat
+Data/UI/_Elements/Game/SparkCraftWindow/SparkCraftWindow
+Data/UI/_Elements/Game/SparkFindWindow/SparkFindWindow
+Data/UI/_Elements/Game/SparkGmWindow/SparkGmWindow
+Data/UI/_Elements/Game/SparkHennaWindow/SparkHennaWindow
+Data/UI/_Elements/Game/SparkMapaWindow/SparkMapaWindow
+Data/UI/_Elements/Game/SparkQuestWindow/SparkQuestWindow
+Data/UI/_Elements/Game/SparkRefinoWindow/SparkRefinoWindow
+Data/UI/_Elements/Login/CharCreationWindow/CharCreationWindow
+Data/UI/_Elements/Login/CharSelectWindow/CharSelectWindow
+Data/UI/_Elements/Login/LicenseWindow/LicenseWindow
+Data/UI/_Elements/Login/LoginWindow/LoginWindow
+Data/UI/_Elements/Login/ServerListWindow/ServerElement
+Data/UI/_Elements/Login/ServerListWindow/ServerListWindow
+Disconnected from LoginServer.
+Easy Login
+Easy Login: logins salvos ilegiveis (
+Edit login
+Effects/SparkDesintegra/SparkBrasa
+Effects/SparkDesintegra/SparkCinza
+Effects/SparkDesintegra/SparkDesintegra
+Effects/SparkDesintegra/SparkDesintegraPanner
+Effects/SparkFogoProximo
+Enter chat on: press Enter to type and single keys are shortcuts. Off: just type to chat - letters, numbers and symbols become text; F1-F12, Alt/Ctrl shortcuts, Tab, Space and Esc still work.
+Error parsing -Infinity value.
+Error parsing Infinity value.
+Expected schema root. Make sure the root element is <schema> and the namespace is 'http://www.w3.org/2001/XMLSchema' for an XSD schema or 'urn:schemas-microsoft-com:xml-data' for an XDR schema.
+Expecting {0} value(s) for the key being indexed, but received {1} value(s).
+Failed to enable constraints. One or more rows contain values violating non-null, unique, or foreign-key constraints.
+Failed to parse server key/certificate
+Fill in Description, Login and Password.
+ForeignKeyConstraint {0} requires the child key values ({1}) to exist in the parent table.
+Gameserver login failed reason: 
+Global keyword {0} doesn't exist.
+HDR_COLORSPACE_CONVERSION
+HDR_COLORSPACE_CONVERSION_AND_ENCODING
+Hash key cannot be changed after the first write to the stream.
+If ref is present, all of <complexType>, <simpleType>, <key>, <keyref>, <unique>, nillable, default, fixed, form, block, and type must be absent.
+Improperly protected machine's key pairs in '{0}'.
+Improperly protected user's key pairs in '{0}'.
+Incomplete private key - missing CRT.
+Infinity
+Infinity Axe
+Infinity Blade
+Infinity Bow
+Infinity Cleaver
+Infinity Crusher
+Infinity Fang
+Infinity Rod
+Infinity Scepter
+Infinity Spear
+Infinity Stinger
+Infinity Wing
+Infinity Wing Esquerda
+InfinityWingEsquerda
+Internal Text Error : The element is marked as being in the permanent cache without having the cache assigned
+Internal Text Error : changing the TextCore caching node while the other is assigned. It might indicate the previous is still in cache
+Internal Text Error: Transitioning from one cache structure to another directly. This might cause a memory leak
+Internal Text Error: element is marked in permanent cache but the cache doesn't exist
+Invalid BinaryXml protocol version.
+Invalid PropertyPath: No matching end quote for key.
+Invalid Relation definition: different length keys.
+Invalid keyword for font 
+Invalid keyword for image source 
+Keyref '{0}' has different cardinality as the referred key or unique element.
+Last login: 
+Loading sample data for bank: {0}
+Local keyword {0} doesn't exist in the compute shader.
+Local keyword {0} doesn't exist in the shader.
+Login
+Login bloqueado: motivo {0}, {1} s
+Login failed reason: 
+LoginButton
+Missing D parameter for the private key.
+Missing both public (Y) and private (X) keys.
+Missing key algorithm parameters.
+Missing private key
+Missing private key to decrypt value.
+Missing some CRT parameters for the private key.
+More than one key matching '{0}' was found in the ExpandoObject.
+Mutating a key collection derived from a dictionary is not allowed.
+New login
+No asymmetric key object has been associated with this formatter object.
+No public key available.
+NpcName_Classic-eu.txt
+NpcName_Interlude.txt
+Npcgrp_Classic.txt
+Npcgrp_Interlude.txt
+Null key
+One of the serialized keys is null.
+Parent table key is missing in relation '{0}'.
+Prefix "xml" is reserved for use by XML and can be mapped only to namespace name "http://www.w3.org/XML/1998/namespace".
+Press a key...
+Private/public key mismatch
+ProBuilderLog.txt
+Protocol family not supported
+Protocol not supported
+Protocol option not supported
+Protocol wrong type for socket
+RSAES_OAEP
+Raca {0} sem container de Pawn - rode SPARK/Racas/Montar.
+Registry key has subkeys and recursive removes are not supported by this method.
+Registry key names should not be greater than 255 characters.
+Relation {0} cannot be merged, because keys have mismatch columns.
+ReloginButton
+Reset every key to the default?
+SPARK
+SPARK OS 
+SPARK rede 
+SPARK/
+SPARK/Cachoeira
+SPARK/CachoeiraAgua
+SPARK/Panner
+SPARK/Reflexo
+SPARK/UE2Particula
+SPK1
+Save your logins here and enter with one click.
+Shaders/SparkAgua/SparkAguaOnda
+Shaders/SparkAgua/SparkAguaOndaCamada
+Shaders/SparkAgua/SparkAguaRespingo
+Shaders/SparkClima/SparkClimaAgua
+Shaders/SparkClima/SparkClimaCeu
+Shaders/SparkClima/SparkClimaChao
+Shaders/SparkClima/SparkClimaPegadas
+Shaders/SparkClima/SparkClimaQueda
+Shaders/SparkClima/SparkClimaRespingo
+Shaders/SparkFurtivo
+Shaders/SparkMultidao/SparkMultidaoLit
+Size of the buff and debuff icons, 12 per row at any size. Min. is the Interlude size. Default: Max.
+Spark Find
+SparkAguaInterativa
+SparkAguaOnda
+SparkAguaOndaCamada
+SparkAguaRespingo
+SparkAjusteEfeitos
+SparkAjusteEscala
+SparkAnelDeTime
+SparkAnelSimples
+SparkAnimacaoLOD
+SparkApiGrafica
+SparkArte: FALTOU 
+SparkArteIndice: versao 
+SparkAuraEnchant
+SparkAuraHeroi
+SparkBrilhoFade
+SparkBrilhoMaterial
+SparkCachoeiraSkyrim_
+SparkCalor
+SparkCaverna
+SparkCercaGrade
+SparkCercaPoste
+SparkChamaEnchant
+SparkChat
+SparkCifraStream: Seek antes do inicio
+SparkCifraStream: nao e um pacote de arte (
+SparkClima
+SparkClimaAgua
+SparkClimaCeu
+SparkClimaChao
+SparkClimaChuva
+SparkClimaNeve
+SparkClimaPegadas
+SparkClimaPegadasA
+SparkClimaPegadasB
+SparkClimaRespingo
+SparkClimaTeto
+SparkClima_
+SparkCliqueMontaria
+SparkCripto: formato invalido (sem carimbo SPK1)
+SparkCristalIcon
+SparkCubic
+SparkCubicBrilho
+SparkCubicos
+SparkDesintegra
+SparkDesintegra casca
+SparkDetalhePersonagem
+SparkDiagCamera
+SparkDiagVariantes
+SparkDuelo
+SparkEasyLogin
+SparkEmissoresDoMapa
+SparkEnchant
+SparkEnchantAugmentWp
+SparkEnchantInfinityWp
+SparkEnchantInfinityWp > 
+SparkEnchantNasArmas
+SparkEnchantRetail+{0}/{1}
+SparkEnchantRetailChamas
+SparkEnchantTubo
+SparkEnchantWp
+SparkEnchantWpExc
+SparkEstresse.Efeitos
+SparkEstresse.TocaPapel
+SparkEstresse.World
+SparkFindIcon
+SparkFogoPool
+SparkFontesFallback: Data/UI/_Elements/Font_StatusNumber nao encontrado - sem fonte de reserva
+SparkFontesFallback: sem no Windows -> 
+SparkForjaCamada
+SparkFps
+SparkFumacaAditiva
+SparkGeoView
+SparkGeoView Malha
+SparkHeroiAnel
+SparkJanelas
+SparkLuzesDoMapa
+SparkMacros
+SparkMalhaUnica
+SparkMalhaUnica sombra
+SparkMalhaUnicaGerente
+SparkMapaWindow: planta nao encontrada: Data/UI/Assets/Mapa/interno/
+SparkMapaWindow: sem Data/Npc/spark_raidboss.json
+SparkMapaWindow: sem Data/UI/Assets/Mapa/spark_lojas.json/_icones.png - mapa sem as lojas das cidades
+SparkMapaWindow: spark_lojas.json: 
+SparkMapaWindow: spark_raidboss.json: 
+SparkMedida
+SparkMedidorRede
+SparkMontaria
+SparkMontariaCofre
+SparkMontaria_
+SparkMoveisDoMapa
+SparkMovimentoRemoto
+SparkMultidao
+SparkMultidao album 
+SparkMultidao lote {0}
+SparkMultidao poses
+SparkMultidao.Desenha
+SparkMultidao.Entra
+SparkMultidao.Politica
+SparkMultidao.Pose
+SparkMultidao.Sobe
+SparkMusica
+SparkNado
+SparkNadoVolume
+SparkNeblina
+SparkNeblinaLocal
+SparkObservadorPivo
+SparkOficinaComumIcon
+SparkOndaA
+SparkOndaB
+SparkOpcoes
+SparkOpcoesLogin
+SparkOpcoesVolume
+SparkPesca
+SparkPescaJanela
+SparkPiscaHp: textura nao achada 
+SparkPortas
+SparkPreviaRegenFumaca
+SparkRadar
+SparkRadarWindow: planta nao encontrada: Data/UI/Assets/Mapa/interno/
+SparkRadar_icn_npc
+SparkRadar_icn_pc
+SparkRastreio
+SparkRastreioLinha
+SparkRedes
+SparkResolucao
+SparkRespingo
+SparkRespingos
+SparkServidor: 
+SparkSons
+SparkTeclasCaptura
+SparkTerritorio
+SparkTerritorio Malha
+SparkTextoDano
+SparkTextoDanoPedido
+SparkTutorial
+SparkTutorialBtn
+Sparks
+Specified key is a known semi-weak key for '{0}' and cannot be used.
+Specified key is a known weak key for '{0}' and cannot be used.
+Specified key is not a valid size for this algorithm.
+Successfully imported {0} SysString_Classic(s)
+Switching Protocols
+Syntax error in Lookup expression: Expecting keyword 'Parent' followed by a single column argument with possible relation qualifier: Parent[(<relation_name>)].<column_name>.
+Syntax error: The IN keyword must be followed by a non-empty list of expressions separated by commas, and also must be enclosed in parentheses.
+Syntax error: The items following the IN keyword must be separated by commas and be enclosed in parentheses.
+TextHandle : TextCore Permananent cache mismatch. isCache {0} but {1}
+That key types text in the chat. Use another key, or Alt/Ctrl + key.
+The 'xmlns' attribute is bound to the reserved namespace 'http://www.w3.org/2000/xmlns/'.
+The '{0}' Keyref can refer to key or unique only.
+The Keyref '{0}' cannot find the referred key or unique in scope.
+The certificate key algorithm is not supported.
+The given key '{0}' was not present in the dictionary.
+The given key was not present in the dictionary.
+The identity constraint '{0}' validation has failed. Either a key is missing or the existing key has an empty node.
+The key already existed in the dictionary.
+The key sequence '{0}' in '{1}' Keyref fails to refer to some key.
+The key was of an incorrect type for this dictionary.
+The keys and values arrays have different sizes.
+The keys for this dictionary are missing.
+The login server closed the connection without answering. Please try again in a moment.
+The prefix 'xml' is bound to the namespace name 'http://www.w3.org/XML/1998/namespace'. Other prefixes must not be bound to this namespace name, and it must not be declared as the default namespace.
+The prefix 'xmlns' is bound to the namespace name 'http://www.w3.org/2000/xmlns/'. It must not be declared. Other prefixes must not be bound to this namespace name, and it must not be declared as the default namespace.
+The public key is not valid.
+The root element of a W3C XML Schema should be <schema> and its namespace should be 'http://www.w3.org/2001/XMLSchema'.
+The server mode SSL must use a certificate with the associated private key.
+The source argument contains duplicate keys.
+The specified bank has already been loaded.
+The specified key '{0}' does not exist in the ExpandoObject.
+The specified registry key does not exist.
+The target namespace of an attribute declaration, whether local or global, must not match http://www.w3.org/2001/XMLSchema-instance.
+The underlying connection was closed: The server committed a protocol violation
+The {0} key is reserved by the system
+There is a duplicate key sequence '{0}' for the '{1}' key or unique identity constraint.
+This is a known weak key.
+This is a known weak, or semi-weak, key.
+This protocol version is not supported.
+Too many login attempts.
+Trying to use a keyword that comes from a different shader.
+Turkish (Turkey)
+Type '{0}' is not allowed here. See https://go.microsoft.com/fwlink/?linkid=2132227 for more details.
+Unexpected opcode in regular expression generation: {0}.
+Unknown private key format
+When the ref attribute is present, the type attribute and complexType, simpleType, key, keyref, and unique elements cannot be present.
+[FMOD] Could not load bank '{0}' : {1}
+[FMOD] Could not load bank '{0}' : {1} : {2}
+[FMOD] Unable to load {0} - bank already loaded. This may occur when attempting to load another localized bank before the first is unloaded, or if a bank has been loaded via the API.
+[SPARK lento] evento {0}.{1}: {2:F1} ms
+[SPARK lento] quadro de {0:F0} ms (evento mais lento do quadro anterior: {1} {2:F1} ms)
+[SPARK-ANDAR-NO-LUGAR] {0} (npc {1}) anda={2} dir={3} 
+[SPARK-PICKUP] {0} pegou: {1} mult={2:0.00} ritmo={3:0.00} 
+[SPARK-PICKUP] {0}: agachar CORTADO aos {1:0.00} por {2} 
+[SPARK-VELOCIDADE] 
+[SPARK] 
+[SPARK] Acao do jogador descartada: personagem ainda nao existe (teleporte carregando)
+[SPARK] Boneco abaixo do chao em {0}: subiu para {1}
+[SPARK] Devil's Isle: 
+[SPARK] Dynamic resolution: native scaling had no effect on 
+[SPARK] Dynamic resolution: native scaling not accepted by 
+[SPARK] EfeitosAcessorio_Classic.json: 
+[SPARK] Estresse: 
+[SPARK] Existentes_Infinity.json nao encontrado - a busca do Alt+G mostra tudo
+[SPARK] Existentes_Infinity.json: 
+[SPARK] Graphics API check: 
+[SPARK] Graphics API saved: 
+[SPARK] Graphics API: could not save the choice: 
+[SPARK] Graphics API: game executable not found, restart the game manually.
+[SPARK] Graphics API: restart failed: 
+[SPARK] Henna_Infinity.json: 
+[SPARK] ItemDescricao_Interlude.txt nao encontrado - descricao de item so do Classic
+[SPARK] ItemIcone_Interlude.txt nao encontrado - icone de item so do Classic
+[SPARK] LoadingCamera repetida (restart) descartada
+[SPARK] MobSkillAnim_Interlude.txt nao encontrado - skill de NPC pela regra do tipo
+[SPARK] MobSkillAnim_Interlude.txt: 
+[SPARK] PartyWindow.uss nao carregou
+[SPARK] PartyWindow.uss nao carregou (janela do pet)
+[SPARK] QuestName_Interlude.json: 
+[SPARK] Receitas_Infinity.json: 
+[SPARK] Regiao: carregando 
+[SPARK] Regiao: cena 
+[SPARK] Regiao: descarregando 
+[SPARK] Regiao: personagem entrou no tile {0}_{1}
+[SPARK] SkillConsumo_Servidor.txt nao encontrado - dica de skill com o consumo do Classic
+[SPARK] SkillConsumo_Servidor.txt: 
+[SPARK] SkillEfeito_Interlude.txt nao encontrado - efeito de skill so do Classic
+[SPARK] SkillEncanto_Interlude.txt nao encontrado - skill encantada sem o nome do enchant
+[SPARK] SkillEncanto_Interlude.txt: 
+[SPARK] SkillName do Interlude: {0} nivel(is) com texto, {1} nivel(is) encantado(s)
+[SPARK] SkillName_Interlude.txt nao encontrado - dica de skill so com o texto do Classic
+[SPARK] SomArmadura_Interlude.txt nao encontrado - som do golpe na armadura so do Classic
+[SPARK] SparkArte: indice ilegivel - a arte vai faltar: 
+[SPARK] SparkArte: pacote 
+[SPARK] SparkDesintegra: shader nao encontrado ou sem suporte - personagens aparecem/somem seco.
+[SPARK] SparkEstresse: bot: 
+[SPARK] SparkEstresse: efeitos: 
+[SPARK] SparkEstresse: gravar: 
+[SPARK] SparkEstresse: opcoes de video: 
+[SPARK] SparkEstresse: rede: 
+[SPARK] SparkEstresse: tabela 
+[SPARK] SparkEstresse: tile 24_19: 
+[SPARK] SparkEstresse: troca: 
+[SPARK] SparkFurtivo: shader nao encontrado ou sem suporte - furtivo fica opaco.
+[SPARK] SparkMalhaUnica: 
+[SPARK] SparkMultidao: 
+[SPARK] SpawnItem atrasado de item ja pego #{0} ignorado
+[SPARK] Teste Circulo: nenhuma agua na frente da camera (aponte para a agua e ligue de novo)
+[SPARK] Teste: nenhuma agua na frente da camera
+[SPARK] Teste: respingo em 
+[SPARK] agua sem chao embaixo, fica com colisao: 
+[SPARK] anel de time nao encontrado em Resources/Data/Effects/spark_anel_time/spark_anel_time
+[SPARK] anel de time: circulo da raiz nao encontrado, sem anel simples
+[SPARK] arma amaldicoada: sem o efeito 
+[SPARK] augment retail: sem Data/Effects/enchant_retail/variacao
+[SPARK] augment retail: sem o efeito 
+[SPARK] board: 
+[SPARK] board: link fora da lista branca: 
+[SPARK] bots de arma: 
+[SPARK] brilho do shot sem arma visivel ({0}, {1}, {2})
+[SPARK] brilho do shot sem prefab: 
+[SPARK] cachoeira do Skyrim: efeito nao achado: 
+[SPARK] cachoeira do Skyrim: modelo nao achado: Data/SkyrimWaterfalls/Models/
+[SPARK] custo do item {0} no multisell: {1}
+[SPARK] diag: 
+[SPARK] diag: Shader.Find("
+[SPARK] diag: carregando 
+[SPARK] diag: d_fog_01 = 
+[SPARK] diag: fim
+[SPARK] diag: na memoria: 
+[SPARK] diag: shaders na memoria: 
+[SPARK] diag: {0} terreno={1} centro={2}
+[SPARK] dica do item {0} na grade de troca: {1}
+[SPARK] dica do item {0} no multisell: {1}
+[SPARK] efeito ainda nao montado: 
+[SPARK] efeito do mapa nao montado: 
+[SPARK] enchant retail: sem o efeito 
+[SPARK] enchant retail: shader {0}, faces {1}/{2}, chamas {3}
+[SPARK] fogo do lobby nao encontrado (Data/StaticMeshes/FX_E_S/Default_Flame01); usando o efeito do Vefects
+[SPARK] fogo nao encontrado em Resources/Effects/SparkFogoProximo; as chamas ficam como estao
+[SPARK] item no chao {0} #{1} em {2} (jogador em {3}), modelo {4}, caixa {5}
+[SPARK] item {0} no multisell: {1}
+[SPARK] janela de arquivo do Windows falhou: 
+[SPARK] login repetido ignorado (
+[SPARK] movimento 
+[SPARK] movimento (transform) 
+[SPARK] musica nao encontrada: 
+[SPARK] musica: Resources/Data/Music/_musica.txt nao encontrado
+[SPARK] neblina local: falta o shader de particula do URP ou a textura d_fog_01
+[SPARK] ondas na agua: 
+[SPARK] ondas na agua: shader faltando ou sem suporte nesta placa
+[SPARK] pacote de clan 0x{0:x2} com erro: {1}
+[SPARK] peca movel nao montada (SPARK/Moveis/Montar): 
+[SPARK] portas: sem 
+[SPARK] property_list do npcgrp: 
+[SPARK] sem Data/Animations/_passadas: corrida e andar no numero do prefab
+[SPARK] sem Data/Animations/spark_sons_golpe (conversao/animacao_skill/sons_dos_golpes.py): golpes de skill sem os sons do L2
+[SPARK] sem Data/Npc/spark_efeitos_anim (conversao/efeitos_npc_interlude.py): sem efeitos das animacoes do L2
+[SPARK] sem Data/Npc/spark_sons_monstro (conversao/sons_de_monstro.py): monstros sem som do L2
+[SPARK] sem Data/Sounds/_passos: peca com som toca o padrao de ator do L2
+[SPARK] sem Data/Zones/spark_agua.json - nado desligado
+[SPARK] sem Shaders/SparkAgua/SparkAguaRespingo - respingo desligado
+[SPARK] sem a animacao Rebirth de {0} - levanta com a morte ao contrario
+[SPARK] sem a animacao de montaria 
+[SPARK] sem a animacao de nado de 
+[SPARK] sem as animacoes extras (pesca/cadeira) de {0}
+[SPARK] sem o efeito 
+[SPARK] sem o efeito {0} da skill {1}
+[SPARK] sem o prefab 
+[SPARK] skill {0} nivel {1} fora da tabela do cliente
+[SPARK] som abafado no FMOD: 
+[SPARK] som nao exportado: 
+[SPARK] spark_agua.json: 
+[SPARK] spark_ajuste_escala.json: 
+[SPARK] spark_brilho_fade.json: 
+[SPARK] spark_brilho_material.json: 
+[SPARK] spark_cidades.json: 
+[SPARK] spark_clique_npc.json: 
+[SPARK] spark_emissores_mapa.json: 
+[SPARK] spark_escala_arma.json: 
+[SPARK] spark_escala_npc.json: 
+[SPARK] spark_luzes_mapa.json: 
+[SPARK] spark_montaria.json: 
+[SPARK] spark_moveis_mapa.json: 
+[SPARK] spark_neblina.json: 
+[SPARK] spark_npc_nao_selecionavel.json: 
+[SPARK] spark_npc_nao_vira.json: 
+[SPARK] spark_npc_sem_malha.json: 
+[SPARK] spark_raidboss.json: 
+[SPARK] spark_tronos.json: 
+[SPARK] teclas 
+[SPARK] teclas antigas: 
+[SPARK] toggles: {0} efeitos, ligados [{1}], {2} botao(oes) aceso(s)
+[SparkDetalhePersonagem] could not read 
+[SparkDetalhePersonagem] could not simplify 
+] SparkAnimacaoLOD: 
+] [LoginServer] Received packet:
+] [LoginServer] Sending packet:
+_SCREEN_SPACE_IRRADIANCE
+_SCREEN_SPACE_OCCLUSION
+_SURFACE_TYPE_TRANSPARENT
+_SparkBase
+_SparkBind
+_SparkClimaCentro
+_SparkClimaCeu
+_SparkClimaChuva
+_SparkClimaCobertura
+_SparkClimaLuz
+_SparkClimaMolhado
+_SparkClimaNeve
+_SparkClimaNuvens
+_SparkClimaOndas
+_SparkClimaOndasLut
+_SparkClimaPegadas
+_SparkClimaPegadasArea
+_SparkClimaRaio
+_SparkClimaRaioVisivel
+_SparkClimaRelampago
+_SparkClimaTempo
+_SparkClimaTeto
+_SparkClimaTetoArea
+_SparkClimaTetoLonge
+_SparkClimaTetoLongeArea
+_SparkClimaVento
+_SparkEmissao
+_SparkOndaAltura
+_SparkOndaArea
+_SparkOndaLiga
+_SparkOpacidade
+_SparkOssos
+_SparkPecas
+_SparkPersonagens
+_SparkPinturas
+_SparkRemap
+_SparkVert
+_keyPairArray
+_keyPairContainer
+_keyPairExported
+cache
+cache {0}  montadas {1} ({2:0} ms)  recusadas {3}
+cannot export private key
+childkey
+diag_efeitos.txt
+discord.com
+discord.gg
+efeitos vivos: terceiros {0}  importantes {1}  reserva {2} | instanciados {3}  
+estresse_resultado.txt
+file://
+file:///android_asset
+geodata
+grafico.txt
+grafico_teste.txt
+http
+http://
+http://james.newtonking.com/projects/json
+http://microsoft.com/wsdl/types/
+http://schemas.microsoft.com/clr/assem/
+http://schemas.microsoft.com/clr/ns/
+http://schemas.microsoft.com/clr/nsassem/
+http://schemas.microsoft.com/ws/2008/06/identity/claims/role
+http://schemas.xmlsoap.org/soap/encoding/
+http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
+http://schemas.xmlsoap.org/wsdl/
+http://www.w3.org/
+http://www.w3.org/1999/XMLSchema-instance
+http://www.w3.org/2000/09/xmldsig#dsa-sha1
+http://www.w3.org/2000/09/xmldsig#hmac-sha1
+http://www.w3.org/2000/09/xmldsig#rsa-sha1
+http://www.w3.org/2000/09/xmldsig#sha1
+http://www.w3.org/2000/10/XMLSchema-instance
+http://www.w3.org/2000/xmlns/
+http://www.w3.org/2001/04/xmldsig-more#hmac-ripemd160
+http://www.w3.org/2001/04/xmldsig-more#hmac-sha256
+http://www.w3.org/2001/04/xmldsig-more#hmac-sha384
+http://www.w3.org/2001/04/xmldsig-more#hmac-sha512
+http://www.w3.org/2001/04/xmldsig-more#rsa-sha256
+http://www.w3.org/2001/04/xmldsig-more#rsa-sha384
+http://www.w3.org/2001/04/xmldsig-more#rsa-sha512
+http://www.w3.org/2001/04/xmldsig-more#sha384
+http://www.w3.org/2001/04/xmlenc#sha256
+http://www.w3.org/2001/04/xmlenc#sha512
+http://www.w3.org/2001/XMLSchema
+http://www.w3.org/2001/XMLSchema#string
+http://www.w3.org/2001/XMLSchema-instance
+http://www.w3.org/2003/11/xpath-datatypes
+http://www.w3.org/XML/1998/namespace
+https
+https://
+https://discord.gg/v7xnsd9dXW
+https://docs.unity3d.com//{0}.{1}/Documentation/ScriptReference/Rendering.RayTracingShader.html
+https://docs.unity3d.com/Manual/{0}.html{1}
+https://docs.unity3d.com/Packages/{0}@{1}/manual/
+https://docs.unity3d.com/Packages/{0}@{1}/manual/{2}.html{3}
+https://www.facebook.com/l2jspark/
+https://www.youtube.com/@projectsparkl2
+importante
+indice.spi
+invalid private key format
+key
+key = 
+key is null
+key was invalid
+keySelector
+keyStorageFlags
+keyValue
+keyValuePair
+keyboard-type
+keyboardType
+keypairs
+keyref
+keys
+keyword
+l2spark.vercel.app
+m_ProbeVolumeDisableStreamingAssets
+must not be NaN or Infinity
+no private key to export
+not enough key parameters
+opcode:
+parentkey
+porta
+private key
+public key
+public key encrypted
+rede_discord
+sem Data/Zones/spark_cidades.json - agua das regioes fica com o material do mar
+servidor.txt
+shader nao encontrado em Resources/Shaders/SparkMultidao/SparkMultidaoLit
+sortkey1
+sortkey2
+sys_friend_login
+system.security.cryptography.keyedhashalgorithm
+tripledeskeywrap
+value.x and value.y must not be NaN or Infinity
+view-data-key
+{0}: entidade {1} desconhecida do cliente (outros ids do mesmo pacote nao aparecem).
+{0}://{1}{2}

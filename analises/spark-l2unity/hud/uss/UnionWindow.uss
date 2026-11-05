@@ -1,0 +1,67 @@
+/* UnionWindow  (10 regras) */
+.union-caixa {
+    position: absolute;
+    unity-background-image-tint-color: rgba(255, 255, 255, 1.00);
+    background-image: resource("Data/UI/Assets/Party/GroupBox_DF");
+    unity-slice-left: 3;
+    unity-slice-right: 3;
+    unity-slice-top: 3;
+    unity-slice-bottom: 3;
+}
+.union-texto {
+    position: absolute;
+    unity-font: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    color: rgba(176, 155, 121, 1.00);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 1.00);
+}
+.union-valor {
+    color: rgba(230, 225, 210, 1.00);
+}
+.union-lista-cabeca {
+    position: absolute;
+    left: 2px;
+    top: 29px;
+    width: 218px;
+    height: 19px;
+    background-image: resource("Data/UI/Assets/Party/ListCTRL_DF_Decoration");
+    unity-slice-left: 4;
+    unity-slice-right: 4;
+    unity-slice-top: 4;
+    unity-slice-bottom: 4;
+    flex-direction: row;
+}
+.union-lista {
+    position: absolute;
+    left: 3px;
+    top: 49px;
+    width: 216px;
+    height: 124px;
+    overflow: hidden;
+}
+.union-linha {
+    flex-direction: row;
+    height: 18px;
+    align-items: center;
+    padding-left: 4px;
+}
+.union-linha:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.union-linha.escolhida {
+    background-color: rgba(200, 170, 90, 0.25);
+}
+.union-coluna {
+    unity-font: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    color: rgba(215, 210, 195, 1.00);
+}
+.union-botao {
+    position: absolute;
+    width: 72px;
+    height: 25px;
+}

@@ -1,0 +1,22 @@
+Window ChatWnd 348x187 @BOTTOM_LEFT->pai.BOTTOM_LEFT(0,0) unk102=ChatWnd unk103=GamingState unk107=0 unk108=1 unk109=0 unk112=1 unk114=0 unk117=3 unk118=0 unk119=0 unk120=24.0 unk121=10.0 unk122=300 unk126=0 unk127=-31 unk128=0 unk130=0 unk131=0 unk132=10891 unk133=0 unk134=0 unk135=0 unk139=Game size=[2]
+  Texture ChatWndHeadTex 348x18 @TOP_LEFT->pai.TOP_LEFT(0,0) file=L2UI_CH3.ChatWnd.Chatting_Back2 type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture ChatWndBodyTex 100%+0 x 100%-82 @TOP_LEFT->pai.TOP_LEFT(0,18) file=L2UI_CH3.ChatWnd.Chatting_Back3 type=Tile layer=None u=0.0 v=0.0 uSize=348.0 vSize=15.0 size_percent=[2] size=[2]
+  Texture ChatWndBottomTex 348x18 @BOTTOM_LEFT->pai.BOTTOM_LEFT(0,-46) file=L2UI_CH3.ChatWnd.Chatting_Back4 type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture ChatWndBottomTex1 348x46 @BOTTOM_LEFT->pai.BOTTOM_LEFT(0,0) file=L2UI_CH3.ChatWnd.Chatting_Back1 type=Stretch layer=None u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Texture LanguageTexture 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(24,-5) file=L2UI_CH3.ChatWnd.Chatting_IMEkr type=Stretch layer=Normal u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Button ChatFilterBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(5,-51) popupType=Text popupValue=897 normalTex=L2UI_CH3.ChatWnd.Chatting_Option1 pushedTex=L2UI_CH3.ChatWnd.Chatting_Option2 size=[2]
+  Button PartyMatchingBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(5,-5) popupType=Text popupValue=389 normalTex=L2UI_CH3.ChatWnd.PartyMatchButton pushedTex=L2UI_CH3.ChatWnd.PartyMatchButton_Down size=[2]
+  Button MessengerBtn 15x15 @BOTTOM_LEFT->pai.BOTTOM_LEFT(5,-24) popupType=Text popupValue=996 normalTex=L2UI_CH3.ChatWnd.Chatting_Msn4 pushedTex=L2UI_CH3.ChatWnd.Chatting_Msn4_down size=[2]
+  EditBox ChatEditBox 303x16 @BOTTOM_LEFT->pai.BOTTOM_LEFT(39,-6) type=CHAT maxLength=100 chatMarkOn=false size=[2]
+  ChatWindow NormalChat 100%-5 x 100%-46 @TOP_LEFT->pai.TOP_LEFT(0,0) lineGap=4 size_percent=[2] size=[2]
+  ChatWindow PartyChat 100%-5 x 100%-46 @TOP_LEFT->pai.TOP_LEFT(0,0) lineGap=4 size_percent=[2] size=[2]
+  ChatWindow ClanChat 100%-5 x 100%-46 @TOP_LEFT->pai.TOP_LEFT(0,0) lineGap=4 size_percent=[2] size=[2]
+  ChatWindow TradeChat 100%-5 x 100%-46 @TOP_LEFT->pai.TOP_LEFT(0,0) lineGap=4 size_percent=[2] size=[2]
+  ChatWindow AllyChat 100%-5 x 100%-46 @TOP_LEFT->pai.TOP_LEFT(0,0) lineGap=4 size_percent=[2] size=[2]
+  Texture TabBackgroundTexture 320x23 @BOTTOM_LEFT->pai.BOTTOM_LEFT(23,-23) file=L2UI_CH3.Minimap.MapWnd_back_max type=Normal layer=Background u=0.0 v=0.0 uSize=0.0 vSize=0.0 size=[2]
+  Tab ChatTabCtrl 320x23 @BOTTOM_LEFT->pai.BOTTOM_LEFT(23,-23) size=[2] tabs=[5]
+    - tabs: buttonName=144 target=NormalChat width=64 height=23 normalTex=L2UI_CH3.ChatWnd.Chatting_Tab2 pushedTex=L2UI_CH3.ChatWnd.Chatting_Tab1 movable=false gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=355 target=TradeChat width=64 height=23 normalTex=L2UI_CH3.ChatWnd.Chatting_Tab2 pushedTex=L2UI_CH3.ChatWnd.Chatting_Tab1 movable=true gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=188 target=PartyChat width=64 height=23 normalTex=L2UI_CH3.ChatWnd.Chatting_Tab2 pushedTex=L2UI_CH3.ChatWnd.Chatting_Tab1 movable=true gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=128 target=ClanChat width=64 height=23 normalTex=L2UI_CH3.ChatWnd.Chatting_Tab2 pushedTex=L2UI_CH3.ChatWnd.Chatting_Tab1 movable=true gap=0 tooltip=-1 noHighlight=-1
+    - tabs: buttonName=559 target=AllyChat width=64 height=23 normalTex=L2UI_CH3.ChatWnd.Chatting_Tab2 pushedTex=L2UI_CH3.ChatWnd.Chatting_Tab1 movable=true gap=0 tooltip=-1 noHighlight=-1

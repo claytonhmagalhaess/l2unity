@@ -1,0 +1,138 @@
+/* PartyWindow  (21 regras) */
+.party-window {
+    position: absolute;
+    left: 0;
+    top: 84px;
+    flex-direction: row;
+    align-items: stretch;
+}
+.party-aba {
+    width: 16px;
+    flex-direction: column;
+}
+.party-aba-topo, .party-aba-base, .party-aba-meio {
+    height: 8px;
+    flex-shrink: 0;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-aba-tile {
+    flex-grow: 1;
+    min-height: 2px;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-botao {
+    position: absolute;
+    left: 2px;
+    width: 12px;
+}
+.party-lista {
+    flex-direction: column;
+    margin-left: -1px;
+}
+.party-membro {
+    width: 165px;
+    height: 54px;
+    margin-top: -2px;
+}
+.party-cartao {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 165px;
+    height: 54px;
+    unity-slice-left: 3;
+    unity-slice-right: 8;
+    unity-slice-top: 4;
+    unity-slice-bottom: 4;
+}
+.party-nomelinha {
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    height: 14px;
+    right: 25px;
+    flex-direction: row;
+    align-items: center;
+}
+.party-nome {
+    unity-font: resource("Data/UI/Assets/Font/tahoma");
+    font-size: 11px;
+    color: rgba(215, 210, 195, 1.00);
+    margin: 0;
+    padding: 0;
+    unity-text-align: middle-left;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 1.00);
+}
+.party-nobless {
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+    margin-top: -1px;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-coroa {
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    width: 19px;
+    height: 14px;
+}
+.party-div-h {
+    position: absolute;
+    left: 1px;
+    top: 22px;
+    width: 161px;
+    height: 2px;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-div-v {
+    position: absolute;
+    left: 27px;
+    top: 22px;
+    width: 2px;
+    height: 29px;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-classe {
+    position: absolute;
+    left: 3px;
+    top: 24px;
+    width: 24px;
+    height: 24px;
+}
+.party-barra {
+    position: absolute;
+    left: 32px;
+    width: 126px;
+    flex-direction: row;
+}
+.party-barra-camada {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    flex-direction: row;
+    overflow: hidden;
+}
+.party-barra-ponta {
+    width: 4px;
+    flex-shrink: 0;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-barra-meio {
+    flex-grow: 1;
+    unity-background-scale-mode: stretch-to-fill;
+}
+.party-buffs {
+    position: absolute;
+    left: 173px;
+    top: 2px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+}
+.party-buff {
+    width: 16px;
+    height: 16px;
+    margin: 0 1px 1px 0;
+}

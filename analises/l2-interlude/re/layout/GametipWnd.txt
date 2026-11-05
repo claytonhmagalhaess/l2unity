@@ -1,0 +1,7 @@
+Window GametipWnd 100%+0 x 20%+0 @BOTTOM_CENTER->pai.BOTTOM_CENTER(0,0) unk102=GametipWnd unk103=LoadingState unk104=0 unk107=0 unk108=1 unk114=0 unk117=0 unk122=67218880 unk126=0 unk127=67082096 unk128=67082416 unk130=0 unk131=0 unk132=67558168 unk133=67084440 unk134=67084752 unk135=67557848 unk139=Game size_percent=[2] size=[2]
+  TextBox GameTipText1 100%+0 x 100%+0 @CENTER->pai.CENTER(0,-28) textAlign=Center offsetY=0 sysstring=1455 textColor=#ffaaaa00 emoticon=1 size_percent=[2] size=[2]
+  TextBox GameTipText1-1 100%+0 x 100%+0 @CENTER->pai.CENTER(-1,-29) textAlign=Center offsetY=0 sysstring=1455 textColor=#ff000000 emoticon=1 size_percent=[2] size=[2]
+  TextBox GameTipText1-2 100%+0 x 100%+0 @CENTER->pai.CENTER(1,-27) textAlign=Center offsetY=0 sysstring=1455 textColor=#ff000000 emoticon=1 size_percent=[2] size=[2]
+  TextBox GameTipText 100%+0 x 100%+0 @CENTER->pai.CENTER(0,0) textAlign=Center offsetY=0 textColor=#ffc8c8c8 emoticon=1 size_percent=[2] size=[2]
+  TextBox GameTipText-2 100%+0 x 100%+0 @CENTER->pai.CENTER(-1,-1) textAlign=Center offsetY=0 textColor=#ff000000 emoticon=1 size_percent=[2] size=[2]
+  TextBox GameTipText-1 100%+0 x 100%+0 @CENTER->pai.CENTER(1,1) textAlign=Center offsetY=0 textColor=#ff000000 emoticon=1 size_percent=[2] size=[2]

@@ -1,0 +1,49 @@
+<ui:UXML xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" xmlns:ui="UnityEngine.UIElements">
+  <ui:GroupBox name="BoxContent" class="content">
+    <ui:VisualElement name="Background" />
+    <ui:GroupBox name="Box">
+      <ui:GroupBox name="Top">
+        <ui:GroupBox name="Box">
+          <ui:GroupBox name="Grow">
+            <ui:GroupBox name="icon" class="Icon" />
+          </ui:GroupBox>
+          <ui:GroupBox name="Header">
+            <ui:GroupBox name="Name">
+              <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="nameSkill" class="NameSkill" />
+              <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LvlLabel" />
+              <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lvlSkill" class="LvlSkill" />
+            </ui:GroupBox>
+            <ui:GroupBox name="SettingType" class="TypeText">
+              <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="typeSkill" class="TypeSkill" />
+            </ui:GroupBox>
+          </ui:GroupBox>
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="Center">
+        <ui:GroupBox name="centerText" class="CenterText">
+          <ui:GroupBox name="hpText" class="HpText">
+            <ui:Label tabindex="-1" text="HP :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HpName" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="hpLabel" class="HpLabel" />
+          </ui:GroupBox>
+          <ui:GroupBox name="mPText" class="MpText">
+            <ui:Label tabindex="-1" text="MP :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MpName" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="mpLabel" class="MpLabel" />
+          </ui:GroupBox>
+          <ui:GroupBox name="radiusText" class="RadiusText">
+            <ui:Label tabindex="-1" text="Range :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RadiusLabel" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="rangeLabel" class="RangeLabel" />
+          </ui:GroupBox>
+          <ui:GroupBox name="timeText" class="TimeText">
+            <ui:Label tabindex="-1" text="Casting time :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RadiusLabel" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="castlabel" class="Castlabel" />
+          </ui:GroupBox>
+        </ui:GroupBox>
+      </ui:GroupBox>
+      <ui:GroupBox name="Footer">
+        <ui:GroupBox name="descriptedText" class="DescriptedText">
+          <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="descriptedLabel" class="DescriptedLabel" />
+        </ui:GroupBox>
+      </ui:GroupBox>
+    </ui:GroupBox>
+  </ui:GroupBox>
+</ui:UXML>

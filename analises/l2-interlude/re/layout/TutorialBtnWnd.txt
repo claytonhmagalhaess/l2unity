@@ -1,0 +1,2 @@
+Window TutorialBtnWnd 32x32 @BOTTOM_LEFT->ChatWnd.TOP_LEFT(5,-5) unk102=TutorialBtnWnd unk103=GamingState unk107=1 unk108=0 unk114=0 unk117=0 unk122=83512904 unk126=0 unk127=67148336 unk128=0 unk130=0 unk131=0 unk132=0 unk133=0 unk134=83512584 unk135=15136 unk139=Game size=[2]
+  EffectButton btnTutorial 32x32 @TOP_LEFT->pai.TOP_LEFT(0,0) type=0 normalTex=L2UI_ch3.ConsoleBtn.TutorialBtn pushedTex=L2UI_ch3.ConsoleBtn.TutorialBtn_down highlightTex=L2UI_ch3.ConsoleBtn.TutorialBtn_light effectTex1=l2ui_ch3.etc.glowbtn1 effectTex2=l2ui_ch3.etc.glowbtn2 size=[2]
