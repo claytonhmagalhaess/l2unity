@@ -5,6 +5,8 @@
 //    ate soltar a flecha (estados 1, 4 e 5; o 6 nao grava DesiredRotation).
 //  - APawn::GetCurSpeed (0x103138bd): fase de caminhada ate pawn+0x6cc / 30 s; o 0x6cc so vem do chargrp no OnUserInfo e
 //    no OnCharInfo, entao o NPC corre desde o primeiro tick.
+//  - APawn::GetWalkAnimRate (0x1030f65a) / GetRunAnimRate (0x10313a70): XxxAnimRate do .int (1 se 0) * npc_speed do npcgrp
+//    (FL2NpcData+0x58, FL2GameData::NpcDataLoad 0x10307888) para NPC; o atualizador multiplica pelo moveMul (0x6b4).
 using System.Collections.Generic;
 using L2Web.World;
 using NUnit.Framework;
@@ -108,6 +110,23 @@ namespace L2Web.Tests
                 Assert.AreEqual(8f, m.X, 1e-3, kind + ": walk speed na fase de caminhada");
                 Assert.IsFalse(m.RunPhase);
             }
+        }
+
+        [Test]
+        public void MoveAnimRate_NpcSpeedDoNpcgrp()
+        {
+            // Archer of Greed (20660): npc_speed 1.2428571, sem RunAnimRate no .int
+            Assert.AreEqual(1.2428571f, Movement.MoveAnimRate(1, 1.2428571f, 1), 1e-6);
+            Assert.AreEqual(1.2428571f * 1.5f * 1.1f, Movement.MoveAnimRate(1.5f, 1.2428571f, 1.1f), 1e-5);
+            Assert.AreEqual(1f, Movement.MoveAnimRate(0, 0, 0), "ausentes contam como 1");
+            Assert.AreEqual(2f, Movement.MoveAnimRate(1, 1, 2f), "jogador: so o moveMul");
+        }
+
+        [Test]
+        public void NpcSpeed_PadraoUm()
+        {
+            Assert.AreEqual(1f, new Entity(302, "npc").NpcSpeed);
+            Assert.AreEqual(1f, new Entity(303, "player").NpcSpeed);
         }
     }
 }

@@ -237,6 +237,8 @@ namespace L2Web.World
             e.InCombat = n.InCombat;
             e.Running = n.Running;
             if (fresh && n.Rhand != 0) e.Widx = GameData.WeaponIndex(n.Rhand) == 5 ? 5 : 0;
+            // npc_speed do npcgrp (l2anim: "spd"): GetWalkAnimRate/GetRunAnimRate multiplicam a taxa do NPC por ele
+            if (fresh) e.NpcSpeed = (float?)GameData.Npc(n.NpcId)?["spd"] ?? 1;
             if (fresh) e.Dead = n.Dead;
             else e.SetDead(n.Dead);
             e.CollisionHeight = Or(n.CollisionHeight, 23);

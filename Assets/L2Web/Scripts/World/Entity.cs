@@ -59,6 +59,8 @@ namespace L2Web.World
         /// <summary>Em postura de combate (AutoAttackStart / inCombat): parado usa AtkWait em vez de Wait.</summary>
         public bool InCombat;
         public float AtkMul = 1;
+        /// <summary>npc_speed do npcgrp (FL2NpcData+0x58): multiplica a taxa de Walk/Run do NPC; 1 para jogadores.</summary>
+        public float NpcSpeed = 1;
         public float PAtkSpd = 300;
         public float MAtkSpd = 333;
 
@@ -495,7 +497,7 @@ namespace L2Web.World
                 var a = Anim(Motion.RunPhase ? "Run" : "Walk");
                 var cur = Actor.ClipName;
                 var fromWait = waitName != null && cur != null && string.Equals(cur, waitName, StringComparison.OrdinalIgnoreCase);
-                Actor.Play(a.Name, a.Rate * mul, true, fromWait ? Movement.TweenMoveFromWait : Movement.TweenMove);
+                Actor.Play(a.Name, Movement.MoveAnimRate(a.Rate, NpcSpeed, mul), true, fromWait ? Movement.TweenMoveFromWait : Movement.TweenMove);
             }
             else if (Sitting)
             {
