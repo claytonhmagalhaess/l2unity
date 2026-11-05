@@ -36,9 +36,50 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 <!-- uma linha por passo: AAAA-MM-DD — o que foi feito (commit) -->
 
+- 2026-11-05 — Levantamento no Engine.dll (`analises\l2-interlude\re\decomp_all\engine\`) e no aCis, registrado abaixo.
+- 2026-11-05 — Regra de parada, rotação para o alvo, fim do seguimento no Attack, `ServerMoveToPawn`/`PickUp`/`Attack(x,y,z)`, log `[aproximacao]` e `PawnApproachTests` (13) (`7fccefe`).
+- 2026-11-05 — Pedido 0054 (App.cs) para a coordenadora. Pedido de teste para a sessão de testes: compilar, suíte EditMode e roteiro ao vivo antes e depois.
+
 ## Decisões e REA
 
-<!-- o que foi descoberto ou decidido, marcado como Observado / Inferido / A validar, com a evidência (endereço, arquivo:linha) -->
+**Regra de parada no original (Observado).** O caminho é este:
+
+1. O handler do 0x60 (`FUN_104248f0`, formato `dddddd`) chama `UGameEngine::OnMoveToPawn(User*, User* alvo, int distância, FVector origem)` (export `0x1031407e`, `00011.c:22892`).
+2. Se o pawn do alvo não existe, o pacote não faz nada.
+3. Senão, o pawn faz `NActionStop` e depois:
+   - **Outro pawn:** `AdjustPawnLocation(origem)`, depois `AController::AddMoveToward(origem, alvo, distância)` (`0x1030a213`, `00005.c`). Ele grava `pawn+0x6c4 = distância`, monta a correção `0x6d0 = |alvo − origem| / GetCurSpeed(-1)` (sem o moveMul, ao contrário do `AddMoveTo`) e `0x6d4 = (|alvo − pawn| − |alvo − origem|) / 0x6d0`, e chama `MoveToward(alvo, alvo)`.
+   - **Próprio jogador:** zera a trava `GEngine+0x64`, grava `pawn+0x6c4 = distância` e chama `AController::MoveToward(alvo, alvo, 1.0)`, sem ajuste nem correção.
+4. O `AController::MoveToward` (`0x103015a5`, `00000.c`) põe o alvo como `MoveTarget` (`+0x3f0`) e `Focus` (`+0x40c`) e troca o `Destination` pela posição do alvo. O destino do `MoveToLocation` anterior acaba aí.
+5. A cada tick, `AController::execPollMoveToward` (`0x1031064f`, `00009.c`) atualiza o `Destination` para a posição do alvo e chama `APawn::moveToward` (`0x1031050a`). Em `PHYS_Walking` este zera o Z da direção e chama `APawn::ReachedDestination` (`0x10301415`, `00000.c:4864`).
+6. Para alvo pawn, o limiar é `pawn+0x6c4` (a distância do pacote) + `DestinationOffset` (`+0x152c`). O teste é `|Δ|² ≤ limiar²` com Δz = 0, ou seja, **distância horizontal entre os centros ≤ offset**.
+7. Ao chegar, o `moveToward` zera a aceleração e devolve 1. O latente **não** termina: se o alvo se afasta, o pawn volta a andar. Ele termina quando o alvo some (`LAB_10567760`) ou com o `StopMove`.
+
+Mais três pontos sobre essa regra:
+- **(Inferido)** O `DestinationOffset` é 0 no `MoveToward` nativo: só o `execMoveToward` de script e o `execMoveTo` o gravam, e o `execMoveTo` grava 0.
+- **(Observado)** Para item (`APickup`) e outros atores, o `ReachedDestination` usa o próprio raio (até 30) e a soma dos raios. O aCis manda o movimento até item como `MoveToLocation`, então isso não entra.
+- **(Observado)** Os raios não entram no cliente: o aCis já os soma no offset. Em `CreatureAI.maybeMoveToPawn`, `offset += actor.collisionRadius + target.collisionRadius`, e tira 30 se o alvo está andando (mínimo 5). O `moveToPawn` sobe o offset para no mínimo 10.
+
+**Rotação (Observado).** O `MoveToward` põe o alvo no `Focus`, então o pawn olha para o alvo andando e também parado ao lado. O aCis usa isso: `Npc.onAction`, com o jogador já no alcance, manda `MoveToPawn(player, npc, 150)` só para virá-lo, sem `StopMove` depois.
+
+**Quem para o pawn (Observado).** Três pacotes chamam o slot `+0x320` do controller (Inferido: é o `AController::StopMove`, `0x10310140`, que zera `MoveTarget` e `Focus` e põe o `Destination` na posição atual):
+- `UGameEngine::OnStopMove` (`0x1030a53d`);
+- `UGameEngine::OnAttack(User*,User*,…)` (`0x10313d81`): faz antes `AdjustPawnLocation` pela posição do atacante no pacote;
+- `UGameEngine::OnGetItem` (`0x1030d918`): faz `AdjustPawnLocation` e vira para o item.
+
+**O que o aCis manda (Observado, `AbstractAI`/`CreatureAI`).**
+- **Longe:** `startFollow(alvo, offset)`. O `FollowTask` roda a cada 500 ms e manda `MoveToPawn` enquanto o ator não está no raio (teste 3D).
+- **Chegada no servidor:** `onEvtArrived` → `clientStoppedMoving` → `StopMove`, se o offset for > 0. Depois vem o `Attack`.
+- **Alvo andando:** se o alvo está entre offset e offset + 100, `maybeMoveToPawn` só cancela o `FollowTask` e ataca, **sem `StopMove`**.
+- **Já perto no clique:** não manda `MoveToPawn` e ataca direto.
+
+**Onde o porte divergia, e a correção:**
+1. O porte parava exatamente na borda (`d <= Distance`). Com o arredondamento, o d recalculado ficava um fio acima, e o pawn dava um passo de fração de unidade por quadro: andava no lugar ao lado do alvo, com a animação de correr. O original anda o passo inteiro e só testa no começo do tick, então para um pouco *dentro* do raio. O porte agora usa `Movement.PawnReached`, com folga de 1 (`ReachSlack`, o mesmo limiar de encaixe do `PawnMotion.Step`).
+2. O `Attack` não encerrava o seguimento. No caso do alvo andando, em que o aCis ataca sem `StopMove`, o personagem atacava andando até o centro do alvo. Agora `Entity.Attack` chama `StopMoving()`, como o `OnAttack`. Este é o caso mais provável do relato do usuário.
+3. Parado dentro do alcance, o pawn não virava para o alvo. Agora o `Focus` é o alvo do seguimento.
+4. Se o alvo sumia, o pawn voltava ao `Destination` de um `MoveToLocation` antigo. Agora para ali.
+5. O handler do 0x60, no `App.cs`, só grava o `Follow`. Faltam três coisas: ignorar o pacote com o alvo desconhecido, e, para os outros pawns, o `AdjustPawnLocation` e a correção do `AddMoveToward`. O `Attack` também não usa a posição do pacote, e o `GetItem` não para nem vira o personagem. Os métodos estão prontos no `Entity` (`ServerMoveToPawn`, `Attack(alvo, x, y, z)`, `PickUp`), e a troca no `App.cs` está no pedido 0054.
+
+**Fora do escopo (A validar).** Ficaram de fora o `NActionStop` do `OnMoveToPawn` (cancela ataque ou magia em curso, animação) e se o `MagicSkillUse` também para o movimento. São da #0060 (sistema de ataque).
 
 ## Entrega
 
@@ -48,4 +89,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-Nenhum por enquanto.
+- [0054](pedidos/0054-world-app-movetopawn.md): `App.cs` (coordenadora). O 0x60 passa a usar `ServerMoveToPawn`, o `OnAttack` passa a posição do pacote e o 0x0d chama `PickUp`.
