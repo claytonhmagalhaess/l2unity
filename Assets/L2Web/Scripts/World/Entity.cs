@@ -133,6 +133,10 @@ namespace L2Web.World
             if (!Actor.Loaded || Dead) return none;
             posture = null;
             Sitting = false;
+            // UGameEngine::OnAttack (00011.c:17014), so com o atacante vivo: liga os bits 1 (postura de combate, o mesmo do
+            // AutoAttackStart) e 2 do controller +0x41c e chama NActionStop, que interrompe o cast em andamento
+            InCombat = true;
+            casting = null;
             if (target != null) Motion.DesiredYaw = Movement.HeadingOf(target.X - X, target.Y - Y);
             var section = Section;
             var spec = Combat.AttackAnim(Widx, AtkMul, key => GameData.MoveAnim(section, key, Widx).Rate);
@@ -281,16 +285,60 @@ namespace L2Web.World
         /// <summary>Morto e com a animacao Death terminada (o pawn ja esta no DeathWait).</summary>
         public bool InDeathWait => Dead && (posture == null || posture.Anim != "Death" || clock >= posture.Until);
 
+        /// <summary>
+        /// Morto (Die 0x06, ou o campo isDead do CharInfo/NpcInfo). Ao morrer faz o que o UGameEngine::OnDie
+        /// (00006.c:14535) faz antes da Death: limpa o giro (bTurning), StopMove do controller (acaba o MoveToLocation e o
+        /// seguimento), desliga a postura de combate (bit 1 do +0x41c) e NActionStop (interrompe ataque e cast). Sem isso o
+        /// cast ou o golpe continuavam depois da Death e o pawn morto seguia andando ate o destino.
+        /// </summary>
         public void SetDead(bool dead)
         {
             if (dead == Dead) return;
             Dead = dead;
-            if (dead) StartPosture("Death");
+            if (dead)
+            {
+                Turning = 0;
+                Follow = null;
+                Motion.Dest = null;
+                InCombat = false;
+                casting = null;
+                attacking = null;
+                StartPosture("Death");
+            }
             else posture = null;
         }
 
+        /// <summary>
+        /// Revive (0x07), UGameEngine::OnRevive (00003.c:18075): desliga bDead e toca a DeathStandAnimName (Rebirth_* no
+        /// .int) com a NonAttackSpeedRate (moveMul) e tween 0,1. O anim_tables.json nao exporta a DeathStandAnimName: o
+        /// clipe e procurado pelo prefixo "rebirth" (Inferido; os conjuntos de jogador tem Rebirth_&lt;modelo&gt;). Sem o
+        /// clipe (NPCs) o pawn so volta ao Wait.
+        /// </summary>
+        public void Revive()
+        {
+            if (!Dead) return;
+            Dead = false;
+            posture = null;
+            if (!Actor.Loaded) return;
+            var name = GameData.MoveAnim(Section, "DeathStand", Widx).Name;
+            if (!Actor.HasClip(name)) name = Actor.ClipNames.FirstOrDefault(n => n.StartsWith("rebirth", StringComparison.Ordinal));
+            if (name == null) return;
+            var rate = Motion.MoveMul != 0 ? Motion.MoveMul : 1;
+            Actor.Play(name, rate, false, ReviveTween);
+            posture = new Posture { Anim = "DeathStand", Until = clock + Actor.ClipDuration(name) / rate };
+        }
+
+        /// <summary>Tween da DeathStand no OnRevive.</summary>
+        public const float ReviveTween = 0.1f;
+
         void StartPosture(string anim)
         {
+            // sem o modelo nao ha clipe (o resultado ja era posture = null) e as tabelas podem nao estar carregadas
+            if (!Actor.Loaded)
+            {
+                posture = null;
+                return;
+            }
             var a = Anim(anim);
             if (a.Name == null || !Actor.HasClip(a.Name))
             {

@@ -322,6 +322,7 @@ namespace L2Web.World
         {
             foreach (var id in new List<int>(Entities.Keys)) Remove(id);
             Request.Reset();
+            AutoTarget.Reset();
         }
 
         // ------------------------------------------------------------ trava de pedido do clique (spec 05 secao 5.7)
@@ -342,6 +343,59 @@ namespace L2Web.World
 
         /// <summary>Resposta de movimento, ataque ou alvo sobre `objectId`: destrava se for o proprio jogador.</summary>
         public void Answered(int objectId) => Request.Answered(objectId, SelfId);
+
+        // ------------------------------------------------------------ alvo automatico de quem ataca (UGameEngine::OnAttack)
+        /// <summary>AutoTargetPawn e fAutoTargetPendingTime do proprio pawn (World/AutoTarget.cs).</summary>
+        public readonly AutoTarget AutoTarget = new();
+
+        /// <summary>
+        /// Golpe principal do pacote Attack (0x05): true quando o cliente deve mandar Action(attackerId, posicao do proprio
+        /// pawn, Shift) para selecionar quem o atacou (o proprio jogador sem alvo; currentTargetId = alvo atual da interface).
+        /// </summary>
+        public bool AutoTargetOnAttack(int attackerId, int targetId, int currentTargetId)
+        {
+            var a = Get(attackerId);
+            var t = Get(targetId);
+            return AutoTarget.OnAttack(attackerId, targetId, SelfId, a != null, t != null, a != null && a.Dead, currentTargetId);
+        }
+
+        /// <summary>0xa6 MyTargetSelected: destrava o clique e zera o AutoTargetPawn.</summary>
+        public void OnMyTargetSelected()
+        {
+            Request.MyTargetSelected();
+            AutoTarget.Selected();
+        }
+
+        /// <summary>0x29 TargetSelected: destrava se for o proprio jogador e, nesse caso, zera o AutoTargetPawn.</summary>
+        public void OnTargetSelected(int objectId)
+        {
+            Answered(objectId);
+            if (objectId != 0 && objectId == SelfId) AutoTarget.Selected();
+        }
+
+        /// <summary>0x2a TargetUnselected: destrava se for o proprio jogador e, nesse caso, 10 s sem alvo automatico.</summary>
+        public void OnTargetUnselected(int objectId)
+        {
+            Answered(objectId);
+            if (objectId != 0 && objectId == SelfId) AutoTarget.Unselected();
+        }
+
+        // ------------------------------------------------------------ morte e revivida (UGameEngine::OnDie / OnRevive)
+        /// <summary>
+        /// 0x06 Die: UGameEngine::OnDie (00006.c:14535) para o pawn (StopMove, NActionStop: ataque e cast), liga bDead,
+        /// desliga a postura de combate e toca a Death (Entity.SetDead).
+        /// </summary>
+        public void OnDie(int objectId) => Get(objectId)?.SetDead(true);
+
+        /// <summary>
+        /// 0x07 Revive: UGameEngine::OnRevive (00003.c:18075) desliga bDead e toca a DeathStand (Rebirth_*) com
+        /// NonAttackSpeedRate e tween 0,1; para o proprio jogador tambem zera a trava do clique (GEngine+0x64).
+        /// </summary>
+        public void OnRevive(int objectId)
+        {
+            Get(objectId)?.Revive();
+            if (objectId != 0 && objectId == SelfId) Request.Reset();
+        }
 
         /// <summary>Altura do chao (geodata) usada pelo movimento; definida pela cena quando o terreno existe.</summary>
         public Func<float, float, float, float?> Ground = (_, _, _) => null;
@@ -376,6 +430,7 @@ namespace L2Web.World
         public void Update(float dt, Camera camera = null)
         {
             frame++;
+            AutoTarget.Tick(dt);
             if (camera != null && !camera.orthographic)
                 Entity.PxScale = 2 * Mathf.Tan(camera.fieldOfView * Mathf.Deg2Rad / 2) / Mathf.Max(1, camera.pixelHeight);
             Animated = 0;
