@@ -1,4 +1,4 @@
-Suite EditMode em efd8fb5 (sessao de testes, testes0-1\suite-efd8fb5): 925/925, 0 falhas; main e40d43c 912/912.
+Suite EditMode em efd8fb5 (sessao de testes, testes/0060-1/suite-efd8fb5): 925/925, 0 falhas; main e40d43c 912/912.
 Casos de combate:
 Passed  L2Web.Tests.ActionFailTests.ActionFailed_ZeraSemCondicao
 Passed  L2Web.Tests.ActionFailTests.MyTargetSelected_EDeleteObjectDoAlvo
