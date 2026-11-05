@@ -39,6 +39,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — Levantamento no Engine.dll (`analises\l2-interlude\re\decomp_all\engine\`) e no aCis, registrado abaixo.
 - 2026-11-05 — Regra de parada, rotação para o alvo, fim do seguimento no Attack, `ServerMoveToPawn`/`PickUp`/`Attack(x,y,z)`, log `[aproximacao]` e `PawnApproachTests` (13) (`7fccefe`).
 - 2026-11-05 — Pedido 0054 (App.cs) para a coordenadora. Pedido de teste para a sessão de testes: compilar, suíte EditMode e roteiro ao vivo antes e depois.
+- 2026-11-05 — A coordenadora aplicou o pedido 0054 no branch (`d9a7f7d`). O "depois" ao vivo foi repedido sobre esse commit.
 
 ## Decisões e REA
 
