@@ -110,7 +110,7 @@ A tabela completa está em `Docs/combate_lacunas.md` do branch. O principal:
   - `d624cdd`, `efd8fb5`: `Docs/combate_lacunas.md` e a linha M8 da `Docs/validacao.md`;
   - `a7b11b1`: conta `l2webtest8`;
   - `e16e9b4`, `3c4a597`: evidências da suíte em `Docs/evidencias/sistema-ataque/`.
-- **Testes:** sessão de testes, `testes0-1\suite-efd8fb5`:
+- **Testes:** sessão de testes, `testes\0060-1\suite-efd8fb5`:
   - compila sem erros;
   - EditMode 925/925, 0 falhas, contra 912/912 no `main` `e40d43c`. Os +13 são os `CombatSystemTests`;
   - `CombatTests` 9/9, `CombatParityTests` 2/2, `ActionFailTests` 6/6.
