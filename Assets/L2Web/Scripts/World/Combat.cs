@@ -42,7 +42,7 @@ namespace L2Web.World
         /// <summary>
         /// Corpo a corpo: Atk01..03 sorteado (appRand()%3), rate = AtkRate * atkMul * 1.1, tween = 0.1 / (AtkRate * atkMul).
         /// Arco/arremesso: sempre Atk01, rate = AtkRate * atkMul, tween = 0.2 / (AtkRate * atkMul).
-        /// atkRate = XxxAnimRate[arma] do .int (0.8333 corpo a corpo, 1.1111 arco; 1.0 se ausente).
+        /// atkRate = XxxAnimRate[arma] do .int (0.8333 em quase tudo; 1.1111 so no arco [5] do MFighter, lineagewarrior.int; 1.0 se ausente).
         /// rand: [0, 1) (Math.random por padrao).
         /// </summary>
         public static AttackAnim AttackAnim(int widx, double atkMul, Func<string, double> atkRate, Func<double> rand = null)
