@@ -1,8 +1,9 @@
 // Efeitos presos aos pawns fora do cast (spec 09 §1.1, §2.6 e pseudocodigo): o brilho de encantamento da arma
 // (FNWeaponEffect::Init 0x10313da9, criado por APawn::UpdateAbnormalState 0x10311847 quando enchant >= EnchantEffectShow do
 // env.int; classe de weapongrp effA/effB com os 5 floats do slot), o halo de raid (Npcgrp rb_effect/rb_effect_fl [I]), o
-// efeito de golpe (APawn::AssociateAttackedNotify 0x10310ba9: DamageEffect = Npcgrp.effect / p_u002_a, na borda do
-// cilindro voltada para o atacante, opacidade reduzida com varios golpes simultaneos) e a flecha do ataque normal (NArrow
+// efeito de golpe (APawn::AssociateAttackedNotify 0x10310ba9: DamageEffect = Npcgrp.effect / p_u002_a na borda do
+// cilindro voltada para o atacante e, com soulshot, soulshot.int[grade].Atk/AtkCr no mesmo ponto, atenuado com grupo de
+// mais de 2; #0058) e a flecha do ataque normal (NArrow
 // como projetil, APawn::ThrowAttackProcess [I: sem a interpolacao Hermite]).
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,6 @@ namespace L2Web.Render.Fx
         public JObject Tables = new();
         readonly Dictionary<int, (int key, List<FxEmitterActor> fx)> weapon = new();
         readonly Dictionary<int, FxEmitterActor> halo = new();
-        readonly Dictionary<int, List<float>> hitsOn = new();
         float now;
 
         public FxPawnEffects(FxWorld w, SkillFx fx, FxCastRunner runner)
@@ -148,32 +148,108 @@ namespace L2Web.Render.Fx
 
         // ------------------------------------------------------------------ golpe
 
+        /// <summary>Quantos membros tem o grupo (m_pDataManager+0x38 da NWindow, "PartyMemberCount"): atenua o efeito do soulshot.</summary>
+        public Func<int> PartyMemberCount = () => 0;
+
         /// <summary>
-        /// APawn::AssociateAttackedNotify [O]: efeito de golpe (DamageEffect) na borda do cilindro do alvo voltada para o
-        /// atacante (Location - forward(Rotation(alvo - atacante)) * CR/2), com a rotacao do golpe; critico tambem p_u004_a [I];
-        /// com mais de 2 efeitos simultaneos no alvo, opacidade 0.9 - (n - 3) * 0.08.
+        /// Campo do soulshot.int[grade] no golpe (AssociateAttackedNotify 0x10310ba9 e AttackedNotify 0x103046e2) [O]: "Atk"
+        /// (FL2GameData+0x7f644 = 0x10bbbeb4), no critico "AtkCr" (+0x7f65c = 0x10bbbecc) ou, com bUseDarkEffect do atacante
+        /// (pawn+0x1818.b0), "AtkDarkCr" (+0x7f650 = 0x10bbbec0). bUseDarkEffect so e declarado (Pawn.uc) e copiado: nada o liga.
         /// </summary>
+        public static string SoulshotHitField(bool crit, bool darkEffect) => !crit ? "Atk" : darkEffect ? "AtkDarkCr" : "AtkCr";
+
+        /// <summary>Classe do efeito do soulshot no alvo; null se o golpe nao tem soulshot (0x10) ou a grade (flags &amp; 0xF) nao e 0..5 [O].</summary>
+        public static string SoulshotHitClass(JObject soulshot, int flags, bool darkEffect = false)
+        {
+            if (!HasSoulshot(flags)) return null;
+            var cls = (string)soulshot?[LegacyFx.ShotGrades[flags & 0xf]]?[SoulshotHitField((flags & Combat.Hit.Crit) != 0, darkEffect)];
+            return string.IsNullOrEmpty(cls) ? null : cls;
+        }
+
+        /// <summary>Ramo do soulshot do AssociateAttackedNotify: flag 0x10 e grade (flags &amp; 0xF) &lt; 6 [O].</summary>
+        public static bool HasSoulshot(int flags) => (flags & Combat.Hit.Soulshot) != 0 && (flags & 0xf) < 6;
+
+        /// <summary>Opacidade do efeito do soulshot com grupo grande (SetOpacity(0.9 - (n - 3) * 0.08) se n &gt; 2) [O]; 1 sem grupo.</summary>
+        public static float SoulshotOpacity(int partyMembers) => partyMembers > 2 ? 0.9f - (partyMembers - 3) * 0.08f : 1f;
+
+        /// <summary>
+        /// Efeitos de um golpe, na ordem do original [O]; partyFade marca o que recebe SoulshotOpacity.
+        /// Corpo a corpo (APawn::AssociateAttackedNotify): com soulshot, DamageEffect (sem KeepMinFrameRate) e o Atk/AtkCr da
+        /// grade, sem p_u004_a; sem soulshot, DamageEffect e, no critico sem escudo, p_u004_a.
+        /// Flecha (APawn::AttackedNotify tipo 1, com os flags do ataque guardados no atacante em +0x634): com soulshot, igual;
+        /// sem soulshot, escudo sem critico nada, escudo com critico DamageEffect + p_u004_a, sem escudo so o DamageEffect.
+        /// Miss nao chega aqui (APawn::Action_Attack sai antes). Arma amaldicoada (it_zariche_ta) fica de fora.
+        /// </summary>
+        public static List<(string cls, bool partyFade)> HitEffects(int flags, bool arrow, string damageEffect, JObject soulshot, bool keepMinFrameRate = false, bool darkEffect = false)
+        {
+            var list = new List<(string, bool)>();
+            if ((flags & Combat.Hit.Miss) != 0) return list;
+            var dmg = keepMinFrameRate || string.IsNullOrEmpty(damageEffect) ? null : damageEffect;
+            var crit = (flags & Combat.Hit.Crit) != 0;
+            var shield = (flags & Combat.Hit.Shield) != 0;
+            if (HasSoulshot(flags))
+            {
+                if (dmg != null) list.Add((dmg, false));
+                var ss = SoulshotHitClass(soulshot, flags, darkEffect);
+                if (ss != null) list.Add((ss, true));
+                return list;
+            }
+            if (arrow)
+            {
+                if (shield && !crit) return list;
+                if (dmg != null) list.Add((dmg, false));
+                if (shield) list.Add(("LineageEffect.p_u004_a", false));
+                return list;
+            }
+            if (dmg != null) list.Add((dmg, false));
+            if (crit && !shield) list.Add(("LineageEffect.p_u004_a", false));
+            return list;
+        }
+
+        /// <summary>
+        /// Ponto do golpe (AssociateAttackedNotify) [O]: Location do alvo - forward(Rotation(alvo - atacante)) * d, com d = CR/2
+        /// do alvo ou, se CR + CH do alvo &gt; 150, Clamp(0.85 * distancia, 0, distancia - CR do atacante) (FUN_103704b0; 150.0
+        /// em 0x108a33d8, 0.85 em 0x108ce330). rot = a rotacao do golpe, usada no spawn.
+        /// </summary>
+        public static Vector3 HitLocation(Vector3 target, Vector3 attacker, float targetRadius, float targetHeight, float attackerRadius, out FRotator rot)
+        {
+            var d = target - attacker;
+            rot = FxMath.VectorToRotator(d);
+            var off = targetRadius * 0.5f;
+            if (targetRadius + targetHeight > 150f) off = UeClamp(d.magnitude * 0.85f, 0f, d.magnitude - attackerRadius);
+            return target - rot.Forward * off;
+        }
+
+        /// <summary>FUN_103704b0: v &lt; min devolve min; senao v &lt; max devolve v; senao max (com max &lt; min, max).</summary>
+        static float UeClamp(float v, float min, float max) => v < min ? min : v < max ? v : max;
+
+        /// <summary>Golpe so com o critico: o OnAttack do App.cs antes do pedido 0053 (sem soulshot, sem escudo).</summary>
         public void OnHit(Entity target, Entity attacker, bool crit, Func<Entity, string> damageEffect)
+            => OnHit(target, attacker, crit ? Combat.Hit.Crit : 0, false, damageEffect);
+
+        /// <summary>
+        /// Efeitos do golpe no alvo (HitEffects) no ponto HitLocation, com a rotacao do golpe, soltos no mundo. flags = byte do
+        /// golpe no pacote Attack 0x05 (0x10 soulshot | grade, 0x20 critico, 0x40 escudo, 0x80 miss); arrow = golpe de flecha.
+        /// [I] o original so mostra com o alvo desenhado no quadro anterior (bRendered, pawn+0x17fc.b0, vfunc 0x218); a flecha
+        /// usa o ponto onde crava, aqui o mesmo ponto do corpo a corpo.
+        /// </summary>
+        public void OnHit(Entity target, Entity attacker, int flags, bool arrow, Func<Entity, string> damageEffect)
         {
             if (target == null || W.Library == null) return;
             var tp = Runner.Pawn(target);
             var loc = tp.Location;
             var rot = tp.Rotation;
             if (attacker != null && attacker != target)
+                loc = HitLocation(tp.Location, Runner.Pawn(attacker).Location, target.CollisionRadius, target.CollisionHeight, attacker.CollisionRadius, out rot);
+            var legacy = Runner.Legacy;
+            var dmg = damageEffect?.Invoke(target) ?? "LineageEffect.p_u002_a";
+            var opacity = SoulshotOpacity(PartyMemberCount?.Invoke() ?? 0);
+            foreach (var (cls, fade) in HitEffects(flags, arrow, dmg, legacy?.Soulshot, legacy?.KeepMinFrameRate ?? false))
             {
-                var ap = Runner.Pawn(attacker);
-                var d = tp.Location - ap.Location;
-                rot = FxMath.VectorToRotator(d);
-                loc = tp.Location - rot.Forward * (target.CollisionRadius * 0.5f);
+                if (!W.Library.Has(cls)) continue;
+                var fx = W.Spawn(cls, loc, rot, null);
+                if (fx != null && fade && opacity < 1f) fx.SetOpacity(opacity);
             }
-            var cls = damageEffect?.Invoke(target) ?? "LineageEffect.p_u002_a";
-            var list = hitsOn.TryGetValue(target.ObjectId, out var l) ? l : hitsOn[target.ObjectId] = new List<float>();
-            list.RemoveAll(t => now - t > 0.5f);
-            list.Add(now);
-            var n = list.Count;
-            var fx = W.Spawn(cls, loc, rot, null);
-            if (fx != null && n > 2) fx.SetOpacity(0.9f - (n - 3) * 0.08f);
-            if (crit && W.Library.Has("LineageEffect.p_u004_a")) W.Spawn("LineageEffect.p_u004_a", loc, rot, null);
         }
 
         /// <summary>Flecha do ataque normal: NArrow da mao direita ate o alvo (ThrowAttackProcess) [I: sem arco Hermite].</summary>
