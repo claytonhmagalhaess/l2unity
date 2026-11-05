@@ -405,6 +405,27 @@ namespace L2Web.World
             else posture = null;
         }
 
+        /// <summary>
+        /// SocialAction (0x2d) de um NPC, UGameEngine::OnSocialAction (0x1030c243, decomp 00006.c:29124): id 1..5 toca uma vez
+        /// NpcSocialAnimName[id - 1] (propriedade localized de cada classe, no .int: [skeleton_archer] tem spwait01 nos tres
+        /// primeiros) com Rate = moveMul (0x6b4) e Tween 0.1, sem o atualizador de movimento sobrescrever (UM_ONCE); outros
+        /// ids nao fazem nada (o 15 e um efeito, da render). A tabela vem do anim_tables.json como a linha
+        /// "NpcSocialAnimName" indexada pelo slot. Devolve o clipe tocado, ou null.
+        /// </summary>
+        public string Social(int id)
+        {
+            if (Kind != "npc" || !Actor.Loaded || Dead || id < 1 || id > NpcSocialSlots) return null;
+            var name = GameData.MoveAnim(Section, "NpcSocial", id - 1).Name;
+            if (name == null || !Actor.HasClip(name)) return null;
+            var rate = Motion.MoveMul != 0 ? Motion.MoveMul : 1;
+            Actor.Play(name, rate, false, Movement.TweenSocial);
+            posture = new Posture { Anim = "Social", Until = clock + Actor.ClipDuration(name) / rate };
+            return name;
+        }
+
+        /// <summary>NpcSocialAnimName[5] (Pawn.uc).</summary>
+        public const int NpcSocialSlots = 5;
+
         void StartPosture(string anim)
         {
             var a = Anim(anim);

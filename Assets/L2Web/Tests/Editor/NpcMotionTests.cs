@@ -7,6 +7,7 @@
 //    no OnCharInfo, entao o NPC corre desde o primeiro tick.
 //  - APawn::GetWalkAnimRate (0x1030f65a) / GetRunAnimRate (0x10313a70): XxxAnimRate do .int (1 se 0) * npc_speed do npcgrp
 //    (FL2NpcData+0x58, FL2GameData::NpcDataLoad 0x10307888) para NPC; o atualizador multiplica pelo moveMul (0x6b4).
+//  - UGameEngine::OnSocialAction (0x1030c243): NPC so com id 1..5 (NpcSocialAnimName[id - 1]).
 using System.Collections.Generic;
 using L2Web.World;
 using NUnit.Framework;
@@ -127,6 +128,18 @@ namespace L2Web.Tests
         {
             Assert.AreEqual(1f, new Entity(302, "npc").NpcSpeed);
             Assert.AreEqual(1f, new Entity(303, "player").NpcSpeed);
+        }
+    
+        [Test]
+        public void Social_SoNpcEIds1a5()
+        {
+            // sem modelo carregado nada toca; jogador e ids fora de 1..5 nunca tocam (o 15 e um efeito)
+            Assert.IsNull(new Entity(304, "npc").Social(2));
+            Assert.IsNull(new Entity(305, "player").Social(2));
+            Assert.IsNull(new Entity(306, "npc").Social(0));
+            Assert.IsNull(new Entity(307, "npc").Social(6));
+            Assert.IsNull(new Entity(308, "npc").Social(15));
+            Assert.AreEqual(5, Entity.NpcSocialSlots);
         }
     }
 }
