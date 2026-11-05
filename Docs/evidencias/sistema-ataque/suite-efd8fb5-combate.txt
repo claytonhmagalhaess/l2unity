@@ -1,0 +1,36 @@
+Suite EditMode em efd8fb5 (sessao de testes, testes0-1\suite-efd8fb5): 925/925, 0 falhas; main e40d43c 912/912.
+Casos de combate:
+Passed  L2Web.Tests.ActionFailTests.ActionFailed_ZeraSemCondicao
+Passed  L2Web.Tests.ActionFailTests.MyTargetSelected_EDeleteObjectDoAlvo
+Passed  L2Web.Tests.ActionFailTests.RecusaDeAtaque_SoComOProprioPawn
+Passed  L2Web.Tests.ActionFailTests.Respostas_SoDoProprioJogador
+Passed  L2Web.Tests.ActionFailTests.Trava_ComecaLivre_EOPedidoLiga
+Passed  L2Web.Tests.ActionFailTests.World_QuatroPacotes
+Passed  L2Web.Tests.CombatParityTests.Ataque_ConstantesDoEngine
+Passed  L2Web.Tests.CombatParityTests.LeadDoCast_PorCastStyle
+Passed  L2Web.Tests.CombatSystemTests.Arco_TempoDoACis
+Passed  L2Web.Tests.CombatSystemTests.Ataque_LigaAPosturaSoComOAtorCarregado
+Passed  L2Web.Tests.CombatSystemTests.AutoAlvo_DezSegundosDepoisDePerderOAlvo
+Passed  L2Web.Tests.CombatSystemTests.AutoAlvo_PeloWorld
+Passed  L2Web.Tests.CombatSystemTests.AutoAlvo_SoComOProprioSemAlvo
+Passed  L2Web.Tests.CombatSystemTests.Escudo_SoSemMiss
+Passed  L2Web.Tests.CombatSystemTests.Golpes_DoisNotifies_SemExtras_RepeteOPrincipal
+Passed  L2Web.Tests.CombatSystemTests.Golpes_Dual_UmPorNotify
+Passed  L2Web.Tests.CombatSystemTests.Golpes_ExtrasAlemDosNotifies_NaoSaem
+Passed  L2Web.Tests.CombatSystemTests.Golpes_SemNotify_TempoDoServidor
+Passed  L2Web.Tests.CombatSystemTests.Golpes_UmNotify_TodosOsAlvosJuntos
+Passed  L2Web.Tests.CombatSystemTests.Morte_ParaOPawnESaiDaPostura
+Passed  L2Web.Tests.CombatSystemTests.Revive_DesligaOMortoEDestravaOProprio
+Passed  L2Web.Tests.CombatTests.Arco_SempreAtk01
+Passed  L2Web.Tests.CombatTests.CorpoACorpo_RateTween_SorteiaAtk
+Passed  L2Web.Tests.CombatTests.FlagsDoGolpe
+Passed  L2Web.Tests.CombatTests.GameData_ModelosEquipamentoEAnimacoes
+Passed  L2Web.Tests.CombatTests.L2Calc_ClientAttack_IgualAoCalcJs
+Passed  L2Web.Tests.CombatTests.L2Calc_Servidor
+Passed  L2Web.Tests.CombatTests.Servidor_MomentosDosGolpes
+Passed  L2Web.Tests.CombatTests.Skills_CastPlan_Detalhes
+Passed  L2Web.Tests.CombatTests.Skills_CastPlan_IgualAoCalcJs(System.Object[])
+Passed  L2Web.Tests.CombatTests.Skills_CastPlan_IgualAoCalcJs(System.Object[])
+Passed  L2Web.Tests.CombatTests.Skills_CastPlan_IgualAoCalcJs(System.Object[])
+Passed  L2Web.Tests.CombatTests.Skills_CastPlan_IgualAoCalcJs(System.Object[])
+Passed  L2Web.Tests.CombatTests.Skills_CastPlan_IgualAoCalcJs(System.Object[])

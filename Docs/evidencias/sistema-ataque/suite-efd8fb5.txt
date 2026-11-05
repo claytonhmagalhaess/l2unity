@@ -1,0 +1,4 @@
+commit efd8fb5 #0060: combate_lacunas B13 (virar para o alvo) fica com a #0061
+exit 0  tempo 69s  filtro: (suite inteira)
+--- erros de compilacao (log):
+total 925 passou 925 falhou 0 ignorado 0
