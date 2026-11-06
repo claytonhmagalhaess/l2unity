@@ -56,7 +56,14 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
   Some uma linha na `Docs/validacao.md`.
 
-  **Justificativa (pendente):** a linha M9 da `validacao.md` já entrou. O ao vivo não rodou porque o aCis local está fora do ar e só o usuário o liga. O roteiro completo está na fila da sessão de testes como `0061-3`, em 4º lugar: antes no `e40d43c`, depois no `cfa73ce`, conta `l2webtest9`, na Breka's Stronghold. Quando sair, as capturas vão para `Docs/evidencias/npcs-movimento/`.
+  **Feito em parte:** a linha M9 da `validacao.md` entrou. O ao vivo `0061-3` rodou com o antes no `e40d43c` e o depois no `cfa73ce` (conta `l2webtest9`, Breka's Stronghold). Evidências em `Docs/evidencias/npcs-movimento/aovivo-0061-3/` (`29c62bd`); as rajadas inteiras ficaram em `testes1-3\`.
+  - Arqueiro (Breka Orc Archer 20268): coberto.
+  - Corpo a corpo (Breka Orc 20267): coberto.
+  - Andar aleatório: coberto.
+  - Monstro fugindo e voltando: não reproduzido (o orc não perseguiu e morreu antes).
+  - Boss: não há um perto.
+
+  Detalhes na Entrega.
 
 ## Andamento
 
@@ -74,6 +81,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — Pedidos 0064 (`App.cs` e `anim_tables.json`) e 0065 (render), no commit `0a4cb95` deste repo.
 - 2026-11-05 — `Docs/npcs_movimento.md` e a linha M9 da `validacao.md` (`623b62b`); conta `l2webtest9` (`cfa73ce`).
 - 2026-11-05 — Suíte EditMode em `cfa73ce`: compila, 936/936, `NpcMotionTests` 11/11 (`4042e14`). Estado `pronta p/ merge`; o ao vivo fica na fila (`0061-3`).
+- 2026-11-05 — Ao vivo `0061-3`, rodado pela sessão de testes e repassado pela coordenadora. As evidências foram copiadas para o branch (`29c62bd`). Resultado na Entrega.
 - 2026-11-05 — Segundo pedido de teste à sessão de testes, sobre `cfa73ce`: (A) EditMode; (B) roteiro ao vivo antes (`e40d43c`) e depois (`cfa73ce`) na Breka's Stronghold, com arqueiro, corpo a corpo, volta ao spawn, andar aleatório e boss se houver. O (B) espera o aCis, que está fora do ar.
 
 ## Decisões e REA
@@ -118,7 +126,19 @@ A tabela completa, com uma linha por comportamento, está em `Docs/npcs_moviment
   - `1de4edf`: 933/933;
   - `cfa73ce`: 936/936.
 
-  Evidências em `Docs/evidencias/npcs-movimento/`. O ao vivo não rodou: aCis fora do ar, na fila como `0061-3`.
+  Evidências em `Docs/evidencias/npcs-movimento/`.
+- **Ao vivo `0061-3`** (antes `e40d43c`, depois `cfa73ce`): 0 erros de log nas duas rodadas.
+  - **Confirmado:**
+    - O Breka Orc e o arqueiro batem de frente para o personagem (`orc_golpe2_mosaico.png`).
+    - O arqueiro recua e volta: `Attack`, `MoveToLocation`, dois `StopMove` e `run=0`, depois `run=1`. O padrão é igual antes e depois, como no aCis (`AttackableAI.java:690-701`). O `StopMove` duplo também confere.
+    - Andar aleatório: um `MoveToLocation` a cada ~25–30 s, a ~120–150 do ponto, igual nas duas versões.
+    - Selecionar o alvo manda `ValidateLocation` só no primeiro clique. Nesta rodada não houve reclique durante o golpe com `ValidateLocation`, então a M3 continua coberta só pelo EditMode.
+  - **Sem diferença visível antes/depois:** o arqueiro e o orc já estavam no alcance quando entraram em combate (o `run=1` chega junto com o primeiro `Attack`). Por isso o "bate virado" do relato não se reproduziu nesta posição; ele dependia do NPC andando ou corrigindo a posição durante o golpe.
+  - **Não reproduzido:**
+    - o começo da perseguição (M2): o orc não perseguiu, e morreu antes do recuo;
+    - a fuga e volta ao spawn;
+    - o boss: não há um perto.
+  - **A5 sem prova ao vivo:** o Breka Orc (Doom Dagger, índice 1) tem a mesma animação nas linhas [0] e [1] do `.int` (`batur_orc`), então não muda nada visível. Precisa de um NPC cuja linha [1] seja diferente (por exemplo, `wait_1hs`).
 - **Merge:**
   - Só o branch da #0059 entrou neste (fast-forward). Se a #0059 for para o `main` antes, este merge fica limpo.
   - Com o `feat/world-sistema-ataque` (#0060), `git merge-tree` mostra conflitos de "manter os dois lados":
