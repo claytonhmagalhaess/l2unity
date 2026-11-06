@@ -54,7 +54,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
   Some uma linha na `Docs/validacao.md`.
 
-  **Justificativa:** a linha M8 da `Docs/validacao.md` está feita. O ao vivo foi feito em parte, pela sessão de testes no aCis local (`testes0-1`, copiado em `Docs/evidencias/sistema-ataque/`, `3df795a`). Antes = `e40d43c`, depois = `efd8fb5`, conta `l2webtest8`, figurante `l2webtest2`, logs de erro: 0.
+  **Justificativa:** a linha M8 da `Docs/validacao.md` está feita. O ao vivo foi feito em parte, pela sessão de testes no aCis local (`testes\0060-1`, copiado em `Docs/evidencias/sistema-ataque/`, `3df795a`). Antes = `e40d43c`, depois = `efd8fb5`, conta `l2webtest8`, figurante `l2webtest2`, logs de erro: 0.
   - **Feito:**
     - corpo a corpo até matar 3 Turek: o morto fica parado e o alvo continua no corpo;
     - "Critical hit!" no chat;
@@ -127,7 +127,9 @@ A tabela completa está em `Docs/combate_lacunas.md` do branch. O principal:
     - `CombatSystemTests` (13);
   - `d624cdd`, `efd8fb5`: `Docs/combate_lacunas.md` e a linha M8 da `Docs/validacao.md`;
   - `a7b11b1`: conta `l2webtest8`;
-  - `e16e9b4`, `3c4a597`: evidências da suíte em `Docs/evidencias/sistema-ataque/`.
+  - `e16e9b4`, `3c4a597`: evidências da suíte em `Docs/evidencias/sistema-ataque/`;
+  - `b8140e2`: B13 e B16 resolvidas pela #0061;
+  - `3df795a`, `05db993`: evidências do ao vivo e a linha M8.
 - **Testes:** sessão de testes, `testes\0060-1\suite-efd8fb5`:
   - compila sem erros;
   - EditMode 925/925, 0 falhas, contra 912/912 no `main` `e40d43c`. Os +13 são os `CombatSystemTests`;
