@@ -61,4 +61,4 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Pedidos
 
-Nenhum por enquanto.
+- [0066](pedidos/0066-world-render-ossos-npc-espaco.md) → render: os outros lookups de osso (`AttachBone`, `FxCast`, `LegacyFx`) também não acham os ossos de NPC (nome com espaço).
