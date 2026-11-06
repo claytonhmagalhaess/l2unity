@@ -1,0 +1,115 @@
+cfa73ce #0061: conta de teste l2webtest9
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"cena ok"
+"idx=\"
+"idx=7 1024x768"
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=17 self=Npc61 80232,130376,-3664"
+"80232;130376;-3664 alvo=0 @21:45:57.4"
+"hook61 ok C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0061-3/depois/rajadas"
+"268444118:20267:3008 268444120:20267:2884 268444142:20268:2889 268444140:20268:1962 268480958:20268:852 268444136:20267:2513 268444123:20267:2361 268480960:20267:217 268444122:20267:2512 "
+== preparo: ~600 do arqueiro
+"d=852"
+"arq 79528,129896 d=599 dead=False | self 80024,130232"
+== (a)/(b) ataque ao arqueiro + rajada 24 x 150 ms
+"rajada arq_ataque"
+"arq 79528,129896 d=407 dead=False | self 79865,130124"
+"arq 79528,129896 d=261 dead=False | self 79744,130042"
+"arq 79528,129896 d=122 dead=False | self 79629,129964"
+"arq 79528,129896 d=65 dead=False | self 79582,129932"
+"arq 79447,129815 d=149 dead=False | self 79559,129913"
+"arq 79426,129794 d=121 dead=False | self 79517,129875"
+== (c) clique de novo durante o golpe + rajada 10 x 100 ms
+"reclique"
+"rajada arq_reclique"
+"arq 79404,129772 d=116 dead=False | self 79490,129851"
+"arq 79392,129760 d=113 dead=True | self 79475,129837"
+   log [npcpk] 21:46:12.565 ValidateLocation(0x61) 268480958 npc=20268 pos=79528,129896,-3664
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=599,1 offset=60 raios=9+11 bordas=579,1 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=452,1 offset=60 raios=9+11 bordas=432,1 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=290,0 offset=60 raios=9+11 bordas=270,0 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=127,3 offset=60 raios=9+11 bordas=107,3 seguindo=sim
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=65,4 offset=- raios=9+11 bordas=45,4 seguindo=nao
+   log [npcpk] 21:46:16.788 ChangeMoveType(0x2e) 268480958 npc=20268 run=1 pos=79528,129896,-3664
+   log [npcpk] 21:46:16.788 Attack(0x05) 268480958 npc=20268 pos=79528,129896,-3664
+   log [aproximacao] Attack npc 268480958 -> self 268480919: d=65,4 offset=- raios=11+9 bordas=45,4 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=65,4 offset=- raios=9+11 bordas=45,4 seguindo=nao
+   log [npcpk] 21:46:17.191 MoveToLocation(0x01) 268480958 npc=20268 pos=79528,129896,-3664
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=141,2 offset=30 raios=9+11 bordas=121,2 seguindo=sim
+   log [npcpk] 21:46:18.193 StopMove(0x47) 268480958 npc=20268 pos=79426,129794,-3664
+   log [npcpk] 21:46:18.193 StopMove(0x47) 268480958 npc=20268 pos=79426,129794,-3664
+   log [npcpk] 21:46:18.193 ChangeMoveType(0x2e) 268480958 npc=20268 run=0 pos=79426,129794,-3664
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=121,6 offset=- raios=9+11 bordas=101,6 seguindo=nao
+   log [npcpk] 21:46:18.535 ChangeMoveType(0x2e) 268480958 npc=20268 run=1 pos=79426,129794,-3664
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=121,6 offset=60 raios=9+11 bordas=101,6 seguindo=sim
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=85,8 offset=- raios=9+11 bordas=65,8 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=85,8 offset=- raios=9+11 bordas=65,8 seguindo=nao
+   log [npcpk] 21:46:20.158 Attack(0x05) 268480958 npc=20268 pos=79426,129794,-3664
+   log [aproximacao] Attack npc 268480958 -> self 268480919: d=85,8 offset=- raios=11+9 bordas=65,8 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=85,8 offset=- raios=9+11 bordas=65,8 seguindo=nao
+   log [npcpk] 21:46:21.188 MoveToLocation(0x01) 268480958 npc=20268 pos=79426,129794,-3664
+   log [aproximacao] Attack self 268480919 -> npc 268480958: d=90,7 offset=- raios=9+11 bordas=70,7 seguindo=nao
+   log [npcpk] 21:46:21.531 StopMove(0x47) 268480958 npc=20268 pos=79392,129760,-3664
+   log [npcpk] 21:46:21.538 ChangeMoveType(0x2e) 268480958 npc=20268 run=0 pos=79392,129760,-3664
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480958: d=134,5 offset=60 raios=9+11 bordas=114,5 seguindo=sim
+
+#### corpo a corpo
+== (e) luta parada perto
+  chegou: "orc 80536,130456 d=58 dead=False hpSelf=1531 @21:46:33.2"
+"rajada orc_golpe2"
+"orc 80536,130456 d=58 dead=False hpSelf=1503 @21:46:36.1"
+"orc 80536,130456 d=58 dead=True hpSelf=1583 @21:46:37.3"
+"orc 80536,130456 d=58 dead=True hpSelf=1583 @21:46:38.5"
+== (d) recua 250
+"recua"
+"rajada orc_corrida2"
+"orc 80536,130456 d=188 dead=True hpSelf=1583 @21:46:39.7"
+"orc 80536,130456 d=315 dead=True hpSelf=1583 @21:46:40.5"
+"orc 80536,130456 d=315 dead=True hpSelf=1583 @21:46:41.3"
+"orc 80536,130456 d=315 dead=True hpSelf=1583 @21:46:42.0"
+"orc 80536,130456 d=315 dead=True hpSelf=1583 @21:46:42.8"
+   log [npcpk] 21:46:25.330 ValidateLocation(0x61) 268480960 npc=20267 pos=80536,130456,-3664
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=1227,6 offset=58 raios=9+9 bordas=1209,6 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=1081,4 offset=58 raios=9+9 bordas=1063,4 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=1000,4 offset=58 raios=9+9 bordas=982,4 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=839,0 offset=58 raios=9+9 bordas=821,0 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=757,6 offset=58 raios=9+9 bordas=739,6 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=595,6 offset=58 raios=9+9 bordas=577,6 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=514,5 offset=58 raios=9+9 bordas=496,5 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=347,9 offset=58 raios=9+9 bordas=329,9 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480919 -> npc 268480960: d=184,4 offset=58 raios=9+9 bordas=166,4 seguindo=sim
+   log [aproximacao] chegou self 268480919 -> npc 268480960: d=58,2 offset=58 raios=9+9 bordas=40,2 seguindo=sim
+   log [aproximacao] Attack self 268480919 -> npc 268480960: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [npcpk] 21:46:33.450 ChangeMoveType(0x2e) 268480960 npc=20267 run=1 pos=80536,130456,-3664
+   log [npcpk] 21:46:33.451 Attack(0x05) 268480960 npc=20267 pos=80536,130456,-3664
+   log [aproximacao] Attack npc 268480960 -> self 268480919: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480960: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480960: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [npcpk] 21:46:35.104 Attack(0x05) 268480960 npc=20267 pos=80536,130456,-3664
+   log [aproximacao] Attack npc 268480960 -> self 268480919: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480960: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480960: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack self 268480919 -> npc 268480960: d=58,2 offset=- raios=9+9 bordas=40,2 seguindo=nao
+   log [npcpk] 21:46:36.579 StopMove(0x47) 268480960 npc=20267 pos=80536,130456,-3664
+   log [npcpk] 21:46:36.582 ChangeMoveType(0x2e) 268480960 npc=20267 run=0 pos=80536,130456,-3664
+#### ocioso 268444123 (60 s)
+"81768,128584 @21:46:43"
+"81768,128584 @21:46:48"
+"81768,128584 @21:46:54"
+"81768,128584 @21:46:59"
+"81768,128584 @21:47:04"
+"81768,128584 @21:47:09"
+"81768,128584 @21:47:14"
+"81768,128568 @21:47:20"
+"81768,128568 @21:47:25"
+"81768,128568 @21:47:30"
+"81654,128497 @21:47:35"
+"81740,128548 @21:47:40"
+   log [npcpk] 21:47:18.201 MoveToLocation(0x01) 268444123 npc=20267 pos=81768,128584,-3456
+   log [npcpk] 21:47:34.192 MoveToLocation(0x01) 268444123 npc=20267 pos=81768,128568,-3456
+   log [npcpk] 21:47:35.983 MoveToLocation(0x01) 268444123 npc=20267 pos=81640,128488,-3456

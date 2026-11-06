@@ -1,0 +1,7 @@
+   log [npcpk] 21:41:27.656 MoveToLocation(0x01) 268480959 npc=20267 pos=80472,130536,-3664
+   log [npcpk] 21:41:28.059 ValidateLocation(0x61) 268480959 npc=20267 pos=80502,130517,-3664
+   log [npcpk] 21:41:31.210 ChangeMoveType(0x2e) 268480959 npc=20267 run=1 pos=80552,130488,-3664
+   log [npcpk] 21:41:31.210 Attack(0x05) 268480959 npc=20267 pos=80552,130488,-3664
+   log [npcpk] 21:41:32.911 Attack(0x05) 268480959 npc=20267 pos=80552,130488,-3664
+   log [npcpk] 21:41:33.683 ChangeMoveType(0x2e) 268480959 npc=20267 run=0 pos=80552,130488,-3664
+   log [npcpk] 21:41:48.670 MoveToLocation(0x01) 268480959 npc=20267 pos=80552,130488,-3664

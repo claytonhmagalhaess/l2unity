@@ -59,6 +59,8 @@ namespace L2Web.World
         /// <summary>Em postura de combate (AutoAttackStart / inCombat): parado usa AtkWait em vez de Wait.</summary>
         public bool InCombat;
         public float AtkMul = 1;
+        /// <summary>npc_speed do npcgrp (FL2NpcData+0x58): multiplica a taxa de Walk/Run do NPC; 1 para jogadores.</summary>
+        public float NpcSpeed = 1;
         public float PAtkSpd = 300;
         public float MAtkSpd = 333;
 
@@ -73,6 +75,8 @@ namespace L2Web.World
         sealed class Attacking
         {
             public float Until;
+            /// <summary>Ate quando o pawn vira para o alvo (DesiredRotation do Sword/BowAttackProcess).</summary>
+            public float TrackUntil;
             public int TargetId;
         }
 
@@ -103,6 +107,8 @@ namespace L2Web.World
             Kind = kind;
             Actor.ObjectId = objectId;
             Actor.Root.name = kind + " " + objectId;
+            // pawn+0x6cc (walkanimframe) so vem do chargrp no UserInfo/CharInfo: NPC sem fase de caminhada
+            if (kind == "npc") Motion.WalkPhase = 0;
         }
 
         public float X => Motion.X;
@@ -150,10 +156,17 @@ namespace L2Web.World
             if (a.Name == null) return none;
             Actor.Play(a.Name, spec.Rate, false, spec.Tween);
             var play = Actor.ClipDuration(a.Name) / spec.Rate;
-            attacking = new Attacking { Until = clock + spec.Tween + play, TargetId = target?.ObjectId ?? 0 };
             var notes = GameData.ClipNotifies(Set, a.Name);
             List<float> At(string cls) => notes.Where(n => n.Cls == cls).Select(n => spec.Tween + n.Frac * play).ToList();
-            return new AttackTimes { Items = At("AttackItem"), Shots = At("AttackShot"), Ranged = spec.Ranged };
+            var res = new AttackTimes { Items = At("AttackItem"), Shots = At("AttackShot"), Ranged = spec.Ranged };
+            var until = spec.Tween + play;
+            attacking = new Attacking
+            {
+                Until = clock + until,
+                TrackUntil = clock + Combat.TrackTime(spec.Ranged, until, res.Shots),
+                TargetId = target?.ObjectId ?? 0,
+            };
+            return res;
         }
 
         /// <summary>
@@ -291,7 +304,15 @@ namespace L2Web.World
             if (dx * dx + dy * dy > 0.25f) Motion.DesiredYaw = Movement.HeadingOf(dx, dy);
         }
 
-        public void ServerValidate(float x, float y, float z, int heading) => Motion.ServerValidate(new Vec3(x, y, z), heading, IsSelf);
+        public void ServerValidate(float x, float y, float z, int heading) =>
+            Motion.ServerValidate(new Vec3(x, y, z), heading, IsSelf, InAction);
+
+        /// <summary>
+        /// Golpe ou cast em curso (pawn+0x62c != 0 no engine: o OnAttack grava o tipo da acao e o NActionStop zera). O
+        /// OnValidateLocation nao anda um pawn parado ate a posicao do servidor durante a acao: no porte, o AddMoveTo cancelava
+        /// o golpe (andando) e virava o NPC para o ponto da correcao, de costas ou de lado para o alvo.
+        /// </summary>
+        public bool InAction => (attacking != null && clock < attacking.Until) || casting != null;
 
         /// <summary>Chegada ao alvo do MoveToPawn ja foi para o log ([aproximacao]).</summary>
         bool reachLogged;
@@ -426,6 +447,27 @@ namespace L2Web.World
         /// <summary>Tween da DeathStand no OnRevive.</summary>
         public const float ReviveTween = 0.1f;
 
+        /// <summary>
+        /// SocialAction (0x2d) de um NPC, UGameEngine::OnSocialAction (0x1030c243, decomp 00006.c:29124): id 1..5 toca uma vez
+        /// NpcSocialAnimName[id - 1] (propriedade localized de cada classe, no .int: [skeleton_archer] tem spwait01 nos tres
+        /// primeiros) com Rate = moveMul (0x6b4) e Tween 0.1, sem o atualizador de movimento sobrescrever (UM_ONCE); outros
+        /// ids nao fazem nada (o 15 e um efeito, da render). A tabela vem do anim_tables.json como a linha
+        /// "NpcSocialAnimName" indexada pelo slot. Devolve o clipe tocado, ou null.
+        /// </summary>
+        public string Social(int id)
+        {
+            if (Kind != "npc" || !Actor.Loaded || Dead || id < 1 || id > NpcSocialSlots) return null;
+            var name = GameData.MoveAnim(Section, "NpcSocial", id - 1).Name;
+            if (name == null || !Actor.HasClip(name)) return null;
+            var rate = Motion.MoveMul != 0 ? Motion.MoveMul : 1;
+            Actor.Play(name, rate, false, Movement.TweenSocial);
+            posture = new Posture { Anim = "Social", Until = clock + Actor.ClipDuration(name) / rate };
+            return name;
+        }
+
+        /// <summary>NpcSocialAnimName[5] (Pawn.uc).</summary>
+        public const int NpcSocialSlots = 5;
+
         void StartPosture(string anim)
         {
             // sem o modelo nao ha clipe (o resultado ja era posture = null) e as tabelas podem nao estar carregadas
@@ -507,8 +549,9 @@ namespace L2Web.World
                 if (moving || clock >= attacking.Until) attacking = null;
                 else
                 {
+                    // Sword/BowAttackProcess: DesiredRotation.Yaw = direcao do alvo a cada tick (o arco so ate soltar a flecha)
                     var t = World?.Get(attacking.TargetId);
-                    if (t != null) Motion.DesiredYaw = Movement.HeadingOf(t.X - X, t.Y - Y);
+                    if (t != null && t != this && clock <= attacking.TrackUntil) Motion.DesiredYaw = Movement.HeadingOf(t.X - X, t.Y - Y);
                     Actor.Update(dt);
                     return;
                 }
@@ -523,7 +566,7 @@ namespace L2Web.World
                 var a = Anim(Motion.RunPhase ? "Run" : "Walk");
                 var cur = Actor.ClipName;
                 var fromWait = waitName != null && cur != null && string.Equals(cur, waitName, StringComparison.OrdinalIgnoreCase);
-                Actor.Play(a.Name, a.Rate * mul, true, fromWait ? Movement.TweenMoveFromWait : Movement.TweenMove);
+                Actor.Play(a.Name, Movement.MoveAnimRate(a.Rate, NpcSpeed, mul), true, fromWait ? Movement.TweenMoveFromWait : Movement.TweenMove);
             }
             else if (Sitting)
             {

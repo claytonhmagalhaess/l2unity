@@ -1,0 +1,4 @@
+commit cfa73ce #0061: conta de teste l2webtest9
+exit 0  tempo 52s  filtro: (suite inteira)
+--- erros de compilacao (log):
+total 936 passou 936 falhou 0 ignorado 0

@@ -1,0 +1,168 @@
+e40d43c README: a conexao do login fica no Ctrl+Alt+O (o Options abre as opcoes do jogo, #0048)
+status: up_to_date errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"cena ok"
+"idx=\"
+"idx=7 3840x2160"
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=0"
+"criando"
+"ok"
+"scrGame inWorld=True ents=64 self=Npc61 83502,148688,-3400"
+"83502;148688;-3400 alvo=0 @21:36:22.8"
+"npc=268477390"
+"npc_268477390_Link teleporter/custom/levelup.htm"
+"npc_268477390_goto 12024"
+"ok"
+"79785;130651;-3672 alvo=0 @21:37:11.1"
+"hook61 ok C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0061-3/antes/rajadas"
+"268444141:20268:Breka Orc Archer:2625 268444156:20268:Breka Orc Archer:2910 268444157:20268:Breka Orc Archer:3732 268444124:20267:Breka Orc:691 268444123:20267:Breka Orc:2871 268444136:20267:Breka Orc:2048 268444143:20268:Breka Orc Archer:841 268444140:20268:Breka Orc Archer:1442 268444118:20267:Breka Orc:3093 268444142:20268:Breka Orc Archer:3045 268444120:20267:Breka Orc:2983 268444119:20267:Breka Orc:3870 "
+== preparo: ~600 do arqueiro
+"d=841"
+"arq 79508,129856 d=600 dead=False | self 79704,130424"
+== (a)/(b) ataque ao arqueiro + rajada 24 x 150 ms
+"rajada arq_ataque"
+"arq 79508,129856 d=407 dead=False | self 79640,130241"
+"arq 79508,129856 d=260 dead=False | self 79593,130102"
+"arq 79508,129856 d=116 dead=False | self 79546,129966"
+"arq 79494,129842 d=58 dead=False | self 79519,129895"
+"arq 79452,129801 d=54 dead=False | self 79485,129844"
+"arq 79492,129841 d=21 dead=False | self 79474,129830"
+== (c) clique de novo durante o golpe + rajada 10 x 100 ms
+"reclique"
+"rajada arq_reclique"
+"arq 79658,130000 d=69 dead=False | self 79607,129952"
+"arq 79516,129857 d=75 dead=False | self 79569,129910"
+   log [npcpk] 21:37:39.083 ValidateLocation(0x61) 268444143 npc=20268 pos=79508,129856,-3664
+   log [npcpk] 21:37:43.195 ChangeMoveType(0x2e) 268444143 npc=20268 run=1 pos=79508,129856,-3664
+   log [npcpk] 21:37:43.195 Attack(0x05) 268444143 npc=20268 pos=79508,129856,-3664
+   log [npcpk] 21:37:43.196 MoveToLocation(0x01) 268444143 npc=20268 pos=79508,129856,-3664
+   log [npcpk] 21:37:44.096 StopMove(0x47) 268444143 npc=20268 pos=79441,129790,-3664
+   log [npcpk] 21:37:44.096 StopMove(0x47) 268444143 npc=20268 pos=79441,129790,-3664
+   log [npcpk] 21:37:44.097 ChangeMoveType(0x2e) 268444143 npc=20268 run=0 pos=79441,129790,-3664
+   log [npcpk] 21:37:44.122 MoveToLocation(0x01) 268444143 npc=20268 pos=79441,129790,-3664
+   log [npcpk] 21:37:45.187 ChangeMoveType(0x2e) 268444143 npc=20268 run=1 pos=79471,129819,-3664
+   log [npcpk] 21:37:46.213 MoveToLocation(0x01) 268444143 npc=20268 pos=79508,129856,-3664
+   log [npcpk] 21:37:48.373 StopMove(0x47) 268444143 npc=20268 pos=79704,130045,-3664
+   log [npcpk] 21:37:48.374 StopMove(0x47) 268444143 npc=20268 pos=79704,130045,-3664
+   log [npcpk] 21:37:48.374 ChangeMoveType(0x2e) 268444143 npc=20268 run=0 pos=79704,130045,-3664
+   log [npcpk] 21:37:48.467 MoveToLocation(0x01) 268444143 npc=20268 pos=79704,130045,-3664
+   log [npcpk] 21:37:49.495 ChangeMoveType(0x2e) 268444143 npc=20268 run=1 pos=79671,130013,-3664
+   log [npcpk] 21:37:49.495 MoveToLocation(0x01) 268444143 npc=20268 pos=79671,130013,-3664
+== preparo: ~350 do orc
+"d=1160"
+"orc 80488,130552 d=355 dead=False hpSelf=1281 @21:38:23"
+== ataca, depois foge 450 (d: inicio da corrida)
+"foge"
+"rajada orc_corrida"
+"orc 80488,130552 d=242 dead=True hpSelf=1330 @21:38:30"
+"orc 80488,130552 d=448 dead=True hpSelf=1330 @21:38:31"
+"orc 80488,130552 d=515 dead=True hpSelf=1330 @21:38:33"
+"orc 80488,130552 d=515 dead=True hpSelf=1330 @21:38:34"
+== (e) parado levando o golpe da espada
+"rajada orc_golpe"
+"sumiu"
+== (f) foge 2600 e espera ele desistir
+{
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+5
+   log [npcpk] 21:38:27.248 ChangeMoveType(0x2e) 268444124 npc=20267 run=1 pos=80488,130552,-3664
+   log [npcpk] 21:38:27.653 StopMove(0x47) 268444124 npc=20267 pos=80488,130552,-3664
+   log [npcpk] 21:38:27.657 ChangeMoveType(0x2e) 268444124 npc=20267 run=0 pos=80488,130552,-3664
+== (g) ocioso 268444123: posição a cada 5 s por 60 s
+"81768,128584 @21:39:54"
+"81752,128552 @21:39:59"
+"81752,128552 @21:40:04"
+"81752,128552 @21:40:10"
+"81752,128552 @21:40:15"
+"81752,128552 @21:40:20"
+"81704,128488 @21:40:25"
+"81682,128605 @21:40:30"
+"81736,128504 @21:40:36"
+"81736,128504 @21:40:41"
+"81736,128504 @21:40:46"
+"81736,128504 @21:40:51"
+   log [npcpk] 21:39:57.217 MoveToLocation(0x01) 268444123 npc=20267 pos=81768,128584,-3456
+   log [npcpk] 21:40:23.223 MoveToLocation(0x01) 268444123 npc=20267 pos=81752,128552,-3456
+   log [npcpk] 21:40:28.194 MoveToLocation(0x01) 268444123 npc=20267 pos=81704,128488,-3456
+   log [npcpk] 21:40:30.174 MoveToLocation(0x01) 268444123 npc=20267 pos=81640,128648,-3456
+   log [npcpk] 21:40:35.210 MoveToLocation(0x01) 268444123 npc=20267 pos=81740,128548,-3456
+== preparo: ~350 do orc
+"d=492"
+"orc 80478,130531 d=358 dead=False hpSelf=1330 @21:41:27"
+== ataca, depois foge 450 (d: inicio da corrida)
+"foge"
+"rajada orc_corrida"
+"orc 80552,130488 d=175 dead=False hpSelf=1302 @21:41:34"
+"orc 80552,130488 d=384 dead=False hpSelf=1302 @21:41:35"
+"orc 80552,130488 d=472 dead=False hpSelf=1302 @21:41:36"
+"orc 80552,130488 d=472 dead=False hpSelf=1309 @21:41:37"
+== (e) parado levando o golpe da espada
+"rajada orc_golpe"
+"orc 80552,130488 d=472 dead=False hpSelf=1317 @21:41:41"
+== (f) foge 2600 e espera ele desistir
+"foge longe"
+"orc 80552,130488 d=1287 dead=False hpSelf=1322 @21:41:46"
+"orc 80520,130504 d=2112 dead=False hpSelf=1330 @21:41:52"
+"orc 80520,130504 d=2959 dead=False hpSelf=1330 @21:41:57"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+"sumiu"
+7
+   log [npcpk] 21:41:31.210 ChangeMoveType(0x2e) 268480959 npc=20267 run=1 pos=80552,130488,-3664
+   log [npcpk] 21:41:33.683 ChangeMoveType(0x2e) 268480959 npc=20267 run=0 pos=80552,130488,-3664
+== (e) luta parada perto
+"rajada orc_golpe2"
+"orc 80520,130504 d=2467 dead=False hpSelf=1330 @21:43:34.1"
+"orc 80520,130504 d=2271 dead=False hpSelf=1330 @21:43:35.3"
+"orc 80520,130504 d=2075 dead=False hpSelf=1330 @21:43:36.5"
+== (d) recua 250
+"recua"
+"rajada orc_corrida2"
+"orc 80520,130504 d=2158 dead=False hpSelf=1330 @21:43:37.7"
+"orc 80520,130504 d=2261 dead=False hpSelf=1330 @21:43:38.5"
+"orc 80520,130504 d=2305 dead=False hpSelf=1330 @21:43:39.3"
+"orc 80520,130504 d=2305 dead=False hpSelf=1330 @21:43:40.1"
+"orc 80520,130504 d=2305 dead=False hpSelf=1330 @21:43:40.9"
+== (e) luta parada perto
+  chegou: "orc 80520,130504 d=58 dead=False hpSelf=1330 @21:44:02.5"
+"rajada orc_golpe2"
+"orc 80520,130504 d=58 dead=False hpSelf=1287 @21:44:05.5"
+"orc 80520,130504 d=58 dead=True hpSelf=1430 @21:44:06.7"
+"orc 80520,130504 d=58 dead=True hpSelf=1430 @21:44:08.0"
+== (d) recua 250
+"recua"
+"rajada orc_corrida2"
+"orc 80520,130504 d=198 dead=True hpSelf=1430 @21:44:09.2"
+"orc 80520,130504 d=315 dead=True hpSelf=1430 @21:44:10.0"
+"orc 80520,130504 d=315 dead=True hpSelf=1430 @21:44:10.9"
+"orc 80520,130504 d=315 dead=True hpSelf=1430 @21:44:11.7"
+"orc 80520,130504 d=315 dead=True hpSelf=1430 @21:44:12.5"
+   log [npcpk] 21:44:02.659 ChangeMoveType(0x2e) 268480959 npc=20267 run=1 pos=80520,130504,-3664
+   log [npcpk] 21:44:02.659 Attack(0x05) 268480959 npc=20267 pos=80520,130504,-3664
+   log [npcpk] 21:44:04.383 Attack(0x05) 268480959 npc=20267 pos=80520,130504,-3664
+   log [npcpk] 21:44:05.813 StopMove(0x47) 268480959 npc=20267 pos=80520,130504,-3664
+   log [npcpk] 21:44:05.820 ChangeMoveType(0x2e) 268480959 npc=20267 run=0 pos=80520,130504,-3664

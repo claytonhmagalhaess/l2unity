@@ -45,6 +45,20 @@ namespace L2Web.World
         public const float TweenMove = 0.1f;
         public const float TweenMoveFromWait = 0.4f;
         public const float TweenWait = 0.2f;
+        /// <summary>OnSocialAction de NPC: PlayAnim com Tween 0.1.</summary>
+        public const float TweenSocial = 0.1f;
+        /// <summary>
+        /// Taxa da animacao de andar/correr (APawn::GetWalkAnimRate 0x1030f65a / GetRunAnimRate 0x10313a70): XxxAnimRate[arma]
+        /// do .int (1 se 0), vezes o npc_speed do npcgrp se o pawn for NPC (bNpc, FL2NpcData+0x58, gravado pelo
+        /// FL2GameData::NpcDataLoad), vezes o moveMul (0x6b4) no atualizador. `npcSpeed` 0 (ausente) conta como 1.
+        /// </summary>
+        public static float MoveAnimRate(float animRate, float npcSpeed, float moveMul)
+        {
+            var r = animRate != 0 ? animRate : 1;
+            if (npcSpeed != 0) r *= npcSpeed;
+            return r * (moveMul != 0 ? moveMul : 1);
+        }
+
         /// <summary>Parado e girando mais rapido que isso (unidades/s) toca TurnAnim.</summary>
         public const float TurnAnimRate = 1000;
         /// <summary>Tick do PlayerController: ValidatePosition a cada 1,2 s enquanto o pawn tem velocidade.</summary>

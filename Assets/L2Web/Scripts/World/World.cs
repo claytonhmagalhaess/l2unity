@@ -236,7 +236,12 @@ namespace L2Web.World
             e.MAtkSpd = n.MAtkSpd;
             e.InCombat = n.InCombat;
             e.Running = n.Running;
-            if (fresh && n.Rhand != 0) e.Widx = GameData.WeaponIndex(n.Rhand) == 5 ? 5 : 0;
+            // CurWeaponType (pawn[0x71d]) = User::GetAnimType (0x103036fc), gravado pelo User::SetPawnResource (0x10314583)
+            // para todo pawn, NPC incluido: o handness da arma (weapongrp), como no jogador. O .int dos NPCs tem linhas [1]
+            // (wait_1hs, atk01_1hs...); a linha ausente cai na [0] (GameData.MoveAnim) e o clipe ausente no fallback do Anim.
+            if (fresh) e.Widx = GameData.WeaponIndex(n.Rhand);
+            // npc_speed do npcgrp (l2anim: "spd"): GetWalkAnimRate/GetRunAnimRate multiplicam a taxa do NPC por ele
+            if (fresh) e.NpcSpeed = (float?)GameData.Npc(n.NpcId)?["spd"] ?? 1;
             if (fresh) e.Dead = n.Dead;
             else e.SetDead(n.Dead);
             e.CollisionHeight = Or(n.CollisionHeight, 23);
