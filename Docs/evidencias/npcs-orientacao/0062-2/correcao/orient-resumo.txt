@@ -1,0 +1,12 @@
+268480967 npc=20267 sec=batur_orc clip=Wait           n=235  Heading-mov(med)=None n=0  Heading-paraSelf(med)=-22058  Facing-Heading(med)=449  yawT/model ex=315,0/270,0
+268480967 npc=20267 sec=batur_orc clip=Social01       n= 20  Heading-mov(med)=None n=0  Heading-paraSelf(med)=22296  Facing-Heading(med)=474  yawT/model ex=315,0/270,0
+268480967 npc=20267 sec=batur_orc clip=atk01          n= 79  Heading-mov(med)=None n=0  Heading-paraSelf(med)=-22058  Facing-Heading(med)=7737  yawT/model ex=192,6/270,0
+268480967 npc=20267 sec=batur_orc clip=Walk           n= 15  Heading-mov(med)=0 n=15  Heading-paraSelf(med)=20864  Facing-Heading(med)=1101  yawT/model ex=315,0/270,0
+268480967 npc=20267 sec=batur_orc clip=death          n= 23  Heading-mov(med)=None n=0  Heading-paraSelf(med)=1  Facing-Heading(med)=7802  yawT/model ex=192,6/270,0
+268480967 npc=20267 sec=batur_orc clip=deathwait      n= 45  Heading-mov(med)=None n=0  Heading-paraSelf(med)=1  Facing-Heading(med)=-18160  yawT/model ex=192,6/270,0
+268480973 npc=20268 sec=batur_orc_archer clip=Walk           n= 24  Heading-mov(med)=-6 n=24  Heading-paraSelf(med)=20921  Facing-Heading(med)=-1013  yawT/model ex=44,6/270,0
+268480973 npc=20268 sec=batur_orc_archer clip=Wait           n= 92  Heading-mov(med)=None n=0  Heading-paraSelf(med)=22128  Facing-Heading(med)=-594  yawT/model ex=150,5/270,0
+268480973 npc=20268 sec=batur_orc_archer clip=atk01          n= 10  Heading-mov(med)=None n=0  Heading-paraSelf(med)=1  Facing-Heading(med)=4830  yawT/model ex=28,9/270,0
+268480973 npc=20268 sec=batur_orc_archer clip=atkwait        n=  2  Heading-mov(med)=None n=0  Heading-paraSelf(med)=1  Facing-Heading(med)=4827  yawT/model ex=28,9/270,0
+268480973 npc=20268 sec=batur_orc_archer clip=run            n= 18  Heading-mov(med)=2 n=18  Heading-paraSelf(med)=-32046  Facing-Heading(med)=29509  yawT/model ex=224,6/270,0
+268480973 npc=20268 sec=batur_orc_archer clip=death          n=  2  Heading-mov(med)=13 n=1  Heading-paraSelf(med)=709  Facing-Heading(med)=4971  yawT/model ex=44,6/270,0
