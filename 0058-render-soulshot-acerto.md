@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-soulshot-acerto` (nasce de `main`) |
-| Estado | bloqueada |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\09_efeitos_skill.md`; `Docs/efeitos.md` linhas W3 (AssociateAttackedNotify, "soulshot (Atk/AtkCr/AtkDarkCr por grade) [N]"), L6 e L8 |
 | Sessão | render: soulshot no acerto (#0058) |
 | Criada | 2026-11-05 |
@@ -26,10 +26,10 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - a escala;
   - a relação com o DamageEffect normal (substitui ou soma);
   - o caso de arco e o de golpe duplo (dual/pole com vários alvos).
-- [ ] O porte mostra o efeito do soulshot no alvo ao acertar, como no original, para todas as grades e para o crítico, e não mostra sem soulshot. A linha W3 do `Docs/efeitos.md` sai de `[N]`. **Parcial:** código, testes e W3 prontos; a confirmação ao vivo depende do item abaixo.
+- [x] O porte mostra o efeito do soulshot no alvo ao acertar, como no original, para todas as grades e para o crítico, e não mostra sem soulshot. A linha W3 do `Docs/efeitos.md` sai de `[N]`. **Feito:** ao vivo com SS D (3cf9dc0), 8 golpes: 0x11 deu p_u002_a + e_u506_c, 0x31 deu p_u002_a + e_u506_e sem p_u004_a, e 0x00 deu só p_u002_a. As outras grades (sem grade, C, B, A e S) não foram vistas ao vivo, porque não havia arma nem shot dessas grades. A escolha é a mesma tabela, conferida por `FxSoulshotHitTests` contra o `soulshot.int` do cliente; as 18 classes existem no `lineageeffect.json`. A W3 saiu de `[N]`.
 - [x] Se o flag do soulshot no pacote Attack não chegar à camada de efeitos, ou se a mudança for no `App.cs` (`OnAttack`), abra o pedido com o trecho exato em `tarefas\pedidos\`. **Feito:** pedido 0053, aplicado pela coordenadora em 3cf9dc0.
 - [x] Testes EditMode para a escolha da classe por grade e crítico e para a posição. Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes. **Feito:** `FxSoulshotHitTests` (10). 922/922 no 118b832 e no 3cf9dc0 contra 912/912 na base e40d43c; nenhuma falha nova (testes 0058-1 e 0058-2).
-- [ ] Capturas ao vivo antes e depois, tiradas pela sessão de testes no aCis local: golpe normal com soulshot D ou C e um crítico, quadros em sequência, em `Docs/evidencias/soulshot-acerto/`. **Bloqueado:** o aCis local está fora do ar (2106/7777). O roteiro já está com a sessão de testes (0058-1 antes, 0058-2 depois); a #0058 é a 2ª da fila do ao vivo.
+- [x] Capturas ao vivo antes e depois, tiradas pela sessão de testes no aCis local: golpe normal com soulshot D ou C e um crítico, quadros em sequência, em `Docs/evidencias/soulshot-acerto/`. **Feito:** `Docs/evidencias/soulshot-acerto/01`–`07` (sequências de 6 quadros a 0,1 s, antes e depois; normal, crítico e sem SS), mais `resumo_teste.md` e os logs `[ss]`/`[ssfx]` (testes 0058-1 e 0058-2).
 
 ## Andamento
 
@@ -104,10 +104,11 @@ Fontes: `analises\l2-interlude\re\decomp_all\engine\` (índice em `index.tsv`) e
 
 - **Commits:** `feat/render-soulshot-acerto`:
   - 118b832: `FxPawnEffects` (`HitEffects`, `SoulshotHitClass`, `SoulshotOpacity`, `HitLocation`, `OnHit(flags, arrow)`), `FxSoulshotHitTests` e a W3 do `Docs/efeitos.md`;
-  - 3cf9dc0: `App.cs` (pedido 0053, pela coordenadora).
-- **Testes:** EditMode 922/922 no 118b832 e no 3cf9dc0 (base 912/912), `FxSoulshotHitTests` 10/10, sem erros de compilação.
+  - 3cf9dc0: `App.cs` (pedido 0053, pela coordenadora);
+  - eb0a547: evidências ao vivo em `Docs/evidencias/soulshot-acerto/` e a W3.
+- **Testes:** EditMode 922/922 no 118b832 e no 3cf9dc0 (base 912/912), `FxSoulshotHitTests` 10/10, sem erros de compilação. Ao vivo antes e depois com Soulshot D (normal, crítico e sem SS), 0 erros no console.
 - **Falta / fora do escopo:**
-  - Falta: as capturas ao vivo de antes e depois em `Docs/evidencias/soulshot-acerto/`, que esperam o aCis.
+  - Não visto ao vivo: as grades sem grade, C, B, A e S (sem arma nem shot dessas grades), a opacidade com grupo de mais de 2 e a flecha com SS. Esses casos estão cobertos só pelos testes EditMode.
   - Fora do escopo [I]: o teste de alvo visível (`bRendered`), o ponto exato onde a flecha crava e o `it_zariche_ta` da arma amaldiçoada.
   - Observado de passagem: no original, a flecha crítica sem escudo e sem soulshot não mostra o p_u004_a. O porte agora segue o original, porque o 3cf9dc0 marca a flecha.
 
