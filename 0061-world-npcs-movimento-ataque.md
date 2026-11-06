@@ -56,7 +56,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
   Some uma linha na `Docs/validacao.md`.
 
-  **Feito em parte:** a linha M9 da `validacao.md` entrou. O ao vivo `0061-3` rodou com o antes no `e40d43c` e o depois no `cfa73ce` (conta `l2webtest9`, Breka's Stronghold). Evidências em `Docs/evidencias/npcs-movimento/aovivo-0061-3/` (`29c62bd`); as rajadas inteiras ficaram em `testes1-3\`.
+  **Feito em parte:** a linha M9 da `validacao.md` entrou. O ao vivo `0061-3` rodou com o antes no `e40d43c` e o depois no `cfa73ce` (conta `l2webtest9`, Breka's Stronghold). Evidências em `Docs/evidencias/npcs-movimento/aovivo-0061-3/` (`29c62bd`); as rajadas inteiras ficaram em `testes\0061-3\`.
   - Arqueiro (Breka Orc Archer 20268): coberto.
   - Corpo a corpo (Breka Orc 20267): coberto.
   - Andar aleatório: coberto.
