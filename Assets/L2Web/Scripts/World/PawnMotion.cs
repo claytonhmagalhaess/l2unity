@@ -83,6 +83,45 @@ namespace L2Web.World
             Dest = dest.Clone();
         }
 
+        /// <summary>
+        /// AController::AddMoveToward(origem, alvo, offset) do OnMoveToPawn para OUTROS pawns: correcao para chegar em
+        /// sincronia com o servidor, pelas distancias ate o CENTRO do alvo (sem descontar o offset, como no engine):
+        /// 0x6d0 = |alvo - origem| / GetCurSpeed(-1) (sem o moveMul, ao contrario do AddMoveTo) e
+        /// 0x6d4 = (|alvo - pawn| - |alvo - origem|) / 0x6d0. O MoveToward troca o Destination: o MoveToLocation anterior acaba.
+        /// </summary>
+        public void AddMoveToward(Vec3 origin, Vec3 goal)
+        {
+            var v = BaseSpeed();
+            var d1 = Movement.Dist3(goal, origin);
+            var d2 = Movement.Dist3(this, goal);
+            if (v > 0 && d1 > 0 && MoveMul > 0)
+            {
+                CorrTimer = d1 / v;
+                Corr = (d2 - d1) / CorrTimer;
+            }
+            else
+            {
+                CorrTimer = 0;
+                Corr = 0;
+            }
+            Dest = null;
+        }
+
+        /// <summary>
+        /// UGameEngine::OnMoveToPawn: outro pawn longe demais da origem do pacote e reposicionado (AdjustPawnLocation) e
+        /// ganha a correcao do AddMoveToward; o proprio jogador so troca o destino (MoveToward, sem ajuste nem correcao).
+        /// </summary>
+        public void ServerMoveToPawn(Vec3 goal, Vec3 origin, bool isSelf)
+        {
+            if (isSelf)
+            {
+                Dest = null;
+                return;
+            }
+            if (Movement.Dist3(this, origin) > Movement.SnapDistance) Place(origin.X, origin.Y, origin.Z);
+            AddMoveToward(origin, goal);
+        }
+
         /// <summary>StopMove: para; reposiciona so outros pawns e so se divergirem mais que SnapDistance.</summary>
         public void ServerStop(Vec3 pos, bool isSelf)
         {

@@ -1,0 +1,4 @@
+commit 7fccefe #0059: aproximacao do alvo como o OnMoveToPawn/ReachedDestination do original
+exit 0  tempo 66s  filtro: (suite inteira)
+--- erros de compilacao (log):
+total 925 passou 925 falhou 0 ignorado 0

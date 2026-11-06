@@ -1,0 +1,4 @@
+commit f8627bb Merge feat/render-pawns-chao (correcao da ToI)
+exit 0  tempo 25s  filtro: (suite inteira)
+--- erros de compilacao (log):
+total 912 passou 912 falhou 0 ignorado 0
