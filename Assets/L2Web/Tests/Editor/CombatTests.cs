@@ -35,7 +35,7 @@ namespace L2Web.Tests
             var d = Combat.ServerHits(470, "dual");
             Assert.AreEqual(1000, d.TimeAtk);
             CollectionAssert.AreEqual(new[] { 250, 500 }, d.Hits);
-            var b = Combat.ServerHits(345, "bow");
+            var b = Combat.ServerHits(333, "bow");
             Assert.AreEqual(1500, b.TimeAtk);
             CollectionAssert.AreEqual(new[] { 1500 }, b.Hits);
         }
@@ -60,11 +60,12 @@ namespace L2Web.Tests
             Assert.AreEqual(1864, c.Hit);
             Assert.AreEqual(2330, c.Finalize);
             var a = L2Calc.ServerAttack(new ServerAttackOpts { PAtkSpd = 400, ServerType = "BOW", BowReuse = 1500 });
-            Assert.AreEqual(1293, a.TimeAtk);
-            CollectionAssert.AreEqual(new[] { 1293.0 }, a.Hits);
-            Assert.AreEqual(1193, a.AttackEnd);
+            // aCis: timeAtk do arco = 1500 * 333 / PAtkSpd, _attackEndTime = timeAtk - 50, reuso = reuseDelay * 345 / PAtkSpd
+            Assert.AreEqual(1248, a.TimeAtk);
+            CollectionAssert.AreEqual(new[] { 1248.0 }, a.Hits);
+            Assert.AreEqual(1198, a.AttackEnd);
             Assert.AreEqual(1293, a.Reuse);
-            Assert.AreEqual(2586, a.Cycle);
+            Assert.AreEqual(2541, a.Cycle);
             Assert.AreEqual(1.4666666666666668, a.Mult, 1e-12);
         }
 
