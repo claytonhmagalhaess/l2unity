@@ -1,0 +1,5 @@
+   log [npcpk] 21:39:57.217 MoveToLocation(0x01) 268444123 npc=20267 pos=81768,128584,-3456
+   log [npcpk] 21:40:23.223 MoveToLocation(0x01) 268444123 npc=20267 pos=81752,128552,-3456
+   log [npcpk] 21:40:28.194 MoveToLocation(0x01) 268444123 npc=20267 pos=81704,128488,-3456
+   log [npcpk] 21:40:30.174 MoveToLocation(0x01) 268444123 npc=20267 pos=81640,128648,-3456
+   log [npcpk] 21:40:35.210 MoveToLocation(0x01) 268444123 npc=20267 pos=81740,128548,-3456
