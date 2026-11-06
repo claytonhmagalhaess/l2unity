@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world, na pasta `worktrees\net` (emprestada: a `worktrees\world` está com a #0059) |
 | Branch | `feat/world-sistema-ataque` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (combate, animação do pawn, 94/96 Attack 0x05, MagicSkillUse, StopMove, AutoAttackStart/Stop, Die); `Docs/validacao.md` M3, M4 e M5; `World/Combat.cs`, `World/ActionLatch.cs`, `World/Skills.cs`, `World/L2Calc.cs` |
 | Sessão | world: sistema de ataque (#0060) |
 | Criada | 2026-11-05 |

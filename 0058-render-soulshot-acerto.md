@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | render |
 | Branch | `feat/render-soulshot-acerto` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\09_efeitos_skill.md`; `Docs/efeitos.md` linhas W3 (AssociateAttackedNotify, "soulshot (Atk/AtkCr/AtkDarkCr por grade) [N]"), L6 e L8 |
 | Sessão | render: soulshot no acerto (#0058) |
 | Criada | 2026-11-05 |

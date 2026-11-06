@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world, na pasta `worktrees\ui2` (emprestada: `world` está com a #0059 e `net` com a #0060) |
 | Branch | `feat/world-npcs-movimento` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (movimento e rotação do pawn, animação de NPC, 94/96: NpcInfo, MoveToLocation, MoveToPawn, StopMove, StopRotation/BeginRotation, Attack, AutoAttackStart/Stop, Die, SocialAction); `World/PawnMotion.cs`, `World/Movement.cs`, `World/Entity.cs`, `World/Combat.cs` |
 | Sessão | world: NPCs e monstros (#0061) |
 | Criada | 2026-11-05 |

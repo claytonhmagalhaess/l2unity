@@ -4,7 +4,7 @@
 |---|---|
 | De | world (tarefa #0060) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-05 |
 
 ## O que precisa
@@ -87,3 +87,4 @@ Sem o pedido nada quebra: os métodos novos existem, mas ninguém os chama. Fica
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-05 — coordenadora: feito, aplicado na prévia `integracao/combate` (`4ccc06c`) e no `main`. Merge no `main` em `7c4c342`; suíte 970/970 no `57df023` (depois só Docs); o usuário conferiu a prévia no Editor.

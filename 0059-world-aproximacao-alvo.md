@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-aproximacao-alvo` (nasce de `main`) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (movimento do pawn, `MoveToPawn` 0x60, `MoveToLocation` 0x01, `StopMove` 0x47, `ValidateLocation` 0x61, `Attack` 0x05, alcance e raio de colisão); `World/Movement.cs`, `World/PawnMotion.cs`, `World/ActionLatch.cs`, `World/Combat.cs` |
 | Sessão | world: aproximação do alvo (#0059) |
 | Criada | 2026-11-05 |

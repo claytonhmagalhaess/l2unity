@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world (com permissão para `Render/Actor.cs`, ver abaixo) |
 | Branch | `feat/world-npcs-orientacao` (nasce de `integracao/combate`, a prévia com #0058–#0061) |
-| Estado | pronta p/ merge |
+| Estado | no main |
 | Spec | `analises\l2-interlude\client_spec\` (rotação do pawn, `Rotation`/`DesiredRotation`, `RotationRate`, `physicsRotation`, animação de andar e correr, orientação da malha); `World/PawnMotion.cs`, `World/Movement.cs`, `World/Entity.cs`, `Render/Actor.cs` (hierarquia Root → Yaw → Model, correção da frente) |
 | Sessão | world: orientação dos NPCs (#0062) |
 | Criada | 2026-11-05 |

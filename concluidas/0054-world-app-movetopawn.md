@@ -4,7 +4,7 @@
 |---|---|
 | De | world (tarefa #0059) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-05 |
 
 ## O que precisa
@@ -72,3 +72,4 @@ Sem o pedido, o porte continua correto no principal, porque a parada no alcance,
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-05 — coordenadora: feito, aplicado no branch da #0059 (`d9a7f7d`) e no `main` pela prévia `integracao/combate`. Merge no `main` em `7c4c342`; suíte 970/970 no `57df023` (depois só Docs); o usuário conferiu a prévia no Editor.

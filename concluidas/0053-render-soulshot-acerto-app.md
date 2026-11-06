@@ -4,7 +4,7 @@
 |---|---|
 | De | render (tarefa #0058) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-05 |
 
 ## O que precisa
@@ -48,3 +48,4 @@ Sem o pedido nada quebra: a sobrecarga antiga (`bool crit`) continua no branch, 
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-05 — coordenadora: feito, aplicado no branch da #0058 (`3cf9dc0`) e no `main` pela prévia `integracao/combate`. Merge no `main` em `7c4c342`; suíte 970/970 no `57df023` (depois só Docs); o usuário conferiu a prévia no Editor.

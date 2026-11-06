@@ -4,7 +4,7 @@
 |---|---|
 | De | world (tarefa #0061) |
 | Para | coordenadora |
-| Estado | aberto |
+| Estado | feito |
 | Criado | 2026-11-05 |
 
 ## O que precisa
@@ -51,3 +51,4 @@ Sem as duas mudanças nada quebra, só continua sem a animação.
 ## Resposta
 
 <!-- quem atendeu: aceito / feito (commit) / recusado (motivo) -->
+- 2026-11-05 — coordenadora: feito, item 1 (handler 0x2d) na prévia `integracao/combate` (`4ccc06c`); item 2: `anim_tables.json` regerado com as chaves NpcSocial (cópia do gerador com as 3 chaves; o original reproduziu o arquivo antigo; 711 seções ganharam a linha; backup do anterior no scratchpad da coordenadora). Merge no `main` em `7c4c342`; suíte 970/970 no `57df023` (depois só Docs); o usuário conferiu a prévia no Editor.
