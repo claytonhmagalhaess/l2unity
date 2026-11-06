@@ -294,7 +294,8 @@ namespace L2Web.Render
                 if (disposed) return false;
             }
             baseParts = parts;
-            AlignForward();
+            // a primeira parte do manifesto e a malha principal (a do npcgrp/do corpo), dona do RotOrigin
+            AlignForward(man.Parts.Count > 0 ? man.Parts[0].Name : null);
             Loaded = true;
             return true;
         }
@@ -569,15 +570,43 @@ namespace L2Web.Render
             }
         }
 
-        /// <summary>Gira o modelo para que a frente (pes -> dedos) aponte para o heading 0 do L2 (-X local do Unity).</summary>
-        void AlignForward()
+        /// <summary>
+        /// RotOrigin.Yaw das malhas esqueleticas do L2 (ULodMesh::RotOrigin, "#exec MESH ORIGIN ... YAW=192" no .uc do umodel:
+        /// rotator P=0 Y=49152 R=0, isto e, -90 graus). O psk/glb do umodel sai sem ele, com a frente do rig em +Y do mesh do
+        /// UE (+Z do glTF e do Unity); o engine aplica o RotOrigin entre o mesh e o ator, e a frente vira o +X do ator (heading
+        /// 0). Levantado com o umodel -uc nos 477 meshes de NPC do npcgrp e nos de jogador: Y=49152 em todos menos os de
+        /// MeshRotOriginZero (#0062).
+        /// </summary>
+        public const int MeshRotOriginYaw = 49152;
+
+        /// <summary>As unicas malhas do npcgrp com RotOrigin (0, 0, 0): um monstro parado e tres dummies de efeito.</summary>
+        static readonly HashSet<string> MeshRotOriginZero = new(StringComparer.OrdinalIgnoreCase)
+        {
+            "susceptor_prime_m00", "skill_dummy_00_m00", "skill_dummy_01_m00", "valakas_f_dummy_m00",
+        };
+
+        /// <summary>RotOrigin.Yaw de uma malha esqueletica pelo nome (com ou sem o pacote: "LineageMonsters.batur_orc_m00").</summary>
+        public static int MeshRotOriginYawOf(string mesh)
+        {
+            var n = mesh ?? "";
+            var dot = n.LastIndexOf('.');
+            if (dot >= 0) n = n.Substring(dot + 1);
+            return MeshRotOriginZero.Contains(n) ? 0 : MeshRotOriginYaw;
+        }
+
+        /// <summary>Rotacao do no Model (correcao da frente): o RotOrigin no espaco do Unity, no mesmo sentido do heading.</summary>
+        public static Quaternion MeshRotOrigin(string mesh) => Quaternion.Euler(0, Coords.HeadingToUnityDeg(MeshRotOriginYawOf(mesh)), 0);
+
+        /// <summary>
+        /// Gira o modelo para que a frente aponte para o heading 0 do L2 (-X local do Unity): o RotOrigin fixo das malhas. O
+        /// porte media a frente pelos ossos do pe (three.js), mas o glTFast mantem o espaco no nome dos ossos ("Bip01 L Toe0",
+        /// que o three trocava por "_"): nos rigs de NPC a medida falhava e o modelo ficava sem correcao, 90 graus de lado
+        /// (#0062). Nos rigs de passaro/dinossauro (wyvern, Valakas, avestruz...) o Toe0 aponta para tras e a medida dava 180.
+        /// </summary>
+        void AlignForward(string mainMesh)
         {
             Update(0);
-            model.localRotation = Quaternion.identity;
-            // mede no espaco do grupo de heading: o ator pode ja estar girado (heading vindo do servidor)
-            var d = FootDirection(Yaw);
-            // three: model.rotation.y = atan2(d.z, d.x) com d no espaco do three (x negado em relacao ao Unity)
-            if (d.HasValue) model.localRotation = Quaternion.Euler(0, Coords.ThreeYawToUnityDeg(Mathf.Atan2(d.Value.z, -d.Value.x)), 0);
+            model.localRotation = MeshRotOrigin(mainMesh);
             var any = false;
             var box = new Bounds();
             foreach (var m in model.GetComponentsInChildren<SkinnedMeshRenderer>(true))
@@ -597,10 +626,14 @@ namespace L2Web.Render
             Height = any ? box.size.y : 0;
         }
 
-        /// <summary>Direcao pes -> dedos (plano XZ) no espaco local de `space`, ou null sem esses ossos.</summary>
+        /// <summary>
+        /// Direcao pes -> dedos (plano XZ) no espaco local de `space`, ou null sem esses ossos. Os rigs de jogador chamam os
+        /// ossos "Bip01_L_Toe0"; os de NPC, "Bip01 L Toe0".
+        /// </summary>
         Vector3? FootDirection(Transform space)
         {
-            Vector3? P(string n) => byName.TryGetValue(n, out var b) ? space.InverseTransformPoint(b.position) : null;
+            Vector3? P(string n) =>
+                byName.TryGetValue(n, out var b) || byName.TryGetValue(n.Replace('_', ' '), out b) ? space.InverseTransformPoint(b.position) : null;
             var toe = new[] { P("bip01_l_toe0"), P("bip01_r_toe0") }.Where(v => v.HasValue).Select(v => v.Value).ToList();
             var foot = new[] { P("bip01_l_foot"), P("bip01_r_foot") }.Where(v => v.HasValue).Select(v => v.Value).ToList();
             if (toe.Count == 0 || foot.Count == 0) return null;
@@ -611,7 +644,10 @@ namespace L2Web.Render
             return d.sqrMagnitude > 1e-10f ? d.normalized : null;
         }
 
-        /// <summary>Para onde o modelo esta olhando, como heading L2 (0..65535), medido pelos ossos do pe. Diagnostico.</summary>
+        /// <summary>
+        /// Para onde o modelo esta olhando, como heading L2 (0..65535), medido pelos ossos do pe. Diagnostico: nos rigs com o
+        /// Toe0 para tras (wyvern, Valakas, avestruz, dinossauros) da o oposto.
+        /// </summary>
         public int? FacingHeading()
         {
             var d = FootDirection(Root.parent != null ? Root.parent : Root);
