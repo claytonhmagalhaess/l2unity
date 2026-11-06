@@ -1,0 +1,20 @@
+== 4ccc06c
+4ccc06c App.cs: pedidos 0062 (golpes nos AttackShot, alvo automatico, Die e Revive pelo World) e 0064 item 1 (SocialAction de NPC)
+status: up_to_date errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"scrLogin"
+"ok"
+"scrGame chars=4"
+"ok"
+"scrGame inWorld=True ents=17 self=dsadasdasd 81320,130152,-3632"
+"self model=270,0 yawT=139,4 | 20267:0,0 20267:0,0 20199:0,0 20268:0,0 20199:0,0 20199:0,0 "
+== e40d43c
+e40d43c README: a conexao do login fica no Ctrl+Alt+O (o Options abre as opcoes do jogo, #0048)
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=20 self=Npc61 79384,129768,-3664"
+"self model=270,0 yawT=226,3 | 20199:0,0 20268:0,0 20268:0,0 20268:0,0 20267:0,0 20267:0,0 "
