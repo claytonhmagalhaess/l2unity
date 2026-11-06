@@ -1570,6 +1570,12 @@ namespace L2Web
                 var e = world.Get(m.ObjectId);
                 if (e != null) e.Running = m.Running;
             });
+            On(0x2d, r =>
+            {
+                // UGameEngine::OnSocialAction (0x1030c243): NPC toca NpcSocialAnimName[id - 1] (ids 1..5); jogador: pedido 0046
+                var s = GamePackets.ParseSocialAction(r);
+                world.Get(s.ObjectId)?.Social(s.ActionId);
+            });
             On(0x2f, r =>
             {
                 var w = GamePackets.ParseChangeWaitType(r);
@@ -1642,6 +1648,10 @@ namespace L2Web
                 // OnAttack(User*,User*) (+0x12c) zera a trava quando o atacante sou eu; com o alvo desconhecido o
                 // tratador chama +0x128, que nao zera. Os golpes extras (OnAssociatedAttack) nao zeram.
                 if (a.Hits.Count > 0 && world.Get(a.Hits[0].TargetId) != null) world.Answered(a.AttackerId);
+                // alvo automatico de quem me ataca: o original manda Action com o id do atacante e a posicao do proprio pawn
+                if (a.Hits.Count > 0 && world.AutoTargetOnAttack(a.AttackerId, a.Hits[0].TargetId, targetId) && world.Self is { } me)
+                    gc?.Send(GamePackets.Action(a.AttackerId, Mathf.RoundToInt(me.X), Mathf.RoundToInt(me.Y), Mathf.RoundToInt(me.Z),
+                        Keyboard.current?.shiftKey.isPressed ?? false));
                 L2Events.Dispatch(PacketEvents.Attack(a, id => world.Get(id)?.Name ?? ""));
                 OnAttack(a);
             });
@@ -1781,7 +1791,7 @@ namespace L2Web
             On(0xa6, r =>
             {
                 var t = GamePackets.ParseMyTargetSelected(r);
-                world.Request.MyTargetSelected();
+                world.OnMyTargetSelected();
                 L2Events.Dispatch(PacketEvents.MyTargetSelected(t));
                 ui.TargetLevelDiff = t.Color;
                 SetTarget(t.ObjectId);
@@ -1791,7 +1801,7 @@ namespace L2Web
                 var u = GamePackets.ParseTargetUnselected(r);
                 var e = world.Get(u.ObjectId);
                 if (e != null) e.TargetId = 0;
-                world.Answered(u.ObjectId);
+                world.OnTargetUnselected(u.ObjectId);
                 if (u.ObjectId == world.SelfId) SetTarget(0);
             });
             On(0x29, r =>
@@ -1799,17 +1809,13 @@ namespace L2Web
                 var t = GamePackets.ParseTargetSelected(r);
                 var e = world.Get(t.ObjectId);
                 if (e != null) e.TargetId = t.TargetId;
-                world.Answered(t.ObjectId);
+                world.OnTargetSelected(t.ObjectId);
             });
             On(0x06, r =>
             {
                 var d = GamePackets.ParseDie(r);
-                var e = world.Get(d.ObjectId);
-                if (e != null)
-                {
-                    e.SetDead(true);
-                    e.InCombat = false;
-                }
+                // UGameEngine::OnDie: StopMove, sai da postura de combate e corta ataque e cast (pedido 0062)
+                world.OnDie(d.ObjectId);
                 // RestartMenuWnd: vila, clan hall, castelo, QG de cerco, aqui (os indices sao os do RequestRestartPoint)
                 if (d.ObjectId == world.SelfId) L2Events.Dispatch(PacketEvents.Die(d));
                 if (d.ObjectId == world.SelfId) ShowRestartMenuLater(d);
@@ -1818,7 +1824,7 @@ namespace L2Web
             On(0x07, r =>
             {
                 var id = GamePackets.ParseObjectId(r).ObjectId;
-                world.Get(id)?.SetDead(false);
+                world.OnRevive(id);
                 if (id == world.SelfId)
                 {
                     L2Events.Dispatch(PacketEvents.Revive());
@@ -2075,24 +2081,31 @@ namespace L2Web
             var fx = scene.Effects;
             var kind = res.Ranged ? "bow" : a.Hits.Count > 1 || attacker.Widx == 3 ? "dual" : "melee";
             var srv = Combat.ServerHits(attacker.PAtkSpd, kind);
-            // efeito de golpe (AssociateAttackedNotify) no notify AttackItem do cliente; flecha (NArrow) no AttackShot
-            for (var i = 0; i < a.Hits.Count; i++)
+            // efeito de golpe (AssociateAttackedNotify); flecha (NArrow) no AttackShot (pedido 0062)
+            if (res.Ranged)
             {
-                var h = a.Hits[i];
-                var victim = world.Get(h.TargetId);
-                if (victim == null) continue;
-                var hk = Combat.HitKind(h.Flags);
-                if (res.Ranged)
+                for (var i = 0; i < a.Hits.Count; i++)
                 {
+                    var h = a.Hits[i];
+                    var victim = world.Get(h.TargetId);
+                    if (victim == null) continue;
+                    var hk = Combat.HitKind(h.Flags);
                     var shot = res.Shots.Count > 0 ? res.Shots[0] : res.Items.Count > 0 ? res.Items[0] : 0.2f;
                     var land = Mathf.Max(shot + 0.08f, srv.Hits[0] / 1000f);
                     fx.Later(shot, () => scene.PawnFx.OnBowShot(attacker, victim));
                     if (hk != "miss") fx.Later(land, () => scene.PawnFx.OnHit(victim, attacker, h.Flags, true, scene.DamageEffectOf));
                 }
-                else if (hk != "miss")
+            }
+            else
+            {
+                // UAnimNotify_AttackShot::Notify (engine.c:445644): 1o AttackShot = golpe principal (e todos os extras se o
+                // clipe so tem um notify, pole); cada notify seguinte = proximo extra; sem extras repete o principal
+                foreach (var (i, at) in Combat.MeleeHitSchedule(res.Shots, a.Hits.Count, k => srv.Hits[Math.Min(k, srv.Hits.Length - 1)] / 1000f))
                 {
-                    var hitAt = i < res.Items.Count ? res.Items[i] : res.Items.Count > 0 ? res.Items[0] : srv.Hits[Math.Min(i, srv.Hits.Length - 1)] / 1000f;
-                    fx.Later(hitAt, () => scene.PawnFx.OnHit(victim, attacker, h.Flags, false, scene.DamageEffectOf));
+                    var h = a.Hits[i];
+                    var victim = world.Get(h.TargetId);
+                    if (victim == null || Combat.HitKind(h.Flags) == "miss") continue;
+                    fx.Later(at, () => scene.PawnFx.OnHit(victim, attacker, h.Flags, false, scene.DamageEffectOf));
                 }
             }
         }
