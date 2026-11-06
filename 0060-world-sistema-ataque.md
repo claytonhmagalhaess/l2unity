@@ -54,7 +54,18 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
   Some uma linha na `Docs/validacao.md`.
 
-  **Justificativa:** a linha M8 da `Docs/validacao.md` está feita. As capturas ao vivo não estão: o aCis local está fora do ar desde a queda de energia, e o ao vivo está na fila da sessão de testes em 3º lugar (antes `e40d43c`, depois `efd8fb5`). Além disso, parte do efeito só aparece depois que a coordenadora aplicar o pedido 0062 (`App.cs`).
+  **Justificativa:** a linha M8 da `Docs/validacao.md` está feita. O ao vivo foi feito em parte, pela sessão de testes no aCis local (`testes0-1`, copiado em `Docs/evidencias/sistema-ataque/`, `3df795a`). Antes = `e40d43c`, depois = `efd8fb5`, conta `l2webtest8`, figurante `l2webtest2`, logs de erro: 0.
+  - **Feito:**
+    - corpo a corpo até matar 3 Turek: o morto fica parado e o alvo continua no corpo;
+    - "Critical hit!" no chat;
+    - Ctrl+clique no figurante em Giran: o servidor recusa ("peaceful zone").
+
+    Tudo igual antes e depois, como esperado: essas regras já estavam certas, ou a mudança só aparece com o 0062.
+  - **Ficou de fora:**
+    - arco e dual: o personagem não tinha as armas;
+    - miss do próprio personagem: não houve nenhum;
+    - alvo automático e Revive com animação: o monstro provocado bateu com o alvo em 0 e o alvo continuou 0, porque o `App.cs` ainda não chama `World.AutoTargetOnAttack`. Dependem do pedido 0062 e devem ser repetidos depois dele;
+    - os golpes nos `AttackShot`: também dependem do 0062.
 
 ## Andamento
 
@@ -72,6 +83,12 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — Queda de energia às 20:03. O pedido de teste foi reenviado para o `efd8fb5`: compilar e suíte EditMode contra o `main` `e40d43c`. O ao vivo fica na fila até o aCis voltar.
 - 2026-11-05 — Suíte EditMode em `efd8fb5`: 925/925, 0 falhas (`main` 912/912). Evidências no branch (`e16e9b4`, `3c4a597`). Estado `pronta p/ merge`; o ao vivo fica na fila.
 - 2026-11-05 — A #0061 resolveu a B13 (reapontar no golpe, `9c610a7`) e a B16 (`Widx` do NPC, `05e2b56`) no branch dela. O merge com o meu toca `Entity.Attack`, o fim do `Combat.cs` e a linha do `Widx` no `World.UpsertNpc`; o conflito esperado é pequeno e mecânico. O pedido 0065 da #0061 aponta para o 0063 no caso do tronco do NPC.
+- 2026-11-05 — Ao vivo da sessão de testes, repassado pela coordenadora:
+  - corpo a corpo, morto e alvo, crítico e Ctrl em jogador: igual antes e depois, logs de erro: 0;
+  - o alvo automático não dispara porque o `App.cs` não o chama (pedido 0062);
+  - arco e dual não rodados.
+
+  Evidências no branch (`3df795a`).
 
 ## Decisões e REA
 
@@ -118,7 +135,7 @@ A tabela completa está em `Docs/combate_lacunas.md` do branch. O principal:
 - **Falta / fora do escopo:**
   - **Pedido 0062** (coordenadora, `App.cs`): sem ele o código novo não é chamado. Ficam esperando os golpes nos `AttackShot`, o alvo automático, a seleção pelo `World`, o Die e o Revive.
   - **Pedido 0063** (render): a reação do tronco ao golpe (`SpineRotation`) e as regras do escudo no `OnHit`.
-  - **Ao vivo:** na fila da sessão de testes, esperando o aCis voltar.
+  - **Ao vivo depois do 0062:** alvo automático, Revive, golpes nos `AttackShot`, arco e dual (com um personagem que tenha as armas).
   - **Propostas** (`combate_lacunas.md`):
     - exportar a `DeathStandAnimName` no `anim_tables.json` (tools);
     - SitDeath e SwimDeath;
