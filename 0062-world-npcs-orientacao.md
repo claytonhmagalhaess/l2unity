@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world (com permissão para `Render/Actor.cs`, ver abaixo) |
 | Branch | `feat/world-npcs-orientacao` (nasce de `integracao/combate`, a prévia com #0058–#0061) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (rotação do pawn, `Rotation`/`DesiredRotation`, `RotationRate`, `physicsRotation`, animação de andar e correr, orientação da malha); `World/PawnMotion.cs`, `World/Movement.cs`, `World/Entity.cs`, `Render/Actor.cs` (hierarquia Root → Yaw → Model, correção da frente) |
 | Sessão | world: orientação dos NPCs (#0062) |
 | Criada | 2026-11-05 |
@@ -25,12 +25,18 @@ Esta tarefa acha a causa e corrige, para o NPC andar, correr, girar e atacar com
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] **Regressão ou antigo:** primeiro, compare o `main` (`e40d43c`) com a prévia (`4ccc06c`) no mesmo lugar e com os mesmos monstros, pela sessão de testes. Registre se o defeito é antigo ou se veio da #0059, da #0060 ou da #0061, e qual commit o introduziu (bisect se precisar).
-- [ ] Causa registrada em Decisões e REA com evidência: o pseudocódigo do engine (como o pawn ganha a rotação andando, no `MoveToward`/`MoveTo`, e no golpe, no `SwordAttackProcess`/`BowAttackProcess`; a `RotationRate`; o `bRotateToDesired`), o heading que o aCis manda e os dados da malha (a frente do modelo, para cada raça e tipo de NPC afetado).
-- [ ] NPCs e monstros andam, correm, param e atacam com o corpo na direção certa, para corpo a corpo, arqueiro e mago. O jogador e os outros jogadores continuam certos.
-- [ ] A mudança mínima. A área é a world, e `Render/Actor.cs` está liberado só para a correção da orientação, registrada em Decisões. O que for do `App.cs` vira pedido para a coordenadora.
-- [ ] Testes EditMode para a regra corrigida. Suíte sem falhas novas em relação à prévia (959/959), rodada pela sessão de testes.
-- [ ] Capturas ao vivo antes e depois (rajadas de quadros), tiradas pela sessão de testes no aCis local: monstro andando, correndo até o jogador e atacando (corpo a corpo e arqueiro). Ficam em `Docs/evidencias/npcs-orientacao/`.
+- [x] **Regressão ou antigo:** primeiro, compare o `main` (`e40d43c`) com a prévia (`4ccc06c`) no mesmo lugar e com os mesmos monstros, pela sessão de testes. Registre se o defeito é antigo ou se veio da #0059, da #0060 ou da #0061, e qual commit o introduziu (bisect se precisar).
+  - Antigo: `Model` = 0 nos monstros já no `e40d43c` (0062-1). Vem da importação `0f6ba27`; nenhum commit da #0059, da #0060 ou da #0061 mexeu nisso.
+- [x] Causa registrada em Decisões e REA com evidência: o pseudocódigo do engine (como o pawn ganha a rotação andando, no `MoveToward`/`MoveTo`, e no golpe, no `SwordAttackProcess`/`BowAttackProcess`; a `RotationRate`; o `bRotateToDesired`), o heading que o aCis manda e os dados da malha (a frente do modelo, para cada raça e tipo de NPC afetado).
+  - Ver Decisões: o `RotOrigin` de 478 malhas pelo umodel e a pose de 467 rigs. O pseudocódigo da rotação e o aCis foram conferidos e não são a causa. O `MeshToWorld` que aplica o `RotOrigin` está marcado como A validar.
+- [x] NPCs e monstros andam, correm, param e atacam com o corpo na direção certa, para corpo a corpo, arqueiro e mago. O jogador e os outros jogadores continuam certos.
+  - Ao vivo 0062-2: orc andando de perfil na direção do movimento; orc e arqueiro golpeando de frente para o personagem; o arqueiro correndo no recuo com o corpo para a fuga; o personagem em 270 como antes. **Mago não testado ao vivo:** a correção vale para toda malha, pelo `RotOrigin`, e não depende do tipo de NPC.
+- [x] A mudança mínima. A área é a world, e `Render/Actor.cs` está liberado só para a correção da orientação, registrada em Decisões. O que for do `App.cs` vira pedido para a coordenadora.
+  - Só `Render/Actor.cs` (`AlignForward`, `MeshRotOrigin`, `FootDirection`) e o teste novo. Nada no `App.cs`. O lookup de ossos dos efeitos virou o pedido 0066.
+- [x] Testes EditMode para a regra corrigida. Suíte sem falhas novas em relação à prévia (959/959), rodada pela sessão de testes.
+  - `ActorFrontTests` 11/11; suíte em 57df023 com 970/970 (959 + 11).
+- [x] Capturas ao vivo antes e depois (rajadas de quadros), tiradas pela sessão de testes no aCis local: monstro andando, correndo até o jogador e atacando (corpo a corpo e arqueiro). Ficam em `Docs/evidencias/npcs-orientacao/`.
+  - 0062-1 (main × prévia, só números: o monstro ficou fora do quadro) e 0062-2 (prévia × correção, câmera atrás do personagem: `zoom_a_ocioso.png` e mosaicos de golpe e arqueiro).
 
 ## Andamento
 
@@ -38,6 +44,7 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 - 2026-11-05 — branch `feat/world-npcs-orientacao` criado de `integracao/combate` (4ccc06c). Pedido de teste 0062-1 à sessão de testes: ao vivo `e40d43c` × `4ccc06c`, monstro andando, correndo, golpeando e arqueiro, com o log `[orient]` (Heading, DesiredYaw, FacingHeading, direção do movimento, ângulo do Model).
 - 2026-11-05 — causa achada fora do Unity: os NPCs ficam sem a correção da frente da malha (detalhe em Decisões). Correção e `ActorFrontTests` em `57df023`. Pedido 0062-2: suíte em 57df023 (esperado 970) e ao vivo da correção.
 - 2026-11-05 — resultado do 0062-1 (`testes/0062-1/resumo.md`): nas duas versões o Heading lógico está certo. Andando, ele alinha com o movimento em ~0,4 s (mediana Heading−mov = 9); atacando, aponta para o jogador (diferença ≤ 1). Mas o `Model` (filho do `Yaw`) fica em **0** nos monstros em todas as amostras, contra 270 (−90°) no jogador, e o `FacingHeading` volta null. **Defeito antigo**, presente já no `main` `e40d43c`; não veio da #0059, da #0060 nem da #0061.
+- 2026-11-05 — 0062-2 (`testes/0062-2/resumo.md`): suíte em 57df023 com 970/970 e ActorFrontTests 11/11. Ao vivo prévia × correção: Model dos monstros 0 → 270, o personagem fica em 270; o orc anda de perfil na direção do movimento e golpeia de frente. O `FacingHeading` (pés) dá ~180° na corrida do arqueiro: medido no glb, o clipe `run` do orc e do arqueiro tem o vetor pé → dedo para trás e a cabeça à frente, então é limite da medida pelos pés, não do corpo. Evidências em `7c4c342`.
 
 ## Decisões e REA
 
@@ -56,9 +63,14 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/world-npcs-orientacao`, base `integracao/combate` 4ccc06c): `57df023` (correção e `ActorFrontTests`), `e281525` e `7c4c342` (evidências).
+- **Testes:** pela sessão de testes. Suíte em 57df023: 970/970 (`ActorFrontTests` 11/11, com 3 UnityTest que carregam os glb do orc, do MFighter e do Valakas). Ao vivo 0062-1 (e40d43c × 4ccc06c) e 0062-2 (4ccc06c × correção) em Breka's Stronghold.
+- **Falta / fora do escopo:**
+  - mago e NPC de cidade não foram vistos ao vivo (a regra vale para toda malha);
+  - os outros lookups de osso de NPC (efeitos, encaixe) são o pedido 0066 → render;
+  - o `RotationRate` real dos `LineageMonster` (porte 65000/s) continua A validar;
+  - confirmar no pseudocódigo do `MeshToWorld` os offsets do `RotOrigin`;
+  - a branch nasce da prévia: o merge depende da #0058–#0061 entrarem antes (ou junto).
 
 ## Pedidos
 
