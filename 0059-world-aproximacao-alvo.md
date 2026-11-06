@@ -4,7 +4,7 @@
 |---|---|
 | Vaga | world |
 | Branch | `feat/world-aproximacao-alvo` (nasce de `main`) |
-| Estado | fazendo |
+| Estado | pronta p/ merge |
 | Spec | `analises\l2-interlude\client_spec\` (movimento do pawn, `MoveToPawn` 0x60, `MoveToLocation` 0x01, `StopMove` 0x47, `ValidateLocation` 0x61, `Attack` 0x05, alcance e raio de colisão); `World/Movement.cs`, `World/PawnMotion.cs`, `World/ActionLatch.cs`, `World/Combat.cs` |
 | Sessão | world: aproximação do alvo (#0059) |
 | Criada | 2026-11-05 |
@@ -19,8 +19,9 @@ No Interlude ele para à distância certa (alcance da arma, ou da interação ma
 
 Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com todos marcados.
 
-- [ ] Levantamento com evidência no pseudocódigo (Engine.dll em `analises\l2-interlude\re\` e no Tryskell: o handler do `MoveToPawn` 0x60 e a distância de parada que ele usa; `StopMove` 0x47; a física de andar até um pawn com `CollisionRadius`; o que o cliente faz quando já está dentro do alcance; a rotação para o alvo) e no aCis, somente leitura (o que o servidor manda ao atacar ou interagir de perto e de longe, e o `offset` do MoveToPawn). Registre em Decisões e REA a regra de parada do original e onde o porte diverge.
-- [ ] O personagem para à distância certa e se vira para o alvo, sem continuar andando, em:
+- [x] Levantamento com evidência no pseudocódigo (Engine.dll em `analises\l2-interlude\re\` e no Tryskell: o handler do `MoveToPawn` 0x60 e a distância de parada que ele usa; `StopMove` 0x47; a física de andar até um pawn com `CollisionRadius`; o que o cliente faz quando já está dentro do alcance; a rotação para o alvo) e no aCis, somente leitura (o que o servidor manda ao atacar ou interagir de perto e de longe, e o `offset` do MoveToPawn). Registre em Decisões e REA a regra de parada do original e onde o porte diverge.
+  - Feito em Decisões e REA. O Tryskell confirma o mesmo código: `OnMoveToPawn` em `engine.c:506997` e o uso do `0x6c4` no `ReachedDestination` em `engine.c:16774`.
+- [x] O personagem para à distância certa e se vira para o alvo, sem continuar andando, em:
   - ataque corpo a corpo (alvo parado e alvo andando);
   - arco;
   - falar com NPC;
@@ -28,9 +29,22 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - alvo que já está ao lado no momento do clique.
 
   O mesmo vale para os outros pawns que o servidor move até um alvo (monstros atacando o jogador).
-- [ ] O que for do `App.cs` vira pedido para a coordenadora com o trecho exato; o que for de `Net/` vira pedido para a net. A física de terreno e o desenho no chão são da render (#0056, no `main`): não mexa em `Render/GeoTerrain.cs`.
-- [ ] Testes EditMode para a regra de parada (distâncias, raios, alvo em movimento). Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
-- [ ] Capturas ao vivo antes e depois, tiradas pela sessão de testes no aCis local (ataque a um monstro perto e longe, falar com NPC), com o log das distâncias, em `Docs/evidencias/aproximacao-alvo/`.
+
+  Ao vivo (`d9a7f7d`), o "chegou" sempre ficou com d <= offset + 1 e nenhum caso andou no lugar:
+  - corpo a corpo parado: d = 62,0 com offset 61;
+  - corpo a corpo andando: d = 63,3 e 63,0 com offset 63;
+  - já ao lado: d = 38, sem andar;
+  - NPC de longe: d = 60,1 com offset 60;
+  - NPC de perto: offset 150, sem andar;
+  - monstros até o jogador: d = 61,2 e 55,8 com offset 61. No antes, um deles ficava a 26, entrando no corpo.
+
+  **Arco e item: só cobertos pelos testes EditMode, sem verificação ao vivo.** A regra é a mesma (`Arco_ParaNoAlcanceDoArco`, `PegarItem_ParaEViraParaOItem`). O personagem de teste não tinha arco nem GM. O servidor recusa largar itens ("This item cannot be discarded.") e o drop vai direto para o inventário. O aCis manda o movimento até item como `MoveToLocation`, que esta tarefa não muda; o `GetItem` agora para e vira o personagem (pedido 0054).
+- [x] O que for do `App.cs` vira pedido para a coordenadora com o trecho exato; o que for de `Net/` vira pedido para a net. A física de terreno e o desenho no chão são da render (#0056, no `main`): não mexa em `Render/GeoTerrain.cs`.
+  - Pedido 0054, aplicado pela coordenadora no branch (`d9a7f7d`). Nada em `Net/` nem no `GeoTerrain`.
+- [x] Testes EditMode para a regra de parada (distâncias, raios, alvo em movimento). Suíte sem falhas novas em relação ao `main`, rodada pela sessão de testes.
+  - `PawnApproachTests`, 13 testes. Suíte 925/925 no `d9a7f7d`, contra 912/912 na base `f8627bb`.
+- [x] Capturas ao vivo antes e depois, tiradas pela sessão de testes no aCis local (ataque a um monstro perto e longe, falar com NPC), com o log das distâncias, em `Docs/evidencias/aproximacao-alvo/`.
+  - Capturas `0059_<passo>_<antes|depois>.jpg` (convertidas dos PNGs), `depois-aproximacao.log` e os `e2e.log` (`206d601`).
 
 ## Andamento
 
@@ -45,7 +59,8 @@ Escrito pela coordenadora antes de começar. A tarefa só fica `concluída` com 
   - `7fccefe`: 925/925;
   - base `f8627bb`: 912/912 (a diferença são só os 13 novos).
 
-  Evidências em `Docs/evidencias/aproximacao-alvo/` (`bbd9529`). O ao vivo está **bloqueado**: o aCis local está fora do ar, e só o usuário liga o servidor.
+  Evidências em `Docs/evidencias/aproximacao-alvo/` (`bbd9529`). O ao vivo ficou esperando o aCis voltar.
+- 2026-11-05 — Ao vivo no aCis local, com o l2webtest5/BarrasHp54: ANTES no `f8627bb` e DEPOIS no `d9a7f7d`. As evidências estão em `Docs/evidencias/aproximacao-alvo/` (`206d601`). Estado: `pronta p/ merge`.
 
 ## Decisões e REA
 
@@ -90,9 +105,18 @@ Mais três pontos sobre essa regra:
 
 ## Entrega
 
-- **Commits:** a sub-sessão preenche ao terminar.
-- **Testes:** a sub-sessão preenche ao terminar.
-- **Falta / fora do escopo:** a sub-sessão preenche ao terminar.
+- **Commits** (`feat/world-aproximacao-alvo`):
+  - `7fccefe`: regra de parada, Focus, fim do seguimento no Attack, `ServerMoveToPawn`/`PickUp`/`Attack(x,y,z)`, log `[aproximacao]` e `PawnApproachTests`;
+  - `d9a7f7d`: `App.cs`, pedido 0054, pela coordenadora;
+  - `bbd9529` e `206d601`: evidências.
+- **Testes:**
+  - Suíte EditMode pela sessão de testes: 925/925 no `d9a7f7d`, sem erros de compilação. A base `f8627bb` tem 912/912; a diferença são os 13 `PawnApproachTests`.
+  - Ao vivo, antes e depois, no aCis local: passos a, b, c, e e g, com 0 erros no console.
+  - No passo c, o aCis mandou `MoveToPawn` com offset 33 (o -30 do alvo andando) e atacou a d = 66 sem "chegou". É o ataque dentro de offset + 100 que o `Attack` agora encerra, como o `OnAttack` do original.
+- **Falta / fora do escopo:**
+  - arco e pegar item ao vivo (motivo no Critério de pronto);
+  - o `NActionStop` do `OnMoveToPawn` (cancela golpe ou magia em curso) e se o `MagicSkillUse` para o movimento: ficam para a #0060;
+  - a #0060 e a #0061 mexem no `Entity.Attack`. A #0061 já fez merge deste branch até `bbd9529`. A #0058 mexe nas chamadas do `PawnFx.OnHit` no mesmo `OnAttack` do `App.cs`, e a coordenadora junta as duas no merge.
 
 ## Pedidos
 
