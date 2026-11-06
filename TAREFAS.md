@@ -58,6 +58,11 @@ As vagas `net`, `ui` e `world` foram removidas em 2026-10-29 a pedido do usuári
 | 0055 | [HTML do servidor renderizado como no original](tarefas/0055-ui-html.md) | ui4 | no main |
 | 0056 | [Personagens e monstros flutuando fora de Giran](tarefas/0056-render-pawns-flutuando.md) | render | no main |
 | 0057 | [Personagem flutuando depois do unstuck e do teleporte](tarefas/0057-world-teleporte-flutuando.md) | world | no main |
+| 0058 | [Efeito do soulshot no alvo ao acertar](tarefas/0058-render-soulshot-acerto.md) | render | no main |
+| 0059 | [Personagem continua andando até o alvo mesmo ao lado dele](tarefas/0059-world-aproximacao-alvo.md) | world | no main |
+| 0060 | [Sistema de ataque: o que falta em relação ao original](tarefas/0060-world-sistema-ataque.md) | world (pasta net) | no main |
+| 0061 | [NPCs, monstros e bosses: movimento e ataque iguais ao original](tarefas/0061-world-npcs-movimento-ataque.md) | world (pasta ui2) | no main |
+| 0062 | [NPCs andando e atacando de lado](tarefas/0062-world-npcs-orientacao.md) | world | no main |
 
 #0005–#0022 (porte da HUD do Spark) e os pedidos 0001–0013 foram cancelados em 2026-10-29 e estão em `tarefas\concluidas\`.
 
