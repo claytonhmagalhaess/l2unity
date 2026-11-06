@@ -315,7 +315,7 @@ namespace L2Web.World
             var P = opts.PAtkSpd;
             var type = opts.ServerType;
             double timeAtk;
-            if (type == "BOW") timeAtk = Math.Truncate(1500 * 345 / P);
+            if (type == "BOW") timeAtk = Math.Truncate(1500 * 333 / P); // aCis Creature.calculateTimeBetweenAttacks
             else timeAtk = P < 2 ? 2700 : Math.Truncate(470000 / P);
             var r = new ServerAttackResult();
             double reuse = 0;
@@ -332,7 +332,7 @@ namespace L2Web.World
             }
             else r.Hits.Add(Math.Truncate(timeAtk / 2)); // doAttackHitSimple / Pole: timeAtk/2
             r.TimeAtk = timeAtk;
-            r.AttackEnd = timeAtk - 100; // _attackEndTime = time + timeAtk - 100
+            r.AttackEnd = timeAtk - 50; // aCis Creature.doAttack: _attackEndTime = timeAtk + now - 50
             r.ReadyToAct = timeAtk; // AI READY_TO_ACT agendado em timeAtk
             r.Reuse = reuse; // arco: reuseDelay * 345 / PAtkSpd
             r.Cycle = timeAtk + reuse; // proxima flecha so apos sAtk + reuse

@@ -1,0 +1,131 @@
+f8627bb Merge feat/render-pawns-chao (correcao da ToI)
+status: up_to_date errors: 0 warnings: 0
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=77 self=BarrasHp54 91976,208280,-3640"
+"91976;208280;-3640 alvo=0 @20:39:30.8"
+"91976;208280;-3640 alvo=0 @20:39:34.0"
+"91976;208280;-3640 alvo=0 @20:39:37.2"
+"91976;208280;-3640 alvo=0 @20:39:40.6"
+"unstuck"
+f8627bb Merge feat/render-pawns-chao (correcao da ToI)
+status: up_to_date errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"cena ok"
+"idx=\"
+"idx=7 3840x2160"
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=19 self=BarrasHp54 -90024,105672,-3608"
+"-90024;105672;-3608 alvo=0 @20:49:11.4"
+""
+"-90024;105672;-3608 alvo=0 @20:49:22.9"
+"268449875:Turek Orc Skirmisher:1409:atk 268480710:Turek Orc Skirmisher:1933:atk 268480712:Turek Orc Footman:1976:atk 268480709:Turek Orc Supplier:1990:atk 268449847:Turek Orc Archer:2467:atk 268449841:Turek Orc Archer:1507:atk 268449991:Turek Orc Sentinel:2332:atk 268449952:Turek Orc Footman:2127:atk 268449990:Turek Orc Sentinel:2401:atk "
+"ents=19 hp=1941/1941"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import struct,sys;d=open(sys.argv[1],'rb').read(24);print('captura',sys.argv[1],struct.unpack('>II',d[16:24]))
+                        ~~~~^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/Program Files/Git/0059_inicio_antes.png'
+== preparo: chegar a ~700 do 268449875
+"d=1409"
+"268449875:Turek Orc Skirmisher:505:atk 268480710:Turek Orc Skirmisher:1019:atk 268480712:Turek Orc Footman:1101:atk 268480709:Turek Orc Supplier:1146:atk "
+== a) monstro longe
+-- atk 268449875 @20:49:41
+"clique1 d=531"
+"clique2"
+  parou em "-91387;105949"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_a_longe_antes.png (1024, 768)
+"d_final=60 alvoHp=14/1718"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_a_longe_ataque_antes.png (1024, 768)
+"-91387;105949;-3552 alvo=0 @20:49:55.9"
+== b) monstro PERTO
+{
+-- atk 0 @20:50:31
+"clique1 d=-1"
+"clique2"
+  parou em "-91387;105949"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_b_perto_antes.png (1024, 768)
+"alvo sumiu"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_b_perto_ataque_antes.png (1024, 768)
+== c) monstro ANDANDO
+nenhum monstro andando em ~45 s
+== g) agressivo (parado, sem alvo, 40 s)
+"sem alvo"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+== b) monstro PERTO
+"chegando ao lado de 268480713 Turek Orc Skirmisher d=60"
+-- atk 268480713 @20:52:39
+"clique1 d=39"
+"clique2"
+  parou em "-91384;105928"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_b_perto_antes.png (1024, 768)
+"d_final=50 alvoHp=0/1718"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_b_perto_ataque_antes.png (1024, 768)
+== c) monstro ANDANDO
+monstro andando: 268480712
+-- atk 268480712 @20:52:50
+"clique1 d=710"
+"clique2"
+  parou em "-91789;106437"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_c_andando_antes.png (1024, 768)
+"d_final=58 alvoHp=0/1540"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_c_andando_ataque_antes.png (1024, 768)
+== g) agressivo (parado, sem alvo, 40 s)
+"sem alvo"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+  "nada"
+== f) item no chão
+"largou 1 adena (obj 268480846, tinha 6448500)"
+item no chão: 0:1000000000
+== g) monstros atacando o personagem parado
+"self 268480845 | 268480734:Turek Orc Footman:d=58:alvo=0 268480710:Turek Orc Skirmisher:d=26:alvo=0 268480709:Turek Orc Supplier:d=179:alvo=0 "
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_g_agressivo_antes.png (1024, 768)
+{
+== f) item no chão
+"largou 1 Spirit Ore 3031 (obj 268480863, tinha 500)"
+item no chão: 0:1000000000
+== /unstuck para Giran (passo e)
+"unstuck"
+"83403;148570;-3400 alvo=0 @21:00:11.3"
+"268477395:10002:Buffer:396 268477394:10002:Buffer:337 268477393:10009:Grand Master:400 268477391:10007:Donate Shop:646 268477388:10003:Global Gatekeeper:673 268479858:10016:Epic Shop:334 268479864:10009:Grand Master:681 268479866:31124:Daily PvP:264 268479867:31124:Daily PK:333 268479868:30080:Clarissa:666 "
+== e) NPC longe
+-- talk 268479868 @21:00:21
+"clique1 d=666"
+"clique2"
+  parou em "83396;147964"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_e_npc_longe_antes.png (1024, 768)
+"d_final=60 alvoHp=3862/3862"
+"fecha html"
+== e) NPC perto
+-- talk 268479868 @21:00:32
+"clique1 d=60"
+"clique2"
+  parou em "83396;147964"
+captura C:/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0059-world-aproximacao-1/antes/0059_e_npc_perto_antes.png (1024, 768)
+"d_final=60 alvoHp=3862/3862"
+"fecha html"
+0 entradas

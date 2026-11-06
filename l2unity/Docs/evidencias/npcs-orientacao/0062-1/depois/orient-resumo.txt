@@ -1,0 +1,11 @@
+268480967 npc=20267 sec=batur_orc clip=Wait           n=219  Heading-mov(med)=-30 n=1  Heading-paraSelf(med)=-5086  Facing-Heading(med)=None  yawT/model ex=13,9/0,0
+268480967 npc=20267 sec=batur_orc clip=Social01       n= 14  Heading-mov(med)=None n=0  Heading-paraSelf(med)=30261  Facing-Heading(med)=None  yawT/model ex=13,9/0,0
+268480967 npc=20267 sec=batur_orc clip=atk01          n= 86  Heading-mov(med)=19925 n=1  Heading-paraSelf(med)=-5086  Facing-Heading(med)=None  yawT/model ex=207,9/0,0
+268480967 npc=20267 sec=batur_orc clip=Walk           n= 14  Heading-mov(med)=9 n=14  Heading-paraSelf(med)=29837  Facing-Heading(med)=None  yawT/model ex=14,1/0,0
+268480967 npc=20267 sec=batur_orc clip=run            n=  1  Heading-mov(med)=27124 n=1  Heading-paraSelf(med)=27139  Facing-Heading(med)=None  yawT/model ex=356,7/0,0
+268480967 npc=20267 sec=batur_orc clip=atkwait        n= 47  Heading-mov(med)=None n=0  Heading-paraSelf(med)=-1  Facing-Heading(med)=None  yawT/model ex=207,9/0,0
+268480971 npc=20268 sec=batur_orc_archer clip=Wait           n=105  Heading-mov(med)=-7733 n=1  Heading-paraSelf(med)=24689  Facing-Heading(med)=None  yawT/model ex=170,4/0,0
+268480971 npc=20268 sec=batur_orc_archer clip=atk01          n= 16  Heading-mov(med)=None n=0  Heading-paraSelf(med)=0  Facing-Heading(med)=None  yawT/model ex=43,1/0,0
+268480971 npc=20268 sec=batur_orc_archer clip=atkwait        n=  6  Heading-mov(med)=None n=0  Heading-paraSelf(med)=0  Facing-Heading(med)=None  yawT/model ex=34,8/0,0
+268480971 npc=20268 sec=batur_orc_archer clip=run            n= 10  Heading-mov(med)=498 n=10  Heading-paraSelf(med)=-31397  Facing-Heading(med)=None  yawT/model ex=225,0/0,0
+268480971 npc=20268 sec=batur_orc_archer clip=Walk           n=  3  Heading-mov(med)=-14127 n=3  Heading-paraSelf(med)=-22237  Facing-Heading(med)=None  yawT/model ex=318,6/0,0

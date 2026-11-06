@@ -1,0 +1,78 @@
+e40d43c README: a conexao do login fica no Ctrl+Alt+O (o Options abre as opcoes do jogo, #0048)
+status: up_to_date errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"cena ok"
+"idx=\"
+"idx=7 3840x2160"
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=0"
+"criando"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=64 self=Ataque60 83551,148654,-3400"
+"83551;148654;-3400 alvo=0 @21:18:03.2"
+"83551;148654;-3400 alvo=0 @21:18:06.8"
+"83551;148654;-3400 alvo=0 @21:18:10.0"
+"83551;148654;-3400 alvo=0 @21:18:13.2"
+"fig"
+"L2webTest2 (268480759) em 83272,148136,-3400"
+"aproxima"
+"L2webTest2 (268480759) em 83624,148648,-3400"
+== Ctrl+clique no figurante (AttackRequest, como o ClickAt com ctrl)
+"seleciona"
+"ctrl+clique"
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    im=Image.open(r'/c/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0060-1/antes/0060_ctrl_figurante_antes.png'); im.crop((0,380,440,530)).resize((880,300)).save(r'/c/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0060-1/antes/0060_ctrl_figurante_antes_chat.png')
+  File "C:\Users\Clayton\AppData\Local\Python\pythoncore-3.13-64\Lib\site-packages\PIL\Image.py", line 3639, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/Clayton/workspace-claude/L2Unity-workspace/testes/0060-1/antes/0060_ctrl_figurante_antes.png'
+captura 0060_ctrl_figurante_antes (+_chat)
+"alvo=0 pos=83551,148654"
+"no mundo: L2webTest2 em 83272,148136,-3400 || SystemMessage 1987 || SystemMessage 1987"
+"action 268477388 d=756"
+"action 268477388 d=756"
+"npc__Link teleporter/custom/levelup.htm"
+"npc_268477388_goto 12023"
+"ok"
+== matar 0
+  estado: sumiu
+"sumiu"
+"sumiu alvo=268477388"
+captura 0060_morto1_antes (+_chat)
+== matar 0
+  estado: sumiu
+"sumiu"
+"sumiu alvo=268477388"
+captura 0060_morto2_antes (+_chat)
+== matar 0
+  estado: sumiu
+"sumiu"
+"sumiu alvo=268477388"
+captura 0060_morto3_antes (+_chat)
+captura 0060_chat_critico_miss_antes (+_chat)
+"83486;147960;-3400 alvo=0 @21:21:16.8"
+"npc=268477390"
+"npc_268477390_Link teleporter/custom/levelup.htm"
+"npc_268477390_goto 12023"
+"ok"
+"-89915;105459;-3576 alvo=0 @21:22:04.5"
+"268480739:Turek Orc Skirmisher:1407:atk 268449841:Turek Orc Archer:1278:atk "
+== matar 268480739
+  estado: morto
+"morto=True pos=-91272,105832,-3512 | alvo=268480739"
+"1,5 s depois: morto=True pos=-91272,105832,-3512 alvo=268480739"
+captura 0060_morto1_antes (+_chat)
+== matar 268480778
+  estado: morto
+"morto=True pos=-91832,106488,-3816 | alvo=268480778"
+"1,5 s depois: morto=True pos=-91832,106488,-3816 alvo=268480778"
+captura 0060_morto2_antes (+_chat)
+== matar 268480710
+  estado: morto
+"morto=True pos=-91784,106504,-3832 | alvo=268480710"
+"1,5 s depois: morto=True pos=-91784,106504,-3832 alvo=268480710"
+captura 0060_morto3_antes (+_chat)
+captura 0060_chat_critico_miss_antes (+_chat)

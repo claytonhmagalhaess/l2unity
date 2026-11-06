@@ -1,0 +1,11 @@
+Passed  L2Web.Tests.NpcMotionTests.Jogador_AndaAntesDeCorrer
+Passed  L2Web.Tests.NpcMotionTests.MoveAnimRate_NpcSpeedDoNpcgrp
+Passed  L2Web.Tests.NpcMotionTests.Npc_CorreDesdeOPrimeiroTick
+Passed  L2Web.Tests.NpcMotionTests.NpcSpeed_PadraoUm
+Passed  L2Web.Tests.NpcMotionTests.Social_SoNpcEIds1a5
+Passed  L2Web.Tests.NpcMotionTests.TrackTime_Arco_AteSoltarAFlecha
+Passed  L2Web.Tests.NpcMotionTests.TrackTime_CorpoACorpo_AteOFimDoClipe
+Passed  L2Web.Tests.NpcMotionTests.ValidateLocation_NoGolpeLongeDemais_Reposiciona
+Passed  L2Web.Tests.NpcMotionTests.ValidateLocation_ParadoNoGolpe_NaoAnda
+Passed  L2Web.Tests.NpcMotionTests.ValidateLocation_ParadoSemAcao_AndaAtePosicao
+Passed  L2Web.Tests.NpcMotionTests.ValidateLocation_ProprioJogador_IgnoraAcao

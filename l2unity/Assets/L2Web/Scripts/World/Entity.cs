@@ -59,6 +59,8 @@ namespace L2Web.World
         /// <summary>Em postura de combate (AutoAttackStart / inCombat): parado usa AtkWait em vez de Wait.</summary>
         public bool InCombat;
         public float AtkMul = 1;
+        /// <summary>npc_speed do npcgrp (FL2NpcData+0x58): multiplica a taxa de Walk/Run do NPC; 1 para jogadores.</summary>
+        public float NpcSpeed = 1;
         public float PAtkSpd = 300;
         public float MAtkSpd = 333;
 
@@ -73,6 +75,8 @@ namespace L2Web.World
         sealed class Attacking
         {
             public float Until;
+            /// <summary>Ate quando o pawn vira para o alvo (DesiredRotation do Sword/BowAttackProcess).</summary>
+            public float TrackUntil;
             public int TargetId;
         }
 
@@ -103,6 +107,8 @@ namespace L2Web.World
             Kind = kind;
             Actor.ObjectId = objectId;
             Actor.Root.name = kind + " " + objectId;
+            // pawn+0x6cc (walkanimframe) so vem do chargrp no UserInfo/CharInfo: NPC sem fase de caminhada
+            if (kind == "npc") Motion.WalkPhase = 0;
         }
 
         public float X => Motion.X;
@@ -130,9 +136,18 @@ namespace L2Web.World
         public AttackTimes Attack(Entity target)
         {
             var none = new AttackTimes();
+            // UGameEngine::OnAttack chama o StopMove do controller antes do golpe: o atacante para de seguir o alvo. Sem
+            // isso o porte continuava no MoveToPawn quando o aCis ataca sem mandar StopMove (alvo andando dentro de
+            // offset + 100: maybeMoveToPawn so cancela o FollowTask) e o pawn atacava andando ate o centro do alvo.
+            LogApproach("Attack", target, Follow?.Distance);
+            StopMoving();
             if (!Actor.Loaded || Dead) return none;
             posture = null;
             Sitting = false;
+            // UGameEngine::OnAttack (00011.c:17014), so com o atacante vivo: liga os bits 1 (postura de combate, o mesmo do
+            // AutoAttackStart) e 2 do controller +0x41c e chama NActionStop, que interrompe o cast em andamento
+            InCombat = true;
+            casting = null;
             if (target != null) Motion.DesiredYaw = Movement.HeadingOf(target.X - X, target.Y - Y);
             var section = Section;
             var spec = Combat.AttackAnim(Widx, AtkMul, key => GameData.MoveAnim(section, key, Widx).Rate);
@@ -141,10 +156,27 @@ namespace L2Web.World
             if (a.Name == null) return none;
             Actor.Play(a.Name, spec.Rate, false, spec.Tween);
             var play = Actor.ClipDuration(a.Name) / spec.Rate;
-            attacking = new Attacking { Until = clock + spec.Tween + play, TargetId = target?.ObjectId ?? 0 };
             var notes = GameData.ClipNotifies(Set, a.Name);
             List<float> At(string cls) => notes.Where(n => n.Cls == cls).Select(n => spec.Tween + n.Frac * play).ToList();
-            return new AttackTimes { Items = At("AttackItem"), Shots = At("AttackShot"), Ranged = spec.Ranged };
+            var res = new AttackTimes { Items = At("AttackItem"), Shots = At("AttackShot"), Ranged = spec.Ranged };
+            var until = spec.Tween + play;
+            attacking = new Attacking
+            {
+                Until = clock + until,
+                TrackUntil = clock + Combat.TrackTime(spec.Ranged, until, res.Shots),
+                TargetId = target?.ObjectId ?? 0,
+            };
+            return res;
+        }
+
+        /// <summary>
+        /// Attack com a posicao do atacante que vem no pacote (aCis: attacker.getX/Y/Z): o OnAttack faz AdjustPawnLocation
+        /// antes do StopMove.
+        /// </summary>
+        public AttackTimes Attack(Entity target, float x, float y, float z)
+        {
+            AdjustLocation(x, y, z);
+            return Attack(target);
         }
 
         /// <summary>Notifies cruzados desde a ultima chamada (fracao do clipe corrente; volta do loop incluida).</summary>
@@ -227,7 +259,79 @@ namespace L2Web.World
             Motion.ServerStop(new Vec3(x, y, z), IsSelf);
         }
 
-        public void ServerValidate(float x, float y, float z, int heading) => Motion.ServerValidate(new Vec3(x, y, z), heading, IsSelf);
+        /// <summary>
+        /// MoveToPawn (0x60), UGameEngine::OnMoveToPawn: sem o pawn do alvo o pacote nao faz nada; senao o pawn passa a seguir
+        /// o alvo (AController::MoveToward, alvo = MoveTarget e Focus) ate a distancia horizontal entre os centros ficar
+        /// &lt;= `distance` (Movement.PawnReached). Outros pawns: AdjustPawnLocation pela origem e correcao do AddMoveToward.
+        /// </summary>
+        public void ServerMoveToPawn(Entity target, float distance, float ox, float oy, float oz)
+        {
+            if (target == null) return;
+            Follow = new FollowInfo { TargetId = target.ObjectId, Distance = distance };
+            reachLogged = false;
+            Motion.ServerMoveToPawn(new Vec3(target.X, target.Y, target.Z), new Vec3(ox, oy, oz), IsSelf);
+            LogApproach("MoveToPawn", target, distance);
+        }
+
+        /// <summary>
+        /// AController::StopMove (slot +0x320 do controller), chamado pelo OnStopMove, pelo OnAttack e pelo OnGetItem: zera
+        /// MoveTarget e Focus e o Destination vira a posicao atual. Acaba o seguimento do MoveToPawn e o MoveToLocation.
+        /// </summary>
+        public void StopMoving()
+        {
+            Follow = null;
+            Motion.Dest = null;
+            Motion.Corr = 0;
+            Motion.CorrTimer = 0;
+        }
+
+        /// <summary>AdjustPawnLocation: so outro pawn e so se estiver a mais de SnapDistance da posicao do pacote.</summary>
+        void AdjustLocation(float x, float y, float z)
+        {
+            if (!IsSelf && Movement.Dist3(Motion, new Vec3(x, y, z)) > Movement.SnapDistance) Motion.Place(x, y, z);
+        }
+
+        /// <summary>
+        /// GetItem (0x0d), UGameEngine::OnGetItem: para (StopMove), AdjustPawnLocation pela posicao do pacote (a do item) e
+        /// vira para o item antes de tocar a animacao de pegar.
+        /// </summary>
+        public void PickUp(float x, float y, float z)
+        {
+            StopMoving();
+            AdjustLocation(x, y, z);
+            var dx = x - X;
+            var dy = y - Y;
+            if (dx * dx + dy * dy > 0.25f) Motion.DesiredYaw = Movement.HeadingOf(dx, dy);
+        }
+
+        public void ServerValidate(float x, float y, float z, int heading) =>
+            Motion.ServerValidate(new Vec3(x, y, z), heading, IsSelf, InAction);
+
+        /// <summary>
+        /// Golpe ou cast em curso (pawn+0x62c != 0 no engine: o OnAttack grava o tipo da acao e o NActionStop zera). O
+        /// OnValidateLocation nao anda um pawn parado ate a posicao do servidor durante a acao: no porte, o AddMoveTo cancelava
+        /// o golpe (andando) e virava o NPC para o ponto da correcao, de costas ou de lado para o alvo.
+        /// </summary>
+        public bool InAction => (attacking != null && clock < attacking.Until) || casting != null;
+
+        /// <summary>Chegada ao alvo do MoveToPawn ja foi para o log ([aproximacao]).</summary>
+        bool reachLogged;
+
+        /// <summary>
+        /// Log [aproximacao] do proprio jogador indo ate um alvo e de outro pawn vindo ate o proprio jogador: distancia
+        /// horizontal entre os centros, o offset do MoveToPawn, os dois CollisionRadius e a folga entre as bordas.
+        /// </summary>
+        void LogApproach(string what, Entity t, float? offset)
+        {
+            if (t == null || (!IsSelf && (World == null || t.ObjectId != World.SelfId || World.SelfId == 0))) return;
+            var dx = t.X - X;
+            var dy = t.Y - Y;
+            var d = (float)Math.Sqrt((double)dx * dx + (double)dy * dy);
+            var off = offset.HasValue ? $"{offset.Value:0}" : "-";
+            Debug.Log($"[aproximacao] {what} {Kind} {ObjectId} -> {t.Kind} {t.ObjectId}: d={d:0.0} offset={off} " +
+                      $"raios={CollisionRadius:0.#}+{t.CollisionRadius:0.#} bordas={d - CollisionRadius - t.CollisionRadius:0.0} " +
+                      $"seguindo={(Follow != null ? "sim" : "nao")}");
+        }
 
         /// <summary>Avanca o movimento. Devolve true enquanto estiver andando.</summary>
         public bool Step(float dt, World world, Func<float, float, float, float?> ground)
@@ -238,12 +342,28 @@ namespace L2Web.World
                 var t = world?.Get(Follow.TargetId);
                 if (t != null)
                 {
+                    // o MoveToward poe o Focus no alvo: o pawn vira para ele andando e tambem parado ao lado (o aCis manda
+                    // MoveToPawn(150) com o jogador ja perto do NPC so para vira-lo)
                     var dx = t.X - X;
                     var dy = t.Y - Y;
-                    var d = (float)Math.Sqrt((double)dx * dx + (double)dy * dy);
-                    target = d <= Follow.Distance ? null : new Vec3(t.X - dx / d * Follow.Distance, t.Y - dy / d * Follow.Distance, t.Z);
+                    if (dx * dx + dy * dy > 0.25f) Motion.DesiredYaw = Movement.HeadingOf(dx, dy);
+                    // o latente continua depois de chegar: se o alvo se afastar, volta a andar (execPollMoveToward)
+                    target = Movement.PawnGoal(X, Y, t.X, t.Y, t.Z, Follow.Distance);
+                    if (target == null && !reachLogged)
+                    {
+                        reachLogged = true;
+                        LogApproach("chegou", t, Follow.Distance);
+                    }
+                    else if (target != null) reachLogged = false;
                 }
-                else Follow = null;
+                else
+                {
+                    // MoveTarget sumiu: o execPollMoveToward encerra o latente e o pawn para ali (nao volta ao Destination
+                    // de um MoveToLocation anterior)
+                    Follow = null;
+                    Motion.Dest = null;
+                    target = null;
+                }
             }
             if (Turning != 0 && target == null)
             {
@@ -281,16 +401,81 @@ namespace L2Web.World
         /// <summary>Morto e com a animacao Death terminada (o pawn ja esta no DeathWait).</summary>
         public bool InDeathWait => Dead && (posture == null || posture.Anim != "Death" || clock >= posture.Until);
 
+        /// <summary>
+        /// Morto (Die 0x06, ou o campo isDead do CharInfo/NpcInfo). Ao morrer faz o que o UGameEngine::OnDie
+        /// (00006.c:14535) faz antes da Death: limpa o giro (bTurning), StopMove do controller (acaba o MoveToLocation e o
+        /// seguimento), desliga a postura de combate (bit 1 do +0x41c) e NActionStop (interrompe ataque e cast). Sem isso o
+        /// cast ou o golpe continuavam depois da Death e o pawn morto seguia andando ate o destino.
+        /// </summary>
         public void SetDead(bool dead)
         {
             if (dead == Dead) return;
             Dead = dead;
-            if (dead) StartPosture("Death");
+            if (dead)
+            {
+                Turning = 0;
+                Follow = null;
+                Motion.Dest = null;
+                InCombat = false;
+                casting = null;
+                attacking = null;
+                StartPosture("Death");
+            }
             else posture = null;
         }
 
+        /// <summary>
+        /// Revive (0x07), UGameEngine::OnRevive (00003.c:18075): desliga bDead e toca a DeathStandAnimName (Rebirth_* no
+        /// .int) com a NonAttackSpeedRate (moveMul) e tween 0,1. O anim_tables.json nao exporta a DeathStandAnimName: o
+        /// clipe e procurado pelo prefixo "rebirth" (Inferido; os conjuntos de jogador tem Rebirth_&lt;modelo&gt;). Sem o
+        /// clipe (NPCs) o pawn so volta ao Wait.
+        /// </summary>
+        public void Revive()
+        {
+            if (!Dead) return;
+            Dead = false;
+            posture = null;
+            if (!Actor.Loaded) return;
+            var name = GameData.MoveAnim(Section, "DeathStand", Widx).Name;
+            if (!Actor.HasClip(name)) name = Actor.ClipNames.FirstOrDefault(n => n.StartsWith("rebirth", StringComparison.Ordinal));
+            if (name == null) return;
+            var rate = Motion.MoveMul != 0 ? Motion.MoveMul : 1;
+            Actor.Play(name, rate, false, ReviveTween);
+            posture = new Posture { Anim = "DeathStand", Until = clock + Actor.ClipDuration(name) / rate };
+        }
+
+        /// <summary>Tween da DeathStand no OnRevive.</summary>
+        public const float ReviveTween = 0.1f;
+
+        /// <summary>
+        /// SocialAction (0x2d) de um NPC, UGameEngine::OnSocialAction (0x1030c243, decomp 00006.c:29124): id 1..5 toca uma vez
+        /// NpcSocialAnimName[id - 1] (propriedade localized de cada classe, no .int: [skeleton_archer] tem spwait01 nos tres
+        /// primeiros) com Rate = moveMul (0x6b4) e Tween 0.1, sem o atualizador de movimento sobrescrever (UM_ONCE); outros
+        /// ids nao fazem nada (o 15 e um efeito, da render). A tabela vem do anim_tables.json como a linha
+        /// "NpcSocialAnimName" indexada pelo slot. Devolve o clipe tocado, ou null.
+        /// </summary>
+        public string Social(int id)
+        {
+            if (Kind != "npc" || !Actor.Loaded || Dead || id < 1 || id > NpcSocialSlots) return null;
+            var name = GameData.MoveAnim(Section, "NpcSocial", id - 1).Name;
+            if (name == null || !Actor.HasClip(name)) return null;
+            var rate = Motion.MoveMul != 0 ? Motion.MoveMul : 1;
+            Actor.Play(name, rate, false, Movement.TweenSocial);
+            posture = new Posture { Anim = "Social", Until = clock + Actor.ClipDuration(name) / rate };
+            return name;
+        }
+
+        /// <summary>NpcSocialAnimName[5] (Pawn.uc).</summary>
+        public const int NpcSocialSlots = 5;
+
         void StartPosture(string anim)
         {
+            // sem o modelo nao ha clipe (o resultado ja era posture = null) e as tabelas podem nao estar carregadas
+            if (!Actor.Loaded)
+            {
+                posture = null;
+                return;
+            }
             var a = Anim(anim);
             if (a.Name == null || !Actor.HasClip(a.Name))
             {
@@ -364,8 +549,9 @@ namespace L2Web.World
                 if (moving || clock >= attacking.Until) attacking = null;
                 else
                 {
+                    // Sword/BowAttackProcess: DesiredRotation.Yaw = direcao do alvo a cada tick (o arco so ate soltar a flecha)
                     var t = World?.Get(attacking.TargetId);
-                    if (t != null) Motion.DesiredYaw = Movement.HeadingOf(t.X - X, t.Y - Y);
+                    if (t != null && t != this && clock <= attacking.TrackUntil) Motion.DesiredYaw = Movement.HeadingOf(t.X - X, t.Y - Y);
                     Actor.Update(dt);
                     return;
                 }
@@ -380,7 +566,7 @@ namespace L2Web.World
                 var a = Anim(Motion.RunPhase ? "Run" : "Walk");
                 var cur = Actor.ClipName;
                 var fromWait = waitName != null && cur != null && string.Equals(cur, waitName, StringComparison.OrdinalIgnoreCase);
-                Actor.Play(a.Name, a.Rate * mul, true, fromWait ? Movement.TweenMoveFromWait : Movement.TweenMove);
+                Actor.Play(a.Name, Movement.MoveAnimRate(a.Rate, NpcSpeed, mul), true, fromWait ? Movement.TweenMoveFromWait : Movement.TweenMove);
             }
             else if (Sitting)
             {

@@ -45,6 +45,20 @@ namespace L2Web.World
         public const float TweenMove = 0.1f;
         public const float TweenMoveFromWait = 0.4f;
         public const float TweenWait = 0.2f;
+        /// <summary>OnSocialAction de NPC: PlayAnim com Tween 0.1.</summary>
+        public const float TweenSocial = 0.1f;
+        /// <summary>
+        /// Taxa da animacao de andar/correr (APawn::GetWalkAnimRate 0x1030f65a / GetRunAnimRate 0x10313a70): XxxAnimRate[arma]
+        /// do .int (1 se 0), vezes o npc_speed do npcgrp se o pawn for NPC (bNpc, FL2NpcData+0x58, gravado pelo
+        /// FL2GameData::NpcDataLoad), vezes o moveMul (0x6b4) no atualizador. `npcSpeed` 0 (ausente) conta como 1.
+        /// </summary>
+        public static float MoveAnimRate(float animRate, float npcSpeed, float moveMul)
+        {
+            var r = animRate != 0 ? animRate : 1;
+            if (npcSpeed != 0) r *= npcSpeed;
+            return r * (moveMul != 0 ? moveMul : 1);
+        }
+
         /// <summary>Parado e girando mais rapido que isso (unidades/s) toca TurnAnim.</summary>
         public const float TurnAnimRate = 1000;
         /// <summary>Tick do PlayerController: ValidatePosition a cada 1,2 s enquanto o pawn tem velocidade.</summary>
@@ -165,6 +179,39 @@ namespace L2Web.World
                         z = h;
             }
             return z ?? keepZ;
+        }
+
+        /// <summary>
+        /// Folga da chegada ao alvo do MoveToPawn. O original (APawn::moveToward) anda o passo inteiro em direcao ao centro do
+        /// alvo e so testa a chegada no comeco do tick, entao para um pouco DENTRO do raio; o porte para exatamente na borda,
+        /// e sem folga o arredondamento deixava d um fio acima do offset: o pawn dava um passo de fracao de unidade por quadro
+        /// e ficava "andando no lugar" ao lado do alvo. 1 = o limiar de encaixe do PawnMotion.Step (len < 1).
+        /// </summary>
+        public const float ReachSlack = 1;
+
+        /// <summary>
+        /// APawn::ReachedDestination com alvo pawn (engine.dll, export 0x10301415, chamado pelo APawn::moveToward): em PHYS_Walking o
+        /// moveToward zera o Z da direcao, entao a regra e so a distancia horizontal entre os centros &lt;= pawn+0x6c4 (o
+        /// offset do MoveToPawn, gravado pelo OnMoveToPawn / AddMoveToward) + DestinationOffset (0x152c; 0 no MoveToward
+        /// nativo). O aCis ja manda o offset somando os dois CollisionRadius (CreatureAI.maybeMoveToPawn).
+        /// </summary>
+        public static bool PawnReached(float dx, float dy, float offset)
+        {
+            var d = (float)Math.Sqrt((double)dx * dx + (double)dy * dy);
+            return d <= offset + ReachSlack;
+        }
+
+        /// <summary>
+        /// Ponto em que o pawn em (x, y) para ao seguir um alvo em (tx, ty, tz) a `offset` (APawn::moveToward ate o
+        /// ReachedDestination): null se ja chegou; senao o ponto da reta pawn-alvo a `offset` do centro do alvo.
+        /// </summary>
+        public static Vec3 PawnGoal(float x, float y, float tx, float ty, float tz, float offset)
+        {
+            var dx = tx - x;
+            var dy = ty - y;
+            if (PawnReached(dx, dy, offset)) return null;
+            var d = (float)Math.Sqrt((double)dx * dx + (double)dy * dy);
+            return new Vec3(tx - dx / d * offset, ty - dy / d * offset, tz);
         }
 
         public static float Dist3(float ax, float ay, float az, float bx, float by, float bz)

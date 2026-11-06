@@ -1,0 +1,65 @@
+efd8fb5 #0060: combate_lacunas B13 (virar para o alvo) fica com a #0061
+status: completed errors: 0 warnings: 0
+status: up_to_date errors: 0 warnings: 0
+"cena ok"
+"idx=\"
+"idx=7 1024x768"
+  "success": true,
+"scrLogin"
+"ok"
+"scrChars chars=1"
+"ok"
+"scrGame inWorld=True ents=34 self=Ataque60 -91832,106488,-3816"
+"-91832;106488;-3816 alvo=0 @21:24:52.7"
+"268450034:Turek Orc Shaman:1286:atk 268449992:Turek Orc Sentinel:930:atk 268449993:Turek Orc Sentinel:459:atk 268480779:Turek Orc Archer:1027:atk 268449955:Turek Orc Footman:1297:atk 268450033:Turek Orc Shaman:1427:atk 268480893:Turek Orc Footman:35:atk 268480894:Turek Orc Skirmisher:790:atk 268480895:Turek Orc Skirmisher:7:atk 268480709:Turek Orc Supplier:213:atk 268449847:Turek Orc Archer:1025:atk "
+== matar 268480895
+  estado: morto
+"morto=True pos=-91826,106484,-3816 | alvo=268480895"
+"1,5 s depois: morto=True pos=-91826,106484,-3816 alvo=268480895"
+captura 0060_morto1_depois (+_chat)
+== matar 268480893
+  estado: morto
+"morto=True pos=-91864,106472,-3808 | alvo=268480893"
+"1,5 s depois: morto=True pos=-91864,106472,-3808 alvo=268480893"
+captura 0060_morto2_depois (+_chat)
+== matar 268480709
+  estado: morto
+"morto=True pos=-91732,106543,-3840 | alvo=268480709"
+"1,5 s depois: morto=True pos=-91732,106543,-3840 alvo=268480709"
+captura 0060_morto3_depois (+_chat)
+captura 0060_chat_critico_miss_depois (+_chat)
+== agressivo sem alvo
+"sem alvo"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+  "alvo=0" hp="1740/1740"
+captura 0060_agressivo_depois (+_chat)
+== provoca e tira o alvo
+monstro 268480898
+"seleciona"
+"cancela"
+  "alvo=0" "monstro dead=False d=25 hp=1712"
+  "alvo=0" "monstro dead=False d=25 hp=1693"
+  "alvo=0" "monstro dead=False d=25 hp=1674"
+  "alvo=0" "monstro dead=False d=25 hp=1664"
+  "alvo=0" "monstro dead=False d=25 hp=1643"
+  "alvo=0" "monstro dead=False d=25 hp=1623"
+captura 0060_agressivo_provocado_depois (+_chat)
+"foge"
+"unstuck"
+"82278;147809;-3464 alvo=0 @21:32:25.3"
+"fig"
+"L2webTest2 (268480759) em 83624,148648,-3400"
+"L2webTest2 (268480759) em 82358,147809,-3464"
+== Ctrl+clique no figurante
+"seleciona"
+"ctrl+clique"
+captura 0060_ctrl_figurante_depois (+_chat)
+"fig parado"
+0 entradas
+  "success": true,

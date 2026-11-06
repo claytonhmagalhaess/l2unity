@@ -1,0 +1,71 @@
+== e) NPC longe
+-- talk 268479868 @21:02:28
+"clique1 d=664"
+"d_final=53 alvoHp=3862/3862"
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268479868: d=664,0 offset=60 raios=9+8 bordas=647,0 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268479868: d=60,1 offset=60 raios=9+8 bordas=43,1 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268479868: d=60,1 offset=53 raios=9+8 bordas=43,1 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268479868: d=53,3 offset=53 raios=9+8 bordas=36,3 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268479868: d=53,3 offset=150 raios=9+8 bordas=36,3 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268479868: d=53,3 offset=150 raios=9+8 bordas=36,3 seguindo=sim
+== e) NPC perto
+-- talk 268479868 @21:02:39
+"clique1 d=53"
+"d_final=53 alvoHp=3862/3862"
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268479868: d=53,3 offset=150 raios=9+8 bordas=36,3 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268479868: d=53,3 offset=150 raios=9+8 bordas=36,3 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268479868: d=53,3 offset=150 raios=9+8 bordas=36,3 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268479868: d=53,3 offset=150 raios=9+8 bordas=36,3 seguindo=sim
+== preparo: chegar a ~700 do 268480714
+== a) monstro longe
+-- atk 268480714 @21:03:46
+"clique1 d=478"
+"d_final=61 alvoHp=0/1718"
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268480714: d=254,7 offset=61 raios=9+12 bordas=233,7 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268480714: d=120,5 offset=61 raios=9+12 bordas=99,5 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268480714: d=62,0 offset=61 raios=9+12 bordas=41,0 seguindo=sim
+   log [aproximacao] Attack self 268480845 -> npc 268480714: d=61,9 offset=- raios=9+12 bordas=40,9 seguindo=nao
+   log [aproximacao] MoveToPawn npc 268480714 -> self 268480845: d=61,9 offset=61 raios=12+9 bordas=40,9 seguindo=sim
+   log [aproximacao] chegou npc 268480714 -> self 268480845: d=61,9 offset=61 raios=12+9 bordas=40,9 seguindo=sim
+   log [aproximacao] Attack self 268480845 -> npc 268480714: d=61,9 offset=- raios=9+12 bordas=40,9 seguindo=nao
+   log [aproximacao] Attack npc 268480714 -> self 268480845: d=61,9 offset=61 raios=12+9 bordas=40,9 seguindo=sim
+   log [aproximacao] Attack self 268480845 -> npc 268480714: d=61,9 offset=- raios=9+12 bordas=40,9 seguindo=nao
+   log [aproximacao] Attack self 268480845 -> npc 268480714: d=61,9 offset=- raios=9+12 bordas=40,9 seguindo=nao
+   log [aproximacao] Attack self 268480845 -> npc 268480714: d=61,9 offset=- raios=9+12 bordas=40,9 seguindo=nao
+== b) monstro PERTO
+-- atk 268480734 @21:04:30
+"clique1 d=38"
+"d_final=38 alvoHp=0/1540"
+   log [aproximacao] MoveToPawn npc 268480710 -> self 268480845: d=86,2 offset=61 raios=12+9 bordas=65,2 seguindo=sim
+   log [aproximacao] chegou npc 268480710 -> self 268480845: d=61,2 offset=61 raios=12+9 bordas=40,2 seguindo=sim
+   log [aproximacao] Attack npc 268480710 -> self 268480845: d=61,2 offset=- raios=12+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack self 268480845 -> npc 268480734: d=38,2 offset=- raios=9+10 bordas=19,2 seguindo=nao
+   log [aproximacao] Attack npc 268480734 -> self 268480845: d=38,2 offset=- raios=10+9 bordas=19,2 seguindo=nao
+   log [aproximacao] Attack self 268480845 -> npc 268480734: d=38,2 offset=- raios=9+10 bordas=19,2 seguindo=nao
+   log [aproximacao] Attack npc 268480710 -> self 268480845: d=61,2 offset=- raios=12+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack npc 268480710 -> self 268480845: d=61,2 offset=- raios=12+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack npc 268480710 -> self 268480845: d=61,2 offset=- raios=12+9 bordas=40,2 seguindo=nao
+   log [aproximacao] Attack npc 268480710 -> self 268480845: d=55,8 offset=- raios=12+9 bordas=34,8 seguindo=nao
+   log [aproximacao] MoveToPawn npc 268480710 -> self 268480845: d=55,8 offset=61 raios=12+9 bordas=34,8 seguindo=sim
+   log [aproximacao] chegou npc 268480710 -> self 268480845: d=55,8 offset=61 raios=12+9 bordas=34,8 seguindo=sim
+== c) monstro ANDANDO
+-- atk 268449845 @21:04:40
+"clique1 d=1069"
+"d_final=63 alvoHp=0/1627"
+   log [aproximacao] Attack npc 268480710 -> self 268480845: d=55,8 offset=- raios=12+9 bordas=34,8 seguindo=nao
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=1057,1 offset=63 raios=9+14 bordas=1034,1 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=987,7 offset=63 raios=9+14 bordas=964,7 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=815,5 offset=63 raios=9+14 bordas=792,5 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=646,2 offset=63 raios=9+14 bordas=623,2 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=484,9 offset=63 raios=9+14 bordas=461,9 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=316,4 offset=63 raios=9+14 bordas=293,4 seguindo=sim
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=225,6 offset=63 raios=9+14 bordas=202,6 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268449845: d=63,3 offset=63 raios=9+14 bordas=40,3 seguindo=sim
+   log [aproximacao] Attack self 268480845 -> npc 268449845: d=63,3 offset=- raios=9+14 bordas=40,3 seguindo=nao
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=75,4 offset=33 raios=9+14 bordas=52,4 seguindo=sim
+   log [aproximacao] Attack self 268480845 -> npc 268449845: d=66,0 offset=- raios=9+14 bordas=43,0 seguindo=nao
+   log [aproximacao] Attack npc 268449845 -> self 268480845: d=92,6 offset=- raios=14+9 bordas=69,6 seguindo=nao
+   log [aproximacao] MoveToPawn self 268480845 -> npc 268449845: d=92,6 offset=63 raios=9+14 bordas=69,6 seguindo=sim
+   log [aproximacao] chegou self 268480845 -> npc 268449845: d=63,0 offset=63 raios=9+14 bordas=40,0 seguindo=sim
+   log [aproximacao] Attack self 268480845 -> npc 268449845: d=63,0 offset=- raios=9+14 bordas=40,0 seguindo=nao
+== g) agressivo (parado, sem alvo, 40 s)
