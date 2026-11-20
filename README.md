@@ -41,7 +41,11 @@ monta Giran com modelos e música e informa no log quantos pedidos de rede foram
 
 ## Como rodar
 
-1. Os assets já estão no projeto; o `dev.ts` do l2web não é mais necessário.
+1. Baixe os assets (~6 GB, fora do git) do bucket público R2 para `Assets/StreamingAssets/L2Web/`, sem credenciais:
+   `python -I Docs/tools/r2_assets.py baixar` (`status` compara a pasta com o bucket). A lista de arquivos vem de
+   `Docs/tools/r2_manifesto.tsv`, porque a URL pública não lista o bucket. Para enviar arquivos é preciso o token de
+   escrita em `env/` (fora do git); depois de `enviar`, rode `manifesto` e faça commit do `.tsv`. O `dev.ts` do l2web
+   não é mais necessário.
 2. Servidor L2 ligado (login 2106, game 7777).
 3. Abra este projeto no Unity 6000.6.7f1, abra a cena `Assets/Scenes/L2Web.unity` e dê Play.
 4. Na tela de login, **Ctrl+Alt+O** (janela de conexão, só de desenvolvimento; o botão Options abre as opções do jogo,
