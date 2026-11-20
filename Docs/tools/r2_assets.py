@@ -3,11 +3,16 @@
 Uso (na raiz do l2unity):
   python -I Docs/tools/r2_assets.py status            # compara a pasta local com o bucket
   python -I Docs/tools/r2_assets.py baixar            # baixa o que falta ou mudou
-  python -I Docs/tools/r2_assets.py enviar            # envia o que falta ou mudou
+  python -I Docs/tools/r2_assets.py enviar            # envia o que falta ou mudou (precisa do token de escrita)
+  python -I Docs/tools/r2_assets.py manifesto         # regrava Docs/tools/r2_manifesto.tsv a partir do bucket
 Opcoes: --pasta <dir> (padrao: Assets/StreamingAssets/L2Web), --env <arquivo> (padrao: env/r2-leitura.env),
         --limite N (so os N primeiros arquivos, para teste), --threads N (padrao 24).
 
-Credenciais: o arquivo --env (R2_ACCOUNT_ID, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY). Variaveis de ambiente
+Sem credenciais, status e baixar usam a URL publica do bucket (R2_PUBLIC_URL, padrao abaixo) e a lista de
+arquivos em Docs/tools/r2_manifesto.tsv (chave, tamanho, MD5), porque a URL publica nao lista o bucket.
+Depois de enviar, rode manifesto e faca commit do .tsv.
+
+Credenciais (enviar, manifesto, ou para ler pelo S3): o arquivo --env (R2_ACCOUNT_ID, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY). Variaveis de ambiente
 com os mesmos nomes tem preferencia. Um arquivo e igual ao do bucket quando o tamanho e o MD5 (ETag) batem.
 Nada e apagado: arquivos que so existem de um lado sao listados no status.
 """
@@ -26,9 +31,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 NS = '{http://s3.amazonaws.com/doc/2006-03-01/}'
+URL_PUBLICA = 'https://pub-ff57f61d05554ed188283f757a6166fc.r2.dev'
+MANIFESTO = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'r2_manifesto.tsv')
+CHAVES = ('R2_ACCOUNT_ID', 'R2_BUCKET', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY')
 
 
-def credenciais(caminho):
+def credenciais(caminho, obrigatorio=True):
     c = {}
     if os.path.exists(caminho):
         for linha in open(caminho, encoding='utf-8-sig'):
@@ -36,10 +44,12 @@ def credenciais(caminho):
             if linha and not linha.startswith('#') and '=' in linha:
                 k, v = linha.split('=', 1)
                 c[k.strip()] = v.strip()
-    for k in ('R2_ACCOUNT_ID', 'R2_BUCKET', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY'):
+    for k in CHAVES + ('R2_PUBLIC_URL',):
         if os.environ.get(k):
             c[k] = os.environ[k]
-    falta = [k for k in ('R2_ACCOUNT_ID', 'R2_BUCKET', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY') if not c.get(k) or '<' in c[k]]
+    falta = [k for k in CHAVES if not c.get(k) or '<' in c[k]]
+    if falta and not obrigatorio:
+        return None
     if falta:
         sys.exit(f'faltam credenciais em {caminho} ou no ambiente: {", ".join(falta)}')
     return c
@@ -116,6 +126,51 @@ class R2:
             token = raiz.findtext(NS + 'NextContinuationToken')
 
 
+class Publico:
+    """Leitura pela URL publica (sem assinatura); a lista vem do manifesto."""
+
+    def __init__(self, url):
+        u = urllib.parse.urlsplit(url)
+        self.host, self.base = u.netloc, u.path.rstrip('/')
+        self.local = threading.local()
+
+    def pedir(self, metodo, chave='', tentativas=4, **_):
+        uri = self.base + '/' + '/'.join(urllib.parse.quote(s, safe='-_.~') for s in chave.split('/'))
+        for n in range(tentativas):
+            try:
+                if getattr(self.local, 'conn', None) is None:
+                    self.local.conn = http.client.HTTPSConnection(self.host, timeout=120)
+                self.local.conn.request(metodo, uri, headers={'User-Agent': 'r2_assets'})
+                r = self.local.conn.getresponse()
+                dados = r.read()
+                if r.status >= 500:
+                    raise IOError(f'HTTP {r.status}')
+                return r.status, dict(r.getheaders()), dados
+            except (OSError, http.client.HTTPException) as e:
+                self.local.conn = None
+                if n == tentativas - 1:
+                    raise IOError(f'{metodo} {chave}: {e}')
+                time.sleep(1 + 2 * n)
+
+    def listar(self):
+        if not os.path.exists(MANIFESTO):
+            sys.exit(f'sem credenciais e sem {MANIFESTO}')
+        objs = {}
+        for linha in open(MANIFESTO, encoding='utf-8'):
+            if linha.strip() and not linha.startswith('#'):
+                k, n, e = linha.rstrip('\n').split('\t')
+                objs[k] = (int(n), e)
+        return objs
+
+
+def gravar_manifesto(objs):
+    with open(MANIFESTO, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('# chave\ttamanho\tmd5 (gerado por r2_assets.py manifesto)\n')
+        for k in sorted(objs):
+            f.write(f'{k}\t{objs[k][0]}\t{objs[k][1]}\n')
+    print(f'manifesto: {len(objs)} arquivos em {MANIFESTO}')
+
+
 def arquivos_locais(pasta):
     out = {}
     for d, _, fs in os.walk(pasta):
@@ -170,16 +225,25 @@ def executar(tarefas, fn, threads, rotulo):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('acao', choices=['status', 'enviar', 'baixar'])
+    ap.add_argument('acao', choices=['status', 'enviar', 'baixar', 'manifesto'])
     ap.add_argument('--pasta', default=os.path.join(RAIZ, 'Assets', 'StreamingAssets', 'L2Web'))
     ap.add_argument('--env', default=os.path.join(RAIZ, 'env', 'r2-leitura.env'))
     ap.add_argument('--limite', type=int, default=0)
     ap.add_argument('--threads', type=int, default=24)
     a = ap.parse_args()
 
-    r2 = R2(credenciais(a.env))
-    print(f"bucket {r2.c['R2_BUCKET']}, pasta {a.pasta}")
-    remotos = r2.listar()
+    c = credenciais(a.env, obrigatorio=a.acao in ('enviar', 'manifesto'))
+    if c:
+        r2 = R2(c)
+        print(f"bucket {c['R2_BUCKET']} (S3), pasta {a.pasta}")
+    else:
+        url = os.environ.get('R2_PUBLIC_URL', URL_PUBLICA)
+        r2 = Publico(url)
+        print(f'URL publica {url} + manifesto, pasta {a.pasta}')
+    remotos = {k: v for k, v in r2.listar().items() if not k.endswith('/')}  # sem marcadores de pasta
+    if a.acao == 'manifesto':
+        gravar_manifesto(remotos)
+        return 0
     os.makedirs(a.pasta, exist_ok=True)
     locais = arquivos_locais(a.pasta)
     print(f'local: {len(locais)} arquivos, {sum(s for s, _ in locais.values()) / 2**30:.2f} GB; '
