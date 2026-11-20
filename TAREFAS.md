@@ -13,8 +13,6 @@ Estados: `livre` · `fazendo` · `pronta p/ merge` · `no main` · `bloqueada`
 | net | `worktrees\net` | — (livre, no `main`) | livre |
 | world | `worktrees\world` | — (livre, no `main`) | livre |
 | ui2 | `worktrees\ui2` | — (livre, no `main`) | livre |
-| ui3 | `worktrees\ui3` | — (livre, no `main`) | livre |
-| ui4 | `worktrees\ui4` | — (livre, no `main`) | livre |
 | teste | `worktrees\teste` | — (checkout do commit pedido; sessão de testes `local_4903e3f5-6ce1-4e70-84a2-a1f7932933f2`) | fazendo |
 
 As vagas `net`, `ui` e `world` foram removidas em 2026-10-29 a pedido do usuário; a `render` foi recriada do `main` (`0d71a77`) para a #0023. Para recriar outra, ver "Vaga nova" no `CLAUDE.md`.
